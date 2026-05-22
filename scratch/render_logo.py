@@ -2,7 +2,7 @@ import fitz # PyMuPDF
 import os
 import shutil
 
-pdf_path = r"F:\IEB_original_logo.pdf"
+pdf_path = r"F:\Impetus-logo.pdf"
 logo_dir = r"c:\ProgramData\Herd\impetus\public\images\logo"
 
 print("Starting logo rendering from PDF...")

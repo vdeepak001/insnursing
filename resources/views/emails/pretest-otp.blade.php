@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verification Code - {{ $testLabel }}</title>
 </head>
+
 <body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: Inter, Arial, sans-serif; color: #1e293b;">
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f8fafc; padding: 24px 12px;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+        style="background-color: #f8fafc; padding: 24px 12px;">
         <tr>
             <td align="center">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 620px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; overflow: hidden;">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                    style="max-width: 620px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; overflow: hidden;">
                     <tr>
                         <td align="center" style="padding: 24px 24px 16px;">
-                            <img src="{{ $message->embed(public_path('IEB_original_logo.png')) }}" alt="IHS Nursing Logo" style="height: 50px; width: auto; display: block;">
+                            <img src="{{ $message->embed(public_path('Impetus-logo.png')) }}" alt="IHS Nursing Logo"
+                                style="height: 50px; width: auto; display: block;">
                         </td>
                     </tr>
                     <tr>
@@ -32,12 +37,17 @@
                                 Hello {{ $user->name }},
                             </p>
                             <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
-                                One Time Code for your Online CPD Test <strong>{{ $otpCode }}</strong>. Unique code will expire in 10 Minutes. For any further assistance mail us to <a href="mailto:support@ihsnursing.com" style="color: #0082c9; font-weight: 600; text-decoration: underline;">support@ihsnursing.com</a>
+                                One Time Code for your Online CPD Test <strong>{{ $otpCode }}</strong>. Unique code
+                                will expire in 10 Minutes. For any further assistance mail us to <a
+                                    href="mailto:support@ihsnursing.com"
+                                    style="color: #0082c9; font-weight: 600; text-decoration: underline;">support@ihsnursing.com</a>
                             </p>
 
-                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc; margin-bottom: 20px;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                                style="border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc; margin-bottom: 20px;">
                                 <tr>
-                                    <td align="center" style="padding: 20px 16px; font-size: 32px; letter-spacing: 6px; font-weight: 800; color: #0082c9; font-family: monospace;">
+                                    <td align="center"
+                                        style="padding: 20px 16px; font-size: 32px; letter-spacing: 6px; font-weight: 800; color: #0082c9; font-family: monospace;">
                                         {{ $otpCode }}
                                     </td>
                                 </tr>
@@ -57,4 +67,5 @@
         </tr>
     </table>
 </body>
+
 </html>

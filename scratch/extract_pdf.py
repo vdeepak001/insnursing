@@ -1,7 +1,7 @@
 import fitz # PyMuPDF
 import os
 
-pdf_path = r"F:\IEB_original_logo.pdf"
+pdf_path = r"F:\Impetus-logo.pdf"
 print(f"Checking PDF file: {pdf_path}")
 if not os.path.exists(pdf_path):
     print("PDF file does not exist!")

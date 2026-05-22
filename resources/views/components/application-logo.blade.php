@@ -1,1 +1,1 @@
-<img src="{{ asset('IEB_original_logo.png') }}" alt="Logo" {{ $attributes }} />
+<img src="{{ asset('Impetus-logo.png') }}" alt="Logo" {{ $attributes }} />
