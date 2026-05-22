@@ -138,7 +138,7 @@
                                         $creditPoints = !empty($creditPoints) ? $creditPoints : 'N/A';
                                     }
                                 @endphp
-                                <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md shadow-slate-200/50 ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:border-logo-light-green/30 hover:shadow-xl hover:shadow-slate-300/40 hover:ring-logo-light-green/20">
+                                <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md shadow-slate-200/50 ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:border-impetus-orange/30 hover:shadow-xl hover:shadow-slate-300/40 hover:ring-impetus-orange/20">
                                     <a href="{{ $detailUrl }}" class="relative flex flex-1 flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2">
                                         <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-slate-100">
                                             <img
@@ -187,7 +187,7 @@
                                         $creditPoints = !empty($creditPoints) ? $creditPoints : 'N/A';
                                     }
                                 @endphp
-                                <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md shadow-slate-200/50 ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:border-logo-light-green/30 hover:shadow-xl hover:shadow-slate-300/40 hover:ring-logo-light-green/20">
+                                <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md shadow-slate-200/50 ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:border-impetus-orange/30 hover:shadow-xl hover:shadow-slate-300/40 hover:ring-impetus-orange/20">
                                     <a href="{{ $detailUrl }}" class="relative flex flex-1 flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2">
                                         <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-slate-100">
                                             <img
