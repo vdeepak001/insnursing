@@ -5,23 +5,23 @@
 @section('content')
     <main class="relative isolate pb-20 sm:pb-28">
         <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] overflow-hidden">
-            <div class="absolute left-10 top-24 h-72 w-72 rounded-full bg-logo-light-green/12 blur-[100px]"></div>
+            <div class="absolute left-10 top-24 h-72 w-72 rounded-full bg-impetus-orange/15 blur-[100px]"></div>
             <div class="absolute right-10 top-28 h-96 w-96 rounded-full bg-logo-blue/10 blur-[100px]"></div>
             <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
-                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-logo-blue/12 to-logo-light-green/22 opacity-60 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-logo-blue/12 to-impetus-orange/25 opacity-60 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
             </div>
         </div>
 
         <div class="mx-auto max-w-6xl px-6 pt-28 sm:pt-32 lg:px-8">
             <div class="text-center">
-                <span class="inline-flex items-center rounded-full bg-logo-light-green/10 px-4 py-1.5 text-lg font-medium text-logo-light-green ring-1 ring-inset ring-logo-light-green/20">
+                <span class="inline-flex items-center rounded-full bg-impetus-orange/10 px-4 py-1.5 text-lg font-medium text-impetus-orange ring-1 ring-inset ring-impetus-orange/20">
                     Legal
                 </span>
                 <h1 class="mt-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-3xl font-serif">
                     Privacy policy
                 </h1>
                 <p class="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-slate-500 shadow-sm backdrop-blur-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 text-logo-light-green">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4 text-impetus-orange">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5a2.25 2.25 0 002.25-2.25m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5a2.25 2.25 0 012.25 2.25v7.5" />
                     </svg>
                     Last updated {{ date('F j, Y') }}
@@ -33,13 +33,13 @@
                     <nav class="sticky top-28 rounded-2xl border border-slate-200/90 bg-white/90 p-5 shadow-lg shadow-slate-200/40 ring-1 ring-slate-900/5 backdrop-blur-sm" aria-label="Privacy policy sections">
                         <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">On this page</p>
                         <ul class="mt-4 space-y-1 text-sm">
-                            <li><a href="#privacy-introduction" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-light-green/10 hover:text-brand-900">Introduction</a></li>
-                            <li><a href="#privacy-collect" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-light-green/10 hover:text-brand-900">Information we collect</a></li>
-                            <li><a href="#privacy-use" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-light-green/10 hover:text-brand-900">How we use information</a></li>
-                            <li><a href="#privacy-sharing" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-light-green/10 hover:text-brand-900">Sharing and disclosure</a></li>
-                            <li><a href="#privacy-retention" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-light-green/10 hover:text-brand-900">Data retention &amp; security</a></li>
-                            <li><a href="#privacy-choices" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-light-green/10 hover:text-brand-900">Your choices</a></li>
-                            <li><a href="#privacy-contact" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-light-green/10 hover:text-brand-900">Contact</a></li>
+                            <li><a href="#privacy-introduction" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Introduction</a></li>
+                            <li><a href="#privacy-collect" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Information we collect</a></li>
+                            <li><a href="#privacy-use" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">How we use information</a></li>
+                            <li><a href="#privacy-sharing" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Sharing and disclosure</a></li>
+                            <li><a href="#privacy-retention" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Data retention &amp; security</a></li>
+                            <li><a href="#privacy-choices" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Your choices</a></li>
+                            <li><a href="#privacy-contact" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Contact</a></li>
                         </ul>
                     </nav>
                 </aside>
@@ -48,7 +48,7 @@
                     <article class="overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 shadow-2xl shadow-slate-300/30 ring-1 ring-slate-900/5 backdrop-blur-sm">
                         <div class="border-b border-slate-100 bg-gradient-to-r from-slate-50/80 to-white px-6 py-8 sm:px-10 sm:py-10">
                             <div class="flex items-start gap-4">
-                                <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-logo-light-green/25 to-logo-light-green/5 text-logo-light-green ring-1 ring-logo-light-green/20">
+                                <div class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange/25 to-impetus-orange/5 text-impetus-orange ring-1 ring-impetus-orange/20">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-8 w-8">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                                     </svg>
@@ -65,7 +65,7 @@
                         <div class="divide-y divide-slate-100">
                             <section id="privacy-introduction" class="scroll-mt-28 px-6 py-8 sm:px-10 sm:py-10">
                                 <div class="flex gap-5">
-                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-brand-900 text-xs font-bold text-white">01</span>
+                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-impetus-navy text-xs font-bold text-white">01</span>
                                     <div>
                                         <h2 class="text-3xl font-semibold text-slate-900 sm:text-3xl font-serif">Introduction</h2>
                                         <p class="mt-3 text-lg leading-8 text-slate-600 text-justify">
@@ -137,11 +137,11 @@
 
                             <section id="privacy-contact" class="scroll-mt-28 bg-gradient-to-br from-slate-50/90 to-white px-6 py-8 sm:px-10 sm:py-10">
                                 <div class="flex gap-5">
-                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-logo-light-green/20 text-xs font-bold text-brand-900">07</span>
+                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-impetus-orange/20 text-xs font-bold text-impetus-orange">07</span>
                                     <div>
                                         <h2 class="text-3xl font-semibold text-slate-900 sm:text-3xl font-serif">Contact</h2>
                                         <p class="mt-3 text-lg leading-8 text-slate-600 text-justify">
-                                            For questions about this privacy policy, email <a href="mailto:info@careconnect.com" class="font-semibold text-logo-blue underline decoration-logo-blue/30 underline-offset-2 transition hover:text-brand-900">info@careconnect.com</a> or write to us at 123 Health Avenue, New York, NY 10001.
+                                            For questions about this privacy policy, email <a href="mailto:info@ihsnursing.com" class="font-semibold text-logo-blue underline decoration-logo-blue/30 underline-offset-2 transition hover:text-impetus-orange">info@ihsnursing.com</a>.
                                         </p>
                                     </div>
                                 </div>

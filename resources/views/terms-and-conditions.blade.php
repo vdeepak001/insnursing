@@ -6,15 +6,15 @@
     <main class="relative isolate pb-20 sm:pb-28">
         <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] overflow-hidden">
             <div class="absolute left-10 top-24 h-72 w-72 rounded-full bg-logo-blue/10 blur-[100px]"></div>
-            <div class="absolute right-10 top-28 h-96 w-96 rounded-full bg-logo-light-green/12 blur-[100px]"></div>
+            <div class="absolute right-10 top-28 h-96 w-96 rounded-full bg-impetus-orange/15 blur-[100px]"></div>
             <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
-                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-logo-light-green/20 to-logo-blue/15 opacity-60 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-impetus-orange/25 to-logo-blue/15 opacity-60 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
             </div>
         </div>
 
         <div class="mx-auto max-w-6xl px-6 pt-28 sm:pt-32 lg:px-8">
             <div class="text-center">
-                <span class="inline-flex items-center rounded-full bg-logo-light-green/10 px-4 py-1.5 text-lg font-medium text-logo-light-green ring-1 ring-inset ring-logo-light-green/20">
+                <span class="inline-flex items-center rounded-full bg-impetus-orange/10 px-4 py-1.5 text-lg font-medium text-impetus-orange ring-1 ring-inset ring-impetus-orange/20">
                     Legal
                 </span>
                 <h1 class="mt-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-3xl font-serif">
@@ -33,14 +33,14 @@
                     <nav class="sticky top-28 rounded-2xl border border-slate-200/90 bg-white/90 p-5 shadow-lg shadow-slate-200/40 ring-1 ring-slate-900/5 backdrop-blur-sm" aria-label="Terms sections">
                         <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">On this page</p>
                         <ul class="mt-4 space-y-1 text-sm">
-                            <li><a href="#terms-agreement" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-blue/10 hover:text-brand-900">Agreement</a></li>
-                            <li><a href="#terms-eligibility" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-blue/10 hover:text-brand-900">Eligibility &amp; accounts</a></li>
-                            <li><a href="#terms-courses" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-blue/10 hover:text-brand-900">Courses &amp; content</a></li>
-                            <li><a href="#terms-fees" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-blue/10 hover:text-brand-900">Fees &amp; payments</a></li>
-                            <li><a href="#terms-warranty" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-blue/10 hover:text-brand-900">Disclaimer</a></li>
-                            <li><a href="#terms-liability" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-blue/10 hover:text-brand-900">Limitation of liability</a></li>
-                            <li><a href="#terms-changes" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-blue/10 hover:text-brand-900">Changes</a></li>
-                            <li><a href="#terms-contact" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-logo-blue/10 hover:text-brand-900">Contact</a></li>
+                            <li><a href="#terms-agreement" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Agreement</a></li>
+                            <li><a href="#terms-eligibility" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Eligibility &amp; accounts</a></li>
+                            <li><a href="#terms-courses" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Courses &amp; content</a></li>
+                            <li><a href="#terms-fees" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Fees &amp; payments</a></li>
+                            <li><a href="#terms-warranty" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Disclaimer</a></li>
+                            <li><a href="#terms-liability" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Limitation of liability</a></li>
+                            <li><a href="#terms-changes" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Changes</a></li>
+                            <li><a href="#terms-contact" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">Contact</a></li>
                         </ul>
                     </nav>
                 </aside>
@@ -66,7 +66,7 @@
                         <div class="divide-y divide-slate-100">
                             <section id="terms-agreement" class="scroll-mt-28 px-6 py-8 sm:px-10 sm:py-10">
                                 <div class="flex gap-5">
-                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-brand-900 text-xs font-bold text-white">01</span>
+                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-impetus-navy text-xs font-bold text-white">01</span>
                                     <div>
                                         <h2 class="text-3xl font-semibold text-slate-900 sm:text-3xl font-serif">Agreement</h2>
                                         <p class="mt-3 text-lg leading-8 text-slate-600 text-justify">
@@ -150,11 +150,11 @@
 
                             <section id="terms-contact" class="scroll-mt-28 bg-gradient-to-br from-slate-50/90 to-white px-6 py-8 sm:px-10 sm:py-10">
                                 <div class="flex gap-5">
-                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-logo-blue/15 text-xs font-bold text-brand-900">08</span>
+                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-impetus-orange/20 text-xs font-bold text-impetus-orange">08</span>
                                     <div>
                                         <h2 class="text-3xl font-semibold text-slate-900 sm:text-3xl font-serif">Contact</h2>
                                         <p class="mt-3 text-lg leading-8 text-slate-600 text-justify">
-                                            Questions about these terms may be sent to <a href="mailto:info@careconnect.com" class="font-semibold text-logo-blue underline decoration-logo-blue/30 underline-offset-2 transition hover:text-brand-900">info@careconnect.com</a>.
+                                            Questions about these terms may be sent to <a href="mailto:info@ihsnursing.com" class="font-semibold text-logo-blue underline decoration-logo-blue/30 underline-offset-2 transition hover:text-impetus-orange">info@ihsnursing.com</a>.
                                         </p>
                                     </div>
                                 </div>
