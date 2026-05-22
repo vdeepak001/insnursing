@@ -298,51 +298,59 @@
         </div>
     </section>
 
-    <!-- Why Choose IHS Nursing section -->
+    <!-- About IHS Nursing section -->
     <section id="about" class="overflow-hidden bg-[#F8FAFC] py-24 sm:py-32 relative">
         <div class="absolute top-20 right-0 w-72 h-72 bg-impetus-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-16 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center">
-                <div class="lg:pr-8 lg:pt-4">
-                    <div class="lg:max-w-lg">
-                        <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Core Excellence</h2>
-                        <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Built to Support Lifelong Nursing Competency</p>
-                        <p class="mt-6 text-slate-600 text-justify">
-                            IHS Nursing Solutions supports nurses and clinical teams with accessible, practical, and highly engaging evidence-based learning experiences that directly elevate daily clinical operations and long-term career growth.
+            <div class="mx-auto grid grid-cols-1 gap-y-16 lg:max-w-none lg:grid-cols-12 lg:gap-x-16 items-center">
+                <div class="lg:col-span-7">
+                    <div class="lg:max-w-2xl">
+                        <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">About IHS</h2>
+                        <h3 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-6">Empowering Healthcare Through Competency-Based Training</h3>
+                        
+                        <p class="text-slate-600 text-justify leading-relaxed mb-4 text-sm sm:text-base">
+                            <strong>Impetus Healthcare Skills Private Limited (IHS)</strong> is a unique healthcare skills training company that focuses on designing and implementing competency-based training programmes for the development of human resources in the healthcare delivery system. The primary objective of these programmes is to facilitate the acquisition of professional skills that will empower healthcare professionals at all required levels.
                         </p>
-                        <dl class="mt-10 max-w-xl space-y-8 text-slate-600 lg:max-w-none">
-                            <div class="relative pl-9">
-                                <dt class="inline font-bold text-slate-900">
-                                    <svg class="absolute left-1 top-1 h-6 w-6 text-impetus-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    Nurse-Centric Curriculum.
-                                </dt>
-                                <dd class="inline text-justify"> Developed in collaboration with seasoned clinical educators, aligned closely with dynamic regional healthcare expectations.</dd>
-                            </div>
-                            <div class="relative pl-9">
-                                <dt class="inline font-bold text-slate-900">
-                                    <svg class="absolute left-1 top-1 h-6 w-6 text-impetus-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    Flexible Online Portal.
-                                </dt>
-                                <dd class="inline text-justify"> Accessible 24/7 across mobile, tablet, and desktop devices to enable study whenever nursing schedules permit.</dd>
-                            </div>
-                            <div class="relative pl-9">
-                                <dt class="inline font-bold text-slate-900">
-                                    <svg class="absolute left-1 top-1 h-6 w-6 text-impetus-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    Career Acceleration.
-                                </dt>
-                                <dd class="inline text-justify"> Track CNE credentials instantly, satisfy state compliance parameters, and gain targeted skills to apply on-shift.</dd>
-                            </div>
-                        </dl>
+                        <p class="text-slate-600 text-justify leading-relaxed mb-8 text-sm sm:text-base">
+                            The strategic and innovative approaches used in designing specific training modules involve the careful application of emerging, technically sound educational tools. Our training programmes enable significant and valuable contributions to the delivery of quality care.
+                        </p>
+                        <!-- Our Values -->
+                        <div>
+                            <h4 class="text-base font-bold text-impetus-navy font-outfit mb-4 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-impetus-orange inline-block"></span>
+                                Our Values
+                            </h4>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    <span class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
+                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Ethical Values:</strong> Imparting medical ethics, emphasizing morally sound practices.</span>
+                                </li>
+                                <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    <span class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
+                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Excellence:</strong> Achieving excellence recognized for its high quality and standards.</span>
+                                </li>
+                                <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    <span class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
+                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Integrity:</strong> Nurturing honesty, integrity, accountability, and flexibility in all endeavors.</span>
+                                </li>
+                                <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    <span class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
+                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Teamwork:</strong> Demonstrating the values of teamwork and creating a highly conducive working environment.</span>
+                                </li>
+                                <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    <span class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
+                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Innovation:</strong> Supporting commendable creativity and valuable innovation in all our preferred approaches.</span>
+                                </li>
+                                <li class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    <span class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
+                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Synergy:</strong> Developing strong interdisciplinary, synergistic, and collegial relationships.</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Nursing Team" class="w-full max-w-none rounded-3xl shadow-2xl ring-1 ring-slate-400/10 object-cover h-[500px]" />
+                <div class="lg:col-span-5 relative">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Nursing Team" class="w-full max-w-none rounded-3xl shadow-2xl ring-1 ring-slate-400/10 object-cover h-[500px] sm:h-[600px] lg:h-[650px]" />
                     <div class="absolute -inset-4 rounded-3xl ring-1 ring-inset ring-slate-900/10 -z-10 bg-impetus-orange/5"></div>
                 </div>
             </div>
@@ -775,7 +783,7 @@
                         </svg>
                     </div>
                     <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Vision</h3>
-                    <p class="mt-4 text-slate-500 leading-relaxed text-justify">
+                    <p class="mt-4 text-slate-500 leading-relaxed text-justify text-sm sm:text-base">
                         To serve as a trusted global partner in nursing education by championing lifelong learning pathways and enabling healthcare teams to provide highly effective and compassionate clinical care.
                     </p>
                 </article>
@@ -790,8 +798,8 @@
                         </svg>
                     </div>
                     <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Mission</h3>
-                    <p class="mt-4 text-slate-500 leading-relaxed text-justify">
-                        To deliver flexible, innovative, and deeply educational solutions that strengthen real-world expertise, build leadership capabilities, and elevate global patient outcomes.
+                    <p class="mt-4 text-slate-500 leading-relaxed text-justify text-sm sm:text-base">
+                        To deliver flexible, innovative, and deeply educational solutions that strengthen real-world expertise, build leadership capability, and elevate global patient outcomes.
                     </p>
                 </article>
             </div>
