@@ -4,7 +4,6 @@
 
 @section('content')
     <main class="pb-12">
-        <div class="h-[100px]" aria-hidden="true"></div>
 
         <section class="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-logo-light-green/5 py-14 sm:py-20">
             <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-logo-blue/10 blur-3xl"></div>
@@ -60,29 +59,29 @@
                         </div>
                     </div>
                     <div class="order-1 min-w-0 lg:order-2">
-                        <h2 class="text-2xl font-bold tracking-tight text-logo-light-green sm:text-3xl font-serif">Flexible Online Assessment</h2>
+                        <h2 class="text-2xl font-bold tracking-tight text-impetus-orange sm:text-3xl font-serif">Flexible Online Assessment</h2>
                         <p class="mt-5 text-lg leading-8 text-slate-600 text-justify">
                             Accessible anytime and anywhere, the online format offers flexibility for working nurses to complete assessments at their convenience. Instant feedback, performance analysis, and detailed explanations help learners identify strengths and areas for improvement, promoting continuous learning and professional development.
                         </p>
                         <ul class="mt-8 space-y-4 text-lg leading-8 text-slate-700 text-justify">
                             <li class="flex gap-3">
-                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-logo-light-green" aria-hidden="true"></span>
+                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-impetus-orange" aria-hidden="true"></span>
                                 <span>Accessible anytime and anywhere for working nurses</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-logo-light-green" aria-hidden="true"></span>
+                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-impetus-orange" aria-hidden="true"></span>
                                 <span>Multiple-choice, case-based, and application-oriented formats</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-logo-light-green" aria-hidden="true"></span>
+                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-impetus-orange" aria-hidden="true"></span>
                                 <span>Instant feedback and performance analysis after completion</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-logo-light-green" aria-hidden="true"></span>
+                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-impetus-orange" aria-hidden="true"></span>
                                 <span>Supports continuous learning and professional development</span>
                             </li>
                             <li class="flex gap-3">
-                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-logo-light-green" aria-hidden="true"></span>
+                                <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-impetus-orange" aria-hidden="true"></span>
                                 <span>May contribute to CPD credits, certification, and career advancement</span>
                             </li>
                         </ul>
@@ -103,7 +102,7 @@
                 </div>
 
                 <div class="mt-12 grid gap-6 lg:grid-cols-3 lg:items-stretch">
-                    <article class="flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm transition-all hover:shadow-md border-t-4 border-t-logo-light-green">
+                    <article class="flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-sm transition-all hover:shadow-md border-t-4 border-t-impetus-orange">
                         <div class="relative h-44 w-full shrink-0 overflow-hidden bg-slate-100">
                             <img
                                 src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=900&q=80"
@@ -116,7 +115,7 @@
                             >
                             <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
                             <div class="absolute bottom-4 left-6 flex items-center gap-2">
-                                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-logo-light-green text-white shadow-sm">
+                                <span class="flex h-8 w-8 items-center justify-center rounded-lg bg-impetus-orange text-white shadow-sm">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                                     </svg>

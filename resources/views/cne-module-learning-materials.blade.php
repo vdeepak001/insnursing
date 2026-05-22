@@ -72,7 +72,6 @@
     @endphp
 
     <main class="pb-16">
-        <div class="h-[100px]" aria-hidden="true"></div>
 
         <section class="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-logo-light-green/5 py-12 sm:py-16">
             <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-logo-blue/10 blur-3xl"></div>

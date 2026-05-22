@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         @if($type === 'forgot')
-            Temporary Password - {{ config('app.name', 'Ventura') }}
+            Temporary Password - {{ config('app.name', 'IHS Nursing') }}
         @else
-            Welcome to {{ config('app.name', 'Ventura') }}
+            Welcome to {{ config('app.name', 'IHS Nursing') }}
         @endif
     </title>
 </head>
@@ -18,7 +18,7 @@
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 620px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; overflow: hidden;">
                     <tr>
                         <td align="center" style="padding: 24px 24px 16px;">
-                            <img src="{{ $message->embed(public_path('images/venture.svg')) }}" alt="Venture Logo" style="height: 40px; width: auto; display: block;">
+                            <img src="{{ $message->embed(public_path('IEB_original_logo.png')) }}" alt="IHS Nursing Logo" style="height: 50px; width: auto; display: block;">
                         </td>
                     </tr>
                     <tr>
@@ -79,7 +79,7 @@
                     <tr>
                         <td style="padding: 16px 24px; border-top: 1px solid #f1f5f9; background-color: #fafafa;">
                             <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #64748b;">
-                                If you did not request this account, Please contact support@venturacpd.com.
+                                If you did not request this account, Please contact support@ihsnursing.com.
                             </p>
                         </td>
                     </tr>
@@ -87,7 +87,7 @@
                     <tr>
                         <td style="padding: 16px 24px 24px; border-top: 1px solid #f1f5f9;">
                             <p style="margin: 0; font-size: 12px; line-height: 1.7; color: #94a3b8;">
-                                &copy; {{ date('Y') }} {{ config('app.name', 'Ventura') }}. All rights reserved.
+                                &copy; {{ date('Y') }} {{ config('app.name', 'IHS Nursing') }}. All rights reserved.
                             </p>
                         </td>
                     </tr>

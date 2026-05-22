@@ -259,7 +259,7 @@ class ReportsController extends Controller
             return $attempt->user_id . '_' . $attempt->course_detail_id . '_' . $orderId;
         });
 
-        $filename = "ventura_user_performance_" . strtolower(str_replace(' ', '_', $selectedState->name)) . "_" . date('Ymd') . ".csv";
+        $filename = "ihs_nursing_user_performance_" . strtolower(str_replace(' ', '_', $selectedState->name)) . "_" . date('Ymd') . ".csv";
         
         $headers = [
             "Content-type"        => "text/csv",

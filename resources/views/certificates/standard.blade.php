@@ -254,7 +254,7 @@
     </div>
 
     <div class="watermark">
-        <img src="{{ public_path('images/venture.svg') }}" style="width: 100%; height: auto; display: block;" />
+        <img src="{{ public_path('IEB_original_logo.png') }}" style="width: 100%; height: auto; display: block;" />
     </div>
 
     <div class="cert-container">
@@ -292,7 +292,7 @@
                         </td>
                         <td class="footer-cell">
                             <div class="sig-label">Director</div>
-                            <div class="sig-sub-label">Ventura Learning Solutions</div>
+                            <div class="sig-sub-label">IHS Nursing Solutions</div>
                         </td>
                     </tr>
                 </table>

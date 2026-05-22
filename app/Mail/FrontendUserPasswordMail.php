@@ -22,7 +22,7 @@ class FrontendUserPasswordMail extends Mailable
 
     public function envelope(): Envelope
     {
-        $subject = $this->type === 'forgot' ? 'Your Temporary Password' : 'Welcome to Ventura Learning Solutions';
+        $subject = $this->type === 'forgot' ? 'Your Temporary Password' : 'Welcome to IHS Nursing Solutions';
         return new Envelope(
             subject: $subject,
         );

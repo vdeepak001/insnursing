@@ -5,7 +5,7 @@ it('returns a successful response', function () {
 
     $response->assertSuccessful();
     $response->assertSee('Empowering Nurses Through', false);
-    $response->assertSee('Ventura Learning Solutions', false);
+    $response->assertSee('IHS Nursing Solutions', false);
 });
 
 it('shows login for exams CTA that opens the login modal instead of linking to the admin dashboard', function () {

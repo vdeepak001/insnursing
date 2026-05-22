@@ -1,1 +1,1 @@
-<img src="{{ asset('images/venture.svg') }}" alt="Logo" {{ $attributes }} />
+<img src="{{ asset('IEB_original_logo.png') }}" alt="Logo" {{ $attributes }} />

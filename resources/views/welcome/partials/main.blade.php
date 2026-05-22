@@ -1,136 +1,355 @@
-<main>
-    <section id="home" class="relative isolate pt-24 overflow-hidden">
-        <div class="absolute top-20 left-10 w-72 h-72 bg-logo-light-green/10 rounded-full blur-[100px]"></div>
-        <div class="absolute top-40 right-10 w-96 h-96 bg-logo-blue/10 rounded-full blur-[100px]"></div>
-        <div class="absolute -bottom-20 left-1/2 w-80 h-80 bg-logo-light-green/10 rounded-full blur-[100px]"></div>
+<main class="font-sans antialiased text-slate-800">
+    <!-- Hero Section -->
+    <section id="home" class="pt-8 pb-20 md:py-28 bg-impetus-navy text-white relative overflow-hidden">
+        <!-- Radial Gradient Background -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(243,110,33,0.15),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(243,110,33,0.15),transparent_50%)] pointer-events-none"></div>
 
-        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-logo-blue/20 to-logo-light-green/30 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-        </div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <!-- Left text content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    <!-- Brand Badge -->
+                    <div class="inline-flex items-center gap-2 bg-impetus-orange/10 border border-impetus-orange/30 px-4 py-1.5 rounded-full text-xs font-bold text-impetus-orange uppercase tracking-wider mb-6 font-outfit">
+                        <svg class="w-4 h-4 text-impetus-orange animate-spin" style="animation-duration: 3s" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        Building Clinical and Intellectual Capability
+                    </div>
 
-        <div class="max-w-7xl mx-auto px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
-            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-                <div class="lg:col-span-6 text-center lg:text-left">
-
-                    <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-3xl font-serif">
-                        Empowering Nurses Through <br class="hidden lg:block"> Continuous Learning!
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-outfit">
+                        Professional eLearning <br>
+                        <span class="gradient-text-orange-green">Engineered for Clinical Impact.</span>
                     </h1>
-                    <p class="mt-6 text-lg leading-8 text-slate-600 text-justify">
-                        At <b>Ventura Learning Solutions</b>, we are committed to advancing the knowledge, skills, and confidence of nurses through high-quality <strong>Continuous Professional Development (CPD)</strong> programs. In today's rapidly evolving healthcare environment, staying updated is not merely an option, it is a professional responsibility.
+                    
+                    <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
+                        At <strong>IHS Nursing Solutions</strong>, we design and deliver premium continuing education ecosystems, accredited nursing courseware, and next-generation clinical LMS tools to empower healthcare professionals with flexible, evidence-based learning that fits seamlessly into active work routines.
                     </p>
-                    <p class="mt-4 text-lg leading-8 text-slate-600 text-justify">
-                        Our platform offers flexible, evidence-based, and clinically relevant online courses designed to support nurses at every stage of their career. Whether you are enhancing core competencies, exploring specialized fields, or meeting regulatory requirements, Ventura provides learning solutions that fit seamlessly into your busy schedule.
-                    </p>
-                    <div class="mt-10 flex items-center justify-center lg:justify-start gap-x-8">
-                        <a href="#cne-modules" class="rounded-full bg-logo-light-green px-8 py-4 text-base font-bold text-white shadow-[0_10px_30px_rgba(131,186,45,0.4)] hover:shadow-[0_15px_40px_rgba(131,186,45,0.6)] hover:-translate-y-1 transition-all transform duration-300">Explore CPD Modules</a>
-                        <a href="#about" class="text-base font-bold leading-6 text-brand-900 group flex items-center gap-3 hover:text-logo-light-green transition-colors">
-                            <div class="bg-logo-light-green/10 p-2 rounded-full group-hover:bg-logo-light-green/20 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 group-hover:translate-x-1 transition-transform">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                </svg>
-                            </div>
-                            Learn more
+
+                    <!-- CTAs -->
+                    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
+                        <a href="#cne-modules" class="w-full sm:w-auto text-center bg-impetus-orange hover:bg-[#e05d14] text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-impetus-orange/20 transition-all hover:-translate-y-0.5 hover:shadow-2xl hover:shadow-impetus-orange/30 font-outfit glow-orange">
+                            Explore CPD Modules
+                        </a>
+                        <a href="#about" class="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white text-white px-8 py-4 rounded-full font-bold transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-md font-outfit backdrop-blur-sm">
+                            Why Choose IHS Nursing?
                         </a>
                     </div>
 
-                    <div class="mt-12 grid grid-cols-3 gap-4 border-t border-slate-200 pt-8 sm:mt-16 text-left">
-                        <div>
-                            <h3 class="text-3xl font-bold tracking-tight text-slate-900">CPD</h3>
-                            <p class="text-sm text-slate-500 mt-1">Focused Learning</p>
-                        </div>
-                        <div>
-                            <h3 class="text-3xl font-bold tracking-tight text-slate-900">24/7</h3>
-                            <p class="text-sm text-slate-500 mt-1">Online Access</p>
-                        </div>
-                        <div>
-                            <h3 class="text-3xl font-bold tracking-tight text-slate-900">100%</h3>
-                            <p class="text-sm text-slate-500 mt-1">Career Growth Focus</p>
+                    <!-- Client Logos Microbar -->
+                    <div class="mt-12 pt-8 border-t border-white/10 text-left max-w-lg mx-auto lg:mx-0">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest block mb-4 text-center lg:text-left font-semibold">Accredited and Trusted by Health Authorities</span>
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-4 opacity-75">
+                            <span class="font-outfit font-extrabold text-sm text-slate-300 tracking-wider">CPD ACCREDITED</span>
+                            <span class="font-outfit font-extrabold text-sm text-slate-300 tracking-wider">CLINICAL EXCELLENCE</span>
+                            <span class="font-outfit font-extrabold text-sm text-slate-300 tracking-wider">100% REGULATORY SECURE</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-16 lg:mt-0 lg:col-span-6 relative group">
-                    <div class="relative rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] transform transition-all duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-900/60 via-transparent to-transparent z-10"></div>
-                        <img src="{{ asset('images/nursing_hero.png') }}" onerror="this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" alt="Professional Nurse" class="w-full h-[650px] object-cover">
-                        <div class="absolute bottom-8 left-8 right-8 z-20 bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-2xl border border-white/40 flex items-center gap-5">
-                            <div class="bg-logo-light-green/20 p-4 rounded-full text-logo-light-green shadow-inner">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                <!-- Right Dashboard Showcase Graphic -->
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-impetus-orange/10 to-impetus-green/10 rounded-3xl blur-[50px] -z-10"></div>
+                    
+                    <!-- Main visual panel -->
+                    <div class="relative glass-card border border-white/60 rounded-3xl p-6 sm:p-8 custom-shadow animate-float">
+                        <!-- Upper frame detail -->
+                        <div class="flex items-center justify-between mb-6 border-b border-slate-200/50 pb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
+                            </div>
+                            <span class="text-xs font-bold text-slate-400 font-outfit">impetus-lms-v3.0</span>
+                        </div>
+
+                        <!-- Micro Learning Analytics Widget -->
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white/80 p-4 rounded-2xl border border-slate-100 shadow-sm">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Course Completion</span>
+                                <div class="flex items-baseline gap-2 mt-1">
+                                    <span class="text-2xl font-bold text-impetus-navy font-outfit">94.8%</span>
+                                    <span class="text-xs font-bold text-impetus-green flex items-center">&uarr; 3.2%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 h-1.5 rounded-full mt-3 overflow-hidden">
+                                    <div class="bg-impetus-green h-full rounded-full" style="width: 94%"></div>
+                                </div>
+                            </div>
+                            <div class="bg-white/80 p-4 rounded-2xl border border-slate-100 shadow-sm">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Skill Score</span>
+                                <div class="flex items-baseline gap-2 mt-1">
+                                    <span class="text-2xl font-bold text-impetus-navy font-outfit">89 / 100</span>
+                                    <span class="text-xs font-bold text-impetus-orange flex items-center">&uarr; 6%</span>
+                                </div>
+                                <div class="w-full bg-slate-100 h-1.5 rounded-full mt-3 overflow-hidden">
+                                    <div class="bg-impetus-orange h-full rounded-full" style="width: 89%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live Graph Widget -->
+                        <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 shadow-sm mb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-xs font-bold text-slate-500 font-outfit uppercase">Intellectual Growth Curve</span>
+                                <span class="text-[10px] bg-impetus-lightGreen text-impetus-green px-2 py-0.5 rounded-full font-bold">LIVE METRIC</span>
+                            </div>
+                            <!-- Mock Graph SVGs -->
+                            <div class="relative h-28 w-full flex items-end">
+                                <svg class="w-full h-full text-impetus-green" viewBox="0 0 100 30" preserveAspectRatio="none">
+                                    <path d="M0,25 Q15,10 30,18 T60,8 T90,3 T100,5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"></path>
+                                    <path d="M0,25 Q15,10 30,18 T60,8 T90,3 T100,5 L100,30 L0,30 Z" fill="url(#grad)" opacity="0.1"></path>
+                                    <defs>
+                                        <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#0B8444" />
+                                            <stop offset="100%" stop-color="#fff" />
+                                        </linearGradient>
+                                    </defs>
                                 </svg>
                             </div>
+                        </div>
+
+                        <!-- User HUD floating card -->
+                        <div class="flex items-center gap-3 bg-impetus-navy text-white p-4 rounded-2xl shadow-xl shadow-impetus-navy/15">
+                            <div class="w-10 h-10 rounded-full bg-impetus-orange flex items-center justify-center font-extrabold text-white font-outfit shadow-md">i</div>
                             <div>
-                                <h4 class="font-bold text-brand-900 text-lg">Professional Development</h4>
-                                <p class="text-sm text-slate-600 font-medium tracking-wide">Flexible, practical, evidence-based learning.</p>
+                                <h4 class="text-xs font-bold tracking-wide">Impetus Intelligent Tutor</h4>
+                                <p class="text-[10px] text-slate-300">Ready to boost your clinical and tech capabilities.</p>
                             </div>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-400 ml-auto animate-ping"></span>
                         </div>
                     </div>
 
-                    <div class="absolute -top-12 -right-12 -z-10 bg-logo-light-green/30 w-48 h-48 rounded-full blur-[80px] opacity-60"></div>
-                    <div class="absolute -bottom-12 -left-12 -z-10 bg-logo-blue/30 w-56 h-56 rounded-full blur-[80px] opacity-60"></div>
+                    <!-- Ambient glowing backgrounds -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-impetus-orange/30 rounded-full blur-2xl animate-pulse-slow"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-impetus-green/20 rounded-full blur-2xl animate-pulse-slow" style="animation-delay: 2s"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="overflow-hidden bg-white/50 py-24 sm:py-32">
+    <!-- Stats Bar -->
+    <section class="py-12 bg-white border-y border-slate-200/60 shadow-sm relative z-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                <div class="pt-4 md:pt-0">
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-navy font-outfit block">98%</span>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Course Completion Rate</span>
+                </div>
+                <div class="pt-4 md:pt-0">
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">4.9/5</span>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">User Satisfaction Rating</span>
+                </div>
+                <div class="pt-4 md:pt-0">
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">1.8M+</span>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Hours of Learning Cataloged</span>
+                </div>
+                <div class="pt-4 md:pt-0">
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-navy font-outfit block">100%</span>
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Accredited Course Content</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section with Tabs -->
+    <section id="solutions" class="py-24" x-data="{ tab: 'healthcare' }">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Enterprise & Clinical Ecosystems</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Tailored Training for Leading Sectors</p>
+                <p class="mt-4 text-slate-600">Select your focus vertical below to see how IHS Nursing Solutions meets your unique professional, regulatory, and capability objectives.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button @click="tab = 'healthcare'" :class="tab === 'healthcare' ? 'bg-impetus-orange text-white shadow-lg shadow-impetus-orange/20' : 'bg-white hover:bg-slate-50 border border-slate-200 text-slate-700'" class="px-6 py-3 rounded-full text-sm font-bold font-outfit transition-all flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    Clinical & CPD Nursing
+                </button>
+                <button @click="tab = 'corporate'" :class="tab === 'corporate' ? 'bg-impetus-orange text-white shadow-lg shadow-impetus-orange/20' : 'bg-white hover:bg-slate-50 border border-slate-200 text-slate-700'" class="px-6 py-3 rounded-full text-sm font-bold font-outfit transition-all flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Corporate & Compliance
+                </button>
+                <button @click="tab = 'edu'" :class="tab === 'edu' ? 'bg-impetus-orange text-white shadow-lg shadow-impetus-orange/20' : 'bg-white hover:bg-slate-50 border border-slate-200 text-slate-700'" class="px-6 py-3 rounded-full text-sm font-bold font-outfit transition-all flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/></svg>
+                    Higher Academics
+                </button>
+            </div>
+
+            <!-- Tab Content: Healthcare -->
+            <div x-show="tab === 'healthcare'" x-transition class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-impetus-navy font-outfit mb-4">Accredited Continuing Nursing Education (CNE)</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed text-justify">Ensure complete regulatory compliance and cultivate frontline clinical excellence. Our healthcare courseware delivers targeted instruction in intensive care protocols, emergency triage, oncology care, and safety guidelines, mapping directly to regional CNE credit boards.</p>
+                    
+                    <ul class="space-y-3.5 mb-8 text-slate-700 font-medium">
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-orange text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">6,000+ Verified Practice MCQs with comprehensive step-by-step rationales.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-orange text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">Custom Level I, II, and III certification timelines built for busy professionals.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-orange text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">Highly secure, proctored browser exam portals for compliance verification.</span>
+                        </li>
+                    </ul>
+
+                    <a href="#cne-modules" class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-[#e05d14] text-white px-6 py-3 rounded-full font-bold shadow-md transition-all font-outfit">
+                        Explore Nursing Catalog
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+                <div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Clinical Training" class="w-full h-80 sm:h-96 object-cover hover:scale-103 transition-transform duration-700">
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-5 rounded-2xl border border-white/40 shadow-xl flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold text-impetus-orange uppercase tracking-wider block">Featured Package</span>
+                                <h4 class="font-bold text-slate-900 text-sm">Critical Care Advanced Nursing</h4>
+                            </div>
+                            <span class="bg-impetus-navy text-white text-xs font-bold px-3 py-1.5 rounded-full font-outfit">40 CPD Points</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Corporate -->
+            <div x-show="tab === 'corporate'" x-transition class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style="display: none;">
+                <div>
+                    <h3 class="text-2xl font-bold text-impetus-navy font-outfit mb-4">Enterprise Capability & Compliance Frameworks</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed text-justify">Turn standard organizational compliance training into an active operational advantage. Build, deploy, and monitor interactive programs for employee onboarding, workplace safety, information security, and professional soft skills.</p>
+                    
+                    <ul class="space-y-3.5 mb-8 text-slate-700 font-medium">
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-orange text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">Interactive, scenario-based scenario checklists and micro-learning units.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-orange text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">Automated training dashboard trackers with continuous compliance audit logging.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-orange text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">Department-level leaderboards, dynamic achievements, and course completion paths.</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-[#e05d14] text-white px-6 py-3 rounded-full font-bold shadow-md transition-all font-outfit">
+                        Explore Enterprise LMS
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+                <div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Corporate Training" class="w-full h-80 sm:h-96 object-cover hover:scale-103 transition-transform duration-700">
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-5 rounded-2xl border border-white/40 shadow-xl flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold text-impetus-orange uppercase tracking-wider block">Enterprise Hub</span>
+                                <h4 class="font-bold text-slate-900 text-sm">Strategic Corporate Onboarding</h4>
+                            </div>
+                            <span class="bg-impetus-orange text-white text-xs font-bold px-3 py-1.5 rounded-full font-outfit">8 Modules</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Academics -->
+            <div x-show="tab === 'edu'" x-transition class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" style="display: none;">
+                <div>
+                    <h3 class="text-2xl font-bold text-impetus-navy font-outfit mb-4">Scalable Higher Education Digital Classrooms</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed text-justify">Equip universities, colleges, and clinical academies with state-of-the-art classroom tools. Seamlessly integrate virtual classrooms, secure student file records, online secure examinations, and customizable learning sequences.</p>
+                    
+                    <ul class="space-y-3.5 mb-8 text-slate-700 font-medium">
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-navy text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">Full compliance with SCORM, LTI, and modern xAPI interoperability standards.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-navy text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">Comprehensive student progress auditing metrics and custom report generations.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-impetus-navy text-lg leading-none mt-1">&bull;</span>
+                            <span class="text-justify">Interactive webinars and smooth integration with popular conferencing solutions.</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-[#e05d14] text-white px-6 py-3 rounded-full font-bold shadow-md transition-all font-outfit">
+                        Explore Academic Suite
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+                <div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Academic Training" class="w-full h-80 sm:h-96 object-cover hover:scale-103 transition-transform duration-700">
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-5 rounded-2xl border border-white/40 shadow-xl flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] font-bold text-impetus-orange uppercase tracking-wider block">Academics</span>
+                                <h4 class="font-bold text-slate-900 text-sm">Blended Learning Pedagogy</h4>
+                            </div>
+                            <span class="bg-impetus-navy text-white text-xs font-bold px-3 py-1.5 rounded-full font-outfit">SCORM 1.2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose IHS Nursing section -->
+    <section id="about" class="overflow-hidden bg-[#F8FAFC] py-24 sm:py-32 relative">
+        <div class="absolute top-20 right-0 w-72 h-72 bg-impetus-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-16 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 items-center">
                 <div class="lg:pr-8 lg:pt-4">
                     <div class="lg:max-w-lg">
-                        <h2 class="text-lg font-semibold leading-7 text-logo-light-green">Why Choose Ventura Learning Solutions?</h2>
-                        <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl font-serif">Built to support lifelong nursing excellence</p>
-                        <p class="mt-6 text-lg leading-8 text-slate-600 text-justify">
-                            Ventura supports nurses with accessible, practical, and professionally relevant learning experiences that strengthen daily clinical practice and long-term career development.
+                        <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Core Excellence</h2>
+                        <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Built to Support Lifelong Nursing Competency</p>
+                        <p class="mt-6 text-slate-600 text-justify">
+                            IHS Nursing Solutions supports nurses and clinical teams with accessible, practical, and highly engaging evidence-based learning experiences that directly elevate daily clinical operations and long-term career growth.
                         </p>
-                        <dl class="mt-10 max-w-xl space-y-8 text-lg leading-8 text-slate-600 lg:max-w-none">
+                        <dl class="mt-10 max-w-xl space-y-8 text-slate-600 lg:max-w-none">
                             <div class="relative pl-9">
-                                <dt class="inline font-semibold text-slate-900 text-justify">
-                                    <svg class="absolute left-1 top-1 h-6 w-6 text-logo-light-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <dt class="inline font-bold text-slate-900">
+                                    <svg class="absolute left-1 top-1 h-6 w-6 text-impetus-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12"></polyline>
                                     </svg>
                                     Nurse-Centric Curriculum.
                                 </dt>
-                                <dd class="inline text-justify">Courses developed by experienced nursing professionals, aligned with current clinical standards and best practices.</dd>
+                                <dd class="inline text-justify"> Developed in collaboration with seasoned clinical educators, aligned closely with dynamic regional healthcare expectations.</dd>
                             </div>
                             <div class="relative pl-9">
-                                <dt class="inline font-semibold text-slate-900 text-justify">
-                                    <svg class="absolute left-1 top-1 h-6 w-6 text-logo-light-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <dt class="inline font-bold text-slate-900">
+                                    <svg class="absolute left-1 top-1 h-6 w-6 text-impetus-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12"></polyline>
                                     </svg>
-                                    Flexible Online Learning.
+                                    Flexible Online Portal.
                                 </dt>
-                                <dd class="inline text-justify">Learn anytime, anywhere with self-paced modules designed for working nurses.</dd>
+                                <dd class="inline text-justify"> Accessible 24/7 across mobile, tablet, and desktop devices to enable study whenever nursing schedules permit.</dd>
                             </div>
                             <div class="relative pl-9">
-                                <dt class="inline font-semibold text-slate-900 text-justify">
-                                    <svg class="absolute left-1 top-1 h-6 w-6 text-logo-light-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <dt class="inline font-bold text-slate-900">
+                                    <svg class="absolute left-1 top-1 h-6 w-6 text-impetus-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                         <polyline points="20 6 9 17 4 12"></polyline>
                                     </svg>
-                                    Career Advancement.
+                                    Career Acceleration.
                                 </dt>
-                                <dd class="inline text-justify">Enhance your clinical expertise, improve patient outcomes, and access new professional opportunities.</dd>
-                            </div>
-                            <div class="relative pl-9">
-                                <dt class="inline font-semibold text-slate-900 text-justify">
-                                    <svg class="absolute left-1 top-1 h-6 w-6 text-logo-light-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="20 6 9 17 4 12"></polyline>
-                                    </svg>
-                                    Accredited & Relevant Content.
-                                </dt>
-                                <dd class="inline text-justify">Remain compliant with CPD requirements while acquiring practical, real-world knowledge.</dd>
+                                <dd class="inline text-justify"> Track CNE credentials instantly, satisfy state compliance parameters, and gain targeted skills to apply on-shift.</dd>
                             </div>
                         </dl>
                     </div>
                 </div>
                 <div class="relative">
-                    <img src="{{ asset('images/nursing_team.png') }}" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" alt="Nursing Team" class="w-full max-w-none rounded-2xl shadow-xl ring-1 ring-slate-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0 object-cover h-[500px]" />
-                    <div class="absolute -inset-4 rounded-2xl ring-1 ring-inset ring-slate-900/10 -z-10 bg-logo-light-green/10"></div>
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Nursing Team" class="w-full max-w-none rounded-3xl shadow-2xl ring-1 ring-slate-400/10 object-cover h-[500px]" />
+                    <div class="absolute -inset-4 rounded-3xl ring-1 ring-inset ring-slate-900/10 -z-10 bg-impetus-orange/5"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Custom slider configuration style block for smooth infinite dynamic loop -->
     <style>
         @keyframes scroll {
             0% { transform: translateX(0); }
@@ -139,7 +358,7 @@
         .carousel-track {
             display: flex;
             gap: 2rem;
-            animation: scroll 60s linear infinite;
+            animation: scroll 40s linear infinite;
             width: max-content;
         }
         .carousel-track:hover {
@@ -154,297 +373,310 @@
         }
     </style>
 
-    <section id="cne-modules" class="py-24 sm:py-28 overflow-hidden bg-white">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl text-center">
-                <h2 class="text-lg font-semibold uppercase tracking-wider text-logo-light-green">CPD Modules</h2>
-                <p class="mt-2 text-3xl font-bold tracking-tight text-brand-900 sm:text-3xl font-serif">Structured Continuing Nursing Education</p>
-                <p class="mt-5 text-lg leading-8 text-slate-600 text-justify">
-                    Choose from clinically focused modules designed by expert educators. Each module combines lessons, case-based practice, and short assessments to build real-world confidence.
+    <!-- CPD Modules Carousel Section -->
+    <section id="cne-modules" class="py-24 overflow-hidden bg-white relative">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-impetus-orange/5 rounded-full blur-[80px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="mx-auto max-w-3xl text-center mb-16">
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">CPD Modules</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Accredited Continuing Nursing Education</p>
+                <p class="mt-4 text-slate-600 text-justify">
+                    Select highly structured clinical modules created by professional educators. Each pathway balances dynamic slide materials, scenario analyses, and short assessments to ensure rapid skills integration.
                 </p>
             </div>
 
-            <div class="mt-16 relative">
-                {{-- Side fades --}}
-                <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
-                <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none"></div>
+            <div class="relative mt-12">
+                <!-- Side fades to smooth out scroll edge boundaries -->
+                <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white via-white/40 to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white via-white/40 to-transparent z-10 pointer-events-none"></div>
 
                 <div class="flex overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing">
                     <div class="carousel-track">
-                        {{-- Set 1 --}}
+                        {{-- Double Dynamic Loop Set 1 --}}
                         @foreach ($latestCourses as $course)
-                            <a href="{{ route('cne.modules.show', $course->couse_name) }}" class="group block flex w-[350px] flex-none flex-col rounded-3xl border border-slate-200/80 bg-white p-6 shadow-md shadow-slate-200/60 transition-shadow duration-300 hover:shadow-xl hover:shadow-slate-300/50">
-                                <div class="relative h-56 w-full overflow-hidden rounded-2xl bg-slate-100">
+                            <a href="{{ route('cne.modules.show', $course->couse_name) }}" class="group block w-[350px] flex-none flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-md hover:shadow-xl hover:border-impetus-orange/30 transition-all duration-300">
+                                <div class="relative h-48 w-full overflow-hidden rounded-2xl bg-impetus-navy/80 flex items-center justify-center p-4">
                                     <img src="{{ asset('images/course.jpeg') }}"
-                                         alt=""
-                                         class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                                         loading="lazy"
-                                         decoding="async">
-                                    <div class="absolute inset-0 flex items-center justify-center p-4">
-                                        <span class="block max-w-full text-balance text-center text-xl font-bold uppercase leading-snug tracking-tight text-logo-blue sm:text-3xl">
-                                            {{ $course->couse_name }}
-                                        </span>
-                                    </div>
-                                </div>
-                                {{-- <div class="mt-5 flex items-center justify-end">
-                                    <span class="rounded-full bg-logo-light-green/10 px-2.5 py-1 text-xs font-semibold text-logo-light-green">
-                                        Module
+                                         onerror="this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'"
+                                         alt="{{ $course->couse_name }}"
+                                         class="absolute inset-0 h-full w-full object-cover opacity-30 transition-transform duration-500 group-hover:scale-105"
+                                         loading="lazy">
+                                    <span class="relative z-10 block max-w-full text-balance text-center text-lg font-extrabold uppercase leading-snug tracking-tight text-white font-outfit group-hover:text-impetus-orange transition-colors">
+                                        {{ $course->couse_name }}
                                     </span>
-                                </div> --}}
-                                <p class="mt-2 text-base leading-6 text-slate-600 text-justify">
-                                    {{ \Illuminate\Support\Str::words(strip_tags($course->description), 15, '...') }}
+                                </div>
+                                <div class="mt-5 flex items-center justify-between">
+                                    <span class="rounded-full bg-impetus-lightOrange px-3 py-1 text-xs font-bold text-impetus-orange">
+                                        Accredited Module
+                                    </span>
+                                    <span class="text-xs font-bold text-slate-400">CPD Mapped</span>
+                                </div>
+                                <p class="mt-3 text-sm leading-relaxed text-slate-500 text-justify line-clamp-3">
+                                    {{ \Illuminate\Support\Str::words(strip_tags($course->description), 18, '...') }}
                                 </p>
-
                             </a>
                         @endforeach
-                        {{-- Set 2 --}}
-                         @foreach ($latestCourses as $course)
-                            <a href="{{ route('cne.modules.show', $course->couse_name) }}" class="group block flex w-[350px] flex-none flex-col rounded-3xl border border-slate-200/80 bg-white p-6 shadow-md shadow-slate-200/60 transition-shadow duration-300 hover:shadow-xl hover:shadow-slate-300/50">
-                                <div class="relative h-56 w-full overflow-hidden rounded-2xl bg-slate-100">
+
+                        {{-- Double Dynamic Loop Set 2 --}}
+                        @foreach ($latestCourses as $course)
+                            <a href="{{ route('cne.modules.show', $course->couse_name) }}" class="group block w-[350px] flex-none flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-md hover:shadow-xl hover:border-impetus-orange/30 transition-all duration-300">
+                                <div class="relative h-48 w-full overflow-hidden rounded-2xl bg-impetus-navy/80 flex items-center justify-center p-4">
                                     <img src="{{ asset('images/course.jpeg') }}"
-                                         alt=""
-                                         class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                                         loading="lazy"
-                                         decoding="async">
-                                    <div class="absolute inset-0 flex items-center justify-center p-4">
-                                        <span class="block max-w-full text-balance text-center text-xl font-bold uppercase leading-snug tracking-tight text-logo-blue sm:text-2xl">
-                                            {{ $course->couse_name }}
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="mt-5 flex items-center justify-end">
-                                    <span class="rounded-full bg-logo-light-green/10 px-2.5 py-1 text-xs font-semibold text-logo-light-green">
-                                        Module
+                                         onerror="this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'"
+                                         alt="{{ $course->couse_name }}"
+                                         class="absolute inset-0 h-full w-full object-cover opacity-30 transition-transform duration-500 group-hover:scale-105"
+                                         loading="lazy">
+                                    <span class="relative z-10 block max-w-full text-balance text-center text-lg font-extrabold uppercase leading-snug tracking-tight text-white font-outfit group-hover:text-impetus-orange transition-colors">
+                                        {{ $course->couse_name }}
                                     </span>
                                 </div>
-                                <p class="mt-2 text-base leading-6 text-slate-600 text-justify">
-                                    {{ \Illuminate\Support\Str::words(strip_tags($course->description), 15, '...') }}
-                                </p>
-                                <p class="mt-4 text-xs font-bold uppercase tracking-wider text-slate-500">
-                                    Duration: 4-6 Weeks
+                                <div class="mt-5 flex items-center justify-between">
+                                    <span class="rounded-full bg-impetus-lightOrange px-3 py-1 text-xs font-bold text-impetus-orange">
+                                        Accredited Module
+                                    </span>
+                                    <span class="text-xs font-bold text-slate-400">CPD Mapped</span>
+                                </div>
+                                <p class="mt-3 text-sm leading-relaxed text-slate-500 text-justify line-clamp-3">
+                                    {{ \Illuminate\Support\Str::words(strip_tags($course->description), 18, '...') }}
                                 </p>
                             </a>
                         @endforeach
                     </div>
                 </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="{{ route('cne.modules') }}" class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-[#e05d14] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-impetus-orange/20 transition-all hover:-translate-y-0.5 font-outfit glow-orange">
+                    Browse Core Modules Catalog
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="cpd-certification" class="bg-white/50 py-24 sm:py-28">
-        <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2 lg:px-8">
+    <!-- CPD Certification Section -->
+    <section id="cpd-certification" class="bg-[#F8FAFC] py-24">
+        <div class="max-w-7xl mx-auto grid max-w-7xl items-center gap-12 px-6 sm:px-8 lg:grid-cols-2">
             <div>
-                <h2 class="text-lg font-semibold uppercase tracking-wider text-logo-light-green">CPD Certification</h2>
-                <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl font-serif">Track CPD points and download certificates instantly</p>
-                <p class="mt-5 text-lg leading-8 text-slate-600 text-justify">
-                    Our CPD certification workflow is built for working professionals. Complete modules at your own pace, monitor your progress in real time, and keep all compliance-ready records in one place.
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Traceable Credentials</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Track CPD Points and Download Certificates Instantly</p>
+                <p class="mt-5 text-slate-600 text-justify leading-relaxed">
+                    Our Continuing Professional Development workflow is built completely around active healthcare routines. Study modules at a custom pace, monitor milestones via your dedicated dashboard, and retrieve verified audit-ready documents immediately upon final exam clearance.
                 </p>
-                <ul class="mt-6 space-y-4 text-lg text-slate-600">
+                <ul class="mt-8 space-y-4 text-slate-600 font-semibold text-sm">
                     <li class="flex items-start gap-3">
-                        <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <svg class="h-5 w-5 flex-none text-impetus-orange mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
-                        <span class="text-justify">Auto-tracked completed modules with timestamps</span>
+                        <span class="text-justify">Auto-logged completed modules with encrypted timestamps.</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <svg class="h-5 w-5 flex-none text-impetus-orange mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
-                        <span class="text-justify">Verified CPD credit dashboard by category</span>
+                        <span class="text-justify">Live credit ledger highlighting categories and specific hours.</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <svg class="h-5 w-5 flex-none text-impetus-orange mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <polyline points="20 6 9 17 4 12"></polyline>
                         </svg>
-                        <span class="text-justify">One-click downloadable certificate (PDF)</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span class="text-justify">Certificate ID and issue-date verification support</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span class="text-justify">Central archive for renewal and audit purposes</span>
+                        <span class="text-justify">One-click download of cryptographically secured PDF certificates.</span>
                     </li>
                 </ul>
                 <div class="mt-8 grid grid-cols-3 gap-3 text-center sm:max-w-md">
-                    <div class="rounded-xl border border-slate-200/80 bg-white p-3 shadow-md shadow-slate-200/60">
-                        <p class="text-xl font-bold text-brand-900">40+</p>
-                        <p class="text-xs text-slate-500">CPD Credits</p>
+                    <div class="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
+                        <p class="text-2xl font-extrabold text-impetus-navy font-outfit">40+</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">CPD Credits</p>
                     </div>
-                    <div class="rounded-xl border border-slate-200/80 bg-white p-3 shadow-md shadow-slate-200/60">
-                        <p class="text-xl font-bold text-brand-900">100%</p>
-                        <p class="text-xs text-slate-500">Traceable Logs</p>
+                    <div class="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
+                        <p class="text-2xl font-extrabold text-impetus-navy font-outfit">100%</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Traceable Logs</p>
                     </div>
-                    <div class="rounded-xl border border-slate-200/80 bg-white p-3 shadow-md shadow-slate-200/60">
-                        <p class="text-xl font-bold text-brand-900">24/7</p>
-                        <p class="text-xs text-slate-500">Access</p>
+                    <div class="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm">
+                        <p class="text-2xl font-extrabold text-impetus-navy font-outfit">24/7</p>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Access</p>
                     </div>
                 </div>
                 <div class="mt-8">
-                    <a href="{{ route('cpd.certifications') }}" class="inline-flex items-center rounded-full bg-logo-light-green px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(131,186,45,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(131,186,45,0.5)]">
+                    <a href="{{ route('cpd.certifications') }}" class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-[#e05d14] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-impetus-orange/20 transition-all hover:-translate-y-0.5 font-outfit glow-orange">
                         Start CPD Journey
                     </a>
                 </div>
             </div>
             <div>
-                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="CPD certification" class="h-[420px] w-full rounded-3xl object-cover shadow-xl ring-1 ring-slate-200">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="CPD certification" class="h-[420px] w-full rounded-3xl object-cover shadow-2xl ring-1 ring-slate-200">
             </div>
         </div>
     </section>
 
-    <section id="learning-materials" class="py-24 sm:py-28 bg-slate-50/50">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl text-center">
-                <h2 class="text-lg font-semibold uppercase tracking-wider text-logo-light-green">Learning Materials</h2>
-                <p class="mt-2 text-3xl font-bold tracking-tight text-brand-900 sm:text-3xl font-serif">Clear, concise, and practical knowledge resources</p>
-                <p class="mt-5 text-lg leading-8 text-slate-600 text-justify">
-                    Our CPD learning materials are designed to support effective learning by combining visual clarity with detailed explanations, enabling nurses to understand, retain, and apply knowledge in clinical practice.
+    <!-- Platform Features Grid -->
+    <section id="features" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">State-of-the-Art LMS</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Core Technology to Scale Your Learning</p>
+                <p class="mt-4 text-slate-600">Discover the tools that convert legacy static training files into highly engaging learning paths and clinical audits.</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+                <!-- Feature 1 -->
+                <div class="bg-[#F8FAFC] border border-slate-200/60 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white group">
+                    <div class="w-12 h-12 bg-impetus-lightOrange text-impetus-orange rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:scale-110 duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Rich Multimedia Courseware</h3>
+                    <p class="text-slate-500 leading-relaxed text-sm text-justify">Easily convert clinical slide sets and manuals into clean interactive presentations featuring inline checks and knowledge logs.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-[#F8FAFC] border border-slate-200/60 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white group">
+                    <div class="w-12 h-12 bg-impetus-lightOrange text-impetus-orange rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:scale-110 duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Continuous Assessment</h3>
+                    <p class="text-slate-500 leading-relaxed text-sm text-justify">Deploy exams featuring fully randomized questions, dynamic timelines, secure proctoring features, and automatic score generation.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-[#F8FAFC] border border-slate-200/60 p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white group">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center font-bold mb-6 group-hover:scale-110 duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Enterprise Capability Index</h3>
+                    <p class="text-slate-500 leading-relaxed text-sm text-justify">Analyze organizational skills density at a single glance. Review strengths, track regulatory goals, and optimize training budgets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Materials section -->
+    <section id="learning-materials" class="py-24 bg-[#F8FAFC]">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="mx-auto max-w-3xl text-center mb-16">
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Core Learning Assets</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Clear, Concise, and Clinically Practical Resources</p>
+                <p class="mt-4 text-slate-600 text-justify">
+                    Our CPD nursing assets balance visual clean-lines with thorough clinical explanations, encouraging deep comprehension and immediate relevance on active nursing shifts.
                 </p>
             </div>
-            <div class="mt-14 grid gap-8 md:grid-cols-3">
-                <div class="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-md shadow-slate-200/60 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-300/50">
-                    <h3 class="text-xl font-bold text-slate-900 font-serif">PowerPoint Slide Materials</h3>
-                    <p class="mt-4 text-lg leading-7 text-slate-600 text-justify">Visually engaging structured content that simplifies complex concepts and highlights key learning points for quick revision.</p>
-                    <ul class="mt-6 space-y-3 text-lg text-slate-500">
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Clear and concise bullet-points</span>
+
+            <div class="grid gap-8 md:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-350 hover:-translate-y-1 hover:shadow-xl">
+                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-4">Structured Presentation Materials</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed text-justify mb-6">Clean visual slide packages highlighting core guidelines, crucial decision matrices, and procedural reviews for efficient clinical revisions.</p>
+                    <ul class="space-y-3 text-xs font-semibold text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-orange"></span> Concise bullet protocols
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Step-by-step clinical protocols</span>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-orange"></span> Procedural flowcharts
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Case-based learning scenarios</span>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-orange"></span> Core case scenarios
                         </li>
                     </ul>
                 </div>
 
-                <div class="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-md shadow-slate-200/60 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-300/50">
-                    <h3 class="text-xl font-bold text-slate-900 font-serif">PDF Learning Resources</h3>
-                    <p class="mt-4 text-lg leading-7 text-slate-600 text-justify">Comprehensive explanations that supplement slide presentations and serve as reliable references for ongoing study.</p>
-                    <ul class="mt-6 space-y-3 text-lg text-slate-500">
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Structured evidence-based coverage</span>
+                <!-- Card 2 -->
+                <div class="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-350 hover:-translate-y-1 hover:shadow-xl">
+                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-4">Comprehensive PDF Resources</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed text-justify mb-6">Detailed study guides containing in-depth physiological explanations, dynamic charts, and professional reference logs for lifelong learning.</p>
+                    <ul class="space-y-3 text-xs font-semibold text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-orange"></span> Evidence-based nursing reviews
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Detailed procedure explanations</span>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-orange"></span> Complex physiological descriptions
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Quick reference tables and charts</span>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-orange"></span> Direct clinical reference tables
                         </li>
                     </ul>
                 </div>
 
-                <div class="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-md shadow-slate-200/60 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-300/50">
-                    <h3 class="text-xl font-bold text-slate-900 font-serif">Clinical Competence</h3>
-                    <p class="mt-4 text-lg leading-7 text-slate-600 text-justify">Evidence-based practice resources that enhance clinical competence and meet strict CPD requirements.</p>
-                    <ul class="mt-6 space-y-3 text-lg text-slate-500">
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Verified knowledge retention sets</span>
+                <!-- Card 3 -->
+                <div class="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-sm transition-all duration-350 hover:-translate-y-1 hover:shadow-xl">
+                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-4">Competency Blueprints</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed text-justify mb-6">Accredited assessments and skill drills mapped strictly to state boards to measure practical understanding and compliance readiness.</p>
+                    <ul class="space-y-3 text-xs font-semibold text-slate-600">
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-navy"></span> Knowledge retention metrics
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Professional excellence indicators</span>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-navy"></span> Scenario assessment tools
                         </li>
-                        <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span class="text-justify">Flexible and accessible formats</span>
+                        <li class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-impetus-navy"></span> Professional renewal logs
                         </li>
                     </ul>
                 </div>
             </div>
+
             <div class="mt-12 text-center">
-                <a href="{{ route('learning.materials') }}" class="inline-flex items-center rounded-full bg-logo-light-green px-8 py-4 text-base font-bold text-white shadow-[0_10px_30px_rgba(131,186,45,0.4)] hover:shadow-[0_15px_40px_rgba(131,186,45,0.6)] hover:-translate-y-1 transition-all duration-300">
+                <a href="{{ route('learning.materials') }}" class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-[#e05d14] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-impetus-orange/20 transition-all hover:-translate-y-0.5 font-outfit glow-orange">
                     Explore All Resources
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="practice-test" class="bg-white/50 py-24 sm:py-28">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- Practice Test Section -->
+    <section id="practice-test" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="grid items-center gap-10 lg:grid-cols-2">
                 <div>
-                    <h2 class="text-lg font-semibold uppercase tracking-wider text-logo-light-green">Practice Test</h2>
-                    <p class="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl font-serif">IHS practice MCQs at three levels</p>
-                    <p class="mt-6 text-lg text-slate-600 text-justify">
-                        Build theoretical knowledge and exam readiness with multiple-choice questions, immediate rationale, and sets aligned to your specialty—before Mock and Final examinations.
+                    <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Assessed Performance</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Targeted Practice Tests Across Three Structured Levels</p>
+                    <p class="mt-6 text-slate-600 text-justify">
+                        Build exceptional exam readiness and concrete theoretical knowledge utilizing ~6,000 clinically focused multiple-choice questions. Review comprehensive instant rationales and adapt to specific topics prior to taking mock or final credential assessments.
                     </p>
-                    <ul class="mt-5 space-y-3 text-lg text-slate-600">
+                    <ul class="mt-8 space-y-4 text-slate-600 font-semibold text-sm">
                         <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <svg class="h-5 w-5 flex-none text-impetus-orange mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span class="text-justify">~6,000 MCQs across Levels I–III</span>
+                            <span class="text-justify">~6,000 premium clinical MCQs mapping to active nursing specialties.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <svg class="h-5 w-5 flex-none text-impetus-orange mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span class="text-justify">Eight sets per level, twenty questions per set</span>
+                            <span class="text-justify">Eight focused sets per skill level, containing twenty questions each.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <svg class="h-6 w-6 flex-none text-logo-light-green mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <svg class="h-5 w-5 flex-none text-impetus-orange mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
-                            <span class="text-justify">Up to three practice attempts per level</span>
+                            <span class="text-justify">Three formal practice attempts allowed per registered user.</span>
                         </li>
                     </ul>
                     <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="{{ route('practice.test') }}" class="inline-flex items-center rounded-full bg-logo-light-green px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(131,186,45,0.35)] transition-all hover:-translate-y-0.5 hover:shadow-[0_15px_40px_rgba(131,186,45,0.5)]">
-                            View Practice Test details
+                        <a href="{{ route('practice.test') }}" class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-[#e05d14] text-white px-6 py-3 rounded-full font-bold shadow-md transition-all font-outfit">
+                            Start Practice Test
                         </a>
-                        <a href="{{ route('online.examination') }}" class="inline-flex items-center rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-800 transition-colors hover:border-logo-light-green hover:text-logo-light-green">
-                            Online Exam
+                        <a href="{{ route('online.examination') }}" class="inline-flex items-center rounded-full border border-slate-350 bg-white px-6 py-3 text-sm font-bold text-slate-700 hover:border-impetus-orange hover:text-impetus-orange transition-all">
+                            Online examination
                         </a>
                     </div>
                 </div>
-                <div class="rounded-3xl border border-slate-200/80 bg-white p-8 shadow-md shadow-slate-200/60">
+                <div class="rounded-3xl border border-slate-200 bg-[#F8FAFC] p-8 shadow-inner">
                     <div class="grid grid-cols-2 gap-4 text-center">
-                        <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-5 shadow-sm shadow-slate-200/50">
-                            <p class="text-2xl font-bold text-brand-900">~6,000</p>
-                            <p class="text-xs text-slate-500">MCQs</p>
+                        <div class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm">
+                            <p class="text-3xl font-extrabold text-impetus-navy font-outfit">~6,000</p>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Practice MCQs</p>
                         </div>
-                        <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-5 shadow-sm shadow-slate-200/50">
-                            <p class="text-2xl font-bold text-brand-900">3</p>
-                            <p class="text-xs text-slate-500">Levels</p>
+                        <div class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm">
+                            <p class="text-3xl font-extrabold text-impetus-navy font-outfit">3</p>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Skill Levels</p>
                         </div>
-                        <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-5 shadow-sm shadow-slate-200/50">
-                            <p class="text-2xl font-bold text-brand-900">20</p>
-                            <p class="text-xs text-slate-500">Questions / set</p>
+                        <div class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm">
+                            <p class="text-3xl font-extrabold text-impetus-navy font-outfit">20</p>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Q's / Assessment</p>
                         </div>
-                        <div class="rounded-2xl border border-slate-200/70 bg-slate-50 p-5 shadow-sm shadow-slate-200/50">
-                            <p class="text-2xl font-bold text-brand-900">3×</p>
-                            <p class="text-xs text-slate-500">Attempts / level</p>
+                        <div class="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm">
+                            <p class="text-3xl font-extrabold text-impetus-navy font-outfit">3x</p>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Attempts Mapped</p>
                         </div>
                     </div>
                 </div>
@@ -452,57 +684,232 @@
         </div>
     </section>
 
-    <section id="vision-mission" class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24 sm:py-28">
-        <div class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-logo-light-green/10 to-transparent"></div>
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl text-center">
-                <h2 class="text-lg font-semibold uppercase tracking-wider text-logo-light-green">Our Foundation</h2>
-                <p class="mt-2 text-3xl font-bold tracking-tight text-brand-900 sm:text-3xl font-serif">Vision and mission that guide every learning experience</p>
-                <p class="mt-5 text-lg leading-8 text-slate-600 text-justify">
-                    Ventura Learning Solutions is committed to creating meaningful continuing education experiences that support lifelong learning, professional excellence, and better healthcare outcomes.
+    <!-- Interactive ROI Calculator Widget Section -->
+    <section id="calculator" class="py-24 relative overflow-hidden" x-data="{ learners: 250, rate: 85 }">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+            <div class="bg-impetus-navy text-white rounded-[2.5rem] p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden">
+                <!-- Glowing details -->
+                <div class="absolute -top-12 -right-12 w-64 h-64 bg-impetus-orange/20 rounded-full blur-[80px]"></div>
+                <div class="absolute -bottom-12 -left-12 w-64 h-64 bg-impetus-orange/20 rounded-full blur-[80px]"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                    <div class="lg:col-span-6">
+                        <span class="text-xs font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Calculated Performance</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight font-outfit mb-6">Quantify the Training Impact on Your Staff</h2>
+                        <p class="text-slate-300 leading-relaxed mb-6">Configure your team scale to instantly simulate learning efficiency gains, hours saved, and capability index increases using the IHS LMS engine.</p>
+                        
+                        <div class="space-y-4 font-semibold text-slate-200 text-sm">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-impetus-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span>Replaces high-cost offline compliance seminars.</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-impetus-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                                <span>Secures immediate, audit-compliant credentials.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Card -->
+                    <div class="lg:col-span-6 bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-white/10 relative">
+                        <h3 class="text-lg font-bold font-outfit mb-6 text-center">Interactive Calculator</h3>
+                        
+                        <!-- Slider 1 -->
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between text-xs font-bold text-slate-300 mb-2 font-outfit">
+                                <span>TOTAL ACTIVE LEARNERS</span>
+                                <span class="text-impetus-orange" x-text="learners"></span>
+                            </div>
+                            <input type="range" min="10" max="2000" step="10" x-model="learners" class="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-impetus-orange">
+                        </div>
+
+                        <!-- Slider 2 -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between text-xs font-bold text-slate-300 mb-2 font-outfit">
+                                <span>TARGET COMPLETION RATE</span>
+                                <span class="text-impetus-orange" x-text="rate + '%'"></span>
+                            </div>
+                            <input type="range" min="40" max="100" step="5" x-model="rate" class="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-impetus-orange">
+                        </div>
+
+                        <!-- Outputs Display Grid -->
+                        <div class="grid grid-cols-2 gap-4 text-center">
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <span class="text-[10px] font-bold text-slate-400 block uppercase tracking-widest">ANNUAL HOURS SAVED</span>
+                                <span class="text-2xl sm:text-3xl font-extrabold text-white block mt-1 font-outfit" x-text="Math.round(learners * 12 * (rate / 100))"></span>
+                            </div>
+                            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                                <span class="text-[10px] font-bold text-slate-400 block uppercase tracking-widest">CAPABILITY BOOST</span>
+                                <span class="text-2xl sm:text-3xl font-extrabold text-impetus-orange block mt-1 font-outfit" x-text="Math.round((rate * 0.45) + (learners > 500 ? 45 : 30)) + '%'"></span>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="block text-center mt-6 bg-white hover:bg-slate-100 text-impetus-navy py-3.5 rounded-full text-sm font-bold transition-all font-outfit shadow-lg">
+                            Get Custom ROI Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission section -->
+    <section id="vision-mission" class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24">
+        <div class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-impetus-orange/5 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="mx-auto max-w-3xl text-center mb-16">
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Our Core Foundation</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Vision and Mission Guiding Clinical Development</p>
+                <p class="mt-4 text-slate-600 text-justify">
+                    At IHS Nursing Solutions, we are dedicated to providing meaningful continuing education that fosters professional excellence and improves healthcare delivery.
                 </p>
             </div>
 
-            <div class="mt-14 grid gap-8 lg:grid-cols-2">
-                <article class="group relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(131,186,45,0.14)] sm:p-10">
-                    <div class="absolute right-0 top-0 h-32 w-32 rounded-full bg-logo-light-green/10 blur-3xl transition duration-300 group-hover:bg-logo-light-green/20"></div>
-                    <div class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-logo-light-green/10 text-logo-light-green ring-1 ring-logo-light-green/20">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true">
+            <div class="grid gap-8 lg:grid-cols-2">
+                <!-- Vision -->
+                <article class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                    <div class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10"></div>
+                    <div class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l7.5-7.5 7.5 7.5M5.25 12v7.125c0 .621.504 1.125 1.125 1.125h3.375V16.5c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v3.75h3.375c.621 0 1.125-.504 1.125-1.125V12" />
                         </svg>
                     </div>
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900 font-serif">Our Vision</h3>
-                    <p class="mt-5 max-w-xl text-lg leading-8 text-slate-600 text-justify">
-                        To be a trusted partner in nursing education by fostering lifelong learning and empowering nurses to deliver safe, effective, and compassionate care.
+                    <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Vision</h3>
+                    <p class="mt-4 text-slate-500 leading-relaxed text-justify">
+                        To serve as a trusted global partner in nursing education by championing lifelong learning pathways and enabling healthcare teams to provide highly effective and compassionate clinical care.
                     </p>
                 </article>
 
-                <article class="group relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(59,130,246,0.14)] sm:p-10">
-                    <div class="absolute right-0 top-0 h-32 w-32 rounded-full bg-logo-blue/10 blur-3xl transition duration-300 group-hover:bg-logo-blue/20"></div>
-                    <div class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-logo-blue/10 text-logo-blue ring-1 ring-logo-blue/20">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" aria-hidden="true">
+                <!-- Mission -->
+                <article class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                    <div class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10"></div>
+                    <div class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-2.844-.813a4.5 4.5 0 01-1.614-7.509l7.636-7.636a3.375 3.375 0 114.773 4.773l-7.636 7.636a4.5 4.5 0 01-.502.435z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 5.25l6 6" />
                         </svg>
                     </div>
-                    <h3 class="mt-6 text-2xl font-bold text-slate-900 font-serif">Our Mission</h3>
-                    <p class="mt-5 max-w-xl text-lg leading-8 text-slate-600 text-justify">
-                        To provide accessible, innovative, and high-quality continuing education that supports professional excellence and improves healthcare outcomes.
+                    <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Mission</h3>
+                    <p class="mt-4 text-slate-500 leading-relaxed text-justify">
+                        To deliver flexible, innovative, and deeply educational solutions that strengthen real-world expertise, build leadership capabilities, and elevate global patient outcomes.
                     </p>
                 </article>
             </div>
         </div>
     </section>
 
-    <section id="online-exam" class="bg-brand-900 py-24 sm:py-28">
-        <div class="mx-auto max-w-5xl px-6 text-center lg:px-8">
-            <h2 class="text-lg font-semibold uppercase tracking-wider text-logo-light-green">Online Exam</h2>
-            <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-3xl font-serif">Secure, proctored, and fully online</p>
-            <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-300 text-justify">Take your certification exam from anywhere with identity verification, browser monitoring, and immediate pass/fail status.</p>
-            <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-
-                <a href="{{ route('online.examination') }}" class="rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition-colors hover:border-logo-light-green hover:text-logo-light-green">View Online Examination</a>
+    <!-- Testimonials Slider Section -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Client Success</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Endorsed by Top Training Directors</p>
+                <p class="mt-4 text-slate-600">Hear how healthcare institutes and clinical networks scaled educational programs, automated tracking, and built capability index ratios.</p>
             </div>
+
+            <!-- Testimonials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-[#F8FAFC] border border-slate-200 p-8 rounded-3xl flex flex-col justify-between hover:scale-102 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center gap-1 mb-6 text-impetus-orange">
+                            <span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed italic text-sm text-justify">"Deploying the IHS accredited courseware across our regional nursing staff has been incredible. Our overall credit compliance rose to 98% within three months."</p>
+                    </div>
+                    <div class="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200">
+                        <div class="w-10 h-10 rounded-full bg-impetus-lightOrange flex items-center justify-center font-bold text-impetus-orange font-outfit">DR</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 leading-snug">Dr. Evelyn Reed</h4>
+                            <p class="text-xs text-slate-400 font-semibold">CPD Director, IHS Health Alliance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-[#F8FAFC] border border-slate-200 p-8 rounded-3xl flex flex-col justify-between hover:scale-102 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center gap-1 mb-6 text-impetus-orange">
+                            <span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed italic text-sm text-justify">"IHS's secure proctored exams solved our compliance audit concerns perfectly. Highly secure, incredibly fast, and very professional LMS backend."</p>
+                    </div>
+                    <div class="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200">
+                        <div class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center font-bold text-indigo-600 font-outfit">SL</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 leading-snug">Sarah Jenkins</h4>
+                            <p class="text-xs text-slate-400 font-semibold">Dean of E-Learning, Crestview Academy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-[#F8FAFC] border border-slate-200 p-8 rounded-3xl flex flex-col justify-between hover:scale-102 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center gap-1 mb-6 text-impetus-orange">
+                            <span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span><span class="text-lg">&#9733;</span>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed italic text-sm text-justify">"The CPD credit autotrack has completely simplified our credential reporting cycles. Nurses access resources on-shift and download compliance PDFs immediately."</p>
+                    </div>
+                    <div class="flex items-center gap-4 mt-8 pt-6 border-t border-slate-200">
+                        <div class="w-10 h-10 rounded-full bg-impetus-lightOrange flex items-center justify-center font-bold text-impetus-orange font-outfit">ML</div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-900 leading-snug">Marcus Langley</h4>
+                            <p class="text-xs text-slate-400 font-semibold">Director of Nursing, City General Hospital</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sleek Contact Form & Lead Capture -->
+    <section id="contact" class="py-24 bg-impetus-navy text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-tr from-impetus-orange/15 via-transparent to-impetus-orange/15 -z-10"></div>
+        <div class="max-w-4xl mx-auto px-6 sm:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit">Accelerate Your Organization's Competency</h2>
+                <p class="mt-4 text-slate-350 text-sm max-w-xl mx-auto text-center">Complete the details below to receive a custom capability report and start a corporate demonstration of the IHS learning engine.</p>
+            </div>
+
+            <!-- Form -->
+            <form onsubmit="event.preventDefault(); alert('Thank you! Our IHS eLearning consultant will contact you shortly.');" class="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 sm:p-10 border border-white/10 shadow-2xl">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">Full Name</label>
+                        <input type="text" required class="w-full bg-white/5 border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">Email Address</label>
+                        <input type="email" required class="w-full bg-white/5 border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm" placeholder="john@hospital.com">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">Company / Healthcare Alliance</label>
+                        <input type="text" required class="w-full bg-white/5 border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm" placeholder="St. Luke's Health Center">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">LMS Target Scale</label>
+                        <select class="w-full bg-[#1D2A57] border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm">
+                            <option>10 - 250 learners</option>
+                            <option>250 - 1000 learners</option>
+                            <option>1000+ learners</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">Brief Learning Goals</label>
+                    <textarea class="w-full bg-white/5 border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm h-28" placeholder="We need to accredit 350 nurses on critical care guidelines..."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-impetus-orange hover:bg-[#e05d14] text-white py-4 rounded-full font-bold font-outfit transition-all shadow-lg shadow-impetus-orange/20 hover:scale-101 hover:shadow-xl">
+                    Submit consultation Request
+                </button>
+            </form>
         </div>
     </section>
 </main>

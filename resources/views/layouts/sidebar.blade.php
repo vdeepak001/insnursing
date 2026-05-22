@@ -65,9 +65,9 @@
         'justify-start'">
         <a href="/" class="w-full">
             <img x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
-                src="/images/venture.svg" alt="Venture" class="w-[90%] h-auto brightness-0 invert" />
+                src="/IEB_original_logo.png" alt="IHS Nursing" class="max-w-[85%] h-auto object-contain mx-auto" />
             <img x-show="!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen"
-                src="/images/venture.svg" alt="Venture" width="32" height="32" class="brightness-0 invert" />
+                src="/IEB_original_logo.png" alt="IHS Nursing" width="32" height="32" class="object-contain mx-auto" />
 
         </a>
     </div>

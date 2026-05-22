@@ -4,7 +4,6 @@
 
 @section('content')
     <main class="pb-16">
-        <div class="h-[100px]" aria-hidden="true"></div>
 
         <section class="py-12 sm:py-16">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -13,7 +12,7 @@
                 </div>
 
                 <div class="mb-10 rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-logo-light-green/5 p-6 shadow-md shadow-slate-200/50 sm:p-8">
-                    <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl font-serif">Continuing Professional Development Modules</h2>
+                    <h2 class="text-3xl font-bold tracking-tight text-impetus-orange sm:text-3xl font-serif">Continuing Professional Development Modules</h2>
                     <p class="mt-4 text-lg leading-8 text-slate-600 text-justify">
                         Continuing Professional Development (CPD) modules for nurses are structured, topic-focused learning units designed to enhance clinical knowledge, professional skills, and evidence-based practice. These modules support lifelong learning and help nurses stay current with evolving healthcare standards, technologies, and patient care practices.
                     </p>

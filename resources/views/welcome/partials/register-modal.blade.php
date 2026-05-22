@@ -72,7 +72,7 @@
                        name="name"
                        value="{{ old('name') }}"
                        required
-                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25" />
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$frontendRegisterErrors->get('name')" class="mt-2" />
             </div>
 
@@ -81,7 +81,7 @@
                 <select id="register-state"
                         name="state"
                         required
-                        class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25">
+                        class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25">
                     <option value="">Select state</option>
                     @foreach ($activeStates as $stateName)
                         <option value="{{ $stateName }}" @selected(old('state') === $stateName)>{{ $stateName }}</option>
@@ -95,7 +95,7 @@
                 <select id="register-qualification"
                         name="qualification"
                         required
-                        class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25">
+                        class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25">
                     <option value="">Select qualification</option>
                     @foreach (['GNM', 'ANM', 'PB BSc Nursing', 'BSc Nursing', 'MSc Nursing', 'PhD Nursing'] as $qualification)
                         <option value="{{ $qualification }}" @selected(old('qualification') === $qualification)>{{ $qualification }}</option>
@@ -111,7 +111,7 @@
                        name="date_of_birth"
                        value="{{ old('date_of_birth') }}"
                        required
-                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25" />
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$frontendRegisterErrors->get('date_of_birth')" class="mt-2" />
             </div>
 
@@ -123,7 +123,7 @@
                        value="{{ old('email') }}"
                        required
                        autocomplete="email"
-                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25" />
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$frontendRegisterErrors->get('email')" class="mt-2" />
             </div>
 
@@ -134,7 +134,7 @@
                        name="phone"
                        value="{{ old('phone') }}"
                        required
-                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25" />
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$frontendRegisterErrors->get('phone')" class="mt-2" />
             </div>
 
@@ -145,13 +145,13 @@
                        name="rn_number"
                        value="{{ old('rn_number') }}"
                        required
-                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25" />
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$frontendRegisterErrors->get('rn_number')" class="mt-2" />
             </div>
 
             <div class="sm:col-span-2 mt-1">
                 <button type="submit"
-                        class="w-full rounded-full bg-logo-light-green px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-logo-light-green/90 focus:outline-none focus:ring-2 focus:ring-logo-light-green focus:ring-offset-2">
+                        class="w-full rounded-full bg-impetus-orange px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-impetus-orange/90 focus:outline-none focus:ring-2 focus:ring-impetus-orange focus:ring-offset-2">
                     Create account
                 </button>
             </div>
@@ -214,7 +214,7 @@
         <div class="mt-6 flex flex-col gap-3">
             <button type="button"
                     @click="open = false; $dispatch('open-login-modal')"
-                    class="w-full rounded-full bg-logo-light-green px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-logo-light-green/90 focus:outline-none focus:ring-2 focus:ring-logo-light-green focus:ring-offset-2">
+                    class="w-full rounded-full bg-impetus-orange px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-impetus-orange/90 focus:outline-none focus:ring-2 focus:ring-impetus-orange focus:ring-offset-2">
                 Proceed to Login
             </button>
         </div>

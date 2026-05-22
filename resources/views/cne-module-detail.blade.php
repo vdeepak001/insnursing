@@ -64,7 +64,6 @@
         }"
         @keydown.escape.window="practiceGateOpen = false; scoreCardOpen = false"
     >
-        <div class="h-[100px]" aria-hidden="true"></div>
 
         {{-- Hero + overview (aligned with Practice Test / site theme) --}}
         <section class="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-logo-light-green/5 py-14 sm:py-20">
@@ -281,7 +280,7 @@
 
                 <div class="mt-4 grid items-start gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
                     <div class="order-2 min-w-0 lg:order-1">
-                        <h2 class="text-2xl font-bold tracking-tight text-slate-900 font-serif sm:text-3xl">
+                        <h2 class="text-2xl font-bold tracking-tight text-impetus-orange font-serif sm:text-3xl">
                             What you will learn in {{ $title }}?
                         </h2>
                         @if (filled($course->description))
@@ -353,8 +352,8 @@
 
                         {{-- Right Column: Content & Materials Link --}}
                         <div class="min-w-0 flex-1">
-                            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-l-4 border-logo-light-green pl-5 sm:pl-6">
-                                <h2 class="text-2xl font-bold tracking-tight text-emerald-900 font-serif sm:text-3xl">
+                            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-l-4 border-impetus-orange pl-5 sm:pl-6">
+                                <h2 class="text-2xl font-bold tracking-tight text-impetus-orange font-serif sm:text-3xl">
                                     Learning Materials
                                 </h2>
                                 @if ($hasCourseMaterials && $canViewLearningMaterials)
@@ -392,7 +391,7 @@
             <section class="border-t border-slate-200/80 bg-gradient-to-b from-white to-slate-50/80 py-16 sm:py-24">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="mb-6 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-                        <h2 class="text-2xl font-bold tracking-tight text-logo-light-green sm:text-3xl font-serif">
+                        <h2 class="text-2xl font-bold tracking-tight text-impetus-orange sm:text-3xl font-serif">
                             Practice Test
                         </h2>
                         @auth
@@ -473,7 +472,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h2 class="font-serif text-lg font-bold text-slate-900">Score Card</h2>
+                        <h2 class="font-serif text-lg font-bold text-impetus-orange">Score Card</h2>
                     </div>
                     <button 
                         @click="scoreCardOpen = false"

@@ -70,7 +70,7 @@
                        value="{{ old('email') }}"
                        required
                        autocomplete="email"
-                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25" />
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
             <div>
@@ -81,7 +81,7 @@
                            id="login-modal-password"
                            required
                            autocomplete="current-password"
-                           class="block w-full rounded-xl border border-slate-300 bg-white pl-4 pr-11 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25" />
+                           class="block w-full rounded-xl border border-slate-300 bg-white pl-4 pr-11 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                     <button type="button"
                             @click="showPassword = !showPassword"
                             class="absolute inset-y-0 right-3 flex items-center text-slate-400 hover:text-slate-600 focus:outline-none"
@@ -101,7 +101,7 @@
             </div>
             <div class="flex flex-wrap items-center justify-between gap-2">
                 <label class="inline-flex cursor-pointer items-center gap-2 text-sm text-slate-700">
-                    <input type="checkbox" name="remember" value="1" class="rounded border-slate-300 text-logo-light-green focus:ring-logo-light-green" @checked(old('remember')) />
+                    <input type="checkbox" name="remember" value="1" class="rounded border-slate-300 text-impetus-orange focus:ring-impetus-orange" @checked(old('remember')) />
                     <span>Remember me</span>
                 </label>
                 <button type="button"
@@ -111,7 +111,7 @@
                 </button>
             </div>
             <button type="submit"
-                    class="w-full rounded-full bg-logo-light-green px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-logo-light-green/90 focus:outline-none focus:ring-2 focus:ring-logo-light-green focus:ring-offset-2">
+                    class="w-full rounded-full bg-impetus-orange px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-impetus-orange/90 focus:outline-none focus:ring-2 focus:ring-impetus-orange focus:ring-offset-2">
                 Sign in
             </button>
         </form>
@@ -127,11 +127,11 @@
                        value="{{ old('email') }}"
                        required
                        autocomplete="email"
-                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-logo-light-green focus:outline-none focus:ring-2 focus:ring-logo-light-green/25" />
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
             <button type="submit"
-                    class="w-full rounded-full bg-logo-light-green px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-logo-light-green/90 focus:outline-none focus:ring-2 focus:ring-logo-light-green focus:ring-offset-2">
+                    class="w-full rounded-full bg-impetus-orange px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-impetus-orange/90 focus:outline-none focus:ring-2 focus:ring-impetus-orange focus:ring-offset-2">
                 Send login password
             </button>
         </form>

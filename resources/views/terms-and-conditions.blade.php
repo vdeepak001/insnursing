@@ -70,7 +70,7 @@
                                     <div>
                                         <h2 class="text-3xl font-semibold text-slate-900 sm:text-3xl font-serif">Agreement</h2>
                                         <p class="mt-3 text-lg leading-8 text-slate-600 text-justify">
-                                            By accessing or using the website and services operated by Venture Nursing Services (“we,” “us,” or “our”), you agree to these terms and conditions. If you do not agree, do not use the Services.
+                                            By accessing or using the website and services operated by IHS Nursing Solutions (“we,” “us,” or “our”), you agree to these terms and conditions. If you do not agree, do not use the Services.
                                         </p>
                                     </div>
                                 </div>

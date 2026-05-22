@@ -45,7 +45,6 @@
     </style>
 
     <main class="pb-24">
-        <div class="h-[100px]" aria-hidden="true"></div>
 
         <section class="relative overflow-hidden bg-white py-16 sm:py-24">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">

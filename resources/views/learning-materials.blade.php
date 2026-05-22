@@ -4,7 +4,6 @@
 
 @section('content')
     <main class="pb-12">
-        <div class="h-[100px]" aria-hidden="true"></div>
 
         <section class="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-logo-light-green/5 py-14 sm:py-20">
             <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-logo-blue/10 blur-3xl"></div>
@@ -46,7 +45,7 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid gap-10 lg:grid-cols-2 lg:gap-12 lg:items-start">
                     <div>
-                        <h2 class="text-2xl font-bold tracking-tight text-logo-light-green sm:text-3xl font-serif">
+                        <h2 class="text-2xl font-bold tracking-tight text-impetus-orange sm:text-3xl font-serif">
                             PowerPoint Slide Materials
                         </h2>
                         <p class="mt-6 text-lg leading-8 text-slate-600 text-justify">
@@ -58,15 +57,15 @@
                     </div>
                     <div class="grid gap-4 sm:grid-cols-2">
                         <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-5 shadow-sm">
-                            <p class="text-lg font-semibold text-logo-light-green">Concise Content</p>
+                            <p class="text-lg font-semibold text-impetus-orange">Concise Content</p>
                             <p class="mt-2 text-lg text-slate-700 text-justify">Clear and concise bullet-points for focused learning and quick revision.</p>
                         </div>
                         <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-5 shadow-sm">
-                            <p class="text-lg font-semibold text-logo-light-green">Visual Learning</p>
+                            <p class="text-lg font-semibold text-impetus-orange">Visual Learning</p>
                             <p class="mt-2 text-lg text-slate-700 text-justify">Use of diagrams, flowcharts, and clinical illustrations for clarity.</p>
                         </div>
                         <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-5 shadow-sm sm:col-span-2">
-                            <p class="text-lg font-semibold text-logo-light-green">Clinical Procedures</p>
+                            <p class="text-lg font-semibold text-impetus-orange">Clinical Procedures</p>
                             <p class="mt-2 text-lg text-slate-700 text-justify">Step-by-step explanations of procedures and protocols for practical application.</p>
                         </div>
                         {{-- <div class="rounded-2xl border border-slate-200/80 bg-slate-50/80 p-5 shadow-sm sm:col-span-2">

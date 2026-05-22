@@ -69,7 +69,7 @@
                                     <div>
                                         <h2 class="text-3xl font-semibold text-slate-900 sm:text-3xl font-serif">Introduction</h2>
                                         <p class="mt-3 text-lg leading-8 text-slate-600 text-justify">
-                                            Venture Nursing Services (“we,” “us,” or “our”) respects your privacy. This policy describes how we collect, use, disclose, and safeguard information when you use our website and related services (the “Services”).
+                                            IHS Nursing Solutions (“we,” “us,” or “our”) respects your privacy. This policy describes how we collect, use, disclose, and safeguard information when you use our website and related services (the “Services”).
                                         </p>
                                     </div>
                                 </div>
