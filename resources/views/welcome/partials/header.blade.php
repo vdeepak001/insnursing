@@ -30,11 +30,11 @@
                 <a href="{{ route('about') }}" class="{{ $navDesktopClass('about') }}"
                     @if (request()->routeIs('about')) aria-current="page" @endif>About Us</a>
                 <a href="{{ route('cne.modules') }}" class="{{ $navDesktopClass('cne.modules') }}"
-                    @if (request()->routeIs('cne.modules')) aria-current="page" @endif>CPD Modules</a>
+                    @if (request()->routeIs('cne.modules')) aria-current="page" @endif>CNE Modules</a>
                 <a href="{{ route('cpd.certifications') }}" class="{{ $navDesktopClass('cpd.certifications') }}"
-                    @if (request()->routeIs('cpd.certifications')) aria-current="page" @endif>CPD Certification</a>
+                    @if (request()->routeIs('cpd.certifications')) aria-current="page" @endif>CNE Certification</a>
                 <a href="{{ route('learning.materials') }}" class="{{ $navDesktopClass('learning.materials') }}"
-                    @if (request()->routeIs('learning.materials')) aria-current="page" @endif>Learning Materials</a>
+                    @if (request()->routeIs('learning.materials')) aria-current="page" @endif>Learning Resources</a>
                 <a href="{{ route('practice.test') }}" class="{{ $navDesktopClass('practice.test') }}"
                     @if (request()->routeIs('practice.test')) aria-current="page" @endif>Practice Test</a>
                 <a href="{{ route('online.examination') }}" class="{{ $navDesktopClass('online.examination') }}"
