@@ -8,18 +8,18 @@ use Illuminate\Support\Facades\Mail;
 
 test('login screen can be rendered', function () {
     /** @var \Tests\TestCase $this */
-    $response = $this->get('/login');
+    $response = $this->get(route('login'));
 
     $response->assertSuccessful();
-    $response->assertSee('Log in to your account', false);
+    $response->assertSee('Sign In', false);
 });
 
 test('staff login screen can be rendered', function () {
     /** @var \Tests\TestCase $this */
-    $response = $this->get(route('staff.login'));
+    $response = $this->get(route('login'));
 
     $response->assertSuccessful();
-    $response->assertSee('Staff sign in', false);
+    $response->assertSee('Sign In', false);
 });
 
 test('sign up screen can be rendered', function () {
@@ -27,14 +27,16 @@ test('sign up screen can be rendered', function () {
     $response = $this->get('/register');
 
     $response->assertSuccessful();
-    $response->assertSee('Create your account', false);
+    $response->assertSee('Sign Up', false);
 });
 
 test('users can authenticate using the login screen', function () {
     /** @var \Tests\TestCase $this */
-    $user = User::factory()->create();
+    $user = User::factory()->create([
+        'role_type' => 'superadmin',
+    ]);
 
-    $response = $this->post('/login', [
+    $response = $this->post(route('login'), [
         'email' => $user->email,
         'password' => 'password',
     ]);
@@ -47,9 +49,11 @@ test('users can authenticate using the login screen', function () {
 
 test('users can not authenticate with invalid password', function () {
     /** @var \Tests\TestCase $this */
-    $user = User::factory()->create();
+    $user = User::factory()->create([
+        'role_type' => 'superadmin',
+    ]);
 
-    $this->post('/login', [
+    $this->post(route('login'), [
         'email' => $user->email,
         'password' => 'wrong-password',
     ]);
@@ -59,7 +63,9 @@ test('users can not authenticate with invalid password', function () {
 
 test('users can logout', function () {
     /** @var \Tests\TestCase $this */
-    $user = User::factory()->create();
+    $user = User::factory()->create([
+        'role_type' => 'superadmin',
+    ]);
     /** @var User $user */
     $response = $this->actingAs($user)->post('/logout');
 
@@ -73,7 +79,7 @@ test('frontend user can not login from dashboard login endpoint', function () {
         'role_type' => 'user',
     ]);
 
-    $response = $this->post('/login', [
+    $response = $this->post(route('login'), [
         'email' => $user->email,
         'password' => 'password',
     ]);
