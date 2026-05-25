@@ -70,6 +70,18 @@ test('users can logout', function () {
     $response = $this->actingAs($user)->post('/logout');
 
     $this->assertGuest();
+    $response->assertRedirect(route('login'));
+});
+
+test('frontend users can logout and redirect to home', function () {
+    /** @var \Tests\TestCase $this */
+    $user = User::factory()->create([
+        'role_type' => 'user',
+    ]);
+    /** @var User $user */
+    $response = $this->actingAs($user)->post('/logout');
+
+    $this->assertGuest();
     $response->assertRedirect('/');
 });
 
