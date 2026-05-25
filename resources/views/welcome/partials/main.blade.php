@@ -202,7 +202,7 @@
     </section>
 
     <!-- Solutions Section with Tabs -->
-    <section id="solutions" class="py-24" x-data="{ tab: 'healthcare' }">
+    {{-- <section id="solutions" class="py-24" x-data="{ tab: 'healthcare' }">
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">
@@ -423,7 +423,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- About IHS Nursing section -->
     <section id="about" class="overflow-hidden bg-[#F8FAFC] py-24 sm:py-32 relative">
@@ -454,55 +454,55 @@
                         </p>
                         <!-- Our Values -->
                         <div>
-                            <h4 class="text-base font-bold text-impetus-navy font-outfit mb-4 flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-impetus-orange inline-block"></span>
+                            <h4 class="text-lg sm:text-xl font-bold text-impetus-navy font-outfit mb-4 flex items-center gap-2.5">
+                                <span class="w-3 h-3 rounded-full bg-impetus-orange inline-block"></span>
                                 Our Values
                             </h4>
                             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <li
                                     class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
-                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Ethical
+                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                    <span class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Ethical
                                             Values:</strong> Imparting medical ethics, emphasizing morally sound
                                         practices.</span>
                                 </li>
                                 <li
                                     class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
-                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Excellence:</strong>
+                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                    <span class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Excellence:</strong>
                                         Achieving excellence recognized for its high quality and standards.</span>
                                 </li>
                                 <li
                                     class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
-                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Integrity:</strong>
+                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                    <span class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Integrity:</strong>
                                         Nurturing honesty, integrity, accountability, and flexibility in all
                                         endeavors.</span>
                                 </li>
                                 <li
                                     class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
-                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Teamwork:</strong>
+                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                    <span class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Teamwork:</strong>
                                         Demonstrating the values of teamwork and creating a highly conducive working
                                         environment.</span>
                                 </li>
                                 <li
                                     class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
-                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Innovation:</strong>
+                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                    <span class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Innovation:</strong>
                                         Supporting commendable creativity and valuable innovation in all our preferred
                                         approaches.</span>
                                 </li>
                                 <li
                                     class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold font-sans">&bull;</span>
-                                    <span class="text-xs text-slate-600 leading-relaxed"><strong>Synergy:</strong>
+                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                    <span class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Synergy:</strong>
                                         Developing strong interdisciplinary, synergistic, and collegial
                                         relationships.</span>
                                 </li>
@@ -555,21 +555,81 @@
         }
     </style>
 
+    <!-- Vision & Mission section -->
+    <section id="vision-mission" class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24">
+        <div
+            class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-impetus-orange/5 to-transparent">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="mx-auto max-w-3xl text-center mb-16">
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Our Core
+                    Foundation</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Vision and
+                    Mission Guiding Clinical Development</p>
+                <p class="mt-4 text-slate-600 text-justify">
+                    At IHS Nursing Solutions, we are dedicated to providing meaningful continuing education that fosters
+                    professional excellence and improves healthcare delivery.
+                </p>
+            </div>
+
+            <div class="grid gap-8 lg:grid-cols-2">
+                <!-- Vision -->
+                <article
+                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                    <div
+                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
+                    </div>
+                    <div
+                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 13.5l7.5-7.5 7.5 7.5M5.25 12v7.125c0 .621.504 1.125 1.125 1.125h3.375V16.5c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v3.75h3.375c.621 0 1.125-.504 1.125-1.125V12" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Vision</h3>
+                    <p class="mt-4 text-slate-500 leading-relaxed text-justify text-sm sm:text-base">
+                        To serve as a Centre of Excellence for healthcare skill development initiatives and be at the
+                        forefront in carrying out the noble mission of achieving health goals of national and
+                        international importance.
+                    </p>
+                </article>
+
+                <!-- Mission -->
+                <article
+                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                    <div
+                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
+                    </div>
+                    <div
+                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9.813 15.904L9 18.75l-2.844-.813a4.5 4.5 0 01-1.614-7.509l7.636-7.636a3.375 3.375 0 114.773 4.773l-7.636 7.636a4.5 4.5 0 01-.502.435z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 5.25l6 6" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Mission</h3>
+                    <p class="mt-4 text-slate-500 leading-relaxed text-justify text-sm sm:text-base">
+                        Our mission is to provide relevant, comprehensive training programmes to multidisciplinary
+                        healthcare professionals, enabling them to achieve high levels of professional excellence in
+                        clinical practice
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- CPD Modules Carousel Section -->
     <section id="cne-modules" class="py-24 overflow-hidden bg-white relative">
         <div class="absolute top-0 left-0 w-64 h-64 bg-impetus-orange/5 rounded-full blur-[80px] pointer-events-none">
         </div>
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="mx-auto max-w-3xl text-center mb-16">
-                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">CPD
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">CNE
                     Modules</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Accredited
-                    Continuing Nursing Education</p>
-                <p class="mt-4 text-slate-600 text-justify">
-                    Select highly structured clinical modules created by professional educators. Each pathway balances
-                    dynamic slide materials, scenario analyses, and short assessments to ensure rapid skills
-                    integration.
-                </p>
+
             </div>
 
             <div class="relative mt-12">
@@ -599,13 +659,7 @@
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
-                                <div class="mt-5 flex items-center justify-between">
-                                    <span
-                                        class="rounded-full bg-impetus-lightOrange px-3 py-1 text-xs font-bold text-impetus-orange">
-                                        Accredited Module
-                                    </span>
-                                    <span class="text-xs font-bold text-slate-400">CPD Mapped</span>
-                                </div>
+
                                 <p class="mt-3 text-sm leading-relaxed text-slate-500 text-justify line-clamp-3">
                                     {{ \Illuminate\Support\Str::words(strip_tags($course->description), 18, '...') }}
                                 </p>
@@ -628,13 +682,7 @@
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
-                                <div class="mt-5 flex items-center justify-between">
-                                    <span
-                                        class="rounded-full bg-impetus-lightOrange px-3 py-1 text-xs font-bold text-impetus-orange">
-                                        Accredited Module
-                                    </span>
-                                    <span class="text-xs font-bold text-slate-400">CPD Mapped</span>
-                                </div>
+
                                 <p class="mt-3 text-sm leading-relaxed text-slate-500 text-justify line-clamp-3">
                                     {{ \Illuminate\Support\Str::words(strip_tags($course->description), 18, '...') }}
                                 </p>
@@ -1047,71 +1095,7 @@
         </div>
     </section>
 
-    <!-- Vision & Mission section -->
-    <section id="vision-mission" class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24">
-        <div
-            class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-impetus-orange/5 to-transparent">
-        </div>
-        <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="mx-auto max-w-3xl text-center mb-16">
-                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Our Core
-                    Foundation</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Vision and
-                    Mission Guiding Clinical Development</p>
-                <p class="mt-4 text-slate-600 text-justify">
-                    At IHS Nursing Solutions, we are dedicated to providing meaningful continuing education that fosters
-                    professional excellence and improves healthcare delivery.
-                </p>
-            </div>
 
-            <div class="grid gap-8 lg:grid-cols-2">
-                <!-- Vision -->
-                <article
-                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
-                    <div
-                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
-                    </div>
-                    <div
-                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3.75 13.5l7.5-7.5 7.5 7.5M5.25 12v7.125c0 .621.504 1.125 1.125 1.125h3.375V16.5c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v3.75h3.375c.621 0 1.125-.504 1.125-1.125V12" />
-                        </svg>
-                    </div>
-                    <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Vision</h3>
-                    <p class="mt-4 text-slate-500 leading-relaxed text-justify text-sm sm:text-base">
-                        To serve as a Centre of Excellence for healthcare skill development initiatives and be at the
-                        forefront in carrying out the noble mission of achieving health goals of national and
-                        international importance.
-                    </p>
-                </article>
-
-                <!-- Mission -->
-                <article
-                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
-                    <div
-                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
-                    </div>
-                    <div
-                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9.813 15.904L9 18.75l-2.844-.813a4.5 4.5 0 01-1.614-7.509l7.636-7.636a3.375 3.375 0 114.773 4.773l-7.636 7.636a4.5 4.5 0 01-.502.435z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 5.25l6 6" />
-                        </svg>
-                    </div>
-                    <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Mission</h3>
-                    <p class="mt-4 text-slate-500 leading-relaxed text-justify text-sm sm:text-base">
-                        Our mission is to provide relevant, comprehensive training programmes to multidisciplinary
-                        healthcare professionals, enabling them to achieve high levels of professional excellence in
-                        clinical practice
-                    </p>
-                </article>
-            </div>
-        </div>
-    </section>
 
     <!-- Testimonials Slider Section -->
     <section id="testimonials" class="py-24 bg-white">
