@@ -425,6 +425,72 @@
         </div>
     </section> --}}
 
+    <!-- Vision & Mission section -->
+    <section id="vision-mission" class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24">
+        <div
+            class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-impetus-orange/5 to-transparent">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 sm:px-8">
+            <div class="mx-auto max-w-3xl text-center mb-16">
+                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Our Core
+                    Foundation</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Vision and
+                    Mission Guiding Clinical Development</p>
+                <p class="mt-4 text-slate-600 text-justify text-base sm:text-lg leading-relaxed">
+                    At IHS Nursing Solutions, we are dedicated to providing meaningful continuing education that fosters
+                    professional excellence and improves healthcare delivery.
+                </p>
+            </div>
+
+            <div class="grid gap-8 lg:grid-cols-2">
+                <!-- Vision -->
+                <article
+                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                    <div
+                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
+                    </div>
+                    <div
+                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 13.5l7.5-7.5 7.5 7.5M5.25 12v7.125c0 .621.504 1.125 1.125 1.125h3.375V16.5c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v3.75h3.375c.621 0 1.125-.504 1.125-1.125V12" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-impetus-navy font-outfit">Our Vision</h3>
+                    <p class="mt-4 text-slate-600 leading-relaxed text-justify text-base sm:text-lg">
+                        To serve as a Centre of Excellence for healthcare skill development initiatives and be at the
+                        forefront in carrying out the noble mission of achieving health goals of national and
+                        international importance.
+                    </p>
+                </article>
+
+                <!-- Mission -->
+                <article
+                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                    <div
+                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
+                    </div>
+                    <div
+                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9.813 15.904L9 18.75l-2.844-.813a4.5 4.5 0 01-1.614-7.509l7.636-7.636a3.375 3.375 0 114.773 4.773l-7.636 7.636a4.5 4.5 0 01-.502.435z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 5.25l6 6" />
+                        </svg>
+                    </div>
+                    <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-impetus-navy font-outfit">Our Mission</h3>
+                    <p class="mt-4 text-slate-600 leading-relaxed text-justify text-base sm:text-lg">
+                        Our mission is to provide relevant, comprehensive training programmes to multidisciplinary
+                        healthcare professionals, enabling them to achieve high levels of professional excellence in
+                        clinical practice.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- About IHS Nursing section -->
     <section id="about" class="overflow-hidden bg-[#F8FAFC] py-24 sm:py-32 relative">
         <div
@@ -561,71 +627,210 @@
         }
     </style>
 
-    <!-- Vision & Mission section -->
-    <section id="vision-mission" class="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-24">
+
+
+    <!-- IHS' Strengths Section -->
+    <section class="py-24 sm:py-32 relative bg-white border-b border-slate-200/60">
         <div
-            class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-impetus-orange/5 to-transparent">
+            class="absolute top-0 right-0 w-80 h-80 bg-impetus-orange/5 rounded-full blur-[120px] pointer-events-none">
         </div>
-        <div class="max-w-7xl mx-auto px-6 sm:px-8">
-            <div class="mx-auto max-w-3xl text-center mb-16">
-                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Our Core
-                    Foundation</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Vision and
-                    Mission Guiding Clinical Development</p>
-                <p class="mt-4 text-slate-600 text-justify">
-                    At IHS Nursing Solutions, we are dedicated to providing meaningful continuing education that fosters
-                    professional excellence and improves healthcare delivery.
+
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-3xl text-center mb-20">
+                <span
+                    class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">What
+                    Sets Us Apart</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">IHS’ Core
+                    Strengths</h2>
+                <p class="mt-4 text-slate-600 text-justify leading-relaxed text-base sm:text-lg">
+                    Impetus Healthcare Skills Private Limited has strong expertise in simulation-based healthcare
+                    training and online education, enabling healthcare professionals to acquire practical knowledge and
+                    clinical competence through innovative learning methods. Our key strengths include:
                 </p>
             </div>
 
-            <div class="grid gap-8 lg:grid-cols-2">
-                <!-- Vision -->
-                <article
-                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Strength 1 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
                     <div
-                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
-                    </div>
-                    <div
-                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3.75 13.5l7.5-7.5 7.5 7.5M5.25 12v7.125c0 .621.504 1.125 1.125 1.125h3.375V16.5c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v3.75h3.375c.621 0 1.125-.504 1.125-1.125V12" />
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" />
                         </svg>
                     </div>
-                    <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Vision</h3>
-                    <p class="mt-4 text-slate-500 leading-relaxed text-justify text-sm sm:text-base">
-                        To serve as a Centre of Excellence for healthcare skill development initiatives and be at the
-                        forefront in carrying out the noble mission of achieving health goals of national and
-                        international importance.
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Advanced Simulation Training</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        We provide realistic, skill-oriented simulation training programs that help learners develop
+                        hands-on clinical experience in a safe and controlled environment before direct patient care
+                        exposure.
                     </p>
-                </article>
+                </div>
 
-                <!-- Mission -->
-                <article
-                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                <!-- Strength 2 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
                     <div
-                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
-                    </div>
-                    <div
-                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9.813 15.904L9 18.75l-2.844-.813a4.5 4.5 0 01-1.614-7.509l7.636-7.636a3.375 3.375 0 114.773 4.773l-7.636 7.636a4.5 4.5 0 01-.502.435z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 5.25l6 6" />
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <h3 class="mt-6 text-2xl font-bold text-impetus-navy font-outfit">Our Mission</h3>
-                    <p class="mt-4 text-slate-500 leading-relaxed text-justify text-sm sm:text-base">
-                        Our mission is to provide relevant, comprehensive training programmes to multidisciplinary
-                        healthcare professionals, enabling them to achieve high levels of professional excellence in
-                        clinical practice
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Comprehensive Learning</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        We offer flexible, accessible online courses with interactive learning modules, recorded
+                        sessions, assessments, and digital study materials, allowing healthcare professionals to learn
+                        anytime and from any location.
                     </p>
-                </article>
+                </div>
+
+                <!-- Strength 3 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Specialized Healthcare Programs
+                    </h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        Conducts training in nursing specialties including; life support, basic/advanced health
+                        assessment, critical care nursing, emergency nursing, airway management, neonatal care,
+                        infection control, and clinical skills.
+                    </p>
+                </div>
+
+                <!-- Strength 4 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Industry-Relevant Curriculum</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        Training programs are designed according to current healthcare standards, evidence-based
+                        practices, and professional competency requirements to ensure practical applicability in
+                        clinical settings.
+                    </p>
+                </div>
+
+                <!-- Strength 5 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Experienced Educators</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        The company is supported by highly qualified healthcare educators, clinical experts, and
+                        industry professionals with extensive academic and practical experience.
+                    </p>
+                </div>
+
+                <!-- Strength 6 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Focus on Skill Development</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        It emphasizes competency-based education and outcome-oriented training to improve clinical
+                        decision-making, patient safety, and professional confidence.
+                    </p>
+                </div>
+
+                <!-- Strength 7 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Technology-Driven Education</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        Integrates modern technologies such as virtual classrooms, simulation scenarios, online
+                        assessments, digital certifications, and e-learning platforms.
+                    </p>
+                </div>
+
+                <!-- Strength 8 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Continuing Nursing Education</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        Supports lifelong learning through structured continuing education programs and skill
+                        upgradation courses for healthcare professionals.
+                    </p>
+                </div>
+
+                <!-- Strength 9 -->
+                <div
+                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2.945M11 20.935V19a2 2 0 012-2h1.87M16.5 3.5L19 6m0 0l-2.5 2.5M19 6h-6.5" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Scalable & Accessible Model</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        Ability to deliver high-quality training programs to participants across different geographic
+                        locations through online and hybrid learning models.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 10th Strength Custom Box (Commitment to Quality) -->
+            <div
+                class="mt-8 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-3xl p-8 hover:border-impetus-orange/20 transition-all duration-300 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6">
+                <div
+                    class="w-14 h-14 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 shadow-lg shadow-impetus-orange/20">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-1">Commitment to Quality Healthcare
+                        Education</h3>
+                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                        We are profoundly dedicated to improving healthcare workforce competence and strengthening
+                        patient care outcomes through high-quality, comprehensive education and training services.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- CPD Modules Carousel Section -->
     <section id="cne-modules" class="py-24 overflow-hidden bg-white relative">
@@ -709,207 +914,6 @@
         </div>
     </section>
 
-    <!-- IHS' Strengths Section -->
-    <section class="py-24 sm:py-32 relative bg-white border-b border-slate-200/60">
-        <div
-            class="absolute top-0 right-0 w-80 h-80 bg-impetus-orange/5 rounded-full blur-[120px] pointer-events-none">
-        </div>
-
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-3xl text-center mb-20">
-                <span
-                    class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">What
-                    Sets Us Apart</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">IHS’ Core
-                    Strengths</h2>
-                <p class="mt-4 text-slate-500 text-justify leading-relaxed text-sm sm:text-base">
-                    Impetus Healthcare Skills Private Limited has strong expertise in simulation-based healthcare
-                    training and online education, enabling healthcare professionals to acquire practical knowledge and
-                    clinical competence through innovative learning methods. Our key strengths include:
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Strength 1 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Advanced Simulation Training</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        We provide realistic, skill-oriented simulation training programs that help learners develop
-                        hands-on clinical experience in a safe and controlled environment before direct patient care
-                        exposure.
-                    </p>
-                </div>
-
-                <!-- Strength 2 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Comprehensive Learning</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        We offer flexible, accessible online courses with interactive learning modules, recorded
-                        sessions, assessments, and digital study materials, allowing healthcare professionals to learn
-                        anytime and from any location.
-                    </p>
-                </div>
-
-                <!-- Strength 3 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Specialized Healthcare Programs
-                    </h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        Conducts training in nursing specialties including; life support, basic/advanced health
-                        assessment, critical care nursing, emergency nursing, airway management, neonatal care,
-                        infection control, and clinical skills.
-                    </p>
-                </div>
-
-                <!-- Strength 4 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Industry-Relevant Curriculum</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        Training programs are designed according to current healthcare standards, evidence-based
-                        practices, and professional competency requirements to ensure practical applicability in
-                        clinical settings.
-                    </p>
-                </div>
-
-                <!-- Strength 5 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Experienced Educators</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        The company is supported by highly qualified healthcare educators, clinical experts, and
-                        industry professionals with extensive academic and practical experience.
-                    </p>
-                </div>
-
-                <!-- Strength 6 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Focus on Skill Development</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        It emphasizes competency-based education and outcome-oriented training to improve clinical
-                        decision-making, patient safety, and professional confidence.
-                    </p>
-                </div>
-
-                <!-- Strength 7 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Technology-Driven Education</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        Integrates modern technologies such as virtual classrooms, simulation scenarios, online
-                        assessments, digital certifications, and e-learning platforms.
-                    </p>
-                </div>
-
-                <!-- Strength 8 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Continuing Nursing Education</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        Supports lifelong learning through structured continuing education programs and skill
-                        upgradation courses for healthcare professionals.
-                    </p>
-                </div>
-
-                <!-- Strength 9 -->
-                <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
-                    <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2.945M11 20.935V19a2 2 0 012-2h1.87M16.5 3.5L19 6m0 0l-2.5 2.5M19 6h-6.5" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-3">Scalable & Accessible Model</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        Ability to deliver high-quality training programs to participants across different geographic
-                        locations through online and hybrid learning models.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 10th Strength Custom Box (Commitment to Quality) -->
-            <div
-                class="mt-8 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-3xl p-8 hover:border-impetus-orange/20 transition-all duration-300 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6">
-                <div
-                    class="w-14 h-14 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 shadow-lg shadow-impetus-orange/20">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                    </svg>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-1">Commitment to Quality Healthcare
-                        Education</h3>
-                    <p class="text-sm text-slate-500 text-justify leading-relaxed">
-                        We are profoundly dedicated to improving healthcare workforce competence and strengthening
-                        patient care outcomes through high-quality, comprehensive education and training services.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Simulation Based Training Section -->
     <section class="py-24 sm:py-32 relative bg-slate-50 border-b border-slate-200/60 overflow-hidden">
