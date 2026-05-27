@@ -181,3 +181,66 @@ it('processes aborted ccavenue payment callback', function () {
         'payment_status' => PaymentStatus::Aborted->value,
     ]);
 });
+
+it('enables the purchased course in the modules list after successful callback', function () {
+    $state = State::query()->create([
+        'name' => 'Goa',
+        'status' => 'active',
+    ]);
+
+    $course = CourseDetail::query()->create([
+        'couse_name' => 'Purchased Module CNE Test',
+        'description' => 'Test',
+        'active_status' => 1,
+    ]);
+
+    $council = StateCouncil::query()->create([
+        'state_id' => $state->id,
+        'council_name' => 'Goa Council',
+        'active_status' => true,
+    ]);
+    $council->courseDetails()->attach($course->id, [
+        'mrp' => 1500,
+        'offer_price' => 1200,
+        'valid_days' => 60,
+        'points' => 10,
+    ]);
+
+    $user = User::factory()->create([
+        'role_type' => 'user',
+        'state' => 'Goa',
+    ]);
+
+    $txnId = 'IHS' . $user->id . 'T' . time();
+
+    $order = Order::query()->create([
+        'user_id' => $user->id,
+        'course_detail_id' => $course->id,
+        'state_council_id' => $council->id,
+        'payment_mode' => 'ccavenue',
+        'start_date' => now(),
+        'end_date' => now()->addDays(60),
+        'remarks' => $txnId,
+        'payment_status' => PaymentStatus::Pending,
+    ]);
+
+    // Simulate successful payment callback
+    $ccavenue = app(CCAvenueService::class);
+    $responseString = "order_id={$txnId}&order_status=Success&tracking_id=987654321&failure_message=";
+    $encResp = $ccavenue->encrypt($responseString, config('services.ccavenue.working_key'));
+
+    $callbackResponse = $this->post(route('payment.ccavenue.callback'), [
+        'encResp' => $encResp,
+    ]);
+
+    $callbackResponse->assertRedirect(route('dashboard'));
+
+    // Visit CNE modules index
+    $indexResponse = $this->actingAs($user)->get(route('cne.modules'));
+    $indexResponse->assertSuccessful();
+
+    // Verify course is listed in the Purchased Modules section
+    $indexResponse->assertSee('Purchased Modules');
+    $indexResponse->assertSee('Purchased Module CNE Test');
+});
+

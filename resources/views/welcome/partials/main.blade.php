@@ -30,10 +30,10 @@
                     </h1>
 
                     <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
-                        At <strong>IHS Nursing Solutions</strong>, we design and deliver premium continuing education
-                        ecosystems, accredited nursing courseware, and next-generation clinical LMS tools to empower
-                        healthcare professionals with flexible, evidence-based learning that fits seamlessly into active
-                        work routines.
+                        <strong>Impetus Healthcare Skills Private Limited (IHS)</strong> is a pioneering healthcare education and skills development organization committed to strengthening the competency of healthcare professionals through innovative and outcome-oriented training programs. The company specializes in the design, development, and implementation of competency-based educational initiatives that support the continuous enhancement of healthcare delivery systems.
+                    </p>
+                    <p class="mt-4 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
+                        The core objective of IHS is to equip healthcare professionals with advanced knowledge, practical skills, and professional competencies required to meet the evolving demands of modern healthcare practice. Through carefully structured training programs, IHS promotes excellence in clinical practice, patient safety, and quality healthcare services across diverse healthcare settings.
                     </p>
 
                     <!-- CTAs -->
