@@ -142,14 +142,14 @@
                                     <a href="{{ $detailUrl }}" class="relative flex flex-1 flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2">
                                         <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-slate-100">
                                             <img
-                                                src="{{ asset('images/course.jpeg') }}"
+                                                src="{{ asset('images/course_bg.jpeg') }}"
                                                 alt=""
                                                 class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
                                                 loading="lazy"
                                                 decoding="async"
                                             >
                                             <div class="absolute inset-0 flex items-center justify-center p-4">
-                                                <span class="block max-w-full text-balance text-center text-base font-bold leading-snug tracking-tight text-logo-blue sm:text-3xl">
+                                                <span class="block max-w-full text-balance text-center text-base font-bold leading-snug tracking-tight text-impetus-orange sm:text-3xl">
                                                     {{ $title ?? '—' }}
                                                 </span>
                                             </div>
@@ -191,14 +191,14 @@
                                     <a href="{{ $detailUrl }}" class="relative flex flex-1 flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2">
                                         <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-slate-100">
                                             <img
-                                                src="{{ asset('images/course.jpeg') }}"
+                                                src="{{ asset('images/course_bg.jpeg') }}"
                                                 alt=""
                                                 class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
                                                 loading="lazy"
                                                 decoding="async"
                                             >
                                             <div class="absolute inset-0 flex items-center justify-center p-4">
-                                                <span class="block max-w-full text-balance text-center text-base font-bold leading-snug tracking-tight text-logo-blue sm:text-3xl">
+                                                <span class="block max-w-full text-balance text-center text-base font-bold leading-snug tracking-tight text-impetus-orange sm:text-3xl">
                                                     {{ $title ?? '—' }}
                                                 </span>
                                             </div>

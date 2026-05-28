@@ -629,14 +629,14 @@
                             <a href="{{ route('cne.modules.show', $course->couse_name) }}"
                                 class="group block w-[350px] flex-none flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-md hover:shadow-xl hover:border-impetus-orange/30 transition-all duration-300">
                                 <div
-                                    class="relative h-48 w-full overflow-hidden rounded-2xl bg-impetus-navy/80 flex items-center justify-center p-4">
-                                    <img src="{{ asset('images/course.jpeg') }}"
+                                    class="relative h-48 w-full overflow-hidden rounded-2xl bg-slate-100 flex items-center justify-center p-4">
+                                    <img src="{{ asset('images/course_bg.jpeg') }}"
                                         onerror="this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'"
                                         alt="{{ $course->couse_name }}"
-                                        class="absolute inset-0 h-full w-full object-cover opacity-30 transition-transform duration-500 group-hover:scale-105"
+                                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy">
                                     <span
-                                        class="relative z-10 block max-w-full text-balance text-center text-lg font-extrabold uppercase leading-snug tracking-tight text-white font-outfit group-hover:text-impetus-orange transition-colors">
+                                        class="relative z-10 block max-w-full text-balance text-center text-lg font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-colors">
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
@@ -652,14 +652,14 @@
                             <a href="{{ route('cne.modules.show', $course->couse_name) }}"
                                 class="group block w-[350px] flex-none flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-md hover:shadow-xl hover:border-impetus-orange/30 transition-all duration-300">
                                 <div
-                                    class="relative h-48 w-full overflow-hidden rounded-2xl bg-impetus-navy/80 flex items-center justify-center p-4">
-                                    <img src="{{ asset('images/course.jpeg') }}"
+                                    class="relative h-48 w-full overflow-hidden rounded-2xl bg-slate-100 flex items-center justify-center p-4">
+                                    <img src="{{ asset('images/course_bg.jpeg') }}"
                                         onerror="this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'"
                                         alt="{{ $course->couse_name }}"
-                                        class="absolute inset-0 h-full w-full object-cover opacity-30 transition-transform duration-500 group-hover:scale-105"
+                                        class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy">
                                     <span
-                                        class="relative z-10 block max-w-full text-balance text-center text-lg font-extrabold uppercase leading-snug tracking-tight text-white font-outfit group-hover:text-impetus-orange transition-colors">
+                                        class="relative z-10 block max-w-full text-balance text-center text-lg font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-colors">
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>

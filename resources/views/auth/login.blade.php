@@ -107,7 +107,7 @@
                 </div>
             </div>
 
-            <div class="bg-brand-950 relative hidden h-full w-full items-center lg:grid lg:w-1/2 dark:bg-white/5">
+            <div class="bg-gradient-to-br from-impetus-navy to-impetus-dark relative hidden h-full w-full items-center lg:grid lg:w-1/2 dark:bg-white/5">
                 <div class="z-1 flex items-center justify-center">
                     <x-common.common-grid-shape />
                     <div class="flex max-w-xs flex-col items-center">

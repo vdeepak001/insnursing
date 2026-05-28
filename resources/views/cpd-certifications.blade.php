@@ -5,73 +5,52 @@
 @section('content')
     <main class="overflow-hidden bg-[#F8FAFC]">
         <!-- Hero Section -->
-        <section class="relative bg-gradient-to-br from-white via-slate-50 to-slate-100/50 py-20 sm:py-28 border-b border-slate-200/60">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-impetus-orange/5 via-transparent to-transparent pointer-events-none"></div>
-            <div class="absolute top-1/2 left-0 w-80 h-80 bg-impetus-orange/5 rounded-full blur-[120px] pointer-events-none"></div>
-            
+        <section
+            class="relative bg-gradient-to-br from-white via-slate-50 to-slate-100/50 py-20 sm:py-28 border-b border-slate-200/60">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-impetus-orange/5 via-transparent to-transparent pointer-events-none">
+            </div>
+            <div class="absolute top-1/2 left-0 w-80 h-80 bg-impetus-orange/5 rounded-full blur-[120px] pointer-events-none">
+            </div>
+
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid items-center gap-16 lg:grid-cols-12">
                     <div class="lg:col-span-7">
-                        <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Professional Credibility</span>
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-impetus-navy tracking-tight font-outfit leading-tight mb-6">
+                        <span
+                            class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Professional
+                            Credibility</span>
+                        <h1
+                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-impetus-navy tracking-tight font-outfit leading-tight mb-6">
                             CNE Certification
                         </h1>
-                        
+
                         <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-sm sm:text-base">
                             <p>
-                                <strong>CNE (Continuing Nursing Education) certification</strong> is an official recognition awarded to nurses and healthcare professionals upon successful completion of structured educational programs designed to enhance clinical knowledge, professional skills, and competency in nursing practice. It serves as evidence of participation in continuing professional development activities that align with current healthcare standards and evidence-based practices.
+                                <strong>CNE (Continuing Nursing Education) certification</strong> is an official recognition
+                                awarded to nurses and healthcare professionals upon successful completion of structured
+                                educational programs designed to enhance clinical knowledge, professional skills, and
+                                competency in nursing practice. It serves as evidence of participation in continuing
+                                professional development activities that align with current healthcare standards and
+                                evidence-based practices.
                             </p>
                             <p>
-                                CNE certification programs are typically delivered through workshops, simulation-based training, seminars, and online learning modules covering various specialties such as critical care, emergency nursing, infection control, neonatal care, oncology, patient safety, and nursing leadership. These programs are designed to support lifelong learning and ensure that healthcare professionals remain updated with advancements in medical science and clinical care.
+                                CNE certification programs are typically delivered through workshops, simulation-based
+                                training, seminars, and online learning modules covering various specialties such as
+                                critical care, emergency nursing, infection control, neonatal care, oncology, patient
+                                safety, and nursing leadership. These programs are designed to support lifelong learning and
+                                ensure that healthcare professionals remain updated with advancements in medical science and
+                                clinical care.
                             </p>
                         </div>
                     </div>
 
                     <!-- Right Column: Visual Graphic/Accreditation Seal -->
                     <div class="lg:col-span-5 relative">
-                        <div class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/10 via-transparent to-impetus-navy/10 blur-2xl -z-10"></div>
-                        <div class="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-6 shadow-2xl">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-impetus-orange/5 to-impetus-navy/5"></div>
-                            <div class="relative flex flex-col items-center justify-center p-6 border-2 border-dashed border-slate-200 rounded-2xl h-full">
-                                <!-- SVG Certificate Icon/Illustration -->
-                                <svg class="w-32 h-32 text-impetus-orange mb-6 animate-pulse" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- Seal Outer -->
-                                    <circle cx="50" cy="45" r="32" fill="url(#seal-grad)" stroke="#F36E21" stroke-width="2" stroke-dasharray="3 3"/>
-                                    <!-- Seal Inner -->
-                                    <circle cx="50" cy="45" r="26" fill="white" stroke="#0A1931" stroke-width="1.5"/>
-                                    <!-- Ribbon 1 -->
-                                    <path d="M42 68 L32 88 L46 84 L50 68 Z" fill="#F36E21" opacity="0.9"/>
-                                    <!-- Ribbon 2 -->
-                                    <path d="M58 68 L68 88 L54 84 L50 68 Z" fill="#E25C10"/>
-                                    <!-- Nursing/Medical Cross -->
-                                    <path d="M45 45 H37 V39 H45 V31 H51 V39 H59 V45 H51 V53 H45 Z" fill="#0A1931"/>
-                                    <!-- Inner Star Decors -->
-                                    <path d="M50 24 L51.5 28 L55.5 28 L52 30 L53.5 34 L50 32 L46.5 34 L48 30 L44.5 28 L48.5 28 Z" fill="#F36E21"/>
-                                    <!-- Gradients -->
-                                    <defs>
-                                        <linearGradient id="seal-grad" x1="18" y1="13" x2="82" y2="77" gradientUnits="userSpaceOnUse">
-                                            <stop stop-color="#FFF3EB"/>
-                                            <stop offset="1" stop-color="#FFE5D4"/>
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                                
-                                <h4 class="text-lg font-bold text-impetus-navy font-outfit text-center mb-1">CNE ACCREDITED</h4>
-                                <p class="text-xs text-slate-500 font-medium text-center tracking-wider uppercase mb-4">Continuing Nursing Education</p>
-                                
-                                <div class="w-full h-px bg-slate-100 mb-4"></div>
-                                
-                                <div class="flex items-center gap-3">
-                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-100">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
-                                        Official Recognition
-                                    </span>
-                                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-impetus-navy/5 text-impetus-navy border border-impetus-navy/10">
-                                        ANSI Aligned
-                                    </span>
-                                </div>
-                            </div>
+                        <div
+                            class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/10 via-transparent to-impetus-navy/10 blur-2xl -z-10">
                         </div>
+                        <img src="{{ asset('images/CNE_Certification.jpeg') }}" alt="CNE Certification"
+                            class="relative w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
                     </div>
                 </div>
             </div>
@@ -79,49 +58,65 @@
 
         <!-- Purpose & Importance Section -->
         <section class="py-24 sm:py-32 relative bg-white border-b border-slate-200/60 overflow-hidden">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-impetus-orange/5 via-transparent to-transparent pointer-events-none"></div>
-            
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-impetus-orange/5 via-transparent to-transparent pointer-events-none">
+            </div>
+
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid items-start gap-16 lg:grid-cols-12">
-                    
+
                     <!-- Purpose Column (Left) -->
                     <div class="lg:col-span-6 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg">
-                        <div class="w-12 h-12 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 mb-6 shadow-md shadow-impetus-orange/10">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 mb-6 shadow-md shadow-impetus-orange/10">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-impetus-navy font-outfit mb-4">Purpose of CNE Certification</h3>
+                        <h3 class="text-2xl font-extrabold text-impetus-navy font-outfit mb-4">Purpose of CNE Certification
+                        </h3>
                         <p class="text-sm text-slate-500 leading-relaxed text-justify mb-6">
-                            Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core performance goals:
+                            Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core
+                            performance goals:
                         </p>
                         <ul class="space-y-4">
-                            <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
-                                <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                            <li
+                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <span
+                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
                                 <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
                                     To promote continuous professional development among nurses
                                 </span>
                             </li>
-                            <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
-                                <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                            <li
+                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <span
+                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
                                 <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
                                     To update clinical knowledge and practical skills
                                 </span>
                             </li>
-                            <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
-                                <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                            <li
+                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <span
+                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
                                 <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
                                     To improve the quality of patient care and safety standards
                                 </span>
                             </li>
-                            <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
-                                <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                            <li
+                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <span
+                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
                                 <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
                                     To strengthen competency in specialized nursing areas
                                 </span>
                             </li>
-                            <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
-                                <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                            <li
+                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <span
+                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
                                 <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
                                     To meet regulatory and professional education requirements
                                 </span>
@@ -131,21 +126,30 @@
 
                     <!-- Importance Column (Right) -->
                     <div class="lg:col-span-6 flex flex-col justify-center h-full">
-                        <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">High Clinical Standards</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-6">Importance of CNE Certification</h2>
-                        
+                        <span
+                            class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">High
+                            Clinical Standards</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-6">
+                            Importance of CNE Certification</h2>
+
                         <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-sm sm:text-base mb-8">
                             <p>
-                                CNE certification plays a vital role in ensuring that nursing professionals maintain high standards of practice by regularly updating their knowledge and skills. It enhances career development, professional credibility, and clinical confidence while contributing to improved healthcare outcomes and patient safety.
+                                CNE certification plays a vital role in ensuring that nursing professionals maintain high
+                                standards of practice by regularly updating their knowledge and skills. It enhances career
+                                development, professional credibility, and clinical confidence while contributing to
+                                improved healthcare outcomes and patient safety.
                             </p>
                         </div>
 
                         <!-- Takeaway Callout Box -->
-                        <div class="p-6 rounded-2xl bg-gradient-to-r from-impetus-navy to-impetus-navy/90 text-white shadow-xl shadow-slate-900/10">
+                        <div
+                            class="p-6 rounded-2xl bg-gradient-to-r from-impetus-navy to-impetus-navy/90 text-white shadow-xl shadow-slate-900/10">
                             <div class="flex gap-4 items-start">
                                 <span class="text-3xl text-impetus-orange font-serif leading-none shrink-0">“</span>
-                                <p class="text-xs sm:text-sm text-slate-200 text-justify leading-relaxed font-outfit italic">
-                                    Overall, CNE certification reflects a commitment to lifelong learning and excellence in nursing practice.
+                                <p
+                                    class="text-xs sm:text-sm text-slate-200 text-justify leading-relaxed font-outfit italic">
+                                    Overall, CNE certification reflects a commitment to lifelong learning and excellence in
+                                    nursing practice.
                                 </p>
                             </div>
                         </div>
@@ -159,16 +163,21 @@
         <section class="border-t border-slate-200/80 bg-white py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center mb-16">
-                    <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Step-By-Step Path</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Certification Journey</h2>
+                    <span
+                        class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Step-By-Step
+                        Path</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">
+                        Certification Journey</h2>
                     <p class="mt-4 text-slate-600 text-justify sm:text-center leading-relaxed">
-                        To empower nurses with continuous learning opportunities that promote excellence in practice, improve healthcare outcomes, and support professional advancement in a dynamic healthcare landscape.
+                        To empower nurses with continuous learning opportunities that promote excellence in practice,
+                        improve healthcare outcomes, and support professional advancement in a dynamic healthcare landscape.
                     </p>
                 </div>
 
                 <!-- Mobile / Tablet Vertical Timeline -->
                 <div class="relative mx-auto max-w-lg lg:hidden">
-                    <div class="absolute start-6 top-3 bottom-3 w-0.5 bg-gradient-to-b from-impetus-orange via-amber-500 to-emerald-500" aria-hidden="true"></div>
+                    <div class="absolute start-6 top-3 bottom-3 w-0.5 bg-gradient-to-b from-impetus-orange via-amber-500 to-emerald-500"
+                        aria-hidden="true"></div>
                     @php
                         $mobileSteps = [
                             ['label' => 'Register', 'tone' => 'from-orange-500 to-amber-500'],
@@ -184,7 +193,8 @@
                     <ol class="relative list-none space-y-0 p-0">
                         @foreach ($mobileSteps as $index => $step)
                             <li class="relative flex gap-4 pb-10 last:pb-0">
-                                <div class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br {{ $step['tone'] }} text-sm font-bold text-white shadow-lg ring-4 ring-white">
+                                <div
+                                    class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br {{ $step['tone'] }} text-sm font-bold text-white shadow-lg ring-4 ring-white">
                                     {{ $index + 1 }}
                                 </div>
                                 <div class="min-w-0 flex-1 pt-1">
@@ -198,19 +208,28 @@
                 <!-- Desktop Snake Flow -->
                 <div class="mt-14 hidden lg:block">
                     @php
-                        $arrowRight = '<svg class="h-8 w-8 shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>';
-                        $arrowLeft = '<svg class="h-8 w-8 shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>';
-                        $arrowDown = '<svg class="h-10 w-10 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>';
+                        $arrowRight =
+                            '<svg class="h-8 w-8 shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>';
+                        $arrowLeft =
+                            '<svg class="h-8 w-8 shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>';
+                        $arrowDown =
+                            '<svg class="h-10 w-10 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>';
                     @endphp
 
                     <div class="mx-auto max-w-5xl">
                         <!-- Row 1: LTR -->
                         <div class="flex flex-wrap items-center justify-center gap-4">
-                            <div class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-orange-500 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-orange-500/25 font-outfit">Register</div>
+                            <div
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-orange-500 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-orange-500/25 font-outfit">
+                                Register</div>
                             {!! $arrowRight !!}
-                            <div class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-500 to-slate-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-slate-500/20 font-outfit">Choose a module</div>
+                            <div
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-500 to-slate-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-slate-500/20 font-outfit">
+                                Choose a module</div>
                             {!! $arrowRight !!}
-                            <div class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-amber-500/25 font-outfit">Take pre-test</div>
+                            <div
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-amber-500/25 font-outfit">
+                                Take pre-test</div>
                         </div>
 
                         <div class="flex justify-end pe-[calc(8%-1rem)] xl:pe-[calc(12.5%-2rem)]">
@@ -219,11 +238,17 @@
 
                         <!-- Row 2: RTL Boxes -->
                         <div class="flex flex-wrap items-center justify-center gap-4">
-                            <div class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-blue-500/25 font-outfit">Use learning resources</div>
+                            <div
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-blue-500/25 font-outfit">
+                                Use learning resources</div>
                             {!! $arrowLeft !!}
-                            <div class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 font-outfit">Practice MCQs</div>
+                            <div
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 font-outfit">
+                                Practice MCQs</div>
                             {!! $arrowLeft !!}
-                            <div class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-orange-600/25 font-outfit">Take mock exam</div>
+                            <div
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-orange-600/25 font-outfit">
+                                Take mock exam</div>
                         </div>
 
                         <div class="flex justify-start ps-[calc(8%-1rem)] xl:ps-[calc(12.5%-2rem)]">
@@ -232,9 +257,13 @@
 
                         <!-- Row 3: LTR -->
                         <div class="flex flex-wrap items-center justify-center gap-4">
-                            <div class="flex min-h-[88px] min-w-[180px] max-w-[240px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-600 to-slate-700 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-slate-600/25 font-outfit">Complete final exam</div>
+                            <div
+                                class="flex min-h-[88px] min-w-[180px] max-w-[240px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-600 to-slate-700 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-slate-600/25 font-outfit">
+                                Complete final exam</div>
                             {!! $arrowRight !!}
-                            <div class="flex min-h-[88px] min-w-[180px] max-w-[280px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-amber-500/30 font-outfit">Download CNE certificate</div>
+                            <div
+                                class="flex min-h-[88px] min-w-[180px] max-w-[280px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-amber-500/30 font-outfit">
+                                Download CNE certificate</div>
                         </div>
                     </div>
                 </div>
