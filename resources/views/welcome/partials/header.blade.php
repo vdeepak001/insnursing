@@ -39,6 +39,8 @@
                     @if (request()->routeIs('practice.test')) aria-current="page" @endif>Practice Test</a>
                 <a href="{{ route('online.examination') }}" class="{{ $navDesktopClass('online.examination') }}"
                     @if (request()->routeIs('online.examination')) aria-current="page" @endif>Online Test</a>
+                <button type="button" @click="$dispatch('open-contact-modal')"
+                    class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-impetus-orange transition-colors font-outfit cursor-pointer focus:outline-none">Contact Us</button>
             </div>
 
             <!-- Mobile Menu Button Toggle -->
@@ -179,6 +181,8 @@
                     <a href="{{ route('online.examination') }}" @click="mobileMenuOpen = false"
                         class="{{ $navMobileClass('online.examination') }}"
                         @if (request()->routeIs('online.examination')) aria-current="page" @endif>Online Test</a>
+                    <button type="button" @click="mobileMenuOpen = false; $dispatch('open-contact-modal')"
+                        class="-mx-3 block w-full rounded-lg px-3 py-2 text-left text-base font-medium leading-7 text-slate-900 hover:bg-slate-50 font-outfit cursor-pointer focus:outline-none">Contact Us</button>
                 </div>
                 @if (Route::has('login'))
                     <div class="mt-8 border-t border-slate-200 pt-6">

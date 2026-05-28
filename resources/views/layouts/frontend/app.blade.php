@@ -122,6 +122,7 @@
 
 <body class="antialiased bg-slate-50 text-slate-800">
     @include('welcome.partials.header')
+    @include('welcome.partials.contact-modal')
     @guest
         @if (Route::has('login'))
             @include('welcome.partials.login-modal')

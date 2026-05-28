@@ -129,7 +129,7 @@
                         <div class="mb-16 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
                             @foreach ($purchasedCourses as $course)
                                 @php
-                                    $title = $course->couse_name;
+                                    $title = \Illuminate\Support\Str::title($course->couse_name);
                                     $detailUrl = route('cne.modules.show', $course->couse_name);
                                     $creditPoints = 'N/A';
                                     if(isset($course->stateCouncils) && $course->stateCouncils->count() > 0) {
@@ -149,7 +149,7 @@
                                                 decoding="async"
                                             >
                                             <div class="absolute inset-0 flex items-center justify-center p-4">
-                                                <span class="block max-w-full text-balance text-center text-base font-bold uppercase leading-snug tracking-tight text-logo-blue sm:text-3xl">
+                                                <span class="block max-w-full text-balance text-center text-base font-bold leading-snug tracking-tight text-logo-blue sm:text-3xl">
                                                     {{ $title ?? '—' }}
                                                 </span>
                                             </div>
@@ -178,7 +178,7 @@
                         <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
                             @foreach ($otherCourses as $course)
                                 @php
-                                    $title = $course->couse_name;
+                                    $title = \Illuminate\Support\Str::title($course->couse_name);
                                     $detailUrl = route('cne.modules.show', $course->couse_name);
                                     $creditPoints = 'N/A';
                                     if(isset($course->stateCouncils) && $course->stateCouncils->count() > 0) {
@@ -198,7 +198,7 @@
                                                 decoding="async"
                                             >
                                             <div class="absolute inset-0 flex items-center justify-center p-4">
-                                                <span class="block max-w-full text-balance text-center text-base font-bold uppercase leading-snug tracking-tight text-logo-blue sm:text-3xl">
+                                                <span class="block max-w-full text-balance text-center text-base font-bold leading-snug tracking-tight text-logo-blue sm:text-3xl">
                                                     {{ $title ?? '—' }}
                                                 </span>
                                             </div>

@@ -67,6 +67,8 @@ Route::view('/faq', 'faq')->name('faq');
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy.policy');
 Route::view('/terms-and-conditions', 'terms-and-conditions')->name('terms.conditions');
 
+Route::post('/contact-submit', [\App\Http\Controllers\ContactController::class, 'submit'])->name('contact.submit');
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
