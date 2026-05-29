@@ -76,7 +76,7 @@
                         </div>
                         <h3 class="text-2xl font-extrabold text-impetus-navy font-outfit mb-4">Purpose of CNE Certification
                         </h3>
-                        <p class="text-sm text-slate-500 leading-relaxed text-justify mb-6">
+                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed text-justify mb-6">
                             Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core
                             performance goals:
                         </p>
@@ -85,7 +85,7 @@
                                 class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span
                                     class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To promote continuous professional development among nurses
                                 </span>
                             </li>
@@ -93,7 +93,7 @@
                                 class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span
                                     class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To update clinical knowledge and practical skills
                                 </span>
                             </li>
@@ -101,7 +101,7 @@
                                 class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span
                                     class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To improve the quality of patient care and safety standards
                                 </span>
                             </li>
@@ -109,7 +109,7 @@
                                 class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span
                                     class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To strengthen competency in specialized nursing areas
                                 </span>
                             </li>
@@ -117,7 +117,7 @@
                                 class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span
                                     class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To meet regulatory and professional education requirements
                                 </span>
                             </li>
@@ -147,7 +147,7 @@
                             <div class="flex gap-4 items-start">
                                 <span class="text-3xl text-impetus-orange font-serif leading-none shrink-0">“</span>
                                 <p
-                                    class="text-xs sm:text-sm text-slate-200 text-justify leading-relaxed font-outfit italic">
+                                    class="text-sm sm:text-base text-slate-200 text-justify leading-relaxed font-outfit italic">
                                     Overall, CNE certification reflects a commitment to lifelong learning and excellence in
                                     nursing practice.
                                 </p>
