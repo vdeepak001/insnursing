@@ -14,7 +14,7 @@
             </div>
 
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid items-center gap-16 lg:grid-cols-12">
+                <div class="grid items-center gap-16 lg:grid-cols-12 mb-16">
                     <div class="lg:col-span-7">
                         <span
                             class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Who
@@ -47,18 +47,6 @@
                                 accessible and high-quality education for healthcare professionals across different regions.
                             </p>
                         </div>
-
-                        <!-- Commitment Card -->
-                        <div
-                            class="mt-8 p-6 rounded-2xl bg-gradient-to-r from-impetus-navy to-impetus-navy/90 text-white shadow-xl shadow-slate-900/10">
-                            <p class="font-semibold font-outfit text-impetus-orange mb-2 text-xs uppercase tracking-wider">
-                                Our Core Vision & Goal</p>
-                            <p class="text-xs sm:text-sm text-slate-300 text-justify leading-relaxed">
-                                The organization aims to support lifelong learning in healthcare by empowering professionals
-                                with updated clinical knowledge, practical expertise, and industry-relevant competencies
-                                that contribute to improved patient care and healthcare outcomes.
-                            </p>
-                        </div>
                     </div>
 
                     <!-- Right Column: Visual / Image Wrapper -->
@@ -76,9 +64,9 @@
                             </div>
                         </div>
 
-                        <!-- Floating Glass Metric Card -->
+                        <!-- Competency Card Underneath Image -->
                         <div
-                            class="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-md border border-slate-200/80 p-5 rounded-2xl shadow-xl flex items-center gap-4 max-w-xs hover:scale-105 transition-transform duration-300">
+                            class="mt-6 bg-white border border-slate-200/80 p-5 rounded-2xl shadow-lg flex items-center gap-4 hover:scale-[1.02] transition-transform duration-300">
                             <div
                                 class="w-12 h-12 rounded-xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,6 +80,25 @@
                                     safety and patient outcomes.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Full-Width Our Core Vision & Goal Card -->
+                <div
+                    class="p-8 sm:p-10 rounded-[2.5rem] bg-gradient-to-br from-impetus-navy to-slate-900 text-white shadow-xl shadow-slate-900/10 border border-white/5 relative overflow-hidden">
+                    <!-- Decorative glowing vector details -->
+                    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-impetus-orange/10 rounded-full blur-3xl pointer-events-none"></div>
+                    <div class="absolute -left-20 -top-20 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                    <div class="relative z-10">
+                        <p class="font-extrabold font-outfit text-impetus-orange mb-4 text-sm sm:text-base uppercase tracking-widest text-center">
+                            Our Core Vision & Goal
+                        </p>
+                        <p class="text-base sm:text-lg md:text-xl text-slate-200 text-justify leading-relaxed max-w-5xl mx-auto font-sans">
+                            The organization aims to support lifelong learning in healthcare by empowering professionals
+                            with updated clinical knowledge, practical expertise, and industry-relevant competencies
+                            that contribute to improved patient care and healthcare outcomes.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -176,7 +183,7 @@
                         </div>
                         <h3 class="text-xl font-extrabold text-impetus-navy font-outfit mb-4">Skilled Birth Attendant Role
                         </h3>
-                        <p class="text-sm text-slate-500 leading-relaxed text-justify mb-6">
+                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed text-justify mb-6">
                             Nurses have an important role in significantly reducing the maternal mortality rate (MMR) and
                             infant mortality rate (IMR) as Skilled Birth Attendants by providing:
                         </p>
@@ -185,7 +192,7 @@
                                 class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span
                                     class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     <strong>Comprehensive Care:</strong> Delivering professional antenatal, intranatal and
                                     postnatal care.
                                 </span>
@@ -194,7 +201,7 @@
                                 class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span
                                     class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     <strong>Timely Identification:</strong> Quick assessment and identification of potential
                                     clinical complications.
                                 </span>
@@ -203,7 +210,7 @@
                                 class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span
                                     class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     <strong>Basic Management & Referral:</strong> Administering immediate primary care,
                                     followed by timely referral to higher centers.
                                 </span>
