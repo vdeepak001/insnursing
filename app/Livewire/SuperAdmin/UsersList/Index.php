@@ -70,7 +70,8 @@ class Index extends Component
                     || str_contains(mb_strtolower($user->first_name ?? ''), $searchTerm)
                     || str_contains(mb_strtolower($user->last_name ?? ''), $searchTerm)
                     || str_contains(mb_strtolower($user->email ?? ''), $searchTerm)
-                    || str_contains(mb_strtolower($user->phone ?? ''), $searchTerm);
+                    || str_contains(mb_strtolower($user->phone ?? ''), $searchTerm)
+                    || str_contains(mb_strtolower($user->state ?? ''), $searchTerm);
             });
         });
 
