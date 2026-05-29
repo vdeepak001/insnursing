@@ -56,7 +56,7 @@
                         </div>
                         <div
                             class="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-3 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            <img src="{{ asset('images/Screenshot-2026-05-19-073517.webp') }}"
                                 alt="Healthcare training and excellence"
                                 class="w-full h-[450px] object-cover rounded-2xl shadow-inner" />
                             <div
@@ -87,14 +87,20 @@
                 <div
                     class="p-8 sm:p-10 rounded-[2.5rem] bg-gradient-to-br from-impetus-navy to-slate-900 text-white shadow-xl shadow-slate-900/10 border border-white/5 relative overflow-hidden">
                     <!-- Decorative glowing vector details -->
-                    <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-impetus-orange/10 rounded-full blur-3xl pointer-events-none"></div>
-                    <div class="absolute -left-20 -top-20 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+                    <div
+                        class="absolute -right-20 -bottom-20 w-64 h-64 bg-impetus-orange/10 rounded-full blur-3xl pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute -left-20 -top-20 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none">
+                    </div>
 
                     <div class="relative z-10">
-                        <p class="font-extrabold font-outfit text-impetus-orange mb-4 text-sm sm:text-base uppercase tracking-widest text-center">
+                        <p
+                            class="font-extrabold font-outfit text-impetus-orange mb-4 text-sm sm:text-base uppercase tracking-widest text-center">
                             Our Core Vision & Goal
                         </p>
-                        <p class="text-base sm:text-lg md:text-xl text-slate-200 text-justify leading-relaxed max-w-5xl mx-auto font-sans">
+                        <p
+                            class="text-base sm:text-lg md:text-xl text-slate-200 text-justify leading-relaxed max-w-5xl mx-auto font-sans">
                             The organization aims to support lifelong learning in healthcare by empowering professionals
                             with updated clinical knowledge, practical expertise, and industry-relevant competencies
                             that contribute to improved patient care and healthcare outcomes.
@@ -274,7 +280,8 @@
                                 <div>
                                     <h4 class="text-lg font-extrabold text-impetus-navy font-outfit">Research & Development
                                     </h4>
-                                    <p class="text-xs font-semibold text-slate-400 mt-0.5 tracking-wider uppercase font-outfit">
+                                    <p
+                                        class="text-xs font-semibold text-slate-400 mt-0.5 tracking-wider uppercase font-outfit">
                                         Continuous Evaluation Core</p>
                                 </div>
                                 <span
@@ -288,7 +295,8 @@
                                         class="w-9 h-9 rounded-lg bg-impetus-lightOrange text-impetus-orange flex items-center justify-center shrink-0 text-sm font-bold font-outfit">
                                         1</div>
                                     <div>
-                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">Issue &
+                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">
+                                            Issue &
                                             Setting-Based Designs</h5>
                                         <p class="text-xs sm:text-sm text-slate-500 leading-relaxed text-justify">Addressing
                                             existing and emerging healthcare challenges across India.</p>
@@ -299,9 +307,11 @@
                                         class="w-9 h-9 rounded-lg bg-impetus-lightOrange text-impetus-orange flex items-center justify-center shrink-0 text-sm font-bold font-outfit">
                                         2</div>
                                     <div>
-                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">Actionable Health
+                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">
+                                            Actionable Health
                                             Promotion Models</h5>
-                                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed text-justify">Bridging the
+                                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed text-justify">Bridging
+                                            the
                                             practice gap and directly improving national health indicators.</p>
                                     </div>
                                 </div>
@@ -310,9 +320,11 @@
                                         class="w-9 h-9 rounded-lg bg-impetus-lightOrange text-impetus-orange flex items-center justify-center shrink-0 text-sm font-bold font-outfit">
                                         3</div>
                                     <div>
-                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">Continuous
+                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">
+                                            Continuous
                                             Monitoring & Evaluation</h5>
-                                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed text-justify">Establishing
+                                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed text-justify">
+                                            Establishing
                                             absolute value and transparency with well-defined metrics.</p>
                                     </div>
                                 </div>
