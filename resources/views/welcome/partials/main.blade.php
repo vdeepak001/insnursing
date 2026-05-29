@@ -635,14 +635,14 @@
                                         alt="{{ $course->couse_name }}"
                                         class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-impetus-navy/80 via-impetus-navy/55 to-impetus-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
+                                    <div class="absolute inset-0 bg-[#1d2a57]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
                                     <span
-                                        class="relative z-20 block max-w-full text-balance text-center text-2xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
+                                        class="relative z-20 block max-w-full text-balance text-center text-3xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
 
-                                <p class="mt-3 text-sm leading-relaxed text-slate-500 text-justify line-clamp-3">
+                                <p class="mt-3 text-base leading-relaxed text-slate-500 text-justify line-clamp-3">
                                     {{ \Illuminate\Support\Str::words(strip_tags($course->description), 18, '...') }}
                                 </p>
                             </a>
@@ -659,14 +659,14 @@
                                         alt="{{ $course->couse_name }}"
                                         class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy">
-                                    <div class="absolute inset-0 bg-gradient-to-t from-impetus-navy/80 via-impetus-navy/55 to-impetus-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
+                                    <div class="absolute inset-0 bg-[#1d2a57]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
                                     <span
-                                        class="relative z-20 block max-w-full text-balance text-center text-2xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
+                                        class="relative z-20 block max-w-full text-balance text-center text-3xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
 
-                                <p class="mt-3 text-sm leading-relaxed text-slate-500 text-justify line-clamp-3">
+                                <p class="mt-3 text-base leading-relaxed text-slate-500 text-justify line-clamp-3">
                                     {{ \Illuminate\Support\Str::words(strip_tags($course->description), 18, '...') }}
                                 </p>
                             </a>
