@@ -17,7 +17,7 @@
                             CNE Learning Resources
                         </h1>
                         
-                        <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-sm sm:text-base">
+                        <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-base sm:text-lg">
                             <p>
                                 <strong>Learning resources</strong> in Online Continuing Nursing Education (CNE) refer to a wide range of digital educational materials and tools designed to support effective, flexible, and self-paced learning for nurses and healthcare professionals. These resources are developed to enhance clinical knowledge, strengthen practical skills, and promote evidence-based nursing practice in an accessible online learning environment.
                             </p>
@@ -27,70 +27,11 @@
                         </div>
                     </div>
 
-                    <!-- Right Column: Visual Dashboard/Graphics widget -->
-                    <div class="lg:col-span-5 relative">
+                    <!-- Right Column: Visual Graphic -->
+                    <div class="lg:col-span-5 relative flex items-center justify-center">
                         <div class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/10 via-transparent to-impetus-navy/10 blur-2xl -z-10"></div>
-                        <div class="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-4 shadow-2xl">
-                            <!-- SVG Graphic Representation -->
-                            <svg class="w-full h-auto max-h-[350px]" viewBox="0 0 500 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Background grid/dots -->
-                                <defs>
-                                    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                                        <circle cx="2" cy="2" r="1" fill="#E2E8F0" />
-                                    </pattern>
-                                </defs>
-                                <rect width="500" height="350" rx="16" fill="url(#grid)" />
-                                
-                                <!-- Base Glows -->
-                                <circle cx="250" cy="175" r="120" fill="#F36E21" opacity="0.05" filter="blur(40px)" />
-                                <circle cx="380" cy="220" r="80" fill="#0A1931" opacity="0.05" filter="blur(30px)" />
-                                
-                                <!-- Laptop screen representation -->
-                                <rect x="80" y="50" width="340" height="220" rx="12" fill="#0A1931" stroke="#1E293B" stroke-width="4" />
-                                <!-- Screen content area -->
-                                <rect x="90" y="60" width="320" height="180" rx="6" fill="#F8FAFC" />
-                                
-                                <!-- Laptop Base -->
-                                <path d="M50 270 L450 270 C460 270 460 280 450 282 L50 282 C40 282 40 270 50 270 Z" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="2" />
-                                <rect x="220" y="270" width="60" height="6" rx="3" fill="#94A3B8" />
-
-                                <!-- Screen dashboard content -->
-                                <!-- Left panel (Sidebar) -->
-                                <rect x="100" y="70" width="80" height="160" rx="4" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
-                                <rect x="110" y="80" width="60" height="8" rx="2" fill="#F36E21" opacity="0.8" />
-                                <rect x="110" y="96" width="50" height="6" rx="2" fill="#94A3B8" opacity="0.4" />
-                                <rect x="110" y="108" width="55" height="6" rx="2" fill="#94A3B8" opacity="0.4" />
-                                <rect x="110" y="120" width="45" height="6" rx="2" fill="#94A3B8" opacity="0.4" />
-                                
-                                <!-- Video Player widget (Right Top) -->
-                                <rect x="190" y="70" width="210" height="95" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
-                                <rect x="195" y="75" width="200" height="65" rx="4" fill="#0F172A" />
-                                <!-- Play button -->
-                                <circle cx="295" cy="107" r="16" fill="#F36E21" />
-                                <path d="M291 100 L303 107 L291 114 Z" fill="white" />
-                                
-                                <!-- Progress Indicator -->
-                                <rect x="195" y="148" width="130" height="6" rx="3" fill="#E2E8F0" />
-                                <rect x="195" y="148" width="85" height="6" rx="3" fill="#F36E21" />
-                                <circle cx="340" cy="151" r="5" fill="#34D399" />
-                                <rect x="350" y="148" width="45" height="6" rx="3" fill="#94A3B8" opacity="0.4" />
-
-                                <!-- Stats/Analytics widget (Right Bottom) -->
-                                <rect x="190" y="175" width="100" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
-                                <circle cx="215" cy="202" r="14" fill="#E0F2FE" />
-                                <!-- Book icon lines -->
-                                <path d="M210 196 H220 M210 202 H220 M210 208 H216" stroke="#0284C7" stroke-width="1.5" stroke-linecap="round" />
-                                <rect x="235" y="190" width="45" height="8" rx="2" fill="#0A1931" />
-                                <rect x="235" y="204" width="35" height="6" rx="2" fill="#94A3B8" />
-
-                                <!-- Performance gauge widget (Right Bottom 2) -->
-                                <rect x="300" y="175" width="100" height="55" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" />
-                                <circle cx="325" cy="202" r="14" fill="#ECFDF5" />
-                                <path d="M320 206 L324 200 L327 203 L332 196" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <rect x="345" y="190" width="45" height="8" rx="2" fill="#059669" />
-                                <rect x="345" y="204" width="30" height="6" rx="2" fill="#94A3B8" />
-                            </svg>
-                        </div>
+                        <img src="{{ asset('images/Benefits-of-E-Learning-Materials-1024x585.png') }}" alt="CNE Learning Resources"
+                            class="relative w-full max-w-[400px] h-auto rounded-[2rem] shadow-2xl border border-slate-200/60 transition-transform duration-500 hover:scale-[1.02]">
                     </div>
                 </div>
             </div>
@@ -102,7 +43,6 @@
             
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center mb-16">
-                    <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">High-Fidelity Assets</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">
                         Features of CNE Learning Resources
                     </h2>
@@ -120,7 +60,7 @@
                             </svg>
                         </div>
                         <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Universal Access</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Easily accessible anytime and anywhere through modern, responsive digital learning platforms.
                         </p>
                     </div>
@@ -133,7 +73,7 @@
                             </svg>
                         </div>
                         <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Evidence-Based Focus</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Designed specifically based on evidence-based nursing standards, peer-reviewed clinical guidelines, and protocols.
                         </p>
                     </div>
@@ -146,7 +86,7 @@
                             </svg>
                         </div>
                         <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Continuous Updates</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Regularly updated in real time to reflect current healthcare practices, drug formulas, and clinical discoveries.
                         </p>
                     </div>
@@ -159,7 +99,7 @@
                             </svg>
                         </div>
                         <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Adaptive Learning Paths</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Highly suitable for self-paced independent study as well as highly structured formal educational models.
                         </p>
                     </div>
@@ -172,7 +112,7 @@
                             </svg>
                         </div>
                         <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Multimodal Integration</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Supports different learning styles including visual, auditory, and practical learners, using a blend of audio-video lectures, simulation guides, clinical mock-ups, and reference files.
                         </p>
                     </div>
@@ -187,7 +127,6 @@
                     
                     <!-- Importance Copy (Left) -->
                     <div class="lg:col-span-7">
-                        <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Enhanced Competency</span>
                         <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-6">
                             Importance of Learning Resources in Online CNE
                         </h2>
@@ -204,9 +143,8 @@
                             <div class="absolute right-0 bottom-0 translate-x-12 translate-y-12 w-48 h-48 bg-impetus-orange/10 rounded-full blur-2xl"></div>
                             
                             <div class="relative flex flex-col gap-4">
-                                <span class="text-4xl text-impetus-orange font-serif leading-none">“</span>
-                                <p class="text-xs sm:text-sm text-slate-200 text-justify leading-relaxed font-outfit italic">
-                                    Overall, well-designed learning resources in online CNE ensure continuous professional development and strengthen the knowledge base of the nursing workforce within a flexible digital learning environment.
+                                <p class="text-sm sm:text-base text-slate-200 text-justify leading-relaxed font-outfit italic">
+                                    “Overall, well-designed learning resources in online CNE ensure continuous professional development and strengthen the knowledge base of the nursing workforce within a flexible digital learning environment.”
                                 </p>
                             </div>
                         </div>

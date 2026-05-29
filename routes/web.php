@@ -1,8 +1,13 @@
 <?php
 
+use App\Enums\CourseTestType;
+use App\Enums\PaymentStatus;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\CneModulesController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SuperAdmin\AdminUserController;
 use App\Http\Controllers\SuperAdmin\CourseDetailController;
 use App\Http\Controllers\SuperAdmin\CourseMaterialController;
@@ -17,10 +22,13 @@ use App\Http\Controllers\SuperAdmin\StateController;
 use App\Http\Controllers\SuperAdmin\StateCouncilController;
 use App\Http\Controllers\SuperAdmin\UserCourseOrderController;
 use App\Http\Controllers\SuperAdmin\UsersListController;
+use App\Models\CourseDetail;
+use App\Models\CourseTestAttempt;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $latestCourses = \App\Models\CourseDetail::where('active_status', 1)
+    $latestCourses = CourseDetail::where('active_status', 1)
         ->orderByRaw('CASE WHEN sequence IS NULL THEN 1 ELSE 0 END')
         ->orderBy('sequence')
         ->orderBy('id')
@@ -59,7 +67,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->name('cne.modules.test');
 });
 Route::view('/cpd-certifications', 'cpd-certifications')->name('cpd.certifications');
-Route::view('/learning-materials', 'learning-materials')->name('learning.materials');
+Route::view('/learning-resources', 'learning-materials')->name('learning.materials');
 Route::get('/practice-test', [CneModulesController::class, 'practiceIndex'])->name('practice.test');
 Route::view('/online-examination', 'online-examination')->name('online.examination');
 
@@ -67,25 +75,25 @@ Route::view('/faq', 'faq')->name('faq');
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy.policy');
 Route::view('/terms-and-conditions', 'terms-and-conditions')->name('terms.conditions');
 
-Route::post('/contact-submit', [\App\Http\Controllers\ContactController::class, 'submit'])->name('contact.submit');
+Route::post('/contact-submit', [ContactController::class, 'submit'])->name('contact.submit');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', function () {
         if (auth()->user()?->role_type === 'user') {
-            $purchasedCourses = \App\Models\Order::query()
+            $purchasedCourses = Order::query()
                 ->with('courseDetail:id,couse_name')
                 ->where('user_id', auth()->id())
-                ->where('payment_status', \App\Enums\PaymentStatus::Completed)
+                ->where('payment_status', PaymentStatus::Completed)
                 ->latest('id')
                 ->get()
                 ->map(function ($order) {
-                    $order->completion = \App\Models\CourseTestAttempt::query()
+                    $order->completion = CourseTestAttempt::query()
                         ->where('user_id', $order->user_id)
                         ->where('course_detail_id', $order->course_detail_id)
-                        ->where('test_type', \App\Enums\CourseTestType::Final)
-                        ->where('status', \App\Models\CourseTestAttempt::STATUS_COMPLETED)
+                        ->where('test_type', CourseTestType::Final)
+                        ->where('status', CourseTestAttempt::STATUS_COMPLETED)
                         ->where('started_at', '>=', $order->created_at)
                         ->orderByDesc('passed')
                         ->latest('completed_at')
@@ -111,13 +119,12 @@ Route::middleware('auth')->group(function () {
         return view('profile.change-password');
     })->name('profile.change-password');
 
-    Route::get('/certificates/{order}/download', [\App\Http\Controllers\CertificateController::class, 'download'])->name('certificates.download');
+    Route::get('/certificates/{order}/download', [CertificateController::class, 'download'])->name('certificates.download');
 
-    Route::patch('/profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 Route::post('/payment/ccavenue/callback', [CartController::class, 'ccavenueCallback'])->name('payment.ccavenue.callback');
-
 
 $prefixes = ['super-admin', 'admin', 'sme', 'support'];
 
@@ -173,14 +180,14 @@ foreach ($prefixes as $prefix) {
                 ->only(['index'])
                 ->names($prefix.'.course-details')
                 ->parameters(['course-details' => 'course_detail']);
-                
+
             Route::resource('course-sub-titles', CourseSubTitleController::class)
                 ->only(['index'])
                 ->names($prefix.'.course-sub-titles')
                 ->parameters(['course-sub-titles' => 'course_sub_title']);
         }
 
-        if (!in_array($prefix, ['super-admin'], true)) {
+        if (! in_array($prefix, ['super-admin'], true)) {
             Route::resource('course-titles', CourseTitleController::class)
                 ->only(['index'])
                 ->names($prefix.'.course-titles')
@@ -190,7 +197,7 @@ foreach ($prefixes as $prefix) {
         if (in_array($prefix, ['super-admin', 'admin'], true)) {
             Route::get('title-materials/get-existing-attachments', [CourseMaterialController::class, 'getExistingAttachments'])
                 ->name($prefix.'.title-materials.get-existing-attachments');
-                
+
             Route::resource('title-materials', CourseMaterialController::class)
                 ->names($prefix.'.title-materials')
                 ->parameters(['title-materials' => 'title_material']);
@@ -221,7 +228,6 @@ foreach ($prefixes as $prefix) {
                 ->names($prefix.'.course-questions')
                 ->parameters(['course-questions' => 'course_question']);
         }
-
 
         if (in_array($prefix, ['super-admin', 'admin'], true)) {
             Route::resource('states', StateController::class)
