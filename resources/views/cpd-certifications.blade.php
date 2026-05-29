@@ -176,18 +176,18 @@
 
                 <!-- Mobile / Tablet Vertical Timeline -->
                 <div class="relative mx-auto max-w-lg lg:hidden">
-                    <div class="absolute start-6 top-3 bottom-3 w-0.5 bg-gradient-to-b from-impetus-orange via-amber-500 to-emerald-500"
+                    <div class="absolute start-6 top-3 bottom-3 w-0.5 bg-gradient-to-b from-impetus-orange via-[#8c4324] to-impetus-navy"
                         aria-hidden="true"></div>
                     @php
                         $mobileSteps = [
-                            ['label' => 'Register', 'tone' => 'from-orange-500 to-amber-500'],
-                            ['label' => 'Choose a module', 'tone' => 'from-slate-500 to-slate-600'],
-                            ['label' => 'Take pre-test', 'tone' => 'from-amber-400 to-yellow-500'],
-                            ['label' => 'Use learning resources', 'tone' => 'from-blue-500 to-logo-blue'],
-                            ['label' => 'Practice MCQs', 'tone' => 'from-emerald-500 to-teal-600'],
-                            ['label' => 'Take mock exam', 'tone' => 'from-orange-500 to-orange-600'],
-                            ['label' => 'Complete final exam', 'tone' => 'from-slate-500 to-slate-700'],
-                            ['label' => 'Download CNE certificate', 'tone' => 'from-amber-400 to-amber-500'],
+                            ['label' => 'Register', 'tone' => 'from-impetus-orange to-[#e05d14] shadow-impetus-orange/20'],
+                            ['label' => 'Choose a module', 'tone' => 'from-impetus-navy to-[#112547] shadow-impetus-navy/20'],
+                            ['label' => 'Take pre-test', 'tone' => 'from-impetus-orange to-[#e05d14] shadow-impetus-orange/20'],
+                            ['label' => 'Use learning resources', 'tone' => 'from-impetus-navy to-[#112547] shadow-impetus-navy/20'],
+                            ['label' => 'Practice MCQs', 'tone' => 'from-impetus-orange to-[#e05d14] shadow-impetus-orange/20'],
+                            ['label' => 'Take mock exam', 'tone' => 'from-impetus-navy to-[#112547] shadow-impetus-navy/20'],
+                            ['label' => 'Complete final exam', 'tone' => 'from-impetus-orange to-[#e05d14] shadow-impetus-orange/20'],
+                            ['label' => 'Download CNE certificate', 'tone' => 'from-impetus-navy to-[#112547] shadow-impetus-navy/20'],
                         ];
                     @endphp
                     <ol class="relative list-none space-y-0 p-0">
@@ -220,15 +220,15 @@
                         <!-- Row 1: LTR -->
                         <div class="flex flex-wrap items-center justify-center gap-4">
                             <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-orange-500 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-orange-500/25 font-outfit">
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange to-[#e05d14] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-orange/20 font-outfit">
                                 Register</div>
                             {!! $arrowRight !!}
                             <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-500 to-slate-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-slate-500/20 font-outfit">
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-navy to-[#112547] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-navy/20 font-outfit">
                                 Choose a module</div>
                             {!! $arrowRight !!}
                             <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-amber-500/25 font-outfit">
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange to-[#e05d14] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-orange/20 font-outfit">
                                 Take pre-test</div>
                         </div>
 
@@ -239,15 +239,15 @@
                         <!-- Row 2: RTL Boxes -->
                         <div class="flex flex-wrap items-center justify-center gap-4">
                             <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-blue-500/25 font-outfit">
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-navy to-[#112547] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-navy/20 font-outfit">
                                 Use learning resources</div>
                             {!! $arrowLeft !!}
                             <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-emerald-500/25 font-outfit">
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange to-[#e05d14] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-orange/20 font-outfit">
                                 Practice MCQs</div>
                             {!! $arrowLeft !!}
                             <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-orange-600/25 font-outfit">
+                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-navy to-[#112547] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-navy/20 font-outfit">
                                 Take mock exam</div>
                         </div>
 
@@ -258,11 +258,11 @@
                         <!-- Row 3: LTR -->
                         <div class="flex flex-wrap items-center justify-center gap-4">
                             <div
-                                class="flex min-h-[88px] min-w-[180px] max-w-[240px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-600 to-slate-700 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-slate-600/25 font-outfit">
+                                class="flex min-h-[88px] min-w-[180px] max-w-[240px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange to-[#e05d14] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-orange/20 font-outfit">
                                 Complete final exam</div>
                             {!! $arrowRight !!}
                             <div
-                                class="flex min-h-[88px] min-w-[180px] max-w-[280px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-amber-500/30 font-outfit">
+                                class="flex min-h-[88px] min-w-[180px] max-w-[280px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-navy to-[#112547] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-navy/20 font-outfit">
                                 Download CNE certificate</div>
                         </div>
                     </div>
