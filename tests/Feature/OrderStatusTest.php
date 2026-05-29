@@ -56,9 +56,24 @@ it('lists orders and displays parsed order status ID on order status page', func
 
     $response = $this->actingAs($staff)->get(route('super-admin.order-status.index'));
 
-    $response->assertSuccessful();
     $response->assertSee('John Doe');
     $response->assertSee('IHS42T1234567890');
     $response->assertSee('114537784967');
     $response->assertDontSee('<td>' . $manualOrder->id . '</td>', false);
+
+    // Verify filtering by pending CCAvenue transaction ID
+    $filterPendingResponse = $this->actingAs($staff)->get(route('super-admin.order-status.index', [
+        'search' => 'IHS42T1234567890',
+    ]));
+    $filterPendingResponse->assertSuccessful();
+    $filterPendingResponse->assertSee('IHS42T1234567890');
+    $filterPendingResponse->assertDontSee('114537784967');
+
+    // Verify filtering by completed CCAvenue tracking ID
+    $filterCompletedResponse = $this->actingAs($staff)->get(route('super-admin.order-status.index', [
+        'search' => '114537784967',
+    ]));
+    $filterCompletedResponse->assertSuccessful();
+    $filterCompletedResponse->assertSee('114537784967');
+    $filterCompletedResponse->assertDontSee('IHS42T1234567890');
 });

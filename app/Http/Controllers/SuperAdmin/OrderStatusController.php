@@ -36,7 +36,8 @@ class OrderStatusController extends Controller
                         ->orWhereHas('courseDetail', function ($courseQuery) use ($search) {
                             $courseQuery->where('couse_name', 'like', '%'.$search.'%');
                         })
-                        ->orWhere('id', 'like', '%'.$search.'%');
+                        ->orWhere('id', 'like', '%'.$search.'%')
+                        ->orWhere('remarks', 'like', '%'.$search.'%');
                 });
             })
             ->latest('id')
