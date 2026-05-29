@@ -154,28 +154,24 @@
             <div
                 class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
                 <div class="pt-4 md:pt-0">
-                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-navy font-outfit block">98%</span>
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-navy font-outfit block">26</span>
                     <span
-                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Course
-                        Completion Rate</span>
+                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">CNE Modules</span>
                 </div>
                 <div class="pt-4 md:pt-0">
-                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">4.9/5</span>
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">1.4 Lakhs+</span>
                     <span
-                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">User
-                        Satisfaction Rating</span>
+                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Active Users</span>
                 </div>
                 <div class="pt-4 md:pt-0">
-                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">1.8M+</span>
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">4.9</span>
                     <span
-                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Hours
-                        of Learning Cataloged</span>
+                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Users Rating</span>
                 </div>
                 <div class="pt-4 md:pt-0">
                     <span class="text-4xl sm:text-5xl font-extrabold text-impetus-navy font-outfit block">100%</span>
                     <span
-                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Accredited
-                        Course Content</span>
+                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Accredited Course Content</span>
                 </div>
             </div>
         </div>
@@ -190,11 +186,11 @@
         </div>
         <div class="max-w-7xl mx-auto px-6 sm:px-8">
             <div class="mx-auto max-w-3xl text-center mb-16">
-                <h2 class="text-base font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3">Our Core
-                    Foundation</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">Vision and
-                    Mission Guiding Clinical Development</p>
-                <p class="mt-4 text-slate-600 text-justify text-base sm:text-lg leading-relaxed">
+
+                <p class="text-3xl sm:text-4xl font-extrabold text-impetus-orange tracking-tight font-outfit">Vision
+                    and
+                    Mission </p>
+                <p class="mt-4 text-slate-600 text-center text-base sm:text-lg leading-relaxed">
                     At IHS Nursing Solutions, we are dedicated to providing meaningful continuing education that fosters
                     professional excellence and improves healthcare delivery.
                 </p>
@@ -212,7 +208,9 @@
                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3.75 13.5l7.5-7.5 7.5 7.5M5.25 12v7.125c0 .621.504 1.125 1.125 1.125h3.375V16.5c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v3.75h3.375c.621 0 1.125-.504 1.125-1.125V12" />
+                                d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
                     <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-impetus-navy font-outfit">Our Vision</h3>
@@ -233,9 +231,12 @@
                         class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9.813 15.904L9 18.75l-2.844-.813a4.5 4.5 0 01-1.614-7.509l7.636-7.636a3.375 3.375 0 114.773 4.773l-7.636 7.636a4.5 4.5 0 01-.502.435z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 5.25l6 6" />
+                            <circle cx="12" cy="12" r="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="6" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="12" cy="12" r="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                     </div>
                     <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-impetus-navy font-outfit">Our Mission</h3>
@@ -341,8 +342,7 @@
                     </div>
                 </div>
                 <div class="lg:col-span-5 relative">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                        alt="Nursing Team"
+                    <img src="{{ asset('images/Screenshot-2026-05-19-073517.webp') }}" alt="Nursing Team"
                         class="w-full max-w-none rounded-3xl shadow-2xl ring-1 ring-slate-400/10 object-cover h-[500px] sm:h-[600px] lg:h-[650px]" />
                     <div
                         class="absolute -inset-4 rounded-3xl ring-1 ring-inset ring-slate-900/10 -z-10 bg-impetus-orange/5">
@@ -400,7 +400,7 @@
                     Sets Us Apart</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">IHS’ Core
                     Strengths</h2>
-                <p class="mt-4 text-slate-600 text-justify leading-relaxed text-base sm:text-lg">
+                <p class="mt-4 text-slate-600 text-center leading-relaxed text-base sm:text-lg">
                     Impetus Healthcare Skills Private Limited has strong expertise in simulation-based healthcare
                     training and online education, enabling healthcare professionals to acquire practical knowledge and
                     clinical competence through innovative learning methods. Our key strengths include:
@@ -635,7 +635,9 @@
                                         alt="{{ $course->couse_name }}"
                                         class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy">
-                                    <div class="absolute inset-0 bg-[#1d2a57]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
+                                    <div
+                                        class="absolute inset-0 bg-[#1d2a57]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+                                    </div>
                                     <span
                                         class="relative z-20 block max-w-full text-balance text-center text-3xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
                                         {{ $course->couse_name }}
@@ -659,7 +661,9 @@
                                         alt="{{ $course->couse_name }}"
                                         class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy">
-                                    <div class="absolute inset-0 bg-[#1d2a57]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
+                                    <div
+                                        class="absolute inset-0 bg-[#1d2a57]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+                                    </div>
                                     <span
                                         class="relative z-20 block max-w-full text-balance text-center text-3xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
                                         {{ $course->couse_name }}
