@@ -277,7 +277,8 @@
     @endphp
 
     <div class="cert-background">
-        <img src="{{ public_path('images/A4 Certificate.png') }}" style="width: 100%; height: 100%; display: block;" />
+        <img src="{{ public_path('images/certificate-design.jpeg') }}"
+            style="width: 100%; height: 100%; display: block;" />
     </div>
 
     <div class="watermark">

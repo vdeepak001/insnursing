@@ -630,13 +630,14 @@
                                 class="group block w-[350px] flex-none flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-md hover:shadow-xl hover:border-impetus-orange/30 transition-all duration-300">
                                 <div
                                     class="relative h-48 w-full overflow-hidden rounded-2xl bg-slate-100 flex items-center justify-center p-4">
-                                    <img src="{{ asset('images/course_bg.jpeg') }}"
+                                    <img src="{{ asset('images/Course-Labels.jpeg') }}"
                                         onerror="this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'"
                                         alt="{{ $course->couse_name }}"
                                         class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-impetus-navy/80 via-impetus-navy/55 to-impetus-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
                                     <span
-                                        class="relative z-10 block max-w-full text-balance text-center text-lg font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-colors">
+                                        class="relative z-20 block max-w-full text-balance text-center text-2xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
@@ -653,13 +654,14 @@
                                 class="group block w-[350px] flex-none flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-md hover:shadow-xl hover:border-impetus-orange/30 transition-all duration-300">
                                 <div
                                     class="relative h-48 w-full overflow-hidden rounded-2xl bg-slate-100 flex items-center justify-center p-4">
-                                    <img src="{{ asset('images/course_bg.jpeg') }}"
+                                    <img src="{{ asset('images/Course-Labels.jpeg') }}"
                                         onerror="this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'"
                                         alt="{{ $course->couse_name }}"
                                         class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-impetus-navy/80 via-impetus-navy/55 to-impetus-navy/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10"></div>
                                     <span
-                                        class="relative z-10 block max-w-full text-balance text-center text-lg font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-colors">
+                                        class="relative z-20 block max-w-full text-balance text-center text-2xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
