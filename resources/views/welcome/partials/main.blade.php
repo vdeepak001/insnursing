@@ -26,7 +26,7 @@
                     <h1
                         class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] font-outfit">
                         Professional eLearning <br>
-                        <span class="gradient-text-orange-green">Engineered for Clinical Impact.</span>
+                        <span class="gradient-text-orange-green">Engineered for Clinical Impact</span>
                     </h1>
 
                     <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 text-justify">
