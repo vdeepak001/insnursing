@@ -400,10 +400,8 @@
 
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto max-w-3xl text-center mb-20">
-                <span
-                    class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">What
-                    Sets Us Apart</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">IHS’ Core
+
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">IHS Core
                     Strengths</h2>
                 <p class="mt-4 text-slate-600 text-center leading-relaxed text-base sm:text-lg">
                     Impetus Healthcare Skills Private Limited has strong expertise in simulation-based healthcare
