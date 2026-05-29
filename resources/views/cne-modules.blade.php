@@ -52,37 +52,37 @@
                                     Features of Online CNE Modules
                                 </h3>
                                 <ul class="space-y-3">
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span
                                             class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Self-paced, flexible learning</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span
                                             class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Interactive digital content and assessments</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span
                                             class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Accessible via computers and mobile devices</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span
                                             class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Content developed by expert faculty and clinical resource persons</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span
                                             class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Evidence-based, updated curriculum</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span
                                             class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Digital certificates awarded upon successful completion</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span
                                             class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Supports Continuing Nursing Education (CNE)</span>
@@ -98,27 +98,27 @@
                                     Benefits of Online CNE Modules
                                 </h3>
                                 <ul class="space-y-3">
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Enhances clinical knowledge and professional competence</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Promotes continuous learning and skill upgradation</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Enables learning without interrupting professional duties</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Improves the quality of patient care and clinical outcomes</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Encourages evidence-based nursing practice</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-xs sm:text-sm text-slate-600">
+                                    <li class="flex items-start gap-3 text-sm sm:text-base text-slate-600">
                                         <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
                                         <span>Provides equal learning opportunities across geographic locations</span>
                                     </li>
@@ -129,7 +129,7 @@
                         <!-- Closing Takeaway Paragraph -->
                         <div
                             class="p-6 rounded-2xl bg-gradient-to-r from-impetus-navy to-impetus-navy/90 text-white shadow-xl shadow-slate-900/10">
-                            <p class="text-xs sm:text-sm text-slate-300 text-justify leading-relaxed">
+                            <p class="text-sm sm:text-base text-slate-200 text-justify leading-relaxed">
                                 Online CNE modules play an important role in strengthening the healthcare workforce by
                                 helping nurses stay updated with advancements in healthcare, improve clinical performance,
                                 and meet professional education requirements in a flexible and technology-enabled learning
@@ -160,7 +160,7 @@
                         <div class="mb-8">
                             <h3 class="font-serif text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Purchased
                                 Modules</h3>
-                            <div class="mt-2 h-1 w-20 rounded-full bg-emerald-500"></div>
+                            <div class="mt-2 h-1 w-20 rounded-full bg-impetus-orange"></div>
                         </div>
                         <div class="mb-16 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
                             @foreach ($purchasedCourses as $course)
@@ -209,7 +209,7 @@
                             <h3 class="font-serif text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
                                 {{ $purchasedCourses->isNotEmpty() ? 'Other Modules' : 'Available Modules' }}
                             </h3>
-                            <div class="mt-2 h-1 w-20 rounded-full bg-logo-blue"></div>
+                            <div class="mt-2 h-1 w-20 rounded-full bg-impetus-orange"></div>
                         </div>
                         <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
                             @foreach ($otherCourses as $course)
