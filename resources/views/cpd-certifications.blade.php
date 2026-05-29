@@ -14,8 +14,8 @@
             </div>
 
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid items-center gap-16 lg:grid-cols-12">
-                    <div class="lg:col-span-7">
+                <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+                    <div class="lg:col-span-8">
                         <span
                             class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Professional
                             Credibility</span>
@@ -45,12 +45,12 @@
                     </div>
 
                     <!-- Right Column: Visual Graphic/Accreditation Seal -->
-                    <div class="lg:col-span-5 relative">
+                    <div class="lg:col-span-4 relative flex items-center justify-center">
                         <div
                             class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/10 via-transparent to-impetus-navy/10 blur-2xl -z-10">
                         </div>
                         <img src="{{ asset('images/CNE_Certification.jpeg') }}" alt="CNE Certification"
-                            class="relative w-full h-auto transition-transform duration-500 hover:scale-[1.02]">
+                            class="relative w-full max-w-[280px] sm:max-w-[320px] h-auto rounded-[2rem] shadow-xl border border-slate-200/50 transition-transform duration-500 hover:scale-[1.02]">
                     </div>
                 </div>
             </div>
