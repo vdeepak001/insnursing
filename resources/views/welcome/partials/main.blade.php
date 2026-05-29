@@ -642,7 +642,7 @@
                                         class="absolute inset-0 bg-[#1d2a57]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
                                     </div>
                                     <span
-                                        class="relative z-20 block max-w-full text-balance text-center text-3xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
+                                        class="relative z-20 block max-w-full text-balance text-center text-xl sm:text-2xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300 px-2">
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
@@ -668,7 +668,7 @@
                                         class="absolute inset-0 bg-[#1d2a57]/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
                                     </div>
                                     <span
-                                        class="relative z-20 block max-w-full text-balance text-center text-3xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300">
+                                        class="relative z-20 block max-w-full text-balance text-center text-xl sm:text-2xl font-extrabold uppercase leading-snug tracking-tight text-impetus-orange font-outfit group-hover:text-white transition-all duration-300 px-2">
                                         {{ $course->couse_name }}
                                     </span>
                                 </div>
