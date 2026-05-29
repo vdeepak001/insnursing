@@ -156,22 +156,27 @@
                 <div class="pt-4 md:pt-0">
                     <span class="text-4xl sm:text-5xl font-extrabold text-impetus-navy font-outfit block">26</span>
                     <span
-                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">CNE Modules</span>
+                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">CNE
+                        Modules</span>
                 </div>
                 <div class="pt-4 md:pt-0">
-                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">1.4 Lakhs+</span>
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">1.4
+                        Lakhs+</span>
                     <span
-                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Active Users</span>
+                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Active
+                        Users</span>
                 </div>
                 <div class="pt-4 md:pt-0">
                     <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">4.9</span>
                     <span
-                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Users Rating</span>
+                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Users
+                        Rating</span>
                 </div>
                 <div class="pt-4 md:pt-0">
                     <span class="text-4xl sm:text-5xl font-extrabold text-impetus-navy font-outfit block">100%</span>
                     <span
-                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Accredited Course Content</span>
+                        class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Accredited
+                        Course Content</span>
                 </div>
             </div>
         </div>
@@ -756,81 +761,5 @@
 
 
     <!-- Sleek Contact Form & Lead Capture -->
-    <section id="contact" class="py-24 bg-impetus-navy text-white relative overflow-hidden">
-        <div
-            class="absolute inset-0 bg-gradient-to-tr from-impetus-orange/15 via-transparent to-impetus-orange/15 -z-10">
-        </div>
-        <div class="max-w-4xl mx-auto px-6 sm:px-8 relative z-10">
-            <div class="text-center mb-12">
-                <span
-                    class="text-xs font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Get
-                    In Touch</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit">Accelerate Your Organization's Competency
-                </h2>
-                <p class="mt-4 text-slate-350 text-sm max-w-xl mx-auto text-center">Complete the details below to
-                    receive a custom capability report and start a corporate demonstration of the IHS learning engine.
-                </p>
-            </div>
 
-            <!-- Form -->
-            <form
-                onsubmit="event.preventDefault(); alert('Thank you! Our IHS eLearning consultant will contact you shortly.');"
-                class="bg-white/5 backdrop-blur-md rounded-[2rem] p-8 sm:p-10 border border-white/10 shadow-2xl">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label
-                            class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">Full
-                            Name</label>
-                        <input type="text" required
-                            class="w-full bg-white/5 border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm"
-                            placeholder="John Doe">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">Email
-                            Address</label>
-                        <input type="email" required
-                            class="w-full bg-white/5 border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm"
-                            placeholder="john@hospital.com">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label
-                            class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">Company
-                            / Healthcare Alliance</label>
-                        <input type="text" required
-                            class="w-full bg-white/5 border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm"
-                            placeholder="St. Luke's Health Center">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">LMS
-                            Target Scale</label>
-                        <select
-                            class="w-full bg-[#1D2A57] border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm">
-                            <option>10 - 250 learners</option>
-                            <option>250 - 1000 learners</option>
-                            <option>1000+ learners</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="mb-8">
-                    <label
-                        class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 font-outfit">Brief
-                        Learning Goals</label>
-                    <textarea
-                        class="w-full bg-white/5 border border-white/10 focus:border-impetus-orange focus:outline-none rounded-xl px-4 py-3 text-white transition-all text-sm h-28"
-                        placeholder="We need to accredit 350 nurses on critical care guidelines..."></textarea>
-                </div>
-
-                <button type="submit"
-                    class="w-full bg-impetus-orange hover:bg-[#e05d14] text-white py-4 rounded-full font-bold font-outfit transition-all shadow-lg shadow-impetus-orange/20 hover:scale-101 hover:shadow-xl">
-                    Submit consultation Request
-                </button>
-            </form>
-        </div>
-    </section>
 </main>
