@@ -145,11 +145,9 @@
                         <div
                             class="p-6 rounded-2xl bg-gradient-to-r from-impetus-navy to-impetus-navy/90 text-white shadow-xl shadow-slate-900/10">
                             <div class="flex gap-4 items-start">
-                                <span class="text-3xl text-impetus-orange font-serif leading-none shrink-0">“</span>
                                 <p
                                     class="text-sm sm:text-base text-slate-200 text-justify leading-relaxed font-outfit italic">
-                                    Overall, CNE certification reflects a commitment to lifelong learning and excellence in
-                                    nursing practice.
+                                    “Overall, CNE certification reflects a commitment to lifelong learning and excellence in nursing practice.”
                                 </p>
                             </div>
                         </div>

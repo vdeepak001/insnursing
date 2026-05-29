@@ -58,15 +58,15 @@ Route::get('/landing5', function () {
 })->name('landing5');
 
 Route::view('/about-us', 'about')->name('about');
-Route::get('/cpd-modules', [CneModulesController::class, 'index'])->name('cne.modules');
-Route::get('/cpd-modules/{course_detail:couse_name}', [CneModulesController::class, 'show'])->name('cne.modules.show');
-Route::get('/cpd-modules/{course_detail:couse_name}/learning-materials', [CneModulesController::class, 'materials'])->name('cne.modules.materials');
+Route::get('/cne-modules', [CneModulesController::class, 'index'])->name('cne.modules');
+Route::get('/cne-modules/{course_detail:couse_name}', [CneModulesController::class, 'show'])->name('cne.modules.show');
+Route::get('/cne-modules/{course_detail:couse_name}/learning-materials', [CneModulesController::class, 'materials'])->name('cne.modules.materials');
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/cpd-modules/{course_detail:couse_name}/tests/{test}', [CneModulesController::class, 'takeTest'])
+    Route::get('/cne-modules/{course_detail:couse_name}/tests/{test}', [CneModulesController::class, 'takeTest'])
         ->whereIn('test', ['mock', 'pre', 'final', 'practice'])
         ->name('cne.modules.test');
 });
-Route::view('/cpd-certifications', 'cpd-certifications')->name('cpd.certifications');
+Route::view('/cne-certifications', 'cpd-certifications')->name('cpd.certifications');
 Route::view('/learning-resources', 'learning-materials')->name('learning.materials');
 Route::get('/practice-test', [CneModulesController::class, 'practiceIndex'])->name('practice.test');
 Route::view('/online-examination', 'online-examination')->name('online.examination');
