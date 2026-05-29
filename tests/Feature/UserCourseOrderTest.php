@@ -96,7 +96,7 @@ it('rejects an order when the end date is before the start date', function () {
     $this->actingAs($staff)
         ->postJson(route('super-admin.users-list.orders.store', ['userId' => $learner->id]), [
             'course_detail_id' => 999999,
-            'payment_mode' => 'paytm',
+            'payment_mode' => 'ccavenue',
             'start_date' => now()->toDateString(),
             'end_date' => now()->subDay()->toDateString(),
             'remarks' => null,

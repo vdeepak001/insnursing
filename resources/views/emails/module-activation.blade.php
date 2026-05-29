@@ -7,9 +7,7 @@
     <title>
         @php
             $isOnlinePurchase = in_array($order->payment_mode, [
-                \App\Enums\PaymentMode::PaymentGateway->value,
-                \App\Enums\PaymentMode::Paytm->value,
-                \App\Enums\PaymentMode::CreditDebitCard->value,
+                \App\Enums\PaymentMode::Ccavenue->value,
             ]);
         @endphp
         @if ($isOnlinePurchase)

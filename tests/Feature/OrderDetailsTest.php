@@ -105,7 +105,7 @@ it('filters order details by search, mode and status', function () {
         'user_id' => $learnerA->id,
         'course_detail_id' => $courseA->id,
         'state_council_id' => $council->id,
-        'payment_mode' => 'paytm',
+        'payment_mode' => 'ccavenue',
         'start_date' => now()->toDateString(),
         'end_date' => now()->addDays(30)->toDateString(),
         'payment_status' => 'completed',
@@ -125,7 +125,7 @@ it('filters order details by search, mode and status', function () {
 
     $response = $this->actingAs($staff)->get(route('super-admin.order-details.index', [
         'search' => 'filter-target@example.test',
-        'payment_mode' => 'paytm',
+        'payment_mode' => 'ccavenue',
         'payment_status' => 'completed',
     ]));
 
