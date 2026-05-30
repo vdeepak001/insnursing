@@ -110,47 +110,47 @@
             <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-impetus-orange/5 via-transparent to-transparent pointer-events-none"></div>
             
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid items-start gap-16 lg:grid-cols-12">
+                <div class="grid items-stretch gap-16 lg:grid-cols-12">
                     
                     <!-- Purpose Column (Left) -->
-                    <div class="lg:col-span-6 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg">
+                    <div class="lg:col-span-6 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg flex flex-col h-full">
                         <div class="w-12 h-12 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 mb-6 shadow-md shadow-impetus-orange/10">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-impetus-navy font-outfit mb-4">Purpose of Practice Tests</h3>
-                        <p class="text-sm text-slate-500 leading-relaxed text-justify mb-6">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-impetus-navy font-outfit mb-4">Purpose of Practice Tests</h3>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify mb-6">
                             Structured to solidify understanding and verify active nursing competency, our practice assessments serve several fundamental goals:
                         </p>
-                        <ul class="space-y-4">
+                        <ul class="space-y-4 flex-grow">
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To assess understanding of course content
                                 </span>
                             </li>
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To reinforce key clinical concepts and guidelines
                                 </span>
                             </li>
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To identify areas requiring further study
                                 </span>
                             </li>
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To improve critical thinking and decision-making skills
                                 </span>
                             </li>
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To prepare learners for final assessments or certification examinations
                                 </span>
                             </li>
@@ -158,54 +158,60 @@
                     </div>
 
                     <!-- Benefits Column (Right) -->
-                    <div class="lg:col-span-6 flex flex-col justify-center h-full">
-                        <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Measurable Growth</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-6">Benefits of Practice Tests</h2>
-                        
-                        <ul class="space-y-4">
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <div class="lg:col-span-6 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center shrink-0 mb-6 shadow-md shadow-emerald-500/10">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-impetus-navy font-outfit mb-4">Benefits of Practice Tests</h3>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify mb-6">
+                            Designed to accelerate your learning journey and build confidence, practicing regularly delivers key advantages:
+                        </p>
+                        <ul class="space-y-4 flex-grow">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Enhances Retention</h4>
-                                    <p class="text-sm text-slate-500">Enhances retention of clinical knowledge.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Enhances Retention</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Enhances retention of clinical knowledge.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Builds Clinical Confidence</h4>
-                                    <p class="text-sm text-slate-500">Builds confidence in handling real-life clinical situations.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Builds Clinical Confidence</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Builds confidence in handling real-life clinical situations.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Improves Decision Pacing</h4>
-                                    <p class="text-sm text-slate-500">Improves accuracy and speed in clinical decision-making.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Improves Decision Pacing</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Improves accuracy and speed in clinical decision-making.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Supports Self-Evaluation</h4>
-                                    <p class="text-sm text-slate-500">Supports continuous self-evaluation and improvement.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Supports Self-Evaluation</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Supports continuous self-evaluation and improvement.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Exam Readiness</h4>
-                                    <p class="text-sm text-slate-500">Strengthens readiness for professional certification exams.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Exam Readiness</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Strengthens readiness for professional certification exams.</p>
                                 </div>
                             </li>
                         </ul>
@@ -221,11 +227,10 @@
             
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center mb-16">
-                    <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">High-Fidelity Evaluation</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">
                         Features of Online CNE Practice Tests
                     </h2>
-                    <p class="mt-4 text-slate-600 leading-relaxed text-justify sm:text-center max-w-3xl mx-auto">
+                    <p class="mt-4 text-base text-slate-600 leading-relaxed text-justify sm:text-center max-w-3xl mx-auto">
                         Engineered to provide a rich educational ecosystem, our practice assessments leverage evidence-based standards to deliver optimal clinical learning.
                     </p>
                 </div>
@@ -238,8 +243,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-3.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V6.75a2.25 2.25 0 01-2.25 2.25H15A2.25 2.25 0 0113.5 6.75V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Module-Wise Sets</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl font-extrabold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Module-Wise Sets</h4>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify">
                             Topic-wise and module-wise question sets are tailored specifically to match every target knowledge domain in your CNE training modules.
                         </p>
                     </div>
@@ -251,8 +256,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Flexible Assessments</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl font-extrabold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Flexible Assessments</h4>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify">
                             Enjoy self-paced learning with no constraints, or take time-bound practice assessments to simulate high-pressure, real-world exams.
                         </p>
                     </div>
@@ -264,8 +269,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Instant Analytics</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl font-extrabold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Instant Analytics</h4>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify">
                             Obtain instant feedback, detailed scoring guides, and robust clinical performance analysis to identify strength areas and knowledge gaps.
                         </p>
                     </div>
@@ -277,8 +282,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Case-Driven Scenarios</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl font-extrabold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Case-Driven Scenarios</h4>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify">
                             Practice with clinical problem-solving exercises, case-based questions, and real-world scenario metrics that accurately mimic daily practice.
                         </p>
                     </div>
@@ -290,8 +295,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Unlimited Re-Attempts</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl font-extrabold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Unlimited Re-Attempts</h4>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify">
                             Enjoy repeated learning attempts on complex topics, ensuring perfect knowledge retention and readiness for final certification exams.
                         </p>
                     </div>
@@ -303,8 +308,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Universal Platform</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl font-extrabold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Universal Platform</h4>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify">
                             Seamlessly optimized and accessible anywhere through our online learning platforms via desktops, laptops, tablets, and smartphones.
                         </p>
                     </div>

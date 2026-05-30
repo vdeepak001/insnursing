@@ -108,47 +108,47 @@
             <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-impetus-orange/5 via-transparent to-transparent pointer-events-none"></div>
             
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid items-start gap-16 lg:grid-cols-12">
+                <div class="grid items-stretch gap-16 lg:grid-cols-12">
                     
                     <!-- Purpose Column (Left) -->
-                    <div class="lg:col-span-6 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg">
+                    <div class="lg:col-span-6 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg flex flex-col h-full">
                         <div class="w-12 h-12 rounded-2xl bg-impetus-navy text-white flex items-center justify-center shrink-0 mb-6 shadow-md shadow-impetus-navy/10">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.03 0 1.9.693 2.166 1.638m-7.377 2.24A2.251 2.251 0 0 1 7.5 6.108V16.5a2.25 2.25 0 0 0 2.25 2.25h1.5m-.1-12.75a48.367 48.367 0 0 1 1 .08M7.5 6.108c0-1.135.845-2.098 1.976-2.192A48.424 48.424 0 0 1 10.6 3.84" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-impetus-navy font-outfit mb-4">Purpose of Online CNE Tests</h3>
-                        <p class="text-sm text-slate-500 leading-relaxed text-justify mb-6">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-impetus-navy font-outfit mb-4">Purpose of Online CNE Tests</h3>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify mb-6">
                             Aligned with international clinical guidelines and continuous education frameworks, these digital assessments secure critical educational outcomes:
                         </p>
-                        <ul class="space-y-4">
+                        <ul class="space-y-4 flex-grow">
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To assess learners' understanding of course content
                                 </span>
                             </li>
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To evaluate clinical knowledge and decision-making ability
                                 </span>
                             </li>
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To ensure achievement of learning outcomes
                                 </span>
                             </li>
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To support certification and continuing professional development requirements
                                 </span>
                             </li>
                             <li class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
                                 <span class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
-                                <span class="text-xs sm:text-sm text-slate-600 leading-relaxed text-justify">
+                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify font-medium">
                                     To maintain standards of nursing education and competency
                                 </span>
                             </li>
@@ -156,63 +156,69 @@
                     </div>
 
                     <!-- Benefits Column (Right) -->
-                    <div class="lg:col-span-6 flex flex-col justify-center h-full">
-                        <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Measurable Professional Growth</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-6">Benefits of Online CNE Tests</h2>
-                        
-                        <ul class="space-y-6">
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <div class="lg:col-span-6 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg flex flex-col h-full">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center shrink-0 mb-6 shadow-md shadow-emerald-500/10">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-impetus-navy font-outfit mb-4">Benefits of Online CNE Tests</h3>
+                        <p class="text-base text-slate-600 leading-relaxed text-justify mb-6">
+                            Designed to accelerate your learning journey and build confidence, practicing regularly delivers key advantages:
+                        </p>
+                        <ul class="space-y-4 flex-grow">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Standardized Evaluation</h4>
-                                    <p class="text-sm text-slate-500">Provides objective and standardized assessment of learning.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Standardized Evaluation</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Provides objective and standardized assessment of learning.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Enhanced Accountability</h4>
-                                    <p class="text-sm text-slate-500">Enhances accountability in professional education.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Enhanced Accountability</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Enhances accountability in professional education.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Resource Efficiency</h4>
-                                    <p class="text-sm text-slate-500">Saves time and resources compared to traditional examinations.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Resource Efficiency</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Saves time and resources compared to traditional examinations.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Universal Access</h4>
-                                    <p class="text-sm text-slate-500">Allows participation from any location.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Universal Access</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Allows participation from any location.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Continuous Progress Tracking</h4>
-                                    <p class="text-sm text-slate-500">Allows continuous monitoring of learning progress.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Continuous Progress Tracking</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Allows continuous monitoring of learning progress.</p>
                                 </div>
                             </li>
-                            <li class="flex items-start gap-4">
-                                <div class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                            <li class="flex gap-4 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 shadow-sm">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-impetus-navy font-outfit">Self-Discipline Habits</h4>
-                                    <p class="text-sm text-slate-500">Encourages self-discipline and focused study habits.</p>
+                                    <h4 class="text-base sm:text-lg font-bold text-impetus-navy font-outfit">Self-Discipline Habits</h4>
+                                    <p class="text-sm sm:text-base text-slate-500 mt-1 leading-relaxed">Encourages self-discipline and focused study habits.</p>
                                 </div>
                             </li>
                         </ul>
