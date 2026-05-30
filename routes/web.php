@@ -74,6 +74,7 @@ Route::view('/online-test', 'online-examination')->name('online.examination');
 Route::view('/faq', 'faq')->name('faq');
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy.policy');
 Route::view('/terms-and-conditions', 'terms-and-conditions')->name('terms.conditions');
+Route::view('/cancellation-policy', 'cancellation-policy')->name('cancellation.policy');
 
 Route::post('/contact-submit', [ContactController::class, 'submit'])->name('contact.submit');
 
