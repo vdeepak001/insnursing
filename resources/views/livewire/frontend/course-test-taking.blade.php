@@ -278,6 +278,14 @@
                     </div>
                 @endif
 
+                <div @class([
+                    'shrink-0 text-sm font-semibold text-slate-600 sm:text-base font-outfit lg:flex-1',
+                    'text-center' => $examDeadlineTs && $testType !== 'practice',
+                    'text-center lg:text-right' => !($examDeadlineTs && $testType !== 'practice')
+                ])>
+                    Question {{ $currentIndex + 1 }} / {{ $totalQuestions }}
+                </div>
+
                 @if ($examDeadlineTs && $testType !== 'practice')
                     @php
                         $timerLow = ! $examTimeExpired && $examSecondsRemaining > 0 && $examSecondsRemaining <= 300;
@@ -287,7 +295,7 @@
                         role="timer"
                         aria-label="Exam time remaining"
                         @class([
-                            'relative shrink-0 overflow-hidden rounded-3xl border px-5 py-4 shadow-lg sm:min-w-[13.5rem] lg:mx-4',
+                            'relative shrink-0 overflow-hidden rounded-3xl border px-5 py-4 shadow-lg sm:min-w-[13.5rem] lg:ml-4',
                             'border-rose-200/90 bg-gradient-to-br from-rose-50 via-white to-rose-50/60 shadow-rose-200/40' => $examTimeExpired,
                             'border-amber-200/90 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/50 shadow-amber-200/30' => $timerLow && ! $examTimeExpired,
                             'border-slate-200/90 bg-gradient-to-br from-white via-slate-50/40 to-brand-50/35 shadow-brand-900/[0.06]' => ! $examTimeExpired && ! $timerLow,
@@ -308,7 +316,7 @@
                                     'flex size-12 shrink-0 items-center justify-center rounded-2xl text-white shadow-lg',
                                     'bg-gradient-to-br from-rose-500 to-rose-700 shadow-rose-500/35' => $examTimeExpired,
                                     'bg-gradient-to-br from-amber-500 to-orange-600 shadow-amber-500/35' => $timerLow && ! $examTimeExpired,
-                                    'bg-gradient-to-br from-logo-blue to-brand-700 shadow-logo-blue/35' => ! $examTimeExpired && ! $timerLow,
+                                    'bg-gradient-to-br from-impetus-navy to-slate-800 shadow-impetus-navy/25' => ! $examTimeExpired && ! $timerLow,
                                 ])
                             >
                                 <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -335,15 +343,11 @@
                         </div>
                     </div>
                 @endif
-
-                <div class="shrink-0 text-right text-sm font-medium text-slate-500 lg:flex-1 sm:text-base">
-                    Question {{ $currentIndex + 1 }} / {{ $totalQuestions }}
-                </div>
             </div>
 
             <div class="grid gap-8 lg:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]">
                 <aside class="lg:block">
-                    <div class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm ring-1 ring-slate-200/60">
+                    <div class="rounded-2xl border-2 border-slate-300 bg-white p-5 shadow-sm">
                         <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Questions</p>
                         <p class="mt-1 text-xs text-slate-500">
                             @if ($type === \App\Enums\CourseTestType::Practice)
@@ -365,9 +369,9 @@
                                     $isWrong = ($result === 'wrong_second');
                                     $isFirstWrong = ($result === 'wrong_first');
 
-                                    $btnClasses = 'flex h-10 w-10 items-center justify-center rounded-lg border text-sm font-bold transition ';
+                                    $btnClasses = 'flex h-10 w-10 items-center justify-center rounded-full border text-sm font-bold transition ';
                                     if ($isCurrent) {
-                                        $btnClasses .= 'border-logo-blue bg-logo-blue text-white shadow-md shadow-logo-blue/30';
+                                        $btnClasses .= 'border-impetus-navy bg-impetus-navy text-white shadow-md shadow-impetus-navy/30';
                                     } elseif ($isPractice) {
                                         if ($isCorrect) {
                                             $btnClasses .= 'border-emerald-300 bg-emerald-500 text-white';
@@ -378,13 +382,13 @@
                                         } elseif ($answered) {
                                             $btnClasses .= 'border-slate-300 bg-slate-100 text-slate-600';
                                         } else {
-                                            $btnClasses .= 'border-slate-200 bg-white text-slate-700 hover:border-logo-blue/50';
+                                            $btnClasses .= 'border-slate-200 bg-white text-slate-700 hover:border-impetus-navy/50';
                                         }
                                     } else {
                                         if ($answered) {
                                             $btnClasses .= 'border-emerald-300 bg-emerald-50 text-emerald-800';
                                         } else {
-                                            $btnClasses .= 'border-slate-200 bg-white text-slate-700 hover:border-logo-blue/50';
+                                            $btnClasses .= 'border-slate-200 bg-white text-slate-700 hover:border-impetus-navy/50';
                                         }
                                     }
                                 @endphp
@@ -408,7 +412,7 @@
                             $q = $questions[$currentIndex] ?? null;
                         @endphp
                         @if ($q)
-                            <h2 class="mt-4 text-lg font-semibold leading-relaxed !text-logo-blue sm:text-xl">
+                            <h2 class="mt-4 font-serif text-lg font-bold leading-relaxed !text-impetus-navy font-outfit sm:text-xl md:text-2xl">
                                 {{ $currentIndex + 1 }}. {{ $q['text'] }}
                             </h2>
 
@@ -441,20 +445,20 @@
                                             } elseif ($isFirstWrongChoice) {
                                                 $labelClasses .= 'cursor-not-allowed border-slate-200 bg-slate-50 opacity-40 grayscale';
                                             } else {
-                                                $labelClasses .= 'cursor-pointer border-slate-200 hover:border-logo-blue/40 hover:bg-slate-50 has-[:checked]:border-logo-blue has-[:checked]:bg-logo-blue/5';
+                                                $labelClasses .= 'cursor-pointer border-slate-200 hover:border-impetus-navy/40 hover:bg-slate-50/50 has-[:checked]:border-impetus-navy has-[:checked]:bg-impetus-navy/[0.03]';
                                             }
                                         @endphp
                                         @if (filled($choice))
                                             <label class="{{ $labelClasses }}">
                                                 <input
                                                     type="radio"
-                                                    class="mt-1 h-4 w-4 border-slate-300 text-logo-blue focus:ring-logo-blue"
+                                                    class="mt-1 h-4 w-4 border-slate-300 text-impetus-navy focus:ring-impetus-navy"
                                                     wire:model.live="responses.{{ $q['id'] }}"
                                                     value="{{ $letter }}"
                                                     @disabled($showFeedback || $isFirstWrongChoice)
                                                 />
-                                            <span class="text-sm leading-relaxed text-slate-800">
-                                                <span class="font-bold text-slate-900">{{ $label }}.</span>
+                                            <span class="text-base leading-relaxed text-slate-800 sm:text-[17px] font-medium font-outfit">
+                                                <span class="font-bold text-slate-900 font-outfit">{{ $label }}.</span>
                                                 {{ $choice }}
                                                 @if ($showFeedback && $letter === $correctLetter)
                                                     <span class="ml-2 inline-flex items-center gap-1 font-bold text-emerald-600">

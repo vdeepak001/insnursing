@@ -350,8 +350,8 @@
                             </div>
                         </div>
                         <div class="flex min-h-0 flex-1 flex-col p-8">
-                            <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-4">Level 1 - Factual Knowledge</h3>
-                            <div class="flex-1 space-y-4 text-sm text-slate-600 leading-relaxed text-justify">
+                            <h3 class="text-2xl font-bold text-impetus-navy font-outfit mb-4">Level 1 - Factual Knowledge</h3>
+                            <div class="flex-1 space-y-4 text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                                 <p>
                                     Focuses on the assessment of factual knowledge, evaluating the participant's foundational understanding of essential nursing concepts.
                                 </p>
@@ -380,8 +380,8 @@
                             </div>
                         </div>
                         <div class="flex min-h-0 flex-1 flex-col p-8">
-                            <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-4">Level 2 - Functional Knowledge</h3>
-                            <div class="flex-1 space-y-4 text-sm text-slate-600 leading-relaxed text-justify">
+                            <h3 class="text-2xl font-bold text-impetus-navy font-outfit mb-4">Level 2 - Functional Knowledge</h3>
+                            <div class="flex-1 space-y-4 text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                                 <p>
                                     Focuses on the assessment of functional knowledge, measuring how well participants can apply learned concepts in practical nursing situations.
                                 </p>
@@ -410,8 +410,8 @@
                             </div>
                         </div>
                         <div class="flex min-h-0 flex-1 flex-col p-8">
-                            <h3 class="text-xl font-bold text-impetus-navy font-outfit mb-4">Level 3 - Problem Solving</h3>
-                            <div class="flex-1 space-y-4 text-sm text-slate-600 leading-relaxed text-justify">
+                            <h3 class="text-2xl font-bold text-impetus-navy font-outfit mb-4">Level 3 - Problem Solving</h3>
+                            <div class="flex-1 space-y-4 text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                                 <p>
                                     Focuses on the assessment of problem-solving ability, challenging participants to use critical clinical judgement and decision-making in more complex scenarios.
                                 </p>
@@ -424,16 +424,16 @@
                 </div>
 
                 <!-- Live Feedback & Scoring Notice Banner -->
-                <div class="mt-16 rounded-[2rem] border border-impetus-orange/10 bg-gradient-to-br from-impetus-orange/[0.02] to-transparent p-8 shadow-sm">
-                    <div class="flex flex-col sm:flex-row items-start gap-5">
-                        <div class="w-12 h-12 rounded-xl bg-impetus-orange/10 text-impetus-orange flex items-center justify-center shrink-0">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <div class="mt-16 rounded-[2rem] border border-impetus-orange/20 border-l-8 border-l-impetus-orange bg-gradient-to-r from-impetus-orange/10 via-impetus-orange/[0.02] to-transparent p-8 sm:p-10 shadow-md">
+                    <div class="flex flex-col sm:flex-row items-start gap-6">
+                        <div class="w-14 h-14 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 shadow-lg shadow-impetus-orange/25">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18V6.125c0-.621.504-1.125 1.125-1.125H9.75M9 5.25h6.75m-6.75 0a.75.75 0 00-.75.75v1.125c0 .414.336.75.75.75h6.75a.75.75 0 00.75-.75V6c0-.414-.336-.75-.75-.75M9 5.25V3.75A1.5 1.5 0 007.5 2.25h9A1.5 1.5 0 0018 3.75V5.25" />
                             </svg>
                         </div>
                         <div>
-                            <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Automated Feedback & Detailed Scoring Rationale</h4>
-                            <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                            <h4 class="text-xl sm:text-2xl font-extrabold text-impetus-navy font-outfit mb-3">Automated Feedback &amp; Detailed Scoring Rationale</h4>
+                            <p class="text-base sm:text-lg text-slate-700 leading-relaxed text-justify">
                                 Immediate scoring and grading will be provided upon completion of the test, allowing test-takers to identify areas of strength and weakness. This feedback is highly valuable for self-evaluation, continuous improvement, and target CNE credit calculations.
                             </p>
                         </div>
