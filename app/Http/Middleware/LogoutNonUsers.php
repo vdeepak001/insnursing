@@ -23,7 +23,8 @@ class LogoutNonUsers
                 ! $request->is('support*') && 
                 ! $request->is('sme*') && 
                 ! $request->is('dashboard*') && 
-                ! $request->is('logout')) {
+                ! $request->is('logout') &&
+                ! $request->is('livewire*')) {
                 
                 Auth::guard('web')->logout();
                 $request->session()->invalidate();
