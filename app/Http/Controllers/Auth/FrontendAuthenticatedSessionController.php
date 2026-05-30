@@ -57,9 +57,9 @@ class FrontendAuthenticatedSessionController extends Controller
     }
 
     /**
-     * Resend a new frontend login password by email.
+     * Resend a new frontend login password by email and SMS.
      */
-    public function resendPassword(Request $request): RedirectResponse
+    public function resendPassword(Request $request, \App\Services\SmsService $smsService): RedirectResponse
     {
         $request->validate([
             'email' => ['required', 'string', 'email'],
@@ -85,6 +85,10 @@ class FrontendAuthenticatedSessionController extends Controller
         ])->save();
 
         Mail::to($user->email)->send(new FrontendUserPasswordMail($user, $generatedPassword, 'forgot'));
+
+        if (filled($user->phone)) {
+            $smsService->sendOtp($user->phone, $generatedPassword);
+        }
 
         return back()->with('success', 'A new login password has been sent to your email.');
     }

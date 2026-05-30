@@ -195,6 +195,7 @@ class CartController extends Controller
         $user = $orders->first()->user;
 
         if (strtolower($orderStatus) === 'success') {
+            $courseNames = $orders->map(fn($o) => $o->courseDetail->couse_name ?? '')->filter()->implode(', ');
             foreach ($orders as $order) {
                 $validDays = $order->start_date->diffInDays($order->end_date) ?: 30;
                 $order->update([
@@ -210,6 +211,14 @@ class CartController extends Controller
                     );
                 } catch (\Exception $e) {
                     \Illuminate\Support\Facades\Log::error('Failed to send module activation mail: ' . $e->getMessage());
+                }
+            }
+
+            if (filled($user->phone) && !empty($courseNames)) {
+                try {
+                    app(\App\Services\SmsService::class)->sendPurchaseConfirmation($user->phone, $courseNames);
+                } catch (\Exception $e) {
+                    \Illuminate\Support\Facades\Log::error('Failed to send purchase confirmation SMS: ' . $e->getMessage());
                 }
             }
 

@@ -210,6 +210,14 @@ class UserCourseOrderController extends Controller
             } catch (\Exception $e) {
                 \Illuminate\Support\Facades\Log::error('Failed to send module activation mail: ' . $e->getMessage());
             }
+
+            if (filled($user->phone)) {
+                try {
+                    app(\App\Services\SmsService::class)->sendPurchaseConfirmation($user->phone, $course->couse_name ?? '');
+                } catch (\Exception $e) {
+                    \Illuminate\Support\Facades\Log::error('Failed to send purchase confirmation SMS from admin panel: ' . $e->getMessage());
+                }
+            }
         }
 
         if ($request->wantsJson()) {
