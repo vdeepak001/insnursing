@@ -69,7 +69,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::view('/cne-certifications', 'cpd-certifications')->name('cpd.certifications');
 Route::view('/learning-resources', 'learning-materials')->name('learning.materials');
 Route::get('/practice-test', [CneModulesController::class, 'practiceIndex'])->name('practice.test');
-Route::view('/online-examination', 'online-examination')->name('online.examination');
+Route::view('/online-test', 'online-examination')->name('online.examination');
 
 Route::view('/faq', 'faq')->name('faq');
 Route::view('/privacy-policy', 'privacy-policy')->name('privacy.policy');

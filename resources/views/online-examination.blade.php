@@ -228,7 +228,6 @@
             
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center mb-16">
-                    <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">High-Fidelity Systems</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">
                         Features of Online CNE Tests
                     </h2>
@@ -245,8 +244,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Fully Digital Access</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Fully Digital Access</h4>
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                             Fully digital and accessible through online platforms.
                         </p>
                     </div>
@@ -258,8 +257,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Flexible Formats</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Flexible Formats</h4>
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                             Time-bound or flexible assessment formats.
                         </p>
                     </div>
@@ -271,8 +270,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Automated Evaluation</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Automated Evaluation</h4>
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                             Automated evaluation and instant result generation.
                         </p>
                     </div>
@@ -284,8 +283,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Integrity-Secured Portal</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Integrity-Secured Portal</h4>
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                             Secure login and controlled access to maintain integrity.
                         </p>
                     </div>
@@ -297,8 +296,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7C4.547 9.547 4.5 10.768 4.5 12s.047 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7C19.453 14.453 19.5 13.232 19.5 12z" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Randomized Questions</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Randomized Questions</h4>
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                             Randomized question sets to ensure fairness.
                         </p>
                     </div>
@@ -310,8 +309,8 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Holistic Concept Coverage</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                        <h4 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Holistic Concept Coverage</h4>
+                        <p class="text-base sm:text-lg text-slate-600 leading-relaxed text-justify">
                             Coverage of theoretical and clinical concepts.
                         </p>
                     </div>
