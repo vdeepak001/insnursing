@@ -32,7 +32,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #0082c9 0%, #83ba2d 100%); padding: 24px;">
+                        <td style="background: linear-gradient(135deg, #F36E21 0%, #1D2A57 100%); padding: 24px;">
                             <h1 style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
                                 @if ($isOnlinePurchase)
                                     CPD Module Purchased!
@@ -60,14 +60,14 @@
                                     Dear User, you have successfully purchased online CPD Module. Your package details
                                     <strong>{{ $course->couse_name }}</strong>. For any further assistance mail us to <a
                                         href="mailto:info@ihsnursing.com"
-                                        style="color: #0082c9; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
+                                        style="color: #F36E21; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
                                 </p>
                             @else
                                 <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
                                     Dear User, your IHS Nursing CPD module <strong>{{ $course->couse_name }}</strong>
                                     has been activated. Kindly check your account for details. For any further
                                     assistance mail us to <a href="mailto:info@ihsnursing.com"
-                                        style="color: #0082c9; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
+                                        style="color: #F36E21; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
                                 </p>
                             @endif
 
@@ -99,7 +99,7 @@
                                             </tr>
                                             <tr>
                                                 <td style="padding-bottom: 8px; font-size: 13px; color: #64748b;">Expiry
-                                                    Date</td>
+                                                     Date</td>
                                                 <td
                                                     style="padding-bottom: 8px; font-size: 14px; font-weight: 600; color: #1e293b;">
                                                     {{ $order->end_date ? \Carbon\Carbon::parse($order->end_date)->format('d-m-Y') : '-' }}
@@ -120,7 +120,7 @@
                                 <tr>
                                     <td align="center" style="padding: 10px 0 20px;">
                                         <a href="{{ url('/') }}"
-                                            style="display: inline-block; padding: 12px 32px; background-color: #0082c9; color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(0, 130, 201, 0.2), 0 2px 4px -1px rgba(0, 130, 201, 0.1); transition: background-color 0.2s;">
+                                            style="display: inline-block; padding: 12px 32px; background-color: #F36E21; color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(243, 110, 33, 0.2), 0 2px 4px -1px rgba(243, 110, 33, 0.1); transition: background-color 0.2s;">
                                             Go to Dashboard
                                         </a>
                                     </td>
@@ -132,8 +132,7 @@
                     <tr>
                         <td style="padding: 16px 24px 24px; border-top: 1px solid #f1f5f9;">
                             <p style="margin: 0; font-size: 12px; line-height: 1.7; color: #64748b;">
-                                &copy; {{ date('Y') }} {{ config('app.name', 'IHS Nursing') }}. All rights
-                                reserved.
+                                &copy; 2026 Impetus Healthcare Skills Private Limited. All rights reserved.
                             </p>
                         </td>
                     </tr>

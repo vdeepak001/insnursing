@@ -63,7 +63,7 @@
                     <tr>
                         <td style="padding: 16px 24px 24px; border-top: 1px solid #f1f5f9;">
                             <p style="margin: 0; font-size: 12px; line-height: 1.7; color: #64748b;">
-                                &copy; {{ date('Y') }} {{ config('app.name', 'IHS Nursing') }}. All rights reserved.
+                                &copy; 2026 Impetus Healthcare Skills Private Limited. All rights reserved.
                             </p>
                         </td>
                     </tr>

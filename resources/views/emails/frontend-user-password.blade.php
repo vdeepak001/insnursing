@@ -27,7 +27,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #0082c9 0%, #83ba2d 100%); padding: 28px 24px;">
+                        <td style="background: linear-gradient(135deg, #F36E21 0%, #1D2A57 100%); padding: 28px 24px;">
                             @if ($type === 'forgot')
                                 <h1
                                     style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
@@ -62,7 +62,7 @@
                                         <strong
                                             style="color: #0f172a; display: inline-block; width: 150px;">Email:</strong>
                                         <a href="mailto:{{ $user->email }}"
-                                            style="color: #0082c9; text-decoration: underline;">{{ $user->email }}</a>
+                                            style="color: #F36E21; text-decoration: underline;">{{ $user->email }}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -77,7 +77,7 @@
                                     <tr>
                                         <td style="padding: 16px; font-size: 14px; color: #475569;">
                                             <strong
-                                                style="color: #0f172a; display: inline-block; width: 150px;">VLSID:</strong>
+                                                style="color: #0f172a; display: inline-block; width: 150px;">IHS ID:</strong>
                                             <span
                                                 style="color: #0f172a; font-weight: 600;">{{ $user->unique_sequence_number }}</span>
                                         </td>
@@ -103,7 +103,7 @@
                     <tr>
                         <td style="padding: 16px 24px 24px; border-top: 1px solid #f1f5f9;">
                             <p style="margin: 0; font-size: 12px; line-height: 1.7; color: #94a3b8;">
-                                &copy; {{ date('Y') }} {{ config('app.name', 'IHS Nursing') }}. All rights reserved.
+                                &copy; 2026 Impetus Healthcare Skills Private Limited. All rights reserved.
                             </p>
                         </td>
                     </tr>
