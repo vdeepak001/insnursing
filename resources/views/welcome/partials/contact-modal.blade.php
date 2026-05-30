@@ -140,9 +140,9 @@
                                     <p><a href="tel:+919445256977"
                                             class="hover:text-impetus-orange transition-colors">+91 -9445256977</a></p>
                                     <p><a href="tel:+919445296977"
-                                            class="hover:text-impetus-orange transition-colors">+91- 9445296977</a></p>
+                                            class="hover:text-impetus-orange transition-colors">+91 -9445296977</a></p>
                                     <p><a href="tel:+919019051277"
-                                            class="hover:text-impetus-orange transition-colors">+919019051277</a></p>
+                                            class="hover:text-impetus-orange transition-colors">+91 -9019051277</a></p>
                                 </div>
                             </div>
                         </div>
