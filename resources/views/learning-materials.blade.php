@@ -11,13 +11,13 @@
             
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid items-center gap-16 lg:grid-cols-12">
-                    <div class="lg:col-span-7">
+                    <div class="lg:col-span-6">
                         <span class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Flexible Learning Assets</span>
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-impetus-navy tracking-tight font-outfit leading-tight mb-6">
                             CNE Learning Resources
                         </h1>
                         
-                        <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-base sm:text-lg">
+                        <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-sm sm:text-base">
                             <p>
                                 <strong>Learning resources</strong> in Online Continuing Nursing Education (CNE) refer to a wide range of digital educational materials and tools designed to support effective, flexible, and self-paced learning for nurses and healthcare professionals. These resources are developed to enhance clinical knowledge, strengthen practical skills, and promote evidence-based nursing practice in an accessible online learning environment.
                             </p>
@@ -28,10 +28,10 @@
                     </div>
 
                     <!-- Right Column: Visual Graphic -->
-                    <div class="lg:col-span-5 relative flex items-center justify-center">
+                    <div class="lg:col-span-6 relative flex items-center justify-center">
                         <div class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/10 via-transparent to-impetus-navy/10 blur-2xl -z-10"></div>
                         <img src="{{ asset('images/Benefits-of-E-Learning-Materials-1024x585.png') }}" alt="CNE Learning Resources"
-                            class="relative w-full max-w-[400px] h-auto rounded-[2rem] shadow-2xl border border-slate-200/60 transition-transform duration-500 hover:scale-[1.02]">
+                            class="relative w-full max-w-[550px] h-auto rounded-[2rem] shadow-2xl border border-slate-200/60 transition-transform duration-500 hover:scale-[1.02]">
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center mb-16">
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">
-                        Features of CNE Learning Resources
+                        Features of Learning Resources
                     </h2>
                     <p class="mt-4 text-slate-600 leading-relaxed text-justify sm:text-center max-w-3xl mx-auto">
                         Engineered to provide a rich educational ecosystem, our resources leverage evidence-based standards to deliver optimal clinical learning.
@@ -52,9 +52,9 @@
                 </div>
 
                 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    <!-- Feature Card 1 -->
-                    <div class="rounded-3xl border border-slate-200/80 bg-slate-50/50 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
-                        <div class="w-10 h-10 rounded-xl bg-impetus-orange/10 flex items-center justify-center mb-5">
+                    <!-- Feature Card 1 (Orange Theme) -->
+                    <div class="rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start">
+                        <div class="w-10 h-10 rounded-xl bg-orange-100 text-impetus-orange flex items-center justify-center mb-5 ring-1 ring-orange-200/50 shadow-sm">
                             <svg class="w-5 h-5 text-impetus-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
                             </svg>
@@ -65,10 +65,10 @@
                         </p>
                     </div>
 
-                    <!-- Feature Card 2 -->
-                    <div class="rounded-3xl border border-slate-200/80 bg-slate-50/50 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
-                        <div class="w-10 h-10 rounded-xl bg-impetus-navy/10 flex items-center justify-center mb-5">
-                            <svg class="w-5 h-5 text-impetus-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Feature Card 2 (Emerald Theme) -->
+                    <div class="rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 ring-1 ring-emerald-200/50 shadow-sm">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                             </svg>
                         </div>
@@ -78,10 +78,10 @@
                         </p>
                     </div>
 
-                    <!-- Feature Card 3 -->
-                    <div class="rounded-3xl border border-slate-200/80 bg-slate-50/50 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-5">
-                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Feature Card 3 (Indigo/Navy Theme) -->
+                    <div class="rounded-3xl border border-indigo-100/80 bg-gradient-to-br from-indigo-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5 ring-1 ring-indigo-200/50 shadow-sm">
+                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
                             </svg>
                         </div>
@@ -91,10 +91,10 @@
                         </p>
                     </div>
 
-                    <!-- Feature Card 4 -->
-                    <div class="rounded-3xl border border-slate-200/80 bg-slate-50/50 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start lg:col-span-1">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-5">
-                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Feature Card 4 (Orange Theme) -->
+                    <div class="rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start lg:col-span-1">
+                        <div class="w-10 h-10 rounded-xl bg-orange-100 text-impetus-orange flex items-center justify-center mb-5 ring-1 ring-orange-200/50 shadow-sm">
+                            <svg class="w-5 h-5 text-impetus-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                         </div>
@@ -104,10 +104,10 @@
                         </p>
                     </div>
 
-                    <!-- Feature Card 5 -->
-                    <div class="rounded-3xl border border-slate-200/80 bg-slate-50/50 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col items-start sm:col-span-2 lg:col-span-2">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-5">
-                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Feature Card 5 (Emerald Theme) -->
+                    <div class="rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start sm:col-span-2 lg:col-span-2">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 ring-1 ring-emerald-200/50 shadow-sm">
+                            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>

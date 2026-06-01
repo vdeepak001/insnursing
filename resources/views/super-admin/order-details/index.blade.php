@@ -84,49 +84,49 @@
     <div class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gray-800">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gray-50 dark:bg-gray-700">
+                <thead class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
                     <tr>
                         <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 w-14">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit w-14">
                             S. No
                         </th>
                         <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             UID
                         </th>
                         <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             Name
                         </th>
                         {{-- <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 min-w-[10rem]">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit min-w-[10rem]">
                             Module
                         </th> --}}
                         <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 whitespace-nowrap">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit whitespace-nowrap">
                             Payment mode
                         </th>
                         <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 whitespace-nowrap">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit whitespace-nowrap">
                             Status
                         </th>
                         <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 whitespace-nowrap">
-                            Date & Time of Transaction
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit whitespace-nowrap">
+                            Date &amp; Time of Transaction
                         </th>
                         <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 min-w-[8rem]">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit min-w-[8rem]">
                             Remarks
                         </th>
                         <th scope="col"
-                            class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 w-20">
+                            class="px-4 py-4 text-center text-xs font-bold text-white uppercase tracking-wider font-outfit w-20">
                             View
                         </th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                     @forelse ($orders as $order)
-                        <tr>
+                        <tr class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors">
                             <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                 {{ ($orders->currentPage() - 1) * $orders->perPage() + $loop->iteration }}
                             </td>

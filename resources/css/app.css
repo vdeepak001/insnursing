@@ -925,7 +925,7 @@ table tbody tr:nth-child(odd) {
 }
 
 table tbody tr:nth-child(even) {
-  background-color: var(--color-logo-light-green-bg) !important;
+  background-color: #fff3e8 !important;
 }
 
 /* Specific Section Headers */

@@ -26,7 +26,7 @@ class SmsService
 
         // ✅ Make sure this matches your DLT template EXACTLY character by character
         $message = 'Dear User, your OTP '.$otp.' for FORGOT PASSWORD. Valid for 10 minutes. DO NOT SHARE. Call: +91-94452 56977 / 9445296977- IMPETUS';
-        $tempId = '1707171264328240417';
+        $tempId = '1707171264502105055';
 
         return $this->send($cleanedPhone, $message, $tempId);
     }
@@ -43,8 +43,8 @@ class SmsService
         $packageDetails = substr(trim($packageDetails), 0, 50);
 
         // ✅ Make sure this matches your DLT template EXACTLY
-        $message = 'Dear User, you have successfully purchased online test. Your package details '.$packageDetails.'. Call: +91-94452 56977 / 9445296977-IMPETUS';
-        $tempId = '1707171264328240419';
+        $message = 'Dear User, you have successfully purchased online test. Your package details '.$packageDetails.'. Call: +91-94452 56977 / 9445296977-IHSNURSING';
+        $tempId = '1707171264514580828';
 
         return $this->send($cleanedPhone, $message, $tempId);
     }

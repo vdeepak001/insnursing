@@ -23,6 +23,8 @@ class LogoutNonUsers
                 ! $request->is('support*') && 
                 ! $request->is('sme*') && 
                 ! $request->is('dashboard*') && 
+                ! $request->is('profile*') && 
+                ! $request->is('change-password*') && 
                 ! $request->is('logout') &&
                 ! $request->is('livewire*')) {
                 

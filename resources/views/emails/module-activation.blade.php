@@ -11,9 +11,9 @@
             ]);
         @endphp
         @if ($isOnlinePurchase)
-            CPD Module Purchased
+            CNE Module Purchased
         @else
-            CPD Module Activated
+            CNE Module Activated
         @endif
     </title>
 </head>
@@ -32,12 +32,12 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #F36E21 0%, #1D2A57 100%); padding: 24px;">
+                        <td style="background: linear-gradient(135deg, #F36E21 0%, #E28C56 50%, #1D2A57 100%); padding: 24px;">
                             <h1 style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
                                 @if ($isOnlinePurchase)
-                                    CPD Module Purchased!
+                                    CNE Module Purchased!
                                 @else
-                                    CPD Module Activated!
+                                    CNE Module Activated!
                                 @endif
                             </h1>
                             <p style="margin: 8px 0 0; color: #f8fafc; font-size: 14px; line-height: 1.6;">
@@ -57,14 +57,14 @@
                             </p>
                             @if ($isOnlinePurchase)
                                 <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
-                                    Dear User, you have successfully purchased online CPD Module. Your package details
+                                    Dear User, you have successfully purchased online CNE Module. Your package details
                                     <strong>{{ $course->couse_name }}</strong>. For any further assistance mail us to <a
                                         href="mailto:info@ihsnursing.com"
                                         style="color: #F36E21; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
                                 </p>
                             @else
                                 <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
-                                    Dear User, your IHS Nursing CPD module <strong>{{ $course->couse_name }}</strong>
+                                    Dear User, your IHS Nursing CNE module <strong>{{ $course->couse_name }}</strong>
                                     has been activated. Kindly check your account for details. For any further
                                     assistance mail us to <a href="mailto:info@ihsnursing.com"
                                         style="color: #F36E21; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>

@@ -2,14 +2,14 @@
 
 @php
     $colorClasses = [
-        'brand' => 'bg-brand-50 text-brand-500 dark:bg-brand-500/10',
-        'success' => 'bg-success-50 text-success-600 dark:bg-success-500/15',
-        'error' => 'bg-error-50 text-error-600 dark:bg-error-500/15',
-        'indigo' => 'bg-indigo-50 text-indigo-600 dark:bg-indigo-500/15',
-        'blue' => 'bg-blue-50 text-blue-600 dark:bg-blue-500/15',
-        'orange' => 'bg-orange-50 text-orange-600 dark:bg-orange-500/15',
-        'purple' => 'bg-purple-50 text-purple-600 dark:bg-purple-500/15',
-    ][$color] ?? 'bg-gray-50 text-gray-600 dark:bg-gray-500/15';
+        'brand' => 'bg-gradient-to-tr from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/25',
+        'success' => 'bg-gradient-to-tr from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25',
+        'error' => 'bg-gradient-to-tr from-red-500 to-rose-500 text-white shadow-lg shadow-red-500/25',
+        'indigo' => 'bg-gradient-to-tr from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/25',
+        'blue' => 'bg-gradient-to-tr from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/25',
+        'orange' => 'bg-gradient-to-tr from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-500/25',
+        'purple' => 'bg-gradient-to-tr from-purple-500 to-fuchsia-500 text-white shadow-lg shadow-purple-500/25',
+    ][$color] ?? 'bg-gradient-to-tr from-slate-500 to-slate-600 text-white shadow-lg shadow-slate-500/25';
 
     $iconPaths = [
         'users' => 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',
@@ -24,23 +24,36 @@
         'document-duplicate' => 'M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2',
         'question-mark-circle' => 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
     ];
+
+    $subtitles = [
+        'Total Courses' => 'CNE Curriculum Catalog',
+        'Active Courses' => 'Active & Available Modules',
+        'Learning Materials' => 'Documents, PDFs & Multimedia',
+        'Total Questions' => 'Assessment Question Pool',
+        'Total Users' => 'Registered Portal Members',
+        'Active Users' => 'Actively Learning/Certifying',
+    ][$title] ?? 'System Metric';
 @endphp
 
-<div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-white/[0.03] md:p-6 transition-all hover:shadow-theme-md">
-    <div class="flex items-center justify-between">
-        <div class="flex items-center justify-center w-12 h-12 rounded-xl {{ $colorClasses }}">
+<div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:shadow-slate-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between h-full relative overflow-hidden group">
+    <!-- Hover graphic background decoration -->
+    <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-gradient-to-br from-slate-50 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+    <div class="flex items-center justify-between relative z-10">
+        <div class="flex items-center justify-center w-12 h-12 rounded-2xl {{ $colorClasses }} transition-transform duration-300 group-hover:scale-110">
             <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="{{ $iconPaths[$icon] ?? '' }}"></path>
             </svg>
         </div>
     </div>
 
-    <div class="flex items-end justify-between mt-5">
+    <div class="flex items-end justify-between mt-6 relative z-10">
         <div>
-            <span class="text-sm font-medium text-gray-500 dark:text-gray-400">{{ $title }}</span>
-            <h4 class="mt-2 font-bold text-gray-800 text-title-sm dark:text-white/90">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider font-outfit">{{ $title }}</span>
+            <h4 class="mt-2 font-extrabold text-slate-800 text-3xl tracking-tight font-outfit">
                 {{ number_format($value) }}
             </h4>
+            <span class="text-xs text-slate-500 font-medium block mt-1 font-outfit">{{ $subtitles }}</span>
         </div>
     </div>
 </div>

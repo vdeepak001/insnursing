@@ -101,51 +101,58 @@
     <div class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gray-800">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gray-50 dark:bg-gray-700">
+                <thead class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
                     <tr>
                         <th scope="col"
-                            class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 w-14">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit w-14">
                             S.No.
                         </th>
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             Unique ID
                         </th>
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit whitespace-nowrap">
+                            Reg. Date
+                        </th>
+                        <th scope="col"
+                            class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             Name
                         </th>
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             Email
                         </th>
                         {{-- <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             Password
                         </th> --}}
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             Phone
                         </th>
                         <th scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             State
                         </th>
                         <th scope="col"
-                            class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                            class="px-6 py-4 text-center text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             Action
                         </th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                     @forelse ($users as $user)
-                        <tr>
+                        <tr class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors">
                             <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                 {{ ($users->currentPage() - 1) * $users->perPage() + $loop->iteration }}
                             </td>
                             <td
                                 class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">
                                 {{ $user->unique_sequence_number ?? '—' }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">
+                                {{ $user->created_at ? $user->created_at->format('d-m-Y') : '—' }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="text-sm font-medium text-gray-900 dark:text-gray-100">
@@ -298,7 +305,7 @@
                     <div class="mt-8 flex justify-end gap-3">
                         @if (auth()->user()->role_type === 'support')
                             <button type="button" @click="closeDetail()"
-                                class="rounded-lg border border-gray-300 bg-logo-light-green px-8 py-2 text-sm font-bold text-white shadow transition hover:bg-green-600">
+                                class="rounded-lg border border-gray-300 bg-impetus-orange px-8 py-2 text-sm font-bold text-white shadow transition hover:bg-orange-600">
                                 Close
                             </button>
                         @else
@@ -307,7 +314,7 @@
                                 Cancel
                             </button>
                             <button type="submit" :disabled="detailSubmitting"
-                                class="inline-flex items-center rounded-lg bg-logo-light-green px-6 py-2 text-sm font-bold text-white shadow transition hover:bg-green-600 disabled:opacity-60">
+                                class="inline-flex items-center rounded-lg bg-impetus-orange px-6 py-2 text-sm font-bold text-white shadow transition hover:bg-orange-600 disabled:opacity-60">
                                 <span x-show="! detailSubmitting">UPDATE INFORMATION</span>
                                 <span x-show="detailSubmitting" x-cloak>Updating…</span>
                             </button>

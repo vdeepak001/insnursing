@@ -61,10 +61,10 @@
                             $count = $levelCounts[$levelKey] ?? 0;
                             $setCount = floor($count / 20);
                             $themeColor = [
-                                'Level 1' => ['bg' => 'bg-emerald-600', 'btn' => 'bg-emerald-600', 'text' => 'text-emerald-700', 'border' => 'border-emerald-200', 'light' => 'bg-emerald-50'],
-                                'Level 2' => ['bg' => 'bg-sky-500', 'btn' => 'bg-sky-500', 'text' => 'text-sky-700', 'border' => 'border-sky-200', 'light' => 'bg-sky-50'],
-                                'Level 3' => ['bg' => 'bg-rose-500', 'btn' => 'bg-rose-500', 'text' => 'text-rose-700', 'border' => 'border-rose-200', 'light' => 'bg-rose-50'],
-                                'Other' => ['bg' => 'bg-slate-600', 'btn' => 'bg-slate-600', 'text' => 'text-slate-700', 'border' => 'border-slate-200', 'light' => 'bg-slate-50']
+                                'Level 1' => ['bg' => 'bg-gradient-to-r from-emerald-600 to-teal-500', 'btn' => 'bg-emerald-600', 'text' => 'text-emerald-700', 'border' => 'border-emerald-200', 'light' => 'bg-emerald-50'],
+                                'Level 2' => ['bg' => 'bg-gradient-to-r from-sky-500 to-blue-500', 'btn' => 'bg-sky-500', 'text' => 'text-sky-700', 'border' => 'border-sky-200', 'light' => 'bg-sky-50'],
+                                'Level 3' => ['bg' => 'bg-gradient-to-r from-impetus-orange to-amber-500', 'btn' => 'bg-impetus-orange', 'text' => 'text-amber-700', 'border' => 'border-amber-200', 'light' => 'bg-amber-50'],
+                                'Other' => ['bg' => 'bg-gradient-to-r from-slate-700 to-slate-600', 'btn' => 'bg-slate-600', 'text' => 'text-slate-700', 'border' => 'border-slate-200', 'light' => 'bg-slate-50']
                             ][$levelLabel];
                         @endphp
 
@@ -106,8 +106,8 @@
                                                                 <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
                                                             </div>
                                                         @else
-                                                            <a href="{{ $practiceUrl }}" class="group flex items-center gap-2 font-semibold text-slate-700 hover:text-logo-blue">
-                                                                <span class="rounded bg-slate-100 px-2 py-0.5 text-[10px] text-slate-400 group-hover:bg-logo-blue/10 group-hover:text-logo-blue">SET {{ $s + 1 }}</span>
+                                                            <a href="{{ $practiceUrl }}" class="group flex items-center gap-2 font-semibold text-slate-700 hover:text-impetus-orange">
+                                                                <span class="rounded bg-slate-100 px-2 py-0.5 text-[10px] text-slate-400 group-hover:bg-impetus-orange/10 group-hover:text-impetus-orange">SET {{ $s + 1 }}</span>
                                                                 {{ $start }} - {{ $end }}
                                                             </a>
                                                         @endif
@@ -121,7 +121,7 @@
                                                                 @disabled($attemptCount === 0) 
                                                                 @class([
                                                                     'inline-flex rounded-lg p-2 transition', 
-                                                                    'text-logo-blue hover:bg-logo-blue/10' => $attemptCount > 0, 
+                                                                    'text-impetus-orange hover:bg-impetus-orange/10' => $attemptCount > 0, 
                                                                     'text-slate-300 cursor-not-allowed' => $attemptCount === 0
                                                                 ])
                                                             >
@@ -163,8 +163,14 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td @class(['px-6 py-4 text-center', 'rounded-br-2xl' => $s === $setCount - 1])>
-                                                        <span @class(['text-base font-semibold tabular-nums', 'text-slate-600' => !$isLocked, 'text-slate-500' => $isLocked])>{{ $attemptCount }}/2</span>
+                                                    <td @class(['px-6 py-4 text-center font-mono text-sm sm:text-base', 'rounded-br-2xl' => $s === $setCount - 1])>
+                                                        @if ($attemptCount === 0)
+                                                            <span class="text-slate-400 font-medium">0 / 2</span>
+                                                        @elseif ($attemptCount === 1)
+                                                            <span class="text-impetus-orange font-bold">1 / 2</span>
+                                                        @else
+                                                            <span class="text-slate-500 font-bold">2 / 2</span>
+                                                        @endif
                                                     </td>
                                                 </tr>
                                             @endfor

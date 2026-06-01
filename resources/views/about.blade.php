@@ -56,7 +56,7 @@
                         </div>
                         <div
                             class="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-3 shadow-2xl">
-                            <img src="{{ asset('images/Screenshot-2026-05-19-073517.webp') }}"
+                            <img src="{{ asset('images/nursing_team.png') }}"
                                 alt="Healthcare training and excellence"
                                 class="w-full h-[450px] object-cover rounded-2xl shadow-inner" />
                             <div
@@ -179,43 +179,60 @@
 
                     <!-- Right side: Specialized Skilled Birth Attendant roles -->
                     <div
-                        class="lg:col-span-5 lg:sticky lg:top-8 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg">
+                        class="lg:col-span-5 lg:sticky lg:top-8 bg-gradient-to-br from-white to-slate-50 border border-slate-200/80 rounded-[2.5rem] p-8 shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-16 -top-16 w-36 h-36 bg-impetus-orange/5 rounded-full blur-2xl pointer-events-none"></div>
                         <div
-                            class="w-12 h-12 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 mb-6 shadow-md shadow-impetus-orange/10">
+                            class="w-12 h-12 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 mb-6 shadow-lg shadow-impetus-orange/20 relative z-10">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-xl font-extrabold text-impetus-navy font-outfit mb-4">Skilled Birth Attendant Role
-                        </h3>
-                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed text-justify mb-6">
+                        <h3 class="text-xl font-extrabold text-impetus-navy font-outfit mb-4 relative z-10">Skilled Birth Attendant Role</h3>
+                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed text-justify mb-6 relative z-10">
                             Nurses have an important role in significantly reducing the maternal mortality rate (MMR) and
                             infant mortality rate (IMR) as Skilled Birth Attendants by providing:
                         </p>
-                        <ul class="space-y-4">
+                        <ul class="space-y-4 relative z-10">
+                            <!-- 1. Comprehensive Care (Orange Theme) -->
                             <li
-                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                class="flex gap-3 bg-gradient-to-br from-orange-50/40 via-white to-white p-4 rounded-xl border border-orange-100 shadow-sm hover:border-impetus-orange/30 hover:shadow-md hover:shadow-orange-500/5 transition-all duration-300">
                                 <span
-                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                                    class="text-impetus-orange shrink-0 bg-orange-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>
+                                </span>
                                 <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     <strong>Comprehensive Care:</strong> Delivering professional antenatal, intranatal and
                                     postnatal care.
                                 </span>
                             </li>
+
+                            <!-- 2. Timely Complications Identification (Emerald Theme) -->
                             <li
-                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                class="flex gap-3 bg-gradient-to-br from-emerald-50/40 via-white to-white p-4 rounded-xl border border-emerald-100 shadow-sm hover:border-emerald-500/30 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300">
                                 <span
-                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                                    class="text-emerald-600 shrink-0 bg-emerald-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                                    </svg>
+                                </span>
                                 <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     <strong>Timely Identification:</strong> Quick assessment and identification of potential
                                     clinical complications.
                                 </span>
                             </li>
+
+                            <!-- 3. Primary Management & Referral (Indigo Theme) -->
                             <li
-                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                class="flex gap-3 bg-gradient-to-br from-indigo-50/40 via-white to-white p-4 rounded-xl border border-indigo-100 shadow-sm hover:border-indigo-500/30 hover:shadow-md hover:shadow-indigo-500/5 transition-all duration-300">
                                 <span
-                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                                    class="text-indigo-600 shrink-0 bg-indigo-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                    </svg>
+                                </span>
                                 <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     <strong>Basic Management & Referral:</strong> Administering immediate primary care,
                                     followed by timely referral to higher centers.
@@ -269,61 +286,68 @@
                         </div>
                     </div>
 
-                    <!-- Right: Blueprint Decorative Card -->
+                    <!-- Right: Blueprint Decorative Card (Premium Navy Blueprint Style) -->
                     <div class="lg:col-span-5 relative">
                         <div
-                            class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/10 via-transparent to-impetus-navy/5 blur-2xl -z-10">
+                            class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/15 via-transparent to-impetus-navy/15 blur-2xl -z-10">
                         </div>
                         <div
-                            class="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-8 shadow-2xl flex flex-col justify-between">
-                            <div class="flex items-center justify-between mb-8 pb-6 border-b border-slate-100">
+                            class="relative overflow-hidden rounded-[2.5rem] border border-slate-800 bg-gradient-to-br from-impetus-navy via-[#1b2b62] to-[#0f1b40] p-8 shadow-2xl flex flex-col justify-between group">
+                            <!-- Floating light glow backdrop -->
+                            <div class="absolute right-0 top-0 h-48 w-48 rounded-full bg-impetus-orange/10 blur-3xl pointer-events-none transition duration-500 group-hover:bg-impetus-orange/15"></div>
+                            
+                            <div class="flex items-center justify-between mb-8 pb-6 border-b border-white/10 relative z-10">
                                 <div>
-                                    <h4 class="text-lg font-extrabold text-impetus-navy font-outfit">Research & Development
-                                    </h4>
+                                    <h4 class="text-lg font-extrabold text-white font-outfit">Research & Development</h4>
                                     <p
                                         class="text-xs font-semibold text-slate-400 mt-0.5 tracking-wider uppercase font-outfit">
                                         Continuous Evaluation Core</p>
                                 </div>
                                 <span
-                                    class="bg-impetus-lightOrange text-impetus-orange px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider font-outfit uppercase">Evidence
+                                    class="bg-impetus-orange text-white px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider font-outfit uppercase shadow-md shadow-impetus-orange/20">Evidence
                                     Core</span>
                             </div>
 
-                            <div class="space-y-6">
-                                <div class="flex items-start gap-4">
+                            <div class="space-y-5 relative z-10">
+                                <!-- Step 1 -->
+                                <div class="flex items-start gap-4 bg-white/5 border border-white/5 p-4 rounded-2xl hover:bg-white/10 hover:border-white/10 transition-all duration-300">
                                     <div
-                                        class="w-9 h-9 rounded-lg bg-impetus-lightOrange text-impetus-orange flex items-center justify-center shrink-0 text-sm font-bold font-outfit">
+                                        class="w-9 h-9 rounded-lg bg-gradient-to-br from-impetus-orange to-amber-500 text-white flex items-center justify-center shrink-0 text-sm font-bold font-outfit shadow-md shadow-impetus-orange/20">
                                         1</div>
                                     <div>
-                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">
+                                        <h5 class="text-sm sm:text-base font-bold text-white font-outfit mb-0.5">
                                             Issue &
                                             Setting-Based Designs</h5>
-                                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed text-justify">Addressing
+                                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed text-justify">Addressing
                                             existing and emerging healthcare challenges across India.</p>
                                     </div>
                                 </div>
-                                <div class="flex items-start gap-4">
+                                
+                                <!-- Step 2 -->
+                                <div class="flex items-start gap-4 bg-white/5 border border-white/5 p-4 rounded-2xl hover:bg-white/10 hover:border-white/10 transition-all duration-300">
                                     <div
-                                        class="w-9 h-9 rounded-lg bg-impetus-lightOrange text-impetus-orange flex items-center justify-center shrink-0 text-sm font-bold font-outfit">
+                                        class="w-9 h-9 rounded-lg bg-gradient-to-br from-impetus-orange to-amber-500 text-white flex items-center justify-center shrink-0 text-sm font-bold font-outfit shadow-md shadow-impetus-orange/20">
                                         2</div>
                                     <div>
-                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">
+                                        <h5 class="text-sm sm:text-base font-bold text-white font-outfit mb-0.5">
                                             Actionable Health
                                             Promotion Models</h5>
-                                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed text-justify">Bridging
+                                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed text-justify">Bridging
                                             the
                                             practice gap and directly improving national health indicators.</p>
                                     </div>
                                 </div>
-                                <div class="flex items-start gap-4">
+                                
+                                <!-- Step 3 -->
+                                <div class="flex items-start gap-4 bg-white/5 border border-white/5 p-4 rounded-2xl hover:bg-white/10 hover:border-white/10 transition-all duration-300">
                                     <div
-                                        class="w-9 h-9 rounded-lg bg-impetus-lightOrange text-impetus-orange flex items-center justify-center shrink-0 text-sm font-bold font-outfit">
+                                        class="w-9 h-9 rounded-lg bg-gradient-to-br from-impetus-orange to-amber-500 text-white flex items-center justify-center shrink-0 text-sm font-bold font-outfit shadow-md shadow-impetus-orange/20">
                                         3</div>
                                     <div>
-                                        <h5 class="text-sm sm:text-base font-bold text-impetus-navy font-outfit mb-0.5">
+                                        <h5 class="text-sm sm:text-base font-bold text-white font-outfit mb-0.5">
                                             Continuous
                                             Monitoring & Evaluation</h5>
-                                        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed text-justify">
+                                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed text-justify">
                                             Establishing
                                             absolute value and transparency with well-defined metrics.</p>
                                     </div>

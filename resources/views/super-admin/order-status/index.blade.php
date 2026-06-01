@@ -52,19 +52,19 @@
         <div class="p-0 overflow-x-auto">
             <table class="w-full text-left border-collapse">
                 <thead>
-                    <tr class="bg-[#0082c8]">
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20">Order ID</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20">UID</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20">Name</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20">Module name</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20">Date of purchase</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20">Time of purchase</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20 text-center">Status</th>
+                    <tr class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Order ID</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">UID</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Name</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Module name</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Date of purchase</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Time of purchase</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit text-center">Status</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                     @forelse($orders as $order)
-                        <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors duration-150">
+                        <tr class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors duration-150">
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">
                                 @php
                                     $displayId = '-';

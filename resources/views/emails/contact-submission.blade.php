@@ -16,7 +16,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #F36E21 0%, #1D2A57 100%); padding: 24px;">
+                        <td style="background: linear-gradient(135deg, #F36E21 0%, #E28C56 50%, #1D2A57 100%); padding: 24px;">
                             <h1 style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
                                 New Contact Inquiry
                             </h1>

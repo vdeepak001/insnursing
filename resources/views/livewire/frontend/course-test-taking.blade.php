@@ -46,44 +46,44 @@
                     {{-- Content Section --}}
                     <div class="bg-gradient-to-b from-white via-slate-50/30 to-white px-6 py-10 sm:px-10">
                         {{-- Quick Stats Grid --}}
-                        <div class="grid grid-cols-5 gap-1.5 md:gap-3">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-3">
                             {{-- Total Questions --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-2 shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-slate-400 md:text-[11px]">Questions</p>
-                                <p class="mt-1 text-xl font-black text-slate-900 md:mt-2 md:text-2xl">{{ $totalQuestions }}</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900 to-slate-800 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-slate-300 md:text-[11px]">Questions</p>
+                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $totalQuestions }}</p>
                             </div>
 
                             {{-- Correct Answers --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-2 shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-slate-400 md:text-[11px]">Correct Answer</p>
-                                <p class="mt-1 text-xl font-black text-emerald-600 md:mt-2 md:text-2xl">{{ $correctCount }}</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500 to-teal-600 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-emerald-100 md:text-[11px]">Correct</p>
+                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $correctCount }}</p>
                             </div>
 
                             {{-- Wrong Answers --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-2 shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-slate-400 md:text-[11px]">Wrong Answer</p>
-                                <p class="mt-1 text-xl font-black text-orange-600 md:mt-2 md:text-2xl">{{ $wrongCount }}</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-rose-500/20 bg-gradient-to-br from-rose-500 to-red-600 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-rose-100 md:text-[11px]">Wrong</p>
+                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $wrongCount }}</p>
                             </div>
 
                             {{-- Obtained Score --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-2 shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-slate-400 md:text-[11px]">Obtained Score</p>
-                                <p class="mt-1 text-xl font-black text-logo-blue md:mt-2 md:text-2xl">{{ $obtainedScore }}/{{ $maxScore }}</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-orange-500/20 bg-gradient-to-br from-orange-500 to-amber-500 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-orange-100 md:text-[11px]">Score</p>
+                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $obtainedScore }}/{{ $maxScore }}</p>
                             </div>
 
                             @if($testType !== 'practice')
                             {{-- Time Taken --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-white p-2 shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-slate-400 md:text-[11px]">Time Taken</p>
-                                <p class="mt-1 text-xl font-black text-slate-900 md:mt-2 md:text-2xl">{{ $formattedDuration }}</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-slate-50/80 p-2 text-center text-slate-800 shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-slate-500 md:text-[11px]">Time Taken</p>
+                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $formattedDuration }}</p>
                             </div>
                             @endif
                         </div>
                         {{-- Score Chart & Visuals --}}
-                        <div class="mt-10 overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm ring-1 ring-slate-100 sm:p-8">
-                            <div class="flex flex-col gap-2 border-b border-slate-100 pb-5">
-                                <h2 class="font-serif text-xl font-bold text-slate-900 sm:text-2xl">
-                                    Score: {{ $obtainedScore }}/{{ $maxScore }}
+                        <div class="mt-10 overflow-hidden rounded-[2.5rem] border border-slate-700/50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 p-6 shadow-xl sm:p-8">
+                            <div class="flex flex-col gap-2 border-b border-slate-700/50 pb-5">
+                                <h2 class="font-serif text-xl font-bold text-white sm:text-2xl">
+                                    Score: <span class="text-amber-400 font-outfit font-black">{{ $obtainedScore }}/{{ $maxScore }}</span>
                                 </h2>
                             </div>
 
@@ -100,21 +100,21 @@
                             <div class="mt-10 flex flex-col items-center justify-center">
                                 <div class="relative size-64 shrink-0 sm:size-80">
                                     <svg class="size-full transform" viewBox="0 0 100 100">
-                                        {{-- Wrong Percentage (Orange) --}}
+                                        {{-- Wrong Percentage (Crimson/Rose) --}}
                                         <circle
                                             cx="50" cy="50" r="25"
                                             fill="transparent"
-                                            stroke="rgb(249 115 22)"
+                                            stroke="rgb(244, 63, 94)"
                                             stroke-width="50"
                                             stroke-dasharray="157.08"
                                             stroke-dashoffset="0"
                                             transform="rotate(-90, 50, 50)"
                                         />
-                                        {{-- Correct Percentage (Green) --}}
+                                        {{-- Correct Percentage (Emerald) --}}
                                         <circle
                                             cx="50" cy="50" r="25"
                                             fill="transparent"
-                                            stroke="rgb(16 185 129)"
+                                            stroke="rgb(16, 185, 129)"
                                             stroke-width="50"
                                             stroke-dasharray="157.08"
                                             stroke-dashoffset="{{ 157.08 * (1 - $pctCorrect / 100) }}"
@@ -138,12 +138,12 @@
  
                                 <div class="mt-8 flex flex-wrap justify-center gap-8">
                                     <div class="flex items-center gap-3">
-                                        <span class="size-4 shrink-0 bg-emerald-500 shadow-sm"></span>
-                                        <span class="text-base font-bold text-slate-700">Correct Answer</span>
+                                        <span class="size-4 shrink-0 bg-emerald-500 shadow-sm rounded-full"></span>
+                                        <span class="text-base font-bold text-emerald-300">Correct Answer</span>
                                     </div>
                                     <div class="flex items-center gap-3">
-                                        <span class="size-4 shrink-0 bg-orange-500 shadow-sm"></span>
-                                        <span class="text-base font-bold text-slate-700">Wrong Answer</span>
+                                        <span class="size-4 shrink-0 bg-rose-600 shadow-sm rounded-full"></span>
+                                        <span class="text-base font-bold text-rose-300">Wrong Answer</span>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +195,7 @@
                                                 </div>
                                                 <a 
                                                     href="{{ route('certificates.download', $orderId) }}" 
-                                                    class="inline-flex items-center gap-2 rounded-xl bg-logo-blue px-8 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition hover:bg-brand-600"
+                                                    class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-impetus-orange to-amber-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-orange-500/20 transition hover:from-orange-600 hover:to-amber-600"
                                                     target="_blank"
                                                 >
                                                     <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M7.5 7.5L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>
@@ -231,7 +231,11 @@
                         <div class="mt-10 flex flex-col items-center gap-4 border-t border-slate-100 pt-8">
                             <a
                                 href="{{ $testType === 'practice' ? route('cne.modules.test', [$course->couse_name, 'practice']) : route('cne.modules.show', $course->couse_name) }}"
-                                class="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-logo-blue to-brand-600 px-10 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-logo-blue/30 transition hover:from-brand-600 hover:to-brand-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2"
+                                @class([
+                                    'inline-flex items-center justify-center gap-2 rounded-2xl px-10 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+                                    'bg-gradient-to-r from-impetus-orange to-amber-500 shadow-orange-500/20 hover:from-orange-600 hover:to-amber-600 focus-visible:ring-impetus-orange' => $testType === 'practice',
+                                    'bg-gradient-to-r from-indigo-900 to-brand-900 shadow-indigo-900/20 hover:from-brand-900 hover:to-slate-900 focus-visible:ring-indigo-900' => $testType !== 'practice'
+                                ])
                             >
                                 Back to {{ $testType === 'practice' ? 'practice sets' : 'module' }}
                                 <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -262,17 +266,17 @@
                 </div>
 
                 @if($testType === 'practice' && $practiceLevel !== null)
-                    <div class="flex shrink-0 flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wider text-slate-500 sm:text-sm lg:flex-1">
+                    <div class="flex shrink-0 flex-wrap items-center justify-end gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wider text-slate-500 sm:text-sm lg:justify-end lg:flex-1">
                         <span class="flex items-center gap-2">
-                            <span class="h-1.5 w-1.5 rounded-full bg-logo-blue"></span>
+                            <span class="h-1.5 w-1.5 rounded-full bg-impetus-orange"></span>
                             Level: {{ $practiceLevel == -1 ? 'Other' : $practiceLevel }}
                         </span>
                         <span class="flex items-center gap-2">
-                            <span class="h-1.5 w-1.5 rounded-full bg-logo-blue"></span>
+                            <span class="h-1.5 w-1.5 rounded-full bg-impetus-orange"></span>
                             Set: {{ $practiceSet }}
                         </span>
                         <span class="flex items-center gap-2">
-                            <span class="h-1.5 w-1.5 rounded-full bg-logo-blue"></span>
+                            <span class="h-1.5 w-1.5 rounded-full bg-impetus-orange"></span>
                             Attempt: {{ $currentAttemptNumber }} / 2
                         </span>
                     </div>
@@ -281,7 +285,7 @@
                 <div @class([
                     'shrink-0 text-sm font-semibold text-slate-600 sm:text-base font-outfit lg:flex-1',
                     'text-center' => $examDeadlineTs && $testType !== 'practice',
-                    'text-center lg:text-right' => !($examDeadlineTs && $testType !== 'practice')
+                    'text-right lg:text-right' => !($examDeadlineTs && $testType !== 'practice')
                 ])>
                     Question {{ $currentIndex + 1 }} / {{ $totalQuestions }}
                 </div>
@@ -298,7 +302,7 @@
                             'relative shrink-0 overflow-hidden rounded-3xl border px-5 py-4 shadow-lg sm:min-w-[13.5rem] lg:ml-4',
                             'border-rose-200/90 bg-gradient-to-br from-rose-50 via-white to-rose-50/60 shadow-rose-200/40' => $examTimeExpired,
                             'border-amber-200/90 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/50 shadow-amber-200/30' => $timerLow && ! $examTimeExpired,
-                            'border-slate-200/90 bg-gradient-to-br from-white via-slate-50/40 to-brand-50/35 shadow-brand-900/[0.06]' => ! $examTimeExpired && ! $timerLow,
+                            'border-slate-300 bg-gradient-to-br from-slate-50 via-white to-slate-100 shadow-sm' => ! $examTimeExpired && ! $timerLow,
                         ])
                     >
                         <div
@@ -306,7 +310,7 @@
                                 'absolute inset-x-0 top-0 h-1 rounded-t-3xl',
                                 'bg-gradient-to-r from-rose-500 via-rose-400 to-amber-400' => $examTimeExpired,
                                 'bg-gradient-to-r from-amber-500 via-orange-400 to-amber-400' => $timerLow && ! $examTimeExpired,
-                                'bg-gradient-to-r from-logo-blue via-sky-400 to-brand-500' => ! $examTimeExpired && ! $timerLow,
+                                'bg-gradient-to-r from-orange-600 via-sky-400 to-amber-500' => ! $examTimeExpired && ! $timerLow,
                             ])
                             aria-hidden="true"
                         ></div>
@@ -316,7 +320,7 @@
                                     'flex size-12 shrink-0 items-center justify-center rounded-2xl text-white shadow-lg',
                                     'bg-gradient-to-br from-rose-500 to-rose-700 shadow-rose-500/35' => $examTimeExpired,
                                     'bg-gradient-to-br from-amber-500 to-orange-600 shadow-amber-500/35' => $timerLow && ! $examTimeExpired,
-                                    'bg-gradient-to-br from-impetus-navy to-slate-800 shadow-impetus-navy/25' => ! $examTimeExpired && ! $timerLow,
+                                    'bg-gradient-to-br from-slate-800 to-slate-900 shadow-slate-900/25' => ! $examTimeExpired && ! $timerLow,
                                 ])
                             >
                                 <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -331,7 +335,7 @@
                                         'mt-2 font-mono text-[1.65rem] font-bold leading-none tabular-nums tracking-tight sm:text-3xl',
                                         'text-rose-700 drop-shadow-[0_1px_0_rgba(255,255,255,0.6)]' => $examTimeExpired,
                                         'text-amber-900 drop-shadow-sm' => $timerLow && ! $examTimeExpired,
-                                        'text-brand-900 drop-shadow-sm' => ! $examTimeExpired && ! $timerLow,
+                                        'text-slate-800 drop-shadow-sm' => ! $examTimeExpired && ! $timerLow,
                                     ])
                                 >{{ $examTimerDisplay }}</p>
                                 @if ($examTimeExpired)
@@ -356,7 +360,7 @@
                                 Use the grid to navigate. Your answers are saved in this session until you submit.
                             @endif
                         </p>
-                        <div class="mt-4 flex flex-wrap gap-2">
+                        <div class="mt-4 grid grid-cols-4 gap-2 sm:gap-2.5 justify-items-center">
                             @foreach ($questions as $idx => $question_row)
                                 @php
                                     $qid = $question_row['id'];
@@ -412,8 +416,8 @@
                             $q = $questions[$currentIndex] ?? null;
                         @endphp
                         @if ($q)
-                            <h2 class="mt-4 font-serif text-lg font-bold leading-relaxed !text-impetus-navy font-outfit sm:text-xl md:text-2xl">
-                                {{ $currentIndex + 1 }}. {{ $q['text'] }}
+                            <h2 class="mt-4 text-base font-medium leading-relaxed text-slate-800 font-outfit sm:text-lg">
+                                {{ $currentIndex + 1 }}. {!! $q['text'] !!}
                             </h2>
 
                             <div class="mt-8 space-y-4" wire:key="q-{{ $q['id'] }}">
@@ -505,9 +509,9 @@
                                 @endif
 
                                 @if ($showReasoning && filled($practiceReasoning[$qid] ?? null))
-                                    <div class="mt-4 rounded-2xl border border-logo-blue/20 bg-logo-blue/5 p-5">
-                                        <h4 class="text-xs font-bold uppercase tracking-wider text-logo-blue">Rationale</h4>
-                                        <p class="mt-2 text-justify text-base leading-relaxed text-slate-700">
+                                    <div class="mt-4 rounded-2xl border border-emerald-200/80 bg-emerald-50/40 p-5 shadow-sm">
+                                        <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-700">Rationale</h4>
+                                        <p class="mt-2 text-justify text-base leading-relaxed text-slate-700 font-outfit">
                                             {{ $practiceReasoning[$qid] }}
                                         </p>
                                     </div>
@@ -532,7 +536,7 @@
                                     type="button"
                                     wire:click="prevQuestion"
                                     @disabled($currentIndex === 0)
-                                    class="rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-800 shadow-sm transition enabled:hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
+                                    class="rounded-xl border border-slate-300 bg-gradient-to-b from-white to-slate-50 px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition enabled:hover:border-slate-400 enabled:hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40"
                                 >
                                     Previous
                                 </button>
@@ -545,7 +549,7 @@
                                             <button
                                                 type="button"
                                                 wire:click="submitPracticeAnswer({{ $qid }})"
-                                                class="rounded-xl bg-emerald-600 px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-700"
+                                                class="rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-600/25 transition hover:from-emerald-700 hover:to-teal-600"
                                             >
                                                 Submit Answer
                                             </button>
@@ -556,7 +560,7 @@
                                         <button
                                             type="button"
                                             wire:click="nextQuestion"
-                                            class="rounded-xl bg-logo-blue px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-logo-blue/25 transition hover:bg-brand-600"
+                                            class="rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-orange-600/25 transition hover:from-orange-700 hover:to-amber-600"
                                         >
                                             Next
                                         </button>
@@ -565,7 +569,7 @@
                                             type="button"
                                             wire:click="submitTest"
                                             wire:loading.attr="disabled"
-                                            class="rounded-xl bg-emerald-600 px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-700 disabled:opacity-60"
+                                            class="rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-600/25 transition hover:from-emerald-700 hover:to-teal-600 disabled:opacity-60"
                                         >
                                             <span wire:loading.remove wire:target="submitTest">Submit test</span>
                                             <span wire:loading wire:target="submitTest">Submitting…</span>

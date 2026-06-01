@@ -39,34 +39,37 @@
     </div>
 
     <!-- Table -->
-    <div class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gray-800">
+    <div class="bg-white shadow-sm border border-slate-200/80 rounded-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gray-50 dark:bg-gray-700">
+                <thead class="bg-gradient-to-r from-impetus-navy to-[#2c3e75] text-white">
                 <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('id')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer font-outfit" wire:click="sortBy('id')">
                         ID
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('first_name')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer font-outfit" wire:click="sortBy('first_name')">
                         Name
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('email')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer font-outfit" wire:click="sortBy('email')">
                         Email / Role
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
+                        Mobile No.
+                    </th>
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                         Password
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('active_status')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer font-outfit" wire:click="sortBy('active_status')">
                         Status
                     </th>
-                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                    <th scope="col" class="px-6 py-4 text-right text-xs font-bold text-white uppercase tracking-wider font-outfit">
                         Action
                     </th>
                 </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                 @forelse ($users as $user)
-                    <tr wire:key="user-{{ $user->id }}">
+                    <tr wire:key="user-{{ $user->id }}" class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors">
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
                             {{ ($users->currentPage() - 1) * $users->perPage() + $loop->iteration }}
                         </td>
@@ -78,6 +81,9 @@
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="text-sm text-gray-900 dark:text-gray-100">{{ $user->email }}</div>
                             <div class="text-sm text-gray-500 dark:text-gray-400 capitalize">{{ $user->role_type }}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="text-sm text-gray-900 dark:text-gray-100 font-mono">{{ $user->phone ?? '—' }}</div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             <div class="text-sm text-gray-900 dark:text-gray-100 font-mono">{{ $user->password_raw ?? 'N/A' }}</div>
@@ -114,7 +120,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center dark:text-gray-400">
+                        <td colspan="6" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center dark:text-gray-400">
                             No admin users found.
                         </td>
                     </tr>

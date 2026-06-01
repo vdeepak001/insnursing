@@ -44,82 +44,127 @@
 
                         <!-- Features & Benefits Grid -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                            <!-- Features Card -->
+                            <!-- Features Card (Orange Theme) -->
                             <div
-                                class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                                <h3 class="text-lg font-bold text-impetus-navy font-outfit mb-4 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-impetus-orange inline-block"></span>
+                                class="bg-gradient-to-br from-orange-50/40 via-white to-white border border-orange-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300">
+                                <h3 class="text-lg font-bold text-impetus-navy font-outfit mb-5 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-impetus-orange inline-block animate-pulse"></span>
                                     Features of Online CNE Modules
                                 </h3>
-                                <ul class="space-y-3">
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span
-                                            class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Self-paced, flexible learning</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span
-                                            class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Interactive digital content and assessments</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span
-                                            class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Accessible via computers and mobile devices</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span
-                                            class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Content developed by expert faculty and clinical resource persons</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span
-                                            class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Evidence-based, updated curriculum</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span
-                                            class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Digital certificates awarded upon successful completion</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span
-                                            class="text-impetus-orange font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Supports Continuing Nursing Education (CNE)</span>
                                     </li>
                                 </ul>
                             </div>
 
-                            <!-- Benefits Card -->
+                            <!-- Benefits Card (Emerald Theme) -->
                             <div
-                                class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-300">
-                                <h3 class="text-lg font-bold text-impetus-navy font-outfit mb-4 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                                class="bg-gradient-to-br from-emerald-50/40 via-white to-white border border-emerald-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300">
+                                <h3 class="text-lg font-bold text-impetus-navy font-outfit mb-5 flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
                                     Benefits of Online CNE Modules
                                 </h3>
-                                <ul class="space-y-3">
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Enhances clinical knowledge and professional competence</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Promotes continuous learning and skill upgradation</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Enables learning without interrupting professional duties</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Improves the quality of patient care and clinical outcomes</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Encourages evidence-based nursing practice</span>
                                     </li>
-                                    <li class="flex items-start gap-3 text-base sm:text-lg text-slate-600">
-                                        <span class="text-emerald-500 font-bold text-lg leading-none shrink-0">&bull;</span>
+                                    <li class="flex items-start gap-3 text-base text-slate-600">
+                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
                                         <span>Provides equal learning opportunities across geographic locations</span>
                                     </li>
                                 </ul>
@@ -191,7 +236,7 @@
                                             @auth
                                                 @if (auth()->user()?->role_type === 'user')
                                                     <div
-                                                        class="absolute bottom-4 right-4 z-10 flex items-center rounded-sm bg-green-500 px-2.5 py-1 text-xs font-bold tracking-wide text-white shadow-sm">
+                                                        class="absolute bottom-4 right-4 z-10 text-[13px] font-extrabold tracking-wide text-emerald-800 bg-white/90 px-1.5 py-0.5 rounded shadow-sm">
                                                         Credit Point: {{ $creditPoints }}
                                                     </div>
                                                 @endif
@@ -240,7 +285,7 @@
                                             @auth
                                                 @if (auth()->user()?->role_type === 'user')
                                                     <div
-                                                        class="absolute bottom-4 right-4 z-10 flex items-center rounded-sm bg-green-500 px-2.5 py-1 text-xs font-bold tracking-wide text-white shadow-sm">
+                                                        class="absolute bottom-4 right-4 z-10 text-[13px] font-extrabold tracking-wide text-emerald-800 bg-white/90 px-1.5 py-0.5 rounded shadow-sm">
                                                         Credit Point: {{ $creditPoints }}
                                                     </div>
                                                 @endif

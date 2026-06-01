@@ -37,31 +37,31 @@
     <div class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gray-800">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gray-50 dark:bg-gray-700">
+                <thead class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
                 <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('id')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit cursor-pointer" wire:click="sortBy('id')">
                         ID
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('sequence')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit cursor-pointer" wire:click="sortBy('sequence')">
                         Seq
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('couse_name')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit cursor-pointer" wire:click="sortBy('couse_name')">
                         Course Name
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('course_code')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit cursor-pointer" wire:click="sortBy('course_code')">
                         Code
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                         Attachment
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
                         Created By
                     </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300 cursor-pointer" wire:click="sortBy('active_status')">
+                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit cursor-pointer" wire:click="sortBy('active_status')">
                         Status
                     </th>
                     @if ($routePrefix === 'admin')
-                        <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider dark:text-gray-300">
+                        <th scope="col" class="px-6 py-4 text-right text-xs font-bold text-white uppercase tracking-wider font-outfit">
                             Action
                         </th>
                     @endif
@@ -69,7 +69,7 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                 @forelse ($courses as $course)
-                    <tr wire:key="course-{{ $course->id }}">
+                    <tr wire:key="course-{{ $course->id }}" class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors">
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
                             {{ ($courses->currentPage() - 1) * $courses->perPage() + $loop->iteration }}
                         </td>

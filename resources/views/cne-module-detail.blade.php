@@ -119,19 +119,26 @@
                                                 'ring-2 ring-offset-2 ring-logo-blue ring-offset-white shadow-md';
 
                                             $preClass =
-                                                'border-emerald-500/40 bg-white text-emerald-700 hover:border-emerald-600 hover:bg-emerald-600 hover:text-white focus-visible:ring-emerald-600 ' .
+                                                'bg-emerald-600 border-emerald-600 text-white hover:bg-emerald-700 hover:border-emerald-700 focus-visible:ring-emerald-600 ' .
                                                 ($nextTest === 'pre' ? $btnActive : '');
                                             $mockClass =
-                                                'border-amber-500/40 bg-white text-amber-700 hover:border-amber-500 hover:bg-amber-500 hover:text-white focus-visible:ring-amber-500 ' .
+                                                'bg-impetus-orange border-impetus-orange text-white hover:bg-impetus-orange/90 hover:border-impetus-orange/90 focus-visible:ring-amber-500 ' .
                                                 ($nextTest === 'mock' ? $btnActive : '');
                                             $finalClass =
-                                                'border-rose-500/40 bg-white text-rose-700 hover:border-rose-600 hover:bg-rose-600 hover:text-white focus-visible:ring-rose-600 ' .
+                                                'bg-indigo-900 border-indigo-900 text-white hover:bg-indigo-800 hover:border-indigo-800 focus-visible:ring-indigo-700 ' .
                                                 ($nextTest === 'final' ? $btnActive : '');
+
+                                            $preDoneClass =
+                                                'border-emerald-500 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 hover:text-emerald-900 focus-visible:ring-emerald-600';
+                                            $mockDoneClass =
+                                                'border-amber-500 bg-amber-50 text-amber-800 hover:bg-amber-100 hover:text-amber-900 focus-visible:ring-amber-500';
+                                            $finalDoneClass =
+                                                'border-indigo-500 bg-indigo-50 text-indigo-800 hover:bg-indigo-100 hover:text-indigo-900 focus-visible:ring-indigo-700';
 
                                             $doneClass =
                                                 'cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400 opacity-80';
                                             $lockedClass =
-                                                'cursor-not-allowed border-slate-200/50 bg-slate-100/50 text-slate-300';
+                                                'cursor-not-allowed border-slate-200/50 bg-slate-100/50 text-slate-400/70';
                                         @endphp
 
                                         {{-- Pre Test --}}
@@ -150,7 +157,7 @@
                                                     obtained: '{{ $tp['pre_obtained'] }}',
                                                     max: '{{ $tp['pre_max'] }}'
                                                 }"
-                                                class="{{ $btnBase }} {{ $preClass }} border-logo-blue/30 bg-logo-blue/5">
+                                                class="{{ $btnBase }} {{ $preDoneClass }}">
                                                 Pretest <svg class="ml-2 h-5 w-5 text-emerald-500" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -180,7 +187,7 @@
                                                     obtained: '{{ $tp['mock_obtained'] }}',
                                                     max: '{{ $tp['mock_max'] }}'
                                                 }"
-                                                class="{{ $btnBase }} {{ $mockClass }} border-logo-blue/30 bg-logo-blue/5">
+                                                class="{{ $btnBase }} {{ $mockDoneClass }}">
                                                 Mock <svg class="ml-2 h-5 w-5 text-emerald-500" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -211,7 +218,7 @@
                                                     obtained: '{{ $tp['final_obtained'] }}',
                                                     max: '{{ $tp['final_max'] }}'
                                                 }"
-                                                class="{{ $btnBase }} {{ $finalClass }} border-logo-blue/30 bg-logo-blue/5">
+                                                class="{{ $btnBase }} {{ $finalDoneClass }}">
                                                 Final
                                                 @if ($tp['final_passed'] ?? false)
                                                     <svg class="ml-2 h-5 w-5 text-emerald-500" fill="none"
@@ -278,7 +285,7 @@
                             @if (auth()->user()?->role_type === 'user')
                                 <div class="mt-4 flex justify-end">
                                     <div
-                                        class="inline-flex items-center rounded-lg bg-emerald-600 px-4 py-2 text-sm font-bold uppercase tracking-wider text-white shadow-md shadow-emerald-600/20 ring-1 ring-emerald-500/50">
+                                        class="inline-flex items-center rounded-lg bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-2 text-sm font-bold uppercase tracking-wider text-amber-400 shadow-md ring-1 ring-slate-700">
                                         CREDIT POINTS: {{ $creditPoints }}
                                     </div>
                                 </div>
@@ -373,27 +380,42 @@
                                 <h2 class="text-2xl font-bold tracking-tight text-impetus-orange font-serif sm:text-3xl">
                                     Learning Resources
                                 </h2>
-                                @if ($hasCourseMaterials && $canViewLearningMaterials)
-                                    <a href="{{ route('cne.modules.materials', $course->couse_name) }}"
-                                        class="group relative inline-flex overflow-hidden rounded-xl bg-gradient-to-br from-logo-blue to-brand-600 px-8 py-3.5 text-center text-white shadow-lg shadow-logo-blue/20 ring-2 ring-white/40 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue active:translate-y-0">
-                                        <div class="relative flex items-center gap-4">
-                                            <span
-                                                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
-                                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2">
+                                @if ($isPurchased)
+                                    @if ($preDone)
+                                        <a href="{{ route('cne.modules.materials', $course->couse_name) }}"
+                                            class="group relative inline-flex overflow-hidden rounded-xl bg-gradient-to-br from-impetus-orange to-amber-500 px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 ring-2 ring-white/40 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange active:translate-y-0">
+                                            <div class="relative flex items-center gap-4">
+                                                <span
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
+                                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                                    </svg>
+                                                </span>
+                                                <span class="text-sm font-bold uppercase tracking-wider">Learning Resources</span>
+                                                <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                                 </svg>
+                                            </div>
+                                        </a>
+                                    @else
+                                        <div class="flex flex-col items-end gap-1.5">
+                                            <span class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75">
+                                                <div class="relative flex items-center gap-4">
+                                                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
+                                                        <svg class="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                                        </svg>
+                                                    </span>
+                                                    <span class="text-sm font-bold uppercase tracking-wider">Learning Resources (Locked)</span>
+                                                </div>
                                             </span>
-                                            <span class="text-sm font-bold uppercase tracking-wider">View Learning
-                                                Materials</span>
-                                            <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                            </svg>
+                                            <span class="text-xs text-rose-500 font-semibold tracking-wide bg-rose-50 border border-rose-100 rounded-lg px-2.5 py-1">⚠️ Complete the Pre-test first to unlock your Learning Resources.</span>
                                         </div>
-                                    </a>
+                                    @endif
                                 @endif
                             </div>
 
@@ -420,7 +442,7 @@
                         @auth
                             @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
                                 <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
-                                    class="group relative inline-flex overflow-hidden rounded-xl bg-gradient-to-br from-logo-blue to-brand-600 px-8 py-3.5 text-center text-white shadow-lg shadow-logo-blue/20 ring-2 ring-white/40 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2 active:translate-y-0">
+                                    class="group relative inline-flex overflow-hidden rounded-xl bg-gradient-to-r from-impetus-orange to-amber-500 px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 ring-2 ring-white/40 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2 active:translate-y-0">
                                     <div class="relative flex items-center gap-4">
                                         <span
                                             class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
@@ -511,34 +533,33 @@
                             x-text="scoreCardData.title"></p>
                     </div>
 
-                    <div class="mt-8 grid grid-cols-2 gap-3">
-                        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 text-center">
+                    <div class="mt-8 grid grid-cols-2 gap-3.5">
+                        <div class="rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900 to-slate-800 p-4 text-center shadow-inner text-white transition hover:shadow-md">
                             <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Score</p>
-                            <p class="mt-1 text-xl font-bold text-slate-900"
+                            <p class="mt-1.5 text-xl font-black text-amber-400 font-outfit"
                                 x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
                         </div>
-                        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 text-center">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Percentage</p>
-                            <p class="mt-1 text-xl font-bold text-slate-900"
+                        <div class="rounded-2xl border border-orange-500/20 bg-gradient-to-br from-orange-500 to-amber-500 p-4 text-center text-white transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-orange-100">Percentage</p>
+                            <p class="mt-1.5 text-xl font-black font-outfit"
                                 x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'">
                             </p>
                         </div>
-                        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 text-center">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Questions</p>
-                            <p class="mt-1 text-xl font-bold text-slate-900" x-text="scoreCardData.total"></p>
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Questions</p>
+                            <p class="mt-1.5 text-xl font-black text-slate-900 font-outfit" x-text="scoreCardData.total"></p>
                         </div>
-                        <div class="rounded-2xl border border-slate-100 bg-slate-50/50 p-4 text-center">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Time taken</p>
-                            <p class="mt-1 text-xl font-bold text-slate-900" x-text="scoreCardData.duration"></p>
+                        <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Time taken</p>
+                            <p class="mt-1.5 text-xl font-black text-slate-900 font-outfit" x-text="scoreCardData.duration"></p>
                         </div>
-                        <div class="rounded-2xl border border-emerald-100 bg-emerald-50/30 p-4 text-center">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-600/80">Correct Answer
-                            </p>
-                            <p class="mt-1 text-xl font-bold text-emerald-700" x-text="scoreCardData.correct"></p>
+                        <div class="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500 to-teal-600 p-4 text-center text-white transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-100">Correct Answer</p>
+                            <p class="mt-1.5 text-xl font-black font-outfit" x-text="scoreCardData.correct"></p>
                         </div>
-                        <div class="rounded-2xl border border-rose-100 bg-rose-50/30 p-4 text-center">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-rose-600/80">Wrong Answer</p>
-                            <p class="mt-1 text-xl font-bold text-rose-700" x-text="scoreCardData.wrong"></p>
+                        <div class="rounded-2xl border border-rose-500/20 bg-gradient-to-br from-rose-500 to-red-600 p-4 text-center text-white transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-rose-100">Wrong Answer</p>
+                            <p class="mt-1.5 text-xl font-black font-outfit" x-text="scoreCardData.wrong"></p>
                         </div>
                     </div>
 

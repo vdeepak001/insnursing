@@ -45,7 +45,7 @@
                     </div>
 
                     <!-- Right Column: Visual Graphic/Accreditation Seal -->
-                    <div class="lg:col-span-4 relative flex items-center justify-center">
+                    <div class="lg:col-span-4 relative flex items-center justify-center lg:self-end lg:mb-2">
                         <div
                             class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/10 via-transparent to-impetus-navy/10 blur-2xl -z-10">
                         </div>
@@ -66,57 +66,87 @@
                 <div class="grid items-start gap-16 lg:grid-cols-12">
 
                     <!-- Purpose Column (Left) -->
-                    <div class="lg:col-span-6 bg-slate-50 border border-slate-200/80 rounded-[2rem] p-8 shadow-lg">
+                    <div
+                        class="lg:col-span-6 bg-gradient-to-br from-white to-slate-50 border border-slate-200/80 rounded-[2.5rem] p-8 shadow-xl relative overflow-hidden">
+                        <div class="absolute -right-16 -top-16 w-36 h-36 bg-impetus-orange/5 rounded-full blur-2xl pointer-events-none"></div>
                         <div
-                            class="w-12 h-12 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 mb-6 shadow-md shadow-impetus-orange/10">
+                            class="w-12 h-12 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 mb-6 shadow-lg shadow-impetus-orange/20 relative z-10">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
                                     d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-impetus-navy font-outfit mb-4">Purpose of CNE Certification
-                        </h3>
-                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed text-justify mb-6">
+                        <h3 class="text-2xl font-extrabold text-impetus-navy font-outfit mb-4 relative z-10">Purpose of CNE Certification</h3>
+                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed text-justify mb-6 relative z-10">
                             Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core
                             performance goals:
                         </p>
-                        <ul class="space-y-4">
+                        <ul class="space-y-4 relative z-10">
+                            <!-- 1. Continuous Development (Orange Theme) -->
                             <li
-                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                class="flex gap-3 bg-gradient-to-br from-orange-50/40 via-white to-white p-4 rounded-xl border border-orange-100 shadow-sm hover:border-impetus-orange/30 hover:shadow-md hover:shadow-orange-500/5 transition-all duration-300">
                                 <span
-                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                                    class="text-impetus-orange shrink-0 bg-orange-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                    </svg>
+                                </span>
                                 <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To promote continuous professional development among nurses
                                 </span>
                             </li>
+
+                            <!-- 2. Update Clinical Knowledge (Emerald Theme) -->
                             <li
-                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                class="flex gap-3 bg-gradient-to-br from-emerald-50/40 via-white to-white p-4 rounded-xl border border-emerald-100 shadow-sm hover:border-emerald-500/30 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300">
                                 <span
-                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                                    class="text-emerald-600 shrink-0 bg-emerald-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                </span>
                                 <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To update clinical knowledge and practical skills
                                 </span>
                             </li>
+
+                            <!-- 3. Quality & Safety (Navy Theme) -->
                             <li
-                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                class="flex gap-3 bg-gradient-to-br from-indigo-50/40 via-white to-white p-4 rounded-xl border border-indigo-100 shadow-sm hover:border-indigo-500/30 hover:shadow-md hover:shadow-indigo-500/5 transition-all duration-300">
                                 <span
-                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                                    class="text-indigo-600 shrink-0 bg-indigo-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+                                    </svg>
+                                </span>
                                 <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To improve the quality of patient care and safety standards
                                 </span>
                             </li>
+
+                            <!-- 4. Specialized Areas (Orange Theme) -->
                             <li
-                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                class="flex gap-3 bg-gradient-to-br from-orange-50/40 via-white to-white p-4 rounded-xl border border-orange-100 shadow-sm hover:border-impetus-orange/30 hover:shadow-md hover:shadow-orange-500/5 transition-all duration-300">
                                 <span
-                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                                    class="text-impetus-orange shrink-0 bg-orange-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                    </svg>
+                                </span>
                                 <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To strengthen competency in specialized nursing areas
                                 </span>
                             </li>
+
+                            <!-- 5. Regulatory Requirements (Emerald Theme) -->
                             <li
-                                class="flex gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                class="flex gap-3 bg-gradient-to-br from-emerald-50/40 via-white to-white p-4 rounded-xl border border-emerald-100 shadow-sm hover:border-emerald-500/30 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300">
                                 <span
-                                    class="text-impetus-orange font-bold text-lg leading-none mt-0.5 shrink-0">&bull;</span>
+                                    class="text-emerald-600 shrink-0 bg-emerald-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                                    </svg>
+                                </span>
                                 <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                                     To meet regulatory and professional education requirements
                                 </span>
@@ -172,97 +202,33 @@
                     </p>
                 </div>
 
-                <!-- Mobile / Tablet Vertical Timeline -->
-                <div class="relative mx-auto max-w-lg lg:hidden">
-                    <div class="absolute start-6 top-3 bottom-3 w-0.5 bg-gradient-to-b from-impetus-orange via-[#8c4324] to-impetus-navy"
-                        aria-hidden="true"></div>
-                    @php
-                        $mobileSteps = [
-                            ['label' => 'Register', 'tone' => 'from-impetus-orange to-[#e05d14] shadow-impetus-orange/20'],
-                            ['label' => 'Choose a module', 'tone' => 'from-impetus-navy to-[#112547] shadow-impetus-navy/20'],
-                            ['label' => 'Take pre-test', 'tone' => 'from-impetus-orange to-[#e05d14] shadow-impetus-orange/20'],
-                            ['label' => 'Use learning resources', 'tone' => 'from-impetus-navy to-[#112547] shadow-impetus-navy/20'],
-                            ['label' => 'Practice MCQs', 'tone' => 'from-impetus-orange to-[#e05d14] shadow-impetus-orange/20'],
-                            ['label' => 'Take mock exam', 'tone' => 'from-impetus-navy to-[#112547] shadow-impetus-navy/20'],
-                            ['label' => 'Complete final exam', 'tone' => 'from-impetus-orange to-[#e05d14] shadow-impetus-orange/20'],
-                            ['label' => 'Download CNE certificate', 'tone' => 'from-impetus-navy to-[#112547] shadow-impetus-navy/20'],
-                        ];
-                    @endphp
-                    <ol class="relative list-none space-y-0 p-0">
-                        @foreach ($mobileSteps as $index => $step)
-                            <li class="relative flex gap-4 pb-10 last:pb-0">
-                                <div
-                                    class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br {{ $step['tone'] }} text-sm font-bold text-white shadow-lg ring-4 ring-white">
-                                    {{ $index + 1 }}
+                @php
+                    $steps = [
+                        ['num' => '1', 'label' => 'Register', 'gradient' => 'from-emerald-500 to-teal-600 shadow-emerald-500/20'],
+                        ['num' => '2', 'label' => 'Choose a module', 'gradient' => 'from-sky-500 to-blue-600 shadow-sky-500/20'],
+                        ['num' => '3', 'label' => 'Take pre-test', 'gradient' => 'from-indigo-500 to-indigo-600 shadow-indigo-500/20'],
+                        ['num' => '4', 'label' => 'Use learning resources', 'gradient' => 'from-violet-500 to-purple-600 shadow-violet-500/20'],
+                        ['num' => '5', 'label' => 'Practice MCQs', 'gradient' => 'from-fuchsia-500 to-pink-600 shadow-fuchsia-500/20'],
+                        ['num' => '6', 'label' => 'Take mock exam', 'gradient' => 'from-rose-500 to-red-600 shadow-rose-500/20'],
+                        ['num' => '7', 'label' => 'Complete final exam', 'gradient' => 'from-orange-500 to-amber-600 shadow-orange-500/20'],
+                        ['num' => '8', 'label' => 'Download CNE certificate', 'gradient' => 'from-amber-500 to-yellow-500 shadow-amber-500/20']
+                    ];
+                @endphp
+
+                <div class="mt-8">
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 sm:gap-8 max-w-5xl mx-auto justify-items-center">
+                        @foreach ($steps as $step)
+                            <div class="group relative flex flex-col items-center">
+                                {{-- Circle Element --}}
+                                <div class="relative z-10 flex size-36 sm:size-40 flex-col items-center justify-center rounded-full bg-gradient-to-br {{ $step['gradient'] }} p-5 text-center text-white shadow-lg transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl">
+                                    <span class="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">Step {{ $step['num'] }}</span>
+                                    <h4 class="mt-2 text-xs sm:text-sm font-extrabold leading-snug font-outfit uppercase tracking-wider">{{ $step['label'] }}</h4>
                                 </div>
-                                <div class="min-w-0 flex-1 pt-1">
-                                    <p class="text-base font-semibold text-slate-900 font-outfit">{{ $step['label'] }}</p>
-                                </div>
-                            </li>
+                                
+                                {{-- Pulse highlight circle --}}
+                                <div class="absolute inset-0 rounded-full bg-gradient-to-br {{ $step['gradient'] }} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300 pointer-events-none"></div>
+                            </div>
                         @endforeach
-                    </ol>
-                </div>
-
-                <!-- Desktop Snake Flow -->
-                <div class="mt-14 hidden lg:block">
-                    @php
-                        $arrowRight =
-                            '<svg class="h-8 w-8 shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>';
-                        $arrowLeft =
-                            '<svg class="h-8 w-8 shrink-0 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>';
-                        $arrowDown =
-                            '<svg class="h-10 w-10 text-slate-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>';
-                    @endphp
-
-                    <div class="mx-auto max-w-5xl">
-                        <!-- Row 1: LTR -->
-                        <div class="flex flex-wrap items-center justify-center gap-4">
-                            <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange to-[#e05d14] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-orange/20 font-outfit">
-                                Register</div>
-                            {!! $arrowRight !!}
-                            <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-navy to-[#112547] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-navy/20 font-outfit">
-                                Choose a module</div>
-                            {!! $arrowRight !!}
-                            <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange to-[#e05d14] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-orange/20 font-outfit">
-                                Take pre-test</div>
-                        </div>
-
-                        <div class="flex justify-end pe-[calc(8%-1rem)] xl:pe-[calc(12.5%-2rem)]">
-                            <div class="py-2">{!! $arrowDown !!}</div>
-                        </div>
-
-                        <!-- Row 2: RTL Boxes -->
-                        <div class="flex flex-wrap items-center justify-center gap-4">
-                            <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-navy to-[#112547] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-navy/20 font-outfit">
-                                Use learning resources</div>
-                            {!! $arrowLeft !!}
-                            <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange to-[#e05d14] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-orange/20 font-outfit">
-                                Practice MCQs</div>
-                            {!! $arrowLeft !!}
-                            <div
-                                class="flex min-h-[88px] min-w-[160px] max-w-[200px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-navy to-[#112547] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-navy/20 font-outfit">
-                                Take mock exam</div>
-                        </div>
-
-                        <div class="flex justify-start ps-[calc(8%-1rem)] xl:ps-[calc(12.5%-2rem)]">
-                            <div class="py-2">{!! $arrowDown !!}</div>
-                        </div>
-
-                        <!-- Row 3: LTR -->
-                        <div class="flex flex-wrap items-center justify-center gap-4">
-                            <div
-                                class="flex min-h-[88px] min-w-[180px] max-w-[240px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-orange to-[#e05d14] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-orange/20 font-outfit">
-                                Complete final exam</div>
-                            {!! $arrowRight !!}
-                            <div
-                                class="flex min-h-[88px] min-w-[180px] max-w-[280px] flex-1 items-center justify-center rounded-2xl bg-gradient-to-br from-impetus-navy to-[#112547] px-4 py-4 text-center text-sm font-semibold text-white shadow-lg shadow-impetus-navy/20 font-outfit">
-                                Download CNE certificate</div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
-        <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+        <h2 class="text-3xl font-extrabold tracking-tight"
+            style="color: var(--color-impetus-orange)">
             {{ $selectedState ? 'Report: ' . $selectedState->name : 'Reports' }}
         </h2>
 
@@ -22,7 +23,9 @@
                 </form>
             </div>
             @if($selectedState)
-                <a href="{{ request()->url() }}" class="inline-flex items-center px-6 py-2.5 bg-gray-800 dark:bg-gray-700 hover:bg-gray-900 dark:hover:bg-gray-600 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl">
+                <a href="{{ request()->url() }}" 
+                   class="inline-flex items-center px-5 py-2.5 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                   style="background: linear-gradient(135deg, #0f766e, #0d9488);">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Back
                 </a>
@@ -70,14 +73,14 @@
             <div class="p-0 overflow-x-auto">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="bg-[#0082c8]">
-                            <th class="px-8 py-5 text-sm font-bold text-white uppercase tracking-widest border-b border-blue-400/20">Module Name</th>
-                            <th class="px-8 py-5 text-sm font-bold text-white uppercase tracking-widest text-center border-b border-blue-400/20">Number of Nurses Completed</th>
+                        <tr class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
+                            <th class="px-8 py-5 text-sm font-bold text-white uppercase tracking-widest font-outfit">Module Name</th>
+                            <th class="px-8 py-5 text-sm font-bold text-white uppercase tracking-widest font-outfit text-center">Number of Nurses Completed</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                         @forelse($moduleWisePassed as $module)
-                            <tr class="group hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors duration-150">
+                            <tr class="group odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors duration-150">
                                 <td class="px-8 py-5 text-base font-medium text-gray-700 dark:text-gray-300">
                                     <a href="{{ route($routePrefix . '.reports.user-performance', ['state_id' => $selectedState->id, 'course_id' => $module->id]) }}" 
                                        class="hover:text-blue-600 hover:underline transition-all duration-200">

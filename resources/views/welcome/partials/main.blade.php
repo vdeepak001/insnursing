@@ -204,12 +204,12 @@
             <div class="grid gap-8 lg:grid-cols-2">
                 <!-- Vision -->
                 <article
-                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                    class="group relative overflow-hidden rounded-[2rem] border border-orange-100 bg-gradient-to-br from-orange-50/60 via-white to-white p-8 shadow-md shadow-orange-500/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10 hover:border-impetus-orange/40 sm:p-10">
                     <div
-                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
+                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/10 blur-3xl transition duration-300 group-hover:bg-impetus-orange/20">
                     </div>
                     <div
-                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
+                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/30 shadow-md">
                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -228,12 +228,12 @@
 
                 <!-- Mission -->
                 <article
-                    class="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
+                    class="group relative overflow-hidden rounded-[2rem] border border-emerald-100 bg-gradient-to-br from-emerald-50/60 via-white to-white p-8 shadow-md shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-500/40 sm:p-10">
                     <div
-                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-impetus-orange/5 blur-3xl transition duration-300 group-hover:bg-impetus-orange/10">
+                        class="absolute right-0 top-0 h-32 w-32 rounded-full bg-emerald-500/10 blur-3xl transition duration-300 group-hover:bg-emerald-500/20">
                     </div>
                     <div
-                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-impetus-lightOrange text-impetus-orange ring-1 ring-impetus-orange/20">
+                        class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600 ring-1 ring-emerald-500/30 shadow-md">
                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
                             stroke="currentColor">
                             <circle cx="12" cy="12" r="10" stroke-linecap="round"
@@ -285,58 +285,93 @@
                         <!-- Our Values -->
                         <div>
                             <h4
-                                class="text-lg sm:text-xl font-bold text-impetus-navy font-outfit mb-4 flex items-center gap-2.5">
-                                <span class="w-3 h-3 rounded-full bg-impetus-orange inline-block"></span>
+                                class="text-lg sm:text-xl font-bold text-impetus-navy font-outfit mb-5 flex items-center gap-2.5">
+                                <span class="w-3.5 h-3.5 rounded-full bg-impetus-orange inline-block animate-pulse"></span>
                                 Our Values
                             </h4>
                             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <!-- 1. Ethical Values (Orange Theme) -->
                                 <li
-                                    class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    class="flex items-start gap-3 bg-gradient-to-br from-orange-50/40 via-white to-white p-4 rounded-xl border border-orange-100 shadow-sm hover:border-impetus-orange/30 hover:shadow-md hover:shadow-orange-500/5 transition-all duration-300">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                        class="text-impetus-orange shrink-0 bg-orange-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+                                        </svg>
+                                    </span>
                                     <span class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Ethical
                                             Values:</strong> Imparting medical ethics, emphasizing morally sound
                                         practices.</span>
                                 </li>
+
+                                <!-- 2. Excellence (Emerald Theme) -->
                                 <li
-                                    class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    class="flex items-start gap-3 bg-gradient-to-br from-emerald-50/40 via-white to-white p-4 rounded-xl border border-emerald-100 shadow-sm hover:border-emerald-500/30 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                        class="text-emerald-600 shrink-0 bg-emerald-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499c.198-.39.743-.39.94 0l2.22 4.506 4.973.722c.43.063.602.592.29.896l-3.6 3.51 1.053 5.48c.08.413-.354.729-.726.533L12 16.273l-4.437 2.33c-.372.196-.806-.12-.726-.533L7.89 13.62l-3.6-3.51c-.312-.304-.14-.833.29-.896l4.973-.722 2.22-4.506z" />
+                                        </svg>
+                                    </span>
                                     <span
                                         class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Excellence:</strong>
                                         Achieving excellence recognized for its high quality and standards.</span>
                                 </li>
+
+                                <!-- 3. Integrity (Orange Theme) -->
                                 <li
-                                    class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    class="flex items-start gap-3 bg-gradient-to-br from-orange-50/40 via-white to-white p-4 rounded-xl border border-orange-100 shadow-sm hover:border-impetus-orange/30 hover:shadow-md hover:shadow-orange-500/5 transition-all duration-300">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                        class="text-impetus-orange shrink-0 bg-orange-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                                        </svg>
+                                    </span>
                                     <span
                                         class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Integrity:</strong>
                                         Nurturing honesty, integrity, accountability, and flexibility in all
                                         endeavors.</span>
                                 </li>
+
+                                <!-- 4. Teamwork (Emerald Theme) -->
                                 <li
-                                    class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    class="flex items-start gap-3 bg-gradient-to-br from-emerald-50/40 via-white to-white p-4 rounded-xl border border-emerald-100 shadow-sm hover:border-emerald-500/30 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                        class="text-emerald-600 shrink-0 bg-emerald-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.109A11.386 11.386 0 0110.089 21c-2.243 0-4.32-.647-6.07-1.758.172-.114.362-.218.569-.307a8.35 8.35 0 017.842-.004c.036.015.07.031.106.048m5.172-3.837a4.122 4.122 0 00-6.977-2.13M14.249 9.308a3.517 3.517 0 01.317 1.332 3.52 3.52 0 01-1.047 2.481 3.519 3.519 0 01-2.482 1.048 3.507 3.507 0 01-3.513-3.513c0-.343.05-.674.14-.99M10.5 3a3 3 0 110 6 3 3 0 010-6zm7.5 3a2.25 2.25 0 110 4.5 2.25 2.25 0 010-4.5z" />
+                                        </svg>
+                                    </span>
                                     <span
                                         class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Teamwork:</strong>
                                         Demonstrating the values of teamwork and creating a highly conducive working
                                         environment.</span>
                                 </li>
+
+                                <!-- 5. Innovation (Orange Theme) -->
                                 <li
-                                    class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    class="flex items-start gap-3 bg-gradient-to-br from-orange-50/40 via-white to-white p-4 rounded-xl border border-orange-100 shadow-sm hover:border-impetus-orange/30 hover:shadow-md hover:shadow-orange-500/5 transition-all duration-300">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                        class="text-impetus-orange shrink-0 bg-orange-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v3m0 0h.01m-9.07 0h18.14M12 3a6 6 0 00-6 6c0 1.63.65 3.1 1.7 4.18l.8 1.1A3 3 0 019 16.18V18h6v-1.82a3 3 0 01.5-1.9l.8-1.1A5.99 5.99 0 0018 9a6 6 0 00-6-6z" />
+                                        </svg>
+                                    </span>
                                     <span
                                         class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Innovation:</strong>
                                         Supporting commendable creativity and valuable innovation in all our preferred
                                         approaches.</span>
                                 </li>
+
+                                <!-- 6. Synergy (Emerald Theme) -->
                                 <li
-                                    class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm hover:border-slate-200 transition-colors">
+                                    class="flex items-start gap-3 bg-gradient-to-br from-emerald-50/40 via-white to-white p-4 rounded-xl border border-emerald-100 shadow-sm hover:border-emerald-500/30 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300">
                                     <span
-                                        class="text-impetus-orange shrink-0 bg-impetus-lightOrange w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold font-sans">&bull;</span>
+                                        class="text-emerald-600 shrink-0 bg-emerald-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
+                                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                                        </svg>
+                                    </span>
                                     <span
                                         class="text-sm sm:text-base text-slate-600 leading-relaxed"><strong>Synergy:</strong>
                                         Developing strong interdisciplinary, synergistic, and collegial
@@ -411,11 +446,11 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Strength 1 -->
+                <!-- Strength 1 (Orange Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-orange-500/5 hover:border-impetus-orange/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-orange-100 text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-orange-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" />
@@ -430,11 +465,11 @@
                     </p>
                 </div>
 
-                <!-- Strength 2 -->
+                <!-- Strength 2 (Emerald Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 hover:border-emerald-500/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-emerald-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -449,11 +484,11 @@
                     </p>
                 </div>
 
-                <!-- Strength 3 -->
+                <!-- Strength 3 (Indigo/Navy Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-indigo-100/80 bg-gradient-to-br from-indigo-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-500/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-indigo-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -469,11 +504,11 @@
                     </p>
                 </div>
 
-                <!-- Strength 4 -->
+                <!-- Strength 4 (Orange Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-orange-500/5 hover:border-impetus-orange/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-orange-100 text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-orange-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -488,11 +523,11 @@
                     </p>
                 </div>
 
-                <!-- Strength 5 -->
+                <!-- Strength 5 (Emerald Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 hover:border-emerald-500/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-emerald-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -506,11 +541,11 @@
                     </p>
                 </div>
 
-                <!-- Strength 6 -->
+                <!-- Strength 6 (Indigo/Navy Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-indigo-100/80 bg-gradient-to-br from-indigo-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-500/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-indigo-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
@@ -524,11 +559,11 @@
                     </p>
                 </div>
 
-                <!-- Strength 7 -->
+                <!-- Strength 7 (Orange Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-orange-500/5 hover:border-impetus-orange/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-orange-100 text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-orange-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -542,11 +577,11 @@
                     </p>
                 </div>
 
-                <!-- Strength 8 -->
+                <!-- Strength 8 (Emerald Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-500/5 hover:border-emerald-500/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-emerald-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -560,11 +595,11 @@
                     </p>
                 </div>
 
-                <!-- Strength 9 -->
+                <!-- Strength 9 (Indigo/Navy Theme) -->
                 <div
-                    class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50/50 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white hover:border-impetus-orange/30">
+                    class="group relative overflow-hidden rounded-3xl border border-indigo-100/80 bg-gradient-to-br from-indigo-50/40 via-white to-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-indigo-500/5 hover:border-indigo-500/30">
                     <div
-                        class="w-12 h-12 rounded-2xl bg-impetus-lightOrange text-impetus-orange flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                        class="w-12 h-12 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform ring-1 ring-indigo-200/50 shadow-sm">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2.945M11 20.935V19a2 2 0 012-2h1.87M16.5 3.5L19 6m0 0l-2.5 2.5M19 6h-6.5" />
@@ -579,21 +614,20 @@
                 </div>
             </div>
 
-            <!-- 10th Strength Custom Box (Commitment to Quality) -->
+            <!-- 10th Strength Custom Box (Commitment to Quality) - Navy Banner Theme -->
             <div
-                class="mt-8 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 rounded-3xl p-8 hover:border-impetus-orange/20 transition-all duration-300 shadow-sm flex flex-col md:flex-row items-start md:items-center gap-6">
+                class="mt-8 bg-gradient-to-r from-impetus-navy to-[#182652] border border-slate-800 rounded-3xl p-8 hover:border-impetus-orange/40 hover:shadow-2xl hover:shadow-impetus-navy/30 transition-all duration-500 flex flex-col md:flex-row items-start md:items-center gap-6 group relative overflow-hidden">
+                <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-impetus-orange/10 blur-3xl pointer-events-none transition duration-500 group-hover:bg-impetus-orange/20"></div>
                 <div
-                    class="w-14 h-14 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 shadow-lg shadow-impetus-orange/20">
+                    class="w-14 h-14 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 shadow-lg shadow-impetus-orange/30 group-hover:scale-110 transition-transform">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
                     </svg>
                 </div>
-                <div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-1">Commitment to Quality
-                        Healthcare
-                        Education</h3>
-                    <p class="text-base text-slate-600 text-justify leading-relaxed">
+                <div class="relative z-10">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white font-outfit mb-1.5">Commitment to Quality Healthcare Education</h3>
+                    <p class="text-base text-slate-200 text-justify leading-relaxed">
                         We are profoundly dedicated to improving healthcare workforce competence and strengthening
                         patient care outcomes through high-quality, comprehensive education and training services.
                     </p>

@@ -210,7 +210,7 @@
 
 <body>
     @php
-        $salutation = '';
+        $salutation = 'Ms/Mr. ';
         if ($user->gender) {
             $gender = strtolower($user->gender);
             if ($gender === 'male') {
@@ -296,7 +296,7 @@
                 <div class="certify-text">This is to certify that</div>
                 <div class="user-name">{{ $userName }}</div>
 
-                <div class="course-label">has successfully completed the CPD Module</div>
+                <div class="course-label">has successfully completed the CNE Module</div>
                 <div class="course-name">{{ $courseNameStr }}</div>
 
                 <div class="date-section">
@@ -320,7 +320,7 @@
                         </td>
                         <td class="footer-cell">
                             <div class="sig-label">Director</div>
-                            <div class="sig-sub-label">IHS Nursing Solutions</div>
+                            <div class="sig-sub-label">Impetus Healthcare Skills Private Limited</div>
                         </td>
                     </tr>
                 </table>

@@ -27,12 +27,12 @@
     <div class="bg-white shadow-sm border border-gray-200 rounded-xl overflow-hidden dark:bg-gray-800 dark:border-gray-700">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gray-50 dark:bg-gray-700/50">
+                <thead class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
                 <tr>
-                    <th scope="col" class="px-4 py-3 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                    <th scope="col" class="px-4 py-4 text-left text-[11px] font-bold text-white uppercase tracking-wider font-outfit">
                         #
                     </th>
-                    <th scope="col" class="px-4 py-3 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400 cursor-pointer hover:text-indigo-600 transition-colors" wire:click="sortBy('states.name')">
+                    <th scope="col" class="px-4 py-4 text-left text-[11px] font-bold text-white uppercase tracking-wider font-outfit cursor-pointer hover:text-orange-200 transition-colors" wire:click="sortBy('states.name')">
                         <div class="flex items-center gap-1">
                             State
                             @if($sortField === 'states.name')
@@ -40,7 +40,7 @@
                             @endif
                         </div>
                     </th>
-                    <th scope="col" class="px-4 py-3 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400 cursor-pointer hover:text-indigo-600 transition-colors" wire:click="sortBy('council_name')">
+                    <th scope="col" class="px-4 py-4 text-left text-[11px] font-bold text-white uppercase tracking-wider font-outfit cursor-pointer hover:text-orange-200 transition-colors" wire:click="sortBy('council_name')">
                         <div class="flex items-center gap-1">
                             Council
                             @if($sortField === 'council_name')
@@ -48,20 +48,20 @@
                             @endif
                         </div>
                     </th>
-                    <th scope="col" class="px-4 py-3 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                    <th scope="col" class="px-4 py-4 text-left text-[11px] font-bold text-white uppercase tracking-wider font-outfit">
                         Courses
                     </th>
-                    <th scope="col" class="px-4 py-3 text-center text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                    <th scope="col" class="px-4 py-4 text-center text-[11px] font-bold text-white uppercase tracking-wider font-outfit">
                         Status
                     </th>
-                    <th scope="col" class="px-4 py-3 text-right text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                    <th scope="col" class="px-4 py-4 text-right text-[11px] font-bold text-white uppercase tracking-wider font-outfit">
                         Actions
                     </th>
                 </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                 @forelse ($stateCouncils as $stateCouncil)
-                    <tr wire:key="state-council-{{ $stateCouncil->id }}" class="hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors">
+                    <tr wire:key="state-council-{{ $stateCouncil->id }}" class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors">
                         <td class="px-4 py-3 whitespace-nowrap text-xs text-gray-500 dark:text-gray-400">
                             {{ ($stateCouncils->currentPage() - 1) * $stateCouncils->perPage() + $loop->iteration }}
                         </td>
