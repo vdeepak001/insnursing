@@ -52,7 +52,7 @@
         <div class="p-0 overflow-x-auto">
             <table class="w-full text-left border-collapse">
                 <thead>
-                    <tr class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
+                    <tr class="bg-gradient-to-r from-impetus-orange to-orange-500">
                         <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Order ID</th>
                         <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">UID</th>
                         <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Name</th>

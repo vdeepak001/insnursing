@@ -208,63 +208,100 @@
                             'num' => '1',
                             'label' => 'Register',
                             'gradient' => 'from-emerald-500 to-teal-600 shadow-emerald-500/20',
-                            'arrow_right' => 'block',
-                            'arrow_down' => 'hidden'
+                            'arrow_right' => 'block'
                         ],
                         [
                             'num' => '2',
                             'label' => 'Purchase a module',
                             'gradient' => 'from-sky-500 to-blue-600 shadow-sky-500/20',
-                            'arrow_right' => 'hidden sm:block',
-                            'arrow_down' => 'block sm:hidden'
+                            'arrow_right' => 'hidden sm:block'
                         ],
                         [
                             'num' => '3',
                             'label' => 'Take pre-test',
                             'gradient' => 'from-indigo-500 to-indigo-600 shadow-indigo-500/20',
-                            'arrow_right' => 'block sm:hidden md:block',
-                            'arrow_down' => 'hidden sm:block md:hidden'
+                            'arrow_right' => 'hidden md:block'
                         ],
                         [
                             'num' => '4',
                             'label' => 'Use learning resources',
                             'gradient' => 'from-violet-500 to-purple-600 shadow-violet-500/20',
-                            'arrow_right' => 'hidden sm:block md:hidden',
-                            'arrow_down' => 'block sm:hidden md:block'
+                            'arrow_right' => 'hidden sm:block md:hidden'
                         ],
                         [
                             'num' => '5',
                             'label' => 'Practice MCQs',
                             'gradient' => 'from-fuchsia-500 to-pink-600 shadow-fuchsia-500/20',
-                            'arrow_right' => 'block',
-                            'arrow_down' => 'hidden'
+                            'arrow_right' => 'block'
                         ],
                         [
                             'num' => '6',
                             'label' => 'Take mock exam',
                             'gradient' => 'from-rose-500 to-red-600 shadow-rose-500/20',
-                            'arrow_right' => 'hidden md:block',
-                            'arrow_down' => 'block md:hidden'
+                            'arrow_right' => 'hidden md:block'
                         ],
                         [
                             'num' => '7',
                             'label' => 'Complete final exam',
                             'gradient' => 'from-orange-500 to-amber-600 shadow-orange-500/20',
-                            'arrow_right' => 'block',
-                            'arrow_down' => 'hidden'
+                            'arrow_right' => 'block'
                         ],
                         [
                             'num' => '8',
                             'label' => 'Download CNE certificate',
                             'gradient' => 'from-amber-500 to-yellow-500 shadow-amber-500/20',
-                            'arrow_right' => 'hidden',
-                            'arrow_down' => 'hidden'
+                            'arrow_right' => 'hidden'
                         ]
                     ];
                 @endphp
 
-                <div class="mt-8">
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16 max-w-5xl mx-auto">
+                <div class="mt-8 relative">
+                    <!-- Desktop SVG wrapping connector (4 columns) -->
+                    <svg class="hidden md:block absolute inset-0 w-full h-[384px] pointer-events-none z-0" viewBox="0 0 1000 384" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrow-md" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#CBD5E1" />
+                            </marker>
+                        </defs>
+                        <!-- Step 4 to Step 5 wrap -->
+                        <path d="M 875 160 C 875 185, 875 192, 850 192 L 150 192 C 125 192, 125 199, 125 220" 
+                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-md)" />
+                    </svg>
+
+                    <!-- Tablet SVG wrapping connectors (3 columns) -->
+                    <svg class="hidden sm:block md:hidden absolute inset-0 w-full h-[608px] pointer-events-none z-0" viewBox="0 0 1000 608" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrow-sm" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#CBD5E1" />
+                            </marker>
+                        </defs>
+                        <!-- Step 3 to Step 4 wrap -->
+                        <path d="M 833 160 C 833 185, 833 192, 808 192 L 192 192 C 167 192, 167 199, 167 220" 
+                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-sm)" />
+                        <!-- Step 6 to Step 7 wrap -->
+                        <path d="M 833 384 C 833 409, 833 416, 808 416 L 192 416 C 167 416, 167 423, 167 444" 
+                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-sm)" />
+                    </svg>
+
+                    <!-- Mobile SVG wrapping connectors (2 columns) -->
+                    <svg class="block sm:hidden absolute inset-0 w-full h-[720px] pointer-events-none z-0" viewBox="0 0 1000 720" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrow-xs" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#CBD5E1" />
+                            </marker>
+                        </defs>
+                        <!-- Step 2 to Step 3 wrap -->
+                        <path d="M 750 144 C 750 162, 750 168, 730 168 L 270 168 C 250 168, 250 174, 250 188" 
+                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-xs)" />
+                        <!-- Step 4 to Step 5 wrap -->
+                        <path d="M 750 336 C 750 354, 750 360, 730 360 L 270 360 C 250 360, 250 366, 250 380" 
+                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-xs)" />
+                        <!-- Step 6 to Step 7 wrap -->
+                        <path d="M 750 528 C 750 546, 750 552, 730 552 L 270 552 C 250 552, 250 558, 250 572" 
+                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-xs)" />
+                    </svg>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16 max-w-5xl mx-auto relative z-10">
                         @foreach ($steps as $step)
                             <div class="group relative flex flex-col items-center w-full">
                                 {{-- Circle Element --}}
@@ -280,13 +317,6 @@
                                 <div class="{{ $step['arrow_right'] }} absolute left-full -translate-x-1/2 top-[72px] sm:top-[80px] -translate-y-1/2 w-8 sm:w-12 h-12 flex items-center justify-center z-20">
                                     <svg class="w-6 h-6 sm:w-8 sm:h-8 text-slate-300 group-hover:text-slate-500 transition-all duration-300 transform group-hover:translate-x-1 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
-                                </div>
-
-                                {{-- Connector Arrow (Down) --}}
-                                <div class="{{ $step['arrow_down'] }} absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center z-20 mt-2">
-                                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-slate-300 group-hover:text-slate-500 transition-all duration-300 transform group-hover:translate-y-1 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 13l-7 7m0 0l-7-7m7 7V3" />
                                     </svg>
                                 </div>
                             </div>

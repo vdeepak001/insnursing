@@ -84,7 +84,7 @@
     <div class="bg-white shadow-md rounded-lg overflow-hidden dark:bg-gray-800">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
+                <thead class="bg-gradient-to-r from-impetus-orange to-orange-500">
                     <tr>
                         <th scope="col"
                             class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit w-14">

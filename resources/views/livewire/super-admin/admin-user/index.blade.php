@@ -42,7 +42,7 @@
     <div class="bg-white shadow-sm border border-slate-200/80 rounded-2xl overflow-hidden dark:bg-gray-800 dark:border-gray-700">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gradient-to-r from-impetus-navy to-[#2c3e75] text-white">
+                <thead class="bg-gradient-to-r from-impetus-orange to-orange-500 text-white">
                 <tr>
                     <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider cursor-pointer font-outfit" wire:click="sortBy('id')">
                         ID

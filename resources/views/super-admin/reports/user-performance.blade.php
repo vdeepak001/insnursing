@@ -67,8 +67,8 @@
                 border: 1px solid #e5e7eb !important;
                 padding: 8px !important;
             }
-            .bg-[#0082c8] {
-                background-color: #0082c8 !important;
+            .print-bg-orange {
+                background-color: #F36E21 !important;
                 -webkit-print-color-adjust: exact;
             }
             .text-white {
@@ -132,7 +132,7 @@
             </div>
 
             <div class="flex gap-2 w-full md:w-auto">
-                <button type="submit" class="flex-1 md:flex-none bg-[#0082c8] hover:bg-blue-700 text-white font-bold py-2.5 px-8 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
+                <button type="submit" class="flex-1 md:flex-none bg-gradient-to-r from-impetus-orange to-orange-500 hover:from-orange-600 hover:to-orange-500 text-white font-bold py-2.5 px-8 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg">
                     Search
                 </button>
                 <a href="{{ request()->url() }}?state_id={{ request('state_id') }}" class="flex-1 md:flex-none text-center bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-white font-bold py-2.5 px-8 rounded-lg transition-all duration-200">
@@ -147,24 +147,24 @@
         <div class="p-0 overflow-x-auto">
             <table class="w-full text-left border-collapse">
                 <thead>
-                    <tr class="bg-[#0082c8]">
-                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20 text-left w-[10%] whitespace-nowrap">Unique ID</th>
-                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20 text-left w-[16%] whitespace-nowrap">Name</th>
-                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20 text-left w-[10%] whitespace-nowrap">RN Number</th>
-                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/20 text-left w-[24%] whitespace-nowrap">Module Name</th>
+                    <tr class="bg-gradient-to-r from-impetus-orange to-orange-500 print-bg-orange">
+                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[10%] whitespace-nowrap">Unique ID</th>
+                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[16%] whitespace-nowrap">Name</th>
+                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[10%] whitespace-nowrap">RN Number</th>
+                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[24%] whitespace-nowrap">Module Name</th>
                         
                         @if(!request('exam_type') || request('exam_type') === 'pre')
-                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/25 text-center w-[8%] whitespace-nowrap">Pre Test</th>
+                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/25 text-center w-[8%] whitespace-nowrap">Pre Test</th>
                         @endif
 
                         @if(!request('exam_type') || request('exam_type') === 'mock')
-                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/25 text-center w-[8%] whitespace-nowrap">Mock Test</th>
+                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/25 text-center w-[8%] whitespace-nowrap">Mock Test</th>
                         @endif
 
                         @if(!request('exam_type') || in_array(request('exam_type'), ['final', 'passed']))
-                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/25 text-center w-[8%] whitespace-nowrap">Final 1</th>
-                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/25 text-center w-[8%] whitespace-nowrap">Final 2</th>
-                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-blue-400/25 text-center w-[8%] whitespace-nowrap">Completed on</th>
+                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/25 text-center w-[8%] whitespace-nowrap">Final 1</th>
+                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/25 text-center w-[8%] whitespace-nowrap">Final 2</th>
+                            <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/25 text-center w-[8%] whitespace-nowrap">Completed on</th>
                         @endif
                     </tr>
                 </thead>

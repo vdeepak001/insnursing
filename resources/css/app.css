@@ -913,7 +913,7 @@ pre[class*='language-'] {
 
 /* Global Table & Header Styles */
 table thead {
-  background-color: var(--color-logo-blue) !important;
+  background-color: var(--color-impetus-orange) !important;
 }
 
 table thead th {

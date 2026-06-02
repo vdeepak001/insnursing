@@ -73,7 +73,7 @@
             <div class="p-0 overflow-x-auto">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="bg-gradient-to-r from-impetus-navy to-[#2c3e75]">
+                        <tr class="bg-gradient-to-r from-impetus-orange to-orange-500">
                             <th class="px-8 py-5 text-sm font-bold text-white uppercase tracking-widest font-outfit">Module Name</th>
                             <th class="px-8 py-5 text-sm font-bold text-white uppercase tracking-widest font-outfit text-center">Number of Nurses Completed</th>
                         </tr>

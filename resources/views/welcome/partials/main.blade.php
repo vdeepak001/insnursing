@@ -47,102 +47,18 @@
 
                 </div>
 
-                <!-- Right Dashboard Showcase Graphic -->
-                <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                <!-- Right Showcase Graphic (Nurse Image) -->
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center items-center">
+                    <!-- Ambient orange glowing backgrounds (shade) -->
                     <div
-                        class="absolute inset-0 bg-gradient-to-tr from-impetus-orange/10 to-impetus-green/10 rounded-3xl blur-[50px] -z-10">
+                        class="absolute w-80 h-80 sm:w-96 sm:h-96 bg-impetus-orange/25 rounded-full blur-[100px] -z-10 animate-pulse-slow">
                     </div>
-
-                    <!-- Main visual panel -->
-                    <div
-                        class="relative glass-card border border-white/60 rounded-3xl p-6 sm:p-8 custom-shadow animate-float">
-                        <!-- Upper frame detail -->
-                        <div class="flex items-center justify-between mb-6 border-b border-slate-200/50 pb-4">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
-                                <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
-                            </div>
-                            <span class="text-xs font-bold text-slate-400 font-outfit">impetus-lms-v3.0</span>
-                        </div>
-
-                        <!-- Micro Learning Analytics Widget -->
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-white/80 p-4 rounded-2xl border border-slate-100 shadow-sm">
-                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Course
-                                    Completion</span>
-                                <div class="flex items-baseline gap-2 mt-1">
-                                    <span class="text-2xl font-bold text-impetus-navy font-outfit">94.8%</span>
-                                    <span class="text-xs font-bold text-impetus-green flex items-center">&uarr;
-                                        3.2%</span>
-                                </div>
-                                <div class="w-full bg-slate-100 h-1.5 rounded-full mt-3 overflow-hidden">
-                                    <div class="bg-impetus-green h-full rounded-full" style="width: 94%"></div>
-                                </div>
-                            </div>
-                            <div class="bg-white/80 p-4 rounded-2xl border border-slate-100 shadow-sm">
-                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Skill
-                                    Score</span>
-                                <div class="flex items-baseline gap-2 mt-1">
-                                    <span class="text-2xl font-bold text-impetus-navy font-outfit">89 / 100</span>
-                                    <span class="text-xs font-bold text-impetus-orange flex items-center">&uarr;
-                                        6%</span>
-                                </div>
-                                <div class="w-full bg-slate-100 h-1.5 rounded-full mt-3 overflow-hidden">
-                                    <div class="bg-impetus-orange h-full rounded-full" style="width: 89%"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Live Graph Widget -->
-                        <div class="bg-white/90 p-5 rounded-2xl border border-slate-100 shadow-sm mb-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-xs font-bold text-slate-500 font-outfit uppercase">Intellectual Growth
-                                    Curve</span>
-                                <span
-                                    class="text-[10px] bg-impetus-lightGreen text-impetus-green px-2 py-0.5 rounded-full font-bold">LIVE
-                                    METRIC</span>
-                            </div>
-                            <!-- Mock Graph SVGs -->
-                            <div class="relative h-28 w-full flex items-end">
-                                <svg class="w-full h-full text-impetus-green" viewBox="0 0 100 30"
-                                    preserveAspectRatio="none">
-                                    <path d="M0,25 Q15,10 30,18 T60,8 T90,3 T100,5" fill="none" stroke="currentColor"
-                                        stroke-width="2.5" stroke-linecap="round"></path>
-                                    <path d="M0,25 Q15,10 30,18 T60,8 T90,3 T100,5 L100,30 L0,30 Z" fill="url(#grad)"
-                                        opacity="0.1"></path>
-                                    <defs>
-                                        <linearGradient id="grad" x1="0%" y1="0%" x2="0%"
-                                            y2="100%">
-                                            <stop offset="0%" stop-color="#0B8444" />
-                                            <stop offset="100%" stop-color="#fff" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </div>
-
-                        <!-- User HUD floating card -->
-                        <div
-                            class="flex items-center gap-3 bg-impetus-navy text-white p-4 rounded-2xl shadow-xl shadow-impetus-navy/15">
-                            <div
-                                class="w-10 h-10 rounded-full bg-impetus-orange flex items-center justify-center font-extrabold text-white font-outfit shadow-md">
-                                i</div>
-                            <div>
-                                <h4 class="text-xs font-bold tracking-wide">Impetus Intelligent Tutor</h4>
-                                <p class="text-[10px] text-slate-300">Ready to boost your clinical and tech
-                                    capabilities.</p>
-                            </div>
-                            <span class="w-2.5 h-2.5 rounded-full bg-green-400 ml-auto animate-ping"></span>
-                        </div>
-                    </div>
-
-                    <!-- Ambient glowing backgrounds -->
-                    <div
-                        class="absolute -top-6 -right-6 w-24 h-24 bg-impetus-orange/30 rounded-full blur-2xl animate-pulse-slow">
-                    </div>
-                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-impetus-green/20 rounded-full blur-2xl animate-pulse-slow"
+                    <div class="absolute w-72 h-72 sm:w-80 sm:h-80 bg-impetus-orange/15 rounded-full blur-[80px] -z-10 animate-pulse-slow"
                         style="animation-delay: 2s"></div>
+
+                    <!-- Nurse Image -->
+                    <img src="{{ asset('images/Nursing.png') }}" alt="Nursing Professional"
+                        class="relative z-10 w-full max-w-[400px] sm:max-w-[460px] lg:max-w-[500px] h-auto drop-shadow-[0_20px_50px_rgba(243,110,33,0.3)] hover:scale-[1.02] transition-all duration-500">
                 </div>
             </div>
         </div>
