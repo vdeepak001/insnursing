@@ -204,14 +204,14 @@
 
                 @php
                     $steps = [
-                        ['num' => '1', 'label' => 'Register', 'gradient' => 'from-emerald-500 to-teal-600 shadow-emerald-500/20'],
-                        ['num' => '2', 'label' => 'Choose a module', 'gradient' => 'from-sky-500 to-blue-600 shadow-sky-500/20'],
-                        ['num' => '3', 'label' => 'Take pre-test', 'gradient' => 'from-indigo-500 to-indigo-600 shadow-indigo-500/20'],
-                        ['num' => '4', 'label' => 'Use learning resources', 'gradient' => 'from-violet-500 to-purple-600 shadow-violet-500/20'],
-                        ['num' => '5', 'label' => 'Practice MCQs', 'gradient' => 'from-fuchsia-500 to-pink-600 shadow-fuchsia-500/20'],
-                        ['num' => '6', 'label' => 'Take mock exam', 'gradient' => 'from-rose-500 to-red-600 shadow-rose-500/20'],
-                        ['num' => '7', 'label' => 'Complete final exam', 'gradient' => 'from-orange-500 to-amber-600 shadow-orange-500/20'],
-                        ['num' => '8', 'label' => 'Download CNE certificate', 'gradient' => 'from-amber-500 to-yellow-500 shadow-amber-500/20']
+                        ['num' => '1', 'label' => 'Register', 'gradient' => 'from-emerald-500 to-teal-600 shadow-emerald-500/20', 'arrow' => 'block'],
+                        ['num' => '2', 'label' => 'Purchase a module', 'gradient' => 'from-sky-500 to-blue-600 shadow-sky-500/20', 'arrow' => 'hidden sm:block'],
+                        ['num' => '3', 'label' => 'Take pre-test', 'gradient' => 'from-indigo-500 to-indigo-600 shadow-indigo-500/20', 'arrow' => 'block sm:hidden md:block'],
+                        ['num' => '4', 'label' => 'Use learning resources', 'gradient' => 'from-violet-500 to-purple-600 shadow-violet-500/20', 'arrow' => 'hidden sm:block md:hidden'],
+                        ['num' => '5', 'label' => 'Practice MCQs', 'gradient' => 'from-fuchsia-500 to-pink-600 shadow-fuchsia-500/20', 'arrow' => 'block'],
+                        ['num' => '6', 'label' => 'Take mock exam', 'gradient' => 'from-rose-500 to-red-600 shadow-rose-500/20', 'arrow' => 'hidden md:block'],
+                        ['num' => '7', 'label' => 'Complete final exam', 'gradient' => 'from-orange-500 to-amber-600 shadow-orange-500/20', 'arrow' => 'block'],
+                        ['num' => '8', 'label' => 'Download CNE certificate', 'gradient' => 'from-amber-500 to-yellow-500 shadow-amber-500/20', 'arrow' => 'hidden']
                     ];
                 @endphp
 
@@ -227,6 +227,13 @@
                                 
                                 {{-- Pulse highlight circle --}}
                                 <div class="absolute inset-0 rounded-full bg-gradient-to-br {{ $step['gradient'] }} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300 pointer-events-none"></div>
+
+                                {{-- Connector Arrow --}}
+                                <div class="{{ $step['arrow'] }} absolute left-full top-[72px] sm:top-[80px] -translate-y-1/2 w-6 sm:w-8 h-8 flex items-center justify-center z-20">
+                                    <svg class="w-5 h-5 sm:w-6 sm:h-6 text-slate-300 group-hover:text-slate-500 transition-all duration-300 transform group-hover:translate-x-1 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </div>
                             </div>
                         @endforeach
                     </div>
