@@ -13,6 +13,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        if (auth()->user()?->role_type === 'user') {
+            return redirect()->route('profile');
+        }
+
         $stats = [
             // User Stats
             'total_users' => User::where('role_type', 'user')->count(),

@@ -218,7 +218,7 @@
                                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-impetus-navy font-outfit">Our Vision</h3>
+                    <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-impetus-navy font-outfit group-hover:text-impetus-orange transition-colors">Our Vision</h3>
                     <p class="mt-4 text-slate-600 leading-relaxed text-justify text-base sm:text-lg">
                         To serve as a Centre of Excellence for healthcare skill development initiatives and be at the
                         forefront in carrying out the noble mission of achieving health goals of national and
@@ -244,7 +244,7 @@
                                 stroke-linejoin="round" />
                         </svg>
                     </div>
-                    <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-impetus-navy font-outfit">Our Mission</h3>
+                    <h3 class="mt-6 text-2xl sm:text-3xl font-bold text-impetus-navy font-outfit group-hover:text-impetus-orange transition-colors">Our Mission</h3>
                     <p class="mt-4 text-slate-600 leading-relaxed text-justify text-base sm:text-lg">
                         Our mission is to provide relevant, comprehensive training programmes to multidisciplinary
                         healthcare professionals, enabling them to achieve high levels of professional excellence in
@@ -456,7 +456,7 @@
                                 d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Advanced Simulation
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Advanced Simulation
                         Training</h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
                         We provide realistic, skill-oriented simulation training programs that help learners develop
@@ -475,7 +475,7 @@
                                 d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Comprehensive Learning
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Comprehensive Learning
                     </h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
                         We offer flexible, accessible online courses with interactive learning modules, recorded
@@ -494,7 +494,7 @@
                                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Specialized Healthcare
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Specialized Healthcare
                         Programs
                     </h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
@@ -514,7 +514,7 @@
                                 d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Industry-Relevant
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Industry-Relevant
                         Curriculum</h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
                         Training programs are designed according to current healthcare standards, evidence-based
@@ -533,7 +533,7 @@
                                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Experienced Educators
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Experienced Educators
                     </h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
                         The company is supported by highly qualified healthcare educators, clinical experts, and
@@ -551,7 +551,7 @@
                                 d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Focus on Skill
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Focus on Skill
                         Development</h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
                         It emphasizes competency-based education and outcome-oriented training to improve clinical
@@ -569,7 +569,7 @@
                                 d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Technology-Driven
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Technology-Driven
                         Education</h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
                         Integrates modern technologies such as virtual classrooms, simulation scenarios, online
@@ -587,7 +587,7 @@
                                 d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Continuing Nursing
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Continuing Nursing
                         Education</h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
                         Supports lifelong learning through structured continuing education programs and skill
@@ -605,7 +605,7 @@
                                 d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h2.945M11 20.935V19a2 2 0 012-2h1.87M16.5 3.5L19 6m0 0l-2.5 2.5M19 6h-6.5" />
                         </svg>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3">Scalable & Accessible
+                    <h3 class="text-xl sm:text-2xl font-bold text-impetus-navy font-outfit mb-3 group-hover:text-impetus-orange transition-colors">Scalable & Accessible
                         Model</h3>
                     <p class="text-base text-slate-600 text-justify leading-relaxed">
                         Ability to deliver high-quality training programs to participants across different geographic
@@ -626,7 +626,7 @@
                     </svg>
                 </div>
                 <div class="relative z-10">
-                    <h3 class="text-xl sm:text-2xl font-bold text-white font-outfit mb-1.5">Commitment to Quality Healthcare Education</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-white font-outfit mb-1.5 group-hover:text-impetus-orange transition-colors">Commitment to Quality Healthcare Education</h3>
                     <p class="text-base text-slate-200 text-justify leading-relaxed">
                         We are profoundly dedicated to improving healthcare workforce competence and strengthening
                         patient care outcomes through high-quality, comprehensive education and training services.

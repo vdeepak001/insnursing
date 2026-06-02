@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 
-@section('title', 'CNE Practice Tests - IHS')
+@section('title', 'CNE Practice Test - IHS')
 
 @section('content')
     <main class="overflow-hidden bg-[#F8FAFC]">
@@ -21,19 +21,19 @@
                             Tools</span>
                         <h1
                             class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-impetus-navy tracking-tight font-outfit leading-tight mb-6">
-                            CNE Practice Tests
+                            CNE Practice Test
                         </h1>
 
                         <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-sm sm:text-base">
                             <p>
-                                <strong>Practice tests</strong> in Online Continuing Nursing Education (CNE) are structured
+                                <strong>Practice Test</strong> in Online Continuing Nursing Education (CNE) are structured
                                 assessment tools designed to evaluate and reinforce the knowledge and clinical understanding
-                                of nurses and healthcare professionals during and after training modules. These tests are an
+                                of nurses and healthcare professionals during and after training modules. These Test are an
                                 essential part of the learning process, enabling learners to assess their progress, identify
                                 knowledge gaps, and strengthen their competency in various nursing and healthcare domains.
                             </p>
                             <p>
-                                Online CNE practice tests are typically based on evidence-based guidelines and standardized
+                                Online CNE practice Test are typically based on evidence-based guidelines and standardized
                                 curricula. They include multiple-choice questions, case-based scenarios, clinical
                                 problem-solving exercises, and situation-based questions that reflect real-world healthcare
                                 practice. These assessments help learners apply theoretical knowledge to practical clinical
@@ -49,7 +49,7 @@
                         </div>
                         <div
                             class="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white p-3 shadow-2xl">
-                            <img src="{{ asset('images/practice_test_hero.png') }}" alt="CNE Practice Tests"
+                            <img src="{{ asset('images/practice_test_hero.png') }}" alt="CNE Practice Test"
                                 class="w-full h-auto rounded-2xl shadow-inner object-cover" />
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent rounded-[2rem] pointer-events-none">
@@ -84,7 +84,7 @@
                             </svg>
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-extrabold text-impetus-navy font-outfit mb-4 relative z-10">
-                            Purpose of Practice Tests</h3>
+                            Purpose of Practice Test</h3>
                         <p class="text-base text-slate-500 leading-relaxed text-justify mb-6 relative z-10">
                             Structured to solidify understanding and verify active nursing competency, our practice
                             assessments serve several fundamental goals:
@@ -186,7 +186,7 @@
                             </svg>
                         </div>
                         <h3 class="text-2xl sm:text-3xl font-extrabold text-impetus-navy font-outfit mb-4 relative z-10">
-                            Benefits of Practice Tests</h3>
+                            Benefits of Practice Test</h3>
                         <p class="text-base text-slate-500 leading-relaxed text-justify mb-6 relative z-10">
                             Designed to accelerate your learning journey and build confidence, practicing regularly delivers
                             key advantages:
@@ -295,7 +295,7 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center mb-16">
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">
-                        Features of Online CNE Practice Tests
+                        Features of Online CNE Practice Test
                     </h2>
                     <p class="mt-4 text-base text-slate-600 leading-relaxed text-justify sm:text-center max-w-3xl mx-auto">
                         Engineered to provide a rich educational ecosystem, our practice assessments leverage evidence-based
@@ -453,7 +453,7 @@
 
                 <p
                     class="text-base sm:text-lg text-slate-300 leading-relaxed text-justify sm:text-center max-w-4xl mx-auto mb-10">
-                    Practice tests in Online Continuing Nursing Education (CNE) play a vital role in ensuring effective
+                    Practice Test in Online Continuing Nursing Education (CNE) play a vital role in ensuring effective
                     learning by transforming theoretical knowledge into practical understanding. They help nursing
                     professionals stay competent, confident, and prepared to deliver safe and high-quality patient care in
                     clinical settings.

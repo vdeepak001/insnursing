@@ -125,6 +125,10 @@
             padding: 0 40px;
         }
 
+        .user-name .salutation {
+            font-size: 26px;
+        }
+
         .course-label {
             font-size: 20px;
             margin: 15px 0 5px;
@@ -133,7 +137,7 @@
 
         .course-name {
             font-size: 32px;
-            color: #5a8b3d;
+            color: #0B8444;
             /* Dark Green */
             font-weight: bold;
             margin-bottom: 15px;
@@ -210,7 +214,7 @@
 
 <body>
     @php
-        $salutation = 'Ms/Mr. ';
+        $salutation = 'Mr/Ms. ';
         if ($user->gender) {
             $gender = strtolower($user->gender);
             if ($gender === 'male') {
@@ -219,7 +223,7 @@
                 $salutation = 'Ms. ';
             }
         }
-        $userName = $salutation . ($user->name ?: $user->first_name . ' ' . $user->last_name);
+        $userName = ($user->name ?: $user->first_name . ' ' . $user->last_name);
         $courseNameStr = $course->couse_name;
 
         // QR Data
@@ -294,7 +298,7 @@
                 <div class="main-title">Certificate of Completion</div>
 
                 <div class="certify-text">This is to certify that</div>
-                <div class="user-name">{{ $userName }}</div>
+                <div class="user-name"><span class="salutation">{{ $salutation }}</span>{{ $userName }}</div>
 
                 <div class="course-label">has successfully completed the CNE Module</div>
                 <div class="course-name">{{ $courseNameStr }}</div>

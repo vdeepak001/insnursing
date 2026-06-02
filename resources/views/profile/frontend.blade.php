@@ -10,10 +10,10 @@
         <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between border-b border-slate-200 pb-5 text-sm font-semibold gap-8">
                 <div class="flex flex-nowrap items-center gap-x-8 sm:gap-x-12 lg:gap-x-16 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
-                    <button type="button" @click="tab = 'personal'" :class="tab === 'personal' ? 'text-logo-blue border-logo-blue' : 'text-slate-500 border-transparent'" class="whitespace-nowrap border-b-2 pb-2 text-left transition">Personal Information</button>
-                    <button type="button" @click="tab = 'academic'" :class="tab === 'academic' ? 'text-logo-blue border-logo-blue' : 'text-slate-500 border-transparent'" class="whitespace-nowrap border-b-2 pb-2 text-left transition">Academic Information</button>
-                    <button type="button" @click="tab = 'professional'" :class="tab === 'professional' ? 'text-logo-blue border-logo-blue' : 'text-slate-500 border-transparent'" class="whitespace-nowrap border-b-2 pb-2 text-left transition">Professional Information</button>
-                    <button type="button" @click="tab = 'course'" :class="tab === 'course' ? 'text-logo-blue border-logo-blue' : 'text-slate-500 border-transparent'" class="whitespace-nowrap border-b-2 pb-2 text-left transition">My Course</button>
+                    <button type="button" @click="tab = 'personal'" :class="tab === 'personal' ? 'text-impetus-orange border-impetus-orange' : 'text-slate-500 border-transparent'" class="whitespace-nowrap border-b-2 pb-2 text-left transition">Personal Information</button>
+                    <button type="button" @click="tab = 'academic'" :class="tab === 'academic' ? 'text-impetus-orange border-impetus-orange' : 'text-slate-500 border-transparent'" class="whitespace-nowrap border-b-2 pb-2 text-left transition">Academic Information</button>
+                    <button type="button" @click="tab = 'professional'" :class="tab === 'professional' ? 'text-impetus-orange border-impetus-orange' : 'text-slate-500 border-transparent'" class="whitespace-nowrap border-b-2 pb-2 text-left transition">Professional Information</button>
+                    <button type="button" @click="tab = 'course'" :class="tab === 'course' ? 'text-impetus-orange border-impetus-orange' : 'text-slate-500 border-transparent'" class="whitespace-nowrap border-b-2 pb-2 text-left transition">My Course</button>
                 </div>
                 <div class="w-40 rounded-lg bg-logo-blue py-1 text-center text-[13px] font-bold text-white shadow-sm">
                     UID: {{ auth()->user()->unique_sequence_number ?? 'N/A' }}
@@ -43,7 +43,7 @@
                     <label class="text-sm font-medium text-slate-700">District<input name="district" value="{{ old('district', auth()->user()->district) }}" class="{{ $inputClass }}" /></label>
                     <label class="text-sm font-medium text-slate-700">State<input name="state" value="{{ old('state', auth()->user()->state) }}" class="{{ $inputClass }}" /></label>
                 </div>
-                <button type="submit" class="mt-6 inline-flex rounded-full bg-logo-light-green px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-green-600">
+                <button type="submit" class="mt-6 inline-flex rounded-full bg-impetus-orange px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-impetus-orange/90">
                     UPDATE INFORMATION
                 </button>
             </form>
@@ -60,7 +60,7 @@
                     <label class="text-sm font-medium text-slate-700">RM<input name="rm_number" value="{{ old('rm_number', auth()->user()->rm_number) }}" class="{{ $inputClass }}" /></label>
                     <label class="text-sm font-medium text-slate-700">RNM<input name="rnm_number" value="{{ old('rnm_number', auth()->user()->rnm_number) }}" class="{{ $inputClass }}" /></label>
                 </div>
-                <button type="submit" class="mt-6 inline-flex rounded-full bg-logo-light-green px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-green-600">
+                <button type="submit" class="mt-6 inline-flex rounded-full bg-impetus-orange px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-impetus-orange/90">
                     UPDATE INFORMATION
                 </button>
             </form>
@@ -87,7 +87,7 @@
                     <label class="text-sm font-medium text-slate-700">District<input name="professional_district" value="{{ old('professional_district', auth()->user()->professional_district) }}" class="{{ $inputClass }}" /></label>
                     <label class="text-sm font-medium text-slate-700">State<input name="professional_state" value="{{ old('professional_state', auth()->user()->professional_state) }}" class="{{ $inputClass }}" /></label>
                 </div>
-                <button type="submit" class="mt-6 inline-flex rounded-full bg-logo-light-green px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-green-600">
+                <button type="submit" class="mt-6 inline-flex rounded-full bg-impetus-orange px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-impetus-orange/90">
                     UPDATE INFORMATION
                 </button>
             </form>
@@ -96,7 +96,7 @@
                 <h3 class="text-xl font-semibold text-slate-900">CPD Module</h3>
                 <div class="mt-3 overflow-hidden rounded-xl border border-slate-200">
                     <table class="w-full border-collapse text-sm">
-                        <thead class="bg-logo-blue text-white">
+                        <thead class="bg-impetus-orange text-white">
                             <tr>
                                 <th class="px-3 py-2 text-left">#</th>
                                 <th class="px-3 py-2 text-left">Name of Module</th>

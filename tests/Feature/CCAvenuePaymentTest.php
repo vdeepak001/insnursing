@@ -127,7 +127,7 @@ it('processes successful ccavenue payment callback', function () {
         'encResp' => $encResp,
     ]);
 
-    $response->assertRedirect(route('dashboard'));
+    $response->assertRedirect(route('profile'));
     $response->assertSessionHas('success');
 
     // Assert order completed
@@ -233,7 +233,7 @@ it('enables the purchased course in the modules list after successful callback',
         'encResp' => $encResp,
     ]);
 
-    $callbackResponse->assertRedirect(route('dashboard'));
+    $callbackResponse->assertRedirect(route('profile'));
 
     // Visit CNE modules index
     $indexResponse = $this->actingAs($user)->get(route('cne.modules'));

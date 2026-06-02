@@ -48,8 +48,8 @@
                         {{-- Quick Stats Grid --}}
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-3">
                             {{-- Total Questions --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-700/50 bg-gradient-to-br from-slate-900 to-slate-800 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-slate-300 md:text-[11px]">Questions</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-transparent bg-gradient-to-br from-blue-600 to-indigo-700 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-blue-100 md:text-[11px]">Questions</p>
                                 <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $totalQuestions }}</p>
                             </div>
 
@@ -80,10 +80,10 @@
                             @endif
                         </div>
                         {{-- Score Chart & Visuals --}}
-                        <div class="mt-10 overflow-hidden rounded-[2.5rem] border border-slate-700/50 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 p-6 shadow-xl sm:p-8">
-                            <div class="flex flex-col gap-2 border-b border-slate-700/50 pb-5">
-                                <h2 class="font-serif text-xl font-bold text-white sm:text-2xl">
-                                    Score: <span class="text-amber-400 font-outfit font-black">{{ $obtainedScore }}/{{ $maxScore }}</span>
+                        <div class="mt-10 overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
+                            <div class="flex flex-col gap-2 border-b border-slate-100 pb-5">
+                                <h2 class="font-serif text-xl font-bold text-slate-900 sm:text-2xl">
+                                    Score: <span class="text-impetus-orange font-outfit font-black">{{ $obtainedScore }}/{{ $maxScore }}</span>
                                 </h2>
                             </div>
 
@@ -100,11 +100,21 @@
                             <div class="mt-10 flex flex-col items-center justify-center">
                                 <div class="relative size-64 shrink-0 sm:size-80">
                                     <svg class="size-full transform" viewBox="0 0 100 100">
+                                        <defs>
+                                            <linearGradient id="correctGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#10b981" />
+                                                <stop offset="100%" stop-color="#0d9488" />
+                                            </linearGradient>
+                                            <linearGradient id="wrongGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" stop-color="#f43f5e" />
+                                                <stop offset="100%" stop-color="#dc2626" />
+                                            </linearGradient>
+                                        </defs>
                                         {{-- Wrong Percentage (Crimson/Rose) --}}
                                         <circle
                                             cx="50" cy="50" r="25"
                                             fill="transparent"
-                                            stroke="rgb(244, 63, 94)"
+                                            stroke="url(#wrongGrad)"
                                             stroke-width="50"
                                             stroke-dasharray="157.08"
                                             stroke-dashoffset="0"
@@ -114,7 +124,7 @@
                                         <circle
                                             cx="50" cy="50" r="25"
                                             fill="transparent"
-                                            stroke="rgb(16, 185, 129)"
+                                            stroke="url(#correctGrad)"
                                             stroke-width="50"
                                             stroke-dasharray="157.08"
                                             stroke-dashoffset="{{ 157.08 * (1 - $pctCorrect / 100) }}"
@@ -135,15 +145,15 @@
                                         @endif
                                     </svg>
                                 </div>
- 
+
                                 <div class="mt-8 flex flex-wrap justify-center gap-8">
                                     <div class="flex items-center gap-3">
-                                        <span class="size-4 shrink-0 bg-emerald-500 shadow-sm rounded-full"></span>
-                                        <span class="text-base font-bold text-emerald-300">Correct Answer</span>
+                                        <span class="size-4 shrink-0 bg-gradient-to-r from-emerald-500 to-teal-600 shadow-sm rounded-full"></span>
+                                        <span class="text-base font-bold text-emerald-600">Correct Answer</span>
                                     </div>
                                     <div class="flex items-center gap-3">
-                                        <span class="size-4 shrink-0 bg-rose-600 shadow-sm rounded-full"></span>
-                                        <span class="text-base font-bold text-rose-300">Wrong Answer</span>
+                                        <span class="size-4 shrink-0 bg-gradient-to-r from-rose-500 to-red-600 shadow-sm rounded-full"></span>
+                                        <span class="text-base font-bold text-rose-600">Wrong Answer</span>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +224,7 @@
                                             <div class="mt-8">
                                                 <a 
                                                     href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
-                                                    class="inline-flex items-center gap-2 rounded-xl border-2 border-rose-600 px-10 py-3 text-sm font-black uppercase tracking-widest text-rose-600 transition hover:bg-rose-600 hover:text-white"
+                                                    class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-rose-500 to-red-600 px-10 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-rose-500/20 transition hover:from-rose-600 hover:to-red-700"
                                                 >
                                                     TRY AGAIN!
                                                 </a>
@@ -234,7 +244,7 @@
                                 @class([
                                     'inline-flex items-center justify-center gap-2 rounded-2xl px-10 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
                                     'bg-gradient-to-r from-impetus-orange to-amber-500 shadow-orange-500/20 hover:from-orange-600 hover:to-amber-600 focus-visible:ring-impetus-orange' => $testType === 'practice',
-                                    'bg-gradient-to-r from-indigo-900 to-brand-900 shadow-indigo-900/20 hover:from-brand-900 hover:to-slate-900 focus-visible:ring-indigo-900' => $testType !== 'practice'
+                                    'bg-gradient-to-r from-blue-600 to-indigo-700 shadow-indigo-600/20 hover:from-blue-700 hover:to-indigo-800 focus-visible:ring-indigo-600' => $testType !== 'practice'
                                 ])
                             >
                                 Back to {{ $testType === 'practice' ? 'practice sets' : 'module' }}

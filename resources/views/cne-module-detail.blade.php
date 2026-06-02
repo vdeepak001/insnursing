@@ -119,21 +119,21 @@
                                                 'ring-2 ring-offset-2 ring-logo-blue ring-offset-white shadow-md';
 
                                             $preClass =
-                                                'bg-emerald-600 border-emerald-600 text-white hover:bg-emerald-700 hover:border-emerald-700 focus-visible:ring-emerald-600 ' .
+                                                'bg-gradient-to-r from-emerald-500 to-teal-600 border-transparent text-white hover:from-emerald-600 hover:to-teal-700 focus-visible:ring-emerald-600 ' .
                                                 ($nextTest === 'pre' ? $btnActive : '');
                                             $mockClass =
-                                                'bg-impetus-orange border-impetus-orange text-white hover:bg-impetus-orange/90 hover:border-impetus-orange/90 focus-visible:ring-amber-500 ' .
+                                                'bg-gradient-to-r from-amber-500 to-orange-600 border-transparent text-white hover:from-amber-600 hover:to-orange-700 focus-visible:ring-amber-500 ' .
                                                 ($nextTest === 'mock' ? $btnActive : '');
                                             $finalClass =
-                                                'bg-indigo-900 border-indigo-900 text-white hover:bg-indigo-800 hover:border-indigo-800 focus-visible:ring-indigo-700 ' .
+                                                'bg-gradient-to-r from-blue-600 to-indigo-700 border-transparent text-white hover:from-blue-700 hover:to-indigo-800 focus-visible:ring-indigo-700 ' .
                                                 ($nextTest === 'final' ? $btnActive : '');
 
                                             $preDoneClass =
-                                                'border-emerald-500 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 hover:text-emerald-900 focus-visible:ring-emerald-600';
+                                                'bg-gradient-to-r from-emerald-500 to-teal-600 border-transparent text-white hover:from-emerald-600 hover:to-teal-700 focus-visible:ring-emerald-600';
                                             $mockDoneClass =
-                                                'border-amber-500 bg-amber-50 text-amber-800 hover:bg-amber-100 hover:text-amber-900 focus-visible:ring-amber-500';
+                                                'bg-gradient-to-r from-amber-500 to-orange-600 border-transparent text-white hover:from-amber-600 hover:to-orange-700 focus-visible:ring-amber-500';
                                             $finalDoneClass =
-                                                'border-indigo-500 bg-indigo-50 text-indigo-800 hover:bg-indigo-100 hover:text-indigo-900 focus-visible:ring-indigo-700';
+                                                'bg-gradient-to-r from-blue-600 to-indigo-700 border-transparent text-white hover:from-blue-700 hover:to-indigo-800 focus-visible:ring-indigo-700';
 
                                             $doneClass =
                                                 'cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400 opacity-80';
@@ -158,7 +158,7 @@
                                                     max: '{{ $tp['pre_max'] }}'
                                                 }"
                                                 class="{{ $btnBase }} {{ $preDoneClass }}">
-                                                Pretest <svg class="ml-2 h-5 w-5 text-emerald-500" fill="none"
+                                                Pretest <svg class="ml-2 h-5 w-5 text-white" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M4.5 12.75l6 6 9-13.5" />
@@ -188,7 +188,7 @@
                                                     max: '{{ $tp['mock_max'] }}'
                                                 }"
                                                 class="{{ $btnBase }} {{ $mockDoneClass }}">
-                                                Mock <svg class="ml-2 h-5 w-5 text-emerald-500" fill="none"
+                                                Mock <svg class="ml-2 h-5 w-5 text-white" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M4.5 12.75l6 6 9-13.5" />
@@ -221,7 +221,7 @@
                                                 class="{{ $btnBase }} {{ $finalDoneClass }}">
                                                 Final
                                                 @if ($tp['final_passed'] ?? false)
-                                                    <svg class="ml-2 h-5 w-5 text-emerald-500" fill="none"
+                                                    <svg class="ml-2 h-5 w-5 text-white" fill="none"
                                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="M4.5 12.75l6 6 9-13.5" />
@@ -285,7 +285,7 @@
                             @if (auth()->user()?->role_type === 'user')
                                 <div class="mt-4 flex justify-end">
                                     <div
-                                        class="inline-flex items-center rounded-lg bg-gradient-to-r from-slate-900 to-slate-800 px-4 py-2 text-sm font-bold uppercase tracking-wider text-amber-400 shadow-md ring-1 ring-slate-700">
+                                        class="text-sm font-bold uppercase tracking-wider text-impetus-orange">
                                         CREDIT POINTS: {{ $creditPoints }}
                                     </div>
                                 </div>
@@ -534,9 +534,9 @@
                     </div>
 
                     <div class="mt-8 grid grid-cols-2 gap-3.5">
-                        <div class="rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-900 to-slate-800 p-4 text-center shadow-inner text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Score</p>
-                            <p class="mt-1.5 text-xl font-black text-amber-400 font-outfit"
+                        <div class="rounded-2xl border border-transparent bg-gradient-to-br from-blue-600 to-indigo-700 p-4 text-center text-white transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-blue-100">Score</p>
+                            <p class="mt-1.5 text-xl font-black font-outfit"
                                 x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
                         </div>
                         <div class="rounded-2xl border border-orange-500/20 bg-gradient-to-br from-orange-500 to-amber-500 p-4 text-center text-white transition hover:shadow-md">

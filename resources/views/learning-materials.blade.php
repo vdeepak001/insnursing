@@ -53,65 +53,65 @@
 
                 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     <!-- Feature Card 1 (Orange Theme) -->
-                    <div class="rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start">
+                    <div class="rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start group">
                         <div class="w-10 h-10 rounded-xl bg-orange-100 text-impetus-orange flex items-center justify-center mb-5 ring-1 ring-orange-200/50 shadow-sm">
                             <svg class="w-5 h-5 text-impetus-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Universal Access</h4>
+                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2 group-hover:text-impetus-orange transition-colors">Universal Access</h4>
                         <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Easily accessible anytime and anywhere through modern, responsive digital learning platforms.
                         </p>
                     </div>
 
                     <!-- Feature Card 2 (Emerald Theme) -->
-                    <div class="rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start">
+                    <div class="rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start group">
                         <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 ring-1 ring-emerald-200/50 shadow-sm">
                             <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Evidence-Based Focus</h4>
+                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2 group-hover:text-impetus-orange transition-colors">Evidence-Based Focus</h4>
                         <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Designed specifically based on evidence-based nursing standards, peer-reviewed clinical guidelines, and protocols.
                         </p>
                     </div>
 
                     <!-- Feature Card 3 (Indigo/Navy Theme) -->
-                    <div class="rounded-3xl border border-indigo-100/80 bg-gradient-to-br from-indigo-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start">
+                    <div class="rounded-3xl border border-indigo-100/80 bg-gradient-to-br from-indigo-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start group">
                         <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5 ring-1 ring-indigo-200/50 shadow-sm">
                             <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Continuous Updates</h4>
+                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2 group-hover:text-impetus-orange transition-colors">Continuous Updates</h4>
                         <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Regularly updated in real time to reflect current healthcare practices, drug formulas, and clinical discoveries.
                         </p>
                     </div>
 
                     <!-- Feature Card 4 (Orange Theme) -->
-                    <div class="rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start lg:col-span-1">
+                    <div class="rounded-3xl border border-orange-100/80 bg-gradient-to-br from-orange-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start lg:col-span-1 group">
                         <div class="w-10 h-10 rounded-xl bg-orange-100 text-impetus-orange flex items-center justify-center mb-5 ring-1 ring-orange-200/50 shadow-sm">
                             <svg class="w-5 h-5 text-impetus-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Adaptive Learning Paths</h4>
+                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2 group-hover:text-impetus-orange transition-colors">Adaptive Learning Paths</h4>
                         <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Highly suitable for self-paced independent study as well as highly structured formal educational models.
                         </p>
                     </div>
 
                     <!-- Feature Card 5 (Emerald Theme) -->
-                    <div class="rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start sm:col-span-2 lg:col-span-2">
+                    <div class="rounded-3xl border border-emerald-100/80 bg-gradient-to-br from-emerald-50/40 via-white to-white p-6 shadow-md hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-start sm:col-span-2 lg:col-span-2 group">
                         <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center mb-5 ring-1 ring-emerald-200/50 shadow-sm">
                             <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                             </svg>
                         </div>
-                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2">Multimodal Integration</h4>
+                        <h4 class="text-lg font-bold text-impetus-navy font-outfit mb-2 group-hover:text-impetus-orange transition-colors">Multimodal Integration</h4>
                         <p class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
                             Supports different learning styles including visual, auditory, and practical learners, using a blend of audio-video lectures, simulation guides, clinical mock-ups, and reference files.
                         </p>
