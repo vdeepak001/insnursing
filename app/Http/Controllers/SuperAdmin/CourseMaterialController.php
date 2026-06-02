@@ -15,7 +15,7 @@ class CourseMaterialController extends Controller
 {
     public function index()
     {
-        return view('super-admin.course-materials.index', ['title' => 'Learning Materials']);
+        return view('super-admin.course-materials.index', ['title' => 'Learning Resources']);
     }
 
     public function create()
@@ -25,7 +25,7 @@ class CourseMaterialController extends Controller
         $titles = CourseTitle::orderBy('title_name')->get();
 
         return view('super-admin.course-materials.create', [
-            'title' => 'Create Learning Material',
+            'title' => 'Create Learning Resources',
             'courses' => $courses,
             'titles' => $titles,
         ]);
@@ -43,7 +43,7 @@ class CourseMaterialController extends Controller
         $paths = [];
         if ($request->hasFile('attachments')) {
             foreach ($request->file('attachments') as $file) {
-                $filename = time() . '_' . $file->getClientOriginalName();
+                $filename = time().'_'.$file->getClientOriginalName();
                 $paths[] = $file->storeAs('materials', $filename, 'public');
             }
         }
@@ -56,7 +56,7 @@ class CourseMaterialController extends Controller
         if ($material) {
             $currentPaths = $material->attachment ?? [];
             $material->update([
-                'attachment' => array_merge($currentPaths, $paths)
+                'attachment' => array_merge($currentPaths, $paths),
             ]);
         } else {
             CourseMaterial::create([
@@ -80,7 +80,7 @@ class CourseMaterialController extends Controller
             'material' => $title_material,
             'courses' => $courses,
             'titles' => $titles,
-            'title' => 'Edit Learning Material',
+            'title' => 'Edit Learning Resources',
         ]);
     }
 
@@ -98,7 +98,7 @@ class CourseMaterialController extends Controller
         // Handle adding new files
         if ($request->hasFile('attachments')) {
             foreach ($request->file('attachments') as $file) {
-                $filename = time() . '_' . $file->getClientOriginalName();
+                $filename = time().'_'.$file->getClientOriginalName();
                 $currentPaths[] = $file->storeAs('materials', $filename, 'public');
             }
         }
@@ -126,6 +126,7 @@ class CourseMaterialController extends Controller
             $mergedPaths = array_merge($existingMaterial->attachment ?? [], $currentPaths);
             $existingMaterial->update(['attachment' => $mergedPaths]);
             $title_material->delete();
+
             return redirect()->route(MenuHelper::getCurrentPrefix().'.title-materials.index')->with('success', 'Course material merged into existing record.');
         }
 
@@ -167,7 +168,7 @@ class CourseMaterialController extends Controller
                 foreach ($material->attachment as $path) {
                     $attachments[] = [
                         'name' => preg_replace('/^\d+_/', '', basename($path)),
-                        'url' => asset('storage/' . $path),
+                        'url' => asset('storage/'.$path),
                     ];
                 }
             }
