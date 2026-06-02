@@ -37,7 +37,7 @@
                                 Hello {{ $user->name }},
                             </p>
                             <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
-                                One Time Code for your Online CPD Test <strong>{{ $otpCode }}</strong>. Unique code
+                                One Time Code for your Online CNE Test <strong>{{ $otpCode }}</strong>. Unique code
                                 will expire in 10 Minutes. For any further assistance mail us to <a
                                     href="mailto:support@ihsnursing.com"
                                     style="color: #F36E21; font-weight: 600; text-decoration: underline;">support@ihsnursing.com</a>

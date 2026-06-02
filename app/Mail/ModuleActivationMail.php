@@ -19,13 +19,12 @@ class ModuleActivationMail extends Mailable
         public User $user,
         public CourseDetail $course,
         public Order $order
-    ) {
-    }
+    ) {}
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Your CPD Module "' . $this->course->couse_name . '" Has Been Activated!',
+            subject: 'Your CNE Module "'.$this->course->couse_name.'" Has Been Activated!',
         );
     }
 
