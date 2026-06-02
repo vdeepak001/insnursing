@@ -466,7 +466,7 @@
                     <article
                         class="flex h-full min-h-0 flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 border-t-4 border-t-impetus-orange group">
                         <div class="relative h-48 w-full shrink-0 overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/problem-solving (3).jpeg') }}"
+                            <img src="{{ asset('images/factual-knowledge (1).jpeg') }}"
                                 alt="Study materials and preparation for a nursing examination"
                                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 width="900" height="600" loading="lazy" decoding="async">
@@ -499,7 +499,7 @@
                     <article
                         class="flex h-full min-h-0 flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 border-t-4 border-t-impetus-navy group">
                         <div class="relative h-48 w-full shrink-0 overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/problem-solving (2).jpeg') }}"
+                            <img src="{{ asset('images/factual-knowledge (2).jpeg') }}"
                                 alt="Laptop showing an online multiple-choice examination"
                                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 width="900" height="600" loading="lazy" decoding="async">
@@ -532,7 +532,7 @@
                     <article
                         class="flex h-full min-h-0 flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 border-t-4 border-t-[#8B5CF6] group">
                         <div class="relative h-48 w-full shrink-0 overflow-hidden bg-slate-100">
-                            <img src="{{ asset('images/problem-solving (1).jpeg') }}"
+                            <img src="{{ asset('images/factual-knowledge (3).jpeg') }}"
                                 alt="Graduates celebrating achievement and certification"
                                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                 width="900" height="600" loading="lazy" decoding="async">
