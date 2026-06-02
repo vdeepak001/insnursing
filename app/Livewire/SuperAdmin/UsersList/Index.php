@@ -93,4 +93,20 @@ class Index extends Component
             'profileLabels' => self::PROFILE_LABELS,
         ]);
     }
+
+    public function deleteUser($userId)
+    {
+        if (auth()->user()->role_type === 'support') {
+            abort(403, 'Unauthorized action.');
+        }
+
+        $user = User::findOrFail($userId);
+        $user->delete();
+
+        $this->dispatch('notify', 
+            message: 'User deleted successfully!',
+            title: 'Success',
+            variant: 'success'
+        );
+    }
 }
