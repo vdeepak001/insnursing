@@ -12,7 +12,7 @@
     </div>
 
     <div>
-        <x-common.component-card title="Material Information">
+        <x-common.component-card title="Resources Information">
             <form method="POST" action="{{ route($routePrefix . '.title-materials.store') }}" enctype="multipart/form-data">
                 @csrf
 
@@ -151,7 +151,8 @@
 
                 if (courseId && titleId && titleLabel) {
                     fetch(
-                            `{{ route($routePrefix . '.title-materials.get-existing-attachments') }}?course_id=${courseId}&course_title_id=${titleId}&description=${encodeURIComponent(titleLabel)}`)
+                            `{{ route($routePrefix . '.title-materials.get-existing-attachments') }}?course_id=${courseId}&course_title_id=${titleId}&description=${encodeURIComponent(titleLabel)}`
+                            )
                         .then(response => response.json())
                         .then(data => {
                             if (data.length > 0) {

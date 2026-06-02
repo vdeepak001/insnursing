@@ -12,7 +12,7 @@
     </div>
 
     <div>
-        <x-common.component-card title="Material Information">
+        <x-common.component-card title="Resources Information">
             <form method="POST" action="{{ route($routePrefix . '.title-materials.update', $material) }}"
                 enctype="multipart/form-data">
                 @csrf
