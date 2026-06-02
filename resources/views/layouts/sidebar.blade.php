@@ -58,11 +58,12 @@
     @mouseenter="if (!$store.sidebar.isExpanded) $store.sidebar.setHovered(true)"
     @mouseleave="$store.sidebar.setHovered(false)">
     <!-- Logo Section -->
-    <div class="pt-8 pb-7 flex border-b border-white/10 mb-6"
+    <div class="pt-8 pb-7 mb-6 flex border-b border-white/10"
         :class="(!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen) ?
         'xl:justify-center' :
         'justify-start'">
-        <a href="/" class="w-full">
+        <a href="/"
+            class="w-full rounded-2xl border border-white/20 bg-white/95 px-4 py-3 shadow-lg shadow-orange-900/20 backdrop-blur-sm">
             <img x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
                 src="/Impetus-logo.png" alt="IHS Nursing" class="max-w-[85%] h-auto object-contain mx-auto" />
             <img x-show="!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen"
