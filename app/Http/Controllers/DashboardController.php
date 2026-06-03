@@ -2,36 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Models\CourseDetail;
-use App\Models\CourseTitle;
-use App\Models\CourseMaterial;
-use App\Models\CourseQuestion;
-use Illuminate\Http\Request;
+use App\Services\AdminDashboardService;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function __construct(private AdminDashboardService $dashboard) {}
+
+    public function index(): View|RedirectResponse
     {
         if (auth()->user()?->role_type === 'user') {
             return redirect()->route('profile');
         }
 
-        $stats = [
-            // User Stats
-            'total_users' => User::where('role_type', 'user')->count(),
-            'active_users' => User::where('role_type', 'user')->where('active_status', 1)->count(),
-            
-            // Course Stats
-            'total_courses' => CourseDetail::count(),
-            'active_courses' => CourseDetail::where('active_status', 1)->count(),
-            'total_materials' => CourseMaterial::count(),
-            'total_questions' => CourseQuestion::count(),
-        ];
+        $data = $this->dashboard->build();
 
         return view('pages.dashboard.ecommerce', [
             'title' => 'Dashboard Overview',
-            'stats' => $stats
+            'stats' => $data['stats'],
+            'charts' => $data['charts'],
+            'recentAttempts' => $data['recent_attempts'],
+            'topPerforming' => $data['top_performing'],
         ]);
     }
 }

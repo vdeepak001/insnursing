@@ -74,10 +74,9 @@
                     @endforeach
                 </select>
             </div>
-            <a href="{{ route(request()->route()->getName()) }}"
-                class="inline-flex items-center rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-200 dark:hover:bg-gray-700">
+            <x-ui.button variant="secondary" size="sm" href="{{ route(request()->route()->getName()) }}">
                 Clear
-            </a>
+            </x-ui.button>
         </div>
     </form>
 
@@ -151,13 +150,7 @@
                                 {{ \App\Enums\PaymentMode::tryFrom($order->payment_mode)?->label() ?? \Illuminate\Support\Str::of($order->payment_mode)->replace('_', ' ')->title() }}
                             </td>
                             <td class="px-4 py-4 whitespace-nowrap">
-                                <span @class([
-                                    'inline-flex rounded-full px-2 py-0.5 text-xs font-medium',
-                                    'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-200' => $order->payment_status->value === 'completed',
-                                    'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-200' => $order->payment_status->value === 'pending',
-                                ])>
-                                    {{ $order->payment_status->label() }}
-                                </span>
+                                <x-ui.payment-status-badge :status="$order->payment_status" />
                             </td>
                             <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-700 dark:text-gray-300">
                                 {{ $order->created_at->format('d-m-Y h:i A') }}
@@ -170,13 +163,11 @@
                                 @endif
                             </td>
                             <td class="px-4 py-4 whitespace-nowrap text-center text-sm font-medium">
-                                <button type="button" @click="openCourse({{ $order->user_id }})"
-                                    class="inline-flex items-center justify-center rounded-lg p-2 text-sky-700 transition-colors hover:bg-sky-50 hover:text-sky-900 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-1 dark:text-sky-400 dark:hover:bg-gray-700 dark:hover:text-sky-300 dark:focus:ring-offset-gray-800"
+                                <x-ui.button type="button" variant="secondary" size="sm" class="!px-3 !py-2"
+                                    @click="openCourse({{ $order->user_id }})"
                                     title="View purchased modules">
-                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </button>
+                                    View Report
+                                </x-ui.button>
                             </td>
                         </tr>
                     @empty
@@ -276,10 +267,9 @@
                 </div>
 
                 <div class="mt-8 flex justify-end">
-                    <button type="button" @click="closeCourse()"
-                        class="rounded-lg border border-gray-300 bg-white px-6 py-2 text-sm font-bold text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700">
+                    <x-ui.button type="button" variant="secondary" size="sm" @click="closeCourse()">
                         Close
-                    </button>
+                    </x-ui.button>
                 </div>
             </div>
         </div>

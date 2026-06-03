@@ -13,6 +13,7 @@ use App\Http\Controllers\SuperAdmin\CourseDetailController;
 use App\Http\Controllers\SuperAdmin\CourseMaterialController;
 use App\Http\Controllers\SuperAdmin\CourseQuestionController;
 use App\Http\Controllers\SuperAdmin\CourseSubTitleController;
+use App\Http\Controllers\SuperAdmin\CourseTestAttemptsController;
 use App\Http\Controllers\SuperAdmin\CourseTitleController;
 use App\Http\Controllers\SuperAdmin\LevelScoreController;
 use App\Http\Controllers\SuperAdmin\OrderDetailsController;
@@ -268,6 +269,12 @@ foreach ($prefixes as $prefix) {
                 ->name($prefix.'.reports.user-performance');
             Route::get('reports/export-csv', [ReportsController::class, 'exportCsv'])
                 ->name($prefix.'.reports.export-csv');
+        }
+
+        if (in_array($prefix, ['super-admin', 'admin', 'sme', 'support'], true)) {
+            Route::get('tests/{testSegment}', [CourseTestAttemptsController::class, 'index'])
+                ->where('testSegment', 'pretest|mock-test|final-test|practice-test|results')
+                ->name($prefix.'.tests.index');
         }
 
         if (in_array($prefix, ['super-admin', 'admin', 'support'], true)) {

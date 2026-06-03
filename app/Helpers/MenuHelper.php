@@ -92,6 +92,20 @@ class MenuHelper
             ];
         }
 
+        if (in_array($roleType, ['superadmin', 'admin', 'sme', 'support'], true)) {
+            $items[] = [
+                'icon' => 'forms',
+                'name' => 'Tests',
+                'subItems' => [
+                    ['name' => 'Pretest', 'path' => '/'.$prefix.'/tests/pretest'],
+                    ['name' => 'Mock Test', 'path' => '/'.$prefix.'/tests/mock-test'],
+                    ['name' => 'Final Test', 'path' => '/'.$prefix.'/tests/final-test'],
+                    ['name' => 'Practice Test', 'path' => '/'.$prefix.'/tests/practice-test'],
+                    ['name' => 'Results', 'path' => '/'.$prefix.'/tests/results'],
+                ],
+            ];
+        }
+
         if (in_array($roleType, ['superadmin', 'admin'], true)) {
             $items[] = [
                 'icon' => 'charts',

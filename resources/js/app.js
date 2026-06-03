@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('#chartThirteen')) {
         import('./components/chart/chart-13').then(module => module.initChartThirteen());
     }
+    if (document.getElementById('dashboard-chart-data')) {
+        import('./components/chart/dashboard-charts').then(module => module.initDashboardCharts());
+    }
+    if (document.getElementById('test-attempts-chart-data')) {
+        import('./components/chart/test-attempts-charts').then(module => module.initTestAttemptsCharts());
+    }
 
     // Calendar init
     if (document.querySelector('#calendar')) {

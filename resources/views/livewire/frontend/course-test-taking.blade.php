@@ -35,7 +35,7 @@
                                 <p class="mt-1.5 text-lg font-bold text-orange-600">
                                     {{ $course->couse_name }}
                                 </p>
-                               
+
                             </div>
                             <div class="hidden shrink-0 lg:block">
                                 <span class="inline-flex rounded-full border border-logo-blue/25 bg-logo-blue/10 px-4 py-1.5 text-sm font-bold text-brand-800">{{ $banner }}</span>
@@ -59,7 +59,7 @@
                                 <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $correctCount }}</p>
                             </div>
 
-                            {{-- Wrong Answers --}}
+                            {{-- Incorrect Answers --}}
                             <div class="flex flex-col items-center justify-center rounded-xl border border-rose-500/20 bg-gradient-to-br from-rose-500 to-red-600 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
                                 <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-rose-100 md:text-[11px]">Wrong</p>
                                 <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $wrongCount }}</p>
@@ -131,7 +131,7 @@
                                             transform="rotate(-90, 50, 50)"
                                             class="transition-all duration-1000 ease-out"
                                         />
-                                        
+
                                         {{-- Percentages inside --}}
                                         @if($pctCorrect > 5)
                                             <text x="{{ $tx_c }}" y="{{ $ty_c }}" fill="white" font-size="8" font-weight="bold" text-anchor="middle" dominant-baseline="middle">
@@ -153,7 +153,7 @@
                                     </div>
                                     <div class="flex items-center gap-3">
                                         <span class="size-4 shrink-0 bg-gradient-to-r from-rose-500 to-red-600 shadow-sm rounded-full"></span>
-                                        <span class="text-base font-bold text-rose-600">Wrong Answer</span>
+                                        <span class="text-base font-bold text-rose-600">Incorrect Answer</span>
                                     </div>
                                 </div>
                             </div>
@@ -166,20 +166,20 @@
                                     <div class="space-y-4">
                                         <h3 class="text-2xl font-black tracking-widest text-emerald-600 sm:text-3xl">CONGRATULATIONS!</h3>
                                         <p class="text-lg font-bold text-slate-800">You have Successfully Completed the Exam</p>
-                                        
+
                                         <div class="flex flex-col items-center gap-3 py-6" x-data="{ hoverRating: 0, currentRating: @entangle('rating').live }">
                                             <p class="text-sm font-bold text-slate-600">Feedback (Give a Star Rating)</p>
                                             <div class="flex gap-1">
                                                 @foreach(range(1, 5) as $i)
-                                                    <button 
-                                                        type="button" 
+                                                    <button
+                                                        type="button"
                                                         @click="$wire.setRating({{ $i }})"
                                                         @mouseenter="hoverRating = {{ $i }}"
                                                         @mouseleave="hoverRating = 0"
                                                         class="transition-transform hover:scale-110"
                                                     >
-                                                        <svg 
-                                                            class="size-10 transition-colors" 
+                                                        <svg
+                                                            class="size-10 transition-colors"
                                                             :class="(hoverRating || currentRating) >= {{ $i }} ? 'text-amber-400 fill-amber-400' : 'text-slate-300 fill-transparent'"
                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                                                         >
@@ -203,8 +203,8 @@
                                                     <img src="{{ $qrUrl }}" alt="Verification QR Code" class="size-24">
                                                     <p class="mt-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">Scan to verify</p>
                                                 </div>
-                                                <a 
-                                                    href="{{ route('certificates.download', $orderId) }}" 
+                                                <a
+                                                    href="{{ route('certificates.download', $orderId) }}"
                                                     class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-impetus-orange to-amber-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-orange-500/20 transition hover:from-orange-600 hover:to-amber-600"
                                                     target="_blank"
                                                 >
@@ -218,11 +218,11 @@
                                     <div class="space-y-4">
                                         <h3 class="text-2xl font-black tracking-widest text-rose-600 sm:text-3xl">SORRY!</h3>
                                         <p class="text-lg font-bold text-slate-800">You have not Successfully Completed the Exam</p>
-                                        
+
                                         @if($finalAttemptCount < 2)
                                             <p class="text-sm font-semibold text-slate-500">You can make ONE more attempt</p>
                                             <div class="mt-8">
-                                                <a 
+                                                <a
                                                     href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
                                                     class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-rose-500 to-red-600 px-10 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-rose-500/20 transition hover:from-rose-600 hover:to-red-700"
                                                 >
@@ -377,7 +377,7 @@
                                     $answered = filled($responses[$qid] ?? null);
                                     $isPractice = $type === \App\Enums\CourseTestType::Practice;
                                     $isCurrent = $idx === $currentIndex;
-                                    
+
                                     $result = $isPractice ? ($practiceResults[$qid] ?? null) : null;
                                     $isCorrect = ($result === 'correct');
                                     $isWrong = ($result === 'wrong_second');
@@ -442,7 +442,7 @@
                                             $showFeedback = $isPractice && ($practiceShowReasoning[$qid] ?? false);
                                             $correctLetter = $practiceCorrectAnswers[$qid] ?? null;
                                             $isSelected = ($responses[$qid] ?? null) === $letter;
-                                            
+
                                             // New logic for disabling first wrong choice on 2nd attempt
                                             $isFirstWrongChoice = $isPractice && ($practiceFirstWrongAnswer[$qid] ?? null) === $letter && ($practiceResults[$qid] ?? null) === 'wrong_first';
 

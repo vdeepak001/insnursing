@@ -28,24 +28,12 @@
         </div>
     </div>
 
-    {{-- Status Legends --}}
-    <div class="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6 px-1">
-        <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400 font-black">S</span>
-            Success
-        </div>
-        <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 font-black">F</span>
-            Failed
-        </div>
-        <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 font-black">I</span>
-            Initiated
-        </div>
-        <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 font-black">A</span>
-            Aborted
-        </div>
+    {{-- Payment status legend --}}
+    <div class="mb-6 flex flex-wrap items-center gap-3 px-1">
+        <x-ui.payment-status-badge :status="\App\Enums\PaymentStatus::Completed" />
+        <x-ui.payment-status-badge :status="\App\Enums\PaymentStatus::Pending" />
+        <x-ui.payment-status-badge :status="\App\Enums\PaymentStatus::Failed" />
+        <x-ui.payment-status-badge :status="\App\Enums\PaymentStatus::Aborted" />
     </div>
 
     <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden mb-8">
@@ -85,24 +73,8 @@
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->courseDetail->couse_name ?? 'N/A' }}</td>
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->created_at->format('d-m-Y') }}</td>
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->created_at->format('h:i A') }}</td>
-                            <td class="px-6 py-4 text-sm font-normal text-center">
-                                @php
-                                    $statusText = match($order->payment_status->value) {
-                                        'completed' => 'Success',
-                                        'pending' => 'Initiated',
-                                        'failed' => 'Failed',
-                                        'aborted' => 'Aborted',
-                                        default => 'Unknown'
-                                    };
-                                    $statusColor = match($order->payment_status->value) {
-                                        'completed' => 'text-green-600',
-                                        'pending' => 'text-blue-600',
-                                        'failed' => 'text-red-600',
-                                        'aborted' => 'text-orange-600',
-                                        default => 'text-gray-600'
-                                    };
-                                @endphp
-                                <span class="{{ $statusColor }} uppercase">{{ $statusText }}</span>
+                            <td class="px-6 py-4 text-center">
+                                <x-ui.payment-status-badge :status="$order->payment_status" class="mx-auto" />
                             </td>
                         </tr>
                     @empty

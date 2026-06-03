@@ -13,7 +13,7 @@
 
     // Size map
     $sizeMap = [
-        'sm' => 'px-4 py-3 text-sm',
+        'sm' => 'px-4 py-2 text-sm',
         'md' => 'px-5 py-3.5 text-sm',
     ];
     $sizeClass = $sizeMap[$size] ?? $sizeMap['md'];
@@ -21,6 +21,8 @@
     // Variant map
     $variantMap = [
         'primary' => 'bg-brand-500 text-white shadow-theme-xs hover:bg-brand-600 disabled:bg-brand-300',
+        'impetus' => 'bg-impetus-orange text-white shadow-md shadow-orange-500/20 hover:bg-orange-600 disabled:bg-orange-300',
+        'secondary' => 'border-2 border-teal-700 bg-white text-teal-800 hover:bg-teal-50 dark:border-teal-600 dark:bg-gray-900 dark:text-teal-300 dark:hover:bg-teal-950/30',
         'outline' => 'bg-white text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-400 dark:ring-gray-700 dark:hover:bg-white/[0.03] dark:hover:text-gray-300',
     ];
     $variantClass = $variantMap[$variant] ?? $variantMap['primary'];
@@ -32,9 +34,16 @@
     $classes = trim("{$base} {$sizeClass} {$variantClass} {$className} {$disabledClass}");
 @endphp
 
-<button
-    {{ $attributes->merge(['class' => $classes, 'type' => $attributes->get('type', 'button')]) }}
-    @if($disabled) disabled @endif
+@php
+    $tag = $attributes->has('href') ? 'a' : 'button';
+@endphp
+
+<{{ $tag }}
+    {{ $attributes->merge(['class' => $classes]) }}
+    @if($tag === 'button')
+        type="{{ $attributes->get('type', 'button') }}"
+        @if($disabled) disabled @endif
+    @endif
 >
     {{-- start icon: priority — named slot 'startIcon' first, then startIcon prop if it's a HtmlString --}}
     @if (isset($__env) && $slot->isEmpty() === false) @endif
@@ -58,4 +67,4 @@
     @elseif($endIcon)
         <span class="flex items-center">{!! $endIcon !!}</span>
     @endif
-</button>
+</{{ $tag }}>

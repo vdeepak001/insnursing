@@ -144,7 +144,7 @@
                                         {{-- Pre Test --}}
                                         @if ($preDone)
                                             <button type="button"
-                                                @click="scoreCardOpen = true; scoreCardData = { 
+                                                @click="scoreCardOpen = true; scoreCardData = {
                                                     title: 'Pretest Result',
                                                     score: '{{ number_format((float) $tp['pre_score'], 1) }}',
                                                     correct: '{{ $tp['pre_correct'] }}',
@@ -174,7 +174,7 @@
                                         {{-- Mock Test --}}
                                         @if ($mockDone)
                                             <button type="button"
-                                                @click="scoreCardOpen = true; scoreCardData = { 
+                                                @click="scoreCardOpen = true; scoreCardData = {
                                                     title: 'Mock Test Result',
                                                     score: '{{ number_format((float) $tp['mock_score'], 1) }}',
                                                     correct: '{{ $tp['mock_correct'] }}',
@@ -205,7 +205,7 @@
                                         {{-- Final Test --}}
                                         @if ($finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2))
                                             <button type="button"
-                                                @click="scoreCardOpen = true; scoreCardData = { 
+                                                @click="scoreCardOpen = true; scoreCardData = {
                                                     title: 'Final Test Result',
                                                     score: '{{ number_format((float) $tp['final_score'], 1) }}',
                                                     correct: '{{ $tp['final_correct'] }}',
@@ -558,7 +558,7 @@
                             <p class="mt-1.5 text-xl font-black font-outfit" x-text="scoreCardData.correct"></p>
                         </div>
                         <div class="rounded-2xl border border-rose-500/20 bg-gradient-to-br from-rose-500 to-red-600 p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-rose-100">Wrong Answer</p>
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-rose-100">Incorrect Answer</p>
                             <p class="mt-1.5 text-xl font-black font-outfit" x-text="scoreCardData.wrong"></p>
                         </div>
                     </div>
