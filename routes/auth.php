@@ -26,7 +26,12 @@ Route::middleware('guest')->group(function () {
 
     Route::post('admin-login', [AuthenticatedSessionController::class, 'store']);
     Route::post('frontend-login', [FrontendAuthenticatedSessionController::class, 'store'])->name('frontend.login');
-    Route::post('frontend-resend-password', [FrontendAuthenticatedSessionController::class, 'resendPassword'])->name('frontend.password.resend');
+    Route::post('frontend-forgot-password/send-otp', [FrontendAuthenticatedSessionController::class, 'sendForgotPasswordOtp'])
+        ->middleware('throttle:6,1')
+        ->name('frontend.password.send-otp');
+    Route::post('frontend-forgot-password/verify', [FrontendAuthenticatedSessionController::class, 'verifyForgotPasswordOtp'])
+        ->middleware('throttle:6,1')
+        ->name('frontend.password.verify');
 
     Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('auth.google.redirect');
     Route::get('auth/google/callback', [GoogleAuthController::class, 'callback'])->name('auth.google.callback');

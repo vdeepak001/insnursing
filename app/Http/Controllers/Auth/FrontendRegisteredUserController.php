@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Mail\FrontendUserPasswordMail;
 use App\Models\User;
+use App\Services\SmsService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -26,7 +27,7 @@ class FrontendRegisteredUserController extends Controller
     /**
      * Handle frontend user registration without touching admin register flow.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, SmsService $smsService): RedirectResponse
     {
         $validated = $request->validateWithBag('frontendRegister', [
             'name' => ['required', 'string', 'max:255'],
@@ -100,8 +101,20 @@ class FrontendRegisteredUserController extends Controller
 
         Mail::to($user->email)->send(new FrontendUserPasswordMail($user, $generatedPassword, 'register'));
 
+        if (filled($user->phone)) {
+            try {
+                $smsService->sendRegistrationCredentials(
+                    $user->phone,
+                    $generatedPassword,
+                    $user->unique_sequence_number
+                );
+            } catch (\Exception $e) {
+                report($e);
+            }
+        }
+
         return back()
-            ->with('success', 'Your account has been created. We sent a login password to your email.')
+            ->with('success', 'Your account has been created. Login details were sent to your email and mobile number.')
             ->with('registered_user', [
                 'name' => $user->name,
                 'email' => $user->email,

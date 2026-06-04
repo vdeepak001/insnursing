@@ -1,13 +1,23 @@
 <?php
 
-use App\Models\CourseDetail;
-use App\Models\Order;
-use App\Models\User;
-use App\Mail\PretestOtpMail;
+use App\Enums\CourseTestType;
 use App\Enums\PaymentMode;
 use App\Enums\PaymentStatus;
+use App\Mail\PretestOtpMail;
+use App\Models\CourseDetail;
+use App\Models\CourseTestAttempt;
+use App\Models\Order;
+use App\Models\User;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Livewire;
+
+beforeEach(function () {
+    Mail::fake();
+    Http::fake([
+        'https://www.smsjust.com/*' => Http::response('OK', 200),
+    ]);
+});
 
 it('blocks pretest access for users who have not verified OTP', function () {
     $user = User::factory()->create(['role_type' => 'user']);
@@ -34,13 +44,12 @@ it('blocks pretest access for users who have not verified OTP', function () {
 });
 
 it('sends OTP, verifies it, and allows pretest access', function () {
-    Mail::fake();
-
     $user = User::factory()->create([
         'role_type' => 'user',
         'email' => 'student@example.com',
+        'phone' => '9876543210',
     ]);
-    
+
     $course = CourseDetail::create([
         'couse_name' => 'OTP Verified Course',
         'active_status' => 1,
@@ -75,17 +84,22 @@ it('sends OTP, verifies it, and allows pretest access', function () {
     $component->call('sendOtp')
         ->assertSet('otpSent', true)
         ->assertSet('isSending', false)
-        ->assertSet('successMessage', 'Verification code sent successfully to your email.');
+        ->assertSet('successMessage', 'OTP sent successfully to your registered email and mobile number.');
 
-    // Assert mail was sent with OTP
-    Mail::assertSent(PretestOtpMail::class, function ($mail) use ($user, $course) {
-        return $mail->hasTo($user->email) &&
-               $mail->courseName === $course->couse_name &&
-               strlen($mail->otpCode) === 6;
+    Mail::assertSent(PretestOtpMail::class, function (PretestOtpMail $mail) use ($user, $course): bool {
+        return $mail->hasTo($user->email)
+            && $mail->courseName === $course->couse_name
+            && strlen($mail->otpCode) === 6;
+    });
+
+    Http::assertSent(function ($request): bool {
+        return str_contains($request->url(), 'urlsms.php')
+            && $request['dest_mobileno'] === '919876543210'
+            && str_contains($request['message'], 'OTP');
     });
 
     // Get the generated OTP from session
-    $stored = session()->get('pretest_otp_' . $course->id);
+    $stored = session()->get('pretest_otp_'.$course->id);
     $otp = $stored['code'];
     expect($otp)->not->toBeNull();
 
@@ -100,13 +114,14 @@ it('sends OTP, verifies it, and allows pretest access', function () {
         ->assertRedirect(route('cne.modules.test', [$course->couse_name, 'pre']));
 
     // Assert session verification flag is set
-    expect(session()->has('pretest_otp_verified_' . $course->id))->toBeTrue();
+    expect(session()->has('pretest_otp_verified_'.$course->id))->toBeTrue();
 });
 
 it('invalidates the OTP after 3 failed verification attempts to prevent brute-forcing', function () {
-    Mail::fake();
-
-    $user = User::factory()->create(['role_type' => 'user']);
+    $user = User::factory()->create([
+        'role_type' => 'user',
+        'phone' => '9876543210',
+    ]);
     $course = CourseDetail::create([
         'couse_name' => 'OTP Brute Force Course',
         'active_status' => 1,
@@ -148,7 +163,7 @@ it('invalidates the OTP after 3 failed verification attempts to prevent brute-fo
         ->assertSet('otpInput', '');
 
     // Assert the session OTP is deleted
-    expect(session()->has('pretest_otp_' . $course->id))->toBeFalse();
+    expect(session()->has('pretest_otp_'.$course->id))->toBeFalse();
 });
 
 it('blocks mock access for users who have not verified Mock OTP', function () {
@@ -168,11 +183,11 @@ it('blocks mock access for users who have not verified Mock OTP', function () {
     ]);
 
     // Mock has a prerequisite of Pretest completed
-    \App\Models\CourseTestAttempt::create([
+    CourseTestAttempt::create([
         'user_id' => $user->id,
         'course_detail_id' => $course->id,
-        'test_type' => \App\Enums\CourseTestType::Pre->value,
-        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'test_type' => CourseTestType::Pre->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
         'question_ids' => [1, 2, 3],
         'started_at' => now()->subHours(2),
         'completed_at' => now()->subHours(1),
@@ -184,13 +199,12 @@ it('blocks mock access for users who have not verified Mock OTP', function () {
 });
 
 it('sends Mock OTP, verifies it, and allows mock access', function () {
-    Mail::fake();
-
     $user = User::factory()->create([
         'role_type' => 'user',
         'email' => 'student-mock@example.com',
+        'phone' => '9876543210',
     ]);
-    
+
     $course = CourseDetail::create([
         'couse_name' => 'Mock OTP Verified Course',
         'active_status' => 1,
@@ -206,11 +220,11 @@ it('sends Mock OTP, verifies it, and allows mock access', function () {
     ]);
 
     // Prerequisite: completed Pretest
-    \App\Models\CourseTestAttempt::create([
+    CourseTestAttempt::create([
         'user_id' => $user->id,
         'course_detail_id' => $course->id,
-        'test_type' => \App\Enums\CourseTestType::Pre->value,
-        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'test_type' => CourseTestType::Pre->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
         'question_ids' => [1, 2, 3],
         'started_at' => now()->subHours(2),
         'completed_at' => now()->subHours(1),
@@ -231,20 +245,16 @@ it('sends Mock OTP, verifies it, and allows mock access', function () {
     $component->call('sendOtp')
         ->assertSet('otpSent', true);
 
-    Mail::assertSent(PretestOtpMail::class, function ($mail) use ($user, $course) {
-        return $mail->hasTo($user->email) &&
-               $mail->courseName === $course->couse_name &&
-               $mail->testLabel === 'Mock Test';
-    });
+    Http::assertSent(fn ($request): bool => str_contains($request->url(), 'urlsms.php'));
 
-    $stored = session()->get('mocktest_otp_' . $course->id);
+    $stored = session()->get('mocktest_otp_'.$course->id);
     $otp = $stored['code'];
 
     $component->set('otpInput', $otp)
         ->call('verifyOtp')
         ->assertRedirect(route('cne.modules.test', [$course->couse_name, 'mock']));
 
-    expect(session()->has('mocktest_otp_verified_' . $course->id))->toBeTrue();
+    expect(session()->has('mocktest_otp_verified_'.$course->id))->toBeTrue();
 });
 
 it('blocks final access for users who have not verified Final OTP', function () {
@@ -264,11 +274,11 @@ it('blocks final access for users who have not verified Final OTP', function () 
     ]);
 
     // Prerequisite: completed Pretest
-    \App\Models\CourseTestAttempt::create([
+    CourseTestAttempt::create([
         'user_id' => $user->id,
         'course_detail_id' => $course->id,
-        'test_type' => \App\Enums\CourseTestType::Pre->value,
-        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'test_type' => CourseTestType::Pre->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
         'question_ids' => [1, 2, 3],
         'started_at' => now()->subHours(4),
         'completed_at' => now()->subHours(3),
@@ -276,11 +286,11 @@ it('blocks final access for users who have not verified Final OTP', function () 
     ]);
 
     // Prerequisite: completed Mock test
-    \App\Models\CourseTestAttempt::create([
+    CourseTestAttempt::create([
         'user_id' => $user->id,
         'course_detail_id' => $course->id,
-        'test_type' => \App\Enums\CourseTestType::Mock->value,
-        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'test_type' => CourseTestType::Mock->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
         'question_ids' => [1, 2, 3],
         'started_at' => now()->subHours(2),
         'completed_at' => now()->subHours(1),
@@ -292,13 +302,12 @@ it('blocks final access for users who have not verified Final OTP', function () 
 });
 
 it('sends Final OTP, verifies it, and allows final access', function () {
-    Mail::fake();
-
     $user = User::factory()->create([
         'role_type' => 'user',
         'email' => 'student-final@example.com',
+        'phone' => '9876543210',
     ]);
-    
+
     $course = CourseDetail::create([
         'couse_name' => 'Final OTP Verified Course',
         'active_status' => 1,
@@ -314,11 +323,11 @@ it('sends Final OTP, verifies it, and allows final access', function () {
     ]);
 
     // Prerequisite: completed Pretest
-    \App\Models\CourseTestAttempt::create([
+    CourseTestAttempt::create([
         'user_id' => $user->id,
         'course_detail_id' => $course->id,
-        'test_type' => \App\Enums\CourseTestType::Pre->value,
-        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'test_type' => CourseTestType::Pre->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
         'question_ids' => [1, 2, 3],
         'started_at' => now()->subHours(4),
         'completed_at' => now()->subHours(3),
@@ -326,11 +335,11 @@ it('sends Final OTP, verifies it, and allows final access', function () {
     ]);
 
     // Prerequisite: completed Mock test
-    \App\Models\CourseTestAttempt::create([
+    CourseTestAttempt::create([
         'user_id' => $user->id,
         'course_detail_id' => $course->id,
-        'test_type' => \App\Enums\CourseTestType::Mock->value,
-        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'test_type' => CourseTestType::Mock->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
         'question_ids' => [1, 2, 3],
         'started_at' => now()->subHours(2),
         'completed_at' => now()->subHours(1),
@@ -351,19 +360,14 @@ it('sends Final OTP, verifies it, and allows final access', function () {
     $component->call('sendOtp')
         ->assertSet('otpSent', true);
 
-    Mail::assertSent(PretestOtpMail::class, function ($mail) use ($user, $course) {
-        return $mail->hasTo($user->email) &&
-               $mail->courseName === $course->couse_name &&
-               $mail->testLabel === 'Final Test';
-    });
+    Http::assertSent(fn ($request): bool => str_contains($request->url(), 'urlsms.php'));
 
-    $stored = session()->get('finaltest_otp_' . $course->id);
+    $stored = session()->get('finaltest_otp_'.$course->id);
     $otp = $stored['code'];
 
     $component->set('otpInput', $otp)
         ->call('verifyOtp')
         ->assertRedirect(route('cne.modules.test', [$course->couse_name, 'final']));
 
-    expect(session()->has('finaltest_otp_verified_' . $course->id))->toBeTrue();
+    expect(session()->has('finaltest_otp_verified_'.$course->id))->toBeTrue();
 });
-

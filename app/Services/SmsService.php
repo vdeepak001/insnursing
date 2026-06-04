@@ -7,13 +7,15 @@ use Illuminate\Support\Facades\Log;
 
 class SmsService
 {
-    protected string $username = 'healthcareskill';
+    public function sendForgotPasswordOtp(string $phone, string $otp): bool
+    {
+        return $this->sendOtp($phone, $otp);
+    }
 
-    protected string $pass = 'Raja_uday@2025';
-
-    protected string $senderid = 'INURSE';
-
-    protected string $dltEntityId = '1701158072845020034';
+    public function sendTestOtp(string $phone, string $otp): bool
+    {
+        return $this->sendOtp($phone, $otp);
+    }
 
     public function sendOtp(string $phone, string $otp): bool
     {
@@ -24,11 +26,27 @@ class SmsService
             return false;
         }
 
-        // ✅ Make sure this matches your DLT template EXACTLY character by character
-        $message = 'Dear User, your OTP '.$otp.' for FORGOT PASSWORD. Valid for 10 minutes. DO NOT SHARE. Call: +91-94452 56977 / 9445296977- IMPETUS';
-        $tempId = '1707171264502105055';
+        $message = str_replace('{otp}', $otp, config('sms.messages.otp'));
 
-        return $this->send($cleanedPhone, $message, $tempId);
+        return $this->send($cleanedPhone, $message, config('sms.templates.otp'));
+    }
+
+    public function sendRegistrationCredentials(string $phone, string $password, ?string $ihsId = null): bool
+    {
+        $cleanedPhone = $this->formatPhone($phone);
+        if (! $cleanedPhone) {
+            Log::warning("SmsService: Invalid phone number: {$phone}");
+
+            return false;
+        }
+
+        $message = str_replace(
+            ['{password}', '{ihs_id}'],
+            [$password, $ihsId ?? 'N/A'],
+            config('sms.messages.registration')
+        );
+
+        return $this->send($cleanedPhone, $message, config('sms.templates.registration'));
     }
 
     public function sendPurchaseConfirmation(string $phone, string $packageDetails): bool
@@ -42,34 +60,35 @@ class SmsService
 
         $packageDetails = substr(trim($packageDetails), 0, 50);
 
-        // ✅ Make sure this matches your DLT template EXACTLY
-        $message = 'Dear User, you have successfully purchased online test. Your package details '.$packageDetails.'. Call: +91-94452 56977 / 9445296977-IHSNURSING';
-        $tempId = '1707171264514580828';
+        $message = str_replace(
+            '{package}',
+            $packageDetails,
+            config('sms.messages.purchase')
+        );
 
-        return $this->send($cleanedPhone, $message, $tempId);
+        return $this->send($cleanedPhone, $message, config('sms.templates.purchase'));
     }
 
     protected function send(string $phone, string $message, string $tempId): bool
     {
-        $url = 'https://www.smsjust.com/blank/sms/user/urlsms.php';
+        $url = config('sms.api_url');
 
-        // ✅ Log exactly what is being sent BEFORE the API call
         Log::info('SmsService: Sending SMS', [
             'phone' => $phone,
             'tempId' => $tempId,
-            'entityId' => $this->dltEntityId,
+            'entityId' => config('sms.dlt_entity_id'),
             'messageLen' => strlen($message),
             'message' => $message,
         ]);
 
         try {
             $response = Http::get($url, [
-                'username' => $this->username,
-                'pass' => $this->pass,
-                'senderid' => $this->senderid,
+                'username' => config('sms.username'),
+                'pass' => config('sms.password'),
+                'senderid' => config('sms.sender_id'),
                 'dest_mobileno' => $phone,
                 'message' => $message,
-                'dltentityid' => $this->dltEntityId,
+                'dltentityid' => config('sms.dlt_entity_id'),
                 'dlttempid' => $tempId,
                 'response' => 'Y',
             ]);
@@ -103,7 +122,6 @@ class SmsService
         $digits = preg_replace('/[^0-9]/', '', $phone);
 
         if (strlen($digits) >= 10) {
-            // ✅ Add country code 91 prefix
             return '91'.substr($digits, -10);
         }
 

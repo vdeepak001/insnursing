@@ -7,6 +7,8 @@
     <title>
         @if ($type === 'forgot')
             Temporary Password - {{ config('app.name', 'IHS Nursing') }}
+        @elseif ($type === 'updated')
+            Login Credentials - {{ config('app.name', 'IHS Nursing') }}
         @else
             Welcome to {{ config('app.name', 'IHS Nursing') }}
         @endif
@@ -36,6 +38,14 @@
                                 <p style="margin: 8px 0 0; color: #f8fafc; font-size: 14px; line-height: 1.6;">
                                     Your temporary login credentials to access your account.
                                 </p>
+                            @elseif ($type === 'updated')
+                                <p style="margin: 0 0 6px; color: #f8fafc; font-size: 13px; line-height: 1.5; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;">
+                                    Login Credentials
+                                </p>
+                                <h1
+                                    style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
+                                    Your password has been updated
+                                </h1>
                             @else
                                 <h1
                                     style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
@@ -68,8 +78,13 @@
                                 <tr>
                                     <td
                                         style="padding: 16px; @if (!empty($user->unique_sequence_number) && $type !== 'forgot') border-bottom: 1px solid #e2e8f0; @endif font-size: 14px; color: #475569;">
-                                        <strong style="color: #0f172a; display: inline-block; width: 150px;">Temporary
-                                            Password:</strong>
+                                        <strong style="color: #0f172a; display: inline-block; width: 150px;">
+                                            @if ($type === 'updated')
+                                                Password:
+                                            @else
+                                                Temporary Password:
+                                            @endif
+                                        </strong>
                                         <span style="color: #0f172a; font-weight: 600;">{{ $generatedPassword }}</span>
                                     </td>
                                 </tr>
@@ -85,10 +100,12 @@
                                 @endif
                             </table>
 
-                            <p style="margin: 0 0 16px; font-size: 14px; line-height: 1.6; color: #475569;">
-                                For security, please log in and change your password immediately after your first sign
-                                in.
-                            </p>
+                            @if ($type !== 'updated')
+                                <p style="margin: 0 0 16px; font-size: 14px; line-height: 1.6; color: #475569;">
+                                    For security, please log in and change your password immediately after your first sign
+                                    in.
+                                </p>
+                            @endif
                         </td>
                     </tr>
 

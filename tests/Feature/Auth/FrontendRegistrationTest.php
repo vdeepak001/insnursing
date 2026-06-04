@@ -1,16 +1,22 @@
 <?php
 
+use App\Mail\FrontendUserPasswordMail;
 use App\Models\State;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Tests\TestCase;
 
 uses(RefreshDatabase::class);
 
 test('frontend users can register from the signup modal flow', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     Mail::fake();
+    Http::fake([
+        'https://www.smsjust.com/*' => Http::response('OK', 200),
+    ]);
 
     State::query()->create([
         'name' => 'Gujarat',
@@ -30,7 +36,7 @@ test('frontend users can register from the signup modal flow', function () {
     $response->assertStatus(302);
     $response->assertSessionHas('success');
 
-    $user = User::query()->get()->filter(fn($u) => $u->email === 'frontend.nurse@example.com')->first();
+    $user = User::query()->get()->filter(fn ($u) => $u->email === 'frontend.nurse@example.com')->first();
 
     expect($user)->not->toBeNull()
         ->and($user->role_type)->toBe('user')
@@ -42,15 +48,18 @@ test('frontend users can register from the signup modal flow', function () {
         ->and($user->password_raw)->toBeString()
         ->and(strlen($user->password_raw))->toBe(10);
 
-    Mail::assertSent(\App\Mail\FrontendUserPasswordMail::class, function ($mail) use ($user) {
+    Mail::assertSent(FrontendUserPasswordMail::class, function ($mail) use ($user) {
         return $mail->hasTo('frontend.nurse@example.com')
             && $mail->user->is($user)
             && strlen($mail->generatedPassword) >= 8;
     });
+
+    Http::assertSent(fn ($request): bool => str_contains($request->url(), 'urlsms.php')
+        && $request['dest_mobileno'] === '919999999999');
 });
 
 test('frontend registration only accepts active states', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     State::query()->create([
         'name' => 'Inactive State',
         'status' => 'inactive',
@@ -72,7 +81,7 @@ test('frontend registration only accepts active states', function () {
 });
 
 test('frontend registration rejects duplicate email addresses', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     State::query()->create([
         'name' => 'Gujarat',
         'status' => 'active',

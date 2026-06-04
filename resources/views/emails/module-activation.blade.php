@@ -59,15 +59,15 @@
                                 <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
                                     Dear User, you have successfully purchased online CNE Module. Your package details
                                     <strong>{{ $course->couse_name }}</strong>. For any further assistance mail us to <a
-                                        href="mailto:info@ihsnursing.com"
-                                        style="color: #FF7A00; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
+                                        href="mailto:support@ihsnursing.com"
+                                        style="color: #FF7A00; font-weight: 600; text-decoration: underline;">support@ihsnursing.com</a>
                                 </p>
                             @else
                                 <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
                                     Dear User, your IHS Nursing CNE module <strong>{{ $course->couse_name }}</strong>
                                     has been activated. Kindly check your account for details. For any further
-                                    assistance mail us to <a href="mailto:info@ihsnursing.com"
-                                        style="color: #FF7A00; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
+                                    assistance mail us to <a href="mailto:support@ihsnursing.com"
+                                        style="color: #FF7A00; font-weight: 600; text-decoration: underline;">support@ihsnursing.com</a>
                                 </p>
                             @endif
 

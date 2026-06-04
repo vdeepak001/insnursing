@@ -1,7 +1,8 @@
 <div x-data="{
-         open: {{ ($errors->has('email') || $errors->has('password') || session('success')) ? 'true' : 'false' }},
+         open: {{ ($errors->has('email') || $errors->has('password') || $errors->has('otp') || session('success') || session('forgot_otp_sent')) ? 'true' : 'false' }},
          showPassword: false,
-         mode: '{{ old('form_type') === 'forgot' ? 'forgot' : 'login' }}'
+         mode: '{{ old('form_type') === 'forgot' || session('forgot_otp_sent') || $errors->has('otp') ? 'forgot' : 'login' }}',
+         forgotOtpSent: {{ session('forgot_otp_sent') || $errors->has('otp') ? 'true' : 'false' }}
      }"
      x-show="open"
      x-cloak
@@ -32,7 +33,10 @@
         <div class="mb-6 flex items-start justify-between gap-4">
             <div>
                 <h2 id="login-modal-title" class="font-serif text-xl font-semibold text-slate-900" x-text="mode === 'login' ? 'Log in' : 'Forgot Password'">Log in</h2>
-                <p class="mt-1 text-sm text-slate-600" x-text="mode === 'login' ? 'Enter your email and password to continue.' : 'Enter your email address and we will send you a new password.'">Enter your email and password to continue.</p>
+                <p class="mt-1 text-sm text-slate-600"
+                   x-text="mode === 'login' ? 'Enter your email and password to continue.' : (forgotOtpSent ? 'Enter the OTP sent to your email and mobile, then verify to receive a new password by email.' : 'Enter your email to receive an OTP on your registered email and mobile number.')">
+                    Enter your email and password to continue.
+                </p>
             </div>
             <button type="button"
                     @click="open = false"
@@ -105,7 +109,7 @@
                     <span>Remember me</span>
                 </label>
                 <button type="button"
-                        @click="mode = 'forgot'"
+                        @click="mode = 'forgot'; forgotOtpSent = false"
                         class="text-sm font-medium text-logo-blue hover:underline">
                     Forgot password?
                 </button>
@@ -116,7 +120,7 @@
             </button>
         </form>
 
-        <form method="POST" action="{{ route('frontend.password.resend') }}" class="space-y-4" x-show="mode === 'forgot'" x-cloak>
+        <form method="POST" action="{{ route('frontend.password.send-otp') }}" class="space-y-4" x-show="mode === 'forgot' && ! forgotOtpSent" x-cloak>
             @csrf
             <input type="hidden" name="form_type" value="forgot">
             <div>
@@ -124,7 +128,7 @@
                 <input type="email"
                        name="email"
                        id="forgot-modal-email"
-                       value="{{ old('email') }}"
+                       value="{{ old('email', session('forgot_otp_email')) }}"
                        required
                        autocomplete="email"
                        class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
@@ -132,7 +136,47 @@
             </div>
             <button type="submit"
                     class="w-full rounded-full bg-impetus-orange px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-impetus-orange/90 focus:outline-none focus:ring-2 focus:ring-impetus-orange focus:ring-offset-2">
-                Send login password
+                Send OTP
+            </button>
+        </form>
+
+        <form method="POST" action="{{ route('frontend.password.verify') }}" class="space-y-4" x-show="mode === 'forgot' && forgotOtpSent" x-cloak>
+            @csrf
+            <input type="hidden" name="form_type" value="forgot">
+            <div>
+                <label for="forgot-verify-email" class="mb-1.5 block text-sm font-medium text-slate-700">Email</label>
+                <input type="email"
+                       name="email"
+                       id="forgot-verify-email"
+                       value="{{ old('email', session('forgot_otp_email')) }}"
+                       required
+                       readonly
+                       class="block w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-700" />
+                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
+            <div>
+                <label for="forgot-modal-otp" class="mb-1.5 block text-sm font-medium text-slate-700">OTP</label>
+                <input type="text"
+                       name="otp"
+                       id="forgot-modal-otp"
+                       value="{{ old('otp') }}"
+                       required
+                       maxlength="6"
+                       inputmode="numeric"
+                       pattern="[0-9]{6}"
+                       autocomplete="one-time-code"
+                       placeholder="000000"
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-center text-lg font-bold tracking-[0.25em] text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
+                <x-input-error :messages="$errors->get('otp')" class="mt-2" />
+            </div>
+            <button type="submit"
+                    class="w-full rounded-full bg-impetus-orange px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-impetus-orange/90 focus:outline-none focus:ring-2 focus:ring-impetus-orange focus:ring-offset-2">
+                Verify OTP &amp; Email Password
+            </button>
+            <button type="button"
+                    @click="forgotOtpSent = false"
+                    class="w-full text-center text-sm font-medium text-logo-blue hover:underline">
+                Resend OTP
             </button>
         </form>
 

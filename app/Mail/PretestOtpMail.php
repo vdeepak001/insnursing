@@ -24,6 +24,7 @@ class PretestOtpMail extends Mailable
         $this->testLabel = match ($testType) {
             'mock' => 'Mock Test',
             'final' => 'Final Test',
+            'forgot' => 'Forgot Password',
             default => 'Pretest',
         };
     }
@@ -31,7 +32,7 @@ class PretestOtpMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Verification OTP for ' . $this->courseName . ' ' . $this->testLabel,
+            subject: 'Verification OTP for '.$this->courseName.' '.$this->testLabel,
         );
     }
 

@@ -1,9 +1,10 @@
 <?php
 
-use Livewire\Component;
-use App\Models\CourseDetail;
 use App\Mail\PretestOtpMail;
+use App\Models\CourseDetail;
+use App\Services\SmsService;
 use Illuminate\Support\Facades\Mail;
+use Livewire\Component;
 
 new class extends Component
 {
@@ -72,26 +73,61 @@ new class extends Component
         return $this->getTestLabel() . ' Security Gate';
     }
 
-    public function sendOtp()
+    public function sendOtp(SmsService $smsService): void
     {
         $this->errorMessage = '';
         $this->successMessage = '';
         $this->isSending = true;
 
         try {
-            $otp = (string) rand(100000, 999999);
+            $user = auth()->user();
+
+            if (! filled($user?->email) && ! filled($user?->phone)) {
+                $this->errorMessage = 'No email or mobile number is registered on your account. Please contact support.';
+
+                return;
+            }
+
+            $otp = (string) random_int(100000, 999999);
             session()->put($this->getSessionOtpKey(), [
                 'code' => $otp,
                 'expires_at' => now()->addMinutes(10),
                 'attempts' => 0,
             ]);
 
-            Mail::to(auth()->user()->email)->send(new PretestOtpMail(auth()->user(), $otp, $this->course->couse_name, $this->testType));
+            $deliveryErrors = [];
+
+            if (filled($user->email)) {
+                try {
+                    Mail::to($user->email)->send(
+                        new PretestOtpMail($user, $otp, $this->course->couse_name, $this->testType)
+                    );
+                } catch (\Exception $e) {
+                    report($e);
+                    $deliveryErrors[] = 'email';
+                }
+            }
+
+            if (filled($user->phone)) {
+                if (! $smsService->sendTestOtp($user->phone, $otp)) {
+                    $deliveryErrors[] = 'sms';
+                }
+            }
+
+            if ($deliveryErrors !== []) {
+                $this->errorMessage = match ($deliveryErrors) {
+                    ['email', 'sms'], ['sms', 'email'] => 'Failed to send OTP to your email and mobile. Please try again later.',
+                    ['email'] => 'Failed to send OTP to your email. Please try again later.',
+                    default => 'Failed to send OTP to your mobile number. Please try again later.',
+                };
+
+                return;
+            }
 
             $this->otpSent = true;
-            $this->successMessage = 'Verification code sent successfully to your email.';
+            $this->successMessage = 'OTP sent successfully to your registered email and mobile number.';
         } catch (\Exception $e) {
-            $this->errorMessage = 'Failed to send verification code: ' . $e->getMessage();
+            $this->errorMessage = 'Failed to send verification code: '.$e->getMessage();
         } finally {
             $this->isSending = false;
         }
@@ -147,23 +183,37 @@ new class extends Component
         return redirect()->route('cne.modules.test', [$this->course->couse_name, $this->testType]);
     }
 
-    public function getMaskedEmail()
+    public function getMaskedEmail(): string
     {
-        $email = auth()->user()->email;
+        $email = (string) auth()->user()?->email;
         $parts = explode('@', $email);
-        if (count($parts) !== 2) return $email;
+
+        if (count($parts) !== 2) {
+            return $email;
+        }
 
         $name = $parts[0];
         $domain = $parts[1];
         $len = strlen($name);
 
         if ($len > 3) {
-            $maskedName = substr($name, 0, 1) . str_repeat('*', $len - 2) . substr($name, -1);
+            $maskedName = substr($name, 0, 1).str_repeat('*', $len - 2).substr($name, -1);
         } else {
             $maskedName = str_repeat('*', $len);
         }
 
-        return $maskedName . '@' . $domain;
+        return $maskedName.'@'.$domain;
+    }
+
+    public function getMaskedPhone(): string
+    {
+        $phone = preg_replace('/[^0-9]/', '', (string) auth()->user()?->phone);
+
+        if (strlen($phone) < 4) {
+            return 'your mobile number';
+        }
+
+        return str_repeat('*', max(0, strlen($phone) - 4)).substr($phone, -4);
     }
 };
 ?>
@@ -221,8 +271,9 @@ new class extends Component
                         <p class="text-xs font-bold uppercase tracking-[0.15em] text-logo-blue/80 mb-1">Verification Required</p>
                         <h3 class="text-base font-bold text-slate-800 leading-snug">{{ $course->couse_name }}</h3>
                         <p class="mt-2 text-sm text-slate-500">
-                            For security purposes, we need to verify your identity before you start the {{ strtolower($this->getTestLabel()) }}. We will send a One-Time Password (OTP) to your registered email:
+                            For security purposes, we need to verify your identity before you start the {{ strtolower($this->getTestLabel()) }}. We will send a One-Time Password (OTP) to your registered email and mobile number:
                             <span class="block mt-1 font-semibold text-slate-800 text-base tracking-wide">{{ $this->getMaskedEmail() }}</span>
+                            <span class="block font-semibold text-slate-800 text-base tracking-wide">{{ $this->getMaskedPhone() }}</span>
                         </p>
                     </div>
 

@@ -25,6 +25,7 @@ class LogoutNonUsers
                 ! $request->is('dashboard*') &&
                 ! $request->is('profile*') &&
                 ! $request->is('change-password*') &&
+                ! $request->is('password') &&
                 ! $request->is('certificates*') &&
                 ! $request->is('logout') &&
                 ! $request->is('livewire*')) {

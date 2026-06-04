@@ -17,12 +17,16 @@ class FrontendUserPasswordMail extends Mailable
         public User $user,
         public string $generatedPassword,
         public string $type = 'register'
-    ) {
-    }
+    ) {}
 
     public function envelope(): Envelope
     {
-        $subject = $this->type === 'forgot' ? 'Your Temporary Password' : 'Welcome to IHS Nursing';
+        $subject = match ($this->type) {
+            'forgot' => 'Your Temporary Password',
+            'updated' => 'Login Credentials',
+            default => 'Welcome to IHS Nursing',
+        };
+
         return new Envelope(
             subject: $subject,
         );

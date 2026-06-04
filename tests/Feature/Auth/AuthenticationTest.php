@@ -1,13 +1,11 @@
 <?php
 
 use App\Helpers\MenuHelper;
-use App\Mail\FrontendUserPasswordMail;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
+use Tests\TestCase;
 
 test('login screen can be rendered', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $response = $this->get(route('login'));
 
     $response->assertSuccessful();
@@ -15,7 +13,7 @@ test('login screen can be rendered', function () {
 });
 
 test('staff login screen can be rendered', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $response = $this->get(route('login'));
 
     $response->assertSuccessful();
@@ -23,7 +21,7 @@ test('staff login screen can be rendered', function () {
 });
 
 test('sign up screen can be rendered', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $response = $this->get('/register');
 
     $response->assertSuccessful();
@@ -31,7 +29,7 @@ test('sign up screen can be rendered', function () {
 });
 
 test('users can authenticate using the login screen', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $user = User::factory()->create([
         'role_type' => 'superadmin',
     ]);
@@ -48,7 +46,7 @@ test('users can authenticate using the login screen', function () {
 });
 
 test('users can not authenticate with invalid password', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $user = User::factory()->create([
         'role_type' => 'superadmin',
     ]);
@@ -62,7 +60,7 @@ test('users can not authenticate with invalid password', function () {
 });
 
 test('users can logout', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $user = User::factory()->create([
         'role_type' => 'superadmin',
     ]);
@@ -74,7 +72,7 @@ test('users can logout', function () {
 });
 
 test('frontend users can logout and redirect to home', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $user = User::factory()->create([
         'role_type' => 'user',
     ]);
@@ -86,7 +84,7 @@ test('frontend users can logout and redirect to home', function () {
 });
 
 test('frontend user can not login from dashboard login endpoint', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $user = User::factory()->create([
         'role_type' => 'user',
     ]);
@@ -101,7 +99,7 @@ test('frontend user can not login from dashboard login endpoint', function () {
 });
 
 test('frontend user can login from frontend login endpoint', function () {
-    /** @var \Tests\TestCase $this */
+    /** @var TestCase $this */
     $user = User::factory()->create([
         'role_type' => 'user',
     ]);
@@ -113,32 +111,4 @@ test('frontend user can login from frontend login endpoint', function () {
 
     $this->assertAuthenticated();
     $response->assertRedirect(route('home', absolute: false));
-});
-
-test('frontend resend password stores readable password for staff view', function () {
-    /** @var \Tests\TestCase $this */
-    Mail::fake();
-
-    $user = User::factory()->create([
-        'role_type' => 'user',
-        'password_raw' => null,
-    ]);
-
-    $response = $this->post(route('frontend.password.resend'), [
-        'email' => $user->email,
-    ]);
-
-    $response
-        ->assertSessionHasNoErrors()
-        ->assertSessionHas('success');
-
-    $user->refresh();
-    expect($user->password_raw)->toBeString()
-        ->and(strlen($user->password_raw))->toBe(10)
-        ->and(Hash::check($user->password_raw, $user->password))->toBeTrue();
-
-    Mail::assertSent(FrontendUserPasswordMail::class, function (FrontendUserPasswordMail $mail) use ($user): bool {
-        return $mail->hasTo((string) $user->email)
-            && $mail->generatedPassword === $user->password_raw;
-    });
 });
