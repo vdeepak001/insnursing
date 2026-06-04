@@ -123,6 +123,30 @@
                         out to us directly through any of these communication channels.</p>
 
                     <div class="space-y-6">
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="p-2.5 bg-white/10 rounded-xl text-impetus-orange shrink-0">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest font-outfit mb-1">
+                                    Address</h4>
+                                <address
+                                    class="not-italic m-0 text-sm font-semibold text-slate-200 font-outfit space-y-0.5 leading-snug">
+                                    <span class="block text-slate-100">Impetus Healthcare Skills Private Limited</span>
+                                    <span class="block">No: 1/23, Somasundaram Avenue</span>
+                                    <span class="block">Porur, Chennai – 600116</span>
+                                    <span class="block">Tamil Nadu</span>
+                                </address>
+                            </div>
+                        </div>
+
                         <!-- Mobile Numbers -->
                         <div class="flex items-start gap-4">
                             <div class="p-2.5 bg-white/10 rounded-xl text-impetus-orange shrink-0">
@@ -133,16 +157,15 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest font-outfit">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest font-outfit mb-1">
                                     Mobile</h4>
-                                <div
-                                    class="text-sm font-semibold text-slate-200 mt-2 font-outfit space-y-1.5 leading-relaxed">
-                                    <p><a href="tel:+919445256977"
-                                            class="hover:text-impetus-orange transition-colors">+91 -9445256977</a></p>
-                                    <p><a href="tel:+919445296977"
-                                            class="hover:text-impetus-orange transition-colors">+91 -9445296977</a></p>
-                                    <p><a href="tel:+919019051277"
-                                            class="hover:text-impetus-orange transition-colors">+91 -9019051277</a></p>
+                                <div class="text-sm font-semibold text-slate-200 font-outfit space-y-1 leading-snug">
+                                    <a href="tel:+919445256977"
+                                        class="block hover:text-impetus-orange transition-colors">+91 -9445256977</a>
+                                    <a href="tel:+919445296977"
+                                        class="block hover:text-impetus-orange transition-colors">+91 -9445296977</a>
+                                    <a href="tel:+919019051277"
+                                        class="block hover:text-impetus-orange transition-colors">+91 -9019051277</a>
                                 </div>
                             </div>
                         </div>
@@ -157,12 +180,10 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest font-outfit">Mail
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest font-outfit mb-1">Mail
                                     ID</h4>
-                                <p class="text-sm font-semibold text-slate-200 mt-2 font-outfit leading-relaxed">
-                                    <a href="mailto:support@ihsnursing.com"
-                                        class="hover:text-impetus-orange transition-colors font-outfit">support@ihsnursing.com</a>
-                                </p>
+                                <a href="mailto:support@ihsnursing.com"
+                                    class="block text-sm font-semibold text-slate-200 font-outfit leading-snug hover:text-impetus-orange transition-colors">support@ihsnursing.com</a>
                             </div>
                         </div>
                     </div>
