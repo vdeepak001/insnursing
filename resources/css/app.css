@@ -1122,3 +1122,39 @@ h2 {
 .exam-q-default {
   @apply flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-sm font-bold text-[#6B7280] transition hover:border-[#0F766E]/50 hover:text-[#0F766E];
 }
+.exam-sidebar-card {
+  @apply overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm;
+}
+.exam-sidebar-accent {
+  @apply h-1 w-full bg-[#FF7A00];
+}
+.exam-sidebar-intro {
+  @apply px-3 pb-2 pt-3 sm:px-4 sm:pt-4;
+}
+.exam-sidebar-grid {
+  @apply border-t border-slate-100 px-3 pb-3 pt-2 sm:px-4 sm:pb-4;
+}
+.exam-bottom-legend {
+  @apply mt-auto shrink-0 rounded-2xl border border-slate-200 bg-white px-5 py-5 shadow-sm sm:px-8 sm:py-6;
+}
+.exam-legend-row {
+  @apply m-0 flex list-none flex-row flex-nowrap items-end justify-between gap-4 p-0 sm:justify-around sm:gap-8;
+}
+.exam-legend-item {
+  @apply flex min-w-0 flex-1 flex-col items-center gap-2 text-center;
+}
+.exam-legend-label {
+  @apply text-[11px] font-semibold leading-snug text-[#6B7280] sm:text-xs;
+}
+.exam-legend-dot {
+  @apply flex size-8 shrink-0 items-center justify-center rounded-full text-sm font-bold;
+}
+.exam-legend-dot.exam-q-current {
+  @apply border-2 border-[#0F766E] bg-[#0F766E] text-white shadow-sm;
+}
+.exam-legend-dot.exam-q-answered {
+  @apply border border-[#99F6E4] bg-[#CCFBF1] text-[#0F766E];
+}
+.exam-legend-dot.exam-q-default {
+  @apply border border-slate-200 bg-white text-[#6B7280];
+}

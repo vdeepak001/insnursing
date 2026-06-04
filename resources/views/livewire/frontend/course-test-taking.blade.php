@@ -321,24 +321,38 @@
                         </div>
                     @endif
 
-            <div class="grid gap-6 lg:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]">
-                <aside class="lg:block">
-                    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                        <div class="grid grid-cols-4 gap-2 sm:gap-2.5 justify-items-center">
+            <div class="grid gap-4 lg:grid-cols-[minmax(0,13.5rem)_minmax(0,1fr)] lg:items-start lg:gap-6">
+                <aside class="lg:sticky lg:top-4 lg:self-start">
+                    <div class="exam-sidebar-card">
+                        <div class="exam-sidebar-accent" aria-hidden="true"></div>
+                        <div class="exam-sidebar-intro">
+                            <p class="text-xs font-bold uppercase tracking-wider text-[#0F766E]">Questions</p>
+                            <p class="mt-0.5 text-[11px] leading-snug text-[#6B7280]">
+                                @if ($type === \App\Enums\CourseTestType::Practice)
+                                    Full set of questions ordered by level. Click a number to jump.
+                                @else
+                                    Use the grid to navigate. Your answers are saved in this session until you submit.
+                                @endif
+                            </p>
+                        </div>
+                        <div class="exam-sidebar-grid">
+                        <div class="grid grid-cols-5 gap-2 justify-items-center sm:grid-cols-6 lg:grid-cols-4">
                             @foreach ($questions as $idx => $question_row)
                                 @php
                                     $qid = $question_row['id'];
                                     $answered = filled($responses[$qid] ?? null);
                                     $isPractice = $type === \App\Enums\CourseTestType::Practice;
                                     $isCurrent = $idx === $currentIndex;
-
                                     $result = $isPractice ? ($practiceResults[$qid] ?? null) : null;
                                     $isCorrect = ($result === 'correct');
                                     $isWrong = ($result === 'wrong_second');
                                     $isFirstWrong = ($result === 'wrong_first');
+                                    $isAnswerVerified = $isPractice
+                                        ? (($practiceShowReasoning[$qid] ?? false) || in_array($result, ['correct', 'wrong_second'], true))
+                                        : $answered;
 
                                     $btnClasses = '';
-                                    if ($isCurrent) {
+                                    if ($isCurrent && ! $isAnswerVerified) {
                                         $btnClasses = 'exam-q-current';
                                     } elseif ($isPractice) {
                                         if ($isCorrect) {
@@ -347,47 +361,34 @@
                                             $btnClasses = 'flex h-10 w-10 items-center justify-center rounded-full border border-[#EF4444] bg-[#EF4444] text-sm font-bold text-white';
                                         } elseif ($isFirstWrong) {
                                             $btnClasses = 'flex h-10 w-10 items-center justify-center rounded-full border border-[#FF7A00] bg-[#FFF6E9] text-sm font-bold text-[#EA580C]';
-                                        } elseif ($answered) {
+                                        } elseif ($isAnswerVerified || $answered) {
                                             $btnClasses = 'exam-q-answered';
                                         } else {
                                             $btnClasses = 'exam-q-default';
                                         }
+                                    } elseif ($isAnswerVerified) {
+                                        $btnClasses = 'exam-q-answered';
                                     } else {
-                                        if ($answered) {
-                                            $btnClasses = 'exam-q-answered';
-                                        } else {
-                                            $btnClasses = 'exam-q-default';
-                                        }
+                                        $btnClasses = 'exam-q-default';
                                     }
                                 @endphp
                                 <button
                                     type="button"
                                     wire:click="gotoQuestion({{ $idx }})"
                                     class="{{ $btnClasses }}"
+                                    aria-label="Question {{ $question_row['num'] }}"
+                                    @if ($isCurrent) aria-current="true" @endif
                                 >
                                     {{ $question_row['num'] }}
                                 </button>
                             @endforeach
                         </div>
-                        <div class="mt-5 border-t border-slate-100 pt-5">
-                            <p class="text-xs font-bold uppercase tracking-wider text-[#0F766E]">Questions</p>
-                            <p class="mt-1 text-xs text-[#6B7280]">
-                                @if ($type === \App\Enums\CourseTestType::Practice)
-                                    Full set of questions ordered by level. Click a number to jump.
-                                @else
-                                    Use the grid to navigate. Your answers are saved in this session until you submit.
-                                @endif
-                            </p>
-                            <ul class="mt-4 space-y-2 text-[11px] font-semibold text-[#6B7280]">
-                                <li class="flex items-center gap-2"><span class="exam-q-current size-4 min-h-0 min-w-4 text-[10px]">1</span> Current</li>
-                                <li class="flex items-center gap-2"><span class="exam-q-answered size-4 min-h-0 min-w-4 text-[10px]">2</span> Answered</li>
-                                <li class="flex items-center gap-2"><span class="exam-q-default size-4 min-h-0 min-w-4 text-[10px]">3</span> Not visited</li>
-                            </ul>
                         </div>
                     </div>
                 </aside>
 
-                <section class="min-w-0 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+                <div class="flex min-h-full min-w-0 flex-col gap-4">
+                <section class="min-w-0 flex-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
                     @if ($questions === [])
                         <p class="text-slate-600">No questions to display.</p>
                     @else
@@ -558,6 +559,24 @@
                         @endif
                     @endif
                 </section>
+
+                <div class="exam-bottom-legend">
+                    <ul class="exam-legend-row" role="list">
+                        <li class="exam-legend-item">
+                            <span class="exam-legend-label">Current (not verified)</span>
+                            <span class="exam-legend-dot exam-q-current" aria-hidden="true">1</span>
+                        </li>
+                        <li class="exam-legend-item">
+                            <span class="exam-legend-label">Answered</span>
+                            <span class="exam-legend-dot exam-q-answered" aria-hidden="true">2</span>
+                        </li>
+                        <li class="exam-legend-item">
+                            <span class="exam-legend-label">Not visited</span>
+                            <span class="exam-legend-dot exam-q-default" aria-hidden="true">3</span>
+                        </li>
+                    </ul>
+                </div>
+                </div>
             </div>
                 </div>
             </div>

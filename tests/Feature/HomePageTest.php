@@ -18,5 +18,11 @@ it('uses the orange and teal brand palette in theme css', function () {
         ->toContain('--color-impetus-navy: #1E3A5F')
         ->toContain('--color-impetus-background: #F9FAFB')
         ->toContain('.exam-header')
+        ->toContain('.exam-sidebar-card')
+        ->toContain('.exam-sidebar-intro')
+        ->toContain('.exam-sidebar-grid')
+        ->toContain('.exam-bottom-legend')
+        ->toContain('.exam-legend-row')
+        ->toContain('.exam-legend-dot')
         ->toContain('background-color: #0F766E');
 });
