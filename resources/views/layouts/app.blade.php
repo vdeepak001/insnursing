@@ -90,7 +90,7 @@ window.addEventListener('resize', checkMobile);">
         @include('layouts.backdrop')
         @include('layouts.sidebar')
 
-        <div class="min-w-0 flex-1 transition-all duration-300 ease-in-out"
+        <div class="min-w-0 flex-1 transition-all duration-300 ease-in-out bg-[#F9FAFB]"
             :class="{
                 'xl:ml-[290px]': $store.sidebar.isExpanded || $store.sidebar.isHovered,
                 'xl:ml-[90px]': !$store.sidebar.isExpanded && !$store.sidebar.isHovered,

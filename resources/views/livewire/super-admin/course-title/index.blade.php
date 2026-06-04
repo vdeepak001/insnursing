@@ -17,7 +17,7 @@
             <!-- Filter Buttons -->
             <div class="flex items-center gap-2 flex-shrink-0">
                 <button type="button" wire:click="setFilter('all')" wire:key="filter-all" wire:loading.attr="disabled"
-                        class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap {{ $filter === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600' }}">
+                        class="px-4 py-2 text-sm font-medium rounded-lg transition-colors whitespace-nowrap {{ $filter === 'all' ? 'bg-impetus-teal text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600' }}">
                     All ({{ $totalCount }})
                 </button>
                 <button type="button" wire:click="setFilter('active')" wire:key="filter-active" wire:loading.attr="disabled"
@@ -33,7 +33,7 @@
             @if($routePrefix === 'super-admin')
                 <!-- Add New Button -->
                 <a href="{{ route($routePrefix . '.course-titles.create') }}"
-                   class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700 active:bg-indigo-900 focus:outline-none focus:border-indigo-900 focus:ring ring-indigo-300 disabled:opacity-25 transition ease-in-out duration-150 flex-shrink-0">
+                   class="inline-flex items-center px-4 py-2 bg-impetus-orange border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-orange-600 active:bg-orange-700 focus:outline-none focus:border-orange-700 focus:ring ring-orange-300/40 disabled:opacity-25 transition ease-in-out duration-150 flex-shrink-0">
                     Add New Title
                 </a>
             @endif
@@ -113,7 +113,7 @@
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <div class="flex justify-end gap-2">
                                     <a href="{{ route($routePrefix . '.course-titles.edit', $title) }}"
-                                       class="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 dark:focus:ring-offset-gray-800">
+                                       class="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold text-white bg-impetus-teal hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-1 dark:focus:ring-offset-gray-800">
                                         Edit
                                     </a>
                                     <form action="{{ route($routePrefix . '.course-titles.destroy', $title) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this course?');">

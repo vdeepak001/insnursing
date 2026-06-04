@@ -21,7 +21,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #F36E21 0%, #E28C56 50%, #1D2A57 100%); padding: 24px;">
+                        <td style="background: linear-gradient(135deg, #FF7A00 0%, #0F766E 50%, #1E3A5F 100%); padding: 24px;">
                             <h1 style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
                                 {{ $testLabel }} Verification Code
                             </h1>
@@ -40,14 +40,14 @@
                                 One Time Code for your Online CNE Test <strong>{{ $otpCode }}</strong>. Unique code
                                 will expire in 10 Minutes. For any further assistance mail us to <a
                                     href="mailto:support@ihsnursing.com"
-                                    style="color: #F36E21; font-weight: 600; text-decoration: underline;">support@ihsnursing.com</a>
+                                    style="color: #FF7A00; font-weight: 600; text-decoration: underline;">support@ihsnursing.com</a>
                             </p>
 
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
                                 style="border: 1px solid #e2e8f0; border-radius: 12px; background-color: #f8fafc; margin-bottom: 20px;">
                                 <tr>
                                     <td align="center"
-                                        style="padding: 20px 16px; font-size: 32px; letter-spacing: 6px; font-weight: 800; color: #F36E21; font-family: monospace;">
+                                        style="padding: 20px 16px; font-size: 32px; letter-spacing: 6px; font-weight: 800; color: #FF7A00; font-family: monospace;">
                                         {{ $otpCode }}
                                     </td>
                                 </tr>

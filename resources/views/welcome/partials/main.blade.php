@@ -3,7 +3,7 @@
     <section id="home" class="pt-8 pb-20 md:py-28 bg-impetus-navy text-white relative overflow-hidden">
         <!-- Radial Gradient Background -->
         <div
-            class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(243,110,33,0.15),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(243,110,33,0.15),transparent_50%)] pointer-events-none">
+            class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,122,0,0.15),transparent_50%),radial-gradient(circle_at_80%_70%,rgba(15,118,110,0.12),transparent_50%)] pointer-events-none">
         </div>
 
         <div class="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
@@ -58,7 +58,7 @@
 
                     <!-- Nurse Image -->
                     <img src="{{ asset('images/Nursing.png') }}" alt="Nursing Professional"
-                        class="relative z-10 w-full max-w-[400px] sm:max-w-[460px] lg:max-w-[500px] h-auto drop-shadow-[0_20px_50px_rgba(243,110,33,0.3)] hover:scale-[1.02] transition-all duration-500">
+                        class="relative z-10 w-full max-w-[400px] sm:max-w-[460px] lg:max-w-[500px] h-auto drop-shadow-[0_20px_50px_rgba(255,122,0,0.25)] hover:scale-[1.02] transition-all duration-500">
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                         Modules</span>
                 </div>
                 <div class="pt-4 md:pt-0">
-                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-orange font-outfit block">1.4
+                    <span class="text-4xl sm:text-5xl font-extrabold text-impetus-green font-outfit block">1.4
                         Lakhs+</span>
                     <span
                         class="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1 block font-semibold">Active
@@ -634,7 +634,7 @@
 
             <div class="mt-12 text-center">
                 <a href="{{ route('cne.modules') }}"
-                    class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-[#e05d14] text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-impetus-orange/20 transition-all hover:-translate-y-0.5 font-outfit glow-orange">
+                    class="inline-flex items-center gap-2 bg-impetus-orange hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-impetus-orange/20 transition-all hover:-translate-y-0.5 font-outfit glow-orange">
                     Browse Core Modules Catalog
                 </a>
             </div>

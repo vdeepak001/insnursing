@@ -137,7 +137,7 @@
 
         .course-name {
             font-size: 32px;
-            color: #0B8444;
+            color: #0F766E;
             /* Dark Green */
             font-weight: bold;
             margin-bottom: 15px;

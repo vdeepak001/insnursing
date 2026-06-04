@@ -143,7 +143,7 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                     @forelse ($users as $user)
-                        <tr class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors">
+                        <tr class="odd:bg-white even:bg-impetus-teal-muted/50 hover:bg-brand-50/80 transition-colors">
                             <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                 {{ ($users->currentPage() - 1) * $users->perPage() + $loop->iteration }}
                             </td>

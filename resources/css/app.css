@@ -47,18 +47,18 @@
   --color-white: #ffffff;
   --color-black: #101828;
 
-  --color-brand-25: #f5fbff;
-  --color-brand-50: #ebf7ff;
-  --color-brand-100: #d6efff;
-  --color-brand-200: #ade0ff;
-  --color-brand-300: #70ccff;
-  --color-brand-400: #33b8ff;
-  --color-brand-500: #0082c9;
-  --color-brand-600: #0073b1;
-  --color-brand-700: #006399;
-  --color-brand-800: #005481;
-  --color-brand-900: #163a5a;
-  --color-brand-950: #0a1c2c;
+  --color-brand-25: #f0fdfa;
+  --color-brand-50: #CCFBF1;
+  --color-brand-100: #99F6E4;
+  --color-brand-200: #5eead4;
+  --color-brand-300: #2dd4bf;
+  --color-brand-400: #14b8a6;
+  --color-brand-500: #0F766E;
+  --color-brand-600: #0D9488;
+  --color-brand-700: #115e59;
+  --color-brand-800: #134e4a;
+  --color-brand-900: #1e3a5f;
+  --color-brand-950: #042f2e;
 
   --color-blue-light-25: #f5fbff;
   --color-blue-light-50: #f0f9ff;
@@ -73,11 +73,11 @@
   --color-blue-light-900: #0b4a6f;
   --color-blue-light-950: #062c41;
 
-  --color-logo-dark-green: #5a8b3d;
-  --color-logo-mid-green: #689b38;
-  --color-logo-light-green: #83ba2d;
-  --color-logo-light-green-bg: rgba(131, 186, 45, 0.2);
-  --color-logo-blue: #0082c9;
+  --color-logo-dark-green: #115e59;
+  --color-logo-mid-green: #0F766E;
+  --color-logo-light-green: #14b8a6;
+  --color-logo-light-green-bg: rgba(15, 118, 110, 0.15);
+  --color-logo-blue: #0F766E;
 
   --color-gray-25: #fcfcfd;
   --color-gray-50: #f9fafb;
@@ -94,17 +94,17 @@
   --color-gray-dark: #1a2231;
 
   --color-orange-25: #fffaf5;
-  --color-orange-50: #fff6ed;
-  --color-orange-100: #ffead5;
-  --color-orange-200: #fddcab;
-  --color-orange-300: #feb273;
-  --color-orange-400: #fd853a;
-  --color-orange-500: #fb6514;
-  --color-orange-600: #ec4a0a;
-  --color-orange-700: #c4320a;
-  --color-orange-800: #9c2a10;
-  --color-orange-900: #7e2410;
-  --color-orange-950: #511c10;
+  --color-orange-50: #fff6e9;
+  --color-orange-100: #ffedd5;
+  --color-orange-200: #fed7aa;
+  --color-orange-300: #fdba74;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #FF7A00;
+  --color-orange-600: #EA580C;
+  --color-orange-700: #c2410c;
+  --color-orange-800: #9a3412;
+  --color-orange-900: #7c2d12;
+  --color-orange-950: #431407;
 
   --color-success-25: #f6fef9;
   --color-success-50: #ecfdf3;
@@ -112,7 +112,7 @@
   --color-success-200: #a6f4c5;
   --color-success-300: #6ce9a6;
   --color-success-400: #32d583;
-  --color-success-500: #12b76a;
+  --color-success-500: #10B981;
   --color-success-600: #039855;
   --color-success-700: #027a48;
   --color-success-800: #05603a;
@@ -125,7 +125,7 @@
   --color-error-200: #fecdca;
   --color-error-300: #fda29b;
   --color-error-400: #f97066;
-  --color-error-500: #f04438;
+  --color-error-500: #EF4444;
   --color-error-600: #d92d20;
   --color-error-700: #b42318;
   --color-error-800: #912018;
@@ -149,13 +149,30 @@
 
   --color-theme-purple-500: #7a5af8;
 
-  --color-impetus-orange: #F36E21;
-  --color-impetus-green: #0B8444;
-  --color-impetus-navy: #1D2A57;
-  --color-impetus-gray: #718096;
-  --color-impetus-lightGreen: #EBF7F0;
-  --color-impetus-lightOrange: #FFF3EC;
-  --color-impetus-dark: #0B0F19;
+  --color-impetus-orange: #FF7A00;
+  --color-impetus-orange-hover: #EA580C;
+  --color-impetus-orange-pressed: #C2410C;
+  --color-impetus-green: #0F766E;
+  --color-impetus-teal: #0F766E;
+  --color-impetus-teal-hover: #0D9488;
+  --color-impetus-teal-pressed: #115E59;
+  --color-impetus-light-teal: #CCFBF1;
+  --color-impetus-light-teal-hover: #99F6E4;
+  --color-impetus-light-teal-border: #99F6E4;
+  --color-impetus-teal-muted: #EEF6F6;
+  --color-impetus-background: #F9FAFB;
+  --color-impetus-navy: #1E3A5F;
+  --color-impetus-gray: #6B7280;
+  --color-impetus-muted: #9CA3AF;
+  --color-impetus-lightGreen: #CCFBF1;
+  --color-impetus-lightOrange: #FFF6E9;
+  --color-impetus-dark: #0F172A;
+  --color-impetus-heading: #1F2937;
+  --color-impetus-body: #1F2937;
+  --color-impetus-success: #10B981;
+  --color-impetus-error: #EF4444;
+  --color-impetus-disabled-bg: #E5E7EB;
+  --color-impetus-disabled-text: #9CA3AF;
 
   --font-sans: "Plus Jakarta Sans", sans-serif;
   --font-outfit: Outfit, sans-serif;
@@ -215,7 +232,7 @@
     cursor: pointer;
   }
   body {
-    @apply relative font-normal font-outfit z-1 bg-gray-50;
+    @apply relative font-normal font-outfit z-1 bg-[#F9FAFB];
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -228,7 +245,7 @@
 }
 
 @utility menu-item-active {
-  @apply bg-brand-50 text-brand-500 dark:bg-brand-500/[0.12] dark:text-brand-400;
+  @apply bg-impetus-orange/10 text-impetus-orange dark:bg-impetus-orange/[0.12] dark:text-impetus-orange;
 }
 
 @utility menu-item-inactive {
@@ -240,7 +257,7 @@
 }
 
 @utility menu-item-icon-active {
-  @apply text-brand-500 dark:text-brand-400;
+  @apply text-impetus-orange dark:text-impetus-orange;
 }
 
 @utility menu-item-icon-inactive {
@@ -925,23 +942,30 @@ table tbody tr:nth-child(odd) {
 }
 
 table tbody tr:nth-child(even) {
-  background-color: #fff3e8 !important;
+  background-color: var(--color-impetus-teal-muted) !important;
 }
 
 /* Specific Section Headers */
 h2 {
-  color: var(--color-impetus-orange);
+  color: var(--color-impetus-heading);
 }
 
 /* Premium Theme Option 1 Helpers */
 .gradient-text-orange-green {
-  background: linear-gradient(135deg, #F36E21 0%, #0B8444 100%);
+  background: linear-gradient(135deg, #FF7A00 0%, #0F766E 100%);
   -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient-text-orange-teal {
+  background: linear-gradient(135deg, #FF7A00 0%, #0F766E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .gradient-bg-hero {
-  background: radial-gradient(circle at 10% 20%, rgba(243, 110, 33, 0.05) 0%, transparent 40%),
-              radial-gradient(circle at 90% 80%, rgba(11, 132, 68, 0.05) 0%, transparent 40%);
+  background: radial-gradient(circle at 10% 20%, rgba(255, 122, 0, 0.05) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(15, 118, 110, 0.05) 0%, transparent 40%);
 }
 .glass-card {
   background: rgba(255, 255, 255, 0.45);
@@ -957,8 +981,144 @@ h2 {
   box-shadow: 0 20px 40px -15px rgba(29, 42, 87, 0.08);
 }
 .glow-orange:hover {
-  box-shadow: 0 10px 30px -5px rgba(243, 110, 33, 0.3);
+  box-shadow: 0 10px 30px -5px rgba(255, 122, 0, 0.3);
 }
-.glow-green:hover {
-  box-shadow: 0 10px 30px -5px rgba(11, 132, 68, 0.3);
+.glow-green:hover,
+.glow-teal:hover {
+  box-shadow: 0 10px 30px -5px rgba(15, 118, 110, 0.3);
+}
+
+/* Test type buttons (Pre / Mock / Final) — design spec hex codes */
+.btn-pretest {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 text-sm font-bold uppercase tracking-wide transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E]/30 focus-visible:ring-offset-2;
+  background-color: #CCFBF1;
+  border-color: #99F6E4;
+  color: #0F766E;
+}
+.btn-pretest:hover:not(:disabled) {
+  background-color: #99F6E4;
+  border-color: #5EEAD4;
+}
+.btn-pretest:active:not(:disabled) {
+  background-color: #5EEAD4;
+  border-color: #2DD4BF;
+}
+.btn-mock-test {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E]/40 focus-visible:ring-offset-2;
+  background-color: #0F766E;
+  border-color: #0D9488;
+}
+.btn-mock-test:hover:not(:disabled) {
+  background-color: #0D9488;
+  border-color: #14B8A6;
+}
+.btn-mock-test:active:not(:disabled) {
+  background-color: #115E59;
+  border-color: #0F766E;
+}
+.btn-final-test {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF7A00]/40 focus-visible:ring-offset-2;
+  background-color: #FF7A00;
+  border-color: #EA580C;
+}
+.btn-final-test:hover:not(:disabled) {
+  background-color: #EA580C;
+  border-color: #C2410C;
+}
+.btn-final-test:active:not(:disabled) {
+  background-color: #C2410C;
+  border-color: #9A3412;
+}
+.btn-test-disabled,
+.btn-pretest:disabled,
+.btn-mock-test:disabled,
+.btn-final-test:disabled {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 text-sm font-bold uppercase tracking-wide cursor-not-allowed pointer-events-none;
+  background-color: #E5E7EB !important;
+  border-color: #D1D5DB !important;
+  color: #9CA3AF !important;
+  box-shadow: none !important;
+}
+/* Locked but still show test-type colors (design spec disabled + visual identity) */
+.btn-pretest-locked {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 text-sm font-bold uppercase tracking-wide cursor-not-allowed pointer-events-none opacity-60;
+  background-color: #E5E7EB;
+  border-color: #D1D5DB;
+  color: #9CA3AF;
+}
+.btn-mock-test-locked {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 text-sm font-bold uppercase tracking-wide cursor-not-allowed pointer-events-none;
+  background-color: #CCFBF1;
+  border-color: #99F6E4;
+  color: #9CA3AF;
+  opacity: 0.65;
+}
+.btn-final-test-locked {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 text-sm font-bold uppercase tracking-wide cursor-not-allowed pointer-events-none;
+  background-color: #FFEDD5;
+  border-color: #FED7AA;
+  color: #9CA3AF;
+  opacity: 0.65;
+}
+.btn-outline-teal {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border-2 px-5 py-3 text-sm font-bold transition;
+  border-color: #0F766E;
+  color: #0F766E;
+}
+.btn-outline-teal:hover {
+  background-color: #CCFBF1;
+}
+
+/* Admin dashboard (teal sidebar + orange accents) */
+.admin-btn-primary {
+  @apply inline-flex items-center rounded-lg bg-impetus-orange px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-orange-500/20 transition hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500/30;
+}
+.admin-btn-secondary {
+  @apply inline-flex items-center rounded-lg bg-impetus-teal px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-500/30;
+}
+.admin-filter-active {
+  @apply bg-impetus-teal text-white;
+}
+.admin-table-row {
+  @apply odd:bg-white even:bg-impetus-teal-muted/50 hover:bg-brand-50/80 transition-colors;
+}
+
+/* Live exam / test-taking screen (teal + orange spec) */
+.exam-shell {
+  @apply overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg;
+}
+.exam-header {
+  @apply flex flex-col gap-3 border-b border-[#0D6B63] bg-[#0F766E] px-4 py-4 text-white sm:flex-row sm:items-center sm:justify-between sm:px-6;
+}
+.exam-body {
+  @apply bg-[#F9FAFB] p-4 sm:p-6;
+}
+.exam-btn-next {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#FF7A00] px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-orange-500/25 transition hover:bg-[#EA580C] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF7A00]/40 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+}
+.exam-btn-submit {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-[#FF7A00] px-4 py-2 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#EA580C] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF7A00]/40 focus-visible:ring-offset-2 disabled:opacity-60;
+}
+.exam-btn-prev {
+  @apply rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#1F2937] shadow-sm transition enabled:hover:border-[#0F766E]/40 enabled:hover:text-[#0F766E] disabled:cursor-not-allowed disabled:opacity-40;
+}
+.exam-choice {
+  @apply flex cursor-pointer gap-3 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-[#0F766E]/40 hover:bg-[#CCFBF1]/30;
+}
+.exam-choice:has(:checked) {
+  border-color: #0F766E;
+  background-color: #EEF6F6;
+  box-shadow: 0 0 0 1px #0F766E;
+}
+.exam-choice input[type='radio'] {
+  @apply mt-1 h-4 w-4 border-slate-300 text-[#0F766E] focus:ring-[#0F766E];
+}
+.exam-q-current {
+  @apply flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#0F766E] bg-[#0F766E] text-sm font-bold text-white shadow-sm;
+}
+.exam-q-answered {
+  @apply flex h-10 w-10 items-center justify-center rounded-full border border-[#99F6E4] bg-[#CCFBF1] text-sm font-bold text-[#0F766E];
+}
+.exam-q-default {
+  @apply flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-sm font-bold text-[#6B7280] transition hover:border-[#0F766E]/50 hover:text-[#0F766E];
 }

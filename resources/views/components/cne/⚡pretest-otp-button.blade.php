@@ -247,7 +247,7 @@ new class extends Component
                                 type="button"
                                 wire:click="sendOtp"
                                 wire:loading.attr="disabled"
-                                class="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-logo-blue to-brand-900 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-logo-blue/20 transition hover:from-logo-blue hover:to-logo-blue/90 disabled:opacity-50"
+                                class="btn-mock-test flex w-full disabled:opacity-50"
                             >
                                 <span wire:loading wire:target="sendOtp" class="inline-block border-2 border-white border-t-transparent rounded-full size-4 animate-spin"></span>
                                 <span wire:loading.remove wire:target="sendOtp">Send OTP Code</span>
@@ -267,7 +267,7 @@ new class extends Component
                                     maxlength="6"
                                     placeholder="000000"
                                     wire:model="otpInput"
-                                    class="block w-full rounded-2xl border border-slate-200 bg-slate-50/50 px-4 py-3.5 text-center text-2xl font-bold tracking-[0.25em] text-slate-800 focus:border-logo-blue focus:bg-white focus:outline-none focus:ring-2 focus:ring-logo-blue/20"
+                                    class="block w-full rounded-2xl border border-slate-200 bg-[#F9FAFB] px-4 py-3.5 text-center text-2xl font-bold tracking-[0.25em] text-[#1F2937] focus:border-[#0F766E] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F766E]/20"
                                     required
                                     autofocus
                                 />
@@ -278,7 +278,7 @@ new class extends Component
                                     type="button"
                                     wire:click="verifyOtp"
                                     wire:loading.attr="disabled"
-                                    class="flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-600 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-emerald-600/20 transition hover:bg-emerald-700 disabled:opacity-50"
+                                    class="btn-final-test flex w-full disabled:opacity-50"
                                 >
                                     <span wire:loading wire:target="verifyOtp" class="inline-block border-2 border-white border-t-transparent rounded-full size-4 animate-spin"></span>
                                     <span>Verify & Proceed</span>
@@ -288,7 +288,7 @@ new class extends Component
                                     type="button"
                                     wire:click="sendOtp"
                                     wire:loading.attr="disabled"
-                                    class="mt-2 text-center text-xs font-bold uppercase tracking-wider text-logo-blue hover:text-brand-900 transition focus:outline-none disabled:opacity-50"
+                                    class="mt-2 text-center text-xs font-bold uppercase tracking-wider text-[#0F766E] hover:text-[#0D9488] transition focus:outline-none disabled:opacity-50"
                                 >
                                     Resend Verification Code
                                 </button>

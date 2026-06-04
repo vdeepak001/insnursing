@@ -14,7 +14,7 @@
             <!-- CSV Download Button -->
             <a href="{{ route($routePrefix . '.reports.export-csv', request()->all()) }}" 
                class="inline-flex items-center px-5 py-2.5 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
-               style="background: linear-gradient(135deg, var(--color-impetus-orange, #F36E21), #e05c10);">
+               style="background: linear-gradient(135deg, var(--color-impetus-orange, #FF7A00), #ea580c);">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                 Download Excel
             </a>
@@ -29,7 +29,7 @@
 
             <a href="{{ route($routePrefix . '.reports.index', ['state_id' => $selectedState->id]) }}" 
                class="inline-flex items-center px-5 py-2.5 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
-               style="background: linear-gradient(135deg, #0f766e, #0d9488);">
+               style="background: linear-gradient(135deg, #0F766E, #0D9488);">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Summary
             </a>
@@ -68,7 +68,7 @@
                 padding: 8px !important;
             }
             .print-bg-orange {
-                background-color: #F36E21 !important;
+                background-color: #FF7A00 !important;
                 -webkit-print-color-adjust: exact;
             }
             .text-white {

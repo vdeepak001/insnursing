@@ -24,13 +24,18 @@
             @theme {
                 --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
                 --font-outfit: 'Outfit', sans-serif;
-                --color-impetus-orange: #F36E21;
-                --color-impetus-green: #0B8444;
-                --color-impetus-navy: #1D2A57;
-                --color-impetus-gray: #718096;
-                --color-impetus-lightGreen: #EBF7F0;
-                --color-impetus-lightOrange: #FFF3EC;
-                --color-impetus-dark: #0B0F19;
+                --color-impetus-orange: #FF7A00;
+                --color-impetus-green: #0F766E;
+                --color-impetus-teal: #0F766E;
+                --color-impetus-light-teal: #ccfbf1;
+                --color-impetus-teal-muted: #eef6f6;
+                --color-impetus-navy: #1e3a5f;
+                --color-impetus-gray: #6b7280;
+                --color-impetus-lightGreen: #eef6f6;
+                --color-impetus-lightOrange: #fff6e9;
+                --color-impetus-dark: #0f172a;
+                --color-impetus-heading: #1e3a5f;
+                --color-impetus-body: #1f2937;
 
                 --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
                 --animate-float: float 6s ease-in-out infinite;
@@ -51,7 +56,7 @@
 
             body {
                 font-family: var(--font-sans);
-                background-image: radial-gradient(#F36E2110 1px, transparent 1px);
+                background-image: radial-gradient(#ff7a0010 1px, transparent 1px);
                 background-size: 40px 40px;
                 -webkit-user-select: none;
                 -moz-user-select: none;
@@ -67,18 +72,20 @@
             }
 
             h2 {
-                color: var(--color-impetus-orange);
+                color: var(--color-impetus-heading);
             }
 
-            .gradient-text-orange-green {
-                background: linear-gradient(135deg, #F36E21 0%, #0B8444 100%);
+            .gradient-text-orange-green,
+            .gradient-text-orange-teal {
+                background: linear-gradient(135deg, #FF7A00 0%, #0F766E 100%);
                 -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
 
             .gradient-bg-hero {
-                background: radial-gradient(circle at 10% 20%, rgba(243, 110, 33, 0.05) 0%, transparent 40%),
-                    radial-gradient(circle at 90% 80%, rgba(11, 132, 68, 0.05) 0%, transparent 40%);
+                background: radial-gradient(circle at 10% 20%, rgba(255, 122, 0, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(15, 118, 110, 0.05) 0%, transparent 40%);
             }
 
             .glass-card {
@@ -98,11 +105,12 @@
             }
 
             .glow-orange:hover {
-                box-shadow: 0 10px 30px -5px rgba(243, 110, 33, 0.3);
+                box-shadow: 0 10px 30px -5px rgba(255, 122, 0, 0.3);
             }
 
-            .glow-green:hover {
-                box-shadow: 0 10px 30px -5px rgba(11, 132, 68, 0.3);
+            .glow-green:hover,
+            .glow-teal:hover {
+                box-shadow: 0 10px 30px -5px rgba(15, 118, 110, 0.3);
             }
         </style>
         <script>

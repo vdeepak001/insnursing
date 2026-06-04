@@ -32,7 +32,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #F36E21 0%, #E28C56 50%, #1D2A57 100%); padding: 24px;">
+                        <td style="background: linear-gradient(135deg, #FF7A00 0%, #0F766E 50%, #1E3A5F 100%); padding: 24px;">
                             <h1 style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
                                 @if ($isOnlinePurchase)
                                     CNE Module Purchased!
@@ -60,14 +60,14 @@
                                     Dear User, you have successfully purchased online CNE Module. Your package details
                                     <strong>{{ $course->couse_name }}</strong>. For any further assistance mail us to <a
                                         href="mailto:info@ihsnursing.com"
-                                        style="color: #F36E21; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
+                                        style="color: #FF7A00; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
                                 </p>
                             @else
                                 <p style="margin: 0 0 20px; font-size: 15px; line-height: 1.7; color: #334155;">
                                     Dear User, your IHS Nursing CNE module <strong>{{ $course->couse_name }}</strong>
                                     has been activated. Kindly check your account for details. For any further
                                     assistance mail us to <a href="mailto:info@ihsnursing.com"
-                                        style="color: #F36E21; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
+                                        style="color: #FF7A00; font-weight: 600; text-decoration: underline;">info@ihsnursing.com</a>
                                 </p>
                             @endif
 
@@ -120,7 +120,7 @@
                                 <tr>
                                     <td align="center" style="padding: 10px 0 20px;">
                                         <a href="{{ url('/') }}"
-                                            style="display: inline-block; padding: 12px 32px; background-color: #F36E21; color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(243, 110, 33, 0.2), 0 2px 4px -1px rgba(243, 110, 33, 0.1); transition: background-color 0.2s;">
+                                            style="display: inline-block; padding: 12px 32px; background-color: #FF7A00; color: #ffffff; font-size: 15px; font-weight: 600; text-decoration: none; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(255, 122, 0, 0.2), 0 2px 4px -1px rgba(255, 122, 0, 0.1); transition: background-color 0.2s;">
                                             Go to Dashboard
                                         </a>
                                     </td>

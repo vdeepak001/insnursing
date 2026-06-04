@@ -21,24 +21,24 @@
             <div class="mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/5">
                 <div class="relative overflow-hidden">
                     {{-- Decorative backgrounds --}}
-                    <div class="pointer-events-none absolute -left-20 -top-16 h-72 w-72 rounded-full bg-logo-blue/[0.07] blur-3xl" aria-hidden="true"></div>
+                    <div class="pointer-events-none absolute -left-20 -top-16 h-72 w-72 rounded-full bg-[#0F766E]/10 blur-3xl" aria-hidden="true"></div>
                     <div class="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-logo-light-green/[0.12] blur-3xl" aria-hidden="true"></div>
 
                     {{-- Header Section --}}
                     <div class="border-b border-slate-200/80 bg-gradient-to-br from-slate-50/95 via-white to-brand-50/30 px-6 py-8 sm:px-10">
                         <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
                             <div class="min-w-0">
-                                <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-logo-blue/80">Test completed</p>
-                                <h1 class="mt-2 font-serif text-xl font-bold tracking-tight text-brand-900 sm:text-[26px]">
+                                <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0F766E]">Test completed</p>
+                                <h1 class="mt-2 font-serif text-xl font-bold tracking-tight text-[#1F2937] sm:text-[26px]">
                                     Result: {{ $banner }}
                                 </h1>
-                                <p class="mt-1.5 text-lg font-bold text-orange-600">
+                                <p class="mt-1.5 text-lg font-bold text-[#FF7A00]">
                                     {{ $course->couse_name }}
                                 </p>
 
                             </div>
                             <div class="hidden shrink-0 lg:block">
-                                <span class="inline-flex rounded-full border border-logo-blue/25 bg-logo-blue/10 px-4 py-1.5 text-sm font-bold text-brand-800">{{ $banner }}</span>
+                                <span class="inline-flex rounded-full border border-[#99F6E4] bg-[#CCFBF1] px-4 py-1.5 text-sm font-bold text-[#0F766E]">{{ $banner }}</span>
                             </div>
                         </div>
                     </div>
@@ -48,8 +48,8 @@
                         {{-- Quick Stats Grid --}}
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-3">
                             {{-- Total Questions --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-transparent bg-gradient-to-br from-blue-600 to-indigo-700 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-blue-100 md:text-[11px]">Questions</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-transparent bg-gradient-to-br from-[#0F766E] to-[#0D9488] p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-white/80 md:text-[11px]">Questions</p>
                                 <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $totalQuestions }}</p>
                             </div>
 
@@ -103,7 +103,7 @@
                                         <defs>
                                             <linearGradient id="correctGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                                 <stop offset="0%" stop-color="#10b981" />
-                                                <stop offset="100%" stop-color="#0d9488" />
+                                                <stop offset="100%" stop-color="#0F766E" />
                                             </linearGradient>
                                             <linearGradient id="wrongGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                                 <stop offset="0%" stop-color="#f43f5e" />
@@ -243,8 +243,8 @@
                                 href="{{ $testType === 'practice' ? route('cne.modules.test', [$course->couse_name, 'practice']) : route('cne.modules.show', $course->couse_name) }}"
                                 @class([
                                     'inline-flex items-center justify-center gap-2 rounded-2xl px-10 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
-                                    'bg-gradient-to-r from-impetus-orange to-amber-500 shadow-orange-500/20 hover:from-orange-600 hover:to-amber-600 focus-visible:ring-impetus-orange' => $testType === 'practice',
-                                    'bg-gradient-to-r from-blue-600 to-indigo-700 shadow-indigo-600/20 hover:from-blue-700 hover:to-indigo-800 focus-visible:ring-indigo-600' => $testType !== 'practice'
+                                    'bg-[#FF7A00] shadow-orange-500/20 hover:bg-[#EA580C] focus-visible:ring-[#FF7A00]' => $testType === 'practice',
+                                    'bg-[#0F766E] shadow-teal-900/20 hover:bg-[#0D9488] focus-visible:ring-[#0F766E]' => $testType !== 'practice'
                                 ])
                             >
                                 Back to {{ $testType === 'practice' ? 'practice sets' : 'module' }}
@@ -257,120 +257,74 @@
                 </div>
             </div>
         @else
-            {{-- Questions View --}}
-            <div class="mb-6 flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
-                <div class="min-w-0 lg:flex-1">
-                    <a
-                        href="{{ $testType === 'practice' ? route('cne.modules.test', [$course->couse_name, 'practice']) : route('cne.modules.show', $course->couse_name) }}"
-                        class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-logo-blue hover:text-brand-600"
-                    >
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
-                        {{ $testType === 'practice' ? 'Practice Sets' : 'Module' }}
-                    </a>
-                    <h1 class="mt-2 font-serif text-xl font-bold tracking-tight text-brand-900 sm:text-[26px]">
-                        {{ $type->label() }}
-                    </h1>
-                    <p class="mt-2 text-2xl font-bold leading-tight text-orange-500 sm:text-3xl lg:text-4xl">
-                        {{ $course->couse_name }}
-                    </p>
-                </div>
-
-                @if($testType === 'practice' && $practiceLevel !== null)
-                    <div class="flex shrink-0 flex-wrap items-center justify-end gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wider text-slate-500 sm:text-sm lg:justify-end lg:flex-1">
-                        <span class="flex items-center gap-2">
-                            <span class="h-1.5 w-1.5 rounded-full bg-impetus-orange"></span>
-                            Level: {{ $practiceLevel == -1 ? 'Other' : $practiceLevel }}
-                        </span>
-                        <span class="flex items-center gap-2">
-                            <span class="h-1.5 w-1.5 rounded-full bg-impetus-orange"></span>
-                            Set: {{ $practiceSet }}
-                        </span>
-                        <span class="flex items-center gap-2">
-                            <span class="h-1.5 w-1.5 rounded-full bg-impetus-orange"></span>
-                            Attempt: {{ $currentAttemptNumber }} / 2
-                        </span>
-                    </div>
-                @endif
-
-                <div @class([
-                    'shrink-0 text-sm font-semibold text-slate-600 sm:text-base font-outfit lg:flex-1',
-                    'text-center' => $examDeadlineTs && $testType !== 'practice',
-                    'text-right lg:text-right' => !($examDeadlineTs && $testType !== 'practice')
-                ])>
-                    Question {{ $currentIndex + 1 }} / {{ $totalQuestions }}
-                </div>
-
-                @if ($examDeadlineTs && $testType !== 'practice')
-                    @php
-                        $timerLow = ! $examTimeExpired && $examSecondsRemaining > 0 && $examSecondsRemaining <= 300;
-                    @endphp
-                    <div
-                        wire:poll.1s="refreshExamTimer"
-                        role="timer"
-                        aria-label="Exam time remaining"
-                        @class([
-                            'relative shrink-0 overflow-hidden rounded-3xl border px-5 py-4 shadow-lg sm:min-w-[13.5rem] lg:ml-4',
-                            'border-rose-200/90 bg-gradient-to-br from-rose-50 via-white to-rose-50/60 shadow-rose-200/40' => $examTimeExpired,
-                            'border-amber-200/90 bg-gradient-to-br from-amber-50/90 via-white to-orange-50/50 shadow-amber-200/30' => $timerLow && ! $examTimeExpired,
-                            'border-slate-300 bg-gradient-to-br from-slate-50 via-white to-slate-100 shadow-sm' => ! $examTimeExpired && ! $timerLow,
-                        ])
-                    >
-                        <div
-                            @class([
-                                'absolute inset-x-0 top-0 h-1 rounded-t-3xl',
-                                'bg-gradient-to-r from-rose-500 via-rose-400 to-amber-400' => $examTimeExpired,
-                                'bg-gradient-to-r from-amber-500 via-orange-400 to-amber-400' => $timerLow && ! $examTimeExpired,
-                                'bg-gradient-to-r from-orange-600 via-sky-400 to-amber-500' => ! $examTimeExpired && ! $timerLow,
-                            ])
-                            aria-hidden="true"
-                        ></div>
-                        <div class="relative mt-1 flex items-center gap-4">
-                            <div
-                                @class([
-                                    'flex size-12 shrink-0 items-center justify-center rounded-2xl text-white shadow-lg',
-                                    'bg-gradient-to-br from-rose-500 to-rose-700 shadow-rose-500/35' => $examTimeExpired,
-                                    'bg-gradient-to-br from-amber-500 to-orange-600 shadow-amber-500/35' => $timerLow && ! $examTimeExpired,
-                                    'bg-gradient-to-br from-slate-800 to-slate-900 shadow-slate-900/25' => ! $examTimeExpired && ! $timerLow,
-                                ])
-                            >
-                                <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div class="min-w-0 flex-1 text-left">
-                                <p class="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">Time remaining</p>
-                                <p class="mt-0.5 text-[11px] leading-tight text-slate-400">45-minute exam window</p>
-                                <p
-                                    @class([
-                                        'mt-2 font-mono text-[1.65rem] font-bold leading-none tabular-nums tracking-tight sm:text-3xl',
-                                        'text-rose-700 drop-shadow-[0_1px_0_rgba(255,255,255,0.6)]' => $examTimeExpired,
-                                        'text-amber-900 drop-shadow-sm' => $timerLow && ! $examTimeExpired,
-                                        'text-slate-800 drop-shadow-sm' => ! $examTimeExpired && ! $timerLow,
-                                    ])
-                                >{{ $examTimerDisplay }}</p>
-                                @if ($examTimeExpired)
-                                    <p class="mt-1 text-[11px] font-semibold text-rose-600/90">Window ended</p>
-                                @elseif ($timerLow)
-                                    <p class="mt-1 text-[11px] font-semibold text-amber-700/90">Less than 5 minutes left</p>
-                                @endif
-                            </div>
+            {{-- Questions View — teal header + orange actions (design spec) --}}
+            @php
+                $timerLow = $examDeadlineTs && $testType !== 'practice' && ! $examTimeExpired && $examSecondsRemaining > 0 && $examSecondsRemaining <= 300;
+            @endphp
+            <div class="exam-shell">
+                <div class="exam-header">
+                    <div class="flex min-w-0 flex-1 items-center gap-3">
+                        <a
+                            href="{{ $testType === 'practice' ? route('cne.modules.test', [$course->couse_name, 'practice']) : route('cne.modules.show', $course->couse_name) }}"
+                            class="inline-flex size-10 shrink-0 items-center justify-center rounded-lg border border-white/25 bg-white/10 text-white transition hover:bg-white/20"
+                            title="{{ $testType === 'practice' ? 'Back to practice sets' : 'Back to module' }}"
+                        >
+                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                        </a>
+                        <div class="min-w-0">
+                            <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/75">{{ $type->label() }}</p>
+                            <h1 class="truncate font-outfit text-base font-bold sm:text-lg">{{ $course->couse_name }}</h1>
                         </div>
                     </div>
-                @endif
-            </div>
+                    <div class="flex flex-wrap items-center gap-2 sm:justify-end">
+                        <span class="rounded-lg bg-white/10 px-3 py-1.5 font-outfit text-sm font-bold tabular-nums">
+                            Question {{ $currentIndex + 1 }} / {{ $totalQuestions }}
+                        </span>
+                        @if ($examDeadlineTs && $testType !== 'practice')
+                            <div
+                                wire:poll.1s="refreshExamTimer"
+                                role="timer"
+                                aria-label="Exam time remaining"
+                                @class([
+                                    'flex items-center gap-2 rounded-lg px-3 py-1.5 font-mono text-sm font-bold tabular-nums sm:text-base',
+                                    'bg-rose-500/90' => $examTimeExpired,
+                                    'bg-[#FF7A00]/90' => $timerLow && ! $examTimeExpired,
+                                    'bg-white/15' => ! $examTimeExpired && ! $timerLow,
+                                ])
+                            >
+                                <svg class="size-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                {{ $examTimerDisplay }}
+                            </div>
+                        @endif
+                        @if ($testType !== 'practice')
+                            <button
+                                type="button"
+                                wire:click="submitTest"
+                                wire:loading.attr="disabled"
+                                class="exam-btn-submit"
+                            >
+                                <span wire:loading.remove wire:target="submitTest">Submit</span>
+                                <span wire:loading wire:target="submitTest">…</span>
+                            </button>
+                        @endif
+                    </div>
+                </div>
 
-            <div class="grid gap-8 lg:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]">
+                <div class="exam-body">
+                    @if ($testType === 'practice' && $practiceLevel !== null)
+                        <div class="mb-4 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-wider text-[#6B7280]">
+                            <span class="rounded-full bg-[#CCFBF1] px-3 py-1 text-[#0F766E]">Level: {{ $practiceLevel == -1 ? 'Other' : $practiceLevel }}</span>
+                            <span class="rounded-full bg-[#CCFBF1] px-3 py-1 text-[#0F766E]">Set: {{ $practiceSet }}</span>
+                            <span class="rounded-full bg-[#FFF6E9] px-3 py-1 text-[#FF7A00]">Attempt: {{ $currentAttemptNumber }} / 2</span>
+                        </div>
+                    @endif
+
+            <div class="grid gap-6 lg:grid-cols-[minmax(0,14rem)_minmax(0,1fr)]">
                 <aside class="lg:block">
-                    <div class="rounded-2xl border-2 border-slate-300 bg-white p-5 shadow-sm">
-                        <p class="text-xs font-bold uppercase tracking-wider text-slate-500">Questions</p>
-                        <p class="mt-1 text-xs text-slate-500">
-                            @if ($type === \App\Enums\CourseTestType::Practice)
-                                Full set of questions ordered by level. Click a number to jump.
-                            @else
-                                Use the grid to navigate. Your answers are saved in this session until you submit.
-                            @endif
-                        </p>
-                        <div class="mt-4 grid grid-cols-4 gap-2 sm:gap-2.5 justify-items-center">
+                    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <div class="grid grid-cols-4 gap-2 sm:gap-2.5 justify-items-center">
                             @foreach ($questions as $idx => $question_row)
                                 @php
                                     $qid = $question_row['id'];
@@ -383,26 +337,26 @@
                                     $isWrong = ($result === 'wrong_second');
                                     $isFirstWrong = ($result === 'wrong_first');
 
-                                    $btnClasses = 'flex h-10 w-10 items-center justify-center rounded-full border text-sm font-bold transition ';
+                                    $btnClasses = '';
                                     if ($isCurrent) {
-                                        $btnClasses .= 'border-impetus-navy bg-impetus-navy text-white shadow-md shadow-impetus-navy/30';
+                                        $btnClasses = 'exam-q-current';
                                     } elseif ($isPractice) {
                                         if ($isCorrect) {
-                                            $btnClasses .= 'border-emerald-300 bg-emerald-500 text-white';
+                                            $btnClasses = 'flex h-10 w-10 items-center justify-center rounded-full border border-[#10B981] bg-[#10B981] text-sm font-bold text-white';
                                         } elseif ($isWrong) {
-                                            $btnClasses .= 'border-rose-300 bg-rose-500 text-white';
+                                            $btnClasses = 'flex h-10 w-10 items-center justify-center rounded-full border border-[#EF4444] bg-[#EF4444] text-sm font-bold text-white';
                                         } elseif ($isFirstWrong) {
-                                            $btnClasses .= 'border-amber-300 bg-amber-100 text-amber-800';
+                                            $btnClasses = 'flex h-10 w-10 items-center justify-center rounded-full border border-[#FF7A00] bg-[#FFF6E9] text-sm font-bold text-[#EA580C]';
                                         } elseif ($answered) {
-                                            $btnClasses .= 'border-slate-300 bg-slate-100 text-slate-600';
+                                            $btnClasses = 'exam-q-answered';
                                         } else {
-                                            $btnClasses .= 'border-slate-200 bg-white text-slate-700 hover:border-impetus-navy/50';
+                                            $btnClasses = 'exam-q-default';
                                         }
                                     } else {
                                         if ($answered) {
-                                            $btnClasses .= 'border-emerald-300 bg-emerald-50 text-emerald-800';
+                                            $btnClasses = 'exam-q-answered';
                                         } else {
-                                            $btnClasses .= 'border-slate-200 bg-white text-slate-700 hover:border-impetus-navy/50';
+                                            $btnClasses = 'exam-q-default';
                                         }
                                     }
                                 @endphp
@@ -415,10 +369,25 @@
                                 </button>
                             @endforeach
                         </div>
+                        <div class="mt-5 border-t border-slate-100 pt-5">
+                            <p class="text-xs font-bold uppercase tracking-wider text-[#0F766E]">Questions</p>
+                            <p class="mt-1 text-xs text-[#6B7280]">
+                                @if ($type === \App\Enums\CourseTestType::Practice)
+                                    Full set of questions ordered by level. Click a number to jump.
+                                @else
+                                    Use the grid to navigate. Your answers are saved in this session until you submit.
+                                @endif
+                            </p>
+                            <ul class="mt-4 space-y-2 text-[11px] font-semibold text-[#6B7280]">
+                                <li class="flex items-center gap-2"><span class="exam-q-current size-4 min-h-0 min-w-4 text-[10px]">1</span> Current</li>
+                                <li class="flex items-center gap-2"><span class="exam-q-answered size-4 min-h-0 min-w-4 text-[10px]">2</span> Answered</li>
+                                <li class="flex items-center gap-2"><span class="exam-q-default size-4 min-h-0 min-w-4 text-[10px]">3</span> Not visited</li>
+                            </ul>
+                        </div>
                     </div>
                 </aside>
 
-                <section class="min-w-0 rounded-2xl border border-slate-200 bg-white p-6 shadow-xl shadow-slate-200/60 ring-1 ring-slate-200/60 sm:p-8">
+                <section class="min-w-0 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
                     @if ($questions === [])
                         <p class="text-slate-600">No questions to display.</p>
                     @else
@@ -426,7 +395,7 @@
                             $q = $questions[$currentIndex] ?? null;
                         @endphp
                         @if ($q)
-                            <h2 class="mt-4 text-base font-medium leading-relaxed text-slate-800 font-outfit sm:text-lg">
+                            <h2 class="mt-2 text-base font-medium leading-relaxed text-[#1F2937] font-outfit sm:text-lg">
                                 {{ $currentIndex + 1 }}. {!! $q['text'] !!}
                             </h2>
 
@@ -446,27 +415,25 @@
                                             // New logic for disabling first wrong choice on 2nd attempt
                                             $isFirstWrongChoice = $isPractice && ($practiceFirstWrongAnswer[$qid] ?? null) === $letter && ($practiceResults[$qid] ?? null) === 'wrong_first';
 
-                                            $labelClasses = 'flex gap-3 rounded-xl border p-4 transition ';
+                                            $labelClasses = 'exam-choice ';
                                             if ($showFeedback) {
                                                 $labelClasses .= 'cursor-default ';
                                                 if ($letter === $correctLetter) {
-                                                    $labelClasses .= 'border-emerald-500 bg-emerald-50 ring-1 ring-emerald-500';
+                                                    $labelClasses .= '!border-[#10B981] !bg-emerald-50 ring-1 ring-[#10B981]';
                                                 } elseif ($isSelected && $letter !== $correctLetter) {
-                                                    $labelClasses .= 'border-rose-500 bg-rose-50 ring-1 ring-rose-500';
+                                                    $labelClasses .= '!border-[#EF4444] !bg-rose-50 ring-1 ring-[#EF4444]';
                                                 } else {
-                                                    $labelClasses .= 'border-slate-200 opacity-60';
+                                                    $labelClasses .= '!border-slate-200 opacity-60';
                                                 }
                                             } elseif ($isFirstWrongChoice) {
                                                 $labelClasses .= 'cursor-not-allowed border-slate-200 bg-slate-50 opacity-40 grayscale';
-                                            } else {
-                                                $labelClasses .= 'cursor-pointer border-slate-200 hover:border-impetus-navy/40 hover:bg-slate-50/50 has-[:checked]:border-impetus-navy has-[:checked]:bg-impetus-navy/[0.03]';
                                             }
                                         @endphp
                                         @if (filled($choice))
                                             <label class="{{ $labelClasses }}">
                                                 <input
                                                     type="radio"
-                                                    class="mt-1 h-4 w-4 border-slate-300 text-impetus-navy focus:ring-impetus-navy"
+                                                    class="mt-1 h-4 w-4 border-slate-300 text-[#0F766E] focus:ring-[#0F766E]"
                                                     wire:model.live="responses.{{ $q['id'] }}"
                                                     value="{{ $letter }}"
                                                     @disabled($showFeedback || $isFirstWrongChoice)
@@ -546,7 +513,7 @@
                                     type="button"
                                     wire:click="prevQuestion"
                                     @disabled($currentIndex === 0)
-                                    class="rounded-xl border border-slate-300 bg-gradient-to-b from-white to-slate-50 px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition enabled:hover:border-slate-400 enabled:hover:text-slate-900 disabled:cursor-not-allowed disabled:opacity-40"
+                                    class="exam-btn-prev"
                                 >
                                     Previous
                                 </button>
@@ -559,7 +526,7 @@
                                             <button
                                                 type="button"
                                                 wire:click="submitPracticeAnswer({{ $qid }})"
-                                                class="rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-600/25 transition hover:from-emerald-700 hover:to-teal-600"
+                                                class="btn-mock-test"
                                             >
                                                 Submit Answer
                                             </button>
@@ -570,16 +537,17 @@
                                         <button
                                             type="button"
                                             wire:click="nextQuestion"
-                                            class="rounded-xl bg-gradient-to-r from-orange-600 to-amber-500 px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-orange-600/25 transition hover:from-orange-700 hover:to-amber-600"
+                                            class="exam-btn-next"
                                         >
-                                            Next
+                                            Next Question
+                                            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                                         </button>
                                     @else
                                         <button
                                             type="button"
                                             wire:click="submitTest"
                                             wire:loading.attr="disabled"
-                                            class="rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-600/25 transition hover:from-emerald-700 hover:to-teal-600 disabled:opacity-60"
+                                            class="exam-btn-next"
                                         >
                                             <span wire:loading.remove wire:target="submitTest">Submit test</span>
                                             <span wire:loading wire:target="submitTest">Submitting…</span>
@@ -590,6 +558,8 @@
                         @endif
                     @endif
                 </section>
+            </div>
+                </div>
             </div>
         @endif
     </div>

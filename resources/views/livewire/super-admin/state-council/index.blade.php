@@ -17,7 +17,7 @@
             </div>
 
             <a href="{{ route($routePrefix . '.state-councils.create') }}"
-               class="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg shadow-sm shadow-indigo-200 transition-all active:scale-[0.98] flex-shrink-0">
+               class="inline-flex items-center px-4 py-2 bg-impetus-orange hover:bg-orange-600 text-white text-sm font-semibold rounded-lg shadow-sm shadow-orange-500/25 transition-all active:scale-[0.98] flex-shrink-0">
                 <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                 Add New Council
             </a>
@@ -61,7 +61,7 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                 @forelse ($stateCouncils as $stateCouncil)
-                    <tr wire:key="state-council-{{ $stateCouncil->id }}" class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors">
+                    <tr wire:key="state-council-{{ $stateCouncil->id }}" class="odd:bg-white even:bg-impetus-teal-muted/50 hover:bg-brand-50/80 transition-colors">
                         <td class="px-4 py-3 whitespace-nowrap text-xs text-gray-500 dark:text-gray-400">
                             {{ ($stateCouncils->currentPage() - 1) * $stateCouncils->perPage() + $loop->iteration }}
                         </td>

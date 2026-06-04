@@ -25,7 +25,7 @@
             <!-- Filter Buttons -->
             <div class="flex items-center gap-2">
                 <button type="button" wire:click="setFilter('all')" wire:key="filter-all" wire:loading.attr="disabled"
-                        class="px-3 py-1.5 text-xs font-semibold rounded-lg transition-all {{ $filter === 'all' ? 'bg-indigo-600 text-white shadow-sm shadow-indigo-200' : 'bg-gray-50 text-gray-600 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800' }}">
+                        class="px-3 py-1.5 text-xs font-semibold rounded-lg transition-all {{ $filter === 'all' ? 'bg-impetus-teal text-white shadow-sm shadow-teal-900/15' : 'bg-gray-50 text-gray-600 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800' }}">
                     All ({{ $totalCount }})
                 </button>
                 <button type="button" wire:click="setFilter('active')" wire:key="filter-active" wire:loading.attr="disabled"
@@ -40,7 +40,7 @@
 
             @if ($user->role_type === 'admin' && Route::has($routePrefix . '.course-sub-titles.create'))
                 <a href="{{ route($routePrefix . '.course-sub-titles.create') }}"
-                   class="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg shadow-sm shadow-indigo-200 transition-all active:scale-[0.98] flex-shrink-0">
+                   class="inline-flex items-center px-4 py-2 bg-impetus-orange hover:bg-orange-600 text-white text-sm font-semibold rounded-lg shadow-sm shadow-orange-500/25 transition-all active:scale-[0.98] flex-shrink-0">
                     <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                     Add New Sub-Title
                 </a>

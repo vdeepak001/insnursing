@@ -52,7 +52,7 @@
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                     @forelse($orders as $order)
-                        <tr class="odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors duration-150">
+                        <tr class="odd:bg-white even:bg-impetus-teal-muted/50 hover:bg-brand-50/80 transition-colors duration-150">
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">
                                 @php
                                     $displayId = '-';

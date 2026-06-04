@@ -97,7 +97,7 @@
                         </thead>
                         <tbody class="divide-y divide-gray-100">
                             @forelse ($moduleStats as $module)
-                                <tr class="odd:bg-orange-50/50 even:bg-white">
+                                <tr class="odd:bg-white even:bg-impetus-teal-muted/50">
                                     <td class="px-6 py-3 text-sm font-medium text-gray-900">{{ $module['module_name'] }}</td>
                                     <td class="px-6 py-3 text-sm text-gray-600">{{ number_format($module['total_attempts']) }}</td>
                                     <td class="px-6 py-3 text-sm text-gray-600">{{ number_format($module['completed_attempts']) }}</td>
@@ -176,7 +176,7 @@
                         </thead>
                         <tbody class="divide-y divide-gray-100">
                             @forelse ($moduleResults as $module)
-                                <tr class="odd:bg-orange-50/50 even:bg-white">
+                                <tr class="odd:bg-white even:bg-impetus-teal-muted/50">
                                     <td class="px-6 py-3 text-sm font-medium text-gray-900">{{ $module['module_name'] }}</td>
                                     @foreach (['pretest' => 'Pretest', 'mock' => 'Mock Test', 'final' => 'Final Test'] as $key => $label)
                                         <td class="px-6 py-3">
@@ -185,7 +185,7 @@
                                                 <div class="flex flex-col gap-1">
                                                     <div class="flex items-center gap-2">
                                                         <div class="h-2 w-20 overflow-hidden rounded-full bg-slate-100">
-                                                            <div class="h-full rounded-full {{ $key === 'pretest' ? 'bg-blue-500' : ($key === 'mock' ? 'bg-indigo-500' : 'bg-emerald-500') }}"
+                                                            <div class="h-full rounded-full {{ $key === 'pretest' ? 'bg-[#CCFBF1] ring-1 ring-[#0F766E]/30' : ($key === 'mock' ? 'bg-[#0F766E]' : 'bg-[#FF7A00]') }}"
                                                                 style="width: {{ min(100, $bucket['completion_percentage']) }}%"></div>
                                                         </div>
                                                         <span class="text-sm font-bold text-impetus-navy">{{ number_format($bucket['completion_percentage'], 1) }}%</span>
@@ -263,7 +263,7 @@
                                 ? ($learner->name ?: trim(($learner->first_name ?? '').' '.($learner->last_name ?? '')) ?: '—')
                                 : '—';
                         @endphp
-                        <tr class="transition-colors odd:bg-orange-50 even:bg-white hover:bg-orange-100">
+                        <tr class="transition-colors odd:bg-white even:bg-impetus-teal-muted/50 hover:bg-brand-50/80">
                             <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
                                 {{ $learner?->unique_sequence_number ?? '—' }}
                             </td>

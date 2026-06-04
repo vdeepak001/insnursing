@@ -113,32 +113,23 @@
                                                 }
                                             }
 
-                                            $btnBase =
-                                                'inline-flex items-center justify-center rounded-xl border-2 px-8 py-3.5 text-base font-bold uppercase tracking-wide transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
                                             $btnActive =
-                                                'ring-2 ring-offset-2 ring-logo-blue ring-offset-white shadow-md';
+                                                'ring-2 ring-offset-2 ring-[#0F766E] ring-offset-white shadow-md';
 
                                             $preClass =
-                                                'bg-gradient-to-r from-emerald-500 to-teal-600 border-transparent text-white hover:from-emerald-600 hover:to-teal-700 focus-visible:ring-emerald-600 ' .
-                                                ($nextTest === 'pre' ? $btnActive : '');
+                                                'btn-pretest' . ($nextTest === 'pre' ? ' ' . $btnActive : '');
                                             $mockClass =
-                                                'bg-gradient-to-r from-amber-500 to-orange-600 border-transparent text-white hover:from-amber-600 hover:to-orange-700 focus-visible:ring-amber-500 ' .
-                                                ($nextTest === 'mock' ? $btnActive : '');
+                                                'btn-mock-test' . ($nextTest === 'mock' ? ' ring-2 ring-offset-2 ring-[#FF7A00] ring-offset-white shadow-md' : '');
                                             $finalClass =
-                                                'bg-gradient-to-r from-blue-600 to-indigo-700 border-transparent text-white hover:from-blue-700 hover:to-indigo-800 focus-visible:ring-indigo-700 ' .
-                                                ($nextTest === 'final' ? $btnActive : '');
+                                                'btn-final-test' . ($nextTest === 'final' ? ' ring-2 ring-offset-2 ring-[#FF7A00] ring-offset-white shadow-md' : '');
 
-                                            $preDoneClass =
-                                                'bg-gradient-to-r from-emerald-500 to-teal-600 border-transparent text-white hover:from-emerald-600 hover:to-teal-700 focus-visible:ring-emerald-600';
-                                            $mockDoneClass =
-                                                'bg-gradient-to-r from-amber-500 to-orange-600 border-transparent text-white hover:from-amber-600 hover:to-orange-700 focus-visible:ring-amber-500';
-                                            $finalDoneClass =
-                                                'bg-gradient-to-r from-blue-600 to-indigo-700 border-transparent text-white hover:from-blue-700 hover:to-indigo-800 focus-visible:ring-indigo-700';
+                                            $preDoneClass = 'btn-pretest';
+                                            $mockDoneClass = 'btn-mock-test';
+                                            $finalDoneClass = 'btn-final-test';
 
-                                            $doneClass =
-                                                'cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400 opacity-80';
-                                            $lockedClass =
-                                                'cursor-not-allowed border-slate-200/50 bg-slate-100/50 text-slate-400/70';
+                                            $preLockedClass = 'btn-pretest-locked';
+                                            $mockLockedClass = 'btn-mock-test-locked';
+                                            $finalLockedClass = 'btn-final-test-locked';
                                         @endphp
 
                                         {{-- Pre Test --}}
@@ -157,17 +148,17 @@
                                                     obtained: '{{ $tp['pre_obtained'] }}',
                                                     max: '{{ $tp['pre_max'] }}'
                                                 }"
-                                                class="{{ $btnBase }} {{ $preDoneClass }}">
-                                                Pretest <svg class="ml-2 h-5 w-5 text-white" fill="none"
+                                                class="{{ $preDoneClass }}">
+                                                Pretest <svg class="ml-2 h-5 w-5 text-[#0F766E]" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M4.5 12.75l6 6 9-13.5" />
                                                 </svg>
                                             </button>
                                         @elseif ($canPre)
-                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$btnBase . ' ' . $preClass" />
+                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$preClass" />
                                         @else
-                                            <span class="{{ $btnBase }} {{ $lockedClass }}"
+                                            <span class="{{ $preLockedClass }}"
                                                 title="Tests are unavailable">Pretest</span>
                                         @endif
 
@@ -187,7 +178,7 @@
                                                     obtained: '{{ $tp['mock_obtained'] }}',
                                                     max: '{{ $tp['mock_max'] }}'
                                                 }"
-                                                class="{{ $btnBase }} {{ $mockDoneClass }}">
+                                                class="{{ $mockDoneClass }}">
                                                 Mock <svg class="ml-2 h-5 w-5 text-white" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -195,11 +186,11 @@
                                                 </svg>
                                             </button>
                                         @elseif ($canMock)
-                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$btnBase . ' ' . $mockClass"
-                                                :test-type="'mock'" :btn-label="'Mock'" />
+                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$mockClass"
+                                                :test-type="'mock'" :btn-label="'Mock Test'" />
                                         @else
-                                            <span class="{{ $btnBase }} {{ $lockedClass }}"
-                                                title="Complete the pre test first">Mock</span>
+                                            <span class="{{ $mockLockedClass }}"
+                                                title="Complete the pre test first">Mock Test</span>
                                         @endif
 
                                         {{-- Final Test --}}
@@ -218,7 +209,7 @@
                                                     obtained: '{{ $tp['final_obtained'] }}',
                                                     max: '{{ $tp['final_max'] }}'
                                                 }"
-                                                class="{{ $btnBase }} {{ $finalDoneClass }}">
+                                                class="{{ $finalDoneClass }}">
                                                 Final
                                                 @if ($tp['final_passed'] ?? false)
                                                     <svg class="ml-2 h-5 w-5 text-white" fill="none"
@@ -232,15 +223,15 @@
                                                 @endif
                                             </button>
                                         @elseif ($canFinal)
-                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$btnBase . ' ' . $finalClass"
+                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$finalClass"
                                                 :test-type="'final'" :btn-label="$finalDone
                                                     ? 'Retake Final (' .
                                                         number_format((float) $tp['final_score'], 1) .
                                                         '%)'
                                                     : 'Final'" />
                                         @else
-                                            <span class="{{ $btnBase }} {{ $lockedClass }}"
-                                                title="Complete the mock test first">Final</span>
+                                            <span class="{{ $finalLockedClass }}"
+                                                title="Complete the mock test first">Final Test</span>
                                         @endif
                                     </div>
                                 @else

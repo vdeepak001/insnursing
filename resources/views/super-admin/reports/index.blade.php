@@ -25,7 +25,7 @@
             @if($selectedState)
                 <a href="{{ request()->url() }}" 
                    class="inline-flex items-center px-5 py-2.5 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
-                   style="background: linear-gradient(135deg, #0f766e, #0d9488);">
+                   style="background: linear-gradient(135deg, #0F766E, #0D9488);">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Back
                 </a>
@@ -80,7 +80,7 @@
                     </thead>
                     <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                         @forelse($moduleWisePassed as $module)
-                            <tr class="group odd:bg-orange-50 even:bg-white hover:bg-orange-100 transition-colors duration-150">
+                            <tr class="group odd:bg-white even:bg-impetus-teal-muted/50 hover:bg-brand-50/80 transition-colors duration-150">
                                 <td class="px-8 py-5 text-base font-medium text-gray-700 dark:text-gray-300">
                                     <a href="{{ route($routePrefix . '.reports.user-performance', ['state_id' => $selectedState->id, 'course_id' => $module->id]) }}" 
                                        class="hover:text-blue-600 hover:underline transition-all duration-200">

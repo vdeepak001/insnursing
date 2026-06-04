@@ -3,13 +3,13 @@
 @php
     $colorClasses = [
         'brand' => 'bg-gradient-to-tr from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/25',
-        'success' => 'bg-gradient-to-tr from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/25',
+        'success' => 'bg-gradient-to-tr from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/25',
         'error' => 'bg-gradient-to-tr from-red-500 to-rose-500 text-white shadow-lg shadow-red-500/25',
-        'indigo' => 'bg-gradient-to-tr from-indigo-500 to-purple-500 text-white shadow-lg shadow-indigo-500/25',
-        'blue' => 'bg-gradient-to-tr from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/25',
-        'orange' => 'bg-gradient-to-tr from-amber-500 to-orange-500 text-white shadow-lg shadow-amber-500/25',
-        'purple' => 'bg-gradient-to-tr from-purple-500 to-fuchsia-500 text-white shadow-lg shadow-purple-500/25',
-    ][$color] ?? 'bg-gradient-to-tr from-slate-500 to-slate-600 text-white shadow-lg shadow-slate-500/25';
+        'indigo' => 'bg-gradient-to-tr from-brand-600 to-brand-500 text-white shadow-lg shadow-brand-500/25',
+        'blue' => 'bg-gradient-to-tr from-brand-700 to-brand-500 text-white shadow-lg shadow-brand-500/25',
+        'orange' => 'bg-gradient-to-tr from-amber-500 to-orange-500 text-white shadow-lg shadow-orange-500/25',
+        'purple' => 'bg-gradient-to-tr from-orange-400 to-orange-600 text-white shadow-lg shadow-orange-500/25',
+    ][$color] ?? 'bg-gradient-to-tr from-brand-600 to-brand-500 text-white shadow-lg shadow-brand-500/25';
 
     $iconPaths = [
         'users' => 'M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z',

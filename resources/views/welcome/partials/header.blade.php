@@ -1,10 +1,10 @@
 @php
     $navDesktopClass = fn(string $routeName): string => request()->routeIs($routeName)
-        ? 'text-xs xl:text-sm font-bold text-impetus-orange transition-colors font-outfit'
-        : 'text-xs xl:text-sm font-semibold text-slate-700 hover:text-impetus-orange transition-colors font-outfit';
+        ? 'text-xs xl:text-sm font-bold text-impetus-teal transition-colors font-outfit'
+        : 'text-xs xl:text-sm font-semibold text-slate-700 hover:text-impetus-teal transition-colors font-outfit';
     $navMobileClass = fn(string $routeName): string => request()->routeIs($routeName)
-        ? '-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-impetus-orange'
-        : '-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-slate-900 hover:bg-slate-50';
+        ? '-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-impetus-teal'
+        : '-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-slate-900 hover:bg-brand-50';
     $cartCount = 0;
     if (auth()->check() && auth()->user()?->role_type === 'user') {
         $cartCount = \App\Models\CartItem::query()
@@ -40,13 +40,13 @@
                 <a href="{{ route('online.examination') }}" class="{{ $navDesktopClass('online.examination') }}"
                     @if (request()->routeIs('online.examination')) aria-current="page" @endif>Online Test</a>
                 <button type="button" @click="$dispatch('open-contact-modal')"
-                    class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-impetus-orange transition-colors font-outfit cursor-pointer focus:outline-none">Contact Us</button>
+                    class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-impetus-teal transition-colors font-outfit cursor-pointer focus:outline-none">Contact Us</button>
             </div>
 
             <!-- Mobile Menu Button Toggle -->
             <div class="flex lg:hidden">
                 <button type="button" @click="mobileMenuOpen = true"
-                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700 hover:text-impetus-orange transition-colors">
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700 hover:text-impetus-teal transition-colors">
                     <span class="sr-only">Open main menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                         aria-hidden="true">
@@ -63,7 +63,7 @@
                         <div class="flex items-center gap-3">
                             @if ($cartCount > 0)
                                 <a href="{{ route('cart.index') }}"
-                                    class="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-800 transition hover:border-impetus-orange hover:text-impetus-orange">
+                                    class="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-800 transition hover:border-impetus-teal hover:text-impetus-teal">
                                     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.8"
                                         stroke="currentColor" aria-hidden="true">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -81,7 +81,7 @@
                             <div x-data="{ userMenuOpen: false }" class="relative flex-shrink-0 flex flex-col items-center gap-1.5">
                                 <button type="button" @click="userMenuOpen = !userMenuOpen"
                                     @click.outside="userMenuOpen = false"
-                                    class="inline-flex w-40 items-center justify-between rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-850 shadow-sm transition hover:border-impetus-orange hover:text-impetus-orange font-outfit">
+                                    class="inline-flex w-40 items-center justify-between rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-850 shadow-sm transition hover:border-impetus-teal hover:text-impetus-teal font-outfit">
                                     <span class="truncate font-outfit">Hi, {{ auth()->user()->name }}</span>
                                     <svg class="h-3.5 w-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                         stroke="currentColor" aria-hidden="true">
@@ -97,23 +97,23 @@
                                 <div x-show="userMenuOpen" x-cloak x-transition
                                     class="absolute right-0 top-14 z-50 w-48 rounded-2xl border border-slate-200/60 bg-white p-2 shadow-xl">
                                     <a href="{{ route('profile') }}" @click="userMenuOpen = false"
-                                        class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-impetus-orange transition-colors font-outfit">
+                                        class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-impetus-teal transition-colors font-outfit">
                                         My Profile
                                     </a>
                                     <a href="{{ route('profile.change-password') }}" @click="userMenuOpen = false"
-                                        class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-impetus-orange transition-colors font-outfit">
+                                        class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-impetus-teal transition-colors font-outfit">
                                         Change Password
                                     </a>
                                     @if (auth()->user()?->role_type !== 'user')
                                         <a href="{{ url('/dashboard') }}" @click="userMenuOpen = false"
-                                            class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-impetus-orange transition-colors font-outfit">
+                                            class="block rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-impetus-teal transition-colors font-outfit">
                                             Dashboard
                                         </a>
                                     @endif
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <button type="submit"
-                                            class="block w-full rounded-xl px-3 py-2 text-left text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-impetus-orange transition-colors font-outfit">
+                                            class="block w-full rounded-xl px-3 py-2 text-left text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-impetus-teal transition-colors font-outfit">
                                             Logout
                                         </button>
                                     </form>
@@ -123,11 +123,11 @@
                     @else
                         <div class="flex items-center gap-3">
                             <button type="button" @click="$dispatch('open-login-modal')"
-                                class="text-sm font-bold text-slate-700 hover:text-impetus-orange transition-colors font-outfit">
+                                class="text-sm font-bold text-slate-700 hover:text-impetus-teal transition-colors font-outfit">
                                 Log in
                             </button>
                             <button type="button" @click="$dispatch('open-register-modal')"
-                                class="bg-impetus-orange hover:bg-[#e05d14] text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-impetus-orange/20 transition-all hover:scale-102 hover:shadow-xl hover:shadow-impetus-orange/30 font-outfit glow-orange">
+                                class="bg-impetus-orange hover:bg-orange-600 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-impetus-orange/20 transition-all hover:scale-102 hover:shadow-xl hover:shadow-impetus-orange/30 font-outfit glow-orange">
                                 Sign up
                             </button>
                         </div>

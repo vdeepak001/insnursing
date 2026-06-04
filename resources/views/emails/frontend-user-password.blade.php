@@ -27,7 +27,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #F36E21 0%, #E28C56 50%, #1D2A57 100%); padding: 28px 24px;">
+                        <td style="background: linear-gradient(135deg, #FF7A00 0%, #0F766E 50%, #1E3A5F 100%); padding: 28px 24px;">
                             @if ($type === 'forgot')
                                 <h1
                                     style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
@@ -62,7 +62,7 @@
                                         <strong
                                             style="color: #0f172a; display: inline-block; width: 150px;">Email:</strong>
                                         <a href="mailto:{{ $user->email }}"
-                                            style="color: #F36E21; text-decoration: underline;">{{ $user->email }}</a>
+                                            style="color: #FF7A00; text-decoration: underline;">{{ $user->email }}</a>
                                     </td>
                                 </tr>
                                 <tr>

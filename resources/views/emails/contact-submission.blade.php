@@ -16,7 +16,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #F36E21 0%, #E28C56 50%, #1D2A57 100%); padding: 24px;">
+                        <td style="background: linear-gradient(135deg, #FF7A00 0%, #0F766E 50%, #1E3A5F 100%); padding: 24px;">
                             <h1 style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
                                 New Contact Inquiry
                             </h1>
@@ -42,7 +42,7 @@
                                 <tr>
                                     <td style="font-weight: bold; color: #475569; border-bottom: 1px solid #e2e8f0;">Email ID:</td>
                                     <td style="color: #1e293b; border-bottom: 1px solid #e2e8f0;">
-                                        <a href="mailto:{{ $contactQuery->email }}" style="color: #F36E21; text-decoration: none;">{{ $contactQuery->email }}</a>
+                                        <a href="mailto:{{ $contactQuery->email }}" style="color: #FF7A00; text-decoration: none;">{{ $contactQuery->email }}</a>
                                     </td>
                                 </tr>
                                 <tr>

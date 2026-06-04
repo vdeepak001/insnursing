@@ -7,7 +7,7 @@
 @endphp
 
 <aside id="sidebar"
-    class="fixed flex flex-col mt-0 top-0 px-5 left-0 bg-gradient-to-br from-orange-600 via-orange-500 to-amber-500 border-white/10 text-white h-screen transition-all duration-300 ease-in-out z-99999 border-r"
+    class="fixed flex flex-col mt-0 top-0 px-5 left-0 bg-[#0F766E] border-[#0D6B63]/40 text-white h-screen transition-all duration-300 ease-in-out z-99999 border-r shadow-xl shadow-[#042f2e]/25"
     x-data="{
         openSubmenus: {},
         init() {
@@ -63,7 +63,7 @@
         'xl:justify-center' :
         'justify-start'">
         <a href="/"
-            class="w-full rounded-2xl border border-white/20 bg-white/95 px-4 py-3 shadow-lg shadow-orange-900/20 backdrop-blur-sm">
+            class="w-full rounded-2xl border border-white/20 bg-white px-4 py-3 shadow-lg shadow-teal-950/25">
             <img x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
                 src="/Impetus-logo.png" alt="IHS Nursing" class="max-w-[85%] h-auto object-contain mx-auto" />
             <img x-show="!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen"
@@ -108,8 +108,8 @@
                                             class="relative flex items-center w-full gap-3 px-3 py-2 font-medium rounded-lg text-theme-sm transition-all duration-200 group"
                                             :class="[
                                                 isSubmenuOpen({{ $groupIndex }}, {{ $itemIndex }}) ?
-                                                'bg-white/20 text-white font-bold backdrop-blur-md border border-white/10 shadow-md shadow-orange-700/10' :
-                                                'text-white/80 hover:bg-white/10 hover:text-white border border-transparent',
+                                                'bg-white/10 text-white font-semibold' :
+                                                'text-white/85 hover:bg-white/10 hover:text-white',
                                                 !$store.sidebar.isExpanded && !$store.sidebar.isHovered ?
                                                 'xl:justify-center' : 'xl:justify-start'
                                             ]">
@@ -155,8 +155,8 @@
                                                         <a href="{{ $subItem['path'] }}" 
                                                             class="relative flex items-center gap-3 rounded-lg px-3 py-2.5 text-theme-sm font-medium transition-all duration-200"
                                                             :class="isActive('{{ $subItem['path'] }}') ?
-                                                                'bg-white/20 text-white font-bold backdrop-blur-md border border-white/10 shadow-sm' :
-                                                                'text-white/70 hover:bg-white/10 hover:text-white border border-transparent'">
+                                                                'bg-impetus-orange text-white font-bold shadow-md shadow-orange-900/25 rounded-xl' :
+                                                                'text-white/80 hover:bg-white/10 hover:text-white rounded-xl'">
                                                             {{ $subItem['name'] }}
                                                             <span class="flex items-center gap-1 ml-auto">
                                                                 @if (!empty($subItem['new']))
@@ -181,8 +181,8 @@
                                             class="relative flex items-center w-full gap-3 px-3 py-2 font-medium rounded-lg text-theme-sm transition-all duration-200 group"
                                             :class="[
                                                 isActive('{{ $item['path'] }}') ? 
-                                                'bg-white/20 text-white font-bold backdrop-blur-md border border-white/10 shadow-md shadow-orange-700/10' :
-                                                'text-white/80 hover:bg-white/10 hover:text-white border border-transparent',
+                                                'bg-impetus-orange text-white font-bold shadow-md shadow-orange-900/25 rounded-xl' :
+                                                'text-white/85 hover:bg-white/10 hover:text-white',
                                                 (!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store
                                                     .sidebar.isMobileOpen) ?
                                                 'xl:justify-center' :
