@@ -9,15 +9,19 @@ class SmsService
 {
     public function sendForgotPasswordOtp(string $phone, string $otp): bool
     {
-        return $this->sendOtp($phone, $otp);
+        $cleanedPhone = $this->formatPhone($phone);
+        if (! $cleanedPhone) {
+            Log::warning("SmsService: Invalid phone number: {$phone}");
+
+            return false;
+        }
+
+        $message = str_replace('{otp}', $otp, config('sms.messages.forgot_password_otp'));
+
+        return $this->send($cleanedPhone, $message, config('sms.templates.forgot_password_otp'));
     }
 
     public function sendTestOtp(string $phone, string $otp): bool
-    {
-        return $this->sendOtp($phone, $otp);
-    }
-
-    public function sendOtp(string $phone, string $otp): bool
     {
         $cleanedPhone = $this->formatPhone($phone);
         if (! $cleanedPhone) {
@@ -26,13 +30,17 @@ class SmsService
             return false;
         }
 
-        $message = str_replace('{otp}', $otp, config('sms.messages.otp'));
+        $message = str_replace('{otp}', $otp, config('sms.messages.test_otp'));
 
-        return $this->send($cleanedPhone, $message, config('sms.templates.otp'));
+        return $this->send($cleanedPhone, $message, config('sms.templates.test_otp'));
     }
 
-    public function sendRegistrationCredentials(string $phone, string $password, ?string $ihsId = null): bool
-    {
+    public function sendRegistrationCredentials(
+        string $phone,
+        string $username,
+        string $password,
+        ?string $ihsId = null
+    ): bool {
         $cleanedPhone = $this->formatPhone($phone);
         if (! $cleanedPhone) {
             Log::warning("SmsService: Invalid phone number: {$phone}");
@@ -41,8 +49,8 @@ class SmsService
         }
 
         $message = str_replace(
-            ['{password}', '{ihs_id}'],
-            [$password, $ihsId ?? 'N/A'],
+            ['{username}', '{password}', '{ihs_id}'],
+            [$username, $password, $ihsId ?? 'N/A'],
             config('sms.messages.registration')
         );
 

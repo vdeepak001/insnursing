@@ -105,6 +105,7 @@ class FrontendRegisteredUserController extends Controller
             try {
                 $smsService->sendRegistrationCredentials(
                     $user->phone,
+                    $user->email,
                     $generatedPassword,
                     $user->unique_sequence_number
                 );
