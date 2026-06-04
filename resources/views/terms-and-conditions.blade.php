@@ -3,7 +3,7 @@
 @section('title', 'Terms and Conditions')
 
 @section('content')
-    <main class="relative isolate pb-20 sm:pb-28">
+    <main class="relative isolate pb-20 sm:pb-28" x-data="{}">
         <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] overflow-hidden">
             <div class="absolute left-10 top-24 h-72 w-72 rounded-full bg-logo-blue/10 blur-[100px]"></div>
             <div class="absolute right-10 top-28 h-96 w-96 rounded-full bg-impetus-orange/15 blur-[100px]"></div>
@@ -351,8 +351,24 @@
                                             <div class="bg-white border border-slate-100 rounded-xl p-4 mt-2 space-y-1 text-sm shadow-sm max-w-md">
                                                 <p class="font-bold text-slate-800">Impetus Healthcare Skills Private Limited</p>
                                                 <p class="text-slate-600">Website: <a href="https://www.ihsnursing.com" class="text-impetus-orange font-semibold hover:underline">www.ihsnursing.com</a></p>
-                                                <p class="text-slate-600">Email: <a href="mailto:support@ihsnursing.com" class="text-impetus-orange font-semibold hover:underline">support@ihsnursing.com</a></p>
+                                                <p class="text-slate-600">
+                                                    <button type="button"
+                                                        @click="window.dispatchEvent(new CustomEvent('open-contact-modal', { bubbles: true }))"
+                                                        class="text-impetus-orange font-semibold hover:underline">
+                                                        Contact Us
+                                                    </button>
+                                                    to submit your query.
+                                                </p>
                                             </div>
+                                            <p class="mt-2">
+                                                Users may also submit queries through
+                                                <button type="button"
+                                                    @click="window.dispatchEvent(new CustomEvent('open-contact-modal', { bubbles: true }))"
+                                                    class="font-semibold text-impetus-orange hover:underline">
+                                                    Contact Us
+                                                </button>
+                                                on our official website.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>

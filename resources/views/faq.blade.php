@@ -3,7 +3,7 @@
 @section('title', 'FAQ')
 
 @section('content')
-    <main class="relative isolate pb-20 sm:pb-28">
+    <main class="relative isolate pb-20 sm:pb-28" x-data="{}">
         <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[480px] overflow-hidden">
             <div class="absolute left-10 top-24 h-72 w-72 rounded-full bg-impetus-orange/15 blur-[100px]"></div>
             <div class="absolute right-10 top-32 h-96 w-96 rounded-full bg-logo-blue/10 blur-[100px]"></div>
@@ -227,9 +227,10 @@
                         x-transition:leave-end="opacity-0 -translate-y-1"
                         class="border-t border-slate-100 bg-slate-50/80 px-5 pb-5 pt-0 sm:px-6 sm:pb-6">
                         <p class="text-lg leading-8 text-slate-600 sm:pl-14 text-justify">
-                            Email us at <a href="mailto:support@ihsnursing.com"
-                                class="font-semibold text-logo-blue underline decoration-logo-blue/30 underline-offset-2 transition-colors hover:text-brand-900 hover:decoration-brand-900/40">support@ihsnursing.com</a>.
-                            Include your account email and a short description of the issue so we can help faster.
+                            Open <button type="button"
+                                @click="window.dispatchEvent(new CustomEvent('open-contact-modal', { bubbles: true }))"
+                                class="font-semibold text-logo-blue underline decoration-logo-blue/30 underline-offset-2 transition-colors hover:text-brand-900 hover:decoration-brand-900/40">Contact Us</button>
+                            to submit your query. Include your account email and a short description of the issue so we can help faster.
                         </p>
                     </div>
                 </div>
@@ -242,10 +243,11 @@
                     Our team is happy to help with account access, course selection, or technical issues.
                 </p>
                 <div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-                    <a href="mailto:support@ihsnursing.com"
+                    <button type="button"
+                        @click="window.dispatchEvent(new CustomEvent('open-contact-modal', { bubbles: true }))"
                         class="inline-flex items-center justify-center rounded-full bg-impetus-orange px-6 py-3 text-sm font-bold text-white shadow-lg shadow-impetus-orange/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-impetus-orange/40">
-                        Email support
-                    </a>
+                        Contact Us
+                    </button>
                 </div>
             </div>
         </div>
