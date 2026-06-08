@@ -53,15 +53,15 @@
     <div class="bg-white shadow-sm border border-gray-200 rounded-xl overflow-hidden dark:bg-gray-800 dark:border-gray-700">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gray-50 dark:bg-gray-700/50">
+                <thead class="bg-gradient-to-r from-impetus-teal to-impetus-orange text-white">
                 <tr>
-                    <th scope="col" class="px-4 py-3 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                    <th scope="col" class="px-4 py-4 text-left text-[11px] font-bold text-white uppercase tracking-wider font-outfit">
                         #
                     </th>
-                    <th scope="col" class="px-4 py-3 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                    <th scope="col" class="px-4 py-4 text-left text-[11px] font-bold text-white uppercase tracking-wider font-outfit">
                         Course
                     </th>
-                    <th scope="col" class="px-4 py-3 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400 cursor-pointer" wire:click="sortBy('title_name')">
+                    <th scope="col" class="px-4 py-4 text-left text-[11px] font-bold text-white uppercase tracking-wider font-outfit cursor-pointer" wire:click="sortBy('title_name')">
                         <div class="flex items-center gap-1">
                             Sub-Title Name
                             @if($sortField === 'title_name')
@@ -69,10 +69,10 @@
                             @endif
                         </div>
                     </th>
-                    <th scope="col" class="px-4 py-3 text-left text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                    <th scope="col" class="px-4 py-4 text-left text-[11px] font-bold text-white uppercase tracking-wider font-outfit">
                         Created By
                     </th>
-                    <th scope="col" class="px-4 py-3 text-center text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400 cursor-pointer" wire:click="sortBy('active_status')">
+                    <th scope="col" class="px-4 py-4 text-center text-[11px] font-bold text-white uppercase tracking-wider font-outfit cursor-pointer" wire:click="sortBy('active_status')">
                         <div class="flex items-center justify-center gap-1">
                             Status
                             @if($sortField === 'active_status')
@@ -81,7 +81,7 @@
                         </div>
                     </th>
                     @if ($routePrefix === 'admin')
-                        <th scope="col" class="px-4 py-3 text-right text-[11px] font-semibold text-gray-500 uppercase tracking-wider dark:text-gray-400">
+                        <th scope="col" class="px-4 py-4 text-right text-[11px] font-bold text-white uppercase tracking-wider font-outfit">
                             Actions
                         </th>
                     @endif

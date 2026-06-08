@@ -238,7 +238,7 @@
         <div class="overflow-x-auto">
             <table class="w-full border-collapse text-left">
                 <thead>
-                    <tr class="bg-gradient-to-r from-impetus-orange to-orange-500">
+                    <tr class="bg-gradient-to-r from-impetus-teal to-impetus-orange">
                         <th class="px-6 py-4 font-outfit text-xs font-bold uppercase tracking-wider text-white">UID</th>
                         <th class="px-6 py-4 font-outfit text-xs font-bold uppercase tracking-wider text-white">Name</th>
                         <th class="px-6 py-4 font-outfit text-xs font-bold uppercase tracking-wider text-white">Module</th>

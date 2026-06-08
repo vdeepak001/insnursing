@@ -6,7 +6,7 @@
         <div class="pointer-events-none absolute -right-20 -bottom-20 h-64 w-64 rounded-full bg-impetus-orange/10 blur-3xl"></div>
 
         <div class="relative z-10">
-            <!-- Administrative Welcome Card -->
+            {{-- Administrative Welcome Card (Hidden)
             <div class="relative mb-10 overflow-hidden rounded-[2.5rem] border border-[#0D6B63]/40 bg-gradient-to-r from-[#0F766E] to-impetus-navy p-8 text-white shadow-xl sm:p-10">
                 <div class="pointer-events-none absolute right-0 bottom-0 h-80 w-80 translate-x-12 translate-y-12 rounded-full bg-impetus-orange/20 blur-3xl"></div>
                 <div class="pointer-events-none absolute top-0 left-1/4 h-64 w-64 -translate-y-12 rounded-full bg-brand-400/15 blur-3xl"></div>
@@ -30,6 +30,7 @@
                     </div>
                 </div>
             </div>
+            --}}
 
             <div class="mb-6 flex items-center justify-between">
                 <div>
@@ -38,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-4">
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-6">
                 @if(auth()->user()->role_type !== 'support')
                     <x-dashboard.metric-card
                         title="Total Courses"
@@ -142,14 +143,14 @@
 
                     <div class="overflow-x-auto">
                         <table class="min-w-full text-left">
-                            <thead class="bg-slate-50/80">
+                            <thead class="bg-gradient-to-r from-impetus-teal to-impetus-orange text-white">
                                 <tr>
-                                    <th class="px-6 py-3 text-xs font-bold tracking-wider text-slate-500 uppercase">User</th>
-                                    <th class="px-6 py-3 text-xs font-bold tracking-wider text-slate-500 uppercase">Module</th>
-                                    <th class="px-6 py-3 text-xs font-bold tracking-wider text-slate-500 uppercase">Test</th>
-                                    <th class="px-6 py-3 text-xs font-bold tracking-wider text-slate-500 uppercase">Status</th>
-                                    <th class="px-6 py-3 text-xs font-bold tracking-wider text-slate-500 uppercase">Score</th>
-                                    <th class="px-6 py-3 text-xs font-bold tracking-wider text-slate-500 uppercase">Date</th>
+                                    <th class="px-6 py-4 text-xs font-bold tracking-wider text-white uppercase font-outfit">User</th>
+                                    <th class="px-6 py-4 text-xs font-bold tracking-wider text-white uppercase font-outfit">Module</th>
+                                    <th class="px-6 py-4 text-xs font-bold tracking-wider text-white uppercase font-outfit">Test</th>
+                                    <th class="px-6 py-4 text-xs font-bold tracking-wider text-white uppercase font-outfit">Status</th>
+                                    <th class="px-6 py-4 text-xs font-bold tracking-wider text-white uppercase font-outfit">Score</th>
+                                    <th class="px-6 py-4 text-xs font-bold tracking-wider text-white uppercase font-outfit">Date</th>
                                 </tr>
                             </thead>
                             <tbody>

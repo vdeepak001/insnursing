@@ -43,25 +43,21 @@
     ][$title] ?? 'System Metric';
 @endphp
 
-<div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-xl hover:shadow-slate-500/5 transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between h-full relative overflow-hidden group">
+<div class="rounded-2xl border border-slate-200 bg-white p-3 sm:p-4 shadow-sm hover:shadow-md transition-all duration-200 flex items-center gap-2.5 sm:gap-3 relative overflow-hidden group">
     <!-- Hover graphic background decoration -->
     <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-gradient-to-br from-slate-50 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
-    <div class="flex items-center justify-between relative z-10">
-        <div class="flex items-center justify-center w-12 h-12 rounded-2xl {{ $colorClasses }} transition-transform duration-300 group-hover:scale-110">
-            <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="{{ $iconPaths[$icon] ?? '' }}"></path>
-            </svg>
-        </div>
+    <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl {{ $colorClasses }} transition-transform duration-300 group-hover:scale-105 relative z-10">
+        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="{{ $iconPaths[$icon] ?? '' }}"></path>
+        </svg>
     </div>
 
-    <div class="flex items-end justify-between mt-6 relative z-10">
-        <div>
-            <span class="text-xs font-bold text-slate-400 uppercase tracking-wider font-outfit">{{ $title }}</span>
-            <h4 class="mt-2 font-extrabold text-slate-800 text-3xl tracking-tight font-outfit">
-                {{ number_format($value) }}
-            </h4>
-            <span class="text-xs text-slate-500 font-medium block mt-1 font-outfit">{{ $subtitles }}</span>
-        </div>
+    <div class="min-w-0 relative z-10">
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-outfit block truncate">{{ $title }}</span>
+        <h4 class="mt-0.5 font-extrabold text-slate-800 text-lg sm:text-xl tracking-tight font-outfit leading-none">
+            {{ number_format($value) }}
+        </h4>
+        <span class="text-[10px] text-slate-500 font-medium block mt-0.5 font-outfit truncate" title="{{ $subtitles }}">{{ $subtitles }}</span>
     </div>
 </div>
