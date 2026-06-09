@@ -7,7 +7,7 @@
 @endphp
 
 <aside id="sidebar"
-    class="fixed flex flex-col mt-0 top-0 px-5 left-0 bg-[#0F766E] border-[#0D6B63]/40 text-white h-screen transition-all duration-300 ease-in-out z-99999 border-r shadow-xl shadow-[#042f2e]/25"
+    class="fixed xl:hidden flex flex-col mt-0 top-0 px-5 left-0 bg-[#0F766E] border-[#0D6B63]/40 text-white h-screen transition-all duration-300 ease-in-out z-99999 border-r shadow-xl shadow-[#042f2e]/25"
     x-data="{
         openSubmenus: {},
         init() {
@@ -229,4 +229,4 @@
 
 <!-- Mobile Overlay -->
 <div x-show="$store.sidebar.isMobileOpen" @click="$store.sidebar.setMobileOpen(false)"
-    class="fixed z-50 h-screen w-full bg-gray-900/50"></div>
+    class="fixed xl:hidden z-50 h-screen w-full bg-gray-900/50"></div>

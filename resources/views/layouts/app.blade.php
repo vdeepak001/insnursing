@@ -86,16 +86,11 @@ window.addEventListener('resize', checkMobile);">
     <x-common.preloader />
     {{-- preloader end --}}
 
-    <div class="min-h-screen xl:flex">
+    <div class="min-h-screen flex flex-col bg-[#F9FAFB]">
         @include('layouts.backdrop')
         @include('layouts.sidebar')
 
-        <div class="min-w-0 flex-1 transition-all duration-300 ease-in-out bg-[#F9FAFB]"
-            :class="{
-                'xl:ml-[290px]': $store.sidebar.isExpanded || $store.sidebar.isHovered,
-                'xl:ml-[90px]': !$store.sidebar.isExpanded && !$store.sidebar.isHovered,
-                'ml-0': $store.sidebar.isMobileOpen
-            }">
+        <div class="min-w-0 flex-1 bg-[#F9FAFB]">
             <!-- app header start -->
             @include('layouts.app-header')
             <!-- app header end -->
