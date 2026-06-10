@@ -16,7 +16,8 @@ class DashboardController extends Controller
             return redirect()->route('profile');
         }
 
-        $data = $this->dashboard->build();
+        $attemptsMonth = request()->string('attempts_month')->toString();
+        $data = $this->dashboard->build($attemptsMonth !== '' ? $attemptsMonth : null);
 
         return view('pages.dashboard.ecommerce', [
             'title' => 'Dashboard Overview',

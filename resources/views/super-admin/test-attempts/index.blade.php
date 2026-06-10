@@ -287,15 +287,9 @@
                                 </td>
                             @endif
                             <td class="px-6 py-4 text-center">
-                                @if ($attempt->status === \App\Models\CourseTestAttempt::STATUS_COMPLETED)
-                                    <span class="inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold {{ $attempt->passed ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700' }}">
-                                        {{ $attempt->passed ? 'Passed' : 'Failed' }}
-                                    </span>
-                                @else
-                                    <span class="inline-flex rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
-                                        In progress
-                                    </span>
-                                @endif
+                                <span class="inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold {{ $attempt->outcomeBadgeClasses() }}">
+                                    {{ $attempt->outcomeLabel() }}
+                                </span>
                             </td>
                             <td class="px-6 py-4 text-sm font-semibold text-gray-800 dark:text-gray-200">
                                 {{ $attempt->score_percent !== null ? number_format((float) $attempt->score_percent, 1).'%' : '—' }}

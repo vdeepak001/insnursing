@@ -122,14 +122,35 @@
 
             <div class="mt-10 grid grid-cols-1 gap-6 xl:grid-cols-3">
                 <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm xl:col-span-2">
-                    <h3 class="font-outfit text-lg font-bold text-impetus-navy">Total Attempts Overview</h3>
-                    <p class="mt-0.5 text-xs text-slate-500">Monthly pre, mock, and final test attempts (last 6 months).</p>
+                    <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                        <div>
+                            <h3 class="font-outfit text-lg font-bold text-impetus-navy">Test Attempts Overview</h3>
+                            <p class="mt-0.5 text-xs text-slate-500">Weekly pre, mock, and final test attempts for the selected month.</p>
+                        </div>
+
+                        <form method="GET" class="shrink-0">
+                            <label for="attempts-month" class="sr-only">Select month</label>
+                            <select
+                                id="attempts-month"
+                                name="attempts_month"
+                                onchange="this.form.submit()"
+                                class="block rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm focus:border-impetus-teal focus:outline-none focus:ring-2 focus:ring-impetus-teal/20"
+                            >
+                                @foreach ($charts['attempts_month_options'] as $option)
+                                    <option value="{{ $option['value'] }}" @selected($option['value'] === $charts['attempts_month'])>
+                                        {{ $option['label'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </form>
+                    </div>
+
                     <div class="mt-6" id="dashboardAttemptsChart"></div>
                 </div>
 
                 <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                     <h3 class="font-outfit text-lg font-bold text-impetus-navy">Test Status Distribution</h3>
-                    <p class="mt-0.5 text-xs text-slate-500">In progress, passed, and failed attempts.</p>
+                    <p class="mt-0.5 text-xs text-slate-500">Completed, in progress, pending, and expired test activity.</p>
                     <div class="mt-4" id="dashboardStatusChart"></div>
                 </div>
             </div>
@@ -160,15 +181,9 @@
                                         <td class="px-6 py-4 text-sm text-slate-600">{{ $attempt['course_name'] }}</td>
                                         <td class="px-6 py-4 text-sm text-slate-600">{{ $attempt['test_label'] }}</td>
                                         <td class="px-6 py-4">
-                                            @if($attempt['status'] === 'Completed')
-                                                <span class="inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold {{ $attempt['passed'] ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700' }}">
-                                                    {{ $attempt['passed'] ? 'Passed' : 'Failed' }}
-                                                </span>
-                                            @else
-                                                <span class="inline-flex rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
-                                                    In progress
-                                                </span>
-                                            @endif
+                                            <span class="inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold {{ $attempt['outcome_badge_classes'] }}">
+                                                {{ $attempt['outcome_label'] }}
+                                            </span>
                                         </td>
                                         <td class="px-6 py-4 text-sm font-semibold text-slate-800">{{ $attempt['score'] }}</td>
                                         <td class="px-6 py-4 text-sm text-slate-500">{{ $attempt['completed_at'] }}</td>

@@ -13,6 +13,8 @@ class CourseTestAttempt extends Model
 
     public const STATUS_COMPLETED = 'completed';
 
+    public const EXAM_TIME_LIMIT_MINUTES = 45;
+
     protected $fillable = [
         'user_id',
         'course_detail_id',
@@ -74,5 +76,38 @@ class CourseTestAttempt extends Model
             ->where('test_type', $type->value)
             ->where('status', self::STATUS_COMPLETED)
             ->exists();
+    }
+
+    public function hasPassFailOutcome(): bool
+    {
+        return $this->getRawOriginal('passed') !== null;
+    }
+
+    public function outcomeLabel(): string
+    {
+        if ($this->status !== self::STATUS_COMPLETED) {
+            return 'In progress';
+        }
+
+        if ($this->hasPassFailOutcome()) {
+            return $this->passed ? 'Passed' : 'Failed';
+        }
+
+        return 'Completed';
+    }
+
+    public function outcomeBadgeClasses(): string
+    {
+        if ($this->status !== self::STATUS_COMPLETED) {
+            return 'bg-amber-50 text-amber-700';
+        }
+
+        if ($this->hasPassFailOutcome()) {
+            return $this->passed
+                ? 'bg-emerald-50 text-emerald-700'
+                : 'bg-rose-50 text-rose-700';
+        }
+
+        return 'bg-slate-100 text-slate-700';
     }
 }

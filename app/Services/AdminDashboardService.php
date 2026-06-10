@@ -3,10 +3,12 @@
 namespace App\Services;
 
 use App\Enums\CourseTestType;
+use App\Enums\PaymentStatus;
 use App\Models\CourseDetail;
 use App\Models\CourseMaterial;
 use App\Models\CourseQuestion;
 use App\Models\CourseTestAttempt;
+use App\Models\Order;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -16,19 +18,25 @@ class AdminDashboardService
      * @return array{
      *     stats: array<string, int>,
      *     charts: array{
-     *         attempts_overview: array{categories: list<string>, series: list<array{name: string, data: list<int>}>},
-     *         status_distribution: list<array{label: string, count: int}>
+     *         attempts_overview: array{categories: list<string>, series: list<array{name: string, data: list<int>}>, colors: list<string>},
+     *         attempts_month: string,
+     *         attempts_month_options: list<array{value: string, label: string}>,
+     *         status_distribution: list<array{label: string, count: int, color: string}>
      *     },
      *     recent_attempts: list<array<string, mixed>>,
      *     top_performing: list<array<string, mixed>>
      * }
      */
-    public function build(): array
+    public function build(?string $attemptsMonth = null): array
     {
+        $selectedMonth = $this->resolveAttemptsMonth($attemptsMonth);
+
         return [
             'stats' => $this->platformStats(),
             'charts' => [
-                'attempts_overview' => $this->attemptsOverview(),
+                'attempts_overview' => $this->attemptsOverview($selectedMonth),
+                'attempts_month' => $selectedMonth->format('Y-m'),
+                'attempts_month_options' => $this->attemptsOverviewMonthOptions(),
                 'status_distribution' => $this->statusDistribution(),
             ],
             'recent_attempts' => $this->recentAttempts(),
@@ -61,23 +69,45 @@ class AdminDashboardService
         ];
     }
 
-    /**
-     * @return array{categories: list<string>, series: list<array{name: string, data: list<int>}>}
-     */
-    private function attemptsOverview(): array
+    private function resolveAttemptsMonth(?string $attemptsMonth): Carbon
     {
-        $months = collect(range(5, 0))
-            ->map(fn (int $offset) => now()->subMonths($offset)->startOfMonth());
+        if ($attemptsMonth !== null && preg_match('/^\d{4}-\d{2}$/', $attemptsMonth) === 1) {
+            return Carbon::createFromFormat('Y-m', $attemptsMonth)->startOfMonth();
+        }
 
-        $start = $months->first()->copy()->startOfMonth();
+        return now()->startOfMonth();
+    }
+
+    /**
+     * @return list<array{value: string, label: string}>
+     */
+    private function attemptsOverviewMonthOptions(): array
+    {
+        return collect(range(0, 11))
+            ->map(fn (int $offset): Carbon => now()->subMonths($offset)->startOfMonth())
+            ->map(fn (Carbon $month): array => [
+                'value' => $month->format('Y-m'),
+                'label' => $month->isSameMonth(now()) ? 'This Month' : $month->format('F Y'),
+            ])
+            ->all();
+    }
+
+    /**
+     * @return array{categories: list<string>, series: list<array{name: string, data: list<int>}>, colors: list<string>}
+     */
+    private function attemptsOverview(Carbon $month): array
+    {
+        $month = $month->copy()->startOfMonth();
         $types = [
-            CourseTestType::Pre->value => CourseTestType::Pre->label(),
-            CourseTestType::Mock->value => CourseTestType::Mock->label(),
-            CourseTestType::Final->value => CourseTestType::Final->label(),
+            CourseTestType::Pre->value => 'Pre Tests',
+            CourseTestType::Mock->value => 'Mock Tests',
+            CourseTestType::Final->value => 'Final Tests',
         ];
 
+        $weekStarts = collect(range(1, $month->daysInMonth, 7));
+
         $attempts = CourseTestAttempt::query()
-            ->where('created_at', '>=', $start)
+            ->whereBetween('created_at', [$month->copy()->startOfDay(), $month->copy()->endOfMonth()->endOfDay()])
             ->whereIn('test_type', array_keys($types))
             ->get(['test_type', 'created_at']);
 
@@ -86,43 +116,95 @@ class AdminDashboardService
         foreach ($types as $typeValue => $label) {
             $series[] = [
                 'name' => $label,
-                'data' => $months->map(function (Carbon $month) use ($attempts, $typeValue): int {
-                    $monthKey = $month->format('Y-m');
+                'data' => $weekStarts->map(function (int $startDay) use ($attempts, $typeValue, $month): int {
+                    $weekStart = $month->copy()->day($startDay)->startOfDay();
+                    $weekEnd = $month->copy()->day(min($startDay + 6, $month->daysInMonth))->endOfDay();
 
                     return $attempts
-                        ->filter(fn (CourseTestAttempt $attempt): bool => $attempt->test_type->value === $typeValue
-                            && $attempt->created_at->format('Y-m') === $monthKey)
+                        ->filter(function (CourseTestAttempt $attempt) use ($typeValue, $weekStart, $weekEnd): bool {
+                            return $attempt->test_type->value === $typeValue
+                                && $attempt->created_at->betweenIncluded($weekStart, $weekEnd);
+                        })
                         ->count();
                 })->values()->all(),
             ];
         }
 
         return [
-            'categories' => $months->map(fn (Carbon $month) => $month->format('M Y'))->values()->all(),
+            'categories' => $weekStarts
+                ->map(fn (int $startDay): string => $month->copy()->day($startDay)->format('d M'))
+                ->values()
+                ->all(),
             'series' => $series,
+            'colors' => ['#107C85', '#1A7F64', '#E68A2E'],
         ];
     }
 
     /**
-     * @return list<array{label: string, count: int}>
+     * @return list<array{label: string, count: int, color: string}>
      */
     private function statusDistribution(): array
     {
-        $inProgress = CourseTestAttempt::query()
-            ->where('status', CourseTestAttempt::STATUS_IN_PROGRESS)
+        $sequencedTypes = [
+            CourseTestType::Pre->value,
+            CourseTestType::Mock->value,
+            CourseTestType::Final->value,
+        ];
+
+        $attemptQuery = CourseTestAttempt::query()->whereIn('test_type', $sequencedTypes);
+
+        $completed = (clone $attemptQuery)
+            ->where('status', CourseTestAttempt::STATUS_COMPLETED)
             ->count();
 
-        $completedQuery = CourseTestAttempt::query()
-            ->where('status', CourseTestAttempt::STATUS_COMPLETED);
+        $inProgressAttempts = (clone $attemptQuery)
+            ->where('status', CourseTestAttempt::STATUS_IN_PROGRESS)
+            ->get(['started_at']);
 
-        $passed = (clone $completedQuery)->where('passed', true)->count();
-        $failed = (clone $completedQuery)->where('passed', false)->count();
+        $expiredThreshold = now()->subMinutes(CourseTestAttempt::EXAM_TIME_LIMIT_MINUTES);
+        $inProgress = 0;
+        $expired = 0;
+
+        foreach ($inProgressAttempts as $attempt) {
+            if ($attempt->started_at !== null && $attempt->started_at->lte($expiredThreshold)) {
+                $expired++;
+            } else {
+                $inProgress++;
+            }
+        }
 
         return [
-            ['label' => 'In progress', 'count' => $inProgress],
-            ['label' => 'Passed', 'count' => $passed],
-            ['label' => 'Failed', 'count' => $failed],
+            ['label' => 'Completed', 'count' => $completed, 'color' => '#009688'],
+            ['label' => 'In progress', 'count' => $inProgress, 'color' => '#2196F3'],
+            ['label' => 'Pending', 'count' => $this->pendingTestEnrollmentsCount($sequencedTypes), 'color' => '#FF9800'],
+            ['label' => 'Expired', 'count' => $expired, 'color' => '#F44336'],
         ];
+    }
+
+    /**
+     * @param  list<string>  $sequencedTypes
+     */
+    private function pendingTestEnrollmentsCount(array $sequencedTypes): int
+    {
+        $activeOrders = Order::query()
+            ->where('payment_status', PaymentStatus::Completed)
+            ->whereDate('start_date', '<=', now()->toDateString())
+            ->whereDate('end_date', '>=', now()->toDateString())
+            ->get(['user_id', 'course_detail_id']);
+
+        if ($activeOrders->isEmpty()) {
+            return 0;
+        }
+
+        $attemptPairs = CourseTestAttempt::query()
+            ->whereIn('test_type', $sequencedTypes)
+            ->get(['user_id', 'course_detail_id'])
+            ->map(fn (CourseTestAttempt $attempt): string => $attempt->user_id.'-'.$attempt->course_detail_id)
+            ->flip();
+
+        return $activeOrders
+            ->filter(fn (Order $order): bool => ! isset($attemptPairs[$order->user_id.'-'.$order->course_detail_id]))
+            ->count();
     }
 
     /**
@@ -142,9 +224,9 @@ class AdminDashboardService
                 'user_name' => $attempt->user?->name ?? '—',
                 'course_name' => $attempt->courseDetail?->couse_name ?? '—',
                 'test_label' => $attempt->test_type?->label() ?? '—',
-                'status' => $attempt->status === CourseTestAttempt::STATUS_COMPLETED ? 'Completed' : 'In progress',
+                'outcome_label' => $attempt->outcomeLabel(),
+                'outcome_badge_classes' => $attempt->outcomeBadgeClasses(),
                 'score' => $attempt->score_percent !== null ? number_format((float) $attempt->score_percent, 1).'%' : '—',
-                'passed' => $attempt->passed,
                 'completed_at' => $attempt->completed_at?->format('M j, Y g:i A') ?? $attempt->updated_at?->format('M j, Y g:i A') ?? '—',
             ])
             ->all();
