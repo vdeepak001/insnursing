@@ -171,6 +171,20 @@
   --color-impetus-body: #1F2937;
   --color-impetus-success: #10B981;
   --color-impetus-error: #EF4444;
+
+  /* UI status palette — Completed / Pending / Failed (design spec) */
+  --color-ui-success-bg: #E8F5E9;
+  --color-ui-success-text: #2E7D32;
+  --color-ui-success-icon: #2E7D32;
+  --color-ui-warning-bg: #FFF3E0;
+  --color-ui-warning-text: #EF6C00;
+  --color-ui-warning-icon: #EF6C00;
+  --color-ui-error-bg: #FFEBEE;
+  --color-ui-error-text: #C62828;
+  --color-ui-error-icon: #C62828;
+  --color-ui-aborted-bg: #FFF8E1;
+  --color-ui-aborted-text: #FF6F00;
+  --color-ui-aborted-icon: #F57C00;
   --color-impetus-disabled-bg: #E5E7EB;
   --color-impetus-disabled-text: #9CA3AF;
 

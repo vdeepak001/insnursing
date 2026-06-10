@@ -59,7 +59,7 @@ it('lists orders and displays parsed order status ID on order status page', func
     $response->assertSee('John Doe');
     $response->assertSee('IHS42T1234567890');
     $response->assertSee('114537784967');
-    $response->assertDontSee('<td>' . $manualOrder->id . '</td>', false);
+    $response->assertDontSee('<td>'.$manualOrder->id.'</td>', false);
 
     // Verify filtering by pending CCAvenue transaction ID
     $filterPendingResponse = $this->actingAs($staff)->get(route('super-admin.order-status.index', [
@@ -76,4 +76,21 @@ it('lists orders and displays parsed order status ID on order status page', func
     $filterCompletedResponse->assertSuccessful();
     $filterCompletedResponse->assertSee('114537784967');
     $filterCompletedResponse->assertDontSee('IHS42T1234567890');
+});
+
+it('renders payment status badges with ui palette colors on order status page', function () {
+    $staff = User::factory()->create(['role_type' => 'superadmin']);
+
+    $response = $this->actingAs($staff)->get(route('super-admin.order-status.index'));
+
+    $response->assertSuccessful();
+    $response->assertSee('bg-ui-success-bg', false);
+    $response->assertSee('text-ui-success-text', false);
+    $response->assertSee('bg-ui-warning-bg', false);
+    $response->assertSee('text-ui-warning-text', false);
+    $response->assertSee('bg-ui-error-bg', false);
+    $response->assertSee('text-ui-error-text', false);
+    $response->assertSee('bg-ui-aborted-bg', false);
+    $response->assertSee('rounded-lg', false);
+    $response->assertSee('w-[9.25rem]', false);
 });

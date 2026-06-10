@@ -133,3 +133,36 @@ it('filters order details by search, mode and status', function () {
     $response->assertSee('filter-target@example.test');
     $response->assertDontSee('filter-other@example.test');
 });
+
+it('renders payment status badges with ui palette colors on order details page', function () {
+    $staff = User::factory()->create(['role_type' => 'superadmin']);
+
+    $learner = User::factory()->create(['role_type' => 'user']);
+    $course = CourseDetail::query()->create([
+        'couse_name' => 'Badge Test Course',
+        'description' => 'Test',
+        'active_status' => 1,
+    ]);
+
+    foreach (['completed', 'pending', 'failed'] as $status) {
+        Order::query()->create([
+            'user_id' => $learner->id,
+            'course_detail_id' => $course->id,
+            'state_council_id' => null,
+            'payment_mode' => 'internet_banking',
+            'start_date' => now()->toDateString(),
+            'end_date' => now()->addDays(30)->toDateString(),
+            'payment_status' => $status,
+            'recorded_by_id' => $staff->id,
+        ]);
+    }
+
+    $response = $this->actingAs($staff)->get(route('super-admin.order-details.index'));
+
+    $response->assertSuccessful();
+    $response->assertSee('bg-ui-success-bg', false);
+    $response->assertSee('bg-ui-warning-bg', false);
+    $response->assertSee('bg-ui-error-bg', false);
+    $response->assertSee('rounded-lg', false);
+    $response->assertSee('w-[9.25rem]', false);
+});

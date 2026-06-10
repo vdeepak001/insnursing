@@ -12,26 +12,26 @@
     $config = match ($paymentStatus) {
         PaymentStatus::Completed => [
             'label' => $paymentStatus->label(),
-            'container' => 'border border-emerald-200 bg-emerald-50 text-emerald-800',
-            'iconWrap' => 'bg-emerald-500 text-white',
+            'container' => 'border border-ui-success-text/15 bg-ui-success-bg text-ui-success-text',
+            'iconWrap' => 'bg-ui-success-icon text-white',
             'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />',
         ],
         PaymentStatus::Pending => [
             'label' => $paymentStatus->label(),
-            'container' => 'border border-orange-200 bg-orange-50 text-orange-800',
-            'iconWrap' => 'text-orange-600',
+            'container' => 'border border-ui-warning-text/15 bg-ui-warning-bg text-ui-warning-text',
+            'iconWrap' => 'text-ui-warning-icon',
             'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />',
         ],
         PaymentStatus::Failed => [
             'label' => $paymentStatus->label(),
-            'container' => 'border border-rose-200 bg-rose-50 text-rose-800',
-            'iconWrap' => 'bg-rose-500 text-white',
+            'container' => 'border border-ui-error-text/15 bg-ui-error-bg text-ui-error-text',
+            'iconWrap' => 'bg-ui-error-icon text-white',
             'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />',
         ],
         PaymentStatus::Aborted => [
             'label' => $paymentStatus->label(),
-            'container' => 'border border-amber-200 bg-amber-50 text-amber-900',
-            'iconWrap' => 'bg-amber-500 text-white',
+            'container' => 'border border-ui-aborted-text/15 bg-ui-aborted-bg text-ui-aborted-text',
+            'iconWrap' => 'bg-ui-aborted-icon text-white',
             'icon' => '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />',
         ],
         default => [
@@ -43,7 +43,7 @@
     };
 @endphp
 
-<span {{ $attributes->merge(['class' => 'inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold '.$config['container']]) }}>
+<span {{ $attributes->merge(['class' => 'inline-flex w-[9.25rem] items-center justify-center gap-2 rounded-lg px-3 py-1.5 text-sm font-semibold '.$config['container']]) }}>
     <span @class([
         'flex h-6 w-6 shrink-0 items-center justify-center rounded-full',
         $config['iconWrap'],
@@ -53,5 +53,5 @@
             {!! $config['icon'] !!}
         </svg>
     </span>
-    <span>{{ $config['label'] }}</span>
+    <span class="shrink-0">{{ $config['label'] }}</span>
 </span>
