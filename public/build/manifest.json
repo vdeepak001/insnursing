@@ -4,7 +4,7 @@
     "name": "apexcharts.esm"
   },
   "resources/css/app.css": {
-    "file": "assets/app-C1GUE-Cb.css",
+    "file": "assets/app-U7jtoPJv.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -13,7 +13,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-wfdJrQVh.js",
+    "file": "assets/app-Be4iTCad.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -26,7 +26,7 @@
       "resources/js/components/chart/chart-8.js",
       "resources/js/components/chart/chart-13.js",
       "resources/js/components/chart/dashboard-charts.js",
-      "resources/js/components/chart/test-attempts-charts.js",
+      "resources/js/components/chart/results-charts.js",
       "resources/js/components/calendar-init.js"
     ]
   },
@@ -81,10 +81,10 @@
       "_apexcharts.esm-DjuKEj9n.js"
     ]
   },
-  "resources/js/components/chart/test-attempts-charts.js": {
-    "file": "assets/test-attempts-charts-BAwqFl3s.js",
-    "name": "test-attempts-charts",
-    "src": "resources/js/components/chart/test-attempts-charts.js",
+  "resources/js/components/chart/results-charts.js": {
+    "file": "assets/results-charts-CVdnSAnh.js",
+    "name": "results-charts",
+    "src": "resources/js/components/chart/results-charts.js",
     "isDynamicEntry": true,
     "imports": [
       "_apexcharts.esm-DjuKEj9n.js"

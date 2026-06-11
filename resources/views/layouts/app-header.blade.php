@@ -1,11 +1,11 @@
-<header class="sticky top-0 w-full bg-white border-b border-gray-200 z-99999 dark:border-gray-800 dark:bg-gray-900">
+<header class="sticky top-0 w-full bg-impetus-teal border-b border-impetus-teal-pressed z-99999">
     <!-- Desktop Header Layout (xl and up) -->
     <div class="hidden xl:flex items-center justify-between h-16 px-6">
         
         <!-- Left Side: Logo & Navigation Menu -->
         <div class="flex items-center gap-6 grow">
             <!-- Desktop Logo -->
-            <a href="/" class="flex items-center shrink-0 hover:opacity-90 transition-opacity">
+            <a href="/" class="flex shrink-0 items-center rounded-lg bg-white px-3 py-1.5 shadow-sm transition-opacity hover:opacity-95">
                 <img src="/Impetus-logo.png" alt="IHS Nursing" class="h-9 w-auto object-contain" />
             </a>
 
@@ -14,7 +14,7 @@
                 use App\Helpers\MenuHelper;
                 $menuGroups = MenuHelper::getMenuGroups();
             @endphp
-            <nav class="flex items-center gap-1">
+            <nav class="flex items-center gap-3">
                 @foreach ($menuGroups[0]['items'] as $itemIndex => $item)
                     @php
                         $isParentActive = false;
@@ -33,10 +33,10 @@
                     @if (isset($item['subItems']))
                         <!-- Dropdown Menu Item -->
                         <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                            <button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 font-outfit"
-                                :class="open || {{ $isParentActive ? 'true' : 'false' }} ? 'bg-orange-50 text-impetus-orange font-bold border border-orange-100/30' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 border border-transparent dark:text-gray-300 dark:hover:bg-white/5'">
+                            <button class="group inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium transition-all duration-200 font-outfit"
+                                :class="open || {{ $isParentActive ? 'true' : 'false' }} ? 'bg-orange-50 text-impetus-orange font-bold border border-orange-100/30' : 'text-white/90 hover:bg-white/15 hover:text-white border border-transparent'">
                                 {{ $item['name'] }}
-                                <svg class="w-3.5 h-3.5 transition-transform duration-200 text-gray-400" :class="{ 'rotate-180 text-impetus-orange': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-3.5 h-3.5 transition-transform duration-200 text-white/70 group-hover:text-white" :class="{ 'rotate-180 text-impetus-orange group-hover:text-impetus-orange': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                                 </svg>
                             </button>
@@ -63,7 +63,7 @@
                         <!-- Simple Link Item -->
                         <a href="{{ $item['path'] }}"
                             class="px-3 py-2 text-sm font-medium rounded-xl transition-all duration-200 font-outfit border border-transparent"
-                            :class="{{ $isParentActive ? 'true' : 'false' }} ? 'bg-orange-50 text-impetus-orange font-bold border-orange-100/30' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-white/5'">
+                            :class="{{ $isParentActive ? 'true' : 'false' }} ? 'bg-orange-50 text-impetus-orange font-bold border-orange-100/30' : 'text-white/90 hover:bg-white/15 hover:text-white'">
                             {{ $item['name'] }}
                         </a>
                     @endif
@@ -71,32 +71,9 @@
             </nav>
         </div>
 
-        <!-- Right Side: Search Bar & User Dropdown -->
-        <div class="flex items-center gap-5 shrink-0 ml-4">
-            <!-- Search Bar -->
-            <div class="relative w-[185px] 2xl:w-[280px]">
-                <form onsubmit="return false;">
-                    <div class="relative">
-                        <span class="absolute -translate-y-1/2 pointer-events-none left-3.5 top-1/2 text-gray-400">
-                            <!-- Search Icon -->
-                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
-                        </span>
-                        <input type="text" placeholder="Search..."
-                            class="dark:bg-dark-900 h-10 w-full rounded-xl border border-gray-200 bg-gray-50/50 pl-10 pr-10 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-impetus-orange focus:bg-white focus:outline-hidden focus:ring-2 focus:ring-impetus-orange/15 transition-all duration-200 dark:border-gray-800 dark:text-white/90 dark:placeholder:text-white/30" />
-                        <span class="absolute right-2.5 top-1/2 -translate-y-1/2 inline-flex items-center gap-0.5 rounded-lg border border-gray-200 bg-white px-1.5 py-0.5 text-[10px] font-semibold text-gray-400 shadow-2xs dark:border-gray-800 dark:bg-white/[0.03]">
-                            <span>⌘</span>
-                            <span>K</span>
-                        </span>
-                    </div>
-                </form>
-            </div>
-
-            <!-- User Dropdown -->
-            <div class="border-l border-gray-200 dark:border-gray-800 pl-5 h-8 flex items-center">
-                <x-header.user-dropdown />
-            </div>
+        <!-- Right Side: User Dropdown -->
+        <div class="flex items-center shrink-0 ml-4">
+            <x-header.user-dropdown light />
         </div>
     </div>
 
@@ -104,8 +81,8 @@
     <div class="xl:hidden flex items-center justify-between h-14 px-4 relative" x-data="{ isApplicationMenuOpen: false }">
         <!-- Mobile Menu Toggle Button (visible below xl) -->
         <button
-            class="flex items-center justify-center w-10 h-10 text-gray-500 rounded-lg dark:text-gray-400"
-            :class="{ 'bg-gray-100 dark:bg-white/[0.03]': $store.sidebar.isMobileOpen }"
+            class="flex items-center justify-center w-10 h-10 text-white rounded-lg hover:bg-white/15"
+            :class="{ 'bg-white/15': $store.sidebar.isMobileOpen }"
             @click="$store.sidebar.toggleMobileOpen()" aria-label="Toggle Mobile Menu">
             <svg x-show="!$store.sidebar.isMobileOpen" width="16" height="12" viewBox="0 0 16 12" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -122,13 +99,13 @@
         </button>
 
         <!-- Mobile Logo -->
-        <a href="/" class="flex items-center">
+        <a href="/" class="flex items-center rounded-lg bg-white px-2.5 py-1 shadow-sm">
             <img src="/Impetus-logo.png" alt="Logo" class="h-8 w-auto object-contain" />
         </a>
 
         <!-- Mobile Profile Menu Toggle Button -->
         <button @click="isApplicationMenuOpen = !isApplicationMenuOpen"
-            class="flex items-center justify-center w-10 h-10 text-gray-700 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800">
+            class="flex items-center justify-center w-10 h-10 text-white rounded-lg hover:bg-white/15">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M5.99902 10.4951C6.82745 10.4951 7.49902 11.1667 7.49902 11.9951V12.0051C7.49902 12.8335 6.82745 13.5051 5.99902 13.5051C5.1706 13.5051 4.49902 12.8335 4.49902 12.0051V11.9951C4.49902 11.1667 5.1706 10.4951 5.99902 10.4951ZM17.999 10.4951C18.8275 10.4951 19.499 11.1667 19.499 11.9951V12.0051C19.499 12.8335 18.8275 13.5051 17.999 13.5051C17.1706 13.5051 16.499 12.8335 16.499 12.0051V11.9951C16.499 11.1667 17.1706 10.4951 17.999 10.4951ZM13.499 11.9951C13.499 11.1667 12.8275 10.4951 11.999 10.4951C11.1706 10.4951 10.499 11.1667 10.499 11.9951V12.0051C10.499 12.8335 11.1706 13.5051 11.999 13.5051C12.8275 13.5051 13.499 12.8335 13.499 12.0051V11.9951Z"

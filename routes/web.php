@@ -13,12 +13,12 @@ use App\Http\Controllers\SuperAdmin\CourseDetailController;
 use App\Http\Controllers\SuperAdmin\CourseMaterialController;
 use App\Http\Controllers\SuperAdmin\CourseQuestionController;
 use App\Http\Controllers\SuperAdmin\CourseSubTitleController;
-use App\Http\Controllers\SuperAdmin\CourseTestAttemptsController;
 use App\Http\Controllers\SuperAdmin\CourseTitleController;
 use App\Http\Controllers\SuperAdmin\LevelScoreController;
 use App\Http\Controllers\SuperAdmin\OrderDetailsController;
 use App\Http\Controllers\SuperAdmin\OrderStatusController;
 use App\Http\Controllers\SuperAdmin\ReportsController;
+use App\Http\Controllers\SuperAdmin\ResultsController;
 use App\Http\Controllers\SuperAdmin\StateController;
 use App\Http\Controllers\SuperAdmin\StateCouncilController;
 use App\Http\Controllers\SuperAdmin\UserCourseOrderController;
@@ -272,9 +272,11 @@ foreach ($prefixes as $prefix) {
         }
 
         if (in_array($prefix, ['super-admin', 'admin', 'sme', 'support'], true)) {
-            Route::get('tests/{testSegment}', [CourseTestAttemptsController::class, 'index'])
-                ->where('testSegment', 'pretest|mock-test|final-test|practice-test|results')
-                ->name($prefix.'.tests.index');
+            Route::get('results', [ResultsController::class, 'index'])
+                ->name($prefix.'.results.index');
+
+            Route::get('tests/{testSegment}', fn () => redirect()->route($prefix.'.results.index'))
+                ->where('testSegment', 'pretest|mock-test|final-test|practice-test|results');
         }
 
         if (in_array($prefix, ['super-admin', 'admin', 'support'], true)) {

@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('dashboard-chart-data')) {
         import('./components/chart/dashboard-charts').then(module => module.initDashboardCharts());
     }
-    if (document.getElementById('test-attempts-chart-data')) {
-        import('./components/chart/test-attempts-charts').then(module => module.initTestAttemptsCharts());
+    if (document.getElementById('results-chart-data')) {
+        import('./components/chart/results-charts').then(module => module.initResultsCharts());
     }
 
     // Calendar init

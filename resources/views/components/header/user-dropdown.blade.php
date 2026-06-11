@@ -1,3 +1,5 @@
+@props(['light' => false])
+
 @php
     $role = Auth::user()->role_type;
     $displayRole = match($role) {
@@ -19,7 +21,11 @@
 }" @click.away="closeDropdown()">
     <!-- User Button -->
     <button
-        class="flex items-center text-gray-700 dark:text-gray-400"
+        @class([
+            'flex items-center',
+            'text-white' => $light,
+            'text-gray-700 dark:text-gray-400' => ! $light,
+        ])
         @click.prevent="toggleDropdown()"
         type="button"
     >
