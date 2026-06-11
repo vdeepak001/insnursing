@@ -2,6 +2,7 @@
 
 use App\Enums\CourseTestType;
 use App\Enums\PaymentStatus;
+use App\Helpers\DateHelper;
 use App\Models\CourseDetail;
 use App\Models\CourseTestAttempt;
 use App\Models\Order;
@@ -16,9 +17,14 @@ it('defaults results date filters to the current month', function () {
     $response->assertSuccessful();
     $response->assertSee('Results', false);
     $response->assertSee('Module Name', false);
-    $response->assertSee('Final 2', false);
-    $response->assertSee('value="'.now()->startOfMonth()->toDateString().'"', false);
-    $response->assertSee('value="'.now()->endOfMonth()->toDateString().'"', false);
+    $response->assertSee('Final-2', false);
+    $response->assertSee(DateHelper::displayRange(
+        now()->startOfMonth()->toDateString(),
+        now()->endOfMonth()->toDateString()
+    ), false);
+    $response->assertSee('value="'.DateHelper::displayDateString(now()->startOfMonth()->toDateString()).'"', false);
+    $response->assertSee('value="'.DateHelper::displayDateString(now()->endOfMonth()->toDateString()).'"', false);
+    $response->assertSee('placeholder="dd/mm/yyyy"', false);
 });
 
 it('shows purchased modules and completion counts on the results page', function () {
@@ -97,8 +103,8 @@ it('filters results by purchase date range', function () {
     $currentMonthResponse->assertDontSee('Dated Purchase Module', false);
 
     $rangeResponse = $this->actingAs($admin)->get(route('admin.results.index', [
-        'from_date' => now()->subDays(30)->toDateString(),
-        'to_date' => now()->toDateString(),
+        'from_date' => DateHelper::displayDateString(now()->subDays(30)->toDateString()),
+        'to_date' => DateHelper::displayDateString(now()->toDateString()),
     ]));
     $rangeResponse->assertSuccessful();
     $rangeResponse->assertSee('Dated Purchase Module', false);

@@ -17,14 +17,18 @@
         <div class="flex flex-wrap items-end gap-3">
             <div class="min-w-[150px]">
                 <label for="from-date" class="mb-1 block text-xs font-medium text-gray-600 dark:text-gray-300">From date</label>
-                <input id="from-date" name="from_date" type="date" value="{{ $filters['from_date'] }}"
+                <input id="from-date" name="from_date" type="text" inputmode="numeric"
+                    value="{{ DateHelper::displayDateString($filters['from_date']) }}"
+                    placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}" maxlength="10"
                     onchange="this.form.submit()"
                     class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100" />
             </div>
 
             <div class="min-w-[150px]">
                 <label for="to-date" class="mb-1 block text-xs font-medium text-gray-600 dark:text-gray-300">To date</label>
-                <input id="to-date" name="to_date" type="date" value="{{ $filters['to_date'] }}"
+                <input id="to-date" name="to_date" type="text" inputmode="numeric"
+                    value="{{ DateHelper::displayDateString($filters['to_date']) }}"
+                    placeholder="dd/mm/yyyy" pattern="\d{2}/\d{2}/\d{4}" maxlength="10"
                     onchange="this.form.submit()"
                     class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100" />
             </div>

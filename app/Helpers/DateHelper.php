@@ -57,4 +57,23 @@ class DateHelper
 
         return Carbon::parse($date)->format(self::INPUT_DATE);
     }
+
+    public static function parseForFilter(?string $date): Carbon
+    {
+        if (blank($date)) {
+            return now()->startOfDay();
+        }
+
+        $date = trim($date);
+
+        foreach ([self::DISPLAY_DATE, 'd-m-Y', self::INPUT_DATE] as $format) {
+            try {
+                return Carbon::createFromFormat($format, $date)->startOfDay();
+            } catch (\Exception) {
+                continue;
+            }
+        }
+
+        return Carbon::parse($date)->startOfDay();
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Enums\CourseTestType;
 use App\Enums\PaymentStatus;
+use App\Helpers\DateHelper;
 use App\Models\CourseDetail;
 use App\Models\CourseTestAttempt;
 use App\Models\Order;
@@ -18,11 +19,15 @@ class ResultsReportService
      */
     public function resolveDateRange(Request $request): array
     {
-        $fromDate = (string) $request->input('from_date', now()->startOfMonth()->toDateString());
-        $toDate = (string) $request->input('to_date', now()->endOfMonth()->toDateString());
+        $from = DateHelper::parseForFilter(
+            $request->input('from_date', now()->startOfMonth()->toDateString())
+        );
+        $to = DateHelper::parseForFilter(
+            $request->input('to_date', now()->endOfMonth()->toDateString())
+        )->endOfDay();
 
-        $from = Carbon::parse($fromDate)->startOfDay();
-        $to = Carbon::parse($toDate)->endOfDay();
+        $fromDate = $from->toDateString();
+        $toDate = $to->toDateString();
 
         if ($from->greaterThan($to)) {
             [$from, $to] = [$to->copy()->startOfDay(), $from->copy()->endOfDay()];

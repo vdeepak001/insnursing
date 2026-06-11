@@ -17,3 +17,9 @@ it('keeps html date inputs in yyyy-mm-dd format', function () {
 
     expect(DateHelper::forInput($date))->toBe('2026-06-11');
 });
+
+it('parses display and iso filter dates', function () {
+    expect(DateHelper::parseForFilter('11/06/2026')->toDateString())->toBe('2026-06-11');
+    expect(DateHelper::parseForFilter('2026-06-11')->toDateString())->toBe('2026-06-11');
+    expect(DateHelper::parseForFilter('11-06-2026')->toDateString())->toBe('2026-06-11');
+});
