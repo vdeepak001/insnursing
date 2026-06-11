@@ -86,7 +86,7 @@
                 <thead class="bg-gradient-to-r from-impetus-teal to-impetus-orange">
                     <tr>
                         <th scope="col"
-                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit w-14">
+                            class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit whitespace-nowrap w-20">
                             S. No
                         </th>
                         <th scope="col"

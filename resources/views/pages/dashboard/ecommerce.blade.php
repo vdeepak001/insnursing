@@ -209,7 +209,7 @@
                     <h3 class="font-outfit text-lg font-bold text-impetus-navy">Top 10 Performing Tests</h3>
                     <p class="mt-0.5 text-xs text-slate-500">Highest average scores among completed attempts.</p>
 
-                    <div class="mt-6 max-h-[32rem] space-y-4 overflow-y-auto pr-1">
+                    <div class="mt-6 max-h-[45rem] space-y-4 overflow-y-auto pr-1">
                         @forelse($topPerforming as $index => $item)
                             <div class="flex items-center gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-4">
                                 <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-impetus-navy to-slate-800 font-outfit text-sm font-bold text-white">

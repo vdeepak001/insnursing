@@ -8,7 +8,7 @@
             {{ $title }}
         </h2>
         <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
-            Module purchases and test completion for
+            Module Purchased and test completion for
             {{ DateHelper::displayRange($filters['from_date'], $filters['to_date']) }}.
         </p>
     </div>
