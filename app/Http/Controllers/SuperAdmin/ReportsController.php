@@ -66,6 +66,9 @@ class ReportsController extends Controller
 
                 $userAttempts = $this->buildUserAttempts($request, $councilIds, $stateUserIds);
             }
+        } else {
+            $stateCourses = CourseDetail::orderBy('couse_name')->get();
+            $userAttempts = $this->buildUserAttempts($request);
         }
 
         return view('super-admin.reports.index', [
@@ -200,7 +203,7 @@ class ReportsController extends Controller
         });
     }
 
-    private function buildUserAttempts(Request $request, array $councilIds, array $stateUserIds): Collection
+    private function buildUserAttempts(Request $request, ?array $councilIds = null, ?array $stateUserIds = null): Collection
     {
         $selectedCourseId = $request->query('course_id');
         $fromDate = $request->query('from_date');
@@ -208,11 +211,14 @@ class ReportsController extends Controller
         $examType = $request->query('exam_type');
 
         $query = CourseTestAttempt::with(['user', 'courseDetail'])
-            ->where(function ($builder) use ($councilIds, $stateUserIds) {
+            ->where('status', CourseTestAttempt::STATUS_COMPLETED);
+
+        if ($councilIds !== null && $stateUserIds !== null) {
+            $query->where(function ($builder) use ($councilIds, $stateUserIds) {
                 $builder->whereIn('state_council_id', $councilIds)
                     ->orWhereIn('user_id', $stateUserIds);
-            })
-            ->where('status', CourseTestAttempt::STATUS_COMPLETED);
+            });
+        }
 
         if ($selectedCourseId) {
             $query->where('course_detail_id', $selectedCourseId);

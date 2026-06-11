@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="mb-10 flex flex-col items-center justify-between gap-4 md:flex-row">
+    <div class="mb-6 flex flex-col items-center justify-between gap-4 md:flex-row">
         <h2 class="text-3xl font-extrabold tracking-tight" style="color: var(--color-impetus-orange)">
             {{ $selectedState ? 'Report: '.$selectedState->name : 'Reports' }}
         </h2>
@@ -60,62 +60,56 @@
         $moduleTableTitle = $selectedState ? 'State Module Completion' : 'Overall Module Completion';
     @endphp
 
-    <div class="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-        <div class="flex flex-col items-center rounded-3xl border border-gray-100 bg-white p-6 text-center shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl group dark:border-gray-700 dark:bg-gray-800">
-            <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 transition-transform duration-300 group-hover:scale-110 dark:bg-blue-900/20">
-                <svg class="h-7 w-7 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                </svg>
+    <div class="grid grid-cols-1 items-start gap-6 xl:grid-cols-12">
+        <div class="flex flex-col gap-6 xl:col-span-4">
+            <div class="grid grid-cols-3 gap-3">
+                <div class="flex flex-col items-center rounded-2xl border border-gray-100 bg-white px-2 py-4 text-center shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                    <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20">
+                        <svg class="h-6 w-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-gray-400 dark:text-gray-500">Registered Users</span>
+                    <span class="font-outfit text-2xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['registered_users']) }}</span>
+                </div>
+
+                <div class="flex flex-col items-center rounded-2xl border border-gray-100 bg-white px-2 py-4 text-center shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                    <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-900/20">
+                        <svg class="h-6 w-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                    </div>
+                    <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-gray-400 dark:text-gray-500">Purchased Modules</span>
+                    <span class="font-outfit text-2xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['purchased_modules']) }}</span>
+                </div>
+
+                <div class="flex flex-col items-center rounded-2xl border border-gray-100 bg-white px-2 py-4 text-center shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                    <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-purple-50 dark:bg-purple-900/20">
+                        <svg class="h-6 w-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-gray-400 dark:text-gray-500">Modules Completed</span>
+                    <span class="font-outfit text-2xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['modules_completed']) }}</span>
+                </div>
             </div>
-            <span class="mb-1 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">Registered Users</span>
-            <span class="text-3xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['registered_users']) }}</span>
+
+            @include('super-admin.reports.partials.module-completion-table', [
+                'title' => $moduleTableTitle,
+                'moduleRows' => $moduleRows,
+                'emptyMessage' => $selectedState
+                    ? 'No completion data found for this state.'
+                    : 'No completion data found.',
+            ])
         </div>
 
-        <div class="flex flex-col items-center rounded-3xl border border-gray-100 bg-white p-6 text-center shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl group dark:border-gray-700 dark:bg-gray-800">
-            <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-emerald-50 transition-transform duration-300 group-hover:scale-110 dark:bg-emerald-900/20">
-                <svg class="h-7 w-7 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                </svg>
-            </div>
-            <span class="mb-1 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">Purchased Modules</span>
-            <span class="text-3xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['purchased_modules']) }}</span>
-        </div>
-
-        <div class="flex flex-col items-center rounded-3xl border border-gray-100 bg-white p-6 text-center shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl group dark:border-gray-700 dark:bg-gray-800">
-            <div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-purple-50 transition-transform duration-300 group-hover:scale-110 dark:bg-purple-900/20">
-                <svg class="h-7 w-7 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-            </div>
-            <span class="mb-1 text-[10px] font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">Modules Completed</span>
-            <span class="text-3xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['modules_completed']) }}</span>
+        <div class="xl:col-span-8">
+            @include('super-admin.reports.partials.user-performance-section', [
+                'selectedState' => $selectedState,
+                'stateCourses' => $stateCourses,
+                'userAttempts' => $userAttempts,
+                'filters' => $filters,
+            ])
         </div>
     </div>
-
-    @if ($selectedState)
-        <div class="grid grid-cols-1 gap-6 xl:grid-cols-12">
-            <div class="xl:col-span-4">
-                @include('super-admin.reports.partials.module-completion-table', [
-                    'title' => $moduleTableTitle,
-                    'moduleRows' => $moduleRows,
-                    'emptyMessage' => 'No completion data found for this state.',
-                ])
-            </div>
-
-            <div class="xl:col-span-8">
-                @include('super-admin.reports.partials.user-performance-section', [
-                    'selectedState' => $selectedState,
-                    'stateCourses' => $stateCourses,
-                    'userAttempts' => $userAttempts,
-                    'filters' => $filters,
-                ])
-            </div>
-        </div>
-    @else
-        @include('super-admin.reports.partials.module-completion-table', [
-            'title' => $moduleTableTitle,
-            'moduleRows' => $moduleRows,
-            'emptyMessage' => 'No completion data found.',
-        ])
-    @endif
 @endsection

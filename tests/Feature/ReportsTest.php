@@ -16,7 +16,8 @@ it('shows overall reports summary on the reports page', function () {
     $response->assertSee('Registered Users', false);
     $response->assertSee('Modules Completed', false);
     $response->assertSee('Overall Report Module', false);
-    $response->assertDontSee('Report:', false);
+    $response->assertSee('Unique ID', false);
+    $response->assertSee('All Modules', false);
 });
 
 it('shows state report and user performance on the same page when a state is selected', function () {

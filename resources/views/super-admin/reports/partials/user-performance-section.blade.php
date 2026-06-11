@@ -64,8 +64,8 @@
     }
 </style>
 
-<div class="mb-6 rounded-2xl border border-gray-100 bg-white p-6 shadow-lg dark:border-gray-700 dark:bg-gray-800">
-    <form action="{{ request()->url() }}" method="GET" class="flex flex-wrap items-end gap-4">
+<div class="mb-4 rounded-2xl border border-gray-100 bg-white p-4 shadow-lg dark:border-gray-700 dark:bg-gray-800">
+    <form action="{{ request()->url() }}" method="GET" class="flex flex-wrap items-end gap-3">
         <input type="hidden" name="state_id" value="{{ request('state_id') }}">
 
         <div class="min-w-[200px] flex-1">
@@ -185,7 +185,7 @@
 
 <div id="print-report-view" class="hidden">
     <div class="mb-8 text-center">
-        <h1 class="text-2xl font-bold">User Performance Report: {{ $selectedState->name }}</h1>
+        <h1 class="text-2xl font-bold">User Performance Report: {{ $selectedState?->name ?? 'All States' }}</h1>
         <p class="text-gray-600">Generated on: {{ now()->displayDateTime() }}</p>
     </div>
     <table class="w-full border-collapse border border-gray-300 text-left">

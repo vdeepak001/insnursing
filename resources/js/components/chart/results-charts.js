@@ -7,6 +7,12 @@ const chartTargets = [
     { key: 'final_2', elementId: 'resultsChartFinal2' },
 ];
 
+const formatPercent = (value) => {
+    const rounded = Math.round(value * 10) / 10;
+
+    return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+};
+
 export function initResultsCharts() {
     const configEl = document.getElementById('results-chart-data');
 
@@ -70,7 +76,7 @@ export function initResultsCharts() {
                 fontSize: '12px',
                 formatter: (seriesName, opts) => {
                     const value = opts.w.globals.series[opts.seriesIndex];
-                    const percentage = total > 0 ? ((value / total) * 100).toFixed(0) : '0';
+                    const percentage = total > 0 ? formatPercent((value / total) * 100) : '0';
 
                     return `${seriesName} ${percentage}%`;
                 },
