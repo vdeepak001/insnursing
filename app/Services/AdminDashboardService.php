@@ -220,15 +220,20 @@ class AdminDashboardService
             ->latest('updated_at')
             ->limit(10)
             ->get()
-            ->map(fn (CourseTestAttempt $attempt): array => [
-                'user_name' => $attempt->user?->name ?? '—',
-                'course_name' => $attempt->courseDetail?->couse_name ?? '—',
-                'test_label' => $attempt->test_type?->label() ?? '—',
-                'outcome_label' => $attempt->outcomeLabel(),
-                'outcome_badge_classes' => $attempt->outcomeBadgeClasses(),
-                'score' => $attempt->score_percent !== null ? number_format((float) $attempt->score_percent, 1).'%' : '—',
-                'completed_at' => $attempt->completed_at?->format('M j, Y g:i A') ?? $attempt->updated_at?->format('M j, Y g:i A') ?? '—',
-            ])
+            ->map(function (CourseTestAttempt $attempt): array {
+                $timestamp = $attempt->completed_at ?? $attempt->updated_at;
+
+                return [
+                    'user_name' => $attempt->user?->name ?? '—',
+                    'course_name' => $attempt->courseDetail?->couse_name ?? '—',
+                    'test_label' => $attempt->test_type?->label() ?? '—',
+                    'outcome_label' => $attempt->outcomeLabel(),
+                    'outcome_badge_classes' => $attempt->outcomeBadgeClasses(),
+                    'score' => $attempt->score_percent !== null ? number_format((float) $attempt->score_percent, 1).'%' : '—',
+                    'completed_at_date' => $timestamp?->format('M j, Y') ?? '—',
+                    'completed_at_time' => $timestamp?->format('g:i A') ?? '',
+                ];
+            })
             ->all();
     }
 
@@ -250,7 +255,7 @@ class AdminDashboardService
             ])
             ->groupBy('course_detail_id', 'test_type')
             ->orderByDesc('average_score')
-            ->limit(5)
+            ->limit(10)
             ->get();
 
         if ($rows->isEmpty()) {

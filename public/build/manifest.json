@@ -4,7 +4,7 @@
     "name": "apexcharts.esm"
   },
   "resources/css/app.css": {
-    "file": "assets/app-U7jtoPJv.css",
+    "file": "assets/app-BpNEqJXa.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -13,7 +13,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-Be4iTCad.js",
+    "file": "assets/app-hlCEuk_z.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -73,7 +73,7 @@
     "isDynamicEntry": true
   },
   "resources/js/components/chart/dashboard-charts.js": {
-    "file": "assets/dashboard-charts-DdGDN7ia.js",
+    "file": "assets/dashboard-charts-DGNJscH4.js",
     "name": "dashboard-charts",
     "src": "resources/js/components/chart/dashboard-charts.js",
     "isDynamicEntry": true,

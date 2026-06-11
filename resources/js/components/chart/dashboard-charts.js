@@ -145,6 +145,33 @@ export function initDashboardCharts() {
                     formatter: (value) => `${Math.round(value).toLocaleString()} attempts`,
                 },
             },
+            responsive: [
+                {
+                    breakpoint: 640,
+                    options: {
+                        chart: {
+                            height: 360,
+                        },
+                        legend: {
+                            position: 'bottom',
+                            horizontalAlign: 'center',
+                            itemMargin: {
+                                horizontal: 8,
+                                vertical: 4,
+                            },
+                        },
+                        plotOptions: {
+                            pie: {
+                                donut: {
+                                    labels: {
+                                        show: true,
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            ],
         });
 
         statusChart.render();

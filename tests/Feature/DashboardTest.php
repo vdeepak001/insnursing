@@ -56,7 +56,7 @@ test('admin dashboard shows platform and assessment metrics', function () {
     $response->assertSee('This Month', false);
     $response->assertSee('Test Status Distribution', false);
     $response->assertSee('Recent Test Attempts', false);
-    $response->assertSee('Top Performing Tests', false);
+    $response->assertSee('Top 10 Performing Tests', false);
     $response->assertSee($learner->name, false);
     $response->assertSee('Dashboard Metrics Course', false);
     $response->assertSee('Pre test', false);
@@ -134,6 +134,66 @@ test('recent attempts show completed for practice tests without pass fail outcom
     expect($recent)->not->toBeNull();
     expect($recent['outcome_label'])->toBe('Completed');
     expect($recent['score'])->toBe('85.0%');
+    expect($recent)->toHaveKeys(['completed_at_date', 'completed_at_time']);
+    expect($recent['completed_at_time'])->not->toBe('');
+});
+
+test('top performing tests returns up to ten highest scoring module and test pairs', function () {
+    $learner = User::factory()->create(['role_type' => 'user']);
+
+    for ($index = 1; $index <= 12; $index++) {
+        $course = CourseDetail::create([
+            'couse_name' => "Top Ten Course {$index}",
+            'active_status' => 1,
+        ]);
+
+        CourseTestAttempt::create([
+            'user_id' => $learner->id,
+            'course_detail_id' => $course->id,
+            'test_type' => CourseTestType::Pre->value,
+            'status' => CourseTestAttempt::STATUS_COMPLETED,
+            'question_ids' => [1],
+            'score_percent' => $index * 5,
+            'started_at' => now()->subHour(),
+            'completed_at' => now(),
+        ]);
+    }
+
+    $topPerforming = app(AdminDashboardService::class)->build()['top_performing'];
+
+    expect($topPerforming)->toHaveCount(10);
+    expect($topPerforming[0]['course_name'])->toBe('Top Ten Course 12');
+    expect($topPerforming[0]['average_score'])->toBe(60.0);
+    expect($topPerforming[9]['course_name'])->toBe('Top Ten Course 3');
+});
+
+test('recent attempts show date and time on separate lines in dashboard', function () {
+    $admin = User::factory()->create(['role_type' => 'admin']);
+    $learner = User::factory()->create(['role_type' => 'user', 'name' => 'Date Split Learner']);
+    $course = CourseDetail::create([
+        'couse_name' => 'Date Split Course',
+        'active_status' => 1,
+    ]);
+
+    $completedAt = now()->setTime(10, 13);
+
+    CourseTestAttempt::create([
+        'user_id' => $learner->id,
+        'course_detail_id' => $course->id,
+        'test_type' => CourseTestType::Pre->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
+        'question_ids' => [1],
+        'score_percent' => 80.0,
+        'started_at' => $completedAt->copy()->subHour(),
+        'completed_at' => $completedAt,
+    ]);
+
+    $response = $this->actingAs($admin)->get(route('admin.dashboard'));
+
+    $response->assertSuccessful();
+    $response->assertSee($completedAt->format('M j, Y'), false);
+    $response->assertSee($completedAt->format('g:i A'), false);
+    $response->assertSee('dashboardStatusChart', false);
 });
 
 test('recent attempts show passed or failed only for final tests with pass outcome', function () {

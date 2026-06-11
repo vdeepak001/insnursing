@@ -151,7 +151,7 @@
                 <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                     <h3 class="font-outfit text-lg font-bold text-impetus-navy">Test Status Distribution</h3>
                     <p class="mt-0.5 text-xs text-slate-500">Completed, in progress, pending, and expired test activity.</p>
-                    <div class="mt-4" id="dashboardStatusChart"></div>
+                    <div class="mt-4 flex w-full justify-center" id="dashboardStatusChart"></div>
                 </div>
             </div>
 
@@ -186,7 +186,12 @@
                                             </span>
                                         </td>
                                         <td class="px-6 py-4 text-sm font-semibold text-slate-800">{{ $attempt['score'] }}</td>
-                                        <td class="px-6 py-4 text-sm text-slate-500">{{ $attempt['completed_at'] }}</td>
+                                        <td class="px-6 py-4 text-sm text-slate-500">
+                                            <div>{{ $attempt['completed_at_date'] }}</div>
+                                            @if ($attempt['completed_at_time'])
+                                                <div class="text-xs text-slate-400">{{ $attempt['completed_at_time'] }}</div>
+                                            @endif
+                                        </td>
                                     </tr>
                                 @empty
                                     <tr>
@@ -201,20 +206,22 @@
                 </div>
 
                 <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <h3 class="font-outfit text-lg font-bold text-impetus-navy">Top Performing Tests</h3>
+                    <h3 class="font-outfit text-lg font-bold text-impetus-navy">Top 10 Performing Tests</h3>
                     <p class="mt-0.5 text-xs text-slate-500">Highest average scores among completed attempts.</p>
 
-                    <div class="mt-6 space-y-4">
+                    <div class="mt-6 max-h-[32rem] space-y-4 overflow-y-auto pr-1">
                         @forelse($topPerforming as $index => $item)
-                            <div class="flex items-start gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-4">
+                            <div class="flex items-center gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-4">
                                 <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-impetus-navy to-slate-800 font-outfit text-sm font-bold text-white">
                                     {{ $index + 1 }}
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <p class="truncate text-sm font-bold text-slate-800">{{ $item['course_name'] }}</p>
                                     <p class="text-xs text-slate-500">{{ $item['test_label'] }} · {{ number_format($item['attempt_count']) }} attempts</p>
-                                    <p class="mt-1 font-outfit text-lg font-extrabold text-impetus-orange">{{ number_format($item['average_score'], 1) }}%</p>
                                 </div>
+                                <p class="shrink-0 font-outfit text-lg font-extrabold text-impetus-orange">
+                                    {{ number_format($item['average_score'], 1) }}%
+                                </p>
                             </div>
                         @empty
                             <p class="rounded-2xl border border-dashed border-slate-200 bg-slate-50 px-4 py-8 text-center text-sm text-slate-500">
