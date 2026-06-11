@@ -144,7 +144,7 @@
                                                                             <div class="flex items-center justify-between border-t border-slate-50 pt-2 first:border-0 first:pt-0">
                                                                                 <div class="text-[11px] font-medium text-slate-700">
                                                                                     #{{ $attemptCount - $idx }}
-                                                                                    <span class="ml-1 text-[9px] text-slate-500 font-normal">{{ $att->completed_at?->format('d M') }}</span>
+                                                                                    <span class="ml-1 text-[9px] text-slate-500 font-normal">{{ $att->completed_at?->displayDate() }}</span>
                                                                                 </div>
                                                                                 <div @class([
                                                                                     'text-xs font-bold',

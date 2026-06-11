@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers\SuperAdmin;
 
+use App\Enums\CourseTestType;
 use App\Enums\PaymentMode;
 use App\Enums\PaymentStatus;
+use App\Helpers\DateHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreUserCourseOrderRequest;
-use App\Enums\CourseTestType;
-use App\Models\CourseTestAttempt;
+use App\Mail\ModuleActivationMail;
 use App\Models\CourseDetail;
+use App\Models\CourseTestAttempt;
 use App\Models\Order;
 use App\Models\User;
+use App\Services\SmsService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class UserCourseOrderController extends Controller
 {
@@ -70,7 +75,7 @@ class UserCourseOrderController extends Controller
                 $latestOrder = Order::query()
                     ->where('user_id', $user->id)
                     ->where('course_detail_id', $c->id)
-                    ->where('payment_status', \App\Enums\PaymentStatus::Completed)
+                    ->where('payment_status', PaymentStatus::Completed)
                     ->latest('id')
                     ->first();
 
@@ -79,7 +84,7 @@ class UserCourseOrderController extends Controller
                     ->where('course_detail_id', $c->id)
                     ->where('test_type', CourseTestType::Final->value)
                     ->where('status', CourseTestAttempt::STATUS_COMPLETED)
-                    ->when($latestOrder, fn($q) => $q->where('started_at', '>=', $latestOrder->created_at))
+                    ->when($latestOrder, fn ($q) => $q->where('started_at', '>=', $latestOrder->created_at))
                     ->get();
 
                 $isFailed = $finalAttempts->count() >= 2 && ! $finalAttempts->contains('passed', true);
@@ -126,36 +131,36 @@ class UserCourseOrderController extends Controller
             }
 
             $pre = (clone $baseQuery)
-                ->where('test_type', \App\Enums\CourseTestType::Pre->value)
+                ->where('test_type', CourseTestType::Pre->value)
                 ->latest('completed_at')
                 ->first();
 
             $mock = (clone $baseQuery)
-                ->where('test_type', \App\Enums\CourseTestType::Mock->value)
+                ->where('test_type', CourseTestType::Mock->value)
                 ->latest('completed_at')
                 ->first();
 
             $completion = (clone $baseQuery)
-                ->where('test_type', \App\Enums\CourseTestType::Final->value)
+                ->where('test_type', CourseTestType::Final->value)
                 ->orderByDesc('passed')
                 ->latest('completed_at')
                 ->first();
 
-                return [
-                    'id' => $order->id,
-                    'course_id' => $order->course_detail_id,
-                    'course_name' => $order->courseDetail?->couse_name ?? 'N/A',
-                    'purchase_date' => $order->start_date ? $order->start_date->format('d-m-Y') : '-',
-                    'expiry_date' => $order->end_date ? $order->end_date->format('d-m-Y') : '-',
-                    'completion_date' => $completion ? $completion->completed_at->format('d-m-Y') : '-',
-                    'passed' => $completion ? (bool) $completion->passed : false,
-                    'scores' => [
-                        'pre' => $pre ? (float) $pre->score_percent : 0,
-                        'mock' => $mock ? (float) $mock->score_percent : 0,
-                        'final' => $completion ? (float) $completion->score_percent : 0,
-                    ]
-                ];
-            });
+            return [
+                'id' => $order->id,
+                'course_id' => $order->course_detail_id,
+                'course_name' => $order->courseDetail?->couse_name ?? 'N/A',
+                'purchase_date' => DateHelper::display($order->start_date),
+                'expiry_date' => DateHelper::display($order->end_date),
+                'completion_date' => $completion ? DateHelper::display($completion->completed_at) : '-',
+                'passed' => $completion ? (bool) $completion->passed : false,
+                'scores' => [
+                    'pre' => $pre ? (float) $pre->score_percent : 0,
+                    'mock' => $mock ? (float) $mock->score_percent : 0,
+                    'final' => $completion ? (float) $completion->score_percent : 0,
+                ],
+            ];
+        });
 
         return response()->json([
             'orders' => $orders,
@@ -206,16 +211,16 @@ class UserCourseOrderController extends Controller
 
         if ($paymentStatus === PaymentStatus::Completed) {
             try {
-                \Illuminate\Support\Facades\Mail::to($user->email)->send(new \App\Mail\ModuleActivationMail($user, $course, $order));
+                Mail::to($user->email)->send(new ModuleActivationMail($user, $course, $order));
             } catch (\Exception $e) {
-                \Illuminate\Support\Facades\Log::error('Failed to send module activation mail: ' . $e->getMessage());
+                Log::error('Failed to send module activation mail: '.$e->getMessage());
             }
 
             if (filled($user->phone)) {
                 try {
-                    app(\App\Services\SmsService::class)->sendPurchaseConfirmation($user->phone, $course->couse_name ?? '');
+                    app(SmsService::class)->sendPurchaseConfirmation($user->phone, $course->couse_name ?? '');
                 } catch (\Exception $e) {
-                    \Illuminate\Support\Facades\Log::error('Failed to send purchase confirmation SMS from admin panel: ' . $e->getMessage());
+                    Log::error('Failed to send purchase confirmation SMS from admin panel: '.$e->getMessage());
                 }
             }
         }

@@ -282,7 +282,7 @@ class ReportsController extends Controller
                 'mock_score' => $mock ? $mock->score_percent : '-',
                 'final_score_1' => $final1 ? $final1->score_percent : '-',
                 'final_score_2' => $final2 ? $final2->score_percent : '-',
-                'date_of_completion' => $first->completed_at ? $first->completed_at->format('d-m-Y') : '-',
+                'date_of_completion' => $first->completed_at ? $first->completed_at->displayDate() : '-',
                 'time_of_completion' => $first->completed_at ? $first->completed_at->format('h:i A') : '-',
                 'score' => $final1 ? $final1->score_percent : ($mock ? $mock->score_percent : ($pre ? $pre->score_percent : '-')),
             ];

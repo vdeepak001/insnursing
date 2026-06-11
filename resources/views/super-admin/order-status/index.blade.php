@@ -71,7 +71,7 @@
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->user->unique_sequence_number ?? '-' }}</td>
                             <td class="px-6 py-4 text-sm font-normal text-gray-900 dark:text-white uppercase">{{ $order->user->name ?? 'N/A' }}</td>
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->courseDetail->couse_name ?? 'N/A' }}</td>
-                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->created_at->format('d-m-Y') }}</td>
+                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->created_at->displayDate() }}</td>
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->created_at->format('h:i A') }}</td>
                             <td class="px-6 py-4 text-center">
                                 <x-ui.payment-status-badge :status="$order->payment_status" class="mx-auto" />

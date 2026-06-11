@@ -132,7 +132,7 @@ class AdminDashboardService
 
         return [
             'categories' => $weekStarts
-                ->map(fn (int $startDay): string => $month->copy()->day($startDay)->format('d M'))
+                ->map(fn (int $startDay): string => $month->copy()->day($startDay)->displayDate())
                 ->values()
                 ->all(),
             'series' => $series,
@@ -230,7 +230,7 @@ class AdminDashboardService
                     'outcome_label' => $attempt->outcomeLabel(),
                     'outcome_badge_classes' => $attempt->outcomeBadgeClasses(),
                     'score' => $attempt->score_percent !== null ? number_format((float) $attempt->score_percent, 1).'%' : '—',
-                    'completed_at_date' => $timestamp?->format('M j, Y') ?? '—',
+                    'completed_at_date' => $timestamp?->displayDate() ?? '—',
                     'completed_at_time' => $timestamp?->format('g:i A') ?? '',
                 ];
             })

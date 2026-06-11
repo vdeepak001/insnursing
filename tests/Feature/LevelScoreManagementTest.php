@@ -3,6 +3,18 @@
 use App\Models\LevelScore;
 use App\Models\User;
 
+test('admin can view level score page with branded level cards', function () {
+    $admin = User::factory()->create(['role_type' => 'admin']);
+
+    $response = $this->actingAs($admin)->get(route('admin.level-scores.index'));
+
+    $response->assertSuccessful();
+    $response->assertSee('Level Score Information', false);
+    $response->assertSee('Factual Knowledge', false);
+    $response->assertSee('Functional Knowledge', false);
+    $response->assertSee('Critical Application', false);
+});
+
 test('admin can save level score from single page', function () {
     $admin = User::factory()->create(['role_type' => 'admin']);
 

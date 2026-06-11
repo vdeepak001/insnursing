@@ -102,7 +102,7 @@ test('attempts overview groups weekly data for the selected month', function () 
     $overview = app(AdminDashboardService::class)->build($month->format('Y-m'))['charts']['attempts_overview'];
     $series = collect($overview['series'])->keyBy('name');
 
-    expect($overview['categories'][0])->toBe($month->copy()->day(1)->format('d M'));
+    expect($overview['categories'][0])->toBe($month->copy()->day(1)->displayDate());
     expect($overview['colors'])->toBe(['#107C85', '#1A7F64', '#E68A2E']);
     expect($series['Pre Tests']['data'][0])->toBe(1);
     expect($series['Mock Tests']['data'][1])->toBe(1);
@@ -191,7 +191,7 @@ test('recent attempts show date and time on separate lines in dashboard', functi
     $response = $this->actingAs($admin)->get(route('admin.dashboard'));
 
     $response->assertSuccessful();
-    $response->assertSee($completedAt->format('M j, Y'), false);
+    $response->assertSee($completedAt->displayDate(), false);
     $response->assertSee($completedAt->format('g:i A'), false);
     $response->assertSee('dashboardStatusChart', false);
 });

@@ -94,7 +94,7 @@
                                                 </td>
                                                 <td
                                                     style="padding-bottom: 8px; font-size: 14px; font-weight: 600; color: #1e293b;">
-                                                    {{ $order->start_date ? \Carbon\Carbon::parse($order->start_date)->format('d-m-Y') : '-' }}
+                                                    {{ $order->start_date ? \Carbon\Carbon::parse($order->start_date)->displayDate() : '-' }}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -102,7 +102,7 @@
                                                      Date</td>
                                                 <td
                                                     style="padding-bottom: 8px; font-size: 14px; font-weight: 600; color: #1e293b;">
-                                                    {{ $order->end_date ? \Carbon\Carbon::parse($order->end_date)->format('d-m-Y') : '-' }}
+                                                    {{ $order->end_date ? \Carbon\Carbon::parse($order->end_date)->displayDate() : '-' }}
                                                 </td>
                                             </tr>
                                             <tr>

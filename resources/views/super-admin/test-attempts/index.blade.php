@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@php use App\Helpers\DateHelper; @endphp
+
 @section('content')
     <div class="mb-6">
         <h2 class="font-outfit text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
@@ -7,11 +9,11 @@
         </h2>
         <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
             @if ($showResultsAnalytics)
-                Module completion for pretest, mock, and final tests — {{ $filters['from_date'] === $filters['to_date'] ? $filters['from_date'] : $filters['from_date'].' to '.$filters['to_date'] }}.
+                Module completion for pretest, mock, and final tests — {{ DateHelper::displayRange($filters['from_date'], $filters['to_date']) }}.
             @elseif ($showTestTypeColumn)
-                Completed assessment results for {{ $filters['from_date'] === $filters['to_date'] ? $filters['from_date'] : $filters['from_date'].' to '.$filters['to_date'] }}.
+                Completed assessment results for {{ DateHelper::displayRange($filters['from_date'], $filters['to_date']) }}.
             @elseif ($showModuleAnalytics)
-                Module completion overview and learner attempts for {{ $filters['from_date'] === $filters['to_date'] ? $filters['from_date'] : $filters['from_date'].' to '.$filters['to_date'] }}.
+                Module completion overview and learner attempts for {{ DateHelper::displayRange($filters['from_date'], $filters['to_date']) }}.
             @else
                 Learner attempts for {{ strtolower($title) }}.
             @endif
@@ -295,10 +297,10 @@
                                 {{ $attempt->score_percent !== null ? number_format((float) $attempt->score_percent, 1).'%' : '—' }}
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
-                                {{ $attempt->started_at?->format('d-m-Y h:i A') ?? '—' }}
+                                {{ $attempt->started_at?->displayDateTime() ?? '—' }}
                             </td>
                             <td class="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">
-                                {{ $attempt->completed_at?->format('d-m-Y h:i A') ?? '—' }}
+                                {{ $attempt->completed_at?->displayDateTime() ?? '—' }}
                             </td>
                         </tr>
                     @empty

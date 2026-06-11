@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@php use App\Helpers\DateHelper; @endphp
+
 @section('content')
     <div class="mb-6">
         <h2 class="font-outfit text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
@@ -7,7 +9,7 @@
         </h2>
         <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
             Module purchases and test completion for
-            {{ $filters['from_date'] === $filters['to_date'] ? $filters['from_date'] : $filters['from_date'].' to '.$filters['to_date'] }}.
+            {{ DateHelper::displayRange($filters['from_date'], $filters['to_date']) }}.
         </p>
     </div>
 
@@ -41,7 +43,7 @@
                         <th class="px-6 py-4 text-center font-outfit text-xs font-bold uppercase tracking-wider text-white">Pre-Test</th>
                         <th class="px-6 py-4 text-center font-outfit text-xs font-bold uppercase tracking-wider text-white">Mock</th>
                         <th class="px-6 py-4 text-center font-outfit text-xs font-bold uppercase tracking-wider text-white">Final-1</th>
-                        <th class="px-6 py-4 text-center font-outfit text-xs font-bold uppercase tracking-wider text-white">Final 2</th>
+                        <th class="px-6 py-4 text-center font-outfit text-xs font-bold uppercase tracking-wider text-white">Final-2</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
@@ -81,8 +83,8 @@
         @foreach ([
             'pretest' => ['label' => 'Pretest', 'chart_id' => 'resultsChartPretest'],
             'mock' => ['label' => 'Mock', 'chart_id' => 'resultsChartMock'],
-            'final_1' => ['label' => 'Final 1', 'chart_id' => 'resultsChartFinal1'],
-            'final_2' => ['label' => 'Final 2', 'chart_id' => 'resultsChartFinal2'],
+            'final_1' => ['label' => 'Final-1', 'chart_id' => 'resultsChartFinal1'],
+            'final_2' => ['label' => 'Final-2', 'chart_id' => 'resultsChartFinal2'],
         ] as $key => $chart)
             <div class="rounded-3xl border border-gray-100 bg-white p-5 shadow-xl dark:border-gray-700 dark:bg-gray-800">
                 <h3 class="mb-3 text-center font-outfit text-lg font-bold text-impetus-navy">{{ $chart['label'] }}</h3>

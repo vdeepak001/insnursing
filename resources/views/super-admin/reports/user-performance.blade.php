@@ -214,7 +214,7 @@
     <div id="print-report-view" class="hidden">
         <div class="mb-8 text-center">
             <h1 class="text-2xl font-bold">User Performance Report: {{ $selectedState->name }}</h1>
-            <p class="text-gray-600">Generated on: {{ date('d-m-Y h:i A') }}</p>
+            <p class="text-gray-600">Generated on: {{ now()->displayDateTime() }}</p>
         </div>
         <table class="w-full text-left border-collapse border border-gray-300">
             <thead>

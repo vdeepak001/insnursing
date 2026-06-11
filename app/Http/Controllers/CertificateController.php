@@ -47,7 +47,7 @@ class CertificateController extends Controller
             'completion' => $completion,
             'user' => $order->user,
             'course' => $order->courseDetail,
-            'date' => $completion->completed_at->format('d F, Y'),
+            'date' => $completion->completed_at->displayDate(),
             'points' => (int) $points,
         ];
 

@@ -195,7 +195,7 @@
 
                                         @if ($orderId)
                                             @php
-                                                $qrData = "Unique ID: " . $orderId . "\nModule: " . $course->couse_name . "\nDate: " . now()->format('d M, Y');
+                                                $qrData = "Unique ID: " . $orderId . "\nModule: " . $course->couse_name . "\nDate: " . now()->displayDate();
                                                 $qrUrl = "https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=" . urlencode($qrData);
                                             @endphp
                                             <div class="mt-6 flex flex-col items-center gap-4">

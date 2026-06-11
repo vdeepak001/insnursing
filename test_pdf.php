@@ -35,7 +35,7 @@ $order->user_id = 999;
 $order->course_detail_id = 999;
 
 $points = 4;
-$date = $completion->completed_at->format('d F, Y');
+$date = $completion->completed_at->format('d/m/Y');
 
 $data = [
     'order' => $order,

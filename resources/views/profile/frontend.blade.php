@@ -33,7 +33,7 @@
                             <option value="other" @selected(old('gender', auth()->user()->gender) === 'other')>Other</option>
                         </select>
                     </label>
-                    <label class="text-sm font-medium text-slate-700">Date of Birth<input type="date" name="date_of_birth" value="{{ old('date_of_birth', optional(auth()->user()->date_of_birth)->format('Y-m-d')) }}" class="{{ $inputClass }}" /></label>
+                    <label class="text-sm font-medium text-slate-700">Date of Birth<input type="date" name="date_of_birth" value="{{ old('date_of_birth', \App\Helpers\DateHelper::forInput(auth()->user()->date_of_birth)) }}" class="{{ $inputClass }}" /></label>
                     <label class="text-sm font-medium text-slate-700">Aadhar Number<input name="aadhar_number" value="{{ old('aadhar_number', auth()->user()->aadhar_number) }}" class="{{ $inputClass }}" /></label>
                     <label class="text-sm font-medium text-slate-700">Mobile Number<input name="phone" value="{{ old('phone', auth()->user()->phone) }}" class="{{ $inputClass }}" /></label>
                     <label class="text-sm font-medium text-slate-700">Email ID (Username)<input type="email" name="email" value="{{ old('email', auth()->user()->email) }}" class="{{ $inputClass }}" /></label>
@@ -111,9 +111,9 @@
                                 <tr class="border-t border-slate-200">
                                     <td class="px-3 py-3 text-slate-700">{{ $loop->iteration }}</td>
                                     <td class="px-3 py-3 text-slate-700">{{ $courseOrder->courseDetail?->couse_name ?? 'N/A' }}</td>
-                                    <td class="px-3 py-3 text-slate-700">{{ optional($courseOrder->start_date)->format('d-m-Y') ?? '-' }}</td>
-                                    <td class="px-3 py-3 text-slate-700">{{ optional($courseOrder->end_date)->format('d-m-Y') ?? '-' }}</td>
-                                    <td class="px-3 py-3 text-slate-700">{{ $courseOrder->completion ? $courseOrder->completion->completed_at->format('d-m-Y') : '-' }}</td>
+                                    <td class="px-3 py-3 text-slate-700">{{ $courseOrder->start_date?->displayDate() ?? '-' }}</td>
+                                    <td class="px-3 py-3 text-slate-700">{{ $courseOrder->end_date?->displayDate() ?? '-' }}</td>
+                                    <td class="px-3 py-3 text-slate-700">{{ $courseOrder->completion ? $courseOrder->completion->completed_at->displayDate() : '-' }}</td>
                                     <td class="px-3 py-3 text-slate-700">
                                         @if($courseOrder->completion && $courseOrder->completion->passed)
                                             @php
