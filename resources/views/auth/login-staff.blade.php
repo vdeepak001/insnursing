@@ -108,7 +108,7 @@
             </div>
 
             <!-- Right Side: Graphic Panel -->
-            <div class="bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] relative hidden h-full w-full items-center justify-center lg:flex lg:w-1/2 overflow-hidden select-none">
+            <div class="bg-slate-900 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] relative hidden h-full w-full items-center justify-center lg:flex lg:w-1/2 overflow-hidden select-none">
                 <!-- Glowing Blurs -->
                 <div class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-impetus-orange/10 rounded-full blur-[120px] pointer-events-none"></div>
                 <div class="absolute -bottom-1/4 -left-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px] pointer-events-none"></div>

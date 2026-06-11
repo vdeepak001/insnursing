@@ -149,8 +149,8 @@
                 </div>
 
                 <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <h3 class="font-outfit text-lg font-bold text-impetus-navy">Test Status Distribution</h3>
-                    <p class="mt-0.5 text-xs text-slate-500">Completed, in progress, pending, and expired test activity.</p>
+                    <h3 class="font-outfit text-lg font-bold text-impetus-navy text-center">Test Status Distribution</h3>
+                    <p class="mt-0.5 text-xs text-slate-500 text-center">Completed, in progress, pending, and expired test activity.</p>
                     <div class="mt-4 flex w-full justify-center" id="dashboardStatusChart"></div>
                 </div>
             </div>
@@ -212,7 +212,7 @@
                     <div class="mt-6 max-h-[45rem] space-y-4 overflow-y-auto pr-1">
                         @forelse($topPerforming as $index => $item)
                             <div class="flex items-center gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-4">
-                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-impetus-navy to-slate-800 font-outfit text-sm font-bold text-white">
+                                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-impetus-teal font-outfit text-sm font-bold text-white">
                                     {{ $index + 1 }}
                                 </div>
                                 <div class="min-w-0 flex-1">

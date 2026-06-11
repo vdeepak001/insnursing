@@ -110,24 +110,24 @@
             </div>
 
             <!-- Right Side: Graphic Panel -->
-            <div class="bg-gradient-to-br from-orange-600 via-orange-500 to-amber-500 relative hidden h-full w-full items-center justify-center lg:flex lg:w-1/2 overflow-hidden select-none">
+            <div class="bg-impetus-teal bg-gradient-to-br from-[#115e59] via-[#0f766e] to-[#14b8a6] relative hidden h-full w-full items-center justify-center lg:flex lg:w-1/2 overflow-hidden select-none">
                 <!-- Glowing Blurs -->
-                <div class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-yellow-300/20 rounded-full blur-[120px] pointer-events-none"></div>
-                <div class="absolute -bottom-1/4 -left-1/4 w-96 h-96 bg-rose-600/20 rounded-full blur-[120px] pointer-events-none"></div>
+                <div class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-teal-300/20 rounded-full blur-[120px] pointer-events-none"></div>
+                <div class="absolute -bottom-1/4 -left-1/4 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
                 <div class="relative z-10 w-full max-w-sm p-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] shadow-2xl flex flex-col items-center text-center">
                     <!-- Soft glow behind the logo -->
                     <div class="absolute inset-0 bg-radial-gradient from-white/10 to-transparent blur-3xl -z-10"></div>
                     
                     <!-- Elegant Logo backdrop -->
-                    <div class="mb-8 p-6 bg-white/95 rounded-3xl shadow-xl shadow-orange-950/20 inline-flex items-center justify-center hover:scale-105 transition-transform duration-300">
+                    <div class="mb-8 p-6 bg-white/95 rounded-3xl shadow-xl shadow-teal-950/20 inline-flex items-center justify-center hover:scale-105 transition-transform duration-300">
                         <img src="{{ asset('Impetus-logo.png') }}" alt="Logo" class="h-10 w-auto object-contain" />
                     </div>
                     
                     <h2 class="text-2xl font-extrabold !text-white tracking-tight font-outfit mb-3">
                         IHS Clinical Learning
                     </h2>
-                    <p class="text-sm text-orange-50 leading-relaxed max-w-[280px] font-outfit">
+                    <p class="text-sm text-teal-50 leading-relaxed max-w-[280px] font-outfit">
                         Empowering healthcare professionals through state-of-the-art CNE modules and interactive training.
                     </p>
                     
