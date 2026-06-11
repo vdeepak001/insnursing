@@ -12,7 +12,7 @@
                 <form action="{{ request()->url() }}" method="GET" id="stateFilterForm">
                     <select name="state_id" onchange="this.form.submit()"
                         class="block w-full rounded-lg border-gray-300 py-2 pl-3 pr-10 text-base transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white">
-                        <option value="">-- Select State --</option>
+                        <option value="">All States</option>
                         @foreach ($states as $state)
                             <option value="{{ $state->id }}" {{ request('state_id') == $state->id ? 'selected' : '' }}>
                                 {{ $state->name }}

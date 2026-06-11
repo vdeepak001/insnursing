@@ -13,7 +13,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-hlCEuk_z.js",
+    "file": "assets/app-CGZy-Bwq.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -73,7 +73,7 @@
     "isDynamicEntry": true
   },
   "resources/js/components/chart/dashboard-charts.js": {
-    "file": "assets/dashboard-charts-DGNJscH4.js",
+    "file": "assets/dashboard-charts-BfEreF7w.js",
     "name": "dashboard-charts",
     "src": "resources/js/components/chart/dashboard-charts.js",
     "isDynamicEntry": true,

@@ -650,8 +650,10 @@
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-1 pr-10">
                     Performance Analysis
                 </h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">
-                    Visual comparison of test scores across all purchased modules.
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-6"
+                    x-text="selectedPerformanceModule === 'all'
+                        ? 'Visual comparison of test scores across all purchased modules.'
+                        : 'Score breakdown for the selected module.'">
                 </p>
 
                 {{-- Module Filter Dropdown --}}
@@ -693,7 +695,7 @@
 
                 <div x-show="!performanceLoading">
                     <template x-if="performanceOrders.length > 0">
-                        <div id="performanceChart" class="min-h-[350px]"></div>
+                        <div id="performanceChart" class="mx-auto min-h-[350px] w-full max-w-xl"></div>
                     </template>
                     <template x-if="performanceOrders.length === 0">
                         <div

@@ -101,7 +101,7 @@ export function initDashboardCharts() {
             chart: {
                 fontFamily: 'Outfit, sans-serif',
                 type: 'donut',
-                height: 320,
+                height: 380,
             },
             plotOptions: {
                 pie: {
@@ -129,8 +129,13 @@ export function initDashboardCharts() {
             dataLabels: { enabled: false },
             legend: {
                 show: true,
-                position: 'right',
+                position: 'bottom',
+                horizontalAlign: 'center',
                 fontSize: '13px',
+                itemMargin: {
+                    horizontal: 12,
+                    vertical: 4,
+                },
                 formatter: (seriesName, opts) => {
                     const value = opts.w.globals.series[opts.seriesIndex];
                     const total = opts.w.globals.seriesTotals.reduce((sum, item) => sum + item, 0);
@@ -145,33 +150,6 @@ export function initDashboardCharts() {
                     formatter: (value) => `${Math.round(value).toLocaleString()} attempts`,
                 },
             },
-            responsive: [
-                {
-                    breakpoint: 640,
-                    options: {
-                        chart: {
-                            height: 360,
-                        },
-                        legend: {
-                            position: 'bottom',
-                            horizontalAlign: 'center',
-                            itemMargin: {
-                                horizontal: 8,
-                                vertical: 4,
-                            },
-                        },
-                        plotOptions: {
-                            pie: {
-                                donut: {
-                                    labels: {
-                                        show: true,
-                                    },
-                                },
-                            },
-                        },
-                    },
-                },
-            ],
         });
 
         statusChart.render();

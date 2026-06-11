@@ -238,48 +238,112 @@
                     orders = allOrders.filter(o => String(o.id) === String(this.selectedPerformanceModule));
                 }
 
-                const categories = orders.map(o => `${o.course_name} (${o.purchase_date})`);
-                const preScores = orders.map(o => o.scores.pre);
-                const mockScores = orders.map(o => o.scores.mock);
-                const finalScores = orders.map(o => o.scores.final);
+                if (this.performanceChart) {
+                    this.performanceChart.destroy();
+                    this.performanceChart = null;
+                }
 
-                const options = {
+                const isSingleModule = this.selectedPerformanceModule !== 'all' && orders.length === 1;
+                const options = isSingleModule
+                    ? this.buildPerformanceDonutOptions(orders[0])
+                    : this.buildPerformanceBarOptions(orders);
+
+                this.performanceChart = new ApexCharts(chartEl, options);
+                this.performanceChart.render();
+            },
+            buildPerformanceBarOptions(orders) {
+                const categories = orders.map(o => `${o.course_name} (${o.purchase_date})`);
+
+                return {
                     series: [
-                        { name: 'Pre-Test', data: preScores },
-                        { name: 'Mock Test', data: mockScores },
-                        { name: 'Final Test', data: finalScores }
+                        { name: 'Pre-Test', data: orders.map(o => o.scores.pre) },
+                        { name: 'Mock Test', data: orders.map(o => o.scores.mock) },
+                        { name: 'Final Test', data: orders.map(o => o.scores.final) },
                     ],
                     chart: {
                         type: 'bar',
                         height: 350,
                         toolbar: { show: false },
-                        fontFamily: 'Outfit, sans-serif'
+                        fontFamily: 'Outfit, sans-serif',
                     },
                     plotOptions: {
                         bar: {
                             horizontal: false,
                             columnWidth: '55%',
-                            borderRadius: 4
+                            borderRadius: 4,
                         },
                     },
                     dataLabels: { enabled: false },
                     stroke: { show: true, width: 2, colors: ['transparent'] },
-                    xaxis: { categories: categories },
-                    yaxis: { 
+                    xaxis: { categories },
+                    yaxis: {
                         title: { text: 'Score (%)' },
-                        max: 100
+                        max: 100,
                     },
                     fill: { opacity: 1 },
                     colors: ['#465fff', '#10b981', '#f59e0b'],
                     tooltip: {
-                        y: { formatter: (val) => val + "%" }
+                        y: { formatter: (val) => val + '%' },
                     },
-                    legend: { position: 'top' }
+                    legend: { position: 'top' },
                 };
+            },
+            buildPerformanceDonutOptions(order) {
+                const scores = [order.scores.pre, order.scores.mock, order.scores.final];
+                const averageScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
 
-                if (this.performanceChart) this.performanceChart.destroy();
-                this.performanceChart = new ApexCharts(chartEl, options);
-                this.performanceChart.render();
+                return {
+                    series: scores,
+                    labels: ['Pre-Test', 'Mock Test', 'Final Test'],
+                    colors: ['#465fff', '#10b981', '#f59e0b'],
+                    chart: {
+                        type: 'donut',
+                        height: 380,
+                        toolbar: { show: false },
+                        fontFamily: 'Outfit, sans-serif',
+                    },
+                    plotOptions: {
+                        pie: {
+                            donut: {
+                                size: '68%',
+                                labels: {
+                                    show: true,
+                                    total: {
+                                        show: true,
+                                        showAlways: true,
+                                        label: 'Avg Score',
+                                        fontSize: '14px',
+                                        fontWeight: 600,
+                                        color: '#64748B',
+                                        formatter: () => `${averageScore.toFixed(1)}%`,
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    dataLabels: { enabled: false },
+                    legend: {
+                        show: true,
+                        position: 'bottom',
+                        horizontalAlign: 'center',
+                        fontSize: '13px',
+                        itemMargin: {
+                            horizontal: 12,
+                            vertical: 4,
+                        },
+                        formatter: (seriesName, opts) => {
+                            const value = opts.w.globals.series[opts.seriesIndex];
+
+                            return `${seriesName} ${value.toFixed(1)}%`;
+                        },
+                    },
+                    stroke: { width: 2, colors: ['#ffffff'] },
+                    tooltip: {
+                        y: {
+                            formatter: (value) => `${value.toFixed(1)}%`,
+                        },
+                    },
+                };
             },
             async loadPaymentCourses() {
                 this.paymentLoading = true;

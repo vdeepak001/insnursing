@@ -35,6 +35,17 @@ it('allows support role to view the frontend users list', function () {
     $this->actingAs($support)->get(route('support.users-list.index'))->assertSuccessful();
 });
 
+it('includes performance analysis chart modes for all modules and single module views', function () {
+    $superAdmin = User::factory()->create(['role_type' => 'superadmin']);
+
+    $response = $this->actingAs($superAdmin)->get(route('super-admin.users-list.index'));
+
+    $response->assertSuccessful();
+    $response->assertSee('buildPerformanceDonutOptions', false);
+    $response->assertSee('buildPerformanceBarOptions', false);
+    $response->assertSee('All Modules', false);
+});
+
 it('redirects frontend learners away from the staff users list', function () {
     $customer = User::factory()->create(['role_type' => 'user']);
 
