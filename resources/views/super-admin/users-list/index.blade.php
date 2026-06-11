@@ -288,9 +288,8 @@
                     legend: { position: 'top' },
                 };
             },
-            buildPerformanceDonutOptions(order) {
+             buildPerformanceDonutOptions(order) {
                 const scores = [order.scores.pre, order.scores.mock, order.scores.final];
-                const averageScore = scores.reduce((sum, score) => sum + score, 0) / scores.length;
 
                 return {
                     series: scores,
@@ -308,20 +307,45 @@
                                 size: '68%',
                                 labels: {
                                     show: true,
-                                    total: {
+                                    name: {
                                         show: true,
-                                        showAlways: true,
-                                        label: 'Avg Score',
                                         fontSize: '14px',
                                         fontWeight: 600,
                                         color: '#64748B',
-                                        formatter: () => `${averageScore.toFixed(1)}%`,
+                                        offsetY: -10
+                                    },
+                                    value: {
+                                        show: true,
+                                        fontSize: '22px',
+                                        fontWeight: 'bold',
+                                        color: '#1E293B',
+                                        offsetY: 4,
+                                        formatter: (val) => `${parseFloat(val).toFixed(1)}%`,
+                                    },
+                                    total: {
+                                        show: true,
+                                        showAlways: true,
+                                        label: 'Final Test',
+                                        fontSize: '14px',
+                                        fontWeight: 600,
+                                        color: '#64748B',
+                                        formatter: () => `${order.scores.final.toFixed(1)}%`,
                                     },
                                 },
                             },
                         },
                     },
-                    dataLabels: { enabled: false },
+                    dataLabels: {
+                        enabled: true,
+                        style: {
+                            colors: ['#ffffff'],
+                            fontWeight: 'bold',
+                        },
+                        formatter: (val, opts) => {
+                            const value = opts.w.globals.series[opts.seriesIndex];
+                            return `${value.toFixed(0)}%`;
+                        },
+                    },
                     legend: {
                         show: true,
                         position: 'bottom',

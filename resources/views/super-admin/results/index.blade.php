@@ -86,9 +86,9 @@
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
         @foreach ([
             'pretest' => ['label' => 'Pretest', 'chart_id' => 'resultsChartPretest'],
-            'mock' => ['label' => 'Mock', 'chart_id' => 'resultsChartMock'],
-            'final_1' => ['label' => 'Final-1', 'chart_id' => 'resultsChartFinal1'],
-            'final_2' => ['label' => 'Final-2', 'chart_id' => 'resultsChartFinal2'],
+            'mock' => ['label' => 'Mock Test', 'chart_id' => 'resultsChartMock'],
+            'final_1' => ['label' => 'Final Test- 1', 'chart_id' => 'resultsChartFinal1'],
+            'final_2' => ['label' => 'Final Test-2', 'chart_id' => 'resultsChartFinal2'],
         ] as $key => $chart)
             <div class="rounded-3xl border border-gray-100 bg-white p-5 shadow-xl dark:border-gray-700 dark:bg-gray-800">
                 <h3 class="mb-3 text-center font-outfit text-lg font-bold text-impetus-navy">{{ $chart['label'] }}</h3>

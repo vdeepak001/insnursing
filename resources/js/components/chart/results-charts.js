@@ -56,6 +56,21 @@ export function initResultsCharts() {
                         size: '68%',
                         labels: {
                             show: true,
+                            name: {
+                                show: true,
+                                fontSize: '13px',
+                                fontWeight: 600,
+                                color: '#64748B',
+                                offsetY: -10
+                            },
+                            value: {
+                                show: true,
+                                fontSize: '20px',
+                                fontWeight: 'bold',
+                                color: '#1E293B',
+                                offsetY: 4,
+                                formatter: (val) => `${parseFloat(val).toFixed(1)}%`,
+                            },
                             total: {
                                 show: true,
                                 showAlways: true,
