@@ -115,24 +115,24 @@
                 <div class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-teal-300/20 rounded-full blur-[120px] pointer-events-none"></div>
                 <div class="absolute -bottom-1/4 -left-1/4 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-                <div class="relative z-10 w-full max-w-sm p-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2.5rem] shadow-2xl flex flex-col items-center text-center">
+                <div class="relative z-10 w-full max-w-sm p-10 bg-gradient-to-br from-[#c2410c] via-[#ea580c] to-[#ff7a00] backdrop-blur-xl border border-white/25 rounded-[2.5rem] shadow-2xl shadow-orange-950/30 flex flex-col items-center text-center">
                     <!-- Soft glow behind the logo -->
-                    <div class="absolute inset-0 bg-radial-gradient from-white/10 to-transparent blur-3xl -z-10"></div>
+                    <div class="absolute inset-0 bg-radial-gradient from-white/15 to-transparent blur-3xl -z-10 rounded-[2.5rem]"></div>
                     
                     <!-- Elegant Logo backdrop -->
-                    <div class="mb-8 p-6 bg-white/95 rounded-3xl shadow-xl shadow-teal-950/20 inline-flex items-center justify-center hover:scale-105 transition-transform duration-300">
+                    <div class="mb-8 p-6 bg-white/95 rounded-3xl shadow-xl shadow-orange-950/20 inline-flex items-center justify-center hover:scale-105 transition-transform duration-300">
                         <img src="{{ asset('Impetus-logo.png') }}" alt="Logo" class="h-10 w-auto object-contain" />
                     </div>
                     
                     <h2 class="text-2xl font-extrabold !text-white tracking-tight font-outfit mb-3">
-                        IHS Clinical Learning
+                        Impetus Healthcare skills
                     </h2>
-                    <p class="text-sm text-teal-50 leading-relaxed max-w-[280px] font-outfit">
+                    <p class="text-sm text-orange-50 leading-relaxed max-w-[280px] font-outfit">
                         Empowering healthcare professionals through state-of-the-art CNE modules and interactive training.
                     </p>
                     
                     <div class="mt-8 flex gap-2 items-center justify-center text-white/90 text-[11px] uppercase tracking-widest font-outfit">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-200 animate-pulse"></span>
                         <span>Secure Learning Gateway</span>
                     </div>
                 </div>

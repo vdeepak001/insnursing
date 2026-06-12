@@ -1,70 +1,63 @@
 @php
     $split = $splitUp ?? null;
+    $testTypes = [
+        [
+            'prefix' => 'pre',
+            'label' => 'Pre Test',
+            'card' => 'border-impetus-light-teal-border bg-gradient-to-br from-impetus-light-teal/40 via-white to-white dark:border-teal-800 dark:from-teal-950/30 dark:via-gray-900 dark:to-gray-900',
+            'header' => 'bg-impetus-light-teal text-impetus-teal dark:bg-teal-950/50 dark:text-teal-200',
+            'level_label' => 'text-impetus-teal/70 dark:text-teal-300/80',
+            'focus' => 'focus:border-impetus-teal focus:ring-impetus-teal/20',
+        ],
+        [
+            'prefix' => 'mock',
+            'label' => 'Mock Test',
+            'card' => 'border-teal-200 bg-gradient-to-br from-impetus-teal-muted via-white to-white dark:border-teal-800 dark:from-teal-950/30 dark:via-gray-900 dark:to-gray-900',
+            'header' => 'bg-gradient-to-r from-impetus-teal to-impetus-teal-hover text-white',
+            'level_label' => 'text-white/80',
+            'focus' => 'focus:border-impetus-teal focus:ring-impetus-teal/20',
+        ],
+        [
+            'prefix' => 'final',
+            'label' => 'Final Test',
+            'card' => 'border-orange-200 bg-gradient-to-br from-impetus-lightOrange via-white to-orange-50/50 dark:border-orange-900 dark:from-orange-950/20 dark:via-gray-900 dark:to-gray-900',
+            'header' => 'bg-gradient-to-r from-impetus-orange to-orange-500 text-white',
+            'level_label' => 'text-white/80',
+            'focus' => 'focus:border-impetus-orange focus:ring-impetus-orange/20',
+        ],
+    ];
 @endphp
 
 <div class="space-y-6">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <!-- Pre Test Configuration -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 dark:bg-gray-900 dark:border-gray-800 transition-all hover:shadow-md">
-            <div class="space-y-6">
-                <div class="flex items-center gap-2">
-                    <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
-                    <h5 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Pre Test</h5>
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        @foreach ($testTypes as $testType)
+            <div class="overflow-hidden rounded-2xl border shadow-sm transition-all hover:shadow-md {{ $testType['card'] }}">
+                <div class="px-5 py-4 {{ $testType['header'] }}">
+                    <h5 class="font-outfit text-xs font-black uppercase tracking-[0.2em]">
+                        {{ $testType['label'] }}
+                    </h5>
                 </div>
-                <div class="flex items-end gap-3">
-                    @foreach(['l1', 'l2', 'l3'] as $idx => $level)
-                        @php $field = 'pre_'.$level; @endphp
-                        <div class="flex-1 space-y-1">
-                            <span class="block text-[10px] font-bold text-gray-400/80 uppercase tracking-tighter text-center">L{{ $idx + 1 }}</span>
-                            <input type="number" name="split_up[{{ $field }}]" value="{{ old('split_up.'.$field, $split ? $split->$field : 0) }}" min="0"
-                                class="h-10 w-full rounded-xl border border-gray-200 bg-gray-50/50 text-center text-lg font-bold text-gray-800 focus:bg-white focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/5 dark:bg-gray-800 dark:border-gray-700 dark:text-white transition-all shadow-sm" />
-                        </div>
-                    @endforeach
+
+                <div class="p-5 sm:p-6">
+                    <div class="flex items-end gap-3">
+                        @foreach (['l1', 'l2', 'l3'] as $idx => $level)
+                            @php $field = $testType['prefix'].'_'.$level; @endphp
+                            <div class="flex-1 space-y-1">
+                                <span class="{{ $testType['level_label'] }} block text-center text-[10px] font-bold uppercase tracking-tighter">
+                                    L{{ $idx + 1 }}
+                                </span>
+                                <input
+                                    type="number"
+                                    name="split_up[{{ $field }}]"
+                                    value="{{ old('split_up.'.$field, $split ? $split->$field : 0) }}"
+                                    min="0"
+                                    class="{{ $testType['focus'] }} h-10 w-full rounded-xl border border-slate-200 bg-white px-2 text-center text-lg font-bold text-slate-800 shadow-sm outline-none transition focus:ring-4 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                                />
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Mock Test Configuration -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 dark:bg-gray-900 dark:border-gray-800 transition-all hover:shadow-md">
-            <div class="space-y-6">
-                <div class="flex items-center gap-2">
-                    <span class="h-2 w-2 rounded-full bg-brand-500"></span>
-                    <h5 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Mock Test</h5>
-                </div>
-                <div class="flex items-end gap-3">
-                    @foreach(['l1', 'l2', 'l3'] as $idx => $level)
-                        @php $field = 'mock_'.$level; @endphp
-                        <div class="flex-1 space-y-1">
-                            <span class="block text-[10px] font-bold text-gray-400/80 uppercase tracking-tighter text-center">L{{ $idx + 1 }}</span>
-                            <input type="number" name="split_up[{{ $field }}]" value="{{ old('split_up.'.$field, $split ? $split->$field : 0) }}" min="0"
-                                class="h-10 w-full rounded-xl border border-gray-200 bg-gray-50/50 text-center text-lg font-bold text-gray-800 focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/5 dark:bg-gray-800 dark:border-gray-700 dark:text-white transition-all shadow-sm" />
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-
-      
-
-        <!-- Final Test Configuration -->
-        <div class="bg-white p-6 rounded-2xl border border-gray-100 dark:bg-gray-900 dark:border-gray-800 transition-all hover:shadow-md">
-            <div class="space-y-6">
-                <div class="flex items-center gap-2">
-                    <span class="h-2 w-2 rounded-full bg-purple-500"></span>
-                    <h5 class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Final Test</h5>
-                </div>
-                <div class="flex items-end gap-3">
-                    @foreach(['l1', 'l2', 'l3'] as $idx => $level)
-                        @php $field = 'final_'.$level; @endphp
-                        <div class="flex-1 space-y-1">
-                            <span class="block text-[10px] font-bold text-gray-400/80 uppercase tracking-tighter text-center">L{{ $idx + 1 }}</span>
-                            <input type="number" name="split_up[{{ $field }}]" value="{{ old('split_up.'.$field, $split ? $split->$field : 0) }}" min="0"
-                                class="h-10 w-full rounded-xl border border-gray-200 bg-gray-50/50 text-center text-lg font-bold text-gray-800 focus:bg-white focus:border-purple-500 focus:ring-4 focus:ring-purple-500/5 dark:bg-gray-800 dark:border-gray-700 dark:text-white transition-all shadow-sm" />
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-
+        @endforeach
     </div>
 </div>

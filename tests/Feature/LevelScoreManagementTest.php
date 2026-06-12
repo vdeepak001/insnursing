@@ -13,6 +13,7 @@ test('admin can view level score page with branded level cards', function () {
     $response->assertSee('Factual Knowledge', false);
     $response->assertSee('Functional Knowledge', false);
     $response->assertSee('Critical Application', false);
+    $response->assertSee('from-impetus-teal to-impetus-orange', false);
 });
 
 test('admin can save level score from single page', function () {
