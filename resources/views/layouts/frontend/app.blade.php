@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
@@ -22,8 +22,8 @@
         <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         <style>
             @theme {
-                --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-                --font-outfit: 'Outfit', sans-serif;
+                --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+                --font-outfit: Poppins, sans-serif;
                 --color-impetus-orange: #FF7A00;
                 --color-impetus-green: #0F766E;
                 --color-impetus-teal: #0F766E;

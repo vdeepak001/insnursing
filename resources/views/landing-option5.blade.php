@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@800;900&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS Play CDN -->
@@ -22,8 +22,8 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        outfit: ['Outfit', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        outfit: ['Poppins', 'sans-serif'],
                         cabinet: ['"Cabinet Grotesk"', 'sans-serif'],
                         syne: ['Syne', 'sans-serif'],
                     },

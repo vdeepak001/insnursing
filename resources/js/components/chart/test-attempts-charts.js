@@ -21,7 +21,7 @@ export function initTestAttemptsCharts() {
               series: data.series ?? [],
               colors: ['#3B82F6', '#6366F1', '#10B981'],
               chart: {
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Poppins, sans-serif',
                   type: 'bar',
                   height: 360,
                   toolbar: { show: false },
@@ -72,7 +72,7 @@ export function initTestAttemptsCharts() {
               series: data.series ?? [],
               colors: ['#F97316'],
               chart: {
-                  fontFamily: 'Outfit, sans-serif',
+                  fontFamily: 'Poppins, sans-serif',
                   type: 'bar',
                   height: Math.max(280, (data.categories?.length ?? 0) * 36),
                   toolbar: { show: false },

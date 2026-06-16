@@ -23,7 +23,7 @@ export function initDashboardCharts() {
             series: seriesData,
             colors: overview.colors ?? ['#107C85', '#1A7F64', '#E68A2E'],
             chart: {
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Poppins, sans-serif',
                 type: 'line',
                 height: 320,
                 toolbar: { show: false },
@@ -99,7 +99,7 @@ export function initDashboardCharts() {
             labels: distribution.map((item) => item.label),
             colors: distribution.map((item) => item.color),
             chart: {
-                fontFamily: 'Outfit, sans-serif',
+                fontFamily: 'Poppins, sans-serif',
                 type: 'donut',
                 height: 380,
             },

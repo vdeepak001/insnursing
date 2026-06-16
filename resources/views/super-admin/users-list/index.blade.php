@@ -269,7 +269,7 @@
                         type: 'bar',
                         height: 350,
                         toolbar: { show: false },
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Poppins, sans-serif',
                     },
                     plotOptions: {
                         bar: {
@@ -304,7 +304,7 @@
                         type: 'donut',
                         height: 380,
                         toolbar: { show: false },
-                        fontFamily: 'Outfit, sans-serif',
+                        fontFamily: 'Poppins, sans-serif',
                     },
                     plotOptions: {
                         pie: {
@@ -375,7 +375,7 @@
                             const value = series[seriesIndex];
 
                             return (
-                                '<div style="padding:10px 14px;background:#0F172A;color:#FFFFFF;border-radius:8px;font-family:Outfit,sans-serif;font-size:13px;font-weight:500;line-height:1.4;box-shadow:0 4px 12px rgba(15,23,42,0.25);">' +
+                                '<div style="padding:10px 14px;background:#0F172A;color:#FFFFFF;border-radius:8px;font-family:Poppins,sans-serif;font-size:13px;font-weight:500;line-height:1.4;box-shadow:0 4px 12px rgba(15,23,42,0.25);">' +
                                 `<span style="color:#FFFFFF;">${label}: </span>` +
                                 `<strong style="color:#FFFFFF;">${value.toFixed(1)}%</strong>` +
                                 '</div>'
