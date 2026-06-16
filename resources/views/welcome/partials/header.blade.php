@@ -17,9 +17,10 @@
      fixed overlay is not trapped inside the sticky header's stacking context --}}
 <div x-data="{ mobileMenuOpen: false, scrolled: false }"
     @keydown.escape.window="mobileMenuOpen = false"
-    @scroll.window="scrolled = (window.pageYOffset > 50)">
+    @scroll.window="scrolled = (window.pageYOffset > 50)"
+    class="sticky top-0 z-50 w-full">
 
-    <header class="sticky top-0 z-50 w-full transition-all duration-300 glass-card border-b border-slate-200/50 shadow-sm">
+    <header class="w-full transition-all duration-300 glass-card border-b border-slate-200/50 shadow-sm">
         <div class="w-full px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
             <nav class="grid h-20 w-full grid-cols-[1fr_auto] items-center xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:gap-x-6" aria-label="Global">
                 <a href="{{ route('home') }}"
@@ -152,15 +153,14 @@
             <div class="pointer-events-none absolute inset-0 opacity-[0.06]"
                 style="background-image: radial-gradient(#0F766E 1.5px, transparent 1.5px); background-size: 28px 28px;"></div>
 
-            {{-- Teal header bar --}}
-            <div class="relative z-10 flex shrink-0 items-center justify-between px-6 py-6"
-                style="background: linear-gradient(135deg, #0F766E 0%, #0D9488 100%); border-bottom: 3px solid rgba(255,122,0,0.4);">
+            {{-- Light header bar --}}
+            <div class="relative z-10 flex shrink-0 items-center justify-between px-6 py-5 border-b border-slate-200/80 bg-white">
                 <a href="{{ route('home') }}" class="-m-1.5 flex items-center gap-2 p-1.5" @click="mobileMenuOpen = false">
                     <img src="{{ asset('Impetus-logo.png') }}" alt="IHS Nursing Logo"
-                        class="h-14 w-auto object-contain drop-shadow-md" style="filter: brightness(0) invert(1);">
+                        class="h-14 w-auto object-contain">
                 </a>
                 <button type="button" @click="mobileMenuOpen = false"
-                    class="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors">
+                    class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
                     <span class="sr-only">Close menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
