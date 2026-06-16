@@ -1187,3 +1187,23 @@ h2 {
   stroke-width: 2.5px;
   vector-effect: non-scaling-stroke;
 }
+
+/* ============================================================
+   Alpine.js — x-cloak
+   Hides elements with x-cloak until Alpine initializes them.
+   Without this rule, x-show panels (e.g. mobile menu) flash
+   visible on page load and the toggle appears broken.
+   ============================================================ */
+[x-cloak] {
+  display: none !important;
+}
+
+/* ============================================================
+   glass-card — used on the sticky navbar header
+   ============================================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
