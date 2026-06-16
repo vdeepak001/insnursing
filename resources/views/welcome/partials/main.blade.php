@@ -19,8 +19,9 @@
 
                     <h1
                         class="text-4xl font-extrabold leading-tight tracking-tight text-slate-800 sm:text-5xl lg:text-[3.25rem] font-outfit">
-                        Professional eLearning Engineered for
-                        <span class="text-impetus-teal">Clinical Impact</span>
+                        Professional eLearning Engineered for <span class="text-impetus-teal">Clinical
+                            Impact</span>
+
                     </h1>
 
                     <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 text-justify sm:text-lg lg:mx-0">
