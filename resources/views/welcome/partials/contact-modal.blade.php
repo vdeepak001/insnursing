@@ -1,14 +1,14 @@
 <div x-data="{
     open: {{ $errors->has('name') || $errors->has('email') || $errors->has('mobile') || $errors->has('query_for') ? 'true' : 'false' }}
 }" x-show="open" x-cloak id="contact-modal" role="dialog" aria-modal="true"
-    aria-labelledby="contact-modal-title" class="fixed inset-0 z-[9999] grid place-items-center p-4 sm:p-6"
+    aria-labelledby="contact-modal-title" class="fixed inset-0 z-[9999] overflow-y-auto p-4 sm:p-6"
     @open-contact-modal.window="open = true" @keydown.escape.window="open = false">
     <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"
         x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0"
         x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-150"
         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="open = false"></div>
 
-    <div class="relative z-10 w-full max-w-4xl rounded-3xl border border-slate-200/80 bg-white p-0 shadow-2xl shadow-slate-900/10 overflow-hidden"
+    <div class="relative z-10 w-full max-w-4xl mx-auto my-4 sm:my-8 rounded-3xl border border-slate-200/80 bg-white p-0 shadow-2xl shadow-slate-900/10 overflow-hidden"
         x-transition:enter="ease-out duration-200" x-transition:enter-start="opacity-0 scale-95"
         x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-150"
         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" @click.stop>

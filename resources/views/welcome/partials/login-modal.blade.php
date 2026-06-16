@@ -10,7 +10,7 @@
      role="dialog"
      aria-modal="true"
      aria-labelledby="login-modal-title"
-     class="fixed inset-0 z-[9999] grid place-items-center p-4 sm:p-6"
+     class="fixed inset-0 z-[9999] overflow-y-auto p-4 sm:p-6"
      @open-login-modal.window="open = true; mode = 'login'"
      @keydown.escape.window="open = false">
     <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"
@@ -22,7 +22,7 @@
          x-transition:leave-end="opacity-0"
          @click="open = false"></div>
 
-    <div class="relative z-10 w-full max-w-md rounded-3xl border border-slate-200/80 bg-white p-6 shadow-2xl shadow-slate-900/10"
+    <div class="relative z-10 w-full max-w-md mx-auto my-4 sm:my-8 rounded-3xl border border-slate-200/80 bg-white p-6 shadow-2xl shadow-slate-900/10"
          x-transition:enter="ease-out duration-200"
          x-transition:enter-start="opacity-0 scale-95"
          x-transition:enter-end="opacity-100 scale-100"
