@@ -1,6 +1,6 @@
 <main class="font-sans antialiased text-slate-800">
     @php
-        $heroImage = asset('images/design/WhatsApp Image 2026-06-06 at 13.40.00.jpeg');
+        $heroImage = asset('banner-image-removebg-preview.png');
         $simulationImage = asset('images/design/WhatsApp Image 2026-06-11 at 17.14.41.jpeg');
     @endphp
 
@@ -19,7 +19,8 @@
 
                     <h1
                         class="text-4xl font-extrabold leading-tight tracking-tight text-slate-800 sm:text-5xl lg:text-[3.25rem] font-outfit">
-                        Professional eLearning Engineered for <span class="text-impetus-teal whitespace-nowrap">Clinical Impact</span>
+                        Professional eLearning Engineered for <span class="text-impetus-teal whitespace-nowrap">Clinical
+                            Impact</span>
 
                     </h1>
 

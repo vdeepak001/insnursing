@@ -16,15 +16,15 @@
 <header x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)"
     @keydown.escape.window="mobileMenuOpen = false"
     class="sticky top-0 z-50 w-full transition-all duration-300 glass-card border-b border-slate-200/50 shadow-sm">
-    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8">
-        <nav class="grid h-20 w-full grid-cols-[1fr_auto] items-center xl:grid-cols-[auto_1fr_auto]" aria-label="Global">
+    <div class="w-full px-4 sm:px-6 lg:px-10 xl:px-12 2xl:px-16">
+        <nav class="grid h-20 w-full grid-cols-[1fr_auto] items-center xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:gap-x-6" aria-label="Global">
             <a href="{{ route('home') }}"
-                class="shrink-0 justify-self-start transition-transform hover:scale-105">
+                class="shrink-0 justify-self-start transition-transform hover:scale-105 xl:mr-3">
                 <img src="{{ asset('Impetus-logo.png') }}" alt="IHS Nursing Logo" class="h-16 w-auto object-contain">
             </a>
 
             <!-- Desktop Menu -->
-            <div class="col-start-2 hidden min-w-0 items-center justify-center gap-x-2 justify-self-center xl:flex xl:gap-x-3">
+            <div class="col-start-2 hidden min-w-0 items-center justify-evenly justify-self-stretch xl:flex xl:px-4 2xl:px-8">
                 <a href="{{ route('home') }}" class="{{ $navDesktopClass('home') }}"
                     @if (request()->routeIs('home')) aria-current="page" @endif>Home</a>
                 <a href="{{ route('about') }}" class="{{ $navDesktopClass('about') }}"
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Actions Desktop -->
-            <div class="col-start-2 hidden items-center justify-self-end gap-2 2xl:gap-3 xl:col-start-3 xl:flex">
+            <div class="col-start-2 hidden items-center justify-self-end gap-2 2xl:gap-3 xl:col-start-3 xl:flex xl:justify-end">
                 @if (Route::has('login'))
                     @auth
                         <div class="flex items-center gap-3">
