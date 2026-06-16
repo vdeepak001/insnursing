@@ -382,6 +382,12 @@
             @else
                 <div x-data="{
                     intervalId: null,
+                    scrollByCard(dir) {
+                        const track = this.$refs.track;
+                        const card = track.querySelector('[data-module-card]');
+                        const amount = (card ? card.offsetWidth + 24 : 360) * dir;
+                        track.scrollBy({ left: amount, behavior: 'smooth' });
+                    },
                     startAutoScroll() {
                         this.stopAutoScroll();
                         this.intervalId = setInterval(() => {
@@ -389,7 +395,7 @@
                             const card = track.querySelector('[data-module-card]');
                             const amount = card ? card.offsetWidth + 24 : 360;
                             const maxScroll = track.scrollWidth - track.clientWidth;
-                
+
                             if (track.scrollLeft >= maxScroll - 5) {
                                 track.scrollTo({ left: 0, behavior: 'smooth' });
                             } else {
@@ -410,9 +416,21 @@
                         this.stopAutoScroll();
                     },
                 }" @mouseenter="stopAutoScroll()" @mouseleave="startAutoScroll()"
-                    class="relative overflow-hidden">
+                    class="relative">
+
+                    {{-- Left Arrow --}}
+                    <button
+                        @click="stopAutoScroll(); scrollByCard(-1); setTimeout(() => startAutoScroll(), 3000)"
+                        class="absolute left-0 top-1/2 z-10 -translate-y-1/2 -translate-x-1 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-impetus-teal/20 text-impetus-teal transition hover:bg-impetus-teal hover:text-white hover:shadow-impetus-teal/30 focus:outline-none"
+                        aria-label="Scroll left">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+
+                    {{-- Scroll Track --}}
                     <div x-ref="track"
-                        class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 px-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                         @foreach ($latestCourses as $course)
                             @include('cne-modules.partials.module-card', [
                                 'course' => $course,
@@ -421,6 +439,16 @@
                             ])
                         @endforeach
                     </div>
+
+                    {{-- Right Arrow --}}
+                    <button
+                        @click="stopAutoScroll(); scrollByCard(1); setTimeout(() => startAutoScroll(), 3000)"
+                        class="absolute right-0 top-1/2 z-10 -translate-y-1/2 translate-x-1 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg ring-1 ring-impetus-teal/20 text-impetus-teal transition hover:bg-impetus-teal hover:text-white hover:shadow-impetus-teal/30 focus:outline-none"
+                        aria-label="Scroll right">
+                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
                 </div>
             @endif
 
