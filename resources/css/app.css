@@ -1172,3 +1172,9 @@ h2 {
 .exam-legend-dot.exam-q-default {
   @apply border border-slate-200 bg-white text-[#6B7280];
 }
+
+.certification-journey-connector path {
+  stroke: var(--color-impetus-orange);
+  stroke-width: 2.5px;
+  vector-effect: non-scaling-stroke;
+}

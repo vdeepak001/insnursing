@@ -5,19 +5,21 @@
 @section('content')
     <main class="relative isolate pb-20 sm:pb-28" x-data="{}">
         <div class="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[420px] overflow-hidden">
-            <div class="absolute left-10 top-24 h-72 w-72 rounded-full bg-logo-blue/10 blur-[100px]"></div>
+            <div class="absolute left-10 top-24 h-72 w-72 rounded-full bg-impetus-teal/10 blur-[100px]"></div>
             <div class="absolute right-10 top-28 h-96 w-96 rounded-full bg-impetus-orange/15 blur-[100px]"></div>
             <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
-                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-impetus-orange/25 to-logo-blue/15 opacity-60 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-impetus-orange/25 to-impetus-teal/15 opacity-60 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
             </div>
         </div>
 
         <div class="mx-auto max-w-6xl px-6 pt-28 sm:pt-32 lg:px-8">
             <div class="text-center">
-                <span class="inline-flex items-center rounded-full bg-impetus-orange/10 px-4 py-1.5 text-lg font-medium text-impetus-orange ring-1 ring-inset ring-impetus-orange/20">
+                <p class="mb-4 flex items-center justify-center gap-3 text-sm font-bold uppercase tracking-widest text-impetus-teal font-outfit">
+                    <span class="h-px w-8 bg-impetus-teal"></span>
                     Legal
-                </span>
-                <h1 class="mt-6 text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-3xl font-serif">
+                    <span class="h-px w-8 bg-impetus-teal"></span>
+                </p>
+                <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-800 sm:text-4xl font-outfit">
                     Terms &amp; Conditions
                 </h1>
                 <p class="mt-4 inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-slate-500 shadow-sm backdrop-blur-sm">
@@ -30,21 +32,21 @@
 
             <div class="mt-14 lg:grid lg:grid-cols-12 lg:gap-10 xl:gap-14">
                 <aside class="mb-10 lg:col-span-4 xl:col-span-3 lg:mb-0">
-                    <nav class="sticky top-28 rounded-2xl border border-slate-200/90 bg-white/90 p-5 shadow-lg shadow-slate-200/40 ring-1 ring-slate-900/5 backdrop-blur-sm" aria-label="Terms sections">
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">On this page</p>
+                    <nav class="sticky top-28 rounded-2xl border border-impetus-teal/10 bg-white p-5 shadow-lg" aria-label="Terms sections">
+                        <p class="text-xs font-bold uppercase tracking-wider text-impetus-teal">On this page</p>
                         <ul class="mt-4 space-y-1 text-sm">
-                            <li><a href="#terms-modifications" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">1. Modifications</a></li>
-                            <li><a href="#terms-intellectual" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">2. Intellectual Property</a></li>
-                            <li><a href="#terms-permitted" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">3. Permitted Use</a></li>
-                            <li><a href="#terms-submissions" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">4. User Submissions</a></li>
-                            <li><a href="#terms-thirdparty" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">5. External Links</a></li>
-                            <li><a href="#terms-availability" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">6. System Availability</a></li>
-                            <li><a href="#terms-disclaimer" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">7. Disclaimer</a></li>
-                            <li><a href="#terms-liability" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">8. Limitation of Liability</a></li>
-                            <li><a href="#terms-indemnification" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">9. Indemnification</a></li>
-                            <li><a href="#terms-compliance" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">10. Compliance</a></li>
-                            <li><a href="#terms-governing" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">11. Governing Law</a></li>
-                            <li><a href="#terms-contact" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-orange/10 hover:text-impetus-orange">12. Contact Details</a></li>
+                            <li><a href="#terms-modifications" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">1. Modifications</a></li>
+                            <li><a href="#terms-intellectual" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">2. Intellectual Property</a></li>
+                            <li><a href="#terms-permitted" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">3. Permitted Use</a></li>
+                            <li><a href="#terms-submissions" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">4. User Submissions</a></li>
+                            <li><a href="#terms-thirdparty" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">5. External Links</a></li>
+                            <li><a href="#terms-availability" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">6. System Availability</a></li>
+                            <li><a href="#terms-disclaimer" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">7. Disclaimer</a></li>
+                            <li><a href="#terms-liability" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">8. Limitation of Liability</a></li>
+                            <li><a href="#terms-indemnification" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">9. Indemnification</a></li>
+                            <li><a href="#terms-compliance" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">10. Compliance</a></li>
+                            <li><a href="#terms-governing" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">11. Governing Law</a></li>
+                            <li><a href="#terms-contact" class="block rounded-lg px-3 py-2 text-slate-600 transition hover:bg-impetus-teal-muted hover:text-impetus-teal">12. Contact Details</a></li>
                         </ul>
                     </nav>
                 </aside>
@@ -77,7 +79,7 @@
                             <!-- Section 1 -->
                             <section id="terms-modifications" class="scroll-mt-28 px-6 py-8 sm:px-10 sm:py-10">
                                 <div class="flex gap-5">
-                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-impetus-navy text-xs font-bold text-white">01</span>
+                                    <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-impetus-teal text-xs font-bold text-white">01</span>
                                     <div>
                                         <h2 class="text-2xl font-semibold text-slate-900 sm:text-2xl font-serif">1. Modifications to Terms</h2>
                                         <div class="mt-3 text-base leading-relaxed text-slate-600 text-justify space-y-3">
@@ -247,8 +249,8 @@
                                                 <li>Non-infringement of intellectual property rights;</li>
                                                 <li>Continuous, secure, or error-free operation of the Website.</li>
                                             </ul>
-                                            <div class="rounded-2xl border border-amber-100 bg-amber-50/50 p-5 mt-2">
-                                                <p class="text-sm font-semibold text-amber-800 leading-relaxed">
+                                            <div class="mt-2 rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange/60 p-5">
+                                                <p class="text-sm font-semibold leading-relaxed text-slate-700">
                                                     Healthcare professionals and users are advised to exercise independent professional and clinical judgment when applying any healthcare-related information, procedures, methods, or recommendations available through the Website.
                                                 </p>
                                             </div>
@@ -378,11 +380,11 @@
 
                     <p class="mt-8 text-center text-xs text-slate-500">
                         Related:
-                        <a href="{{ route('privacy.policy') }}" class="font-medium text-logo-blue hover:underline">Privacy Policy</a>
+                        <a href="{{ route('privacy.policy') }}" class="font-medium text-impetus-teal hover:text-impetus-orange hover:underline">Privacy Policy</a>
                         <span class="mx-2 text-slate-300">·</span>
-                        <a href="{{ route('cancellation.policy') }}" class="font-medium text-logo-blue hover:underline">Cancellation Policy</a>
+                        <a href="{{ route('cancellation.policy') }}" class="font-medium text-impetus-teal hover:text-impetus-orange hover:underline">Cancellation Policy</a>
                         <span class="mx-2 text-slate-300">·</span>
-                        <a href="{{ route('faq') }}" class="font-medium text-logo-blue hover:underline">FAQ</a>
+                        <a href="{{ route('faq') }}" class="font-medium text-impetus-teal hover:text-impetus-orange hover:underline">FAQ</a>
                     </p>
                 </div>
             </div>

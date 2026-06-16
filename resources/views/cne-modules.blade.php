@@ -1,30 +1,23 @@
 @extends('layouts.frontend.app')
 
-@section('title', 'CPD Modules')
+@section('title', 'CNE Modules')
 
 @section('content')
-    <main class="pb-16">
-
+    <main class="pb-16 font-sans antialiased text-slate-800">
         <section class="py-12 sm:py-16">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div class="relative mb-12 overflow-hidden rounded-[2rem] border border-impetus-teal/10 bg-white p-8 shadow-xl shadow-impetus-teal/5 sm:mb-16 sm:p-10">
+                    <div class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-impetus-orange/5 to-transparent"></div>
 
-                </div>
-
-                <div
-                    class="mb-16 rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-8 shadow-xl shadow-slate-200/30 sm:p-10 relative overflow-hidden">
-                    <div
-                        class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-impetus-orange/5 to-transparent pointer-events-none">
-                    </div>
                     <div class="relative">
-                        <span
-                            class="text-xs font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Professional
-                            Excellence</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-6">
-                            Online Continuing Nursing Education (CNE) Modules</h2>
+                        <span class="mb-3 block text-xs font-bold uppercase tracking-widest text-impetus-orange font-outfit">
+                            Professional Excellence
+                        </span>
+                        <h1 class="mb-6 text-3xl font-extrabold tracking-tight text-impetus-teal sm:text-4xl font-outfit">
+                            Online Continuing Nursing Education (CNE) Modules
+                        </h1>
 
-                        <div
-                            class="grid gap-8 lg:grid-cols-2 mb-10 text-slate-600 text-justify leading-relaxed text-sm sm:text-base">
+                        <div class="grid gap-8 text-sm leading-relaxed text-slate-600 text-justify sm:text-base lg:grid-cols-2">
                             <p>
                                 Online Continuing Nursing Education (CNE) Modules are structured digital learning programs
                                 designed to help nurses and healthcare professionals enhance their knowledge, clinical
@@ -41,262 +34,139 @@
                                 accessible for working healthcare professionals.
                             </p>
                         </div>
-
-                        <!-- Features & Benefits Grid -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                            <!-- Features Card (Orange Theme) -->
-                            <div
-                                class="bg-gradient-to-br from-orange-50/40 via-white to-white border border-orange-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-300">
-                                <h3 class="text-lg font-bold text-impetus-navy font-outfit mb-5 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-impetus-orange inline-block animate-pulse"></span>
-                                    Features of Online CNE Modules
-                                </h3>
-                                <ul class="space-y-4">
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Self-paced, flexible learning</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Interactive digital content and assessments</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Accessible via computers and mobile devices</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Content developed by expert faculty and clinical resource persons</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Evidence-based, updated curriculum</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Digital certificates awarded upon successful completion</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-impetus-orange bg-orange-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Supports Continuing Nursing Education (CNE)</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Benefits Card (Emerald Theme) -->
-                            <div
-                                class="bg-gradient-to-br from-emerald-50/40 via-white to-white border border-emerald-100 rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300">
-                                <h3 class="text-lg font-bold text-impetus-navy font-outfit mb-5 flex items-center gap-2">
-                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-                                    Benefits of Online CNE Modules
-                                </h3>
-                                <ul class="space-y-4">
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Enhances clinical knowledge and professional competence</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Promotes continuous learning and skill upgradation</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Enables learning without interrupting professional duties</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Improves the quality of patient care and clinical outcomes</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Encourages evidence-based nursing practice</span>
-                                    </li>
-                                    <li class="flex items-start gap-3 text-base text-slate-600">
-                                        <span class="text-emerald-600 bg-emerald-100/80 w-6 h-6 rounded-full flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <span>Provides equal learning opportunities across geographic locations</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Closing Takeaway Paragraph -->
-                        <div
-                            class="p-6 rounded-2xl bg-gradient-to-r from-impetus-navy to-impetus-navy/90 text-white shadow-xl shadow-slate-900/10">
-                            <p class="text-base sm:text-lg text-slate-200 text-justify leading-relaxed">
-                                Online CNE modules play an important role in strengthening the healthcare workforce by
-                                helping nurses stay updated with advancements in healthcare, improve clinical performance,
-                                and meet professional education requirements in a flexible and technology-enabled learning
-                                environment.
-                            </p>
-                        </div>
                     </div>
                 </div>
 
                 @php
                     $purchasedCourses = $courses->filter(
-                        fn($c) => isset($purchasedCourseIds) && $purchasedCourseIds->contains($c->id),
+                        fn ($c) => isset($purchasedCourseIds) && $purchasedCourseIds->contains($c->id),
                     );
                     $otherCourses = $courses->reject(
-                        fn($c) => isset($purchasedCourseIds) && $purchasedCourseIds->contains($c->id),
+                        fn ($c) => isset($purchasedCourseIds) && $purchasedCourseIds->contains($c->id),
                     );
                 @endphp
 
                 @if ($courses->isEmpty())
-                    <div
-                        class="rounded-3xl border border-slate-200/80 bg-white px-8 py-14 text-center shadow-lg shadow-slate-200/50 ring-1 ring-slate-100">
-                        <p class="text-lg leading-8 text-slate-600 text-justify">No modules are available yet. Please check
-                            back later.</p>
+                    <div class="rounded-2xl border border-impetus-teal/10 bg-impetus-teal-muted px-8 py-14 text-center">
+                        <p class="text-lg leading-8 text-slate-600">No modules are available yet. Please check back later.</p>
                     </div>
                 @else
-                    {{-- Purchased Modules Section --}}
                     @if ($purchasedCourses->isNotEmpty())
                         <div class="mb-8">
-                            <h3 class="font-serif text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">Purchased
-                                Modules</h3>
+                            <h2 class="text-2xl font-extrabold uppercase tracking-widest text-impetus-teal sm:text-3xl font-outfit">
+                                Purchased Modules
+                            </h2>
                             <div class="mt-2 h-1 w-20 rounded-full bg-impetus-orange"></div>
                         </div>
-                        <div class="mb-16 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+                        <div class="mb-16 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                             @foreach ($purchasedCourses as $course)
                                 @php
-                                    $title = \Illuminate\Support\Str::title($course->couse_name);
-                                    $detailUrl = route('cne.modules.show', $course->couse_name);
                                     $creditPoints = 'N/A';
-                                    if (isset($course->stateCouncils) && $course->stateCouncils->count() > 0) {
+                                    if ($course->stateCouncils->count() > 0) {
                                         $rawPoints = $course->stateCouncils->first()->pivot->points;
                                         $creditPoints = is_array($rawPoints) ? array_sum($rawPoints) : $rawPoints;
-                                        $creditPoints = !empty($creditPoints) ? $creditPoints : 'N/A';
+                                        $creditPoints = ! empty($creditPoints) ? $creditPoints : 'N/A';
                                     }
                                 @endphp
-                                <article
-                                    class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md shadow-slate-200/50 ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:border-impetus-orange/30 hover:shadow-xl hover:shadow-slate-300/40 hover:ring-impetus-orange/20">
-                                    <a href="{{ $detailUrl }}"
-                                        class="relative flex flex-1 flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2">
-                                        <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-slate-100">
-                                            <img src="{{ asset('images/Course-Labels.jpeg') }}" alt=""
-                                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
-                                                loading="lazy" decoding="async">
-                                            <div class="absolute inset-0 flex items-center justify-center p-4">
-                                                <span
-                                                    class="block max-w-full text-balance text-center text-base font-bold leading-snug tracking-tight text-impetus-orange sm:text-3xl">
-                                                    {{ $title ?? '—' }}
-                                                </span>
-                                            </div>
-                                            @auth
-                                                @if (auth()->user()?->role_type === 'user')
-                                                    <div
-                                                        class="absolute bottom-4 right-4 z-10 text-[13px] font-extrabold tracking-wide text-emerald-800 bg-white/90 px-1.5 py-0.5 rounded shadow-sm">
-                                                        Credit Point: {{ $creditPoints }}
-                                                    </div>
-                                                @endif
-                                            @endauth
-                                        </div>
-                                    </a>
-                                </article>
+                                @include('cne-modules.partials.module-card', [
+                                    'course' => $course,
+                                    'moduleIndex' => $loop->iteration,
+                                    'creditPoints' => $creditPoints,
+                                ])
                             @endforeach
                         </div>
                     @endif
 
-                    {{-- Other Modules Section --}}
                     @if ($otherCourses->isNotEmpty())
                         <div class="mb-8">
-                            <h3 class="font-serif text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                            <h2 class="text-2xl font-extrabold uppercase tracking-widest text-impetus-teal sm:text-3xl font-outfit">
                                 {{ $purchasedCourses->isNotEmpty() ? 'Other Modules' : 'Available Modules' }}
-                            </h3>
+                            </h2>
                             <div class="mt-2 h-1 w-20 rounded-full bg-impetus-orange"></div>
                         </div>
-                        <div class="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+                        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
                             @foreach ($otherCourses as $course)
                                 @php
-                                    $title = \Illuminate\Support\Str::title($course->couse_name);
-                                    $detailUrl = route('cne.modules.show', $course->couse_name);
                                     $creditPoints = 'N/A';
-                                    if (isset($course->stateCouncils) && $course->stateCouncils->count() > 0) {
+                                    if ($course->stateCouncils->count() > 0) {
                                         $rawPoints = $course->stateCouncils->first()->pivot->points;
                                         $creditPoints = is_array($rawPoints) ? array_sum($rawPoints) : $rawPoints;
-                                        $creditPoints = !empty($creditPoints) ? $creditPoints : 'N/A';
+                                        $creditPoints = ! empty($creditPoints) ? $creditPoints : 'N/A';
                                     }
                                 @endphp
-                                <article
-                                    class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md shadow-slate-200/50 ring-1 ring-slate-100 transition hover:-translate-y-0.5 hover:border-impetus-orange/30 hover:shadow-xl hover:shadow-slate-300/40 hover:ring-impetus-orange/20">
-                                    <a href="{{ $detailUrl }}"
-                                        class="relative flex flex-1 flex-col focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2">
-                                        <div class="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-slate-100">
-                                            <img src="{{ asset('images/Course-Labels.jpeg') }}" alt=""
-                                                class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]"
-                                                loading="lazy" decoding="async">
-                                            <div class="absolute inset-0 flex items-center justify-center p-4">
-                                                <span
-                                                    class="block max-w-full text-balance text-center text-base font-bold leading-snug tracking-tight text-impetus-orange sm:text-3xl">
-                                                    {{ $title ?? '—' }}
-                                                </span>
-                                            </div>
-                                            @auth
-                                                @if (auth()->user()?->role_type === 'user')
-                                                    <div
-                                                        class="absolute bottom-4 right-4 z-10 text-[13px] font-extrabold tracking-wide text-emerald-800 bg-white/90 px-1.5 py-0.5 rounded shadow-sm">
-                                                        Credit Point: {{ $creditPoints }}
-                                                    </div>
-                                                @endif
-                                            @endauth
-                                        </div>
-                                    </a>
-                                </article>
+                                @include('cne-modules.partials.module-card', [
+                                    'course' => $course,
+                                    'moduleIndex' => $loop->iteration,
+                                    'creditPoints' => $creditPoints,
+                                ])
                             @endforeach
                         </div>
                     @endif
                 @endif
+
+                <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange p-6 shadow-md">
+                        <h2 class="mb-5 flex items-center gap-2 text-lg font-bold text-impetus-teal font-outfit">
+                            <span class="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-impetus-orange"></span>
+                            Features of Online CNE Modules
+                        </h2>
+                        <ul class="space-y-4">
+                            @foreach ([
+                                'Self-paced, flexible learning',
+                                'Interactive digital content and assessments',
+                                'Accessible via computers and mobile devices',
+                                'Content developed by expert faculty and clinical resource persons',
+                                'Evidence-based, updated curriculum',
+                                'Digital certificates awarded upon successful completion',
+                                'Supports Continuing Nursing Education (CNE)',
+                            ] as $feature)
+                                <li class="flex items-start gap-3 text-base text-slate-600">
+                                    <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white shadow-sm">
+                                        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                    <span>{{ $feature }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                    <div class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal-muted p-6 shadow-md">
+                        <h2 class="mb-5 flex items-center gap-2 text-lg font-bold text-impetus-teal font-outfit">
+                            <span class="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-impetus-teal"></span>
+                            Benefits of Online CNE Modules
+                        </h2>
+                        <ul class="space-y-4">
+                            @foreach ([
+                                'Enhances clinical knowledge and professional competence',
+                                'Promotes continuous learning and skill upgradation',
+                                'Enables learning without interrupting professional duties',
+                                'Improves the quality of patient care and clinical outcomes',
+                                'Encourages evidence-based nursing practice',
+                                'Provides equal learning opportunities across geographic locations',
+                            ] as $benefit)
+                                <li class="flex items-start gap-3 text-base text-slate-600">
+                                    <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-impetus-teal text-white shadow-sm">
+                                        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                    <span>{{ $benefit }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8 rounded-2xl bg-impetus-teal p-6 shadow-xl sm:p-8">
+                    <p class="text-base leading-relaxed text-white/90 text-justify sm:text-lg">
+                        Online CNE modules play an important role in strengthening the healthcare workforce by
+                        helping nurses stay updated with advancements in healthcare, improve clinical performance,
+                        and meet professional education requirements in a flexible and technology-enabled learning
+                        environment.
+                    </p>
+                </div>
             </div>
         </section>
     </main>

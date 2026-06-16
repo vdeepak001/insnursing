@@ -62,18 +62,16 @@
     }" @keydown.escape.window="practiceGateOpen = false; scoreCardOpen = false">
 
         {{-- Hero + overview (aligned with Practice Test / site theme) --}}
-        <section
-            class="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-logo-light-green/5 py-14 sm:py-20">
-            <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-logo-blue/10 blur-3xl">
+        <section class="relative overflow-hidden border-b border-impetus-teal/10 bg-impetus-teal-muted/30 py-14 sm:py-20">
+            <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-impetus-teal/10 blur-3xl">
             </div>
-            <div
-                class="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-logo-light-green/20 blur-3xl">
+            <div class="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-impetus-orange/10 blur-3xl">
             </div>
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
                     <div class="min-w-0 flex-1">
                         <a href="{{ route('cne.modules') }}"
-                            class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-slate-600 shadow-sm transition hover:border-logo-blue hover:text-logo-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2">
+                            class="inline-flex items-center gap-2 rounded-full border border-impetus-teal/20 bg-white px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-slate-600 shadow-sm transition hover:border-impetus-teal hover:text-impetus-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal focus-visible:ring-offset-2">
                             <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -81,16 +79,16 @@
                             Back to List
                         </a>
 
-                        <h1 class="mt-5 text-3xl font-bold tracking-tight text-slate-900 sm:text-3xl font-serif">
+                        <h1 class="mt-5 text-3xl font-extrabold tracking-tight text-impetus-teal sm:text-4xl font-outfit">
                             {{ $title }}
                         </h1>
 
                     </div>
                     @php
                         $buyButtonClass =
-                            'inline-flex shrink-0 items-center justify-center rounded-xl bg-logo-blue px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-logo-blue/25 transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2';
+                            'inline-flex shrink-0 items-center justify-center rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/25 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2';
                         $purchasedButtonClass =
-                            'inline-flex shrink-0 items-center justify-center rounded-xl bg-emerald-600 px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-emerald-600/25 ring-2 ring-emerald-500/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2';
+                            'inline-flex shrink-0 items-center justify-center rounded-xl bg-impetus-teal px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-teal/25 ring-2 ring-impetus-teal/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal focus-visible:ring-offset-2';
                     @endphp
                     <div class="shrink-0">
                         @if (Auth::check())
@@ -219,7 +217,7 @@
                                                     </svg>
                                                 @else
                                                     <span
-                                                        class="ml-2 text-[10px] text-rose-500 font-bold uppercase">(Failed)</span>
+                                                        class="ml-2 text-[10px] text-impetus-orange font-bold uppercase">(Failed)</span>
                                                 @endif
                                             </button>
                                         @elseif ($canFinal)
@@ -249,7 +247,7 @@
                                 </a>
                             @else
                                 <button type="button" disabled
-                                    class="{{ $buyButtonClass }} cursor-not-allowed opacity-90 hover:bg-logo-blue"
+                                    class="{{ $buyButtonClass }} cursor-not-allowed opacity-90"
                                     title="Purchase link is not set for this module in the admin yet.">
                                     Buy now
                                 </button>
@@ -287,7 +285,7 @@
 
                 <div class="mt-4 grid items-start gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
                     <div class="order-2 min-w-0 lg:order-1">
-                        <h2 class="text-2xl font-bold tracking-tight text-impetus-orange font-serif sm:text-3xl">
+                        <h2 class="text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl">
                             What you will learn in {{ $title }}?
                         </h2>
                         @if (filled($course->description))
@@ -302,7 +300,7 @@
                     <div class="relative order-1 w-full min-w-0 lg:order-2">
                         <div class="relative">
                             <div
-                                class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-logo-light-green/25 via-transparent to-logo-blue/20 blur-2xl">
+                                class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
                             </div>
                             <div
                                 class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-xl shadow-slate-300/30 ring-1 ring-slate-200/40">
@@ -314,17 +312,17 @@
                                     <div
                                         class="flex flex-col items-center justify-center gap-4 bg-slate-50 px-8 py-16 text-center">
                                         <span
-                                            class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-logo-blue shadow-sm ring-1 ring-slate-200/80">Document</span>
+                                            class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-impetus-teal shadow-sm ring-1 ring-impetus-teal/20">Document</span>
                                         <a href="{{ $imgUrl }}"
-                                            class="font-medium text-logo-blue underline decoration-logo-blue/30 underline-offset-2 hover:text-brand-600"
+                                            class="font-medium text-impetus-teal underline decoration-impetus-teal/30 underline-offset-2 hover:text-impetus-orange"
                                             target="_blank" rel="noopener noreferrer">
                                             Open attachment
                                         </a>
                                     </div>
                                 @else
                                     <div
-                                        class="flex aspect-[4/3] flex-col items-center justify-center bg-gradient-to-br from-slate-100 via-white to-logo-light-green/10 text-slate-400">
-                                        <svg class="mb-3 h-12 w-12 text-logo-light-green/50" fill="none"
+                                        class="flex aspect-[4/3] flex-col items-center justify-center bg-impetus-teal-muted/40 text-slate-400">
+                                        <svg class="mb-3 h-12 w-12 text-impetus-teal/40" fill="none"
                                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"
                                             aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -342,18 +340,7 @@
 
         {{-- Learning resources + learning materials link --}}
         @if (filled($course->qa_content) || $hasCourseMaterials)
-            <section
-                class="relative z-10 -mt-px border-t border-amber-200/50 bg-gradient-to-b from-[#fffdf8] via-[#fdf8ee] to-[#faf3e8] py-16 sm:py-24">
-                <div
-                    class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/40 to-transparent">
-                </div>
-                <div
-                    class="pointer-events-none absolute left-1/4 top-20 h-40 w-40 rounded-full bg-logo-light-green/10 blur-3xl">
-                </div>
-                <div
-                    class="pointer-events-none absolute bottom-10 right-1/4 h-32 w-32 rounded-full bg-logo-blue/10 blur-2xl">
-                </div>
-
+            <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-24">
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="flex flex-col gap-10 md:flex-row md:items-center md:gap-12 lg:gap-16 xl:gap-20">
                         {{-- Left Column: Large Visual --}}
@@ -367,14 +354,14 @@
                         {{-- Right Column: Content & Materials Link --}}
                         <div class="min-w-0 flex-1">
                             <div
-                                class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-l-4 border-impetus-orange pl-5 sm:pl-6">
-                                <h2 class="text-2xl font-bold tracking-tight text-impetus-orange font-serif sm:text-3xl">
+                                class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-l-4 border-impetus-teal pl-5 sm:pl-6">
+                                <h2 class="text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl">
                                     Learning Resources
                                 </h2>
                                 @if ($isPurchased)
                                     @if ($preDone)
                                         <a href="{{ route('cne.modules.materials', $course->couse_name) }}"
-                                            class="group relative inline-flex overflow-hidden rounded-xl bg-gradient-to-br from-impetus-orange to-amber-500 px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 ring-2 ring-white/40 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange active:translate-y-0">
+                                            class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange active:translate-y-0">
                                             <div class="relative flex items-center gap-4">
                                                 <span
                                                     class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
@@ -404,14 +391,14 @@
                                                     <span class="text-sm font-bold uppercase tracking-wider">Learning Resources (Locked)</span>
                                                 </div>
                                             </span>
-                                            <span class="text-xs text-rose-500 font-semibold tracking-wide bg-rose-50 border border-rose-100 rounded-lg px-2.5 py-1">⚠️ Complete the Pre-test first to unlock your Learning Resources.</span>
+                                            <span class="text-xs font-semibold tracking-wide text-impetus-orange bg-impetus-lightOrange border border-impetus-orange/20 rounded-lg px-2.5 py-1">⚠️ Complete the Pre-test first to unlock your Learning Resources.</span>
                                         </div>
                                     @endif
                                 @endif
                             </div>
 
                             @if (filled($course->qa_content))
-                                <div class="mt-4 text-lg leading-8 text-slate-800 text-justify">
+                                <div class="mt-4 text-lg leading-8 text-slate-600 text-justify">
                                     {!! nl2br(e($course->qa_content)) !!}
                                 </div>
                             @endif
@@ -424,16 +411,16 @@
 
         {{-- Practice test --}}
         @if (filled($course->practice_content))
-            <section class="border-t border-slate-200/80 bg-gradient-to-b from-white to-slate-50/80 py-16 sm:py-24">
+            <section class="border-t border-impetus-teal/10 bg-white py-16 sm:py-24">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="mb-6 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-                        <h2 class="text-2xl font-bold tracking-tight text-impetus-orange sm:text-3xl font-serif">
+                        <h2 class="text-2xl font-extrabold tracking-tight text-impetus-teal sm:text-3xl font-outfit">
                             Practice Test
                         </h2>
                         @auth
                             @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
                                 <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
-                                    class="group relative inline-flex overflow-hidden rounded-xl bg-gradient-to-r from-impetus-orange to-amber-500 px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 ring-2 ring-white/40 transition hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2 active:translate-y-0">
+                                    class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
                                     <div class="relative flex items-center gap-4">
                                         <span
                                             class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
@@ -456,7 +443,7 @@
                     </div>
                     <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-20">
                         <div class="order-2 min-w-0 lg:order-1">
-                            <div class="mt-4 space-y-4 text-lg leading-8 text-slate-700 text-justify">
+                            <div class="mt-4 space-y-4 text-lg leading-8 text-slate-600 text-justify">
                                 {!! nl2br(e($course->practice_content)) !!}
                             </div>
                             @auth
@@ -471,7 +458,7 @@
                             <br>
                             <div class="relative w-full">
                                 <div
-                                    class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-logo-blue/15 via-transparent to-logo-light-green/20 blur-2xl">
+                                    class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
                                 </div>
                                 <div
                                     class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-300/35 ring-1 ring-slate-200/50">
@@ -500,14 +487,14 @@
                 <div
                     class="flex items-center justify-between border-b border-slate-100 bg-white/95 px-6 py-4 rounded-t-[2rem]">
                     <div class="flex items-center gap-2.5">
-                        <div class="flex size-9 items-center justify-center rounded-xl bg-logo-blue/10 text-logo-blue">
+                        <div class="flex size-9 items-center justify-center rounded-xl bg-impetus-teal/10 text-impetus-teal">
                             <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
-                        <h2 class="font-serif text-lg font-bold text-impetus-orange">Score Card</h2>
+                        <h2 class="text-lg font-bold text-impetus-teal font-outfit">Score Card</h2>
                     </div>
                     <button @click="scoreCardOpen = false"
                         class="rounded-xl p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600">
@@ -520,18 +507,18 @@
                 <div class="px-6 py-6 sm:px-8">
                     <div class="text-center">
                         <p class="mb-1 text-sm font-bold text-slate-800">{{ $course->couse_name }}</p>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-logo-blue/80"
+                        <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-impetus-teal/80"
                             x-text="scoreCardData.title"></p>
                     </div>
 
                     <div class="mt-8 grid grid-cols-2 gap-3.5">
-                        <div class="rounded-2xl border border-transparent bg-gradient-to-br from-blue-600 to-indigo-700 p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-blue-100">Score</p>
+                        <div class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Score</p>
                             <p class="mt-1.5 text-xl font-black font-outfit"
                                 x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
                         </div>
-                        <div class="rounded-2xl border border-orange-500/20 bg-gradient-to-br from-orange-500 to-amber-500 p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-orange-100">Percentage</p>
+                        <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Percentage</p>
                             <p class="mt-1.5 text-xl font-black font-outfit"
                                 x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'">
                             </p>
@@ -544,12 +531,12 @@
                             <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Time taken</p>
                             <p class="mt-1.5 text-xl font-black text-slate-900 font-outfit" x-text="scoreCardData.duration"></p>
                         </div>
-                        <div class="rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500 to-teal-600 p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-100">Correct Answer</p>
+                        <div class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Correct Answer</p>
                             <p class="mt-1.5 text-xl font-black font-outfit" x-text="scoreCardData.correct"></p>
                         </div>
-                        <div class="rounded-2xl border border-rose-500/20 bg-gradient-to-br from-rose-500 to-red-600 p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-rose-100">Incorrect Answer</p>
+                        <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Incorrect Answer</p>
                             <p class="mt-1.5 text-xl font-black font-outfit" x-text="scoreCardData.wrong"></p>
                         </div>
                     </div>
@@ -575,7 +562,7 @@
 
                     <div class="mt-8">
                         <button @click="scoreCardOpen = false"
-                            class="flex w-full items-center justify-center gap-2 rounded-2xl bg-logo-blue py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-logo-blue/20 transition hover:bg-brand-600">
+                            class="flex w-full items-center justify-center gap-2 rounded-2xl bg-impetus-teal py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-impetus-teal/20 transition hover:bg-impetus-teal-hover">
                             Close
                         </button>
                     </div>
@@ -597,11 +584,11 @@
                 x-transition:leave="transition ease-in duration-150"
                 x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                 x-transition:leave-end="opacity-0 scale-95 translate-y-2" @click.stop>
-                <div class="border-b border-amber-100 bg-gradient-to-r from-amber-50 via-white to-amber-50/80 px-6 py-4">
+                <div class="border-b border-impetus-orange/20 bg-impetus-lightOrange px-6 py-4">
                     <div class="flex items-start justify-between gap-3">
                         <div class="flex min-w-0 items-center gap-3">
                             <span
-                                class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-700 ring-1 ring-amber-200/80">
+                                class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-impetus-orange/15 text-impetus-orange ring-1 ring-impetus-orange/20">
                                 <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     stroke-width="2" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -613,7 +600,7 @@
                             </h3>
                         </div>
                         <button type="button"
-                            class="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue"
+                            class="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal"
                             @click="practiceGateOpen = false" aria-label="Close dialog">
                             <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2" aria-hidden="true">
@@ -634,7 +621,7 @@
                             Close
                         </button>
                         <a href="{{ route('cne.modules.test', [$course->couse_name, 'mock']) }}"
-                            class="inline-flex w-full items-center justify-center rounded-xl bg-logo-blue px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-logo-blue/25 transition hover:bg-brand-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2 sm:w-auto"
+                            class="inline-flex w-full items-center justify-center rounded-xl bg-impetus-orange px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/25 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2 sm:w-auto"
                             @click="practiceGateOpen = false">
                             Go to mock test
                         </a>

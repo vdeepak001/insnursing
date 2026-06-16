@@ -1,10 +1,10 @@
 @php
     $navDesktopClass = fn(string $routeName): string => request()->routeIs($routeName)
-        ? 'text-xs xl:text-sm font-bold text-impetus-teal transition-colors font-outfit'
-        : 'text-xs xl:text-sm font-semibold text-slate-700 hover:text-impetus-teal transition-colors font-outfit';
+        ? 'text-xs xl:text-sm font-bold text-impetus-orange transition-colors font-outfit'
+        : 'text-xs xl:text-sm font-semibold text-impetus-teal hover:text-impetus-orange transition-colors font-outfit';
     $navMobileClass = fn(string $routeName): string => request()->routeIs($routeName)
-        ? '-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-impetus-teal'
-        : '-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-slate-900 hover:bg-brand-50';
+        ? '-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-impetus-orange'
+        : '-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-impetus-teal hover:bg-impetus-teal-muted';
     $cartCount = 0;
     if (auth()->check() && auth()->user()?->role_type === 'user') {
         $cartCount = \App\Models\CartItem::query()
@@ -90,7 +90,7 @@
                                     </svg>
                                 </button>
                                 <div
-                                    class="w-40 rounded-full bg-impetus-navy py-1 text-center text-[10px] font-bold tracking-wider text-white shadow-md font-outfit">
+                                    class="w-40 rounded-full bg-impetus-teal py-1 text-center text-[10px] font-bold tracking-wider text-white shadow-md font-outfit">
                                     UID: {{ auth()->user()->unique_sequence_number ?? 'N/A' }}
                                 </div>
 
@@ -123,11 +123,17 @@
                     @else
                         <div class="flex items-center gap-3">
                             <button type="button" @click="$dispatch('open-login-modal')"
-                                class="text-sm font-bold text-slate-700 hover:text-impetus-teal transition-colors font-outfit">
+                                class="inline-flex items-center gap-2 rounded-full bg-impetus-orange px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover font-outfit">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
+                                </svg>
                                 Log in
                             </button>
                             <button type="button" @click="$dispatch('open-register-modal')"
-                                class="bg-impetus-orange hover:bg-orange-600 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-impetus-orange/20 transition-all hover:scale-102 hover:shadow-xl hover:shadow-impetus-orange/30 font-outfit glow-orange">
+                                class="inline-flex items-center gap-2 rounded-full border-2 border-impetus-teal bg-white px-5 py-2.5 text-sm font-bold text-impetus-teal transition hover:bg-impetus-teal-muted font-outfit">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM3 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 019.374 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z" />
+                                </svg>
                                 Sign up
                             </button>
                         </div>

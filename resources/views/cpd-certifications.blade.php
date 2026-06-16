@@ -3,28 +3,21 @@
 @section('title', 'CNE Certifications - IHS')
 
 @section('content')
-    <main class="overflow-hidden bg-[#F8FAFC]">
-        <!-- Hero Section -->
-        <section
-            class="relative bg-gradient-to-br from-white via-slate-50 to-slate-100/50 py-20 sm:py-28 border-b border-slate-200/60">
-            <div
-                class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-impetus-orange/5 via-transparent to-transparent pointer-events-none">
-            </div>
-            <div class="absolute top-1/2 left-0 w-80 h-80 bg-impetus-orange/5 rounded-full blur-[120px] pointer-events-none">
-            </div>
-
+    <main class="overflow-hidden bg-white font-sans antialiased text-slate-800">
+        {{-- Hero Section --}}
+        <section class="relative bg-white py-16 sm:py-24">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-                    <div class="lg:col-span-8">
-                        <span
-                            class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Professional
-                            Credibility</span>
-                        <h1
-                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-impetus-navy tracking-tight font-outfit leading-tight mb-6">
+                <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+                    <div>
+                        <p class="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-impetus-teal font-outfit">
+                            <span class="h-px w-8 bg-impetus-teal"></span>
                             CNE Certification
+                        </p>
+                        <h1 class="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl lg:text-[2.75rem] font-outfit">
+                            Certify Your Skills. <span class="text-impetus-teal">Elevate Your Career.</span>
                         </h1>
 
-                        <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-sm sm:text-base">
+                        <div class="space-y-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
                             <p>
                                 <strong>CNE (Continuing Nursing Education) certification</strong> is an official recognition
                                 awarded to nurses and healthcare professionals upon successful completion of structured
@@ -42,286 +35,298 @@
                                 clinical care.
                             </p>
                         </div>
+
+                        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                            @foreach ([
+                                ['label' => 'Accredited Programs', 'icon' => 'M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
+                                ['label' => 'Digital Certificates', 'icon' => 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z'],
+                                ['label' => 'Professional Growth', 'icon' => 'M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342'],
+                            ] as $highlight)
+                                <div class="flex items-center gap-3 rounded-xl border border-impetus-teal/10 bg-impetus-teal-muted/40 px-3 py-3">
+                                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-impetus-teal text-impetus-teal">
+                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="{{ $highlight['icon'] }}" />
+                                        </svg>
+                                    </span>
+                                    <span class="text-xs font-bold leading-snug text-slate-700 sm:text-sm">{{ $highlight['label'] }}</span>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <a href="{{ route('cne.modules') }}"
+                            class="mt-8 inline-flex items-center gap-2 rounded-full bg-impetus-orange px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-impetus-orange/25 transition hover:bg-impetus-orange-hover font-outfit">
+                            Explore CNE Modules
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
                     </div>
 
-                    <!-- Right Column: Visual Graphic/Accreditation Seal -->
-                    <div class="lg:col-span-4 relative flex items-center justify-center lg:self-end lg:mb-2">
-                        <div
-                            class="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-tr from-impetus-orange/10 via-transparent to-impetus-navy/10 blur-2xl -z-10">
-                        </div>
+                    <div class="relative mx-auto flex w-full max-w-sm items-center justify-center lg:max-w-md">
+                        <div class="absolute h-64 w-64 rounded-full border-2 border-impetus-orange/30 sm:h-72 sm:w-72"></div>
                         <img src="{{ asset('images/CNE_Certification.jpeg') }}" alt="CNE Certification"
-                            class="relative w-full max-w-[280px] sm:max-w-[320px] h-auto rounded-[2rem] shadow-xl border border-slate-200/50 transition-transform duration-500 hover:scale-[1.02]">
+                            class="relative z-10 h-auto w-full max-w-xs rounded-2xl object-cover shadow-xl">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Purpose & Importance Section -->
-        <section class="py-24 sm:py-32 relative bg-white border-b border-slate-200/60 overflow-hidden">
-            <div
-                class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-impetus-orange/5 via-transparent to-transparent pointer-events-none">
-            </div>
-
+        {{-- Purpose & Importance --}}
+        <section class="border-y border-impetus-teal/10 bg-slate-50 py-16 sm:py-20">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid items-start gap-16 lg:grid-cols-12">
-
-                    <!-- Purpose Column (Left) -->
-                    <div
-                        class="lg:col-span-6 bg-gradient-to-br from-white to-slate-50 border border-slate-200/80 rounded-[2.5rem] p-8 shadow-xl relative overflow-hidden">
-                        <div class="absolute -right-16 -top-16 w-36 h-36 bg-impetus-orange/5 rounded-full blur-2xl pointer-events-none"></div>
-                        <div
-                            class="w-12 h-12 rounded-2xl bg-impetus-orange text-white flex items-center justify-center shrink-0 mb-6 shadow-lg shadow-impetus-orange/20 relative z-10">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-extrabold text-impetus-navy font-outfit mb-4 relative z-10">Purpose of CNE Certification</h3>
-                        <p class="text-sm sm:text-base text-slate-500 leading-relaxed text-justify mb-6 relative z-10">
-                            Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core
-                            performance goals:
-                        </p>
-                        <ul class="space-y-4 relative z-10">
-                            <!-- 1. Continuous Development (Orange Theme) -->
-                            <li
-                                class="flex gap-3 bg-gradient-to-br from-orange-50/40 via-white to-white p-4 rounded-xl border border-orange-100 shadow-sm hover:border-impetus-orange/30 hover:shadow-md hover:shadow-orange-500/5 transition-all duration-300">
-                                <span
-                                    class="text-impetus-orange shrink-0 bg-orange-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </span>
-                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
-                                    To promote continuous professional development among nurses
-                                </span>
-                            </li>
-
-                            <!-- 2. Update Clinical Knowledge (Emerald Theme) -->
-                            <li
-                                class="flex gap-3 bg-gradient-to-br from-emerald-50/40 via-white to-white p-4 rounded-xl border border-emerald-100 shadow-sm hover:border-emerald-500/30 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300">
-                                <span
-                                    class="text-emerald-600 shrink-0 bg-emerald-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
-                                    </svg>
-                                </span>
-                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
-                                    To update clinical knowledge and practical skills
-                                </span>
-                            </li>
-
-                            <!-- 3. Quality & Safety (Navy Theme) -->
-                            <li
-                                class="flex gap-3 bg-gradient-to-br from-indigo-50/40 via-white to-white p-4 rounded-xl border border-indigo-100 shadow-sm hover:border-indigo-500/30 hover:shadow-md hover:shadow-indigo-500/5 transition-all duration-300">
-                                <span
-                                    class="text-indigo-600 shrink-0 bg-indigo-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
-                                    </svg>
-                                </span>
-                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
-                                    To improve the quality of patient care and safety standards
-                                </span>
-                            </li>
-
-                            <!-- 4. Specialized Areas (Orange Theme) -->
-                            <li
-                                class="flex gap-3 bg-gradient-to-br from-orange-50/40 via-white to-white p-4 rounded-xl border border-orange-100 shadow-sm hover:border-impetus-orange/30 hover:shadow-md hover:shadow-orange-500/5 transition-all duration-300">
-                                <span
-                                    class="text-impetus-orange shrink-0 bg-orange-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                    </svg>
-                                </span>
-                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
-                                    To strengthen competency in specialized nursing areas
-                                </span>
-                            </li>
-
-                            <!-- 5. Regulatory Requirements (Emerald Theme) -->
-                            <li
-                                class="flex gap-3 bg-gradient-to-br from-emerald-50/40 via-white to-white p-4 rounded-xl border border-emerald-100 shadow-sm hover:border-emerald-500/30 hover:shadow-md hover:shadow-emerald-500/5 transition-all duration-300">
-                                <span
-                                    class="text-emerald-600 shrink-0 bg-emerald-100 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold shadow-sm">
-                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                                    </svg>
-                                </span>
-                                <span class="text-sm sm:text-base text-slate-600 leading-relaxed text-justify">
-                                    To meet regulatory and professional education requirements
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Importance Column (Right) -->
-                    <div class="lg:col-span-6 flex flex-col justify-center h-full">
-                        <span
-                            class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">High
-                            Clinical Standards</span>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-6">
-                            Importance of CNE Certification</h2>
-
-                        <div class="space-y-6 text-slate-600 text-justify leading-relaxed text-sm sm:text-base mb-8">
-                            <p>
-                                CNE certification plays a vital role in ensuring that nursing professionals maintain high
-                                standards of practice by regularly updating their knowledge and skills. It enhances career
-                                development, professional credibility, and clinical confidence while contributing to
-                                improved healthcare outcomes and patient safety.
-                            </p>
-                        </div>
-
-                        <!-- Takeaway Callout Box -->
-                        <div
-                            class="p-6 rounded-2xl bg-gradient-to-r from-impetus-navy to-impetus-navy/90 text-white shadow-xl shadow-slate-900/10">
-                            <div class="flex gap-4 items-start">
-                                <p
-                                    class="text-sm sm:text-base text-slate-200 text-justify leading-relaxed font-outfit italic">
-                                    “Overall, CNE certification reflects a commitment to lifelong learning and excellence in nursing practice.”
+                <div class="grid gap-8 lg:grid-cols-2">
+                    <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange p-6 shadow-md sm:p-8">
+                        <div class="mb-6 flex items-center gap-4">
+                            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
+                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-extrabold text-impetus-orange font-outfit">Purpose of CNE Certification</h2>
+                                <p class="mt-2 text-sm text-slate-600 sm:text-base">
+                                    Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core performance goals:
                                 </p>
                             </div>
                         </div>
+                        <ul class="space-y-4">
+                            @foreach ([
+                                'To promote continuous professional development among nurses',
+                                'To update clinical knowledge and practical skills',
+                                'To improve the quality of patient care and safety standards',
+                                'To strengthen competency in specialized nursing areas',
+                                'To meet regulatory and professional education requirements',
+                            ] as $purpose)
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
+                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                    <p class="text-sm leading-relaxed text-slate-600 text-justify">{{ $purpose }}</p>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
 
+                    <div class="rounded-2xl border border-impetus-teal/15 bg-white p-6 shadow-md sm:p-8">
+                        <div class="mb-6 flex items-center gap-4">
+                            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
+                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-widest text-impetus-teal font-outfit">High Clinical Standards</p>
+                                <h2 class="text-2xl font-extrabold text-impetus-teal font-outfit">Importance of CNE Certification</h2>
+                            </div>
+                        </div>
+                        <p class="mb-6 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                            CNE certification plays a vital role in ensuring that nursing professionals maintain high
+                            standards of practice by regularly updating their knowledge and skills. It enhances career
+                            development, professional credibility, and clinical confidence while contributing to
+                            improved healthcare outcomes and patient safety.
+                        </p>
+                        <div class="rounded-xl bg-impetus-teal p-5">
+                            <p class="text-sm italic leading-relaxed text-white/90 text-justify sm:text-base font-outfit">
+                                “Overall, CNE certification reflects a commitment to lifelong learning and excellence in nursing practice.”
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Process Flow Section -->
-        <section class="border-t border-slate-200/80 bg-white py-24 sm:py-32">
+        {{-- Certification Journey --}}
+        <section class="py-16 sm:py-24">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto max-w-2xl text-center mb-16">
-                    <span
-                        class="text-sm font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-3 block">Step-By-Step
-                        Path</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-impetus-navy tracking-tight font-outfit">
-                        Certification Journey</h2>
-                    <p class="mt-4 text-slate-600 text-justify sm:text-center leading-relaxed">
+                <div class="mx-auto mb-12 max-w-3xl text-center">
+                    <span class="mb-3 block text-sm font-bold uppercase tracking-widest text-impetus-orange font-outfit">Step-By-Step Path</span>
+                    <h2 class="text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Certification Journey</h2>
+                    <p class="mt-4 text-sm leading-relaxed text-slate-600 text-justify sm:text-center sm:text-base">
                         To empower nurses with continuous learning opportunities that promote excellence in practice,
                         improve healthcare outcomes, and support professional advancement in a dynamic healthcare landscape.
                     </p>
                 </div>
 
                 @php
-                    $steps = [
-                        [
-                            'num' => '1',
-                            'label' => 'Register',
-                            'gradient' => 'from-emerald-500 to-teal-600 shadow-emerald-500/20',
-                            'arrow_right' => 'block'
-                        ],
-                        [
-                            'num' => '2',
-                            'label' => 'Purchase a module',
-                            'gradient' => 'from-sky-500 to-blue-600 shadow-sky-500/20',
-                            'arrow_right' => 'hidden sm:block'
-                        ],
-                        [
-                            'num' => '3',
-                            'label' => 'Take pre-test',
-                            'gradient' => 'from-indigo-500 to-indigo-600 shadow-indigo-500/20',
-                            'arrow_right' => 'hidden md:block'
-                        ],
-                        [
-                            'num' => '4',
-                            'label' => 'Use learning resources',
-                            'gradient' => 'from-violet-500 to-purple-600 shadow-violet-500/20',
-                            'arrow_right' => 'hidden sm:block md:hidden'
-                        ],
-                        [
-                            'num' => '5',
-                            'label' => 'Practice MCQs',
-                            'gradient' => 'from-fuchsia-500 to-pink-600 shadow-fuchsia-500/20',
-                            'arrow_right' => 'block'
-                        ],
-                        [
-                            'num' => '6',
-                            'label' => 'Take mock exam',
-                            'gradient' => 'from-rose-500 to-red-600 shadow-rose-500/20',
-                            'arrow_right' => 'hidden md:block'
-                        ],
-                        [
-                            'num' => '7',
-                            'label' => 'Complete final exam',
-                            'gradient' => 'from-orange-500 to-amber-600 shadow-orange-500/20',
-                            'arrow_right' => 'block'
-                        ],
-                        [
-                            'num' => '8',
-                            'label' => 'Download CNE certificate',
-                            'gradient' => 'from-amber-500 to-yellow-500 shadow-amber-500/20',
-                            'arrow_right' => 'hidden'
-                        ]
+                    $journeySteps = [
+                        ['num' => '1', 'label' => 'Register'],
+                        ['num' => '2', 'label' => 'Purchase a module'],
+                        ['num' => '3', 'label' => 'Take pre-test'],
+                        ['num' => '4', 'label' => 'Use learning resources'],
+                        ['num' => '5', 'label' => 'Practice MCQs'],
+                        ['num' => '6', 'label' => 'Take mock exam'],
+                        ['num' => '7', 'label' => 'Complete final exam'],
+                        ['num' => '8', 'label' => 'Download CNE certificate'],
                     ];
+                    $journeyRows = array_chunk($journeySteps, 4);
                 @endphp
 
-                <div class="mt-8 relative">
-                    <!-- Desktop SVG wrapping connector (4 columns) -->
-                    <svg class="hidden md:block absolute inset-0 w-full h-[384px] pointer-events-none z-0" viewBox="0 0 1000 384" preserveAspectRatio="none">
-                        <defs>
-                            <marker id="arrow-md" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#CBD5E1" />
-                            </marker>
-                        </defs>
-                        <!-- Step 4 to Step 5 wrap -->
-                        <path d="M 875 160 C 875 185, 875 192, 850 192 L 150 192 C 125 192, 125 199, 125 220" 
-                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-md)" />
-                    </svg>
+                <svg class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
+                    <defs>
+                        <marker id="journey-connector-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                            <path d="M0,0 L8,4 L0,8 Z" fill="#FF7A00" />
+                        </marker>
+                    </defs>
+                </svg>
 
-                    <!-- Tablet SVG wrapping connectors (3 columns) -->
-                    <svg class="hidden sm:block md:hidden absolute inset-0 w-full h-[608px] pointer-events-none z-0" viewBox="0 0 1000 608" preserveAspectRatio="none">
-                        <defs>
-                            <marker id="arrow-sm" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#CBD5E1" />
-                            </marker>
-                        </defs>
-                        <!-- Step 3 to Step 4 wrap -->
-                        <path d="M 833 160 C 833 185, 833 192, 808 192 L 192 192 C 167 192, 167 199, 167 220" 
-                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-sm)" />
-                        <!-- Step 6 to Step 7 wrap -->
-                        <path d="M 833 384 C 833 409, 833 416, 808 416 L 192 416 C 167 416, 167 423, 167 444" 
-                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-sm)" />
-                    </svg>
-
-                    <!-- Mobile SVG wrapping connectors (2 columns) -->
-                    <svg class="block sm:hidden absolute inset-0 w-full h-[720px] pointer-events-none z-0" viewBox="0 0 1000 720" preserveAspectRatio="none">
-                        <defs>
-                            <marker id="arrow-xs" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#CBD5E1" />
-                            </marker>
-                        </defs>
-                        <!-- Step 2 to Step 3 wrap -->
-                        <path d="M 750 144 C 750 162, 750 168, 730 168 L 270 168 C 250 168, 250 174, 250 188" 
-                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-xs)" />
-                        <!-- Step 4 to Step 5 wrap -->
-                        <path d="M 750 336 C 750 354, 750 360, 730 360 L 270 360 C 250 360, 250 366, 250 380" 
-                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-xs)" />
-                        <!-- Step 6 to Step 7 wrap -->
-                        <path d="M 750 528 C 750 546, 750 552, 730 552 L 270 552 C 250 552, 250 558, 250 572" 
-                              fill="none" stroke="#CBD5E1" stroke-width="3" marker-end="url(#arrow-xs)" />
-                    </svg>
-
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-12 sm:gap-x-8 sm:gap-y-16 max-w-5xl mx-auto relative z-10">
-                        @foreach ($steps as $step)
-                            <div class="group relative flex flex-col items-center w-full">
-                                {{-- Circle Element --}}
-                                <div class="relative z-10 flex size-36 sm:size-40 flex-col items-center justify-center rounded-full bg-gradient-to-br {{ $step['gradient'] }} p-5 text-center text-white shadow-lg transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl">
-                                    <span class="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">Step {{ $step['num'] }}</span>
-                                    <h4 class="mt-2 text-xs sm:text-sm font-extrabold leading-snug font-outfit uppercase tracking-wider">{{ $step['label'] }}</h4>
+                {{-- Desktop --}}
+                <div class="relative mx-auto hidden w-full max-w-5xl md:block">
+                    <div
+                        class="grid grid-cols-[minmax(0,1fr)_2.5rem_minmax(0,1fr)_2.5rem_minmax(0,1fr)_2.5rem_minmax(0,1fr)] items-start gap-x-4 lg:gap-x-8">
+                        @foreach ($journeyRows[0] as $stepIndex => $step)
+                            @php
+                                $theme = (int) $step['num'] % 2 === 1 ? 'teal' : 'orange';
+                            @endphp
+                            <div class="flex flex-col items-center px-2 text-center lg:px-3">
+                                <div class="flex h-[4.5rem] w-full items-center justify-center">
+                                    <div @class([
+                                        'flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md lg:h-[4.5rem] lg:w-[4.5rem]',
+                                        'bg-impetus-teal' => $theme === 'teal',
+                                        'bg-impetus-orange' => $theme === 'orange',
+                                    ])>
+                                        <span class="text-lg font-extrabold font-outfit">{{ $step['num'] }}</span>
+                                    </div>
                                 </div>
-                                
-                                {{-- Pulse highlight circle --}}
-                                <div class="absolute inset-x-0 inset-y-0 rounded-full bg-gradient-to-br {{ $step['gradient'] }} opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300 pointer-events-none"></div>
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Step {{ $step['num'] }}</p>
+                                <h3 class="mt-2 text-sm font-bold leading-snug text-slate-800 font-outfit">{{ $step['label'] }}</h3>
+                            </div>
 
-                                {{-- Connector Arrow (Right) --}}
-                                <div class="{{ $step['arrow_right'] }} absolute left-full -translate-x-1/2 top-[72px] sm:top-[80px] -translate-y-1/2 w-8 sm:w-12 h-12 flex items-center justify-center z-20">
-                                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-slate-300 group-hover:text-slate-500 transition-all duration-300 transform group-hover:translate-x-1 drop-shadow-sm" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            @if ($stepIndex < count($journeyRows[0]) - 1)
+                                <div class="flex h-[4.5rem] items-center justify-center text-impetus-orange" aria-hidden="true">
+                                    <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                     </svg>
                                 </div>
+                            @endif
+                        @endforeach
+                    </div>
+
+                    <div class="relative my-8 h-16 w-full lg:my-10 lg:h-20" aria-hidden="true">
+                        <svg class="certification-journey-connector h-full w-full text-impetus-orange" viewBox="0 0 100 100"
+                            fill="none" preserveAspectRatio="none">
+                            <path
+                                d="M 84 45
+                                   H 14
+                                   V 78"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                marker-end="url(#journey-connector-arrow)" />
+                        </svg>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-[minmax(0,1fr)_2.5rem_minmax(0,1fr)_2.5rem_minmax(0,1fr)_2.5rem_minmax(0,1fr)] items-start gap-x-4 lg:gap-x-8">
+                        @foreach ($journeyRows[1] as $stepIndex => $step)
+                            @php
+                                $theme = (int) $step['num'] % 2 === 1 ? 'teal' : 'orange';
+                            @endphp
+                            <div class="flex flex-col items-center px-2 text-center lg:px-3">
+                                <div class="flex h-[4.5rem] w-full items-center justify-center">
+                                    <div @class([
+                                        'flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md lg:h-[4.5rem] lg:w-[4.5rem]',
+                                        'bg-impetus-teal' => $theme === 'teal',
+                                        'bg-impetus-orange' => $theme === 'orange',
+                                    ])>
+                                        <span class="text-lg font-extrabold font-outfit">{{ $step['num'] }}</span>
+                                    </div>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Step {{ $step['num'] }}</p>
+                                <h3 class="mt-2 text-sm font-bold leading-snug text-slate-800 font-outfit">{{ $step['label'] }}</h3>
+                            </div>
+
+                            @if ($stepIndex < count($journeyRows[1]) - 1)
+                                <div class="flex h-[4.5rem] items-center justify-center text-impetus-orange" aria-hidden="true">
+                                    <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+
+                {{-- Mobile --}}
+                <div class="relative md:hidden">
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-10">
+                        @foreach ($journeyRows[0] as $step)
+                            @php
+                                $theme = (int) $step['num'] % 2 === 1 ? 'teal' : 'orange';
+                            @endphp
+                            <div class="flex flex-col items-center px-2 text-center">
+                                <div @class([
+                                    'mb-3 flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md',
+                                    'bg-impetus-teal' => $theme === 'teal',
+                                    'bg-impetus-orange' => $theme === 'orange',
+                                ])>
+                                    <span class="text-lg font-extrabold font-outfit">{{ $step['num'] }}</span>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Step {{ $step['num'] }}</p>
+                                <h3 class="mt-2 text-sm font-bold leading-snug text-slate-800 font-outfit">{{ $step['label'] }}</h3>
                             </div>
                         @endforeach
                     </div>
+
+                    <div class="relative my-8 h-14 w-full" aria-hidden="true">
+                        <svg class="certification-journey-connector h-full w-full text-impetus-orange" viewBox="0 0 100 100"
+                            fill="none" preserveAspectRatio="none">
+                            <path
+                                d="M 78 30
+                                   H 22
+                                   V 78"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                marker-end="url(#journey-connector-arrow)" />
+                        </svg>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-10">
+                        @foreach ($journeyRows[1] as $step)
+                            @php
+                                $theme = (int) $step['num'] % 2 === 1 ? 'teal' : 'orange';
+                            @endphp
+                            <div class="flex flex-col items-center px-2 text-center">
+                                <div @class([
+                                    'mb-3 flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md',
+                                    'bg-impetus-teal' => $theme === 'teal',
+                                    'bg-impetus-orange' => $theme === 'orange',
+                                ])>
+                                    <span class="text-lg font-extrabold font-outfit">{{ $step['num'] }}</span>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Step {{ $step['num'] }}</p>
+                                <h3 class="mt-2 text-sm font-bold leading-snug text-slate-800 font-outfit">{{ $step['label'] }}</h3>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {{-- Bottom CTA --}}
+        <section class="pb-16 sm:pb-24">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="flex flex-col items-center justify-between gap-6 rounded-2xl bg-impetus-teal px-6 py-8 shadow-xl sm:flex-row sm:px-10 sm:py-10">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-white">
+                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+                            </svg>
+                        </div>
+                        <div class="text-center sm:text-left">
+                            <h2 class="text-xl font-extrabold !text-impetus-orange sm:text-2xl font-outfit">Start Your Certification Journey Today</h2>
+                            <p class="mt-2 text-sm text-white/90 sm:text-base">
+                                Register, complete your modules, and earn your CNE certification with confidence.
+                            </p>
+                        </div>
+                    </div>
+                    <a href="{{ route('cne.modules') }}"
+                        class="inline-flex shrink-0 items-center gap-2 rounded-full bg-impetus-orange px-6 py-3 text-sm font-bold text-white shadow-lg shadow-impetus-orange/25 transition hover:bg-impetus-orange-hover font-outfit">
+                        Get Certified
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>

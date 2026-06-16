@@ -29,7 +29,10 @@ use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $latestCourses = CourseDetail::where('active_status', 1)
+    $latestCourses = CourseDetail::query()
+        ->where('active_status', 1)
+        ->withCount('subTitles')
+        ->with('stateCouncils')
         ->orderByRaw('CASE WHEN sequence IS NULL THEN 1 ELSE 0 END')
         ->orderBy('sequence')
         ->orderBy('id')

@@ -11,11 +11,11 @@ it('returns a successful response for the CNE modules listing', function () {
     $response = $this->get(route('cne.modules'));
 
     $response->assertSuccessful();
-    $response->assertSee('CPD Modules', false);
-    $response->assertSee('Continuing Professional Development Modules', false);
+    $response->assertSee('CNE Modules', false);
+    $response->assertSee('Online Continuing Nursing Education (CNE) Modules', false);
 });
 
-it('lists active courses with static course card imagery and course titles', function () {
+it('lists active courses with module cards and course titles', function () {
     CourseDetail::create([
         'couse_name' => 'Listing Test Course',
         'description' => 'Test description for listing.',
@@ -25,8 +25,9 @@ it('lists active courses with static course card imagery and course titles', fun
     $response = $this->get(route('cne.modules'));
 
     $response->assertSuccessful();
-    $response->assertSee('images/course.jpeg', false);
     $response->assertSee('Listing Test Course', false);
+    $response->assertSee('View Module', false);
+    $response->assertSee('Features of Online CNE Modules', false);
 });
 
 it('shows only state council assigned courses for authenticated frontend users', function () {

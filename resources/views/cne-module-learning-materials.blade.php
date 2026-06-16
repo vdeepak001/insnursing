@@ -73,21 +73,21 @@
 
     <main class="pb-16">
 
-        <section class="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-br from-white via-slate-50 to-logo-light-green/5 py-12 sm:py-16">
-            <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-logo-blue/10 blur-3xl"></div>
-            <div class="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-logo-light-green/20 blur-3xl"></div>
+        <section class="relative overflow-hidden border-b border-impetus-teal/10 bg-impetus-teal-muted/30 py-12 sm:py-16">
+            <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-impetus-teal/10 blur-3xl"></div>
+            <div class="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-impetus-orange/10 blur-3xl"></div>
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                     <div class="min-w-0 flex-1">
-                        <h1 class="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl font-serif">
-                            <span class="text-logo-blue">Learning Materials</span>
+                        <h1 class="text-2xl font-extrabold tracking-tight text-slate-800 sm:text-3xl font-outfit">
+                            <span class="text-impetus-teal">Learning Materials</span>
                             <span class="font-normal text-slate-400" aria-hidden="true"> – </span>
                             <span class="text-slate-900">{{ $courseName }}</span>
                         </h1>
                     </div>
                     <a
                         href="{{ route('cne.modules.show', $course->couse_name) }}"
-                        class="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-slate-300 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-600 shadow-sm transition hover:border-logo-blue hover:text-logo-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-logo-blue focus-visible:ring-offset-2 sm:self-auto"
+                        class="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-impetus-teal/20 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-600 shadow-sm transition hover:border-impetus-teal hover:text-impetus-teal focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal focus-visible:ring-offset-2 sm:self-auto"
                     >
                         <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -106,8 +106,8 @@
         }">
             {{-- Abstract Background Elements --}}
             <div class="pointer-events-none absolute left-0 top-0 h-full w-full overflow-hidden" aria-hidden="true">
-                <div class="absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-logo-blue/5 blur-3xl"></div>
-                <div class="absolute -right-24 bottom-1/4 h-96 w-96 rounded-full bg-logo-light-green/10 blur-3xl"></div>
+                <div class="absolute -left-24 top-1/4 h-96 w-96 rounded-full bg-impetus-teal/5 blur-3xl"></div>
+                <div class="absolute -right-24 bottom-1/4 h-96 w-96 rounded-full bg-impetus-teal/10 blur-3xl"></div>
             </div>
 
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -117,7 +117,7 @@
                         <aside class="w-full shrink-0 lg:w-80">
                             <div class="sticky top-32">
                                 <div class="mb-6 flex items-center justify-between">
-                                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400">Topics</h3>
+                                    <h3 class="text-xs font-bold uppercase tracking-widest text-impetus-teal">Topics</h3>
                                     <span class="rounded-full bg-slate-200/50 px-2.5 py-0.5 text-[10px] font-bold text-slate-500" x-text="(activeIndex + 1) + '/' + total"></span>
                                 </div>
                                 
@@ -133,11 +133,11 @@
                                             {{-- The Indicator Circle --}}
                                             <div 
                                                 class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-2 transition-all duration-300"
-                                                :class="activeIndex === {{ $index }} ? 'bg-logo-blue border-logo-blue shadow-lg shadow-logo-blue/30 scale-110' : 'bg-white border-slate-200 group-hover:border-logo-blue/30'"
+                                                :class="activeIndex === {{ $index }} ? 'bg-impetus-teal border-impetus-teal shadow-lg shadow-impetus-teal/30 scale-110' : 'bg-white border-slate-200 group-hover:border-impetus-teal/30'"
                                             >
                                                 <span 
                                                     class="text-sm font-bold transition-colors duration-300"
-                                                    :class="activeIndex === {{ $index }} ? 'text-white' : 'text-slate-400 group-hover:text-logo-blue'"
+                                                    :class="activeIndex === {{ $index }} ? 'text-white' : 'text-slate-400 group-hover:text-impetus-teal'"
                                                 >
                                                     {{ $index + 1 }}
                                                 </span>
@@ -146,7 +146,7 @@
                                             <div class="pt-1.5">
                                                 <p 
                                                     class="text-sm font-bold leading-tight transition-colors duration-300"
-                                                    :class="activeIndex === {{ $index }} ? 'text-logo-blue' : 'text-slate-500 group-hover:text-slate-800'"
+                                                    :class="activeIndex === {{ $index }} ? 'text-impetus-teal' : 'text-slate-500 group-hover:text-slate-800'"
                                                 >
                                                     {{ $material['subtitle'] }}
                                                 </p>
@@ -162,7 +162,7 @@
                         <div class="flex-1">
                             <div class="relative">
                                 <article class="group relative overflow-hidden rounded-[2.5rem] border border-white bg-white/80 p-1 shadow-2xl shadow-slate-200/60 backdrop-blur-xl ring-1 ring-slate-200/50">
-                                    <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-logo-blue/5 transition-transform duration-700 group-hover:scale-110"></div>
+                                    <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-impetus-teal/5 transition-transform duration-700 group-hover:scale-110"></div>
                                     
                                     <div class="relative flex h-full flex-col overflow-hidden rounded-[2.25rem] bg-white">
                                         {{-- Persistent Top Navigation Stripe --}}
@@ -171,7 +171,7 @@
                                                 type="button"
                                                 @click="prev()"
                                                 :disabled="activeIndex === 0"
-                                                class="group flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition-all disabled:opacity-30 hover:border-logo-blue hover:text-logo-blue"
+                                                class="group flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-600 transition-all disabled:opacity-30 hover:border-impetus-teal hover:text-impetus-teal"
                                             >
                                                 <svg class="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12l7.5-7.5" />
@@ -185,7 +185,7 @@
                                                         type="button"
                                                         @click="activeIndex = {{ $dotIndex }}"
                                                         class="h-1.5 rounded-full transition-all duration-500"
-                                                        :class="activeIndex === {{ $dotIndex }} ? 'w-6 bg-logo-blue' : 'w-1.5 bg-slate-200 hover:bg-slate-300'"
+                                                        :class="activeIndex === {{ $dotIndex }} ? 'w-6 bg-impetus-teal' : 'w-1.5 bg-slate-200 hover:bg-slate-300'"
                                                     ></button>
                                                 @endforeach
                                             </div>
@@ -194,7 +194,7 @@
                                                 type="button"
                                                 @click="next()"
                                                 :disabled="activeIndex === total - 1"
-                                                class="group flex items-center gap-2 rounded-xl bg-logo-blue px-5 py-2 text-xs font-bold text-white shadow-lg shadow-logo-blue/20 transition-all disabled:opacity-30 hover:bg-blue-700 hover:shadow-logo-blue/30"
+                                                class="group flex items-center gap-2 rounded-xl bg-impetus-teal px-5 py-2 text-xs font-bold text-white shadow-lg shadow-impetus-teal/20 transition-all disabled:opacity-30 hover:bg-impetus-teal-hover"
                                             >
                                                 Next
                                                 <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -217,7 +217,7 @@
                                                         <h2 class="font-serif text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
                                                             {{ $material['subtitle'] }}
                                                         </h2>
-                                                        <div class="mt-4 h-1.5 w-20 rounded-full bg-gradient-to-r from-logo-blue to-logo-light-green"></div>
+                                                        <div class="mt-4 h-1.5 w-20 rounded-full bg-gradient-to-r from-impetus-teal to-impetus-orange"></div>
                                                     </header>
                                                     
                                                     {{-- Resources Section --}}
@@ -238,16 +238,16 @@
                                                             @foreach ($attachments as $attIndex => $att)
                                                                 @php
                                                                     $typeColor = match($att['extension']) {
-                                                                        'pdf' => 'text-red-500 bg-red-50 border-red-100',
-                                                                        'doc', 'docx' => 'text-blue-500 bg-blue-50 border-blue-100',
-                                                                        'ppt', 'pptx', 'pps', 'ppsx' => 'text-orange-500 bg-orange-50 border-orange-100',
+                                                                        'pdf' => 'text-impetus-orange bg-impetus-lightOrange border-impetus-orange/20',
+                                                                        'doc', 'docx' => 'text-impetus-teal bg-impetus-teal-muted border-impetus-teal/20',
+                                                                        'ppt', 'pptx', 'pps', 'ppsx' => 'text-impetus-orange bg-impetus-lightOrange border-impetus-orange/20',
                                                                         default => 'text-slate-500 bg-slate-50 border-slate-100'
                                                                     };
                                                                 @endphp
                                                                 <button
                                                                     type="button"
                                                                     onclick="openFile({!! $attachmentsJson !!}, {{ $attIndex }})"
-                                                                    class="group relative flex items-center gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:border-logo-blue hover:bg-white hover:shadow-xl hover:shadow-logo-blue/10"
+                                                                    class="group relative flex items-center gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:border-impetus-teal hover:bg-white hover:shadow-xl hover:shadow-impetus-teal/10"
                                                                 >
                                                                     <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border {{ $typeColor }} transition-transform duration-300 group-hover:scale-110">
                                                                         <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -255,11 +255,11 @@
                                                                         </svg>
                                                                     </div>
                                                                     <div class="min-w-0 flex-1 text-left">
-                                                                        <p class="truncate text-sm font-bold text-slate-800 group-hover:text-logo-blue">{{ $att['name'] }}</p>
+                                                                        <p class="truncate text-sm font-bold text-slate-800 group-hover:text-impetus-teal">{{ $att['name'] }}</p>
                                                                         <p class="mt-0.5 text-[10px] font-bold uppercase tracking-tight text-slate-400 group-hover:text-slate-500">{{ strtoupper($att['extension']) }} Document</p>
                                                                     </div>
                                                                     <div class="flex h-8 w-8 items-center justify-center rounded-full bg-white opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:shadow-sm">
-                                                                        <svg class="h-4 w-4 text-logo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                                        <svg class="h-4 w-4 text-impetus-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                                                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                                                         </svg>
                                                                     </div>
@@ -315,12 +315,12 @@
                                     <span id="pdfPageDisplay" class="text-[11px] font-bold text-slate-700 ml-1">1/1</span>
                                 </div>
                                 <div class="flex items-center gap-1 pr-1">
-                                    <button onclick="navigatePdf(-1)" class="group flex items-center justify-center rounded-lg h-7 w-7 bg-logo-blue text-white shadow-sm hover:bg-brand-600 transition-all">
+                                    <button onclick="navigatePdf(-1)" class="group flex items-center justify-center rounded-lg h-7 w-7 bg-impetus-teal text-white shadow-sm hover:bg-impetus-teal-hover transition-all">
                                         <svg class="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                                         </svg>
                                     </button>
-                                    <button onclick="navigatePdf(1)" class="group flex items-center justify-center rounded-lg h-7 w-7 bg-logo-blue text-white shadow-sm hover:bg-brand-600 transition-all">
+                                    <button onclick="navigatePdf(1)" class="group flex items-center justify-center rounded-lg h-7 w-7 bg-impetus-teal text-white shadow-sm hover:bg-impetus-teal-hover transition-all">
                                         <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                                         </svg>
@@ -331,7 +331,7 @@
 
                         {{-- Right: Close Button --}}
                         <div class="flex-1 flex justify-end">
-                            <button type="button" class="group flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:border-red-200 hover:text-red-500 hover:bg-red-50 transition-all shadow-sm" onclick="closeModal()">
+                            <button type="button" class="group flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:border-impetus-orange/30 hover:text-impetus-orange hover:bg-impetus-lightOrange transition-all shadow-sm" onclick="closeModal()">
                                 <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                                 </svg>

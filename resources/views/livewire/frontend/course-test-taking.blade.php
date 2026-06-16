@@ -1,12 +1,12 @@
 <div class="pb-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         @if ($fatalError)
-            <div class="rounded-2xl border border-amber-200 bg-amber-50 px-6 py-8 text-amber-900 shadow-sm">
+            <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange px-6 py-8 text-slate-800 shadow-sm">
                 <p class="text-lg font-semibold">This test cannot be loaded</p>
-                <p class="mt-2 whitespace-pre-line text-sm text-amber-800/90">{{ $fatalError }}</p>
+                <p class="mt-2 whitespace-pre-line text-sm text-slate-600">{{ $fatalError }}</p>
                 <a
                     href="{{ $testType === 'practice' ? route('cne.modules.test', [$course->couse_name, 'practice']) : route('cne.modules.show', $course->couse_name) }}"
-                    class="mt-6 inline-flex items-center gap-2 rounded-xl border border-amber-300 bg-white px-5 py-2.5 text-sm font-semibold text-amber-900 shadow-sm transition hover:bg-amber-100"
+                    class="mt-6 inline-flex items-center gap-2 rounded-xl border border-impetus-teal/20 bg-white px-5 py-2.5 text-sm font-semibold text-impetus-teal shadow-sm transition hover:bg-impetus-teal-muted"
                 >
                     Back to {{ $testType === 'practice' ? 'practice sets' : 'module' }}
                 </a>
@@ -22,10 +22,10 @@
                 <div class="relative overflow-hidden">
                     {{-- Decorative backgrounds --}}
                     <div class="pointer-events-none absolute -left-20 -top-16 h-72 w-72 rounded-full bg-[#0F766E]/10 blur-3xl" aria-hidden="true"></div>
-                    <div class="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-logo-light-green/[0.12] blur-3xl" aria-hidden="true"></div>
+                    <div class="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-impetus-orange/10 blur-3xl" aria-hidden="true"></div>
 
                     {{-- Header Section --}}
-                    <div class="border-b border-slate-200/80 bg-gradient-to-br from-slate-50/95 via-white to-brand-50/30 px-6 py-8 sm:px-10">
+                    <div class="border-b border-impetus-teal/10 bg-impetus-teal-muted/30 px-6 py-8 sm:px-10">
                         <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
                             <div class="min-w-0">
                                 <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0F766E]">Test completed</p>
@@ -54,20 +54,20 @@
                             </div>
 
                             {{-- Correct Answers --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500 to-teal-600 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-emerald-100 md:text-[11px]">Correct</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-teal/20 bg-impetus-teal p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Correct</p>
                                 <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $correctCount }}</p>
                             </div>
 
                             {{-- Incorrect Answers --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-rose-500/20 bg-gradient-to-br from-rose-500 to-red-600 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-rose-100 md:text-[11px]">Wrong</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-orange/20 bg-impetus-orange p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Wrong</p>
                                 <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $wrongCount }}</p>
                             </div>
 
                             {{-- Obtained Score --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-orange-500/20 bg-gradient-to-br from-orange-500 to-amber-500 p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-orange-100 md:text-[11px]">Score</p>
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-orange/20 bg-impetus-orange p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Score</p>
                                 <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $obtainedScore }}/{{ $maxScore }}</p>
                             </div>
 
@@ -148,12 +148,12 @@
 
                                 <div class="mt-8 flex flex-wrap justify-center gap-8">
                                     <div class="flex items-center gap-3">
-                                        <span class="size-4 shrink-0 bg-gradient-to-r from-emerald-500 to-teal-600 shadow-sm rounded-full"></span>
-                                        <span class="text-base font-bold text-emerald-600">Correct Answer</span>
+                                        <span class="size-4 shrink-0 bg-impetus-teal shadow-sm rounded-full"></span>
+                                        <span class="text-base font-bold text-impetus-teal">Correct Answer</span>
                                     </div>
                                     <div class="flex items-center gap-3">
-                                        <span class="size-4 shrink-0 bg-gradient-to-r from-rose-500 to-red-600 shadow-sm rounded-full"></span>
-                                        <span class="text-base font-bold text-rose-600">Incorrect Answer</span>
+                                        <span class="size-4 shrink-0 bg-impetus-orange shadow-sm rounded-full"></span>
+                                        <span class="text-base font-bold text-impetus-orange">Incorrect Answer</span>
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
                             <div class="mt-10 flex flex-col items-center justify-center text-center">
                                 @if ($passed)
                                     <div class="space-y-4">
-                                        <h3 class="text-2xl font-black tracking-widest text-emerald-600 sm:text-3xl">CONGRATULATIONS!</h3>
+                                        <h3 class="text-2xl font-black tracking-widest text-impetus-teal sm:text-3xl">CONGRATULATIONS!</h3>
                                         <p class="text-lg font-bold text-slate-800">You have Successfully Completed the Exam</p>
 
                                         <div class="flex flex-col items-center gap-3 py-6" x-data="{ hoverRating: 0, currentRating: @entangle('rating').live }">
@@ -180,7 +180,7 @@
                                                     >
                                                         <svg
                                                             class="size-10 transition-colors"
-                                                            :class="(hoverRating || currentRating) >= {{ $i }} ? 'text-amber-400 fill-amber-400' : 'text-slate-300 fill-transparent'"
+                                                            :class="(hoverRating || currentRating) >= {{ $i }} ? 'text-impetus-orange fill-impetus-orange' : 'text-slate-300 fill-transparent'"
                                                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
                                                         >
                                                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -189,7 +189,7 @@
                                                 @endforeach
                                             </div>
                                             <template x-if="currentRating > 0">
-                                                <p class="text-xs font-semibold text-emerald-600">Thank you for your feedback!</p>
+                                                <p class="text-xs font-semibold text-impetus-teal">Thank you for your feedback!</p>
                                             </template>
                                         </div>
 
@@ -205,7 +205,7 @@
                                                 </div>
                                                 <a
                                                     href="{{ route('certificates.download', $orderId) }}"
-                                                    class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-impetus-orange to-amber-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-orange-500/20 transition hover:from-orange-600 hover:to-amber-600"
+                                                    class="inline-flex items-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover"
                                                     target="_blank"
                                                 >
                                                     <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M7.5 7.5L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>
@@ -216,7 +216,7 @@
                                     </div>
                                 @else
                                     <div class="space-y-4">
-                                        <h3 class="text-2xl font-black tracking-widest text-rose-600 sm:text-3xl">SORRY!</h3>
+                                        <h3 class="text-2xl font-black tracking-widest text-impetus-orange sm:text-3xl">SORRY!</h3>
                                         <p class="text-lg font-bold text-slate-800">You have not Successfully Completed the Exam</p>
 
                                         @if($finalAttemptCount < 2)
@@ -224,13 +224,13 @@
                                             <div class="mt-8">
                                                 <a
                                                     href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
-                                                    class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-rose-500 to-red-600 px-10 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-rose-500/20 transition hover:from-rose-600 hover:to-red-700"
+                                                    class="inline-flex items-center gap-2 rounded-xl bg-impetus-orange px-10 py-3 text-sm font-bold uppercase tracking-wider text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover"
                                                 >
                                                     TRY AGAIN!
                                                 </a>
                                             </div>
                                         @else
-                                            <p class="text-sm font-semibold text-rose-600">Kindly Purchase the Module Again</p>
+                                            <p class="text-sm font-semibold text-impetus-orange">Kindly Purchase the Module Again</p>
                                         @endif
                                     </div>
                                 @endif
@@ -287,7 +287,7 @@
                                 aria-label="Exam time remaining"
                                 @class([
                                     'flex items-center gap-2 rounded-lg px-3 py-1.5 font-mono text-sm font-bold tabular-nums sm:text-base',
-                                    'bg-rose-500/90' => $examTimeExpired,
+                                    'bg-impetus-orange/90' => $examTimeExpired,
                                     'bg-[#FF7A00]/90' => $timerLow && ! $examTimeExpired,
                                     'bg-white/15' => ! $examTimeExpired && ! $timerLow,
                                 ])
@@ -420,9 +420,9 @@
                                             if ($showFeedback) {
                                                 $labelClasses .= 'cursor-default ';
                                                 if ($letter === $correctLetter) {
-                                                    $labelClasses .= '!border-[#10B981] !bg-emerald-50 ring-1 ring-[#10B981]';
+                                                    $labelClasses .= '!border-impetus-teal !bg-impetus-teal-muted ring-1 ring-impetus-teal';
                                                 } elseif ($isSelected && $letter !== $correctLetter) {
-                                                    $labelClasses .= '!border-[#EF4444] !bg-rose-50 ring-1 ring-[#EF4444]';
+                                                    $labelClasses .= '!border-impetus-orange !bg-impetus-lightOrange ring-1 ring-impetus-orange';
                                                 } else {
                                                     $labelClasses .= '!border-slate-200 opacity-60';
                                                 }
@@ -443,7 +443,7 @@
                                                 <span class="font-bold text-slate-900 font-outfit">{{ $label }}.</span>
                                                 {{ $choice }}
                                                 @if ($showFeedback && $letter === $correctLetter)
-                                                    <span class="ml-2 inline-flex items-center gap-1 font-bold text-emerald-600">
+                                                    <span class="ml-2 inline-flex items-center gap-1 font-bold text-impetus-teal">
                                                         <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                                         Correct Answer
                                                     </span>
@@ -464,22 +464,22 @@
                                 @endphp
 
                                 @if ($result === 'wrong_first')
-                                    <div class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
-                                        <div class="flex items-center gap-3 text-amber-800">
+                                    <div class="mt-6 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange p-4 shadow-sm">
+                                        <div class="flex items-center gap-3 text-slate-700">
                                             <svg class="size-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" /></svg>
                                             <p class="text-sm font-bold">Incorrect! Please try again. (Attempt 1/2)</p>
                                         </div>
                                     </div>
                                 @elseif ($result === 'wrong_second')
-                                    <div class="mt-6 rounded-xl border border-rose-200 bg-rose-50 p-4 shadow-sm">
-                                        <div class="flex items-center gap-3 text-rose-800">
+                                    <div class="mt-6 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange p-4 shadow-sm">
+                                        <div class="flex items-center gap-3 text-slate-700">
                                             <svg class="size-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                                             <p class="text-sm font-bold">Incorrect! Here is the correct answer and rationale.</p>
                                         </div>
                                     </div>
                                 @elseif ($result === 'correct')
-                                    <div class="mt-6 rounded-xl border border-emerald-200 bg-emerald-50 p-4 shadow-sm">
-                                        <div class="flex items-center gap-3 text-emerald-800">
+                                    <div class="mt-6 rounded-xl border border-impetus-teal/20 bg-impetus-teal-muted/50 p-4 shadow-sm">
+                                        <div class="flex items-center gap-3 text-impetus-teal">
                                             <svg class="size-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                             <p class="text-sm font-bold">Correct!</p>
                                         </div>
@@ -487,8 +487,8 @@
                                 @endif
 
                                 @if ($showReasoning && filled($practiceReasoning[$qid] ?? null))
-                                    <div class="mt-4 rounded-2xl border border-emerald-200/80 bg-emerald-50/40 p-5 shadow-sm">
-                                        <h4 class="text-xs font-bold uppercase tracking-wider text-emerald-700">Rationale</h4>
+                                    <div class="mt-4 rounded-2xl border border-impetus-teal/20 bg-impetus-teal-muted/40 p-5 shadow-sm">
+                                        <h4 class="text-xs font-bold uppercase tracking-wider text-impetus-teal">Rationale</h4>
                                         <p class="mt-2 text-justify text-base leading-relaxed text-slate-700 font-outfit">
                                             {{ $practiceReasoning[$qid] }}
                                         </p>
@@ -497,14 +497,14 @@
                             @endif
 
                             @if ($submitError)
-                                <div class="mt-6 rounded-xl border border-rose-200 bg-rose-50 p-4 shadow-sm">
+                                <div class="mt-6 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange p-4 shadow-sm">
                                     <div class="flex items-center gap-3">
-                                        <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-rose-600 text-white">
+                                        <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
                                             <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                                             </svg>
                                         </div>
-                                        <p class="text-sm font-bold text-rose-600">{{ $submitError }}</p>
+                                        <p class="text-sm font-bold text-impetus-orange">{{ $submitError }}</p>
                                     </div>
                                 </div>
                             @endif
