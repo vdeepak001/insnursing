@@ -1,7 +1,7 @@
 @php
     $navDesktopClass = fn(string $routeName): string => request()->routeIs($routeName)
-        ? 'text-xs xl:text-sm font-bold text-impetus-orange transition-colors font-outfit'
-        : 'text-xs xl:text-sm font-semibold text-impetus-teal hover:text-impetus-orange transition-colors font-outfit';
+        ? 'whitespace-nowrap shrink-0 rounded-md px-1.5 py-1 text-xs 2xl:px-2 2xl:text-sm font-bold text-impetus-orange transition-colors font-outfit'
+        : 'whitespace-nowrap shrink-0 rounded-md px-1.5 py-1 text-xs 2xl:px-2 2xl:text-sm font-semibold text-impetus-teal hover:text-impetus-orange transition-colors font-outfit';
     $navMobileClass = fn(string $routeName): string => request()->routeIs($routeName)
         ? '-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-impetus-orange'
         : '-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-impetus-teal hover:bg-impetus-teal-muted';
@@ -16,15 +16,15 @@
 <header x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)"
     @keydown.escape.window="mobileMenuOpen = false"
     class="sticky top-0 z-50 w-full transition-all duration-300 glass-card border-b border-slate-200/50 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav class="flex items-center justify-between h-20 w-full" aria-label="Global">
+    <div class="mx-auto w-full max-w-7xl px-6 sm:px-8">
+        <nav class="grid h-20 w-full grid-cols-[1fr_auto] items-center xl:grid-cols-[auto_1fr_auto]" aria-label="Global">
             <a href="{{ route('home') }}"
-                class="-m-1.5 p-1.5 flex items-center gap-2 group transition-transform hover:scale-105">
+                class="shrink-0 justify-self-start transition-transform hover:scale-105">
                 <img src="{{ asset('Impetus-logo.png') }}" alt="IHS Nursing Logo" class="h-16 w-auto object-contain">
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden lg:flex lg:items-center lg:justify-center gap-2 xl:gap-5">
+            <div class="col-start-2 hidden min-w-0 items-center justify-center gap-x-2 justify-self-center xl:flex xl:gap-x-3">
                 <a href="{{ route('home') }}" class="{{ $navDesktopClass('home') }}"
                     @if (request()->routeIs('home')) aria-current="page" @endif>Home</a>
                 <a href="{{ route('about') }}" class="{{ $navDesktopClass('about') }}"
@@ -40,11 +40,11 @@
                 <a href="{{ route('online.examination') }}" class="{{ $navDesktopClass('online.examination') }}"
                     @if (request()->routeIs('online.examination')) aria-current="page" @endif>Online Test</a>
                 <button type="button" @click="$dispatch('open-contact-modal')"
-                    class="text-xs xl:text-sm font-semibold text-slate-700 hover:text-impetus-teal transition-colors font-outfit cursor-pointer focus:outline-none">Contact Us</button>
+                    class="shrink-0 whitespace-nowrap rounded-md px-1.5 py-1 text-xs 2xl:px-2 2xl:text-sm font-semibold text-slate-700 hover:text-impetus-teal transition-colors font-outfit cursor-pointer focus:outline-none">Contact Us</button>
             </div>
 
             <!-- Mobile Menu Button Toggle -->
-            <div class="flex lg:hidden">
+            <div class="col-start-2 flex items-center justify-self-end xl:hidden">
                 <button type="button" @click="mobileMenuOpen = true"
                     class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-slate-700 hover:text-impetus-teal transition-colors">
                     <span class="sr-only">Open main menu</span>
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Actions Desktop -->
-            <div class="hidden lg:flex items-center gap-4">
+            <div class="col-start-2 hidden items-center justify-self-end gap-2 2xl:gap-3 xl:col-start-3 xl:flex">
                 @if (Route::has('login'))
                     @auth
                         <div class="flex items-center gap-3">
@@ -123,14 +123,14 @@
                     @else
                         <div class="flex items-center gap-3">
                             <button type="button" @click="$dispatch('open-login-modal')"
-                                class="inline-flex items-center gap-2 rounded-full bg-impetus-orange px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover font-outfit">
+                                class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-impetus-orange px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover font-outfit">
                                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
                                 </svg>
                                 Log in
                             </button>
                             <button type="button" @click="$dispatch('open-register-modal')"
-                                class="inline-flex items-center gap-2 rounded-full border-2 border-impetus-teal bg-white px-5 py-2.5 text-sm font-bold text-impetus-teal transition hover:bg-impetus-teal-muted font-outfit">
+                                class="inline-flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full border-2 border-impetus-teal bg-white px-5 py-2.5 text-sm font-bold text-impetus-teal transition hover:bg-impetus-teal-muted font-outfit">
                                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM3 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 019.374 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z" />
                                 </svg>
@@ -144,7 +144,7 @@
     </div>
 
     <!-- Mobile Menu Slideout -->
-    <div x-show="mobileMenuOpen" x-cloak class="lg:hidden" role="dialog" aria-modal="true">
+    <div x-show="mobileMenuOpen" x-cloak class="xl:hidden" role="dialog" aria-modal="true">
         <div class="fixed inset-0 z-[100] bg-black/20 backdrop-blur-sm" @click="mobileMenuOpen = false"></div>
         <div class="fixed inset-y-0 right-0 z-[101] flex w-full max-w-sm flex-col bg-white shadow-2xl ring-1 ring-slate-900/10"
             style="max-height: 100dvh; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);">
