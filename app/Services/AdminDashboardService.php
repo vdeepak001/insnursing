@@ -252,6 +252,7 @@ class AdminDashboardService
                 CourseTestType::Pre->value,
                 CourseTestType::Mock->value,
                 CourseTestType::Final->value,
+                CourseTestType::Practice->value,
             ])
             ->groupBy('course_detail_id', 'test_type')
             ->orderByDesc('average_score')

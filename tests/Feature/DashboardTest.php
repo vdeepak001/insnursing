@@ -138,7 +138,7 @@ test('recent attempts show completed for practice tests without pass fail outcom
     expect($recent['completed_at_time'])->not->toBe('');
 });
 
-test('top performing tests returns up to ten highest scoring module and test pairs', function () {
+test('top performing tests returns up to ten highest scoring module and test pairs including practice tests', function () {
     $learner = User::factory()->create(['role_type' => 'user']);
 
     for ($index = 1; $index <= 12; $index++) {
@@ -159,12 +159,30 @@ test('top performing tests returns up to ten highest scoring module and test pai
         ]);
     }
 
+    // Add a practice test with the highest score
+    $practiceCourse = CourseDetail::create([
+        'couse_name' => 'Top Practice Course',
+        'active_status' => 1,
+    ]);
+    CourseTestAttempt::create([
+        'user_id' => $learner->id,
+        'course_detail_id' => $practiceCourse->id,
+        'test_type' => CourseTestType::Practice->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
+        'question_ids' => [1],
+        'score_percent' => 95.0,
+        'started_at' => now()->subHour(),
+        'completed_at' => now(),
+    ]);
+
     $topPerforming = app(AdminDashboardService::class)->build()['top_performing'];
 
     expect($topPerforming)->toHaveCount(10);
-    expect($topPerforming[0]['course_name'])->toBe('Top Ten Course 12');
-    expect($topPerforming[0]['average_score'])->toBe(60.0);
-    expect($topPerforming[9]['course_name'])->toBe('Top Ten Course 3');
+    expect($topPerforming[0]['course_name'])->toBe('Top Practice Course');
+    expect($topPerforming[0]['test_label'])->toBe('Practice test');
+    expect($topPerforming[0]['average_score'])->toBe(95.0);
+    expect($topPerforming[1]['course_name'])->toBe('Top Ten Course 12');
+    expect($topPerforming[1]['average_score'])->toBe(60.0);
 });
 
 test('recent attempts show date and time on separate lines in dashboard', function () {
