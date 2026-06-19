@@ -132,7 +132,11 @@
                         'flex flex-col items-center gap-2',
                         'col-span-2 md:col-span-1' => $loop->last && $loop->count % 2 !== 0,
                     ])>
-                        <div class="flex h-11 w-11 items-center justify-center rounded-full bg-white/15">
+                        <div @class([
+                            'flex h-11 w-11 items-center justify-center rounded-full',
+                            'bg-white/15' => $loop->iteration % 2 === 1,
+                            'bg-impetus-orange' => $loop->iteration % 2 === 0,
+                        ])>
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="1.8">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="{{ $stat['icon'] }}" />
