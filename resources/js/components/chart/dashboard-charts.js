@@ -109,12 +109,26 @@ export function initDashboardCharts() {
                         size: '68%',
                         labels: {
                             show: true,
+                            name: {
+                                show: true,
+                                fontSize: '13px',
+                                fontWeight: 'bold',
+                                color: '#64748B',
+                                offsetY: -10,
+                            },
+                            value: {
+                                show: true,
+                                fontSize: '24px',
+                                fontWeight: 'bold',
+                                color: '#1E293B',
+                                offsetY: 4,
+                            },
                             total: {
                                 show: true,
                                 showAlways: true,
                                 label: 'Total',
-                                fontSize: '14px',
-                                fontWeight: 600,
+                                fontSize: '13px',
+                                fontWeight: 'bold',
                                 color: '#64748B',
                                 formatter: (w) => {
                                     const total = w.globals.seriesTotals.reduce((sum, value) => sum + value, 0);
