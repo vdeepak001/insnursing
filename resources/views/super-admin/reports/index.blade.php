@@ -11,7 +11,7 @@
                 <span class="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">View by State</span>
                 <form action="{{ request()->url() }}" method="GET" id="stateFilterForm">
                     <select name="state_id" onchange="this.form.submit()"
-                        class="block w-full rounded-lg border-gray-300 py-2 pl-3 pr-10 text-base transition-all duration-200 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                        class="block w-full rounded-lg border border-gray-300 py-2 pl-3 pr-10 text-base transition-all duration-200 focus:border-black focus:outline-none focus:ring-black/20 sm:text-sm dark:border-gray-600 dark:bg-gray-700 dark:text-white">
                         <option value="">All States</option>
                         @foreach ($states as $state)
                             <option value="{{ $state->id }}" {{ request('state_id') == $state->id ? 'selected' : '' }}>
@@ -75,34 +75,37 @@
 
     <div class="mb-6 grid grid-cols-1 items-stretch gap-6 xl:grid-cols-12">
         <div class="grid grid-cols-3 gap-3 xl:col-span-4">
-            <div class="flex flex-col items-center justify-center rounded-2xl border border-gray-100 bg-white px-2 py-4 text-center shadow-md dark:border-gray-700 dark:bg-gray-800">
-                <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20">
-                    <svg class="h-6 w-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Registered Users Card -->
+            <div class="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-blue-500 px-2 py-4 text-center shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-200">
+                <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-gray-400 dark:text-gray-500">Registered Users</span>
-                <span class="font-outfit text-2xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['registered_users']) }}</span>
+                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-blue-100/90 font-outfit">Registered Users</span>
+                <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['registered_users']) }}</span>
             </div>
 
-            <div class="flex flex-col items-center justify-center rounded-2xl border border-gray-100 bg-white px-2 py-4 text-center shadow-md dark:border-gray-700 dark:bg-gray-800">
-                <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-900/20">
-                    <svg class="h-6 w-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Purchased Modules Card -->
+            <div class="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-500 px-2 py-4 text-center shadow-lg shadow-emerald-500/10 hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-200">
+                <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-gray-400 dark:text-gray-500">Purchased Modules</span>
-                <span class="font-outfit text-2xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['purchased_modules']) }}</span>
+                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-emerald-100/90 font-outfit">Purchased Modules</span>
+                <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['purchased_modules']) }}</span>
             </div>
 
-            <div class="flex flex-col items-center justify-center rounded-2xl border border-gray-100 bg-white px-2 py-4 text-center shadow-md dark:border-gray-700 dark:bg-gray-800">
-                <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-purple-50 dark:bg-purple-900/20">
-                    <svg class="h-6 w-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Modules Completed Card -->
+            <div class="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-tr from-purple-600 to-purple-500 px-2 py-4 text-center shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-200">
+                <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-gray-400 dark:text-gray-500">Modules Completed</span>
-                <span class="font-outfit text-2xl font-black tracking-tight text-gray-900 dark:text-white">{{ number_format($stats['modules_completed']) }}</span>
+                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-purple-100/90 font-outfit">Modules Completed</span>
+                <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['modules_completed']) }}</span>
             </div>
         </div>
 

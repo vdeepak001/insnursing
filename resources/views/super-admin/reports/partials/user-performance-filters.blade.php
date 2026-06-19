@@ -4,7 +4,7 @@
 
         <div class="min-w-[160px] flex-1">
             <label class="mb-2 block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Course / Module</label>
-            <select name="course_id" class="block w-full rounded-lg border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+            <select name="course_id" class="block w-full rounded-lg border border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-black focus:outline-none focus:ring-black/20 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
                 <option value="" {{ empty($filters['course_id']) ? 'selected' : '' }}>All Modules</option>
                 @foreach ($stateCourses as $course)
                     <option value="{{ $course->id }}" {{ (string) $filters['course_id'] === (string) $course->id ? 'selected' : '' }}>
@@ -18,19 +18,19 @@
             <label class="mb-2 block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">From Date</label>
             <input type="date" name="from_date" value="{{ $filters['from_date'] }}"
                 onclick="this.showPicker()"
-                class="date-input-picker block w-full rounded-lg border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                class="date-input-picker block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-black focus:outline-none focus:ring-black/20 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
         </div>
 
         <div class="w-full sm:w-36">
             <label class="mb-2 block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">To Date</label>
             <input type="date" name="to_date" value="{{ $filters['to_date'] }}"
                 onclick="this.showPicker()"
-                class="date-input-picker block w-full rounded-lg border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+                class="date-input-picker block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-black focus:outline-none focus:ring-black/20 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
         </div>
 
         <div class="w-full sm:w-36">
             <label class="mb-2 block text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Exam Type</label>
-            <select name="exam_type" class="block w-full rounded-lg border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
+            <select name="exam_type" class="block w-full rounded-lg border border-gray-300 py-2 pl-3 pr-10 text-sm focus:border-black focus:outline-none focus:ring-black/20 dark:border-gray-600 dark:bg-gray-700 dark:text-white">
                 <option value="" {{ empty($filters['exam_type']) ? 'selected' : '' }}>All Exams</option>
                 <option value="pre" {{ $filters['exam_type'] === 'pre' ? 'selected' : '' }}>Pre-Test</option>
                 <option value="mock" {{ $filters['exam_type'] === 'mock' ? 'selected' : '' }}>Mock Test</option>
