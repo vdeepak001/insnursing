@@ -116,13 +116,13 @@
                 <div class="absolute -bottom-1/4 -left-1/4 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
                 <div class="relative z-10 w-full max-w-sm p-10 bg-white backdrop-blur-xl border border-slate-200/60 rounded-[2.5rem] shadow-2xl shadow-slate-300/30 flex flex-col items-center text-center">
-                    <!-- Elegant Logo backdrop -->
-                    <div class="mb-8 p-6 bg-impetus-teal/10 rounded-3xl shadow-inner inline-flex items-center justify-center hover:scale-105 transition-transform duration-300">
-                        <img src="{{ asset('Impetus-logo.png') }}" alt="Logo" class="h-10 w-auto object-contain" />
+                    <!-- Logo -->
+                    <div class="mb-8 inline-flex items-center justify-center hover:scale-105 transition-transform duration-300">
+                        <img src="{{ asset('Impetus-logo.png') }}" alt="Logo" class="h-16 w-auto object-contain" />
                     </div>
 
-                    <h2 class="text-2xl font-extrabold text-impetus-teal tracking-tight font-outfit mb-3">
-                        Impetus Healthcare skills
+                    <h2 class="text-2xl font-extrabold text-impetus-teal tracking-tight font-outfit mb-3 whitespace-nowrap">
+                        Impetus Healthcare Skills
                     </h2>
                     <p class="text-sm text-slate-500 leading-relaxed max-w-[280px] font-outfit">
                         Empowering healthcare professionals through state-of-the-art CNE modules and interactive training.
