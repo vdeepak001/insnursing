@@ -76,35 +76,35 @@
     <div class="mb-6 grid grid-cols-1 items-stretch gap-6 xl:grid-cols-12">
         <div class="grid grid-cols-3 gap-3 xl:col-span-4">
             <!-- Registered Users Card -->
-            <div class="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-tr from-blue-600 to-blue-500 px-2 py-4 text-center shadow-lg shadow-blue-500/10 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-200">
+            <div class="flex flex-col items-center justify-center rounded-2xl bg-impetus-teal px-2 py-4 text-center shadow-lg shadow-impetus-teal/20 hover:shadow-xl hover:shadow-impetus-teal/30 transition-all duration-200">
                 <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-blue-100/90 font-outfit">Registered Users</span>
+                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-white/80 font-outfit">Registered Users</span>
                 <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['registered_users']) }}</span>
             </div>
 
             <!-- Purchased Modules Card -->
-            <div class="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-tr from-emerald-600 to-emerald-500 px-2 py-4 text-center shadow-lg shadow-emerald-500/10 hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-200">
+            <div class="flex flex-col items-center justify-center rounded-2xl bg-impetus-orange px-2 py-4 text-center shadow-lg shadow-impetus-orange/20 hover:shadow-xl hover:shadow-impetus-orange/30 transition-all duration-200">
                 <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-emerald-100/90 font-outfit">Purchased Modules</span>
+                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-white/80 font-outfit">Purchased Modules</span>
                 <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['purchased_modules']) }}</span>
             </div>
 
             <!-- Modules Completed Card -->
-            <div class="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-tr from-purple-600 to-purple-500 px-2 py-4 text-center shadow-lg shadow-purple-500/10 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-200">
+            <div class="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-tr from-impetus-teal to-impetus-orange px-2 py-4 text-center shadow-lg shadow-impetus-teal/20 hover:shadow-xl hover:shadow-impetus-orange/30 transition-all duration-200">
                 <div class="mb-2 flex h-11 w-11 items-center justify-center rounded-xl bg-white/20 text-white">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-purple-100/90 font-outfit">Modules Completed</span>
+                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-white/80 font-outfit">Modules Completed</span>
                 <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['modules_completed']) }}</span>
             </div>
         </div>

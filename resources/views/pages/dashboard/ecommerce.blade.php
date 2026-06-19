@@ -207,7 +207,7 @@
 
                 <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                     <h3 class="font-outfit text-lg font-bold text-impetus-navy">Top 10 Performing Tests</h3>
-                    <p class="mt-0.5 text-xs text-slate-500">Highest average scores among completed attempts.</p>
+                    <p class="mt-0.5 text-xs text-slate-500">Highest Average Score of the Final Test</p>
 
                     <div class="mt-6 max-h-[45rem] space-y-4 overflow-y-auto pr-1">
                         @forelse($topPerforming as $index => $item)
@@ -217,7 +217,7 @@
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <p class="truncate text-sm font-bold text-slate-800">{{ $item['course_name'] }}</p>
-                                    <p class="text-xs text-slate-500">{{ $item['test_label'] }} · {{ number_format($item['attempt_count']) }} attempts</p>
+                                    <p class="text-xs text-slate-500">{{ $item['test_label'] }} · {{ number_format($item['attempt_count']) }} Users</p>
                                 </div>
                                 <p class="shrink-0 font-outfit text-lg font-extrabold text-impetus-orange">
                                     {{ number_format($item['average_score'], 1) }}%
