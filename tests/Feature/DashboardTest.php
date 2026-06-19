@@ -103,7 +103,7 @@ test('attempts overview groups weekly data for the selected month', function () 
     $series = collect($overview['series'])->keyBy('name');
 
     expect($overview['categories'][0])->toBe($month->copy()->day(1)->displayDate());
-    expect($overview['colors'])->toBe(['#107C85', '#1A7F64', '#E68A2E']);
+    expect($overview['colors'])->toBe(['#2196F3', '#1A7F64', '#E68A2E']);
     expect($series['Pre Tests']['data'][0])->toBe(1);
     expect($series['Mock Tests']['data'][1])->toBe(1);
     expect($series['Final Tests']['data'])->each->toBe(0);

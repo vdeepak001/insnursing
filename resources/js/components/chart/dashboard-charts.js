@@ -21,7 +21,7 @@ export function initDashboardCharts() {
 
         const attemptsChart = new ApexCharts(attemptsEl, {
             series: seriesData,
-            colors: overview.colors ?? ['#107C85', '#1A7F64', '#E68A2E'],
+            colors: overview.colors ?? ['#2196F3', '#1A7F64', '#E68A2E'],
             chart: {
                 fontFamily: 'Poppins, sans-serif',
                 type: 'line',
@@ -128,7 +128,7 @@ export function initDashboardCharts() {
                             total: {
                                 show: true,
                                 showAlways: true,
-                                label: 'Total',
+                                label: 'Total Attempts',
                                 fontSize: '13px',
                                 fontWeight: 'bold',
                                 color: '#64748B',

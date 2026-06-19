@@ -11,6 +11,7 @@ use App\Models\CourseTestAttempt;
 use App\Models\Order;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class AdminDashboardService
 {
@@ -60,7 +61,7 @@ class AdminDashboardService
             ->groupBy('user_id', 'course_detail_id')
             ->selectRaw('MAX(score_percent) as best_score');
 
-        $average = \Illuminate\Support\Facades\DB::table(\Illuminate\Support\Facades\DB::raw("({$finalAverageQuery->toSql()}) as sub"))
+        $average = DB::table(DB::raw("({$finalAverageQuery->toSql()}) as sub"))
             ->mergeBindings($finalAverageQuery->getQuery())
             ->avg('best_score');
 
@@ -148,7 +149,7 @@ class AdminDashboardService
                 ->values()
                 ->all(),
             'series' => $series,
-            'colors' => ['#107C85', '#1A7F64', '#E68A2E'],
+            'colors' => ['#2196F3', '#1A7F64', '#E68A2E'],
         ];
     }
 
@@ -263,7 +264,7 @@ class AdminDashboardService
             ->where('test_type', CourseTestType::Final->value)
             ->groupBy('user_id', 'course_detail_id', 'test_type');
 
-        $rows = \Illuminate\Support\Facades\DB::table(\Illuminate\Support\Facades\DB::raw("({$bestAttemptsQuery->toSql()}) as sub"))
+        $rows = DB::table(DB::raw("({$bestAttemptsQuery->toSql()}) as sub"))
             ->mergeBindings($bestAttemptsQuery->getQuery())
             ->select('course_detail_id', 'test_type')
             ->selectRaw('AVG(best_score) as average_score')
