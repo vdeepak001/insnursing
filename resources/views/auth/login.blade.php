@@ -6,13 +6,13 @@
             <!-- Left Side: Login Form -->
             <div class="flex w-full flex-1 flex-col lg:w-1/2 bg-gradient-to-br from-slate-50 via-white to-slate-100/50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
                 <div class="mx-auto flex w-full max-w-md flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-                    <div class="w-full bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl p-8 sm:p-10 rounded-3xl border border-slate-200/50 dark:border-slate-800 shadow-xl shadow-slate-100/40 dark:shadow-none">
+                    <div class="w-full bg-gradient-to-br from-impetus-orange via-orange-500 to-[#ff7a00] p-8 sm:p-10 rounded-3xl border border-orange-400/30 shadow-xl shadow-orange-500/20">
                         <div class="mb-8">
-                            <span class="text-xs font-bold text-impetus-orange uppercase tracking-widest font-outfit mb-2 block">Welcome Back</span>
-                            <h1 class="text-3xl font-extrabold text-impetus-navy tracking-tight font-outfit mb-2 dark:text-white">
+                            <span class="text-xs font-bold text-white/80 uppercase tracking-widest font-outfit mb-2 block">Welcome Back</span>
+                            <h1 class="text-3xl font-extrabold text-white tracking-tight font-outfit mb-2">
                                 Sign In
                             </h1>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">
+                            <p class="text-sm text-orange-100">
                                 Enter your credentials to access your student portal.
                             </p>
                         </div>
@@ -23,8 +23,8 @@
                                 @csrf
                                 <div class="space-y-6">
                                     <div>
-                                        <label class="mb-1.5 block text-sm font-semibold text-slate-700 dark:text-slate-300 font-outfit">
-                                            Email Address<span class="text-red-500">*</span>
+                                        <label class="mb-1.5 block text-sm font-semibold text-white font-outfit">
+                                            Email Address<span class="text-orange-200">*</span>
                                         </label>
                                         <input type="email" id="email" name="email" value="{{ old('email') }}"
                                             required autofocus placeholder="Enter your email address"
@@ -32,8 +32,8 @@
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div>
                                     <div>
-                                        <label class="mb-1.5 block text-sm font-semibold text-slate-700 dark:text-slate-300 font-outfit">
-                                            Password<span class="text-red-500">*</span>
+                                        <label class="mb-1.5 block text-sm font-semibold text-white font-outfit">
+                                            Password<span class="text-orange-200">*</span>
                                         </label>
                                         <div x-data="{ showPassword: false }" class="relative">
                                             <input :type="showPassword ? 'text' : 'password'" id="password" name="password"
@@ -62,7 +62,7 @@
                                     <div class="flex items-center justify-between">
                                         <div x-data="{ checkboxToggle: {{ old('remember') ? 'true' : 'false' }} }">
                                             <label for="remember"
-                                                class="flex cursor-pointer items-center text-sm font-medium text-slate-600 select-none dark:text-slate-400">
+                                                class="flex cursor-pointer items-center text-sm font-medium text-orange-100 select-none">
                                                 <div class="relative">
                                                     <input type="checkbox" id="remember" name="remember" class="sr-only"
                                                         @change="checkboxToggle = !checkboxToggle" />
@@ -84,24 +84,24 @@
                                         </div>
                                         @if (Route::has('password.request'))
                                             <a href="{{ route('password.request') }}"
-                                                class="text-sm font-semibold text-impetus-orange hover:text-impetus-navy dark:text-orange-400 dark:hover:text-orange-300 transition-colors">
+                                                class="text-sm font-semibold text-white hover:text-orange-200 transition-colors">
                                                 Forgot password?
                                             </a>
                                         @endif
                                     </div>
                                     <div>
                                         <button type="submit"
-                                            class="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-gradient-to-r from-impetus-orange to-orange-500 text-white font-bold hover:from-orange-600 hover:to-impetus-orange active:scale-[0.98] transition-all duration-300 shadow-lg shadow-orange-500/20 font-outfit text-sm tracking-wide">
+                                            class="w-full inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white text-impetus-orange font-bold hover:bg-orange-50 active:scale-[0.98] transition-all duration-300 shadow-lg shadow-orange-900/20 font-outfit text-sm tracking-wide">
                                             Sign In
                                         </button>
                                     </div>
                                 </div>
                             </form>
                             <div class="mt-6">
-                                <p class="text-center text-sm font-medium text-slate-600 dark:text-slate-400">
+                                <p class="text-center text-sm font-medium text-orange-100">
                                     Don't have an account?
                                     <a href="{{ route('register') }}"
-                                        class="font-bold text-impetus-orange hover:text-impetus-navy dark:text-orange-400 dark:hover:text-orange-300 transition-colors font-outfit">Sign Up</a>
+                                        class="font-bold text-white hover:text-orange-200 transition-colors font-outfit">Sign Up</a>
                                 </p>
                             </div>
                         </div>
@@ -115,24 +115,21 @@
                 <div class="absolute -top-1/4 -right-1/4 w-96 h-96 bg-teal-300/20 rounded-full blur-[120px] pointer-events-none"></div>
                 <div class="absolute -bottom-1/4 -left-1/4 w-96 h-96 bg-cyan-600/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-                <div class="relative z-10 w-full max-w-sm p-10 bg-gradient-to-br from-[#c2410c] via-[#ea580c] to-[#ff7a00] backdrop-blur-xl border border-white/25 rounded-[2.5rem] shadow-2xl shadow-orange-950/30 flex flex-col items-center text-center">
-                    <!-- Soft glow behind the logo -->
-                    <div class="absolute inset-0 bg-radial-gradient from-white/15 to-transparent blur-3xl -z-10 rounded-[2.5rem]"></div>
-                    
+                <div class="relative z-10 w-full max-w-sm p-10 bg-white backdrop-blur-xl border border-slate-200/60 rounded-[2.5rem] shadow-2xl shadow-slate-300/30 flex flex-col items-center text-center">
                     <!-- Elegant Logo backdrop -->
-                    <div class="mb-8 p-6 bg-white/95 rounded-3xl shadow-xl shadow-orange-950/20 inline-flex items-center justify-center hover:scale-105 transition-transform duration-300">
+                    <div class="mb-8 p-6 bg-impetus-teal/10 rounded-3xl shadow-inner inline-flex items-center justify-center hover:scale-105 transition-transform duration-300">
                         <img src="{{ asset('Impetus-logo.png') }}" alt="Logo" class="h-10 w-auto object-contain" />
                     </div>
-                    
-                    <h2 class="text-2xl font-extrabold !text-white tracking-tight font-outfit mb-3">
+
+                    <h2 class="text-2xl font-extrabold text-impetus-teal tracking-tight font-outfit mb-3">
                         Impetus Healthcare skills
                     </h2>
-                    <p class="text-sm text-orange-50 leading-relaxed max-w-[280px] font-outfit">
+                    <p class="text-sm text-slate-500 leading-relaxed max-w-[280px] font-outfit">
                         Empowering healthcare professionals through state-of-the-art CNE modules and interactive training.
                     </p>
-                    
-                    <div class="mt-8 flex gap-2 items-center justify-center text-white/90 text-[11px] uppercase tracking-widest font-outfit">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-200 animate-pulse"></span>
+
+                    <div class="mt-8 flex gap-2 items-center justify-center text-impetus-teal/70 text-[11px] uppercase tracking-widest font-outfit">
+                        <span class="w-1.5 h-1.5 rounded-full bg-impetus-orange animate-pulse"></span>
                         <span>Secure Learning Gateway</span>
                     </div>
                 </div>
