@@ -217,7 +217,7 @@
                                 </div>
                                 <div class="min-w-0 flex-1">
                                     <p class="truncate text-sm font-bold text-slate-800">{{ $item['course_name'] }}</p>
-                                    <p class="text-xs text-slate-500">{{ $item['test_label'] }} · {{ number_format($item['attempt_count']) }} Users</p>
+                                    <p class="text-xs text-slate-500">{{ number_format($item['attempt_count']) }} Users</p>
                                 </div>
                                 <p class="shrink-0 font-outfit text-lg font-extrabold text-impetus-orange">
                                     {{ number_format($item['average_score'], 1) }}%
