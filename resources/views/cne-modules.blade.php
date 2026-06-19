@@ -3,10 +3,10 @@
 @section('title', 'CNE Modules')
 
 @section('content')
-    <main class="pb-16 font-sans antialiased text-slate-800">
-        <section class="py-12 sm:py-16">
+    <main class="font-sans antialiased text-slate-800">
+        <section class="bg-impetus-teal-muted py-12 sm:py-16">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="relative mb-12 overflow-hidden rounded-[2rem] border border-impetus-teal/10 bg-white p-8 shadow-xl shadow-impetus-teal/5 sm:mb-16 sm:p-10">
+                <div class="relative overflow-hidden rounded-[2rem] border border-impetus-teal/10 bg-white p-8 shadow-xl shadow-impetus-teal/5 sm:p-10">
                     <div class="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-impetus-orange/5 to-transparent"></div>
 
                     <div class="relative">
@@ -36,7 +36,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <section class="pb-16 pt-12 sm:pt-16">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 @php
                     $purchasedCourses = $courses->filter(
                         fn ($c) => isset($purchasedCourseIds) && $purchasedCourseIds->contains($c->id),
@@ -106,8 +110,7 @@
 
                 <div class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
                     <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange p-6 shadow-md">
-                        <h2 class="mb-5 flex items-center gap-2 text-lg font-bold text-impetus-teal font-outfit">
-                            <span class="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-impetus-orange"></span>
+                        <h2 class="mb-5 text-xl sm:text-2xl font-extrabold text-impetus-teal font-outfit">
                             Features of Online CNE Modules
                         </h2>
                         <ul class="space-y-4">
@@ -133,8 +136,7 @@
                     </div>
 
                     <div class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal-muted p-6 shadow-md">
-                        <h2 class="mb-5 flex items-center gap-2 text-lg font-bold text-impetus-teal font-outfit">
-                            <span class="inline-block h-2.5 w-2.5 animate-pulse rounded-full bg-impetus-teal"></span>
+                        <h2 class="mb-5 text-xl sm:text-2xl font-extrabold text-impetus-teal font-outfit">
                             Benefits of Online CNE Modules
                         </h2>
                         <ul class="space-y-4">
