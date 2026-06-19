@@ -260,12 +260,7 @@ class AdminDashboardService
             ->selectRaw('COUNT(*) as user_attempts')
             ->where('status', CourseTestAttempt::STATUS_COMPLETED)
             ->whereNotNull('score_percent')
-            ->whereIn('test_type', [
-                CourseTestType::Pre->value,
-                CourseTestType::Mock->value,
-                CourseTestType::Final->value,
-                CourseTestType::Practice->value,
-            ])
+            ->where('test_type', CourseTestType::Final->value)
             ->groupBy('user_id', 'course_detail_id', 'test_type');
 
         $rows = \Illuminate\Support\Facades\DB::table(\Illuminate\Support\Facades\DB::raw("({$bestAttemptsQuery->toSql()}) as sub"))

@@ -97,7 +97,7 @@ it('shows an active course detail page with module content', function () {
     $response->assertSee('First Aid', false);
     $response->assertSee('What you will learn in First Aid?', false);
     $response->assertSee('Learning Materials', false);
-    $response->assertSee('Practice test', false);
+    $response->assertSee('Practice Test', false);
     $response->assertSee('Questions and answers for deeper learning', false);
     $response->assertSee('Buy now', false);
 });

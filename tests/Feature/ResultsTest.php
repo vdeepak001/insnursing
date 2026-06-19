@@ -17,7 +17,7 @@ it('defaults results date filters to the current month', function () {
     $response->assertSuccessful();
     $response->assertSee('Results', false);
     $response->assertSee('Module Name', false);
-    $response->assertSee('Final-2', false);
+    $response->assertSee('Final Test-2', false);
     $response->assertSee(DateHelper::displayRange(
         now()->startOfMonth()->toDateString(),
         now()->endOfMonth()->toDateString()

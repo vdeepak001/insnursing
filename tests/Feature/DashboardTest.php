@@ -150,7 +150,7 @@ test('top performing tests returns up to ten highest scoring module and test pai
         CourseTestAttempt::create([
             'user_id' => $learner->id,
             'course_detail_id' => $course->id,
-            'test_type' => CourseTestType::Pre->value,
+            'test_type' => CourseTestType::Final->value,
             'status' => CourseTestAttempt::STATUS_COMPLETED,
             'question_ids' => [1],
             'score_percent' => $index * 5,
@@ -159,26 +159,26 @@ test('top performing tests returns up to ten highest scoring module and test pai
         ]);
     }
 
-    // Add a practice test with the highest score
+    // Add a final test with the highest score
     $practiceCourse = CourseDetail::create([
-        'couse_name' => 'Top Practice Course',
+        'couse_name' => 'Top Final Course',
         'active_status' => 1,
     ]);
     CourseTestAttempt::create([
         'user_id' => $learner->id,
         'course_detail_id' => $practiceCourse->id,
-        'test_type' => CourseTestType::Practice->value,
+        'test_type' => CourseTestType::Final->value,
         'status' => CourseTestAttempt::STATUS_COMPLETED,
         'question_ids' => [1],
         'score_percent' => 95.0,
         'started_at' => now()->subHour(),
         'completed_at' => now(),
     ]);
-    // Add a second attempt with a lower score for the same practice test
+    // Add a second attempt with a lower score for the same final test
     CourseTestAttempt::create([
         'user_id' => $learner->id,
         'course_detail_id' => $practiceCourse->id,
-        'test_type' => CourseTestType::Practice->value,
+        'test_type' => CourseTestType::Final->value,
         'status' => CourseTestAttempt::STATUS_COMPLETED,
         'question_ids' => [1],
         'score_percent' => 80.0,
@@ -189,8 +189,8 @@ test('top performing tests returns up to ten highest scoring module and test pai
     $topPerforming = app(AdminDashboardService::class)->build()['top_performing'];
 
     expect($topPerforming)->toHaveCount(10);
-    expect($topPerforming[0]['course_name'])->toBe('Top Practice Course');
-    expect($topPerforming[0]['test_label'])->toBe('Practice test');
+    expect($topPerforming[0]['course_name'])->toBe('Top Final Course');
+    expect($topPerforming[0]['test_label'])->toBe('Final test');
     expect($topPerforming[0]['average_score'])->toBe(95.0);
     expect($topPerforming[0]['attempt_count'])->toBe(2);
     expect($topPerforming[1]['course_name'])->toBe('Top Ten Course 12');
