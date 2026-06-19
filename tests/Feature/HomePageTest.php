@@ -26,7 +26,7 @@ it('uses the orange and teal brand palette in theme css', function () {
     expect($css)
         ->toContain('--color-impetus-orange: #FF7A00')
         ->toContain('--color-impetus-light-teal: #CCFBF1')
-        ->toContain('--color-impetus-teal: #0F766E')
+        ->toContain('--color-impetus-teal: #045A5D')
         ->toContain('--color-impetus-navy: #1E3A5F')
         ->toContain('--color-impetus-background: #F9FAFB')
         ->toContain('.exam-header')
@@ -36,5 +36,5 @@ it('uses the orange and teal brand palette in theme css', function () {
         ->toContain('.exam-bottom-legend')
         ->toContain('.exam-legend-row')
         ->toContain('.exam-legend-dot')
-        ->toContain('background-color: #0F766E');
+        ->toContain('background-color: #045A5D');
 });

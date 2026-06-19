@@ -146,12 +146,12 @@
 
             {{-- Decorative blobs --}}
             <div class="pointer-events-none absolute top-0 right-0 h-64 w-64 rounded-full opacity-50 blur-3xl"
-                style="background: radial-gradient(circle, #0F766E40 0%, transparent 70%);"></div>
+                style="background: radial-gradient(circle, #045A5D40 0%, transparent 70%);"></div>
             <div class="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full opacity-50 blur-3xl"
                 style="background: radial-gradient(circle, #FF7A0040 0%, transparent 70%);"></div>
             {{-- Dot pattern --}}
             <div class="pointer-events-none absolute inset-0 opacity-[0.06]"
-                style="background-image: radial-gradient(#0F766E 1.5px, transparent 1.5px); background-size: 28px 28px;"></div>
+                style="background-image: radial-gradient(#045A5D 1.5px, transparent 1.5px); background-size: 28px 28px;"></div>
 
             {{-- Light header bar --}}
             <div class="relative z-10 flex shrink-0 items-center justify-between px-6 py-5 border-b border-slate-200/80 bg-white">

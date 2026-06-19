@@ -47,7 +47,7 @@ test('admin dashboard shows platform and assessment metrics', function () {
     $response = $this->actingAs($admin)->get(route('admin.dashboard'));
 
     $response->assertSuccessful();
-    $response->assertSee('bg-[#0F766E]', false);
+    $response->assertSee('bg-[#045A5D]', false);
     $response->assertSee('Total Courses', false);
     $response->assertSee('Pretest', false);
     $response->assertSee('Mock Test', false);

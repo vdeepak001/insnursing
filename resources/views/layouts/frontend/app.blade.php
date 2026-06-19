@@ -25,8 +25,8 @@
                 --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
                 --font-outfit: Poppins, sans-serif;
                 --color-impetus-orange: #FF7A00;
-                --color-impetus-green: #0F766E;
-                --color-impetus-teal: #0F766E;
+                --color-impetus-green: #045A5D;
+                --color-impetus-teal: #045A5D;
                 --color-impetus-light-teal: #ccfbf1;
                 --color-impetus-teal-muted: #eef6f6;
                 --color-impetus-navy: #1e3a5f;
@@ -77,7 +77,7 @@
 
             .gradient-text-orange-green,
             .gradient-text-orange-teal {
-                background: linear-gradient(135deg, #FF7A00 0%, #0F766E 100%);
+                background: linear-gradient(135deg, #FF7A00 0%, #045A5D 100%);
                 -webkit-background-clip: text;
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -85,7 +85,7 @@
 
             .gradient-bg-hero {
                 background: radial-gradient(circle at 10% 20%, rgba(255, 122, 0, 0.05) 0%, transparent 40%),
-                    radial-gradient(circle at 90% 80%, rgba(15, 118, 110, 0.05) 0%, transparent 40%);
+                    radial-gradient(circle at 90% 80%, rgba(4, 90, 93, 0.05) 0%, transparent 40%);
             }
 
             .glass-card {
@@ -110,7 +110,7 @@
 
             .glow-green:hover,
             .glow-teal:hover {
-                box-shadow: 0 10px 30px -5px rgba(15, 118, 110, 0.3);
+                box-shadow: 0 10px 30px -5px rgba(4, 90, 93, 0.3);
             }
         </style>
         <script>

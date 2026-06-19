@@ -7,7 +7,7 @@
     <!-- Hero Section -->
     <section id="home" class="relative overflow-hidden bg-white py-16 md:py-24">
         <div class="pointer-events-none absolute inset-0 opacity-40"
-            style="background-image: radial-gradient(#0F766E12 1px, transparent 1px); background-size: 32px 32px;">
+            style="background-image: radial-gradient(#045A5D12 1px, transparent 1px); background-size: 32px 32px;">
         </div>
 
         <div class="relative mx-auto max-w-7xl px-6 sm:px-8">

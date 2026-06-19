@@ -39,7 +39,7 @@
 
                 <a href="{{ route($routePrefix.'.reports.index') }}"
                     class="inline-flex items-center rounded-xl px-5 py-2.5 text-sm font-bold text-white shadow-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-xl"
-                    style="background: linear-gradient(135deg, #0F766E, #0D9488);">
+                    style="background: linear-gradient(135deg, #045A5D, #067D80);">
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Back to Summary
                 </a>

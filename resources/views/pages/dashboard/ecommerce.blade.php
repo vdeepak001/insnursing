@@ -7,7 +7,7 @@
 
         <div class="relative z-10">
             {{-- Administrative Welcome Card (Hidden)
-            <div class="relative mb-10 overflow-hidden rounded-[2.5rem] border border-[#0D6B63]/40 bg-gradient-to-r from-[#0F766E] to-impetus-navy p-8 text-white shadow-xl sm:p-10">
+            <div class="relative mb-10 overflow-hidden rounded-[2.5rem] border border-[#034E51]/40 bg-gradient-to-r from-[#045A5D] to-impetus-navy p-8 text-white shadow-xl sm:p-10">
                 <div class="pointer-events-none absolute right-0 bottom-0 h-80 w-80 translate-x-12 translate-y-12 rounded-full bg-impetus-orange/20 blur-3xl"></div>
                 <div class="pointer-events-none absolute top-0 left-1/4 h-64 w-64 -translate-y-12 rounded-full bg-brand-400/15 blur-3xl"></div>
 

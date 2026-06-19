@@ -44,7 +44,7 @@ export function initResultsCharts() {
         const chart = new ApexCharts(chartEl, {
             series: [completed, notCompleted],
             labels: ['Completed', 'Not Completed'],
-            colors: ['#0F766E', '#FF7A00'],
+            colors: ['#045A5D', '#FF7A00'],
             chart: {
                 fontFamily: 'Poppins, sans-serif',
                 type: 'donut',

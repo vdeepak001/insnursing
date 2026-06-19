@@ -98,7 +98,7 @@
 
             <!-- Right Panel: Contact Information -->
             <div
-                class="md:col-span-2 bg-gradient-to-br from-[#0F766E] to-impetus-navy text-white p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+                class="md:col-span-2 bg-gradient-to-br from-[#045A5D] to-impetus-navy text-white p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
                 <!-- Decorative background glow -->
                 <div
                     class="absolute -right-10 -bottom-10 w-36 h-36 bg-impetus-orange/15 rounded-full blur-2xl pointer-events-none">

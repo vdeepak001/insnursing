@@ -318,7 +318,7 @@ new class extends Component
                                     maxlength="6"
                                     placeholder="000000"
                                     wire:model="otpInput"
-                                    class="block w-full rounded-2xl border border-slate-200 bg-[#F9FAFB] px-4 py-3.5 text-center text-2xl font-bold tracking-[0.25em] text-[#1F2937] focus:border-[#0F766E] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0F766E]/20"
+                                    class="block w-full rounded-2xl border border-slate-200 bg-[#F9FAFB] px-4 py-3.5 text-center text-2xl font-bold tracking-[0.25em] text-[#1F2937] focus:border-[#045A5D] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#045A5D]/20"
                                     required
                                     autofocus
                                 />
@@ -339,7 +339,7 @@ new class extends Component
                                     type="button"
                                     wire:click="sendOtp"
                                     wire:loading.attr="disabled"
-                                    class="mt-2 text-center text-xs font-bold uppercase tracking-wider text-[#0F766E] hover:text-[#0D9488] transition focus:outline-none disabled:opacity-50"
+                                    class="mt-2 text-center text-xs font-bold uppercase tracking-wider text-[#045A5D] hover:text-[#067D80] transition focus:outline-none disabled:opacity-50"
                                 >
                                     Resend Verification Code
                                 </button>

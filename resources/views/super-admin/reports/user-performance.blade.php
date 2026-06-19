@@ -29,7 +29,7 @@
 
             <a href="{{ route($routePrefix . '.reports.index', ['state_id' => $selectedState->id]) }}" 
                class="inline-flex items-center px-5 py-2.5 text-white text-sm font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
-               style="background: linear-gradient(135deg, #0F766E, #0D9488);">
+               style="background: linear-gradient(135deg, #045A5D, #067D80);">
                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                 Back to Summary
             </a>

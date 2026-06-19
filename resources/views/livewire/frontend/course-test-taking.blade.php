@@ -21,14 +21,14 @@
             <div class="mx-auto max-w-5xl overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/5">
                 <div class="relative overflow-hidden">
                     {{-- Decorative backgrounds --}}
-                    <div class="pointer-events-none absolute -left-20 -top-16 h-72 w-72 rounded-full bg-[#0F766E]/10 blur-3xl" aria-hidden="true"></div>
+                    <div class="pointer-events-none absolute -left-20 -top-16 h-72 w-72 rounded-full bg-[#045A5D]/10 blur-3xl" aria-hidden="true"></div>
                     <div class="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full bg-impetus-orange/10 blur-3xl" aria-hidden="true"></div>
 
                     {{-- Header Section --}}
                     <div class="border-b border-impetus-teal/10 bg-impetus-teal-muted/30 px-6 py-8 sm:px-10">
                         <div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
                             <div class="min-w-0">
-                                <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0F766E]">Test completed</p>
+                                <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#045A5D]">Test completed</p>
                                 <h1 class="mt-2 font-serif text-xl font-bold tracking-tight text-[#1F2937] sm:text-[26px]">
                                     Result: {{ $banner }}
                                 </h1>
@@ -38,7 +38,7 @@
 
                             </div>
                             <div class="hidden shrink-0 lg:block">
-                                <span class="inline-flex rounded-full border border-[#99F6E4] bg-[#CCFBF1] px-4 py-1.5 text-sm font-bold text-[#0F766E]">{{ $banner }}</span>
+                                <span class="inline-flex rounded-full border border-[#99F6E4] bg-[#CCFBF1] px-4 py-1.5 text-sm font-bold text-[#045A5D]">{{ $banner }}</span>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                         {{-- Quick Stats Grid --}}
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-3">
                             {{-- Total Questions --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-transparent bg-gradient-to-br from-[#0F766E] to-[#0D9488] p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
+                            <div class="flex flex-col items-center justify-center rounded-xl border border-transparent bg-gradient-to-br from-[#045A5D] to-[#067D80] p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
                                 <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-white/80 md:text-[11px]">Questions</p>
                                 <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $totalQuestions }}</p>
                             </div>
@@ -103,7 +103,7 @@
                                         <defs>
                                             <linearGradient id="correctGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                                 <stop offset="0%" stop-color="#10b981" />
-                                                <stop offset="100%" stop-color="#0F766E" />
+                                                <stop offset="100%" stop-color="#045A5D" />
                                             </linearGradient>
                                             <linearGradient id="wrongGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                                 <stop offset="0%" stop-color="#f43f5e" />
@@ -244,7 +244,7 @@
                                 @class([
                                     'inline-flex items-center justify-center gap-2 rounded-2xl px-10 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
                                     'bg-[#FF7A00] shadow-orange-500/20 hover:bg-[#EA580C] focus-visible:ring-[#FF7A00]' => $testType === 'practice',
-                                    'bg-[#0F766E] shadow-teal-900/20 hover:bg-[#0D9488] focus-visible:ring-[#0F766E]' => $testType !== 'practice'
+                                    'bg-[#045A5D] shadow-teal-900/20 hover:bg-[#067D80] focus-visible:ring-[#045A5D]' => $testType !== 'practice'
                                 ])
                             >
                                 Back to {{ $testType === 'practice' ? 'practice sets' : 'module' }}
@@ -315,8 +315,8 @@
                 <div class="exam-body">
                     @if ($testType === 'practice' && $practiceLevel !== null)
                         <div class="mb-4 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-wider text-[#6B7280]">
-                            <span class="rounded-full bg-[#CCFBF1] px-3 py-1 text-[#0F766E]">Level: {{ $practiceLevel == -1 ? 'Other' : $practiceLevel }}</span>
-                            <span class="rounded-full bg-[#CCFBF1] px-3 py-1 text-[#0F766E]">Set: {{ $practiceSet }}</span>
+                            <span class="rounded-full bg-[#CCFBF1] px-3 py-1 text-[#045A5D]">Level: {{ $practiceLevel == -1 ? 'Other' : $practiceLevel }}</span>
+                            <span class="rounded-full bg-[#CCFBF1] px-3 py-1 text-[#045A5D]">Set: {{ $practiceSet }}</span>
                             <span class="rounded-full bg-[#FFF6E9] px-3 py-1 text-[#FF7A00]">Attempt: {{ $currentAttemptNumber }} / 2</span>
                         </div>
                     @endif
@@ -326,7 +326,7 @@
                     <div class="exam-sidebar-card">
                         <div class="exam-sidebar-accent" aria-hidden="true"></div>
                         <div class="exam-sidebar-intro">
-                            <p class="text-xs font-bold uppercase tracking-wider text-[#0F766E]">Questions</p>
+                            <p class="text-xs font-bold uppercase tracking-wider text-[#045A5D]">Questions</p>
                             <p class="mt-0.5 text-[11px] leading-snug text-[#6B7280]">
                                 @if ($type === \App\Enums\CourseTestType::Practice)
                                     Full set of questions ordered by level. Click a number to jump.
@@ -434,7 +434,7 @@
                                             <label class="{{ $labelClasses }}">
                                                 <input
                                                     type="radio"
-                                                    class="mt-1 h-4 w-4 border-slate-300 text-[#0F766E] focus:ring-[#0F766E]"
+                                                    class="mt-1 h-4 w-4 border-slate-300 text-[#045A5D] focus:ring-[#045A5D]"
                                                     wire:model.live="responses.{{ $q['id'] }}"
                                                     value="{{ $letter }}"
                                                     @disabled($showFeedback || $isFirstWrongChoice)

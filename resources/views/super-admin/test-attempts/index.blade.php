@@ -187,7 +187,7 @@
                                                 <div class="flex flex-col gap-1">
                                                     <div class="flex items-center gap-2">
                                                         <div class="h-2 w-20 overflow-hidden rounded-full bg-slate-100">
-                                                            <div class="h-full rounded-full {{ $key === 'pretest' ? 'bg-[#CCFBF1] ring-1 ring-[#0F766E]/30' : ($key === 'mock' ? 'bg-[#0F766E]' : 'bg-[#FF7A00]') }}"
+                                                            <div class="h-full rounded-full {{ $key === 'pretest' ? 'bg-[#CCFBF1] ring-1 ring-[#045A5D]/30' : ($key === 'mock' ? 'bg-[#045A5D]' : 'bg-[#FF7A00]') }}"
                                                                 style="width: {{ min(100, $bucket['completion_percentage']) }}%"></div>
                                                         </div>
                                                         <span class="text-sm font-bold text-impetus-navy">{{ number_format($bucket['completion_percentage'], 1) }}%</span>
