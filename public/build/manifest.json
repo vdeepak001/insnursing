@@ -13,7 +13,7 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-Twc-2-a0.js",
+    "file": "assets/app-BOsR9k8F.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -73,7 +73,7 @@
     "isDynamicEntry": true
   },
   "resources/js/components/chart/dashboard-charts.js": {
-    "file": "assets/dashboard-charts-9xGo5G8y.js",
+    "file": "assets/dashboard-charts-CtH3sm4A.js",
     "name": "dashboard-charts",
     "src": "resources/js/components/chart/dashboard-charts.js",
     "isDynamicEntry": true,
