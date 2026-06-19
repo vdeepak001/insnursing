@@ -3,54 +3,54 @@
         <table class="w-full border-collapse text-left">
             <thead>
                 <tr class="bg-gradient-to-r from-impetus-teal to-impetus-orange print-bg-orange">
-                    <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-4 py-2 text-left text-xs font-bold uppercase tracking-wider text-white">Unique ID</th>
-                    <th class="w-[16%] whitespace-nowrap border-b border-orange-400/20 px-4 py-2 text-left text-xs font-bold uppercase tracking-wider text-white">Name</th>
-                    <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-4 py-2 text-left text-xs font-bold uppercase tracking-wider text-white">RN Number</th>
-                    <th class="w-[24%] whitespace-nowrap border-b border-orange-400/20 px-4 py-2 text-left text-xs font-bold uppercase tracking-wider text-white">Module Name</th>
+                    <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">Unique ID</th>
+                    <th class="w-[16%] whitespace-nowrap border-b border-orange-400/20 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">Name</th>
+                    <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">RN Number</th>
+                    <th class="w-[24%] whitespace-nowrap border-b border-orange-400/20 px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">Module Name</th>
 
                     @if (! $filters['exam_type'] || $filters['exam_type'] === 'pre')
-                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-4 py-2 text-center text-xs font-bold uppercase tracking-wider text-white">Pre Test</th>
+                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white font-outfit">Pre Test</th>
                     @endif
 
                     @if (! $filters['exam_type'] || $filters['exam_type'] === 'mock')
-                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-4 py-2 text-center text-xs font-bold uppercase tracking-wider text-white">Mock Test</th>
+                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white font-outfit">Mock Test</th>
                     @endif
 
                     @if (! $filters['exam_type'] || in_array($filters['exam_type'], ['final', 'passed']))
-                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-4 py-2 text-center text-xs font-bold uppercase tracking-wider text-white">Final 1</th>
-                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-4 py-2 text-center text-xs font-bold uppercase tracking-wider text-white">Final 2</th>
-                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-4 py-2 text-center text-xs font-bold uppercase tracking-wider text-white">Completed on</th>
+                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white font-outfit">Final 1</th>
+                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white font-outfit">Final 2</th>
+                        <th class="w-[8%] whitespace-nowrap border-b border-orange-400/25 px-6 py-4 text-center text-xs font-bold uppercase tracking-wider text-white font-outfit">Completed on</th>
                     @endif
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                 @forelse ($userAttempts as $attempt)
                     <tr class="transition-colors duration-150 hover:bg-gray-50 dark:hover:bg-gray-900/50">
-                        <td class="whitespace-nowrap px-4 py-2 text-left text-sm font-medium text-gray-600 dark:text-gray-400">{{ $attempt->sequence_number }}</td>
-                        <td class="whitespace-nowrap px-4 py-2 text-sm font-normal uppercase text-gray-900 dark:text-white">{{ $attempt->user_name }}</td>
-                        <td class="whitespace-nowrap px-4 py-2 text-left text-sm font-medium uppercase text-gray-600 dark:text-gray-400">{{ $attempt->rn_number }}</td>
-                        <td class="whitespace-nowrap px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $attempt->course_name }}</td>
+                        <td class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-gray-600 dark:text-gray-400">{{ $attempt->sequence_number }}</td>
+                        <td class="whitespace-nowrap px-6 py-4 text-sm font-normal uppercase text-gray-900 dark:text-white">{{ $attempt->user_name }}</td>
+                        <td class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium uppercase text-gray-600 dark:text-gray-400">{{ $attempt->rn_number }}</td>
+                        <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $attempt->course_name }}</td>
 
                         @if (! $filters['exam_type'] || $filters['exam_type'] === 'pre')
-                            <td class="whitespace-nowrap px-4 py-2 text-center text-sm font-bold {{ $attempt->pre_score != '-' ? 'text-gray-900 dark:text-white' : 'text-gray-400' }}">
+                            <td class="whitespace-nowrap px-6 py-4 text-center text-sm font-bold {{ $attempt->pre_score != '-' ? 'text-gray-900 dark:text-white' : 'text-gray-400' }}">
                                 {{ is_numeric($attempt->pre_score) ? round($attempt->pre_score).' %' : $attempt->pre_score }}
                             </td>
                         @endif
 
                         @if (! $filters['exam_type'] || $filters['exam_type'] === 'mock')
-                            <td class="whitespace-nowrap px-4 py-2 text-center text-sm font-bold {{ $attempt->mock_score != '-' ? 'text-gray-900 dark:text-white' : 'text-gray-400' }}">
+                            <td class="whitespace-nowrap px-6 py-4 text-center text-sm font-bold {{ $attempt->mock_score != '-' ? 'text-gray-900 dark:text-white' : 'text-gray-400' }}">
                                 {{ is_numeric($attempt->mock_score) ? round($attempt->mock_score).' %' : $attempt->mock_score }}
                             </td>
                         @endif
 
                         @if (! $filters['exam_type'] || in_array($filters['exam_type'], ['final', 'passed']))
-                            <td class="whitespace-nowrap px-4 py-2 text-center text-sm font-bold {{ $attempt->final_score_1 != '-' ? 'text-gray-900 dark:text-white' : 'text-gray-400' }}">
+                            <td class="whitespace-nowrap px-6 py-4 text-center text-sm font-bold {{ $attempt->final_score_1 != '-' ? 'text-gray-900 dark:text-white' : 'text-gray-400' }}">
                                 {{ is_numeric($attempt->final_score_1) ? round($attempt->final_score_1).' %' : $attempt->final_score_1 }}
                             </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-center text-sm font-bold {{ $attempt->final_score_2 != '-' ? 'text-gray-900 dark:text-white' : 'text-gray-400' }}">
+                            <td class="whitespace-nowrap px-6 py-4 text-center text-sm font-bold {{ $attempt->final_score_2 != '-' ? 'text-gray-900 dark:text-white' : 'text-gray-400' }}">
                                 {{ is_numeric($attempt->final_score_2) ? round($attempt->final_score_2).' %' : $attempt->final_score_2 }}
                             </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-center text-sm font-medium text-gray-900 dark:text-white">{{ $attempt->date_of_completion }}</td>
+                            <td class="whitespace-nowrap px-6 py-4 text-center text-sm font-medium text-gray-900 dark:text-white">{{ $attempt->date_of_completion }}</td>
                         @endif
                     </tr>
                 @empty

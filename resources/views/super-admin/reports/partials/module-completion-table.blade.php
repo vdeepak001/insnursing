@@ -3,8 +3,8 @@
         <table class="w-full border-collapse text-left">
             <thead>
                 <tr class="bg-gradient-to-r from-impetus-teal to-impetus-orange">
-                    <th class="px-6 py-4 font-outfit text-xs font-bold uppercase tracking-wider text-white">Module Name</th>
-                    <th class="px-6 py-4 text-center font-outfit text-xs font-bold uppercase tracking-wider text-white">Modules Completed</th>
+                    <th class="px-6 py-4 font-outfit text-xs font-bold uppercase tracking-wider text-white whitespace-nowrap">Module Name</th>
+                    <th class="px-6 py-4 text-center font-outfit text-xs font-bold uppercase tracking-wider text-white whitespace-nowrap">Modules Completed</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
