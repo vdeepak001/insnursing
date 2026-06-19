@@ -80,6 +80,7 @@ export function initDashboardCharts() {
                 },
             },
             tooltip: {
+                theme: 'dark',
                 y: {
                     formatter: (value) => `${Math.round(value)} attempts`,
                 },
@@ -160,6 +161,7 @@ export function initDashboardCharts() {
             },
             stroke: { width: 2, colors: ['#ffffff'] },
             tooltip: {
+                theme: 'dark',
                 y: {
                     formatter: (value) => `${Math.round(value).toLocaleString()} attempts`,
                 },

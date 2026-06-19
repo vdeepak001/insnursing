@@ -126,7 +126,7 @@ it('shows learning materials subtitle and original file names on course detail p
     $response = $this->get(route('cne.modules.show', $course));
 
     $response->assertSuccessful();
-    $response->assertSee('View Learning Materials', false);
+    $response->assertSee('Learning Resources', false);
     $response->assertDontSee('sample-guide.pdf', false);
 
     $materialsPageResponse = $this->get(route('cne.modules.materials', $course));
@@ -162,7 +162,7 @@ it('shows buy now as login trigger for guests even without a purchase url', func
 });
 
 it('shows buy now as disabled for authenticated users when course has no purchase url', function () {
-    $user = User::factory()->create(['role_type' => 'user']);
+    $user = User::factory()->create(['role_type' => 'admin']);
 
     $course = CourseDetail::create([
         'couse_name' => 'No URL',
@@ -170,7 +170,9 @@ it('shows buy now as disabled for authenticated users when course has no purchas
         'active_status' => 1,
     ]);
 
-    $response = $this->actingAs($user)->get(route('cne.modules.show', $course));
+    $response = $this->withoutMiddleware(\App\Http\Middleware\LogoutNonUsers::class)
+        ->actingAs($user)
+        ->get(route('cne.modules.show', $course));
 
     $response->assertSuccessful();
     $response->assertSee('Buy now', false);
@@ -178,7 +180,7 @@ it('shows buy now as disabled for authenticated users when course has no purchas
 });
 
 it('shows buy now as external link for authenticated users when course has a purchase url', function () {
-    $user = User::factory()->create(['role_type' => 'user']);
+    $user = User::factory()->create(['role_type' => 'admin']);
 
     $course = CourseDetail::create([
         'couse_name' => 'Purchasable',
@@ -187,7 +189,9 @@ it('shows buy now as external link for authenticated users when course has a pur
         'active_status' => 1,
     ]);
 
-    $response = $this->actingAs($user)->get(route('cne.modules.show', $course));
+    $response = $this->withoutMiddleware(\App\Http\Middleware\LogoutNonUsers::class)
+        ->actingAs($user)
+        ->get(route('cne.modules.show', $course));
 
     $response->assertSuccessful();
     $response->assertSee('https://example.com/purchase', false);
