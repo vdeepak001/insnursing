@@ -51,7 +51,7 @@ test('admin dashboard shows platform and assessment metrics', function () {
     $response->assertSee('Total Courses', false);
     $response->assertSee('Pretest', false);
     $response->assertSee('Mock Test', false);
-    $response->assertSee('Final Test', false);
+    $response->assertSee('Final Average', false);
     $response->assertSee('Test Attempts Overview', false);
     $response->assertSee('This Month', false);
     $response->assertSee('Test Status Distribution', false);
@@ -174,6 +174,17 @@ test('top performing tests returns up to ten highest scoring module and test pai
         'started_at' => now()->subHour(),
         'completed_at' => now(),
     ]);
+    // Add a second attempt with a lower score for the same practice test
+    CourseTestAttempt::create([
+        'user_id' => $learner->id,
+        'course_detail_id' => $practiceCourse->id,
+        'test_type' => CourseTestType::Practice->value,
+        'status' => CourseTestAttempt::STATUS_COMPLETED,
+        'question_ids' => [1],
+        'score_percent' => 80.0,
+        'started_at' => now()->subHours(2),
+        'completed_at' => now()->subHour(),
+    ]);
 
     $topPerforming = app(AdminDashboardService::class)->build()['top_performing'];
 
@@ -181,8 +192,10 @@ test('top performing tests returns up to ten highest scoring module and test pai
     expect($topPerforming[0]['course_name'])->toBe('Top Practice Course');
     expect($topPerforming[0]['test_label'])->toBe('Practice test');
     expect($topPerforming[0]['average_score'])->toBe(95.0);
+    expect($topPerforming[0]['attempt_count'])->toBe(2);
     expect($topPerforming[1]['course_name'])->toBe('Top Ten Course 12');
     expect($topPerforming[1]['average_score'])->toBe(60.0);
+    expect($topPerforming[1]['attempt_count'])->toBe(1);
 });
 
 test('recent attempts show date and time on separate lines in dashboard', function () {

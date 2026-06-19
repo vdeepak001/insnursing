@@ -39,6 +39,7 @@
         'Pretest' => 'Pre-assessment attempts',
         'Mock Test' => 'Mock examination attempts',
         'Final Test' => 'Final certification attempts',
+        'Final Average' => 'Average of highest final scores',
         'Total Attempts' => 'Pre, mock & final combined',
     ][$title] ?? 'System Metric';
 @endphp
@@ -56,7 +57,7 @@
     <div class="min-w-0 relative z-10">
         <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-outfit block truncate">{{ $title }}</span>
         <h4 class="mt-0.5 font-extrabold text-slate-800 text-lg sm:text-xl tracking-tight font-outfit leading-none">
-            {{ number_format($value) }}
+            {{ is_numeric($value) ? number_format($value) : $value }}
         </h4>
         <span class="text-[10px] text-slate-500 font-medium block mt-0.5 font-outfit truncate" title="{{ $subtitles }}">{{ $subtitles }}</span>
     </div>

@@ -106,8 +106,8 @@
                 />
 
                 <x-dashboard.metric-card
-                    title="Final Test"
-                    value="{{ $stats['final_test_attempts'] }}"
+                    title="Final Average"
+                    value="{{ $stats['final_average'] }}%"
                     icon="badge-check"
                     color="brand"
                 />

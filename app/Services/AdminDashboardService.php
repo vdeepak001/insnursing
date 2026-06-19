@@ -16,7 +16,7 @@ class AdminDashboardService
 {
     /**
      * @return array{
-     *     stats: array<string, int>,
+     *     stats: array<string, int|float>,
      *     charts: array{
      *         attempts_overview: array{categories: list<string>, series: list<array{name: string, data: list<int>}>, colors: list<string>},
      *         attempts_month: string,
@@ -45,13 +45,24 @@ class AdminDashboardService
     }
 
     /**
-     * @return array<string, int>
+     * @return array<string, int|float>
      */
     private function platformStats(): array
     {
         $pretestType = CourseTestType::Pre->value;
         $mockType = CourseTestType::Mock->value;
         $finalType = CourseTestType::Final->value;
+
+        $finalAverageQuery = CourseTestAttempt::query()
+            ->where('test_type', $finalType)
+            ->where('status', CourseTestAttempt::STATUS_COMPLETED)
+            ->whereNotNull('score_percent')
+            ->groupBy('user_id', 'course_detail_id')
+            ->selectRaw('MAX(score_percent) as best_score');
+
+        $average = \Illuminate\Support\Facades\DB::table(\Illuminate\Support\Facades\DB::raw("({$finalAverageQuery->toSql()}) as sub"))
+            ->mergeBindings($finalAverageQuery->getQuery())
+            ->avg('best_score');
 
         return [
             'total_users' => User::query()->where('role_type', 'user')->count(),
@@ -63,6 +74,7 @@ class AdminDashboardService
             'pretest_attempts' => CourseTestAttempt::query()->where('test_type', $pretestType)->count(),
             'mock_test_attempts' => CourseTestAttempt::query()->where('test_type', $mockType)->count(),
             'final_test_attempts' => CourseTestAttempt::query()->where('test_type', $finalType)->count(),
+            'final_average' => $average !== null ? round((float) $average, 1) : 0,
             'total_attempts' => CourseTestAttempt::query()
                 ->whereIn('test_type', [$pretestType, $mockType, $finalType])
                 ->count(),
@@ -242,10 +254,10 @@ class AdminDashboardService
      */
     private function topPerformingTests(): array
     {
-        $rows = CourseTestAttempt::query()
-            ->select('course_detail_id', 'test_type')
-            ->selectRaw('AVG(score_percent) as average_score')
-            ->selectRaw('COUNT(*) as attempt_count')
+        $bestAttemptsQuery = CourseTestAttempt::query()
+            ->select('user_id', 'course_detail_id', 'test_type')
+            ->selectRaw('MAX(score_percent) as best_score')
+            ->selectRaw('COUNT(*) as user_attempts')
             ->where('status', CourseTestAttempt::STATUS_COMPLETED)
             ->whereNotNull('score_percent')
             ->whereIn('test_type', [
@@ -254,6 +266,13 @@ class AdminDashboardService
                 CourseTestType::Final->value,
                 CourseTestType::Practice->value,
             ])
+            ->groupBy('user_id', 'course_detail_id', 'test_type');
+
+        $rows = \Illuminate\Support\Facades\DB::table(\Illuminate\Support\Facades\DB::raw("({$bestAttemptsQuery->toSql()}) as sub"))
+            ->mergeBindings($bestAttemptsQuery->getQuery())
+            ->select('course_detail_id', 'test_type')
+            ->selectRaw('AVG(best_score) as average_score')
+            ->selectRaw('SUM(user_attempts) as attempt_count')
             ->groupBy('course_detail_id', 'test_type')
             ->orderByDesc('average_score')
             ->limit(10)
