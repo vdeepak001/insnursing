@@ -281,8 +281,8 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="{{ $value['icon'] }}" />
                                 </svg>
                             </div>
-                            <h3 class="mb-2 text-base font-bold text-slate-800 font-outfit sm:text-lg">{{ $value['title'] }}</h3>
-                            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">{{ $value['text'] }}</p>
+                            <h3 class="mb-2 text-base font-bold text-slate-800 font-outfit">{{ $value['title'] }}</h3>
+                            <p class="text-sm leading-relaxed text-slate-600">{{ $value['text'] }}</p>
                         </div>
                     @endforeach
                 </div>
