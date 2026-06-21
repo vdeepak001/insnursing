@@ -161,13 +161,29 @@
                     </div>
                 </div>
 
-                <div class="mt-8 rounded-2xl bg-impetus-teal p-6 shadow-xl sm:p-8">
-                    <p class="text-base leading-relaxed text-white/90 text-justify sm:text-lg">
-                        Online CNE modules play an important role in strengthening the healthcare workforce by
-                        helping nurses stay updated with advancements in healthcare, improve clinical performance,
-                        and meet professional education requirements in a flexible and technology-enabled learning
-                        environment.
-                    </p>
+                <div class="mt-8 rounded-2xl bg-impetus-orange p-6 shadow-xl sm:p-8">
+                    <div class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between sm:text-left">
+                        <div class="flex flex-col items-center gap-4 sm:flex-row">
+                            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0 flex-1 text-center sm:text-left">
+                                <h3 class="text-xl font-extrabold !text-white sm:text-2xl font-outfit">Together, We Build a Healthier Tomorrow</h3>
+                                <p class="mt-1 text-sm leading-relaxed !text-white/95 sm:text-left text-justify">
+                                    Online CNE modules play an important role in strengthening the healthcare workforce by helping nurses stay updated with advancements in healthcare, improve clinical performance, and meet professional education requirements in a flexible and technology-enabled learning environment.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="{{ route('practice.test') }}"
+                            class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-impetus-orange shadow-lg transition hover:scale-105 font-outfit">
+                            Practice Tests
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

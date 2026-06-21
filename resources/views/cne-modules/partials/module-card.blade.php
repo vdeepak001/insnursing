@@ -114,7 +114,7 @@
     </div>
 
     {{-- Content panel --}}
-    <div class="relative flex min-w-0 flex-1 flex-col px-4 py-5 sm:px-5 sm:py-6">
+    <div class="relative flex min-w-0 flex-1 flex-col px-2 py-2 sm:px-3 sm:py-5">
         <div class="flex items-start gap-3 sm:gap-4">
             <div class="shrink-0">
                 <p @class([
