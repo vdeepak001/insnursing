@@ -9,7 +9,7 @@
 @section('content')
     <main class="overflow-hidden bg-white font-sans antialiased text-slate-800">
         {{-- Hero Section --}}
-        <section class="relative bg-white py-16 sm:py-24">
+        <section class="relative bg-impetus-teal-muted py-16 sm:py-24">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
@@ -297,27 +297,19 @@
         </section>
 
         {{-- CTA Banner --}}
-        <section class="pb-16 sm:pb-24">
+        <section class="bg-impetus-orange py-8 sm:py-10">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="flex flex-col items-center justify-between gap-6 rounded-2xl bg-impetus-orange px-6 py-8 shadow-xl sm:flex-row sm:px-10 sm:py-10">
-                    <div class="flex items-center gap-4">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-white">
-                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-                            </svg>
-                        </div>
-                        <div class="text-center sm:text-left">
-                            <h2 class="text-xl font-extrabold text-white sm:text-2xl font-outfit">Keep Learning, Keep Growing</h2>
-                            <p class="mt-1 text-sm text-white/90">Explore CNE Learning Resources and advance your clinical expertise.</p>
-                        </div>
-                    </div>
-                    <a href="{{ route('cne.modules') }}"
-                        class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-impetus-orange shadow-lg transition hover:-translate-y-0.5 hover:bg-impetus-teal-muted font-outfit">
-                        Explore Resources
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                <div class="flex flex-col items-center gap-5 sm:flex-row sm:text-left text-center">
+                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                         </svg>
-                    </a>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="text-base leading-relaxed !text-white sm:text-left text-justify">
+                            Explore CNE Learning Resources and advance your clinical expertise.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

@@ -303,30 +303,20 @@
             </div>
         </section>
 
-        {{-- Bottom CTA --}}
-        <section class="pb-16 sm:pb-24">
+        {{-- CTA Banner --}}
+        <section class="bg-impetus-orange py-8 sm:py-10">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="flex flex-col items-center justify-between gap-6 rounded-2xl bg-impetus-teal px-6 py-8 shadow-xl sm:flex-row sm:px-10 sm:py-10">
-                    <div class="flex items-center gap-4">
-                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-white">
-                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
-                            </svg>
-                        </div>
-                        <div class="text-center sm:text-left">
-                            <h2 class="text-xl font-extrabold !text-impetus-orange sm:text-2xl font-outfit">Start Your Certification Journey Today</h2>
-                            <p class="mt-2 text-sm text-white/90 sm:text-base">
-                                Register, complete your modules, and earn your CNE certification with confidence.
-                            </p>
-                        </div>
-                    </div>
-                    <a href="{{ route('cne.modules') }}"
-                        class="inline-flex shrink-0 items-center gap-2 rounded-full bg-impetus-orange px-6 py-3 text-sm font-bold text-white shadow-lg shadow-impetus-orange/25 transition hover:bg-impetus-orange-hover font-outfit">
-                        Get Certified
-                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                <div class="flex flex-col items-center gap-5 sm:flex-row sm:text-left text-center">
+                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                         </svg>
-                    </a>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="text-base leading-relaxed !text-white sm:text-left text-justify">
+                            Register, complete your modules, and earn your CNE certificate with confidence.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

@@ -8,7 +8,7 @@
 
 @section('content')
     <main class="overflow-hidden bg-white font-sans antialiased text-slate-800">
-        <section class="relative bg-impetus-teal-muted/30 py-16 sm:py-24">
+        <section class="relative bg-impetus-teal-muted py-16 sm:py-24">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
@@ -166,30 +166,19 @@
             </div>
         </section>
 
-        <section class="pb-16 sm:pb-24">
+        {{-- CTA Banner --}}
+        <section class="bg-impetus-orange py-8 sm:py-10">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="rounded-2xl bg-impetus-teal px-6 py-10 text-center shadow-xl sm:px-10">
-                    <h2 class="text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl font-outfit">
-                        Transforming Nursing Knowledge Into Clinical Competence
-                    </h2>
-                    <p class="mx-auto mt-6 max-w-4xl text-sm leading-relaxed text-white/90 text-justify sm:text-center sm:text-base">
-                        Practice Test in Online Continuing Nursing Education (CNE) play a vital role in ensuring effective
-                        learning by transforming theoretical knowledge into practical understanding. They help nursing
-                        professionals stay competent, confident, and prepared to deliver safe and high-quality patient care in
-                        clinical settings.
-                    </p>
-                    <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                        <a href="{{ route('cne.modules') }}"
-                            class="inline-flex items-center justify-center gap-2 rounded-full bg-impetus-orange px-8 py-3.5 text-sm font-bold text-white shadow-lg transition hover:bg-impetus-orange-hover font-outfit">
-                            Explore CNE Modules
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                            </svg>
-                        </a>
-                        <a href="{{ route('about') }}"
-                            class="inline-flex items-center justify-center rounded-full border-2 border-white/40 px-8 py-3.5 text-sm font-bold text-white transition hover:bg-white/10 font-outfit">
-                            About IHS
-                        </a>
+                <div class="flex flex-col items-center gap-5 sm:flex-row sm:text-left text-center">
+                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                        </svg>
+                    </div>
+                    <div class="min-w-0 flex-1">
+                        <p class="text-base leading-relaxed !text-white sm:text-left text-justify">
+                            Practice Test in Online Continuing Nursing Education (CNE) play a vital role in ensuring effective learning by transforming theoretical knowledge into practical understanding. They help nursing professionals stay competent, confident, and prepared to deliver safe and high-quality patient care in clinical settings.
+                        </p>
                     </div>
                 </div>
             </div>
