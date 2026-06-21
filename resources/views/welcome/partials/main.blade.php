@@ -5,7 +5,7 @@
     @endphp
 
     <!-- Hero Section -->
-    <section id="home" class="relative overflow-hidden bg-impetus-teal-muted py-16 md:py-24">
+    <section id="home" class="relative overflow-hidden bg-impetus-teal-muted py-16 md:py-16">
         <div class="pointer-events-none absolute inset-0 opacity-40"
             style="background-image: radial-gradient(#045A5D12 1px, transparent 1px); background-size: 32px 32px;">
         </div>
@@ -154,7 +154,7 @@
 
 
     <!-- Vision & Mission section -->
-    <section id="vision-mission" class="bg-impetus-teal-muted py-24">
+    <section id="vision-mission" class="bg-impetus-teal-muted py-16">
         <div class="mx-auto max-w-7xl px-6 sm:px-8">
             <p class="mx-auto mb-10 max-w-3xl text-center text-base leading-relaxed text-slate-600 sm:text-lg">
                 At IHS Nursing, we are dedicated to providing meaningful continuing education that fosters
@@ -254,7 +254,7 @@
     </section>
 
     <!-- Our Values -->
-    <section id="our-values" class="bg-impetus-teal-muted py-24">
+    <section id="our-values" class="bg-impetus-teal-muted py-16">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <h2
                 class="mb-12 text-center text-3xl font-extrabold uppercase tracking-widest text-impetus-teal sm:text-4xl font-outfit">
@@ -281,8 +281,8 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="{{ $value['icon'] }}" />
                                 </svg>
                             </div>
-                            <h3 class="mb-2 text-sm font-bold text-slate-800 font-outfit">{{ $value['title'] }}</h3>
-                            <p class="text-xs leading-relaxed text-slate-600 sm:text-sm">{{ $value['text'] }}</p>
+                            <h3 class="mb-2 text-base font-bold text-slate-800 font-outfit sm:text-lg">{{ $value['title'] }}</h3>
+                            <p class="text-sm leading-relaxed text-slate-600 sm:text-base">{{ $value['text'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -291,7 +291,7 @@
     </section>
 
     <!-- IHS' Strengths Section -->
-    <section class="relative border-b border-impetus-teal/10 bg-white py-16 sm:py-24">
+    <section class="relative border-b border-impetus-teal/10 bg-white py-16 sm:py-16">
         <div
             class="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-impetus-orange/5 blur-[100px]">
         </div>
@@ -337,9 +337,9 @@
                             </svg>
                         </div>
                         <div class="min-w-0">
-                            <h3 class="text-sm font-bold leading-snug text-impetus-teal font-outfit">
+                            <h3 class="text-base font-bold leading-snug text-impetus-teal font-outfit">
                                 {{ $strength['title'] }}</h3>
-                            <p class="mt-1.5 text-xs leading-relaxed text-slate-600">{{ $strength['text'] }}</p>
+                            <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{{ $strength['text'] }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -349,7 +349,7 @@
 
 
     <!-- CNE Modules Carousel Section -->
-    <section id="cne-modules" class="relative overflow-hidden bg-white py-24">
+    <section id="cne-modules" class="relative overflow-hidden bg-white py-16">
         <div class="pointer-events-none absolute left-0 top-0 h-64 w-64 rounded-full bg-impetus-teal/5 blur-[80px]">
         </div>
         <div class="mx-auto max-w-7xl px-6 sm:px-8">
@@ -452,7 +452,7 @@
 
 
     <!-- Simulation Based Training Section -->
-    {{-- <section class="relative overflow-hidden border-b border-impetus-teal/10 bg-impetus-teal-muted py-24 sm:py-32">
+    {{-- <section class="relative overflow-hidden border-b border-impetus-teal/10 bg-impetus-teal-muted py-16 sm:py-32">
         <div class="pointer-events-none absolute -left-16 top-1/4 h-72 w-72 rounded-full bg-impetus-teal/5 blur-[100px]"></div>
         <div class="pointer-events-none absolute -right-16 bottom-1/4 h-72 w-72 rounded-full bg-impetus-orange/5 blur-[100px]"></div>
 
