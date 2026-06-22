@@ -25,9 +25,35 @@ class CertificateController extends Controller
         }
 
         $completion = $this->passedFinalAttemptForOrder($order);
+        $isSuperAdmin = $authUser && $authUser->role_type === 'superadmin';
 
-        if (! $completion) {
+        if (! $completion && ! $isSuperAdmin) {
             abort(404, 'Certificate is not available for this module purchase.');
+        }
+
+        $date = null;
+        if ($completion) {
+            $date = $completion->completed_at->displayDate();
+        } else {
+            $nextOrder = Order::query()
+                ->where('user_id', $order->user_id)
+                ->where('course_detail_id', $order->course_detail_id)
+                ->where('payment_status', PaymentStatus::Completed)
+                ->where('id', '>', $order->id)
+                ->oldest('id')
+                ->first();
+
+            $anyFinalAttempt = CourseTestAttempt::query()
+                ->where('user_id', $order->user_id)
+                ->where('course_detail_id', $order->course_detail_id)
+                ->where('test_type', CourseTestType::Final)
+                ->where('status', CourseTestAttempt::STATUS_COMPLETED)
+                ->where('started_at', '>=', $order->created_at)
+                ->when($nextOrder, fn ($q) => $q->where('started_at', '<', $nextOrder->created_at))
+                ->latest('completed_at')
+                ->first();
+
+            $date = $anyFinalAttempt ? $anyFinalAttempt->completed_at->displayDate() : now()->displayDate();
         }
 
         $points = 0;
@@ -47,7 +73,7 @@ class CertificateController extends Controller
             'completion' => $completion,
             'user' => $order->user,
             'course' => $order->courseDetail,
-            'date' => $completion->completed_at->displayDate(),
+            'date' => $date,
             'points' => (int) $points,
         ];
 

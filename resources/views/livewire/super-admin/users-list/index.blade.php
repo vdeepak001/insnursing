@@ -91,7 +91,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
             </span>
-            Download Certificate (passed modules)
+            Download Certificate ({{ auth()->user()->role_type === 'superadmin' ? 'all modules' : 'passed modules' }})
         </div>
         <div
             class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
@@ -578,7 +578,7 @@
                                             </template>
                                         </td>
                                         <td class="px-4 py-3 text-center">
-                                            <template x-if="order.passed">
+                                            <template x-if="order.passed || {{ auth()->user()->role_type === 'superadmin' ? 'true' : 'false' }}">
                                                 <a :href="`{{ url('/certificates') }}/${order.id}/download`" target="_blank"
                                                     class="inline-flex items-center justify-center rounded-lg p-1.5 text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-blue-400 dark:hover:bg-gray-700"
                                                     title="Download Certificate">
@@ -591,7 +591,7 @@
                                                     </svg>
                                                 </a>
                                             </template>
-                                            <template x-if="!order.passed">
+                                            <template x-if="!(order.passed || {{ auth()->user()->role_type === 'superadmin' ? 'true' : 'false' }})">
                                                 <span class="text-gray-400">—</span>
                                             </template>
                                         </td>

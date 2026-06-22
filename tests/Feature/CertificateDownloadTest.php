@@ -86,3 +86,47 @@ it('forbids learners from downloading another users certificate', function () {
         ->get(route('certificates.download', $order))
         ->assertForbidden();
 });
+
+it('allows superadmin to download a certificate for an uncompleted module purchase', function () {
+    $superAdmin = User::factory()->create(['role_type' => 'superadmin']);
+    $learner = User::factory()->create(['role_type' => 'user']);
+
+    $course = CourseDetail::query()->create([
+        'couse_name' => 'Uncompleted Module',
+        'description' => 'Test',
+        'active_status' => 1,
+        'course_code' => 'UNCOMP-01',
+    ]);
+
+    $order = Order::factory()->create([
+        'user_id' => $learner->id,
+        'course_detail_id' => $course->id,
+        'payment_status' => PaymentStatus::Completed,
+    ]);
+
+    $this->actingAs($superAdmin)
+        ->get(route('certificates.download', $order))
+        ->assertSuccessful();
+});
+
+it('returns 404 for other staff roles downloading an uncompleted module purchase certificate', function () {
+    $admin = User::factory()->create(['role_type' => 'admin']);
+    $learner = User::factory()->create(['role_type' => 'user']);
+
+    $course = CourseDetail::query()->create([
+        'couse_name' => 'Uncompleted Module 2',
+        'description' => 'Test',
+        'active_status' => 1,
+        'course_code' => 'UNCOMP-02',
+    ]);
+
+    $order = Order::factory()->create([
+        'user_id' => $learner->id,
+        'course_detail_id' => $course->id,
+        'payment_status' => PaymentStatus::Completed,
+    ]);
+
+    $this->actingAs($admin)
+        ->get(route('certificates.download', $order))
+        ->assertNotFound();
+});
