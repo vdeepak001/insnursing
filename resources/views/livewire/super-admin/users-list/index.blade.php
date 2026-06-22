@@ -603,21 +603,21 @@
                                                     </svg>
                                                 </a>
                                             </template>
-                                            @if (auth()->user()->role_type === 'superadmin')
-                                                <template x-if="!order.passed">
-                                                    <a :href="`{{ url('/certificates') }}/${order.id}/download`" target="_blank"
-                                                        class="inline-flex items-center justify-center rounded-lg p-1.5 text-amber-600 transition-colors hover:bg-amber-50 hover:text-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:text-amber-400 dark:hover:bg-gray-700"
-                                                        title="Force Download Certificate (Bypass)">
-                                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                                            stroke-width="2.5" stroke="currentColor">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                                                        </svg>
-                                                    </a>
-                                                </template>
-                                            @endif
-                                            <template x-if="!(order.passed || {{ auth()->user()->role_type === 'superadmin' ? 'true' : 'false' }})">
-                                                <span class="text-gray-400">—</span>
+                                            <template x-if="!order.passed">
+                                                <div class="inline-flex items-center justify-center gap-1.5">
+                                                    <span class="text-gray-400">—</span>
+                                                    @if (auth()->user()->role_type === 'superadmin')
+                                                        <a :href="`{{ url('/certificates') }}/${order.id}/download`" target="_blank"
+                                                            class="inline-flex items-center justify-center rounded-lg p-1 text-amber-600 transition-colors hover:bg-amber-50 hover:text-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:text-amber-400 dark:hover:bg-gray-700"
+                                                            title="Force Download Certificate (Bypass)">
+                                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                                                stroke-width="2.5" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                            </svg>
+                                                        </a>
+                                                    @endif
+                                                </div>
                                             </template>
                                         </td>
                                     </tr>
