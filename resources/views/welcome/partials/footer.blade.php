@@ -14,9 +14,9 @@
 </style>
 
 <!-- Footer -->
-<footer class="bg-impetus-teal py-12 text-white">
+<footer class="bg-impetus-teal py-8 text-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-6 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+        <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
             <!-- Column 1: Logo & Description -->
             <div class="sm:col-span-2 lg:col-span-3 footer-col1-rowspan">
                 <div class="mb-6 inline-block rounded-xl bg-white p-3">
