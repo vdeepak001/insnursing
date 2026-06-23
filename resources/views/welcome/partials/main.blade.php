@@ -11,7 +11,7 @@
         </div>
 
         <div class="relative mx-auto max-w-7xl px-6 sm:px-8">
-            <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:items-start lg:gap-16">
                 <div class="text-center lg:text-left">
                     <p class="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-impetus-teal font-outfit">
                         Empowering Nurses. Impacting Care.
