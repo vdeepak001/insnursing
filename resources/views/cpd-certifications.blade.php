@@ -74,13 +74,14 @@
         {{-- Purpose & Importance --}}
         <section class="border-y border-impetus-teal/10 bg-slate-50 py-16 sm:py-20">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid gap-8 lg:grid-cols-2">
-                    <div class="overflow-hidden rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange shadow-md">
-                        <div class="border-b border-impetus-orange/10 bg-white px-4 py-5 sm:px-6 sm:py-6">
+                <div class="grid gap-12 grid-cols-1">
+                    {{-- Purpose of CNE Certification --}}
+                    <div class="overflow-hidden rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange shadow-md lg:grid lg:grid-cols-12 lg:items-stretch">
+                        <div class="border-b border-impetus-orange/10 bg-white px-4 py-5 sm:px-6 sm:py-6 lg:col-span-5 lg:border-b-0 lg:border-r lg:border-impetus-orange/20 lg:flex lg:items-center lg:justify-center">
                             <img src="{{ asset('images/CNE-certification-purposes.jpeg') }}" alt="Purpose of CNE Certification"
                                 class="mx-auto w-full rounded-xl object-contain shadow-sm ring-1 ring-impetus-orange/10">
                         </div>
-                        <div class="p-6 sm:p-8">
+                        <div class="p-6 sm:p-8 lg:col-span-7 lg:flex lg:flex-col lg:justify-center">
                             <div class="mb-6 flex items-center gap-4">
                                 <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
                                     <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -115,12 +116,9 @@
                         </div>
                     </div>
 
-                    <div class="overflow-hidden rounded-2xl border border-impetus-teal/15 bg-white shadow-md">
-                        <div class="border-b border-impetus-teal/10 bg-impetus-teal-muted/30 px-4 py-5 sm:px-6 sm:py-6">
-                            <img src="{{ asset('images/CNE-certification-importance.jpeg') }}" alt="Importance of CNE Certification"
-                                class="mx-auto w-full rounded-xl object-contain shadow-sm ring-1 ring-impetus-teal/10">
-                        </div>
-                        <div class="p-6 sm:p-8">
+                    {{-- Importance of CNE Certification --}}
+                    <div class="overflow-hidden rounded-2xl border border-impetus-teal/15 bg-white shadow-md lg:grid lg:grid-cols-12 lg:items-stretch">
+                        <div class="p-6 sm:p-8 lg:col-span-7 lg:order-first lg:flex lg:flex-col lg:justify-center">
                             <div class="mb-6 flex items-center gap-4">
                                 <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
                                     <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -143,6 +141,10 @@
                                     “Overall, CNE certification reflects a commitment to lifelong learning and excellence in nursing practice.”
                                 </p>
                             </div>
+                        </div>
+                        <div class="border-b border-impetus-teal/10 bg-impetus-teal-muted/30 px-4 py-5 sm:px-6 sm:py-6 lg:col-span-5 lg:border-b-0 lg:border-l lg:border-impetus-teal/15 lg:flex lg:items-center lg:justify-center lg:order-last">
+                            <img src="{{ asset('images/CNE-certification-importance.jpeg') }}" alt="Importance of CNE Certification"
+                                class="mx-auto w-full rounded-xl object-contain shadow-sm ring-1 ring-impetus-teal/10">
                         </div>
                     </div>
                 </div>
