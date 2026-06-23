@@ -3,6 +3,7 @@
         .footer-col1-rowspan {
             grid-row: span 2 / span 2 !important;
         }
+
         .footer-copyright-aligned {
             grid-column: 4 / -1 !important;
             margin-top: 16px !important;
@@ -111,7 +112,8 @@
             </div>
 
             <!-- Bottom Copyright Row -->
-            <div class="footer-copyright-aligned mt-4 text-center sm:text-right text-sm text-white/60" style="grid-column: 1 / -1;">
+            <div class="footer-copyright-aligned mt-4 text-center sm:text-right text-sm text-white/60"
+                style="grid-column: 1 / -1;">
                 <span>&copy; 2026 Impetus Healthcare Skills Private Limited. All rights reserved.</span>
             </div>
         </div>
