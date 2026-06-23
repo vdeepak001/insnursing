@@ -78,39 +78,10 @@
                     </div>
                 </div>
 
-                <div class="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
-                    <div
-                        class="absolute h-72 w-72 rounded-full border-2 border-impetus-orange/30 sm:h-80 sm:w-80 lg:h-[22rem] lg:w-[22rem]">
-                    </div>
-                    <img src="{{ $heroImage }}" alt="IHS Nursing healthcare professional"
-                        class="relative z-10 h-auto w-full max-w-sm object-contain lg:max-w-md">
-                    <div
-                        class="absolute -right-1 top-10 flex h-10 w-10 items-center justify-center rounded-full bg-impetus-orange text-white shadow-md">
-                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
-                        </svg>
-                    </div>
-                    <div
-                        class="absolute right-6 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-impetus-orange text-white shadow-md">
-                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                        </svg>
-                    </div>
-                    <div
-                        class="absolute bottom-12 left-0 flex h-10 w-10 items-center justify-center rounded-full bg-impetus-orange text-white shadow-md">
-                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
-                        </svg>
-                    </div>
-                    <div
-                        class="absolute bottom-6 right-10 flex h-10 w-10 items-center justify-center rounded-full bg-impetus-orange text-white shadow-md">
-                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                        </svg>
+                <div class="relative w-full lg:h-full">
+                    <div class="lg:absolute lg:-top-16 lg:-bottom-16 lg:left-0 lg:right-0 lg:flex lg:items-center lg:justify-center">
+                        <img src="{{ $heroImage }}" alt="IHS Nursing healthcare professional"
+                            class="relative z-10 h-auto w-full max-w-lg object-contain lg:h-full lg:w-auto lg:max-w-none">
                     </div>
                 </div>
             </div>
