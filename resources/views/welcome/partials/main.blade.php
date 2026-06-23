@@ -196,7 +196,8 @@
             <div class="grid grid-cols-1 items-center gap-y-12 lg:grid-cols-12 lg:gap-x-16">
                 <div class="relative lg:col-span-5">
                     <img src="{{ asset('images/homepage-aboutus.jpeg') }}" alt="About IHS"
-                        class="h-[420px] w-full rounded-3xl object-cover shadow-xl ring-1 ring-impetus-teal/10 sm:h-[500px] lg:h-[560px]" />
+                        class="h-[420px] w-full rounded-3xl object-cover shadow-xl ring-1 ring-impetus-teal/10 sm:h-[500px] lg:h-[560px]"
+                        style="object-position: 68% center;" />
                 </div>
                 <div class="lg:col-span-7">
                     <h2 class="mb-3 text-base font-bold uppercase tracking-widest !text-impetus-orange font-outfit">
