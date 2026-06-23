@@ -78,11 +78,9 @@
                     </div>
                 </div>
 
-                <div class="relative w-full lg:h-full">
-                    <div class="lg:absolute lg:-top-16 lg:-bottom-16 lg:left-0 lg:right-0 lg:flex lg:items-center lg:justify-center">
-                        <img src="{{ $heroImage }}" alt="IHS Nursing healthcare professional"
-                            class="relative z-10 h-auto w-full max-w-lg object-contain lg:h-full lg:w-auto lg:max-w-none">
-                    </div>
+                <div class="relative mx-auto flex w-full max-w-lg items-center justify-center lg:max-w-none">
+                    <img src="{{ $heroImage }}" alt="IHS Nursing healthcare professional"
+                        class="relative z-10 h-auto w-full max-w-lg object-contain lg:max-w-2xl">
                 </div>
             </div>
         </div>
