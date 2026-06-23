@@ -1,9 +1,23 @@
+<style>
+    @media (min-width: 1024px) {
+        .footer-col1-rowspan {
+            grid-row: span 2 / span 2 !important;
+        }
+        .footer-copyright-aligned {
+            grid-column: 4 / -1 !important;
+            margin-top: 16px !important;
+            text-align: right !important;
+            align-self: end !important;
+        }
+    }
+</style>
+
 <!-- Footer -->
 <footer class="bg-impetus-teal py-12 text-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-6 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
             <!-- Column 1: Logo & Description -->
-            <div class="sm:col-span-2 lg:col-span-3">
+            <div class="sm:col-span-2 lg:col-span-3 footer-col1-rowspan">
                 <div class="mb-6 inline-block rounded-xl bg-white p-3">
                     <img src="{{ asset('Impetus-logo.png') }}" alt="IHS Nursing Logo" class="h-12 w-auto object-contain">
                 </div>
@@ -95,11 +109,11 @@
                             &amp; Conditions</a></li>
                 </ul>
             </div>
-        </div>
 
-        <!-- Bottom Copyright Row -->
-        <div class="border-t border-white/10 pt-4 text-sm text-white/60">
-            <span>&copy; 2026 Impetus Healthcare Skills Private Limited. All rights reserved.</span>
+            <!-- Bottom Copyright Row -->
+            <div class="footer-copyright-aligned mt-4 text-center sm:text-right text-sm text-white/60" style="grid-column: 1 / -1;">
+                <span>&copy; 2026 Impetus Healthcare Skills Private Limited. All rights reserved.</span>
+            </div>
         </div>
     </div>
 </footer>
