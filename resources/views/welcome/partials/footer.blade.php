@@ -6,7 +6,7 @@
 
         .footer-copyright-aligned {
             grid-column: 4 / -1 !important;
-            margin-top: 16px !important;
+            margin-top: 0px !important;
             text-align: right !important;
             align-self: end !important;
         }
