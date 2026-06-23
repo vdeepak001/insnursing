@@ -24,14 +24,14 @@
 
                     </h1>
 
-                    <p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-600 text-justify sm:text-lg lg:mx-0">
-                        <strong>Impetus Healthcare Skills Private Limited (IHS)</strong> is a pioneering healthcare
+                    <p class="mt-6 max-w-2xl text-sm leading-relaxed text-slate-600 text-justify sm:text-base lg:mx-0">
+                        <strong>Impetus Healthcare Skills Private Limited</strong> is a pioneering healthcare
                         education and skills development organization committed to strengthening the competency of
                         healthcare professionals through innovative and outcome-oriented training programs. The company
                         specializes in the design, development, and implementation of competency-based educational
                         initiatives that support the continuous enhancement of healthcare delivery systems.
                     </p>
-                    <p class="mt-4 max-w-2xl text-base leading-relaxed text-slate-600 text-justify sm:text-lg lg:mx-0">
+                    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 text-justify sm:text-base lg:mx-0">
                         The core objective of IHS is to equip healthcare professionals with advanced knowledge,
                         practical skills, and professional competencies required to meet the evolving demands of modern
                         healthcare practice. Through carefully structured training programs, IHS promotes excellence in
@@ -125,7 +125,7 @@
     <!-- Vision & Mission section -->
     <section id="vision-mission" class="bg-impetus-teal-muted py-16">
         <div class="mx-auto max-w-7xl px-6 sm:px-8">
-            <p class="mx-auto mb-10 max-w-3xl text-center text-base leading-relaxed text-slate-600 sm:text-lg">
+            <p class="mx-auto mb-10 max-w-3xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
                 At IHS Nursing, we are dedicated to providing meaningful continuing education that fosters
                 professional excellence and improves healthcare delivery.
             </p>
@@ -140,8 +140,7 @@
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
                     <div class="min-w-0">
@@ -202,7 +201,7 @@
                         Empowering Healthcare Through Competency-Based Training
                     </h3>
                     <p class="mb-4 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                        <strong>Impetus Healthcare Skills Private Limited (IHS)</strong> is a unique healthcare
+                        <strong>Impetus Healthcare Skills Private Limited</strong> is a unique healthcare
                         skills training company that focuses on designing and implementing competency-based training
                         programmes for the development of human resources in the healthcare delivery system. The
                         primary objective of these programmes is to facilitate the acquisition of professional
@@ -251,7 +250,8 @@
                                 </svg>
                             </div>
                             <h3 class="mb-2 text-xl font-bold text-slate-800 font-outfit">{{ $value['title'] }}</h3>
-                            <p class="text-lg leading-relaxed text-slate-600 text-justify">{{ $value['text'] }}</p>
+                            <p class="text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                                {{ $value['text'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -308,7 +308,8 @@
                         <div class="min-w-0">
                             <h3 class="text-xl font-bold leading-snug text-impetus-teal font-outfit">
                                 {{ $strength['title'] }}</h3>
-                            <p class="mt-1.5 text-lg leading-relaxed text-slate-600 text-justify">{{ $strength['text'] }}</p>
+                            <p class="mt-1.5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                                {{ $strength['text'] }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -329,7 +330,8 @@
 
             @if ($latestCourses->isEmpty())
                 <div class="rounded-2xl border border-impetus-teal/10 bg-impetus-teal-muted px-8 py-12 text-center">
-                    <p class="text-base leading-relaxed text-slate-600">No modules are available yet. Please check back
+                    <p class="text-sm leading-relaxed text-slate-600 sm:text-base">No modules are available yet. Please
+                        check back
                         later.</p>
                 </div>
             @else
