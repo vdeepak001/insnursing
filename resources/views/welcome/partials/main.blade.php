@@ -194,6 +194,10 @@
     <section id="about" class="overflow-hidden bg-white py-16 sm:py-16">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
             <div class="grid grid-cols-1 items-center gap-y-12 lg:grid-cols-12 lg:gap-x-16">
+                <div class="relative lg:col-span-5">
+                    <img src="{{ asset('images/homepage-aboutus.jpeg') }}" alt="About IHS"
+                        class="h-[420px] w-full rounded-3xl object-cover shadow-xl ring-1 ring-impetus-teal/10 sm:h-[500px] lg:h-[560px]" />
+                </div>
                 <div class="lg:col-span-7">
                     <h2 class="mb-3 text-base font-bold uppercase tracking-widest !text-impetus-orange font-outfit">
                         About IHS</h2>
@@ -212,10 +216,6 @@
                         the careful application of emerging, technically sound educational tools. Our training
                         programmes enable significant and valuable contributions to the delivery of quality care.
                     </p>
-                </div>
-                <div class="relative lg:col-span-5">
-                    <img src="{{ asset('images/Screenshot-2026-05-19-073517.webp') }}" alt="Nursing Team"
-                        class="h-[420px] w-full rounded-3xl object-cover shadow-xl ring-1 ring-impetus-teal/10 sm:h-[500px] lg:h-[560px]" />
                 </div>
             </div>
         </div>
