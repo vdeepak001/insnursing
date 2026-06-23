@@ -62,10 +62,10 @@
                         </a>
                     </div>
 
-                    <div class="relative mx-auto flex w-full max-w-sm items-center justify-center lg:max-w-md">
-                        <div class="absolute h-64 w-64 rounded-full border-2 border-impetus-orange/30 sm:h-72 sm:w-72"></div>
-                        <img src="{{ asset('images/CNE_Certification.jpeg') }}" alt="CNE Certification"
-                            class="relative z-10 h-auto w-full max-w-xs rounded-2xl object-cover shadow-xl">
+                    <div class="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
+                        <div class="absolute h-72 w-72 rounded-full border-2 border-impetus-orange/30 sm:h-80 sm:w-80 lg:h-[22rem] lg:w-[22rem]"></div>
+                        <img src="{{ asset('images/CNE-Banner.jpeg') }}" alt="CNE Certification"
+                            class="relative z-10 h-auto w-full max-w-sm rounded-2xl object-cover shadow-xl sm:max-w-md lg:max-w-xl">
                     </div>
                 </div>
             </div>
@@ -75,62 +75,74 @@
         <section class="border-y border-impetus-teal/10 bg-slate-50 py-16 sm:py-20">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid gap-8 lg:grid-cols-2">
-                    <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange p-6 shadow-md sm:p-8">
-                        <div class="mb-6 flex items-center gap-4">
-                            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
-                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h2 class="text-2xl font-extrabold text-impetus-orange font-outfit">Purpose of CNE Certification</h2>
-                                <p class="mt-2 text-sm text-slate-600 sm:text-base">
-                                    Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core performance goals:
-                                </p>
-                            </div>
+                    <div class="overflow-hidden rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange shadow-md">
+                        <div class="border-b border-impetus-orange/10 bg-white px-4 py-5 sm:px-6 sm:py-6">
+                            <img src="{{ asset('images/CNE-certification-purposes.jpeg') }}" alt="Purpose of CNE Certification"
+                                class="mx-auto w-full rounded-xl object-contain shadow-sm ring-1 ring-impetus-orange/10">
                         </div>
-                        <ul class="space-y-4">
-                            @foreach ([
-                                'To promote continuous professional development among nurses',
-                                'To update clinical knowledge and practical skills',
-                                'To improve the quality of patient care and safety standards',
-                                'To strengthen competency in specialized nursing areas',
-                                'To meet regulatory and professional education requirements',
-                            ] as $purpose)
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
-                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                        </svg>
-                                    </span>
-                                    <p class="text-sm leading-relaxed text-slate-600 text-justify">{{ $purpose }}</p>
-                                </li>
-                            @endforeach
-                        </ul>
+                        <div class="p-6 sm:p-8">
+                            <div class="mb-6 flex items-center gap-4">
+                                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
+                                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-extrabold text-impetus-orange font-outfit">Purpose of CNE Certification</h2>
+                                    <p class="mt-2 text-sm text-slate-600 sm:text-base">
+                                        Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core performance goals:
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="space-y-4">
+                                @foreach ([
+                                    'To promote continuous professional development among nurses',
+                                    'To update clinical knowledge and practical skills',
+                                    'To improve the quality of patient care and safety standards',
+                                    'To strengthen competency in specialized nursing areas',
+                                    'To meet regulatory and professional education requirements',
+                                ] as $purpose)
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
+                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
+                                        <p class="text-sm leading-relaxed text-slate-600 text-justify">{{ $purpose }}</p>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="rounded-2xl border border-impetus-teal/15 bg-white p-6 shadow-md sm:p-8">
-                        <div class="mb-6 flex items-center gap-4">
-                            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
-                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-widest text-impetus-teal font-outfit">High Clinical Standards</p>
-                                <h2 class="text-2xl font-extrabold text-impetus-teal font-outfit">Importance of CNE Certification</h2>
-                            </div>
+                    <div class="overflow-hidden rounded-2xl border border-impetus-teal/15 bg-white shadow-md">
+                        <div class="border-b border-impetus-teal/10 bg-impetus-teal-muted/30 px-4 py-5 sm:px-6 sm:py-6">
+                            <img src="{{ asset('images/CNE-certification-importance.jpeg') }}" alt="Importance of CNE Certification"
+                                class="mx-auto w-full rounded-xl object-contain shadow-sm ring-1 ring-impetus-teal/10">
                         </div>
-                        <p class="mb-6 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                            CNE certification plays a vital role in ensuring that nursing professionals maintain high
-                            standards of practice by regularly updating their knowledge and skills. It enhances career
-                            development, professional credibility, and clinical confidence while contributing to
-                            improved healthcare outcomes and patient safety.
-                        </p>
-                        <div class="rounded-xl bg-impetus-teal p-5">
-                            <p class="text-sm italic leading-relaxed text-white/90 text-justify sm:text-base font-outfit">
-                                “Overall, CNE certification reflects a commitment to lifelong learning and excellence in nursing practice.”
+                        <div class="p-6 sm:p-8">
+                            <div class="mb-6 flex items-center gap-4">
+                                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
+                                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-widest text-impetus-teal font-outfit">High Clinical Standards</p>
+                                    <h2 class="text-2xl font-extrabold text-impetus-teal font-outfit">Importance of CNE Certification</h2>
+                                </div>
+                            </div>
+                            <p class="mb-6 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                                CNE certification plays a vital role in ensuring that nursing professionals maintain high
+                                standards of practice by regularly updating their knowledge and skills. It enhances career
+                                development, professional credibility, and clinical confidence while contributing to
+                                improved healthcare outcomes and patient safety.
                             </p>
+                            <div class="rounded-xl bg-impetus-teal p-5">
+                                <p class="text-sm italic leading-relaxed text-white/90 text-justify sm:text-base font-outfit">
+                                    “Overall, CNE certification reflects a commitment to lifelong learning and excellence in nursing practice.”
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

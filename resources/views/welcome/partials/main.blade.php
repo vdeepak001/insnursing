@@ -118,7 +118,7 @@
     </section>
 
     <!-- Stats Bar -->
-    <section class="bg-impetus-teal py-8 sm:py-10">
+    <section class="bg-impetus-teal py-4 sm:py-6">
         <div class="mx-auto max-w-7xl px-6 sm:px-8">
             <div class="grid grid-cols-2 gap-6 text-center text-white md:grid-cols-5 md:gap-4">
                 @foreach ([
@@ -281,8 +281,8 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="{{ $value['icon'] }}" />
                                 </svg>
                             </div>
-                            <h3 class="mb-2 text-base font-bold text-slate-800 font-outfit">{{ $value['title'] }}</h3>
-                            <p class="text-sm leading-relaxed text-slate-600">{{ $value['text'] }}</p>
+                            <h3 class="mb-2 text-xl font-bold text-slate-800 font-outfit">{{ $value['title'] }}</h3>
+                            <p class="text-lg leading-relaxed text-slate-600">{{ $value['text'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -337,9 +337,9 @@
                             </svg>
                         </div>
                         <div class="min-w-0">
-                            <h3 class="text-base font-bold leading-snug text-impetus-teal font-outfit">
+                            <h3 class="text-xl font-bold leading-snug text-impetus-teal font-outfit">
                                 {{ $strength['title'] }}</h3>
-                            <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{{ $strength['text'] }}</p>
+                            <p class="mt-1.5 text-lg leading-relaxed text-slate-600 text-justify">{{ $strength['text'] }}</p>
                         </div>
                     </div>
                 @endforeach
