@@ -77,11 +77,11 @@
                 <div class="grid gap-12 grid-cols-1">
                     {{-- Purpose of CNE Certification --}}
                     <div class="overflow-hidden rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange shadow-md lg:grid lg:grid-cols-12 lg:items-stretch">
-                        <div class="lg:col-span-6 lg:border-r lg:border-impetus-orange/20 bg-white flex items-center justify-center">
+                        <div class="lg:col-span-7 lg:border-r lg:border-impetus-orange/20 bg-impetus-lightOrange flex items-center justify-center">
                             <img src="{{ asset('images/CNE-certification-purposes.jpeg') }}" alt="Purpose of CNE Certification"
-                                class="h-48 w-full object-contain sm:h-64 lg:h-full">
+                                class="h-48 w-full object-cover sm:h-64 lg:h-full">
                         </div>
-                        <div class="p-6 sm:p-10 lg:p-12 lg:col-span-6 lg:flex lg:flex-col lg:justify-center">
+                        <div class="p-6 sm:p-10 lg:p-8 lg:col-span-5 lg:flex lg:flex-col lg:justify-center">
                             <div class="mb-6 flex items-center gap-4">
                                 <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
                                     <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -117,7 +117,7 @@
 
                     {{-- Importance of CNE Certification --}}
                     <div class="overflow-hidden rounded-2xl border border-impetus-teal/15 bg-white shadow-md lg:grid lg:grid-cols-12 lg:items-stretch">
-                        <div class="p-6 sm:p-10 lg:p-12 lg:col-span-6 lg:order-first lg:flex lg:flex-col lg:justify-center">
+                        <div class="p-6 sm:p-10 lg:p-8 lg:col-span-5 lg:order-first lg:flex lg:flex-col lg:justify-center">
                             <div class="mb-6 flex items-center gap-4">
                                 <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
                                     <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -141,9 +141,9 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="lg:col-span-6 lg:border-l lg:border-impetus-teal/15 lg:order-last bg-white flex items-center justify-center">
+                        <div class="lg:col-span-7 lg:border-l lg:border-impetus-teal/15 lg:order-last bg-impetus-teal-muted/30 flex items-center justify-center">
                             <img src="{{ asset('images/CNE-certification-importance.jpeg') }}" alt="Importance of CNE Certification"
-                                class="h-48 w-full object-contain sm:h-64 lg:h-full">
+                                class="h-48 w-full object-cover sm:h-64 lg:h-full">
                         </div>
                     </div>
                 </div>
