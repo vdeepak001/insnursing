@@ -82,8 +82,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-white/80 font-outfit">Registered Users</span>
-                <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['registered_users']) }}</span>
+                <span class="mb-1 text-[9px] font-normal uppercase leading-tight tracking-wide text-white/80 font-outfit">Registered Users</span>
+                <span class="font-outfit text-2xl font-normal tracking-tight text-white">{{ number_format($stats['registered_users']) }}</span>
             </div>
 
             <!-- Purchased Modules Card -->
@@ -93,8 +93,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-white/80 font-outfit">Purchased Modules</span>
-                <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['purchased_modules']) }}</span>
+                <span class="mb-1 text-[9px] font-normal uppercase leading-tight tracking-wide text-white/80 font-outfit">Purchased Modules</span>
+                <span class="font-outfit text-2xl font-normal tracking-tight text-white">{{ number_format($stats['purchased_modules']) }}</span>
             </div>
 
             <!-- Modules Completed Card -->
@@ -104,8 +104,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                 </div>
-                <span class="mb-1 text-[9px] font-bold uppercase leading-tight tracking-wide text-white/80 font-outfit">Modules Completed</span>
-                <span class="font-outfit text-2xl font-black tracking-tight text-white">{{ number_format($stats['modules_completed']) }}</span>
+                <span class="mb-1 text-[9px] font-normal uppercase leading-tight tracking-wide text-white/80 font-outfit">Modules Completed</span>
+                <span class="font-outfit text-2xl font-normal tracking-tight text-white">{{ number_format($stats['modules_completed']) }}</span>
             </div>
         </div>
 
