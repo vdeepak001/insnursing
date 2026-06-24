@@ -10,7 +10,7 @@ test('login screen can be rendered', function () {
 
     $response->assertSuccessful();
     $response->assertSee('Sign In', false);
-    $response->assertSee('Impetus Healthcare skills', false);
+    $response->assertSee('Impetus Healthcare Skills', false);
 });
 
 test('staff login screen can be rendered', function () {

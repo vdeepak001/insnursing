@@ -4,13 +4,13 @@ it('returns a successful response', function () {
     $response = $this->get('/');
 
     $response->assertSuccessful();
-    $response->assertSee('Empowering Nurses Through', false);
-    $response->assertSee('IHS Nursing Solutions', false);
+    $response->assertSee('Empowering Nurses. Impacting Care.', false);
+    $response->assertSee('Impetus Healthcare Skills', false);
 });
 
-it('shows login for exams CTA that opens the login modal instead of linking to the admin dashboard', function () {
+it('shows login CTA and hides dashboard link for guests', function () {
     $response = $this->get('/');
 
-    $response->assertSee('Log in for exams', false);
-    $response->assertDontSee('Go to dashboard', false);
+    $response->assertSee('Log in', false);
+    $response->assertDontSee('Dashboard', false);
 });

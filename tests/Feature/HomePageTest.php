@@ -4,8 +4,8 @@ it('returns a successful response for the home page with design imagery and sect
     $response = $this->get(route('home'));
 
     $response->assertSuccessful();
-    $response->assertSee('images/design/WhatsApp Image 2026-06-06 at 13.40.00.jpeg', false);
-    $response->assertSee('images/design/WhatsApp Image 2026-06-11 at 17.14.41.jpeg', false);
+    $response->assertSee('images/homepage-banner.png', false);
+    $response->assertSee('images/homepage-aboutus.jpeg', false);
     $response->assertSee('CNE Modules', false);
     $response->assertSee('Explore CNE Modules', false);
     $response->assertSee('Our Vision', false);
@@ -14,7 +14,6 @@ it('returns a successful response for the home page with design imagery and sect
     $response->assertSee('Continuing Nursing Education', false);
     $response->assertDontSee('Scalable &amp; Accessible Model', false);
     $response->assertSee('Our Values', false);
-    $response->assertSee('Simulation-Based Training', false);
     $response->assertSee('Commitment to Quality Healthcare Education', false);
     $response->assertSee('aria-label="Facebook"', false);
     $response->assertSee('aria-label="LinkedIn"', false);

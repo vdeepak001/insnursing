@@ -96,14 +96,14 @@ it('filters results by purchase date range', function () {
         'course_detail_id' => $course->id,
         'payment_status' => PaymentStatus::Completed,
     ]);
-    $order->forceFill(['created_at' => now()->subDays(20)])->saveQuietly();
+    $order->forceFill(['created_at' => now()->subMonths(1)])->saveQuietly();
 
     $currentMonthResponse = $this->actingAs($admin)->get(route('admin.results.index'));
     $currentMonthResponse->assertSuccessful();
     $currentMonthResponse->assertDontSee('Dated Purchase Module', false);
 
     $rangeResponse = $this->actingAs($admin)->get(route('admin.results.index', [
-        'from_date' => DateHelper::displayDateString(now()->subDays(30)->toDateString()),
+        'from_date' => DateHelper::displayDateString(now()->subMonths(1)->toDateString()),
         'to_date' => DateHelper::displayDateString(now()->toDateString()),
     ]));
     $rangeResponse->assertSuccessful();

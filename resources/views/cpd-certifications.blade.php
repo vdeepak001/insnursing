@@ -9,11 +9,13 @@
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16">
                     <div>
-                        <p class="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-impetus-teal font-outfit">
+                        <p
+                            class="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-impetus-teal font-outfit">
                             <span class="h-px w-8 bg-impetus-teal"></span>
                             CNE Certification
                         </p>
-                        <h1 class="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl lg:text-[2.75rem] font-outfit">
+                        <h1
+                            class="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl lg:text-[2.75rem] font-outfit">
                             Certify Your Skills. <span class="text-impetus-teal">Elevate Your Career.</span>
                         </h1>
 
@@ -37,18 +39,19 @@
                         </div>
 
                         <div class="mt-8 grid gap-4 sm:grid-cols-3">
-                            @foreach ([
-                                ['label' => 'Accredited Programs', 'icon' => 'M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z'],
-                                ['label' => 'Digital Certificates', 'icon' => 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z'],
-                                ['label' => 'Professional Growth', 'icon' => 'M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342'],
-                            ] as $highlight)
-                                <div class="flex items-center gap-3 rounded-xl border border-impetus-teal/10 bg-impetus-teal-muted/40 px-3 py-3">
-                                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-impetus-teal text-impetus-teal">
-                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="{{ $highlight['icon'] }}" />
+                            @foreach ([['label' => 'Accredited Programs', 'icon' => 'M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z'], ['label' => 'Digital Certificates', 'icon' => 'M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z'], ['label' => 'Professional Growth', 'icon' => 'M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342']] as $highlight)
+                                <div
+                                    class="flex items-center gap-3 rounded-xl border border-impetus-teal/10 bg-impetus-teal-muted/40 px-3 py-3">
+                                    <span
+                                        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-impetus-teal text-impetus-teal">
+                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="{{ $highlight['icon'] }}" />
                                         </svg>
                                     </span>
-                                    <span class="text-xs font-bold leading-snug text-slate-700 sm:text-sm">{{ $highlight['label'] }}</span>
+                                    <span
+                                        class="text-xs font-bold leading-snug text-slate-700 sm:text-sm">{{ $highlight['label'] }}</span>
                                 </div>
                             @endforeach
                         </div>
@@ -56,14 +59,18 @@
                         <a href="{{ route('cne.modules') }}"
                             class="mt-8 inline-flex items-center gap-2 rounded-full bg-impetus-orange px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-impetus-orange/25 transition hover:bg-impetus-orange-hover font-outfit">
                             Explore CNE Modules
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                             </svg>
                         </a>
                     </div>
 
                     <div class="relative flex w-full self-stretch">
-                        <div class="absolute left-1/2 top-1/2 aspect-square w-[min(100%,24rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-impetus-orange/30 sm:w-[min(100%,28rem)] lg:w-[min(100%,36rem)]"></div>
+                        <div
+                            class="absolute left-1/2 top-1/2 aspect-square w-[min(100%,24rem)] -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-impetus-orange/30 sm:w-[min(100%,28rem)] lg:w-[min(100%,36rem)]">
+                        </div>
                         <img src="{{ asset('images/CNE-Banner.jpeg') }}" alt="CNE Certification"
                             class="relative z-10 h-full w-full min-h-[22rem] rounded-2xl object-cover object-center shadow-xl sm:min-h-[26rem] lg:min-h-[36rem]">
                     </div>
@@ -76,39 +83,43 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid gap-12 grid-cols-1">
                     {{-- Purpose of CNE Certification --}}
-                    <div class="overflow-hidden rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange shadow-md lg:grid lg:grid-cols-12 lg:items-stretch">
-                        <div class="lg:col-span-7 lg:border-r lg:border-impetus-orange/20 bg-impetus-lightOrange flex items-center justify-center">
-                            <img src="{{ asset('images/CNE-certification-purposes.jpeg') }}" alt="Purpose of CNE Certification"
-                                class="h-48 w-full object-cover sm:h-64 lg:h-full">
+                    <div
+                        class="overflow-hidden rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange shadow-md lg:grid lg:grid-cols-12 lg:items-stretch">
+                        <div
+                            class="lg:col-span-7 lg:border-r lg:border-impetus-orange/20 bg-impetus-lightOrange flex items-center justify-center">
+                            <img src="{{ asset('images/CNE-certification-purposes.jpeg') }}"
+                                alt="Purpose of CNE Certification" class="h-48 w-full object-cover sm:h-64 lg:h-full">
                         </div>
                         <div class="p-6 sm:p-10 lg:p-8 lg:col-span-5 lg:flex lg:flex-col lg:justify-center">
                             <div class="mb-6 flex items-center gap-4">
-                                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
-                                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                <div
+                                    class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
+                                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
                                 <div>
                                     <p class="text-sm text-slate-600 sm:text-base">
-                                        Structured to drive concrete, high-quality skill benchmarks, CNE certification focuses on core performance goals:
+                                        Structured to drive concrete, high-quality skill benchmarks, CNE certification
+                                        focuses on core performance goals:
                                     </p>
                                 </div>
                             </div>
                             <ul class="space-y-4">
-                                @foreach ([
-                                    'To promote continuous professional development among nurses',
-                                    'To update clinical knowledge and practical skills',
-                                    'To improve the quality of patient care and safety standards',
-                                    'To strengthen competency in specialized nursing areas',
-                                    'To meet regulatory and professional education requirements',
-                                ] as $purpose)
+                                @foreach (['To promote continuous professional development among nurses', 'To update clinical knowledge and practical skills', 'To improve the quality of patient care and safety standards', 'To strengthen competency in specialized nursing areas', 'To meet regulatory and professional education requirements'] as $purpose)
                                     <li class="flex items-start gap-3">
-                                        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
-                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        <span
+                                            class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
+                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M4.5 12.75l6 6 9-13.5" />
                                             </svg>
                                         </span>
-                                        <p class="text-sm leading-relaxed text-slate-600 text-justify">{{ $purpose }}</p>
+                                        <p class="text-sm leading-relaxed text-slate-600 text-justify">{{ $purpose }}
+                                        </p>
                                     </li>
                                 @endforeach
                             </ul>
@@ -116,17 +127,23 @@
                     </div>
 
                     {{-- Importance of CNE Certification --}}
-                    <div class="overflow-hidden rounded-2xl border border-impetus-teal/15 bg-white shadow-md lg:grid lg:grid-cols-12 lg:items-stretch">
+                    <div
+                        class="overflow-hidden rounded-2xl border border-impetus-teal/15 bg-white shadow-md lg:grid lg:grid-cols-12 lg:items-stretch">
                         <div class="p-6 sm:p-10 lg:p-8 lg:col-span-5 lg:order-first lg:flex lg:flex-col lg:justify-center">
                             <div class="mb-6 flex items-center gap-4">
-                                <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
-                                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                <div
+                                    class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
+                                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-bold uppercase tracking-widest text-impetus-teal font-outfit">High Clinical Standards</p>
-                                    <h2 class="text-2xl font-extrabold text-impetus-teal font-outfit">Importance of CNE Certification</h2>
+                                    <p class="text-xs font-bold uppercase tracking-widest text-impetus-teal font-outfit">
+                                        High Clinical Standards</p>
+                                    <h2 class="text-2xl font-extrabold text-impetus-teal font-outfit">Importance of CNE
+                                        Certification</h2>
                                 </div>
                             </div>
                             <p class="mb-6 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
@@ -136,14 +153,17 @@
                                 improved healthcare outcomes and patient safety.
                             </p>
                             <div class="rounded-xl bg-impetus-teal p-5">
-                                <p class="text-sm italic leading-relaxed text-white/90 text-justify sm:text-base font-outfit">
-                                    “Overall, CNE certification reflects a commitment to lifelong learning and excellence in nursing practice.”
+                                <p
+                                    class="text-sm italic leading-relaxed text-white/90 text-justify sm:text-base font-outfit">
+                                    “Overall, CNE certification reflects a commitment to lifelong learning and excellence in
+                                    nursing practice.”
                                 </p>
                             </div>
                         </div>
-                        <div class="lg:col-span-7 lg:border-l lg:border-impetus-teal/15 lg:order-last bg-impetus-teal-muted/30 flex items-center justify-center">
-                            <img src="{{ asset('images/CNE-certification-importance.jpeg') }}" alt="Importance of CNE Certification"
-                                class="h-48 w-full object-cover sm:h-64 lg:h-full">
+                        <div
+                            class="lg:col-span-7 lg:border-l lg:border-impetus-teal/15 lg:order-last bg-impetus-teal-muted/30 flex items-center justify-center">
+                            <img src="{{ asset('images/importance-cne-certification.jpeg') }}"
+                                alt="Importance of CNE Certification" class="h-48 w-full object-cover sm:h-64 lg:h-full">
                         </div>
                     </div>
                 </div>
@@ -154,7 +174,9 @@
         <section class="py-16 sm:py-24">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto mb-12 max-w-3xl text-center">
-                    <span class="mb-3 block text-sm font-bold uppercase tracking-widest text-impetus-orange font-outfit">Step-By-Step Path</span>
+                    <span
+                        class="mb-3 block text-sm font-bold uppercase tracking-widest text-impetus-orange font-outfit">Step-By-Step
+                        Path</span>
                     <h2 class="text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Certification Journey</h2>
                     <p class="mt-4 text-sm leading-relaxed text-slate-600 text-justify sm:text-center sm:text-base">
                         To empower nurses with continuous learning opportunities that promote excellence in practice,
@@ -163,154 +185,389 @@
                 </div>
 
                 @php
-                    $journeySteps = [
-                        ['num' => '1', 'label' => 'Register'],
-                        ['num' => '2', 'label' => 'Purchase a module'],
-                        ['num' => '3', 'label' => 'Take pre-test'],
-                        ['num' => '4', 'label' => 'Use learning resources'],
-                        ['num' => '5', 'label' => 'Practice MCQs'],
-                        ['num' => '6', 'label' => 'Take mock exam'],
-                        ['num' => '7', 'label' => 'Complete final exam'],
-                        ['num' => '8', 'label' => 'Download CNE certificate'],
+                    $cneSteps = [
+                        [
+                            'num' => '1',
+                            'title' => 'Register',
+                            'desc' => 'Create your account and complete the registration process',
+                            'theme' => 'teal',
+                            'icon' => 'user-plus',
+                        ],
+                        [
+                            'num' => '2',
+                            'title' => 'Purchase a Module',
+                            'desc' => 'Choose and purchase the CNE module of your choice',
+                            'theme' => 'orange',
+                            'icon' => 'shopping-cart',
+                        ],
+                        [
+                            'num' => '3',
+                            'title' => 'Take Pre-Test',
+                            'desc' => 'Assess your baseline knowledge through the pre-test',
+                            'theme' => 'teal',
+                            'icon' => 'clipboard-question',
+                        ],
+                        [
+                            'num' => '4',
+                            'title' => 'Use Learning Resources',
+                            'desc' => 'Study the provided resources to build your knowledge',
+                            'theme' => 'orange',
+                            'icon' => 'book-open',
+                        ],
+                        [
+                            'num' => '5',
+                            'title' => 'Practice MCQs',
+                            'desc' => 'Practice multiple-choice questions to reinforce your understanding',
+                            'theme' => 'orange',
+                            'icon' => 'clipboard-check',
+                        ],
+                        [
+                            'num' => '6',
+                            'title' => 'Take Mock Exam',
+                            'desc' => 'Evaluate your preparation with a mock examination',
+                            'theme' => 'teal',
+                            'icon' => 'mock-exam',
+                        ],
+                        [
+                            'num' => '7',
+                            'title' => 'Complete Final Exam',
+                            'desc' => 'Take and pass the final exam to earn your credits',
+                            'theme' => 'orange',
+                            'icon' => 'final-exam',
+                        ],
+                        [
+                            'num' => '8',
+                            'title' => 'Download CNE Certificate',
+                            'desc' => 'Download your digital CNE certificate instantly',
+                            'theme' => 'teal',
+                            'icon' => 'download',
+                        ],
                     ];
-                    $journeyRows = array_chunk($journeySteps, 4);
+                    $journeyRows = array_chunk($cneSteps, 4);
                 @endphp
 
-                <svg class="absolute h-0 w-0 overflow-hidden" aria-hidden="true">
-                    <defs>
-                        <marker id="journey-connector-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
-                            <path d="M0,0 L8,4 L0,8 Z" fill="#FF7A00" />
-                        </marker>
-                    </defs>
-                </svg>
-
-                {{-- Desktop --}}
-                <div class="relative mx-auto hidden w-full max-w-5xl md:block">
-                    <div
-                        class="grid grid-cols-[minmax(0,1fr)_2.5rem_minmax(0,1fr)_2.5rem_minmax(0,1fr)_2.5rem_minmax(0,1fr)] items-start gap-x-4 lg:gap-x-8">
-                        @foreach ($journeyRows[0] as $stepIndex => $step)
-                            @php
-                                $theme = (int) $step['num'] % 2 === 1 ? 'teal' : 'orange';
-                            @endphp
-                            <div class="flex flex-col items-center px-2 text-center lg:px-3">
-                                <div class="flex h-[4.5rem] w-full items-center justify-center">
-                                    <div @class([
-                                        'flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md lg:h-[4.5rem] lg:w-[4.5rem]',
-                                        'bg-impetus-teal' => $theme === 'teal',
-                                        'bg-impetus-orange' => $theme === 'orange',
-                                    ])>
-                                        <span class="text-lg font-extrabold font-outfit">{{ $step['num'] }}</span>
-                                    </div>
-                                </div>
-                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Step {{ $step['num'] }}</p>
-                                <h3 class="mt-2 text-sm font-bold leading-snug text-slate-800 font-outfit">{{ $step['label'] }}</h3>
-                            </div>
-
-                            @if ($stepIndex < count($journeyRows[0]) - 1)
-                                <div class="flex h-[4.5rem] items-center justify-center text-impetus-orange" aria-hidden="true">
-                                    <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                        stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                    </svg>
-                                </div>
-                            @endif
-                        @endforeach
+                {{-- Desktop Layout (lg:block hidden) --}}
+                <div
+                    class="relative hidden lg:block border border-impetus-teal/80 rounded-[2rem] bg-white px-12 py-16 shadow-sm mt-12">
+                    <!-- Header sitting on the top border -->
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white px-6 text-center">
+                        <h3 class="text-xl md:text-2xl font-extrabold text-impetus-teal font-outfit whitespace-nowrap">
+                            Process of CNE Certification
+                        </h3>
+                        <div class="w-10 h-1 bg-impetus-orange rounded-full mx-auto mt-1.5"></div>
                     </div>
 
-                    <div class="relative my-8 h-16 w-full lg:my-10 lg:h-20" aria-hidden="true">
-                        <svg class="certification-journey-connector h-full w-full text-impetus-orange" viewBox="0 0 100 100"
-                            fill="none" preserveAspectRatio="none">
-                            <path
-                                d="M 84 45
-                                   H 14
-                                   V 78"
-                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                marker-end="url(#journey-connector-arrow)" />
-                        </svg>
-                    </div>
-
-                    <div
-                        class="grid grid-cols-[minmax(0,1fr)_2.5rem_minmax(0,1fr)_2.5rem_minmax(0,1fr)_2.5rem_minmax(0,1fr)] items-start gap-x-4 lg:gap-x-8">
-                        @foreach ($journeyRows[1] as $stepIndex => $step)
-                            @php
-                                $theme = (int) $step['num'] % 2 === 1 ? 'teal' : 'orange';
-                            @endphp
-                            <div class="flex flex-col items-center px-2 text-center lg:px-3">
-                                <div class="flex h-[4.5rem] w-full items-center justify-center">
+                    <div class="relative">
+                        <!-- Row 1 Grid -->
+                        <div class="grid grid-cols-4 gap-x-12 relative z-10 items-stretch">
+                            @foreach ($journeyRows[0] as $stepIndex => $step)
+                                @php
+                                    $isTeal = $step['theme'] === 'teal';
+                                @endphp
+                                <div
+                                    class="relative bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex items-stretch">
+                                    <!-- Top-left overlay badge -->
                                     <div @class([
-                                        'flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md lg:h-[4.5rem] lg:w-[4.5rem]',
-                                        'bg-impetus-teal' => $theme === 'teal',
-                                        'bg-impetus-orange' => $theme === 'orange',
+                                        'absolute -top-3 -left-3 flex h-7 w-7 items-center justify-center rounded-full text-xs font-extrabold text-white shadow-sm ring-4 ring-white transition duration-300 hover:scale-110 z-30',
+                                        'bg-impetus-teal' => $isTeal,
+                                        'bg-impetus-orange' => !$isTeal,
                                     ])>
-                                        <span class="text-lg font-extrabold font-outfit">{{ $step['num'] }}</span>
+                                        <span>{{ $step['num'] }}</span>
                                     </div>
-                                </div>
-                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Step {{ $step['num'] }}</p>
-                                <h3 class="mt-2 text-sm font-bold leading-snug text-slate-800 font-outfit">{{ $step['label'] }}</h3>
-                            </div>
 
-                            @if ($stepIndex < count($journeyRows[1]) - 1)
-                                <div class="flex h-[4.5rem] items-center justify-center text-impetus-orange" aria-hidden="true">
-                                    <svg class="h-5 w-5 lg:h-6 lg:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                        stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                    </svg>
+                                    <!-- Left side icon panel matching the homepage CNE module card style -->
+                                    <div class="relative flex w-24 shrink-0 items-center justify-center py-5">
+                                        <div @class([
+                                            'absolute inset-y-3 left-3 right-3 rounded-2xl',
+                                            'bg-impetus-teal-muted/60' => $isTeal,
+                                            'bg-impetus-lightOrange/70' => !$isTeal,
+                                        ])></div>
+                                        <div @class([
+                                            'relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-md transition duration-300 hover:scale-105 z-10',
+                                            'bg-impetus-teal' => $isTeal,
+                                            'bg-impetus-orange' => !$isTeal,
+                                        ])>
+                                            @if ($step['icon'] === 'user-plus')
+                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="1.8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                                                </svg>
+                                            @elseif ($step['icon'] === 'shopping-cart')
+                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="1.8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                                                </svg>
+                                            @elseif ($step['icon'] === 'clipboard-question')
+                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="1.8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 11h.01M12 14v-1a1 1 0 011-1h.5a1.5 1.5 0 000-3h-1.5a1.5 1.5 0 00-1.5 1.5M12 17h.01" />
+                                                </svg>
+                                            @elseif ($step['icon'] === 'book-open')
+                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="1.8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                                </svg>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <!-- Right side text -->
+                                    <div class="flex flex-col justify-center py-5 pr-5 pl-1 min-w-0 flex-1">
+                                        <h4
+                                            class="text-sm font-extrabold text-impetus-teal font-outfit mb-0.5 leading-snug">
+                                            {{ $step['title'] }}</h4>
+                                        <p class="text-xs text-slate-500 font-medium leading-relaxed text-justify">
+                                            {{ $step['desc'] }}</p>
+                                    </div>
+
+                                    <!-- Arrow between cards (for steps 1, 2, 3) -->
+                                    @if ($stepIndex < 3)
+                                        <div
+                                            class="absolute top-1/2 -right-8.5 -translate-y-1/2 flex items-center justify-center text-impetus-teal pointer-events-none z-20">
+                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                            </svg>
+                                        </div>
+                                    @endif
+
+                                    <!-- Loop back curve on the right (attaches to Card 4) -->
+                                    @if ($stepIndex === 3)
+                                        <div class="absolute left-full top-1/2 w-12 h-[88px] pointer-events-none z-0">
+                                            <svg class="w-full h-full text-impetus-teal" fill="none"
+                                                viewBox="0 0 48 88" preserveAspectRatio="none">
+                                                <path d="M0,2 Q48,2 48,44 Q48,86 0,86" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" />
+                                                <circle cx="48" cy="44" r="4.5" fill="#045A5D"
+                                                    stroke="white" stroke-width="1.5" />
+                                            </svg>
+                                        </div>
+                                    @endif
                                 </div>
-                            @endif
-                        @endforeach
+                            @endforeach
+                        </div>
+
+                        <!-- Middle Spacer with Horizontal Line spanning full width -->
+                        <div class="h-[88px] flex items-center justify-center relative">
+                            <div class="absolute left-0 right-0 h-0.5 bg-impetus-teal z-0"></div>
+                        </div>
+
+                        <!-- Row 2 Grid -->
+                        <div class="grid grid-cols-4 gap-x-12 relative z-10 items-stretch">
+                            @foreach ($journeyRows[1] as $stepIndex => $step)
+                                @php
+                                    $isTeal = $step['theme'] === 'teal';
+                                @endphp
+                                <div
+                                    class="relative bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex items-stretch">
+                                    <!-- Loop back curve on the left (attaches to Card 5) -->
+                                    @if ($stepIndex === 0)
+                                        <div class="absolute right-full bottom-1/2 w-12 h-[88px] pointer-events-none z-0">
+                                            <svg class="w-full h-full text-impetus-teal" fill="none"
+                                                viewBox="0 0 48 88" preserveAspectRatio="none">
+                                                <path d="M48,2 Q0,2 0,44 Q0,86 48,86" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" />
+                                                <circle cx="0" cy="44" r="4.5" fill="#045A5D"
+                                                    stroke="white" stroke-width="1.5" />
+                                            </svg>
+                                        </div>
+                                    @endif
+
+                                    <!-- Top-left overlay badge -->
+                                    <div @class([
+                                        'absolute -top-3 -left-3 flex h-7 w-7 items-center justify-center rounded-full text-xs font-extrabold text-white shadow-sm ring-4 ring-white transition duration-300 hover:scale-110 z-30',
+                                        'bg-impetus-teal' => $isTeal,
+                                        'bg-impetus-orange' => !$isTeal,
+                                    ])>
+                                        <span>{{ $step['num'] }}</span>
+                                    </div>
+
+                                    <!-- Left side icon panel matching the homepage CNE module card style -->
+                                    <div class="relative flex w-24 shrink-0 items-center justify-center py-5">
+                                        <div @class([
+                                            'absolute inset-y-3 left-3 right-3 rounded-2xl',
+                                            'bg-impetus-teal-muted/60' => $isTeal,
+                                            'bg-impetus-lightOrange/70' => !$isTeal,
+                                        ])></div>
+                                        <div @class([
+                                            'relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-md transition duration-300 hover:scale-105 z-10',
+                                            'bg-impetus-teal' => $isTeal,
+                                            'bg-impetus-orange' => !$isTeal,
+                                        ])>
+                                            @if ($step['icon'] === 'clipboard-check')
+                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="1.8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4m-4-4h4" />
+                                                </svg>
+                                            @elseif ($step['icon'] === 'mock-exam')
+                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="1.8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 11.5L7 8.5L12 5.5L17 8.5L12 11.5zm0 0v3.5" />
+                                                </svg>
+                                            @elseif ($step['icon'] === 'final-exam')
+                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="1.8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                </svg>
+                                            @elseif ($step['icon'] === 'download')
+                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="1.8">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                </svg>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <!-- Right side text -->
+                                    <div class="flex flex-col justify-center py-5 pr-5 pl-1 min-w-0 flex-1">
+                                        <h4
+                                            class="text-sm font-extrabold text-impetus-teal font-outfit mb-0.5 leading-snug">
+                                            {{ $step['title'] }}</h4>
+                                        <p class="text-xs text-slate-500 font-medium leading-relaxed text-justify">
+                                            {{ $step['desc'] }}</p>
+                                    </div>
+
+                                    <!-- Arrow between cards (for steps 5, 6, 7) -->
+                                    @if ($stepIndex < 3)
+                                        <div
+                                            class="absolute top-1/2 -right-8.5 -translate-y-1/2 flex items-center justify-center text-impetus-teal pointer-events-none z-20">
+                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                            </svg>
+                                        </div>
+                                    @endif
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
-                {{-- Mobile --}}
-                <div class="relative md:hidden">
-                    <div class="grid grid-cols-2 gap-x-6 gap-y-10">
-                        @foreach ($journeyRows[0] as $step)
-                            @php
-                                $theme = (int) $step['num'] % 2 === 1 ? 'teal' : 'orange';
-                            @endphp
-                            <div class="flex flex-col items-center px-2 text-center">
-                                <div @class([
-                                    'mb-3 flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md',
-                                    'bg-impetus-teal' => $theme === 'teal',
-                                    'bg-impetus-orange' => $theme === 'orange',
-                                ])>
-                                    <span class="text-lg font-extrabold font-outfit">{{ $step['num'] }}</span>
-                                </div>
-                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Step {{ $step['num'] }}</p>
-                                <h3 class="mt-2 text-sm font-bold leading-snug text-slate-800 font-outfit">{{ $step['label'] }}</h3>
-                            </div>
-                        @endforeach
-                    </div>
+                {{-- Mobile/Tablet Layout (lg:hidden) --}}
+                <div class="lg:hidden mt-8">
+                    <div class="relative border border-impetus-teal/80 rounded-[2rem] bg-white px-6 py-12 shadow-sm">
+                        <!-- Header sitting on the top border -->
+                        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white px-6 text-center">
+                            <h3 class="text-lg md:text-xl font-extrabold text-impetus-teal font-outfit whitespace-nowrap">
+                                Process of CNE Certification
+                            </h3>
+                            <div class="w-8 h-1 bg-impetus-orange rounded-full mx-auto mt-1.5"></div>
+                        </div>
 
-                    <div class="relative my-8 h-14 w-full" aria-hidden="true">
-                        <svg class="certification-journey-connector h-full w-full text-impetus-orange" viewBox="0 0 100 100"
-                            fill="none" preserveAspectRatio="none">
-                            <path
-                                d="M 78 30
-                                   H 22
-                                   V 78"
-                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                marker-end="url(#journey-connector-arrow)" />
-                        </svg>
-                    </div>
+                        <!-- Vertical Timeline -->
+                        <div class="relative space-y-6 mt-4">
+                            <!-- Vertical Connector Line -->
+                            <div class="absolute left-5 top-4 bottom-4 w-0.5 bg-impetus-teal z-0"></div>
 
-                    <div class="grid grid-cols-2 gap-x-6 gap-y-10">
-                        @foreach ($journeyRows[1] as $step)
-                            @php
-                                $theme = (int) $step['num'] % 2 === 1 ? 'teal' : 'orange';
-                            @endphp
-                            <div class="flex flex-col items-center px-2 text-center">
-                                <div @class([
-                                    'mb-3 flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md',
-                                    'bg-impetus-teal' => $theme === 'teal',
-                                    'bg-impetus-orange' => $theme === 'orange',
-                                ])>
-                                    <span class="text-lg font-extrabold font-outfit">{{ $step['num'] }}</span>
+                            @foreach ($cneSteps as $step)
+                                @php
+                                    $isTeal = $step['theme'] === 'teal';
+                                @endphp
+                                <div class="relative flex items-center gap-5 z-10">
+                                    <!-- Step Number Badge on the Line -->
+                                    <div @class([
+                                        'flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-base font-extrabold text-white shadow-md ring-4 ring-white transition duration-300 hover:scale-105',
+                                        'bg-impetus-teal' => $isTeal,
+                                        'bg-impetus-orange' => !$isTeal,
+                                    ])>
+                                        <span>{{ $step['num'] }}</span>
+                                    </div>
+
+                                    <!-- Step Card -->
+                                    <div
+                                        class="flex-1 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition duration-300 flex items-stretch overflow-hidden">
+                                        <!-- Left side icon panel matching the homepage CNE module card style -->
+                                        <div class="relative flex w-20 shrink-0 items-center justify-center py-4">
+                                            <div @class([
+                                                'absolute inset-y-2.5 left-2.5 right-2.5 rounded-2xl',
+                                                'bg-impetus-teal-muted/60' => $isTeal,
+                                                'bg-impetus-lightOrange/70' => !$isTeal,
+                                            ])></div>
+                                            <div @class([
+                                                'relative flex h-12 w-12 items-center justify-center rounded-full text-white shadow-md transition duration-300 hover:scale-105 z-10',
+                                                'bg-impetus-teal' => $isTeal,
+                                                'bg-impetus-orange' => !$isTeal,
+                                            ])>
+                                                @if ($step['icon'] === 'user-plus')
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                                                    </svg>
+                                                @elseif ($step['icon'] === 'shopping-cart')
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                                                    </svg>
+                                                @elseif ($step['icon'] === 'clipboard-question')
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 11h.01M12 14v-1a1 1 0 011-1h.5a1.5 1.5 0 000-3h-1.5a1.5 1.5 0 00-1.5 1.5M12 17h.01" />
+                                                    </svg>
+                                                @elseif ($step['icon'] === 'book-open')
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                                    </svg>
+                                                @elseif ($step['icon'] === 'clipboard-check')
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4m-4-4h4" />
+                                                    </svg>
+                                                @elseif ($step['icon'] === 'mock-exam')
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 11.5L7 8.5L12 5.5L17 8.5L12 11.5zm0 0v3.5" />
+                                                    </svg>
+                                                @elseif ($step['icon'] === 'final-exam')
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                                                    </svg>
+                                                @elseif ($step['icon'] === 'download')
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                                                    </svg>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col justify-center py-4 pr-4 pl-1 min-w-0 flex-1">
+                                            <h4
+                                                class="text-sm font-extrabold text-impetus-teal font-outfit mb-0.5 leading-snug">
+                                                {{ $step['title'] }}</h4>
+                                            <p class="text-xs text-slate-500 font-medium leading-relaxed text-justify">
+                                                {{ $step['desc'] }}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Step {{ $step['num'] }}</p>
-                                <h3 class="mt-2 text-sm font-bold leading-snug text-slate-800 font-outfit">{{ $step['label'] }}</h3>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -321,8 +578,10 @@
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="flex flex-col items-center gap-5 sm:flex-row sm:text-left text-center">
                     <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                         </svg>
                     </div>
                     <div class="min-w-0 flex-1">
