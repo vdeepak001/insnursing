@@ -354,9 +354,11 @@
                             @endforeach
                         </div>
 
-                        <!-- Middle Spacer with Horizontal Line spanning full width -->
-                        <div class="h-[88px] flex items-center justify-center relative">
-                            <div class="absolute left-0 right-0 h-0.5 bg-impetus-teal z-0"></div>
+                        <!-- Middle Spacer with Horizontal Line connecting the two curve connectors -->
+                        {{-- The curves (w-12 = 3rem = 48px) sit outside this relative div.
+                             We extend the line by -3rem on both sides so it meets the curve SVGs. --}}
+                        <div class="h-[88px] relative">
+                            <div class="absolute top-1/2 -translate-y-1/2 h-0.5 bg-impetus-teal z-0" style="left: -3rem; right: -3rem;"></div>
                         </div>
 
                         <!-- Row 2 Grid -->
