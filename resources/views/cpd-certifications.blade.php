@@ -259,48 +259,44 @@
 
                     <div class="relative">
                         <!-- Row 1 Grid -->
-                        <div class="grid grid-cols-4 gap-x-12 relative z-10 items-stretch">
+                        <div class="grid grid-cols-4 gap-x-6 relative z-10 items-start">
                             @foreach ($journeyRows[0] as $stepIndex => $step)
                                 @php
                                     $isTeal = $step['theme'] === 'teal';
                                 @endphp
-                                <div
-                                    class="relative bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex items-stretch">
-                                    <!-- Top-left overlay badge -->
-                                    <div @class([
-                                        'absolute -top-3 -left-3 flex h-7 w-7 items-center justify-center rounded-full text-xs font-extrabold text-white shadow-sm ring-4 ring-white transition duration-300 hover:scale-110 z-30',
-                                        'bg-impetus-teal' => $isTeal,
-                                        'bg-impetus-orange' => !$isTeal,
-                                    ])>
-                                        <span>{{ $step['num'] }}</span>
-                                    </div>
+                                <div class="relative flex flex-col items-center">
+                                    <!-- Card -->
+                                    <div
+                                        class="relative w-full bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex flex-col items-center pt-8 pb-5 px-4">
+                                        <!-- Number Badge -->
+                                        <div @class([
+                                            'absolute -top-4 left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full text-sm font-extrabold text-white shadow-md ring-4 ring-white z-30',
+                                            'bg-impetus-teal' => $isTeal,
+                                            'bg-impetus-orange' => !$isTeal,
+                                        ])>
+                                            <span>{{ $step['num'] }}</span>
+                                        </div>
 
-                                    <!-- Left side icon panel matching the homepage CNE module card style -->
-                                    <div class="relative flex w-24 shrink-0 items-center justify-center py-5">
+                                        <!-- Icon Circle -->
                                         <div @class([
-                                            'absolute inset-y-3 left-3 right-3 rounded-2xl',
-                                            'bg-impetus-teal-muted/60' => $isTeal,
-                                            'bg-impetus-lightOrange/70' => !$isTeal,
-                                        ])></div>
-                                        <div @class([
-                                            'relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-md transition duration-300 hover:scale-105 z-10',
+                                            'flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md mb-4',
                                             'bg-impetus-teal' => $isTeal,
                                             'bg-impetus-orange' => !$isTeal,
                                         ])>
                                             @if ($step['icon'] === 'user-plus')
-                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="1.8">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                                                 </svg>
                                             @elseif ($step['icon'] === 'shopping-cart')
-                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="1.8">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                                                 </svg>
                                             @elseif ($step['icon'] === 'clipboard-question')
-                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="1.8">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2" />
@@ -308,45 +304,32 @@
                                                         d="M12 11h.01M12 14v-1a1 1 0 011-1h.5a1.5 1.5 0 000-3h-1.5a1.5 1.5 0 00-1.5 1.5M12 17h.01" />
                                                 </svg>
                                             @elseif ($step['icon'] === 'book-open')
-                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="1.8">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                                                 </svg>
                                             @endif
                                         </div>
-                                    </div>
 
-                                    <!-- Right side text -->
-                                    <div class="flex flex-col justify-center py-5 pr-5 pl-1 min-w-0 flex-1">
+                                        <!-- Text -->
                                         <h4
-                                            class="text-sm font-extrabold text-impetus-teal font-outfit mb-0.5 leading-snug">
-                                            {{ $step['title'] }}</h4>
-                                        <p class="text-xs text-slate-500 font-medium leading-relaxed text-justify">
-                                            {{ $step['desc'] }}</p>
+                                            class="text-sm font-extrabold text-impetus-teal font-outfit mb-1 leading-snug text-center">
+                                            {{ $step['title'] }}
+                                        </h4>
+                                        <p class="text-xs text-slate-500 font-medium leading-relaxed text-center">
+                                            {{ $step['desc'] }}
+                                        </p>
                                     </div>
 
                                     <!-- Arrow between cards (for steps 1, 2, 3) -->
                                     @if ($stepIndex < 3)
                                         <div
-                                            class="absolute top-1/2 -right-8.5 -translate-y-1/2 flex items-center justify-center text-impetus-teal pointer-events-none z-20">
-                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                                                stroke="currentColor" stroke-width="2">
+                                            class="absolute top-10 -right-4 flex items-center justify-center text-impetus-teal pointer-events-none z-20">
+                                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" stroke-width="2.5">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                            </svg>
-                                        </div>
-                                    @endif
-
-                                    <!-- Loop back curve on the right (attaches to Card 4) -->
-                                    @if ($stepIndex === 3)
-                                        <div class="absolute left-full top-1/2 w-12 h-[88px] pointer-events-none z-0">
-                                            <svg class="w-full h-full text-impetus-teal" fill="none"
-                                                viewBox="0 0 48 88" preserveAspectRatio="none">
-                                                <path d="M0,2 Q48,2 48,44 Q48,86 0,86" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" />
-                                                <circle cx="48" cy="44" r="4.5" fill="#045A5D"
-                                                    stroke="white" stroke-width="1.5" />
                                             </svg>
                                         </div>
                                     @endif
@@ -354,63 +337,63 @@
                             @endforeach
                         </div>
 
-                        <!-- Middle Spacer with Horizontal Line connecting the two curve connectors -->
-                        {{-- The curves (w-12 = 3rem = 48px) sit outside this relative div.
-                             We extend the line by -3rem on both sides so it meets the curve SVGs. --}}
-                        <div class="h-[88px] relative">
-                            <div class="absolute top-1/2 -translate-y-1/2 h-0.5 bg-impetus-teal z-0" style="left: -3rem; right: -3rem;"></div>
+                        <!-- Middle Spacer: snake connector between row 1 and row 2 -->
+                        <div class="relative my-4" style="height: 64px;">
+
+                            <!-- Right arc: inner-grid right edge → outer border, curving down to the middle line -->
+                            <svg class="absolute text-impetus-teal" fill="none"
+                                style="right: -48px; top: 0; width: 48px; height: 64px;" viewBox="0 0 48 64"
+                                preserveAspectRatio="none">
+                                <path d="M0,0 Q48,0 48,32" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    fill="none" />
+                            </svg>
+
+                            <!-- Horizontal line at the MIDDLE, connecting both arc endpoints at the outer borders -->
+                            <div class="absolute h-0.5 bg-impetus-teal" style="left: -48px; right: -48px; top: 32px;"></div>
+
+                            <!-- Left arc: outer border → inner-grid left edge, curving down from the middle line to Row 2 -->
+                            <svg class="absolute text-impetus-teal" fill="none"
+                                style="left: -48px; top: 0; width: 48px; height: 64px;" viewBox="0 0 48 64"
+                                preserveAspectRatio="none">
+                                <path d="M0,32 Q48,32 48,64" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    fill="none" />
+                            </svg>
+
                         </div>
 
                         <!-- Row 2 Grid -->
-                        <div class="grid grid-cols-4 gap-x-12 relative z-10 items-stretch">
+                        <div class="grid grid-cols-4 gap-x-6 relative z-10 items-start">
                             @foreach ($journeyRows[1] as $stepIndex => $step)
                                 @php
                                     $isTeal = $step['theme'] === 'teal';
                                 @endphp
-                                <div
-                                    class="relative bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex items-stretch">
-                                    <!-- Loop back curve on the left (attaches to Card 5) -->
-                                    @if ($stepIndex === 0)
-                                        <div class="absolute right-full bottom-1/2 w-12 h-[88px] pointer-events-none z-0">
-                                            <svg class="w-full h-full text-impetus-teal" fill="none"
-                                                viewBox="0 0 48 88" preserveAspectRatio="none">
-                                                <path d="M48,2 Q0,2 0,44 Q0,86 48,86" stroke="currentColor"
-                                                    stroke-width="2" stroke-linecap="round" />
-                                                <circle cx="0" cy="44" r="4.5" fill="#045A5D"
-                                                    stroke="white" stroke-width="1.5" />
-                                            </svg>
+                                <div class="relative flex flex-col items-center">
+                                    <!-- Card -->
+                                    <div
+                                        class="relative w-full bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex flex-col items-center pt-8 pb-5 px-4">
+                                        <!-- Number Badge -->
+                                        <div @class([
+                                            'absolute -top-4 left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full text-sm font-extrabold text-white shadow-md ring-4 ring-white z-30',
+                                            'bg-impetus-teal' => $isTeal,
+                                            'bg-impetus-orange' => !$isTeal,
+                                        ])>
+                                            <span>{{ $step['num'] }}</span>
                                         </div>
-                                    @endif
 
-                                    <!-- Top-left overlay badge -->
-                                    <div @class([
-                                        'absolute -top-3 -left-3 flex h-7 w-7 items-center justify-center rounded-full text-xs font-extrabold text-white shadow-sm ring-4 ring-white transition duration-300 hover:scale-110 z-30',
-                                        'bg-impetus-teal' => $isTeal,
-                                        'bg-impetus-orange' => !$isTeal,
-                                    ])>
-                                        <span>{{ $step['num'] }}</span>
-                                    </div>
-
-                                    <!-- Left side icon panel matching the homepage CNE module card style -->
-                                    <div class="relative flex w-24 shrink-0 items-center justify-center py-5">
+                                        <!-- Icon Circle -->
                                         <div @class([
-                                            'absolute inset-y-3 left-3 right-3 rounded-2xl',
-                                            'bg-impetus-teal-muted/60' => $isTeal,
-                                            'bg-impetus-lightOrange/70' => !$isTeal,
-                                        ])></div>
-                                        <div @class([
-                                            'relative flex h-14 w-14 items-center justify-center rounded-full text-white shadow-md transition duration-300 hover:scale-105 z-10',
+                                            'flex h-16 w-16 items-center justify-center rounded-full text-white shadow-md mb-4',
                                             'bg-impetus-teal' => $isTeal,
                                             'bg-impetus-orange' => !$isTeal,
                                         ])>
                                             @if ($step['icon'] === 'clipboard-check')
-                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="1.8">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4m-4-4h4" />
                                                 </svg>
                                             @elseif ($step['icon'] === 'mock-exam')
-                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="1.8">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25" />
@@ -418,36 +401,36 @@
                                                         d="M12 11.5L7 8.5L12 5.5L17 8.5L12 11.5zm0 0v3.5" />
                                                 </svg>
                                             @elseif ($step['icon'] === 'final-exam')
-                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="1.8">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                                 </svg>
                                             @elseif ($step['icon'] === 'download')
-                                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="1.8">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                                                 </svg>
                                             @endif
                                         </div>
-                                    </div>
 
-                                    <!-- Right side text -->
-                                    <div class="flex flex-col justify-center py-5 pr-5 pl-1 min-w-0 flex-1">
+                                        <!-- Text -->
                                         <h4
-                                            class="text-sm font-extrabold text-impetus-teal font-outfit mb-0.5 leading-snug">
-                                            {{ $step['title'] }}</h4>
-                                        <p class="text-xs text-slate-500 font-medium leading-relaxed text-justify">
-                                            {{ $step['desc'] }}</p>
+                                            class="text-sm font-extrabold text-impetus-teal font-outfit mb-1 leading-snug text-center">
+                                            {{ $step['title'] }}
+                                        </h4>
+                                        <p class="text-xs text-slate-500 font-medium leading-relaxed text-center">
+                                            {{ $step['desc'] }}
+                                        </p>
                                     </div>
 
                                     <!-- Arrow between cards (for steps 5, 6, 7) -->
                                     @if ($stepIndex < 3)
                                         <div
-                                            class="absolute top-1/2 -right-8.5 -translate-y-1/2 flex items-center justify-center text-impetus-teal pointer-events-none z-20">
-                                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                                                stroke="currentColor" stroke-width="2">
+                                            class="absolute top-10 -right-4 flex items-center justify-center text-impetus-teal pointer-events-none z-20">
+                                            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" stroke-width="2.5">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                             </svg>
