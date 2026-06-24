@@ -3,7 +3,7 @@
 @section('title', 'About Us - IHS')
 
 @php
-    $heroImage = asset('images/design/WhatsApp Image 2026-06-06 at 13.40.00.jpeg');
+    $heroImage = asset('images/design/about_hero_nurse_clean.png');
     $simulationImage = asset('images/design/WhatsApp Image 2026-06-11 at 17.14.41.jpeg');
 @endphp
 
@@ -48,7 +48,6 @@
 
                     {{-- Hero Visual --}}
                     <div class="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
-                        <div class="absolute h-72 w-72 rounded-full bg-impetus-teal sm:h-80 sm:w-80 lg:h-[22rem] lg:w-[22rem]"></div>
                         <img src="{{ $heroImage }}" alt="IHS Nursing healthcare professional"
                             class="relative z-10 h-auto w-full max-w-sm object-contain drop-shadow-xl lg:max-w-md">
                         <div class="absolute -right-2 top-8 flex h-11 w-11 items-center justify-center rounded-full bg-impetus-orange text-white shadow-lg">
