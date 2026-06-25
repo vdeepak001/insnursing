@@ -4,7 +4,15 @@
 
 @php
     $heroImage = asset('images/design/about_hero_nurse_clean.png');
+    $simulationImage = asset('images/design/WhatsApp Image 2026-06-11 at 17.14.41.jpeg');
     $aboutImage = fn (string $filename): string => asset('about/'.rawurlencode($filename));
+
+    $simulationFeatures = [
+        ['title' => 'Real-Life Scenarios', 'text' => 'Hands-on practice in a safe, controlled environment.', 'color' => 'teal'],
+        ['title' => 'Enhance Skills', 'text' => 'Strengthen clinical judgment and critical thinking.', 'color' => 'orange'],
+        ['title' => 'Build Confidence', 'text' => 'Gain confidence through repetition and feedback.', 'color' => 'teal'],
+        ['title' => 'Better Outcomes', 'text' => 'Improve competence. Ensure patient safety.', 'color' => 'orange'],
+    ];
 
     $focusAreas = [
         [
@@ -18,7 +26,7 @@
             ],
             'link' => null,
             'link_label' => null,
-            'image' => $aboutImage('CBT_Image.png'),
+            'layout' => 'simulation',
         ],
         [
             'id' => 'nursing-cms',
@@ -207,27 +215,135 @@
         </section>
 
         {{-- Our Focus --}}
-        <section class="bg-impetus-teal-muted py-16 sm:py-24">
+        <section class="bg-white py-16 sm:py-24">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 class="mb-16 text-center text-3xl font-extrabold text-impetus-teal sm:text-4xl font-outfit">
                     Our Focus
                 </h2>
 
-                <div class="space-y-20 sm:space-y-24">
+                <div class="space-y-12 sm:space-y-16">
                     @foreach ($focusAreas as $index => $area)
                         @php
                             $imageOnLeft = $index % 2 === 0;
+                            $theme = match ($index % 3) {
+                                0 => [
+                                    'shell' => 'rounded-3xl border border-impetus-teal/20 bg-impetus-teal-muted p-8 shadow-sm sm:p-10',
+                                    'badge' => 'bg-impetus-teal',
+                                    'label' => 'text-impetus-orange',
+                                    'btn' => 'bg-impetus-teal hover:bg-impetus-teal/90',
+                                    'imgBorder' => 'border-impetus-teal/15',
+                                ],
+                                1 => [
+                                    'shell' => 'rounded-3xl border border-impetus-orange/25 bg-impetus-lightOrange p-8 shadow-sm sm:p-10',
+                                    'badge' => 'bg-impetus-orange',
+                                    'label' => 'text-impetus-orange',
+                                    'btn' => 'bg-impetus-orange hover:bg-impetus-orange-hover',
+                                    'imgBorder' => 'border-impetus-orange/20',
+                                ],
+                                default => [
+                                    'shell' => 'rounded-3xl border border-slate-200 bg-white p-8 shadow-md sm:p-10',
+                                    'badge' => 'bg-impetus-teal',
+                                    'label' => 'text-impetus-teal',
+                                    'btn' => 'bg-impetus-teal hover:bg-impetus-teal/90',
+                                    'imgBorder' => 'border-slate-200',
+                                ],
+                            };
                         @endphp
+
+                        @if (($area['layout'] ?? null) === 'simulation')
+                            <article id="{{ $area['id'] }}" class="{{ $theme['shell'] }}">
+                                <div class="mb-8">
+                                    <div class="mb-4 flex items-center gap-4">
+                                        <span
+                                            class="flex h-10 w-10 items-center justify-center rounded-full {{ $theme['badge'] }} text-sm font-extrabold text-white font-outfit">
+                                            {{ $area['number'] }}
+                                        </span>
+                                        <span
+                                            class="text-sm font-bold uppercase tracking-widest {{ $theme['label'] }} font-outfit">Our
+                                            Focus</span>
+                                    </div>
+
+                                    <h3 class="mb-4 text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">
+                                        {{ $area['title'] }}
+                                    </h3>
+
+                                    @if (! empty($area['tagline']))
+                                        <p
+                                            class="mb-4 text-base font-medium italic text-impetus-orange font-outfit sm:text-lg">
+                                            &ldquo;{{ $area['tagline'] }}&rdquo;
+                                        </p>
+                                    @endif
+
+                                    <div
+                                        class="space-y-4 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                                        @foreach ($area['paragraphs'] as $paragraph)
+                                            <p>{{ $paragraph }}</p>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="grid items-center gap-12 lg:grid-cols-2">
+                                    <div class="space-y-8">
+                                        @foreach ($simulationFeatures as $feature)
+                                            <div class="flex gap-4">
+                                                <div @class([
+                                                    'flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white shadow-md',
+                                                    'bg-impetus-teal' => $feature['color'] === 'teal',
+                                                    'bg-impetus-orange' => $feature['color'] === 'orange',
+                                                ])>
+                                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="1.8">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                                <div>
+                                                    <h4 @class([
+                                                        'mb-1 text-base font-extrabold uppercase tracking-wide font-outfit',
+                                                        'text-impetus-teal' => $feature['color'] === 'teal',
+                                                        'text-impetus-orange' => $feature['color'] === 'orange',
+                                                    ])>{{ $feature['title'] }}</h4>
+                                                    <p class="text-sm leading-relaxed text-slate-600">{{ $feature['text'] }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    <div class="relative">
+                                        <img src="{{ $simulationImage }}" alt="Simulation lab training at IHS Nursing"
+                                            class="w-full rounded-2xl border {{ $theme['imgBorder'] }} shadow-xl">
+                                        <div
+                                            class="absolute bottom-4 right-4 hidden max-w-[180px] rounded-xl border border-impetus-teal/20 bg-white p-4 shadow-lg sm:block">
+                                            <p
+                                                class="mb-3 text-xs font-extrabold uppercase tracking-wider text-impetus-teal font-outfit">
+                                                Simulation Lab</p>
+                                            @foreach (['Assess', 'Plan', 'Perform', 'Evaluate', 'Improve'] as $step)
+                                                <div
+                                                    class="mb-1.5 flex items-center gap-2 text-xs font-semibold uppercase text-impetus-teal">
+                                                    <span
+                                                        class="flex h-4 w-4 items-center justify-center rounded-full bg-impetus-teal text-[10px] text-white">✓</span>
+                                                    {{ $step }}
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        @else
                         <article id="{{ $area['id'] }}" @class([
                             'grid items-center gap-10 lg:grid-cols-12 lg:gap-12',
-                            'rounded-3xl bg-impetus-teal-muted p-8 sm:p-10' => $index % 2 === 0,
+                            $theme['shell'],
                         ])>
                             <div @class([
                                 'lg:col-span-5',
                                 $imageOnLeft ? 'order-1' : 'order-2',
                             ])>
                                 <img src="{{ $area['image'] }}" alt="{{ $area['title'] }} at IHS Nursing"
-                                    class="w-full rounded-2xl border border-impetus-teal/10 object-cover shadow-xl">
+                                    @class([
+                                        'w-full rounded-2xl object-cover shadow-xl border',
+                                        $theme['imgBorder'],
+                                    ])>
                             </div>
 
                             <div @class([
@@ -235,10 +351,16 @@
                                 $imageOnLeft ? 'order-2' : 'order-1',
                             ])>
                                 <div class="mb-4 flex items-center gap-4">
-                                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white font-outfit">
+                                    <span @class([
+                                        'flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold text-white font-outfit',
+                                        $theme['badge'],
+                                    ])>
                                         {{ $area['number'] }}
                                     </span>
-                                    <span class="text-sm font-bold uppercase tracking-widest text-impetus-orange font-outfit">Our Focus</span>
+                                    <span @class([
+                                        'text-sm font-bold uppercase tracking-widest font-outfit',
+                                        $theme['label'],
+                                    ])>Our Focus</span>
                                 </div>
 
                                 <h3 class="mb-3 text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">
@@ -265,7 +387,10 @@
 
                                 @if (! empty($area['link']))
                                     <a href="{{ $area['link'] }}" target="_blank" rel="noopener noreferrer"
-                                        class="mt-6 inline-flex items-center gap-2 rounded-full bg-impetus-teal px-6 py-3 text-sm font-bold text-white shadow-md transition hover:bg-impetus-teal/90 font-outfit">
+                                        @class([
+                                            'mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-md transition font-outfit',
+                                            $theme['btn'],
+                                        ])>
                                         {{ $area['link_label'] }}
                                         <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
@@ -274,6 +399,7 @@
                                 @endif
                             </div>
                         </article>
+                        @endif
                     @endforeach
                 </div>
             </div>

@@ -15,7 +15,9 @@ it('returns a successful response for the about page with expected content', fun
     $response->assertSee('Capacity Building', false);
     $response->assertSeeText('Research & Development');
     $response->assertSee('Transforming Evidence into Impact', false);
-    $response->assertSee('about/CBT_Image.png', false);
+    $response->assertSee('Real-Life Scenarios', false);
+    $response->assertSee('Simulation Lab', false);
+    $response->assertSee('WhatsApp Image 2026-06-11 at 17.14.41.jpeg', false);
     $response->assertSee('about/Home_page_1A.png', false);
     $response->assertSee('15K+', false);
     $response->assertSeeText('Our Core Vision & Goal');
