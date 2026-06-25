@@ -257,7 +257,7 @@
                         <div class="w-10 h-1 bg-impetus-orange rounded-full mx-auto mt-1.5"></div>
                     </div>
 
-                    <div class="relative">
+                    <div class="relative overflow-visible">
                         <!-- Row 1 Grid -->
                         <div class="grid grid-cols-4 gap-x-6 relative z-10 items-start">
                             @foreach ($journeyRows[0] as $stepIndex => $step)
@@ -337,32 +337,53 @@
                             @endforeach
                         </div>
 
-                        <!-- Middle Spacer: snake connector between row 1 and row 2 -->
-                        <div class="relative my-4" style="height: 64px;">
+                        <!-- Connector: step 4 → step 5 (down from card 4, across, down into card 5 only) -->
+                        <div class="relative z-20 my-2 h-10 overflow-visible pointer-events-none" aria-hidden="true">
+                            {{-- Down from card 4 --}}
+                            <div
+                                class="absolute top-0 right-[calc((100%-4.5rem)/8)] h-1/2 w-0.5 translate-x-1/2 bg-impetus-teal">
+                            </div>
 
-                            <!-- Right arc: inner-grid right edge → outer border, curving down to the middle line -->
-                            <svg class="absolute text-impetus-teal" fill="none"
-                                style="right: -48px; top: 0; width: 48px; height: 64px;" viewBox="0 0 48 64"
-                                preserveAspectRatio="none">
-                                <path d="M0,0 Q48,0 48,32" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    fill="none" />
-                            </svg>
+                            {{-- Across between rows --}}
+                            <div
+                                class="absolute top-1/2 left-[calc((100%-4.5rem)/8)] right-[calc((100%-4.5rem)/8)] -translate-y-1/2 h-0.5 bg-impetus-teal">
+                            </div>
 
-                            <!-- Horizontal line at the MIDDLE, connecting both arc endpoints at the outer borders -->
-                            <div class="absolute h-0.5 bg-impetus-teal" style="left: -48px; right: -48px; top: 32px;"></div>
+                            {{-- Down into card 5 (left end only) --}}
+                            <div
+                                class="absolute bottom-1 top-1/2 left-[calc((100%-4.5rem)/8)] w-0.5 -translate-x-1/2 bg-impetus-teal">
+                            </div>
 
-                            <!-- Left arc: outer border → inner-grid left edge, curving down from the middle line to Row 2 -->
-                            <svg class="absolute text-impetus-teal" fill="none"
-                                style="left: -48px; top: 0; width: 48px; height: 64px;" viewBox="0 0 48 64"
-                                preserveAspectRatio="none">
-                                <path d="M0,32 Q48,32 48,64" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    fill="none" />
-                            </svg>
+                            <div
+                                class="absolute top-1/2 left-[58%] -translate-x-1/2 -translate-y-1/2 text-impetus-teal">
+                                <svg class="h-4 w-4 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+                            </div>
 
+                            <div
+                                class="absolute top-0 right-[calc((100%-4.5rem)/8)] z-30 translate-x-1/2 -translate-y-1/2 text-impetus-teal">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                                </svg>
+                            </div>
+
+                            <div
+                                class="absolute bottom-1 left-[calc((100%-4.5rem)/8)] z-30 -translate-x-1/2 text-impetus-teal">
+                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+                                </svg>
+                            </div>
                         </div>
 
                         <!-- Row 2 Grid -->
-                        <div class="grid grid-cols-4 gap-x-6 relative z-10 items-start">
+                        <div class="grid grid-cols-4 gap-x-6 relative z-10 items-start pt-5">
                             @foreach ($journeyRows[1] as $stepIndex => $step)
                                 @php
                                     $isTeal = $step['theme'] === 'teal';

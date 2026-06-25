@@ -4,7 +4,85 @@
 
 @php
     $heroImage = asset('images/design/about_hero_nurse_clean.png');
-    $simulationImage = asset('images/design/WhatsApp Image 2026-06-11 at 17.14.41.jpeg');
+    $aboutImage = fn (string $filename): string => asset('about/'.rawurlencode($filename));
+
+    $focusAreas = [
+        [
+            'id' => 'simulation-based-training',
+            'number' => '01',
+            'title' => 'Simulation Based Training',
+            'tagline' => 'Developing Skills for Safe and Effective Patient Care',
+            'paragraphs' => [
+                'Impetus Healthcare Skills (IHS) leverages advanced technologies and simulation-based learning to provide effective hands-on training for healthcare professionals. This innovative approach enhances knowledge, clinical skills, and confidence while improving the quality of healthcare services.',
+                'IHS is committed to skilling, upskilling, and reskilling healthcare professionals to meet evolving industry demands. Our competency-based programs focus on developing the knowledge, practical skills, and professional attitudes required to deliver safe, high-quality patient care across diverse healthcare settings.',
+            ],
+            'link' => null,
+            'link_label' => null,
+            'image' => $aboutImage('CBT_Image.png'),
+        ],
+        [
+            'id' => 'nursing-cms',
+            'number' => '02',
+            'title' => 'Smart College Management System',
+            'tagline' => null,
+            'paragraphs' => [
+                'Nursing CMS is a comprehensive College Management System designed exclusively for nursing and healthcare education institutions. Built to address the unique academic, clinical, administrative, and regulatory requirements of nursing colleges, the platform provides an integrated digital environment that streamlines institutional operations and enhances collaboration among students, faculty, and administrators.',
+                'The platform supports the complete student lifecycle, from admission to graduation, by integrating academic planning, attendance management, faculty administration, examinations, clinical rotations, accreditation documentation, and institutional reporting into a single system. With real-time dashboards, analytics, and automated workflows, Nursing CMS reduces administrative burden, improves operational efficiency, supports compliance requirements, and enables institutions to deliver high-quality nursing education.',
+            ],
+            'link' => 'https://www.nursingcms.com',
+            'link_label' => 'Visit Nursing CMS',
+            'image' => $aboutImage('Home_page_1A.png'),
+        ],
+        [
+            'id' => 'nursing-online-test',
+            'number' => '03',
+            'title' => 'Nursing Online Test',
+            'subtitle' => 'Online Assessment Platform for Nursing Students',
+            'tagline' => 'Empowering Nursing Students with Knowledge, Confidence, and Clinical Excellence',
+            'paragraphs' => [
+                'Nursing Online Test is a curriculum-based assessment platform designed to help nursing students evaluate their knowledge and improve examination readiness. Aligned with Indian Nursing Council (INC) and State Health University curricula, it offers a variety of question formats, instant feedback, and performance analytics to support continuous learning, strengthen nursing concepts, and enhance academic success.',
+            ],
+            'link' => 'https://nursingonlinetest.com/nursing-students',
+            'link_label' => 'Explore Nursing Online Test',
+            'image' => $aboutImage('About us_Focus_Nursing online test.jpeg'),
+        ],
+        [
+            'id' => 'professional-knowledge-assessment',
+            'number' => '04',
+            'title' => 'Professional Knowledge Assessment for Nurses',
+            'tagline' => 'Empowers nurses to strengthen their knowledge, build confidence, and achieve success in competitive examinations',
+            'paragraphs' => [
+                'Impetus Professional Knowledge Assessment is an online platform that helps nurses evaluate their professional knowledge and prepare for competitive recruitment examinations. Featuring structured assessments, mock tests, and performance analytics, it supports exam readiness, identifies knowledge gaps, and enhances confidence for success in nursing recruitment exams.',
+            ],
+            'link' => 'https://nursingonlinetest.com/nurse',
+            'link_label' => 'Explore Professional Assessment',
+            'image' => $aboutImage('Home_page_1.png'),
+        ],
+        [
+            'id' => 'capacity-building',
+            'number' => '05',
+            'title' => 'Capacity Building',
+            'tagline' => 'Building Competence, Strengthening Communities, and Advancing Public Health Excellence',
+            'paragraphs' => [
+                'Capacity Building in Public Health Nursing is a professional development program designed to strengthen nurses\' competencies in health promotion, disease prevention, community health, and public health leadership. Through evidence-based training and competency-focused learning, it equips nurses to address public health challenges, implement health programs effectively, and improve community health outcomes.',
+            ],
+            'link' => null,
+            'link_label' => null,
+            'image' => $aboutImage('About us_Focus_publichealth.jpeg'),
+        ],
+        [
+            'id' => 'research-development',
+            'number' => '06',
+            'title' => 'Research & Development',
+            'tagline' => 'Transforming Evidence into Impact',
+            'paragraphs' => [
+                'Research at Impetus Healthcare Skills focuses on generating evidence-based solutions to improve healthcare education, public health practice, and community well-being. Through multidisciplinary and outcome-driven research, we address key health priorities, support innovation, and contribute to strengthening healthcare systems and population health outcomes. By bridging the gap between research and practice, we support evidence-based decision-making, strengthen healthcare services, and drive innovation in healthcare education and public health.',
+            ],
+            'link' => null,
+            'link_label' => null,
+            'image' => $aboutImage('About us_Research and development.jpeg'),
+        ],
+    ];
 @endphp
 
 @section('content')
@@ -128,65 +206,82 @@
             </div>
         </section>
 
-        {{-- Our Focus Areas --}}
+        {{-- Our Focus --}}
         <section class="bg-impetus-teal-muted py-16 sm:py-24">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <h2 class="mb-12 text-center text-3xl font-extrabold text-impetus-teal sm:text-4xl font-outfit">
-                    Our Focus Areas
+                <h2 class="mb-16 text-center text-3xl font-extrabold text-impetus-teal sm:text-4xl font-outfit">
+                    Our Focus
                 </h2>
-                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                    <article id="about-impetus" class="rounded-2xl border border-impetus-teal/10 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
-                        <div class="mx-auto mb-5 flex h-28 w-full items-center justify-center rounded-xl bg-impetus-teal-muted">
-                            <svg class="h-16 w-16 text-impetus-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-                            </svg>
-                        </div>
-                        <h3 class="mb-3 text-lg font-bold text-impetus-teal font-outfit">About Impetus</h3>
-                        <p class="text-sm leading-relaxed text-slate-600 text-justify">
-                            Impetus Healthcare Skills Private Limited (IHS) is a premier healthcare education and professional training organization dedicated to advancing clinical excellence through simulation-based learning and online education.
-                        </p>
-                    </article>
-                    <article id="public-health" class="rounded-2xl border border-impetus-orange/10 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
-                        <div class="mx-auto mb-5 flex h-28 w-full items-center justify-center rounded-xl bg-impetus-lightOrange">
-                            <svg class="h-16 w-16 text-impetus-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                            </svg>
-                        </div>
-                        <h3 class="mb-3 text-lg font-bold text-impetus-orange font-outfit">Public Health Training</h3>
-                        <p class="text-sm leading-relaxed text-slate-600 text-justify">
-                            Maternal and newborn health is our core component, and we are committed to contributing to the country's efforts to achieve Millennium Development Goals 4, 5 and 6.
-                        </p>
-                    </article>
-                    <article id="skilled-birth" class="rounded-2xl border border-impetus-orange/10 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
-                        <div class="mx-auto mb-5 flex h-28 w-full items-center justify-center rounded-xl bg-impetus-lightOrange">
-                            <svg class="h-16 w-16 text-impetus-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                            </svg>
-                        </div>
-                        <h3 class="mb-3 text-lg font-bold text-impetus-orange font-outfit">Skilled Birth Attendant Role</h3>
-                        <p class="text-sm leading-relaxed text-slate-600 text-justify">
-                            Nurses have an important role in significantly reducing the maternal mortality rate (MMR) and infant mortality rate (IMR) as Skilled Birth Attendants.
-                        </p>
-                    </article>
-                    <article id="research" class="rounded-2xl border border-impetus-teal/10 bg-white p-6 text-center shadow-sm transition hover:shadow-md">
-                        <div class="mx-auto mb-5 flex h-28 w-full items-center justify-center rounded-xl bg-impetus-teal-muted">
-                            <svg class="h-16 w-16 text-impetus-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.611L5 14.5" />
-                            </svg>
-                        </div>
-                        <h3 class="mb-3 text-lg font-bold text-impetus-teal font-outfit">Research &amp; Development</h3>
-                        <p class="text-sm leading-relaxed text-slate-600 text-justify">
-                            Our multidisciplinary research activities focus on developing issue-based and setting-based designs that address existing and emerging healthcare challenges in India.
-                        </p>
-                    </article>
+
+                <div class="space-y-20 sm:space-y-24">
+                    @foreach ($focusAreas as $index => $area)
+                        @php
+                            $imageOnLeft = $index % 2 === 0;
+                        @endphp
+                        <article id="{{ $area['id'] }}" @class([
+                            'grid items-center gap-10 lg:grid-cols-12 lg:gap-12',
+                            'rounded-3xl bg-impetus-teal-muted p-8 sm:p-10' => $index % 2 === 0,
+                        ])>
+                            <div @class([
+                                'lg:col-span-5',
+                                $imageOnLeft ? 'order-1' : 'order-2',
+                            ])>
+                                <img src="{{ $area['image'] }}" alt="{{ $area['title'] }} at IHS Nursing"
+                                    class="w-full rounded-2xl border border-impetus-teal/10 object-cover shadow-xl">
+                            </div>
+
+                            <div @class([
+                                'lg:col-span-7',
+                                $imageOnLeft ? 'order-2' : 'order-1',
+                            ])>
+                                <div class="mb-4 flex items-center gap-4">
+                                    <span class="flex h-10 w-10 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white font-outfit">
+                                        {{ $area['number'] }}
+                                    </span>
+                                    <span class="text-sm font-bold uppercase tracking-widest text-impetus-orange font-outfit">Our Focus</span>
+                                </div>
+
+                                <h3 class="mb-3 text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">
+                                    {{ $area['title'] }}
+                                </h3>
+
+                                @if (! empty($area['subtitle']))
+                                    <p class="mb-3 text-base font-semibold text-impetus-teal font-outfit">
+                                        {{ $area['subtitle'] }}
+                                    </p>
+                                @endif
+
+                                @if (! empty($area['tagline']))
+                                    <p class="mb-6 text-base font-medium italic text-impetus-orange font-outfit sm:text-lg">
+                                        &ldquo;{{ $area['tagline'] }}&rdquo;
+                                    </p>
+                                @endif
+
+                                <div class="space-y-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                                    @foreach ($area['paragraphs'] as $paragraph)
+                                        <p>{{ $paragraph }}</p>
+                                    @endforeach
+                                </div>
+
+                                @if (! empty($area['link']))
+                                    <a href="{{ $area['link'] }}" target="_blank" rel="noopener noreferrer"
+                                        class="mt-6 inline-flex items-center gap-2 rounded-full bg-impetus-teal px-6 py-3 text-sm font-bold text-white shadow-md transition hover:bg-impetus-teal/90 font-outfit">
+                                        {{ $area['link_label'] }}
+                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                        </svg>
+                                    </a>
+                                @endif
+                            </div>
+                        </article>
+                    @endforeach
                 </div>
             </div>
         </section>
 
-        {{-- Detailed Content (preserved from original page) --}}
+        {{-- Vision & Goal --}}
         <section class="bg-white py-16 sm:py-24">
-            <div class="mx-auto max-w-7xl space-y-16 px-6 lg:px-8">
-                {{-- Vision & Goal + Competency --}}
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="rounded-3xl bg-impetus-teal p-8 text-white shadow-lg sm:p-10">
                     <p class="mb-4 text-center text-sm font-extrabold uppercase tracking-widest text-impetus-orange font-outfit">
                         Our Core Vision &amp; Goal
@@ -196,180 +291,6 @@
                         with updated clinical knowledge, practical expertise, and industry-relevant competencies
                         that contribute to improved patient care and healthcare outcomes.
                     </p>
-                </div>
-
-                <div class="flex items-start gap-4 rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange p-6">
-                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-impetus-orange text-white">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h4 class="text-base font-bold text-impetus-teal font-outfit">Competency-Based</h4>
-                        <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify">
-                            Designed for absolute clinical safety and patient outcomes.
-                        </p>
-                    </div>
-                </div>
-
-                {{-- Public Health Training --}}
-                <div class="grid items-start gap-12 lg:grid-cols-12">
-                    <div class="lg:col-span-7">
-                        <span class="mb-3 block text-sm font-bold uppercase tracking-widest text-impetus-orange font-outfit">Capacity Building</span>
-                        <h2 class="mb-8 text-3xl font-extrabold text-impetus-teal sm:text-4xl font-outfit">Public Health Training</h2>
-                        <div class="space-y-6 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                            <p>
-                                Maternal and newborn health is our core component, and we are committed to contributing to
-                                the country's efforts to achieve Millennium Development Goals 4, 5 and 6. By addressing the
-                                primary risk factors involved in maternal and neonatal deaths, we are actively engaged in
-                                capacity-building activities within the public health system. The focus is mainly on
-                                upgrading the health workforce with relevant materials and innovative methodologies that
-                                involve the judicious use of extremely affordable technology, thus ensuring the delivery of
-                                much-needed quality care at various levels of healthcare facilities.
-                            </p>
-                            <p>
-                                IHS will provide multidisciplinary training programmes to healthcare professionals,
-                                equipping them to meet the pressing health needs of individuals and communities, and thereby
-                                improve the effectiveness of the nation's healthcare delivery systems.
-                            </p>
-                        </div>
-
-                        <div class="my-8 overflow-hidden rounded-2xl bg-impetus-orange p-8 text-white shadow-lg">
-                            <h3 class="mb-2 text-xs font-extrabold uppercase tracking-widest text-white/90 font-outfit">Our Deeply Cherished Motto</h3>
-                            <p class="text-xl font-black italic leading-snug tracking-wide font-outfit sm:text-2xl">
-                                "Save the lives of mothers and newborn babies every day, on every occasion"
-                            </p>
-                        </div>
-
-                        <div class="space-y-6 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                            <p>
-                                Mobile training, clinical mentoring and hand-holding support programmes for nurses are
-                                innovative and involve first-of-their-kind approaches, which aim to substantially strengthen
-                                nurses' skills to enable them to provide quality services in the public health delivery
-                                system.
-                            </p>
-                            <p>
-                                The Competency Based Training (CBT) approach is one of our preferred modes of training,
-                                where emphasis is placed on acquiring competence in delivering quality care. The structured
-                                approach of our training programmes helps us impart the right mix of knowledge and skills,
-                                depending on the nature of the specified task. The emphasis of the competency-based training
-                                program is on <strong>"Performing"</strong> rather than merely <strong>"Knowing"</strong>.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- Skilled Birth Attendant --}}
-                    <div class="rounded-3xl border border-impetus-teal/15 bg-impetus-teal-muted p-8 shadow-sm lg:col-span-5">
-                        <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
-                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                        </div>
-                        <h3 class="mb-4 text-xl font-extrabold text-impetus-teal font-outfit">Skilled Birth Attendant Role</h3>
-                        <p class="mb-6 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                            Nurses have an important role in significantly reducing the maternal mortality rate (MMR) and
-                            infant mortality rate (IMR) as Skilled Birth Attendants by providing:
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex gap-3 rounded-xl border border-impetus-orange/20 bg-white p-4">
-                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-impetus-lightOrange text-impetus-orange">
-                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-                                    </svg>
-                                </span>
-                                <span class="text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                                    <strong>Comprehensive Care:</strong> Delivering professional antenatal, intranatal and postnatal care.
-                                </span>
-                            </li>
-                            <li class="flex gap-3 rounded-xl border border-impetus-teal/20 bg-white p-4">
-                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-impetus-teal-muted text-impetus-teal">
-                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                                    </svg>
-                                </span>
-                                <span class="text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                                    <strong>Timely Identification:</strong> Quick assessment and identification of potential clinical complications.
-                                </span>
-                            </li>
-                            <li class="flex gap-3 rounded-xl border border-impetus-orange/20 bg-white p-4">
-                                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-impetus-lightOrange text-impetus-orange">
-                                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                                    </svg>
-                                </span>
-                                <span class="text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                                    <strong>Basic Management &amp; Referral:</strong> Administering immediate primary care, followed by timely referral to higher centers.
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                {{-- Research & Development --}}
-                <div class="grid items-center gap-12 lg:grid-cols-12">
-                    <div class="lg:col-span-7">
-                        <span class="mb-3 block text-sm font-bold uppercase tracking-widest text-impetus-orange font-outfit">Evidence &amp; Quality</span>
-                        <h2 class="mb-8 text-3xl font-extrabold text-impetus-teal sm:text-4xl font-outfit">Research &amp; Development</h2>
-                        <div class="space-y-6 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                            <p>
-                                The Millennium Development Goals (MDGs), established based on key health issues, aim to
-                                improve maternal and child health and reduce the incidence of malaria, tuberculosis, HIV,
-                                and other health determinants.
-                            </p>
-                            <p>
-                                Health promotion is integral to all national health programmes, with implementation
-                                envisaged through the public health system, based on the principles of equitable
-                                distribution, community participation, intersectoral coordination, and the use of
-                                appropriate technology. Our multidisciplinary research activities focus on developing
-                                issue-based and setting-based designs that address existing and emerging healthcare
-                                challenges in India. We aim to translate research findings into suitable health promotion
-                                models for diverse settings, helping to bridge the practice gap and contribute to the
-                                improvement of national health indicators.
-                            </p>
-                            <p>
-                                Evidence is central to our research activities and can clearly guide our efforts to improve
-                                service delivery. We are continually strengthening the monitoring and evaluation of our
-                                projects with the expertise of our R&amp;D team. Our projects are monitored for quality
-                                improvement through well-defined indicators at regular intervals, thereby establishing their
-                                inherent value beyond doubt.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="rounded-3xl bg-impetus-teal p-8 text-white shadow-lg lg:col-span-5">
-                        <div class="mb-8 flex items-center justify-between border-b border-white/15 pb-6">
-                            <div>
-                                <h4 class="text-lg font-extrabold font-outfit">Research &amp; Development</h4>
-                                <p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-white/70 font-outfit">Continuous Evaluation Core</p>
-                            </div>
-                            <span class="rounded-full bg-impetus-orange px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider font-outfit">Evidence Core</span>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/10 p-4">
-                                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-impetus-orange text-sm font-bold font-outfit">1</div>
-                                <div>
-                                    <h5 class="mb-0.5 text-sm font-bold font-outfit sm:text-base">Issue &amp; Setting-Based Designs</h5>
-                                    <p class="text-xs leading-relaxed text-white/85 text-justify sm:text-sm">Addressing existing and emerging healthcare challenges across India.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/10 p-4">
-                                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-impetus-orange text-sm font-bold font-outfit">2</div>
-                                <div>
-                                    <h5 class="mb-0.5 text-sm font-bold font-outfit sm:text-base">Actionable Health Promotion Models</h5>
-                                    <p class="text-xs leading-relaxed text-white/85 text-justify sm:text-sm">Bridging the practice gap and directly improving national health indicators.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/10 p-4">
-                                <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-impetus-orange text-sm font-bold font-outfit">3</div>
-                                <div>
-                                    <h5 class="mb-0.5 text-sm font-bold font-outfit sm:text-base">Continuous Monitoring &amp; Evaluation</h5>
-                                    <p class="text-xs leading-relaxed text-white/85 text-justify sm:text-sm">Establishing absolute value and transparency with well-defined metrics.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -405,66 +326,6 @@
                             ])>{{ $item['label'] }}</p>
                         </div>
                     @endforeach
-                </div>
-            </div>
-        </section>
-
-        {{-- Simulation-Based Training --}}
-        <section class="bg-impetus-teal-muted py-16 sm:py-24">
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mb-10 text-center lg:text-left">
-                    <div class="mb-4 flex items-center justify-center gap-3 lg:justify-start">
-                        <h2 class="text-3xl font-extrabold text-impetus-teal sm:text-4xl font-outfit">Simulation-Based Training</h2>
-                        <svg class="hidden h-8 w-24 text-impetus-teal sm:block" viewBox="0 0 120 24" fill="none" aria-hidden="true">
-                            <path d="M0 12h8M12 12h8M24 4v16M36 4v16M48 12h8M60 12h8M72 4v16M84 4v16M96 12h8M108 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <p class="text-lg font-semibold text-impetus-teal font-outfit">Practice. Learn. Improve. Deliver Better Patient Care.</p>
-                </div>
-
-                <div class="grid items-center gap-12 lg:grid-cols-2">
-                    <div class="space-y-8">
-                        @foreach ([
-                            ['title' => 'Real-Life Scenarios', 'text' => 'Hands-on practice in a safe, controlled environment.', 'color' => 'teal'],
-                            ['title' => 'Enhance Skills', 'text' => 'Strengthen clinical judgment and critical thinking.', 'color' => 'orange'],
-                            ['title' => 'Build Confidence', 'text' => 'Gain confidence through repetition and feedback.', 'color' => 'teal'],
-                            ['title' => 'Better Outcomes', 'text' => 'Improve competence. Ensure patient safety.', 'color' => 'orange'],
-                        ] as $feature)
-                            <div class="flex gap-4">
-                                <div @class([
-                                    'flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-white shadow-md',
-                                    'bg-impetus-teal' => $feature['color'] === 'teal',
-                                    'bg-impetus-orange' => $feature['color'] === 'orange',
-                                ])>
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 @class([
-                                        'mb-1 text-base font-extrabold uppercase tracking-wide font-outfit',
-                                        'text-impetus-teal' => $feature['color'] === 'teal',
-                                        'text-impetus-orange' => $feature['color'] === 'orange',
-                                    ])>{{ $feature['title'] }}</h3>
-                                    <p class="text-sm leading-relaxed text-slate-600">{{ $feature['text'] }}</p>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <div class="relative">
-                        <img src="{{ $simulationImage }}" alt="Simulation lab training at IHS Nursing"
-                            class="w-full rounded-2xl border border-impetus-teal/10 shadow-xl">
-                        <div class="absolute bottom-4 right-4 hidden max-w-[180px] rounded-xl border border-impetus-teal/20 bg-white p-4 shadow-lg sm:block">
-                            <p class="mb-3 text-xs font-extrabold uppercase tracking-wider text-impetus-teal font-outfit">Simulation Lab</p>
-                            @foreach (['Assess', 'Plan', 'Perform', 'Evaluate', 'Improve'] as $step)
-                                <div class="mb-1.5 flex items-center gap-2 text-xs font-semibold uppercase text-impetus-teal">
-                                    <span class="flex h-4 w-4 items-center justify-center rounded-full bg-impetus-teal text-[10px] text-white">✓</span>
-                                    {{ $step }}
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
