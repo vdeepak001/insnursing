@@ -14,7 +14,7 @@
 </style>
 
 <!-- Footer -->
-<footer class="bg-impetus-teal py-8 text-white" style="margin-top: 10px;">
+<footer class="bg-impetus-teal py-8 text-white" style="margin-top: 20px;">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
             <!-- Column 1: Logo & Description -->

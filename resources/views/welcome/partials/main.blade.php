@@ -1,6 +1,6 @@
 <main class="font-sans antialiased text-slate-800">
     @php
-        $heroImage = asset('images/homepage-banner.png');
+        $heroImage = asset('images/Home_page_1F.png');
         $simulationImage = asset('images/design/WhatsApp Image 2026-06-11 at 17.14.41.jpeg');
     @endphp
 
