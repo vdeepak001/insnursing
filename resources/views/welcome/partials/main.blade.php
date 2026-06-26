@@ -38,6 +38,9 @@
                         clinical practice, patient safety, and quality healthcare services across diverse healthcare
                         settings.
                     </p>
+                    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 text-justify sm:text-base lg:mx-0">
+                        Our evidence-based Continuing Nursing Education (CNE) programmes combine structured digital learning, competency-based assessments, practical clinical scenarios, and outcome-driven education to help nurses continuously enhance their professional capabilities. Every learning module is carefully engineered to bridge the gap between academic knowledge and real-world healthcare practice, enabling professionals to deliver safer, more effective, and patient-centred care.
+                    </p>
 
                     <ul class="mt-8 space-y-3 text-left">
                         @foreach (['26+ CNE Modules with evidence-based curriculum', 'Innovative outcome-oriented training programs', 'Clinical practice excellence and patient safety focus', '100% accredited course content for healthcare professionals'] as $bullet)
