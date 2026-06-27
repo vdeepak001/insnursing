@@ -59,9 +59,9 @@
         </section>
 
         {{-- Features of Learning Resources --}}
-        <section class="bg-slate-50 py-16 sm:py-24">
+        <section class="bg-white py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto mb-10 max-w-3xl text-center">
+                <div class="mx-auto max-w-3xl text-center">
                     <h2 class="text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Features of Learning Resources</h2>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
                         Engineered to provide a rich educational ecosystem, our resources leverage evidence-based standards to deliver optimal clinical learning.
@@ -77,7 +77,7 @@
         </section>
 
         {{-- Importance of Learning Resources --}}
-        <section class="bg-white py-16 sm:py-24">
+        <section class="bg-white py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto mb-10 max-w-3xl text-center">
                     <h2 class="text-2xl font-extrabold text-impetus-orange sm:text-3xl font-outfit">Importance of Learning Resources in Online CNE</h2>
