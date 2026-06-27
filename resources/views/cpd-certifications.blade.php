@@ -21,7 +21,7 @@
 
                         <div class="space-y-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
                             <p>
-                                <strong>Continuing Nursing Education certification</strong> is an official recognition
+                                <strong>Continuing Nursing Education Certification</strong> is an official recognition
                                 awarded to nurses and healthcare professionals upon successful completion of structured
                                 educational programs designed to enhance clinical knowledge, professional skills, and
                                 competency in nursing practice. It serves as evidence of participation in continuing
