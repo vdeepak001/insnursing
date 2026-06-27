@@ -39,7 +39,7 @@
             ],
             'link' => 'https://www.nursingcms.com',
             'link_label' => 'Visit Nursing CMS',
-            'image' => $aboutImage('Home_page_1A.png'),
+            'image' => asset('Smart_CMS.png'),
         ],
         [
             'id' => 'nursing-online-test',
@@ -142,7 +142,7 @@
         </section>
 
         {{-- Stats Bar --}}
-        <section class="bg-impetus-teal py-8 sm:py-10">
+        <section class="bg-impetus-teal py-4 sm:py-6">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid grid-cols-2 gap-6 text-center text-white md:grid-cols-5 md:gap-4">
                     <div class="flex flex-col items-center gap-2">
