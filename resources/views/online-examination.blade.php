@@ -308,28 +308,28 @@
         </section>
 
         {{-- CTA Banner --}}
-        <section class="bg-impetus-orange py-8 sm:py-10">
+        <section class="bg-white py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="flex flex-col items-center gap-5 lg:flex-row lg:text-left text-center">
-                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                        </svg>
-                    </div>
-                    <div class="min-w-0 flex-1">
-                        <p class="text-base leading-relaxed !text-white lg:text-left text-justify">
-                            Online Test in CNE play a vital role in ensuring that healthcare professionals achieve required competencies and maintain high standards of clinical practice. They help validate learning outcomes and contribute to improved patient care, professional growth, and lifelong learning in nursing education.
-                        </p>
-                    </div>
-                    <div class="mt-4 shrink-0 lg:mt-0">
-                        <a href="{{ route('cne.modules') }}"
-                            class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-impetus-orange shadow-md transition hover:-translate-y-0.5 hover:bg-slate-50 font-outfit whitespace-nowrap">
-                            Start Online Test
-                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                <div class="flex flex-col items-center gap-6 rounded-3xl bg-impetus-orange p-8 text-center shadow-lg sm:flex-row sm:justify-between sm:p-10 sm:text-left">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                             </svg>
-                        </a>
+                        </div>
+                        <div class="min-w-0 flex-1">
+                            <p class="text-base leading-relaxed !text-white sm:text-left text-justify">
+                                Online Test in CNE play a vital role in ensuring that healthcare professionals achieve required competencies and maintain high standards of clinical practice. They help validate learning outcomes and contribute to improved patient care, professional growth, and lifelong learning in nursing education.
+                            </p>
+                        </div>
                     </div>
+                    <a href="{{ route('cne.modules') }}"
+                        class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-impetus-orange shadow-lg transition hover:scale-105 font-outfit whitespace-nowrap">
+                        Start Online Test
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>

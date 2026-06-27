@@ -67,7 +67,7 @@
                                 ['title' => 'Identify Learning Gaps', 'text' => 'To identify areas requiring further study before final certification examinations.', 'theme' => 'teal'],
                                 ['title' => 'Prepare for Certification', 'text' => 'To prepare learners for final assessments and professional certification examinations.', 'theme' => 'orange'],
                             ] as $item)
-                                <div class="flex items-start gap-4 rounded-2xl border border-impetus-teal/10 bg-white p-5 shadow-md">
+                                <div class="flex items-start gap-4 rounded-2xl border border-impetus-teal/10 bg-white p-3 shadow-md">
                                     <div @class([
                                         'flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow-md',
                                         'bg-impetus-teal' => $item['theme'] === 'teal',
@@ -136,7 +136,7 @@
             <section class="py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-4 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Benefits of Practice Tests</h2>
-                    <p class="mx-auto mb-10 max-w-3xl text-center text-sm text-slate-600 sm:text-base">
+                    <p class="mx-auto mb-5 max-w-3xl text-center text-sm text-slate-600 sm:text-base">
                         Designed to accelerate your learning journey and build confidence, practicing regularly delivers key advantages:
                     </p>
                     <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
@@ -147,7 +147,7 @@
                         </div>
 
                         {{-- Content --}}
-                        <div class="grid gap-4 sm:grid-cols-2">
+                        <div class="grid gap-4 sm:grid-cols-1">
                             @foreach ([
                                 ['title' => 'Enhances Retention', 'text' => 'Enhances retention of clinical knowledge.'],
                                 ['title' => 'Builds Clinical Confidence', 'text' => 'Builds confidence in handling real-life clinical situations.'],
@@ -156,7 +156,7 @@
                                 ['title' => 'Exam Readiness', 'text' => 'Strengthens readiness for professional certification exams.'],
                                 ['title' => 'Performance Tracking', 'text' => 'Monitor progress and identify areas to improve through attempt history.'],
                             ] as $benefit)
-                                <div class="flex items-start gap-3 rounded-xl border border-impetus-orange/15 bg-impetus-lightOrange/50 p-5">
+                                <div class="flex items-start gap-3 rounded-xl border border-impetus-orange/15 bg-impetus-lightOrange/50 p-3">
                                     <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white shadow-sm">
                                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -188,7 +188,7 @@
                             ['title' => 'Unlimited Re-Attempts', 'text' => 'Enjoy repeated learning attempts on complex topics, ensuring perfect knowledge retention and readiness for final certification exams.'],
                             ['title' => 'Universal Platform', 'text' => 'Seamlessly optimized and accessible anywhere through our online learning platforms via desktops, laptops, tablets, and smartphones.'],
                         ] as $feature)
-                            <div class="rounded-2xl border border-impetus-teal/10 bg-white p-5 shadow-md">
+                            <div class="rounded-2xl border border-impetus-teal/10 bg-white p-3 shadow-md">
                                 <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-impetus-teal text-white">
                                     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -205,21 +205,32 @@
             <section class="py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-10 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">How Practice Tests Work</h2>
-                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        @foreach ([
-                            ['step' => '1', 'title' => 'Select Practice Test', 'text' => 'Choose a CNE module and select the practice test level and question set.'],
-                            ['step' => '2', 'title' => 'Start Assessment', 'text' => 'Begin the timed or self-paced assessment through the online platform.'],
-                            ['step' => '3', 'title' => 'Answer Questions', 'text' => 'Work through MCQs, case-based, and scenario-based nursing questions.'],
-                            ['step' => '4', 'title' => 'Submit Test', 'text' => 'Submit your responses when complete to receive instant evaluation.'],
-                            ['step' => '5', 'title' => 'Review Results', 'text' => 'Review your score, performance analytics, and detailed explanations.'],
-                            ['step' => '6', 'title' => 'Improve & Retest', 'text' => 'Use feedback to strengthen weak areas and retest for better outcomes.'],
-                        ] as $step)
-                            <div class="relative rounded-2xl border border-impetus-teal/10 bg-white p-5 shadow-sm">
-                                <span class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-impetus-teal text-sm font-bold text-white">{{ $step['step'] }}</span>
-                                <h3 class="text-base font-bold text-slate-800 font-outfit">{{ $step['title'] }}</h3>
-                                <p class="mt-2 text-sm leading-relaxed text-slate-600 text-justify">{{ $step['text'] }}</p>
-                            </div>
-                        @endforeach
+                    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+                        {{-- Image --}}
+                        <div class="overflow-hidden rounded-2xl shadow-lg">
+                            <img src="{{ asset(rawurlencode('how-practice-test works.png')) }}" alt="How Practice Tests Work"
+                                class="h-auto w-full object-contain">
+                        </div>
+
+                        {{-- Content --}}
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            @foreach ([
+                                ['step' => '1', 'title' => 'Select Practice Test', 'text' => 'Choose a CNE module and select the practice test level and question set.'],
+                                ['step' => '2', 'title' => 'Start Assessment', 'text' => 'Begin the timed or self-paced assessment through the online platform.'],
+                                ['step' => '3', 'title' => 'Answer Questions', 'text' => 'Work through MCQs, case-based, and scenario-based nursing questions.'],
+                                ['step' => '4', 'title' => 'Submit Test', 'text' => 'Submit your responses when complete to receive instant evaluation.'],
+                                ['step' => '5', 'title' => 'Review Results', 'text' => 'Review your score, performance analytics, and detailed explanations.'],
+                                ['step' => '6', 'title' => 'Improve & Retest', 'text' => 'Use feedback to strengthen weak areas and retest for better outcomes.'],
+                            ] as $step)
+                                <div class="flex items-start gap-3 rounded-xl border border-impetus-teal/15 bg-impetus-teal-muted/50 p-5">
+                                    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-impetus-teal text-sm font-bold text-white shadow-sm">{{ $step['step'] }}</span>
+                                    <div>
+                                        <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $step['title'] }}</h3>
+                                        <p class="mt-1 text-sm text-slate-600 text-justify">{{ $step['text'] }}</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </section>
@@ -227,26 +238,26 @@
             {{-- CTA Banner --}}
             <section class="bg-white py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="flex flex-col items-center gap-5 lg:flex-row lg:text-left text-center">
-                        <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
-                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                            </svg>
-                        </div>
-                        <div class="min-w-0 flex-1">
-                            <p class="text-base leading-relaxed !text-white lg:text-left text-justify">
-                                Practice Test in Online Continuing Nursing Education play a vital role in ensuring effective learning by transforming theoretical knowledge into practical understanding. They help nursing professionals stay competent, confident, and prepared to deliver safe and high-quality patient care in clinical settings.
-                            </p>
-                        </div>
-                        <div class="mt-4 shrink-0 lg:mt-0">
-                            <a href="{{ route('cne.modules') }}"
-                                class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-impetus-orange shadow-md transition hover:-translate-y-0.5 hover:bg-slate-50 font-outfit whitespace-nowrap">
-                                Start Practice Test
-                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    <div class="flex flex-col items-center gap-6 rounded-3xl bg-impetus-orange p-8 text-center shadow-lg sm:flex-row sm:justify-between sm:p-10 sm:text-left">
+                        <div class="flex items-center gap-4">
+                            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                                 </svg>
-                            </a>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-base leading-relaxed !text-white sm:text-left text-justify">
+                                    Practice Test in Online Continuing Nursing Education play a vital role in ensuring effective learning by transforming theoretical knowledge into practical understanding. They help nursing professionals stay competent, confident, and prepared to deliver safe and high-quality patient care in clinical settings.
+                                </p>
+                            </div>
                         </div>
+                        <a href="{{ route('cne.modules') }}"
+                            class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-impetus-orange shadow-lg transition hover:scale-105 font-outfit whitespace-nowrap">
+                            Start Practice Test
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </section>
