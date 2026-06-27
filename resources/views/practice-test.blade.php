@@ -205,32 +205,9 @@
             <section class="py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-10 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">How Practice Tests Work</h2>
-                    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-                        {{-- Image --}}
-                        <div class="overflow-hidden rounded-2xl shadow-lg">
-                            <img src="{{ asset(rawurlencode('how-practice-test works.png')) }}" alt="How Practice Tests Work"
-                                class="h-auto w-full object-contain">
-                        </div>
-
-                        {{-- Content --}}
-                        <div class="grid gap-4 sm:grid-cols-2">
-                            @foreach ([
-                                ['step' => '1', 'title' => 'Select Practice Test', 'text' => 'Choose a CNE module and select the practice test level and question set.'],
-                                ['step' => '2', 'title' => 'Start Assessment', 'text' => 'Begin the timed or self-paced assessment through the online platform.'],
-                                ['step' => '3', 'title' => 'Answer Questions', 'text' => 'Work through MCQs, case-based, and scenario-based nursing questions.'],
-                                ['step' => '4', 'title' => 'Submit Test', 'text' => 'Submit your responses when complete to receive instant evaluation.'],
-                                ['step' => '5', 'title' => 'Review Results', 'text' => 'Review your score, performance analytics, and detailed explanations.'],
-                                ['step' => '6', 'title' => 'Improve & Retest', 'text' => 'Use feedback to strengthen weak areas and retest for better outcomes.'],
-                            ] as $step)
-                                <div class="flex items-start gap-3 rounded-xl border border-impetus-teal/15 bg-impetus-teal-muted/50 p-5">
-                                    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-impetus-teal text-sm font-bold text-white shadow-sm">{{ $step['step'] }}</span>
-                                    <div>
-                                        <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $step['title'] }}</h3>
-                                        <p class="mt-1 text-sm text-slate-600 text-justify">{{ $step['text'] }}</p>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
+                    <div class="overflow-hidden rounded-2xl">
+                        <img src="{{ asset(rawurlencode('how-practice-test works.png')) }}" alt="How Practice Tests Work"
+                            class="mx-auto h-auto w-full object-contain">
                     </div>
                 </div>
             </section>
