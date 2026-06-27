@@ -195,7 +195,7 @@
         </section>
 
         {{-- Our Focus --}}
-        <section class="bg-white py-16 sm:py-24">
+        <section class="bg-white py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 class="mb-16 text-center text-3xl font-extrabold text-impetus-teal sm:text-4xl font-outfit">
                     Our Focus
@@ -386,7 +386,7 @@
         </section>
 
         {{-- Vision & Goal --}}
-        <section class="bg-white py-16 sm:py-24">
+        <section class="bg-white py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="rounded-3xl bg-impetus-teal p-8 text-white shadow-lg sm:p-10">
                     <p class="mb-4 text-center text-sm font-extrabold uppercase tracking-widest text-impetus-orange font-outfit">
@@ -402,7 +402,7 @@
         </section>
 
         {{-- Our Commitment --}}
-        <section class="bg-white py-16 sm:py-24">
+        <section class="bg-white py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 class="mb-12 text-center text-3xl font-extrabold text-impetus-teal sm:text-4xl font-outfit">
                     Our Commitment
@@ -437,26 +437,28 @@
         </section>
 
         {{-- CTA Banner --}}
-        <section class="bg-impetus-orange py-10 sm:py-12">
-            <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center sm:flex-row sm:justify-between sm:text-left lg:px-8">
-                <div class="flex items-center gap-4">
-                    <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
-                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+        <section class="bg-white py-16 sm:py-12">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="flex flex-col items-center gap-6 rounded-3xl bg-impetus-orange p-8 text-center shadow-lg sm:flex-row sm:justify-between sm:p-10 sm:text-left">
+                    <div class="flex items-center gap-4">
+                        <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
+                            <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-extrabold !text-white sm:text-2xl font-outfit">Together, We Build a Healthier Tomorrow</h2>
+                            <p class="mt-1 text-sm !text-white/90">Empowering nurses with the skills to deliver exceptional patient care.</p>
+                        </div>
+                    </div>
+                    <a href="{{ route('cne.modules') }}"
+                        class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-impetus-orange shadow-lg transition hover:scale-105 font-outfit">
+                        Explore Courses
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
-                    </div>
-                    <div>
-                        <h2 class="text-xl font-extrabold !text-white sm:text-2xl font-outfit">Together, We Build a Healthier Tomorrow</h2>
-                        <p class="mt-1 text-sm !text-white/90">Empowering nurses with the skills to deliver exceptional patient care.</p>
-                    </div>
+                    </a>
                 </div>
-                <a href="{{ route('cne.modules') }}"
-                    class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-impetus-orange shadow-lg transition hover:scale-105 font-outfit">
-                    Explore Courses
-                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                </a>
             </div>
         </section>
     </main>

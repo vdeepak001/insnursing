@@ -136,8 +136,8 @@
         </div>
 
         @if (filled($course->description))
-            <p class="mt-3 line-clamp-3 text-sm leading-relaxed text-slate-600 text-justify sm:mt-4">
-                {{ \Illuminate\Support\Str::words(strip_tags($course->description), 22, '...') }}
+            <p class="mt-3 text-sm leading-relaxed text-slate-600 text-justify sm:mt-4">
+                {{ \Illuminate\Support\Str::words(strip_tags($course->description), 16, '...') }}
             </p>
         @else
             <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:mt-4">
