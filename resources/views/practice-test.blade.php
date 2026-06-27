@@ -47,9 +47,9 @@
                         </div>
 
                         <div class="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
-                            <div class="absolute h-72 w-72 rounded-full border-2 border-impetus-teal/20 sm:h-80 sm:w-80 lg:h-[22rem] lg:w-[22rem]"></div>
+                            <div class="absolute h-56 w-56 rounded-full border-2 border-impetus-teal/20 sm:h-64 sm:w-64 lg:h-72 lg:w-72"></div>
                             <img src="{{ $heroImage }}" alt="CNE Practice Test"
-                                class="relative z-10 h-auto w-full max-w-sm rounded-2xl object-cover shadow-xl lg:max-w-md">
+                                class="relative z-10 h-auto w-full max-w-md rounded-2xl object-cover shadow-xl lg:max-w-xl">
                         </div>
                     </div>
                 </div>
