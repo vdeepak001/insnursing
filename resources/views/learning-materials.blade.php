@@ -78,27 +78,11 @@
                             </div>
                         </div>
 
-                        <ul class="space-y-5">
-                            @foreach ([
-                                ['title' => 'Universal Access', 'text' => 'Easily accessible anytime and anywhere through modern, responsive digital learning platforms.'],
-                                ['title' => 'Evidence-Based Focus', 'text' => 'Designed specifically based on evidence-based nursing standards, peer-reviewed clinical guidelines, and protocols.'],
-                                ['title' => 'Continuous Updates', 'text' => 'Regularly updated in real time to reflect current healthcare practices, drug formulas, and clinical discoveries.'],
-                                ['title' => 'Adaptive Learning Paths', 'text' => 'Highly suitable for self-paced independent study as well as highly structured formal educational models.'],
-                                ['title' => 'Multimodal Integration', 'text' => 'Supports different learning styles including visual, auditory, and practical learners, using a blend of audio-video lectures, simulation guides, clinical mock-ups, and reference files.'],
-                            ] as $feature)
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-teal text-white">
-                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                        </svg>
-                                    </span>
-                                    <div>
-                                        <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $feature['title'] }}</h3>
-                                        <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify">{{ $feature['text'] }}</p>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+                        <div class="overflow-hidden rounded-xl">
+                            <img src="{{ asset(rawurlencode('Importance _of_Learning_resource_1.png')) }}"
+                                alt="Features of Learning Resources"
+                                class="h-auto w-full object-cover">
+                        </div>
                     </div>
 
                     {{-- Importance Column --}}
@@ -151,7 +135,7 @@
         </section>
 
         {{-- Resource Types --}}
-        <section class="py-16 sm:py-24">
+        <section class="py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <h2 class="mb-12 text-center text-2xl font-extrabold uppercase tracking-widest text-impetus-teal sm:text-3xl font-outfit">
                     Resource Types
