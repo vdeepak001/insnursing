@@ -21,7 +21,7 @@
             'title' => 'Simulation Based Training',
             'tagline' => 'Developing Skills for Safe and Effective Patient Care',
             'paragraphs' => [
-                'Impetus Healthcare Skills (IHS) leverages advanced technologies and simulation-based learning to provide effective hands-on training for healthcare professionals. This innovative approach enhances knowledge, clinical skills, and confidence while improving the quality of healthcare services.',
+                'Impetus Healthcare Skills leverages advanced technologies and simulation-based learning to provide effective hands-on training for healthcare professionals. This innovative approach enhances knowledge, clinical skills, and confidence while improving the quality of healthcare services.',
                 'IHS is committed to skilling, upskilling, and reskilling healthcare professionals to meet evolving industry demands. Our competency-based programs focus on developing the knowledge, practical skills, and professional attitudes required to deliver safe, high-quality patient care across diverse healthcare settings.',
             ],
             'link' => null,
@@ -105,11 +105,11 @@
                             About IHS Nursing
                         </p>
                         <h1 class="mb-6 text-3xl font-extrabold leading-tight text-impetus-teal sm:text-4xl lg:text-[2.75rem] font-outfit">
-                            About Impetus Healthcare Skills (IHS)
+                            About Impetus Healthcare Skills
                         </h1>
                         <div class="space-y-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
                             <p>
-                                <strong>Impetus Healthcare Skills Private Limited (IHS)</strong> is a premier healthcare
+                                <strong>Impetus Healthcare Skills Private Limited</strong> is a premier healthcare
                                 education and professional training organization dedicated to advancing clinical excellence
                                 through simulation-based learning and online education. The company specializes in
                                 delivering innovative healthcare training programs designed to enhance the knowledge,
