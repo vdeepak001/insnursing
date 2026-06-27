@@ -58,78 +58,61 @@
             </div>
         </section>
 
-        {{-- Features & Importance --}}
+        {{-- Features of Learning Resources --}}
         <section class="bg-slate-50 py-16 sm:py-24">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid gap-10 lg:grid-cols-2 lg:gap-12">
-                    {{-- Features Column --}}
-                    <div class="rounded-2xl border border-impetus-teal/15 bg-white p-6 shadow-md sm:p-8">
-                        <div class="mb-6 flex items-start gap-4">
-                            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
-                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                <div class="mx-auto mb-10 max-w-3xl text-center">
+                    <h2 class="text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Features of Learning Resources</h2>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                        Engineered to provide a rich educational ecosystem, our resources leverage evidence-based standards to deliver optimal clinical learning.
+                    </p>
+                </div>
+
+                <div class="overflow-hidden rounded-2xl">
+                    <img src="{{ asset(rawurlencode('Features-leanring fesources.png')) }}"
+                        alt="Features of Learning Resources"
+                        class="mx-auto h-auto w-full object-contain">
+                </div>
+            </div>
+        </section>
+
+        {{-- Importance of Learning Resources --}}
+        <section class="bg-white py-16 sm:py-24">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto mb-10 max-w-3xl text-center">
+                    <h2 class="text-2xl font-extrabold text-impetus-orange sm:text-3xl font-outfit">Importance of Learning Resources in Online CNE</h2>
+                    <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+                        Learning resources play a crucial role in enhancing the effectiveness of online CNE programmes by making education more engaging, interactive, and learner-friendly. They help healthcare professionals stay up to date with current clinical practices, improve competency, and enhance the quality of patient care.
+                    </p>
+                </div>
+
+                <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                    @foreach ([
+                        ['title' => 'Stay Current', 'text' => 'Helps nurses remain updated with current clinical practices and healthcare advancements.'],
+                        ['title' => 'Enhance Knowledge & Skills', 'text' => 'Strengthens clinical knowledge and practical competency through structured digital content.'],
+                        ['title' => 'Support Clinical Decision-Making', 'text' => 'Provides reference materials that reinforce evidence-based nursing practice.'],
+                        ['title' => 'Improve Patient Outcomes', 'text' => 'Enhances the quality of patient care through better-informed healthcare professionals.'],
+                        ['title' => 'Promote Lifelong Learning', 'text' => 'Encourages continuous professional development in a flexible digital environment.'],
+                        ['title' => 'Strengthen Professional Competency', 'text' => 'Builds confidence and competence across diverse nursing specialties and care settings.'],
+                    ] as $importance)
+                        <li class="flex items-start gap-3 rounded-2xl border border-impetus-orange/15 bg-white p-5 shadow-sm">
+                            <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                 </svg>
-                            </div>
+                            </span>
                             <div>
-                                <h2 class="text-2xl font-extrabold text-impetus-teal font-outfit">Features of Learning Resources</h2>
-                                <p class="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">
-                                    Engineered to provide a rich educational ecosystem, our resources leverage evidence-based standards to deliver optimal clinical learning.
-                                </p>
+                                <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $importance['title'] }}</h3>
+                                <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify">{{ $importance['text'] }}</p>
                             </div>
-                        </div>
+                        </li>
+                    @endforeach
+                </ul>
 
-                        <div class="overflow-hidden rounded-xl">
-                            <img src="{{ asset(rawurlencode('Importance _of_Learning_resource_1.png')) }}"
-                                alt="Features of Learning Resources"
-                                class="h-auto w-full object-cover">
-                        </div>
-                    </div>
-
-                    {{-- Importance Column --}}
-                    <div class="rounded-2xl border border-impetus-orange/20 bg-white p-6 shadow-md sm:p-8">
-                        <div class="mb-6 flex items-start gap-4">
-                            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">
-                                <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h2 class="text-2xl font-extrabold text-impetus-orange font-outfit">Importance of Learning Resources in Online CNE</h2>
-                                <p class="mt-2 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                                    Learning resources play a crucial role in enhancing the effectiveness of online CNE programmes by making education more engaging, interactive, and learner-friendly. They help healthcare professionals stay up to date with current clinical practices, improve competency, and enhance the quality of patient care.
-                                </p>
-                            </div>
-                        </div>
-
-                        <ul class="mb-6 space-y-5">
-                            @foreach ([
-                                ['title' => 'Stay Current', 'text' => 'Helps nurses remain updated with current clinical practices and healthcare advancements.'],
-                                ['title' => 'Enhance Knowledge & Skills', 'text' => 'Strengthens clinical knowledge and practical competency through structured digital content.'],
-                                ['title' => 'Support Clinical Decision-Making', 'text' => 'Provides reference materials that reinforce evidence-based nursing practice.'],
-                                ['title' => 'Improve Patient Outcomes', 'text' => 'Enhances the quality of patient care through better-informed healthcare professionals.'],
-                                ['title' => 'Promote Lifelong Learning', 'text' => 'Encourages continuous professional development in a flexible digital environment.'],
-                                ['title' => 'Strengthen Professional Competency', 'text' => 'Builds confidence and competence across diverse nursing specialties and care settings.'],
-                            ] as $importance)
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
-                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                        </svg>
-                                    </span>
-                                    <div>
-                                        <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $importance['title'] }}</h3>
-                                        <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify">{{ $importance['text'] }}</p>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
-
-                        <div class="rounded-xl bg-impetus-teal p-5">
-                            <p class="text-sm italic leading-relaxed text-white/90 text-justify sm:text-base font-outfit">
-                                “Overall, well-designed learning resources in online CNE ensure continuous professional development and strengthen the knowledge base of the nursing workforce within a flexible digital learning environment.”
-                            </p>
-                        </div>
-                    </div>
+                <div class="mt-8 rounded-xl bg-impetus-teal p-6 sm:p-8">
+                    <p class="text-sm italic leading-relaxed text-white/90 text-justify sm:text-base font-outfit">
+                        “Overall, well-designed learning resources in online CNE ensure continuous professional development and strengthen the knowledge base of the nursing workforce within a flexible digital learning environment.”
+                    </p>
                 </div>
             </div>
         </section>
