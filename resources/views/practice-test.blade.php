@@ -3,7 +3,7 @@
 @section('title', isset($course) ? 'Practice Test' : 'Practice Tests - IHS')
 
 @php
-    $heroImage = asset('images/design/WhatsApp Image 2026-06-11 at 17.26.40.jpeg');
+    $heroImage = asset('Practice_test_banner.png');
 @endphp
 
 @section('content')
@@ -15,13 +15,14 @@
                     <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                         <div>
                             <p class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-500 font-outfit">Practice Tests</p>
-                            <h1 class="mb-6 text-3xl font-extrabold leading-tight text-impetus-teal sm:text-4xl lg:text-[2.75rem] font-outfit">
-                                Practice Today. Excel Tomorrow.
+                            <h1 class="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl lg:text-[2.75rem] font-outfit">
+                                Practice Today.<br>
+                                <span class="text-impetus-teal">Excel Tomorrow.</span>
                             </h1>
 
                             <div class="space-y-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
                                 <p>
-                                    <strong>Practice Test</strong> in Online Continuing Nursing Education (CNE) are structured
+                                    <strong>Practice Test</strong> in Online Continuing Nursing Education are structured
                                     assessment tools designed to evaluate and reinforce the knowledge and clinical understanding
                                     of nurses and healthcare professionals during and after training modules. These Test are an
                                     essential part of the learning process, enabling learners to assess their progress, identify
@@ -67,27 +68,38 @@
             <section class="py-16 sm:py-20">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-10 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Why Practice Tests Matter</h2>
-                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        @foreach ([
-                            ['title' => 'Assess Knowledge', 'text' => 'To assess understanding of course content and measure learning progress effectively.', 'theme' => 'teal'],
-                            ['title' => 'Reinforce Learning', 'text' => 'To reinforce key clinical concepts and guidelines through structured repetition.', 'theme' => 'orange'],
-                            ['title' => 'Identify Learning Gaps', 'text' => 'To identify areas requiring further study before final certification examinations.', 'theme' => 'teal'],
-                            ['title' => 'Prepare for Certification', 'text' => 'To prepare learners for final assessments and professional certification examinations.', 'theme' => 'orange'],
-                        ] as $item)
-                            <div class="rounded-2xl border border-impetus-teal/10 bg-white p-6 text-center shadow-md">
-                                <div @class([
-                                    'mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-md',
-                                    'bg-impetus-teal' => $item['theme'] === 'teal',
-                                    'bg-impetus-orange' => $item['theme'] === 'orange',
-                                ])>
-                                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
+                    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+                        {{-- Image --}}
+                        <div class="overflow-hidden rounded-2xl">
+                            <img src="{{ asset('why_practice_test_matters.png') }}" alt="Why Practice Tests Matter"
+                                class="h-auto w-full object-contain">
+                        </div>
+
+                        {{-- Content --}}
+                        <div class="space-y-5">
+                            @foreach ([
+                                ['title' => 'Assess Knowledge', 'text' => 'To assess understanding of course content and measure learning progress effectively.', 'theme' => 'teal'],
+                                ['title' => 'Reinforce Learning', 'text' => 'To reinforce key clinical concepts and guidelines through structured repetition.', 'theme' => 'orange'],
+                                ['title' => 'Identify Learning Gaps', 'text' => 'To identify areas requiring further study before final certification examinations.', 'theme' => 'teal'],
+                                ['title' => 'Prepare for Certification', 'text' => 'To prepare learners for final assessments and professional certification examinations.', 'theme' => 'orange'],
+                            ] as $item)
+                                <div class="flex items-start gap-4 rounded-2xl border border-impetus-teal/10 bg-white p-5 shadow-md">
+                                    <div @class([
+                                        'flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow-md',
+                                        'bg-impetus-teal' => $item['theme'] === 'teal',
+                                        'bg-impetus-orange' => $item['theme'] === 'orange',
+                                    ])>
+                                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-base font-bold text-slate-800 font-outfit">{{ $item['title'] }}</h3>
+                                        <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify">{{ $item['text'] }}</p>
+                                    </div>
                                 </div>
-                                <h3 class="text-base font-bold text-slate-800 font-outfit">{{ $item['title'] }}</h3>
-                                <p class="mt-2 text-sm leading-relaxed text-slate-600 text-justify">{{ $item['text'] }}</p>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </section>
