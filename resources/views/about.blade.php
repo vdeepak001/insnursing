@@ -48,7 +48,8 @@
             'subtitle' => 'Online Assessment Platform for Nursing Students',
             'tagline' => 'Empowering Nursing Students with Knowledge, Confidence, and Clinical Excellence',
             'paragraphs' => [
-                'Nursing Online Test is a curriculum-based assessment platform designed to help nursing students evaluate their knowledge and improve examination readiness. Aligned with Indian Nursing Council (INC) and State Health University curricula, it offers a variety of question formats, instant feedback, and performance analytics to support continuous learning, strengthen nursing concepts, and enhance academic success.',
+                'Nursing Online Test is a comprehensive, curriculum-based assessment platform designed to help nursing students evaluate their knowledge, strengthen core concepts, and improve examination readiness. Developed in alignment with the Indian Nursing Council (INC) and State Health University curricula, the platform features multiple question formats, including multiple-choice, case-based, image-based, and competency-based assessments.',
+                'Instant feedback, detailed score reports, and performance analytics help learners identify strengths and areas for improvement. With flexible, self-paced access, Nursing Online Test promotes continuous learning, reinforces theoretical knowledge, enhances clinical reasoning, and prepares students for university examinations, licensure assessments, and professional nursing practice with confidence.',
             ],
             'link' => 'https://nursingonlinetest.com/nursing-students',
             'link_label' => 'Explore Nursing Online Test',
@@ -60,7 +61,8 @@
             'title' => 'Professional Knowledge Assessment for Nurses',
             'tagline' => 'Empowers nurses to strengthen their knowledge, build confidence, and achieve success in competitive examinations',
             'paragraphs' => [
-                'Impetus Professional Knowledge Assessment is an online platform that helps nurses evaluate their professional knowledge and prepare for competitive recruitment examinations. Featuring structured assessments, mock tests, and performance analytics, it supports exam readiness, identifies knowledge gaps, and enhances confidence for success in nursing recruitment exams.',
+                'Impetus Professional Knowledge Assessment is a comprehensive online platform designed to help nurses evaluate their professional knowledge and prepare effectively for competitive recruitment examinations. The platform offers structured assessments, topic-wise practice tests, full-length mock examinations, and detailed performance analytics to measure progress and identify knowledge gaps.',
+                'Covering core nursing subjects and aligned with current examination patterns, it strengthens clinical knowledge, critical thinking, and decision-making skills. Instant feedback and flexible, self-paced learning enable continuous improvement and focused preparation. The platform enhances confidence, examination readiness, and professional competence, supporting success in government, private, and healthcare recruitment examinations and career advancement opportunities.',
             ],
             'link' => 'https://nursingonlinetest.com/nurse',
             'link_label' => 'Explore Professional Assessment',
@@ -72,7 +74,8 @@
             'title' => 'Capacity Building',
             'tagline' => 'Building Competence, Strengthening Communities, and Advancing Public Health Excellence',
             'paragraphs' => [
-                'Capacity Building in Public Health Nursing is a professional development program designed to strengthen nurses\' competencies in health promotion, disease prevention, community health, and public health leadership. Through evidence-based training and competency-focused learning, it equips nurses to address public health challenges, implement health programs effectively, and improve community health outcomes.',
+                'Capacity Building in Public Health Nursing is a comprehensive professional development program designed to strengthen nurses\' knowledge, skills, and competencies in health promotion, disease prevention, community health, epidemiology, and public health leadership. Through evidence-based training, competency-focused learning, and practical applications, the program prepares healthcare professionals to plan, implement, monitor, and evaluate public health interventions effectively.',
+                'It enhances leadership, communication, and community engagement skills while promoting evidence-informed decision-making and quality healthcare delivery. By supporting continuous professional development, the program empowers nurses to address emerging public health challenges, improve population health, and contribute to stronger, more resilient healthcare systems.',
             ],
             'link' => null,
             'link_label' => null,
@@ -84,7 +87,8 @@
             'title' => 'Research & Development',
             'tagline' => 'Transforming Evidence into Impact',
             'paragraphs' => [
-                'Research at Impetus Healthcare Skills focuses on generating evidence-based solutions to improve healthcare education, public health practice, and community well-being. Through multidisciplinary and outcome-driven research, we address key health priorities, support innovation, and contribute to strengthening healthcare systems and population health outcomes. By bridging the gap between research and practice, we support evidence-based decision-making, strengthen healthcare services, and drive innovation in healthcare education and public health.',
+                'Research at Impetus Healthcare Skills focuses on generating evidence-based knowledge to advance healthcare education, clinical practice, public health, and community well-being. Our multidisciplinary, outcome-oriented research addresses emerging healthcare challenges, evaluates innovative teaching methods, and develops practical solutions that improve healthcare delivery. By promoting collaboration among educators, healthcare professionals, researchers, and institutions, we encourage innovation and the translation of research into practice.',
+                'Our research initiatives strengthen evidence-based decision-making, enhance workforce competencies, improve patient safety and healthcare quality, and contribute to better population health outcomes. Through continuous research and innovation, IHS supports excellence in healthcare education and sustainable healthcare development.',
             ],
             'link' => null,
             'link_label' => null,
