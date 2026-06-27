@@ -46,35 +46,19 @@
                             </a>
                         </div>
 
-                        <div class="relative mx-auto w-full max-w-lg">
-                            <div class="absolute -right-2 top-8 z-20 rounded-xl border border-impetus-teal/15 bg-white p-3 shadow-lg">
-                                <p class="text-[10px] font-bold uppercase tracking-wider text-impetus-teal">Time Left</p>
-                                <p class="text-lg font-extrabold text-slate-800 font-outfit">00:45:30</p>
-                            </div>
-                            <div class="absolute -left-2 bottom-20 z-20 rounded-xl border border-impetus-teal/15 bg-white p-3 shadow-lg">
-                                <p class="text-[10px] font-bold text-impetus-teal">Progress 15 / 50</p>
-                                <div class="mt-2 h-1.5 w-24 overflow-hidden rounded-full bg-impetus-teal-muted">
-                                    <div class="h-full w-[30%] rounded-full bg-impetus-teal"></div>
-                                </div>
-                            </div>
-                            <div class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-impetus-teal/20"></div>
+                        <div class="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
+                            <div class="absolute h-72 w-72 rounded-full border-2 border-impetus-teal/20 sm:h-80 sm:w-80 lg:h-[22rem] lg:w-[22rem]"></div>
                             <img src="{{ $heroImage }}" alt="CNE Practice Test"
-                                class="relative z-10 mx-auto h-auto w-full max-w-md rounded-2xl object-cover shadow-xl">
+                                class="relative z-10 h-auto w-full max-w-sm rounded-2xl object-cover shadow-xl lg:max-w-md">
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="py-16 sm:py-20">
+            <section class="py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-10 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Why Practice Tests Matter</h2>
-                    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-                        {{-- Image --}}
-                        <div class="overflow-hidden rounded-2xl">
-                            <img src="{{ asset('why_practice_test_matters.png') }}" alt="Why Practice Tests Matter"
-                                class="h-auto w-full object-contain">
-                        </div>
-
+                    <div class="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-12">
                         {{-- Content --}}
                         <div class="space-y-5">
                             @foreach ([
@@ -100,11 +84,28 @@
                                 </div>
                             @endforeach
                         </div>
+
+                        {{-- Image --}}
+                        <div class="relative min-h-[20rem] overflow-hidden rounded-2xl shadow-lg">
+                            <img src="{{ asset('why_practice_test_matters.png') }}" alt="Why Practice Tests Matter"
+                                class="absolute inset-0 h-full w-full object-cover">
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="border-y border-impetus-teal/10 bg-slate-50 py-16 sm:py-20">
+            {{-- Purpose of Practice Tests --}}
+            <section class="border-y border-impetus-teal/10 bg-slate-50 py-16 sm:py-12">
+                <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                    <div class="overflow-hidden rounded-2xl">
+                        <img src="{{ asset(rawurlencode('Purpose of aPractice test_1.png')) }}" alt="Purpose of Practice Tests"
+                            class="mx-auto h-auto w-full object-contain">
+                    </div>
+                </div>
+            </section>
+
+            {{-- Purpose of Practice Tests (previous grid layout, hidden for now)
+            <section class="border-y border-impetus-teal/10 bg-slate-50 py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-4 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Purpose of Practice Tests</h2>
                     <p class="mx-auto mb-10 max-w-3xl text-center text-sm text-slate-600 sm:text-base">
@@ -130,39 +131,49 @@
                     </div>
                 </div>
             </section>
+            --}}
 
-            <section class="py-16 sm:py-20">
+            <section class="py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-4 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Benefits of Practice Tests</h2>
                     <p class="mx-auto mb-10 max-w-3xl text-center text-sm text-slate-600 sm:text-base">
                         Designed to accelerate your learning journey and build confidence, practicing regularly delivers key advantages:
                     </p>
-                    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        @foreach ([
-                            ['title' => 'Enhances Retention', 'text' => 'Enhances retention of clinical knowledge.'],
-                            ['title' => 'Builds Clinical Confidence', 'text' => 'Builds confidence in handling real-life clinical situations.'],
-                            ['title' => 'Improves Decision Pacing', 'text' => 'Improves accuracy and speed in clinical decision-making.'],
-                            ['title' => 'Supports Self-Evaluation', 'text' => 'Supports continuous self-evaluation and improvement.'],
-                            ['title' => 'Exam Readiness', 'text' => 'Strengthens readiness for professional certification exams.'],
-                            ['title' => 'Performance Tracking', 'text' => 'Monitor progress and identify areas to improve through attempt history.'],
-                        ] as $benefit)
-                            <div class="flex items-start gap-3 rounded-xl border border-impetus-orange/15 bg-impetus-lightOrange/50 p-5">
-                                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white shadow-sm">
-                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                    </svg>
-                                </span>
-                                <div>
-                                    <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $benefit['title'] }}</h3>
-                                    <p class="mt-1 text-sm text-slate-600 text-justify">{{ $benefit['text'] }}</p>
+                    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+                        {{-- Image --}}
+                        <div class="overflow-hidden rounded-2xl">
+                            <img src="{{ asset(rawurlencode('benefits_practice test.png')) }}" alt="Benefits of Practice Tests"
+                                class="h-auto w-full object-contain">
+                        </div>
+
+                        {{-- Content --}}
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            @foreach ([
+                                ['title' => 'Enhances Retention', 'text' => 'Enhances retention of clinical knowledge.'],
+                                ['title' => 'Builds Clinical Confidence', 'text' => 'Builds confidence in handling real-life clinical situations.'],
+                                ['title' => 'Improves Decision Pacing', 'text' => 'Improves accuracy and speed in clinical decision-making.'],
+                                ['title' => 'Supports Self-Evaluation', 'text' => 'Supports continuous self-evaluation and improvement.'],
+                                ['title' => 'Exam Readiness', 'text' => 'Strengthens readiness for professional certification exams.'],
+                                ['title' => 'Performance Tracking', 'text' => 'Monitor progress and identify areas to improve through attempt history.'],
+                            ] as $benefit)
+                                <div class="flex items-start gap-3 rounded-xl border border-impetus-orange/15 bg-impetus-lightOrange/50 p-5">
+                                    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white shadow-sm">
+                                        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $benefit['title'] }}</h3>
+                                        <p class="mt-1 text-sm text-slate-600 text-justify">{{ $benefit['text'] }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-20">
+            <section class="border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-4 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Features of Online CNE Practice Tests</h2>
                     <p class="mx-auto mb-10 max-w-3xl text-center text-sm text-slate-600 sm:text-base">
@@ -191,7 +202,7 @@
                 </div>
             </section>
 
-            <section class="py-16 sm:py-20">
+            <section class="py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <h2 class="mb-10 text-center text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">How Practice Tests Work</h2>
                     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -214,7 +225,7 @@
             </section>
 
             {{-- CTA Banner --}}
-            <section class="bg-impetus-orange py-8 sm:py-10">
+            <section class="bg-white py-16 sm:py-12">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="flex flex-col items-center gap-5 lg:flex-row lg:text-left text-center">
                         <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white/20 text-white">
@@ -224,7 +235,7 @@
                         </div>
                         <div class="min-w-0 flex-1">
                             <p class="text-base leading-relaxed !text-white lg:text-left text-justify">
-                                Practice Test in Online Continuing Nursing Education (CNE) play a vital role in ensuring effective learning by transforming theoretical knowledge into practical understanding. They help nursing professionals stay competent, confident, and prepared to deliver safe and high-quality patient care in clinical settings.
+                                Practice Test in Online Continuing Nursing Education play a vital role in ensuring effective learning by transforming theoretical knowledge into practical understanding. They help nursing professionals stay competent, confident, and prepared to deliver safe and high-quality patient care in clinical settings.
                             </p>
                         </div>
                         <div class="mt-4 shrink-0 lg:mt-0">
