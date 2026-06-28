@@ -79,7 +79,7 @@
             ],
             'link' => null,
             'link_label' => null,
-            'image' => $aboutImage('About us_Focus_publichealth.jpeg'),
+            'image' => asset('focus_publichealth.jpeg'),
         ],
         [
             'id' => 'research-development',
@@ -92,7 +92,7 @@
             ],
             'link' => null,
             'link_label' => null,
-            'image' => $aboutImage('About us_Research and development.jpeg'),
+            'image' => asset('research_development.jpeg'),
         ],
     ];
 @endphp
@@ -139,7 +139,7 @@
                     {{-- Hero Visual --}}
                     <div class="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
                         <img src="{{ $heroImage }}" alt="IHS Nursing healthcare professional"
-                            class="relative z-10 h-auto w-full rounded-3xl object-cover shadow-xl ring-1 ring-impetus-teal/10">
+                            class="relative z-10 h-auto w-full rounded-3xl object-cover shadow-xl ring-1 ring-impetus-teal/10" style="height: 750px;">
                     </div>
                 </div>
             </div>
