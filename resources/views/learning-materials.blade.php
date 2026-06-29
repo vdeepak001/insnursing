@@ -49,10 +49,10 @@
                         </div>
                     </div>
 
-                    <div class="relative flex w-full self-stretch">
+                    <div class="relative w-full self-stretch min-h-[22rem] sm:min-h-[26rem] lg:min-h-0">
                         <div class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-impetus-teal/20 sm:h-80 sm:w-80 lg:h-[22rem] lg:w-[22rem]"></div>
                         <img src="{{ $heroImage }}" alt="CNE Learning Resources"
-                            class="relative z-10 h-full w-full min-h-[22rem] rounded-2xl object-cover object-center shadow-2xl ring-1 ring-white/60 sm:min-h-[26rem] lg:min-h-[36rem]">
+                            class="relative z-10 h-full w-full rounded-2xl object-cover object-center shadow-2xl ring-1 ring-white/60 lg:absolute lg:inset-0">
                     </div>
                 </div>
             </div>

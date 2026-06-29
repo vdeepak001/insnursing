@@ -19,8 +19,8 @@
                                 Practice Tests
                             </p>
                             <h1 class="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl lg:text-[2.75rem] font-outfit">
-                                Practice Today.<br>
-                                <span class="text-impetus-teal">Excel Tomorrow.</span>
+                                Practice Today<br>
+                                <span class="text-impetus-teal">Excel Tomorrow</span>
                             </h1>
 
                             <div class="space-y-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
