@@ -17,8 +17,9 @@
                             <span class="h-px w-8 bg-impetus-teal"></span>
                             Online Test
                         </p>
-                        <h1 class="mb-4 text-3xl font-extrabold leading-tight text-impetus-teal sm:text-4xl lg:text-[2.75rem] font-outfit">
-                            Smart Testing. Stronger Nursing Career.
+                        <h1 class="mb-4 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl lg:text-[2.75rem] font-outfit">
+                            Smart Testing<br>
+                            <span class="text-impetus-teal">Stronger Nursing Career</span>
                         </h1>
                         <p class="mb-6 text-sm leading-relaxed text-slate-600 sm:text-base">
                             Our Online Test Platform is designed to help nursing professionals assess their knowledge, strengthen skills, and achieve certification with confidence.
