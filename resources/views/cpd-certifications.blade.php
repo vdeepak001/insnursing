@@ -25,10 +25,7 @@
                         <h1
                             class="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl lg:text-[2.75rem] font-outfit">
                             Certify Your Skills
-                            <span class="relative inline-block text-impetus-teal">
-                                Elevate Your Career
-                                <span class="absolute -bottom-1 left-0 h-1.5 w-full rounded-full bg-impetus-orange/40"></span>
-                            </span>
+                            <span class="text-impetus-teal">Elevate Your Career</span>
                         </h1>
 
                         <div class="space-y-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
