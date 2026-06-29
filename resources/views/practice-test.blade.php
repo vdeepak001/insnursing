@@ -10,9 +10,9 @@
     <main class="overflow-hidden bg-white font-sans antialiased text-slate-800">
         @unless (isset($course))
             {{-- Landing Page --}}
-            <section class="relative bg-impetus-teal-muted py-16 sm:py-24">
+            <section class="relative bg-impetus-teal-muted py-16 sm:py-16">
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+                    <div class="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16">
                         <div>
                             <p class="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-impetus-teal font-outfit">
                                 <span class="h-px w-8 bg-impetus-teal"></span>
@@ -49,10 +49,10 @@
                             </a>
                         </div>
 
-                        <div class="relative mx-auto flex w-full max-w-md items-center justify-center lg:max-w-none">
-                            <div class="absolute h-56 w-56 rounded-full border-2 border-impetus-teal/20 sm:h-64 sm:w-64 lg:h-72 lg:w-72"></div>
+                        <div class="relative flex w-full self-stretch">
+                            <div class="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-impetus-teal/20 sm:h-64 sm:w-64 lg:h-72 lg:w-72"></div>
                             <img src="{{ $heroImage }}" alt="CNE Practice Test"
-                                class="relative z-10 h-auto w-full max-w-md rounded-2xl object-cover shadow-xl lg:max-w-xl">
+                                class="relative z-10 h-full w-full min-h-[22rem] rounded-2xl object-cover object-center shadow-2xl ring-1 ring-white/60 sm:min-h-[26rem] lg:min-h-[36rem]">
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@
         {{-- Hero Section --}}
         <section class="relative bg-impetus-teal-muted py-16 sm:py-24">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+                <div class="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16">
                     <div>
                         <p class="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-impetus-teal font-outfit">
                             <span class="h-px w-8 bg-impetus-teal"></span>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
 
-                    <div class="relative mx-auto w-full max-w-lg">
+                    <div class="relative flex w-full self-stretch">
                         <div class="absolute -right-2 top-6 z-20 rounded-xl border border-impetus-teal/15 bg-white p-3 shadow-lg">
                             <p class="text-[10px] font-bold uppercase tracking-wider text-impetus-teal">Time Left</p>
                             <p class="text-lg font-extrabold text-slate-800 font-outfit">00:45:30</p>
@@ -102,7 +102,7 @@
 
                         <div class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-impetus-teal/20"></div>
                         <img src="{{ $heroImage }}" alt="Online CNE Test"
-                            class="relative z-10 mx-auto h-auto w-full max-w-md rounded-2xl object-cover shadow-xl">
+                            class="relative z-10 h-full w-full min-h-[22rem] rounded-2xl object-cover object-center shadow-2xl ring-1 ring-white/60 sm:min-h-[26rem] lg:min-h-[36rem]">
                     </div>
                 </div>
             </div>
