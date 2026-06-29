@@ -74,33 +74,6 @@
                     </div>
 
                     <div class="relative flex w-full self-stretch">
-                        <div class="absolute -right-2 top-6 z-20 rounded-xl border border-impetus-teal/15 bg-white p-3 shadow-lg">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-impetus-teal">Time Left</p>
-                            <p class="text-lg font-extrabold text-slate-800 font-outfit">00:45:30</p>
-                        </div>
-                        <div class="absolute -left-2 top-1/3 z-20 rounded-xl border border-impetus-teal/15 bg-white p-3 shadow-lg">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-impetus-teal">Progress</p>
-                            <p class="text-sm font-bold text-slate-700">15 / 50 Questions</p>
-                            <div class="mt-2 h-1.5 w-28 overflow-hidden rounded-full bg-impetus-teal-muted">
-                                <div class="h-full w-[30%] rounded-full bg-impetus-teal"></div>
-                            </div>
-                        </div>
-                        <div class="absolute -right-4 bottom-8 z-20 w-56 rounded-xl border border-impetus-teal/15 bg-white p-4 shadow-xl">
-                            <p class="text-xs font-bold text-impetus-teal">Question 16 / 50</p>
-                            <p class="mt-2 text-xs leading-snug text-slate-600">Which of the following is the primary purpose of hand hygiene?</p>
-                            <div class="mt-3 space-y-1.5">
-                                @foreach (['A. To clean hands', 'B. To remove dirt', 'C. To prevent infection', 'D. To dry hands'] as $option)
-                                    <p @class([
-                                        'rounded-lg border px-2 py-1 text-[10px]',
-                                        'border-impetus-teal bg-impetus-teal-muted font-bold text-impetus-teal' => str_contains($option, 'C.'),
-                                        'border-slate-200 text-slate-600' => ! str_contains($option, 'C.'),
-                                    ])>{{ $option }}</p>
-                                @endforeach
-                            </div>
-                            <span class="mt-3 inline-flex rounded-full bg-impetus-orange px-3 py-1 text-[10px] font-bold text-white">Next Question →</span>
-                        </div>
-
-                        <div class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-impetus-teal/20"></div>
                         <img src="{{ $heroImage }}" alt="Online CNE Test"
                             class="relative z-10 h-full w-full min-h-[22rem] rounded-2xl object-cover object-center shadow-2xl ring-1 ring-white/60 sm:min-h-[26rem] lg:min-h-[36rem]">
                     </div>
@@ -153,49 +126,9 @@
                         </div>
                     </div>
 
-                    {{-- Benefits: content left, image right --}}
-                    <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-                        <div class="order-1">
-                            <div class="mb-4 flex items-center gap-3">
-                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-impetus-orange text-white shadow-md">
-                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                                    </svg>
-                                </div>
-                                <h2 class="text-2xl font-extrabold text-impetus-orange font-outfit">Benefits of Online CNE Test</h2>
-                            </div>
-                            <p class="mb-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
-                                Designed to accelerate your learning journey and build confidence, practicing regularly delivers
-                                key advantages:
-                            </p>
-                            <ul class="grid gap-4 sm:grid-cols-2">
-                                @foreach ([
-                                    ['title' => 'Standardized Evaluation', 'text' => 'Provides objective and standardized assessment of learning.'],
-                                    ['title' => 'Enhanced Accountability', 'text' => 'Enhances accountability in professional education.'],
-                                    ['title' => 'Resource Efficiency', 'text' => 'Saves time and resources compared to traditional examinations.'],
-                                    ['title' => 'Universal Access', 'text' => 'Allows participation from any location.'],
-                                    ['title' => 'Continuous Progress Tracking', 'text' => 'Allows continuous monitoring of learning progress.'],
-                                    ['title' => 'Self-Discipline Habits', 'text' => 'Encourages self-discipline and focused study habits.'],
-                                ] as $benefit)
-                                    <li class="flex items-start gap-3">
-                                        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
-                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                            </svg>
-                                        </span>
-                                        <div>
-                                            <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $benefit['title'] }}</h3>
-                                            <p class="mt-0.5 text-sm text-slate-600 text-justify sm:text-base">{{ $benefit['text'] }}</p>
-                                        </div>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="order-2">
-                            <img src="{{ asset('images/online-test/Benefits of online_test.png') }}" alt="Benefits of Online CNE Test"
-                                class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-orange/15" loading="lazy">
-                        </div>
-                    </div>
+                    {{-- Benefits: image only --}}
+                    <img src="{{ asset('images/online-test/Benefits of online_test.png') }}" alt="Benefits of Online CNE Test"
+                        class="mx-auto w-full rounded-2xl object-contain shadow-xl ring-1 ring-impetus-orange/15" loading="lazy">
 
                     {{-- Features: image left, content right --}}
                     <div class="grid items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-12">
@@ -227,7 +160,11 @@
                                     ['title' => 'Holistic Concept Coverage', 'text' => 'Comprehensive assessment mapped thoroughly to encompass both critical theory and practical clinical decisions.'],
                                 ] as $feature)
                                     <li class="flex items-start gap-3">
-                                        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-teal text-white">
+                                        <span @class([
+                                            'mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-white',
+                                            'bg-impetus-teal' => $loop->even,
+                                            'bg-impetus-orange' => $loop->odd,
+                                        ])>
                                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                             </svg>
@@ -261,15 +198,10 @@
                     class="mx-auto w-full rounded-2xl object-contain shadow-lg ring-1 ring-impetus-teal/10" loading="lazy">
 
                 <div class="mt-12 rounded-2xl bg-impetus-teal p-6 text-white shadow-lg sm:p-8">
-                    <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-impetus-teal shadow-md">
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18V6.125c0-.621.504-1.125 1.125-1.125H9.75M9 5.25h6.75m-6.75 0a.75.75 0 00-.75.75v1.125c0 .414.336.75.75.75h6.75a.75.75 0 00.75-.75V6c0-.414-.336-.75-.75-.75M9 5.25V3.75A1.5 1.5 0 007.5 2.25h9A1.5 1.5 0 0018 3.75V5.25" />
-                            </svg>
-                        </div>
+                    <div class="flex flex-col items-stretch gap-4">
                         <div>
                             <h3 class="text-center text-lg font-extrabold text-impetus-orange font-outfit sm:text-xl">Automated Feedback &amp; Detailed Scoring Rationale</h3>
-                            <p class="mt-2 text-sm leading-relaxed text-white/90 text-justify sm:text-base">
+                            <p class="mt-2 text-sm leading-relaxed text-white/90 text-center sm:text-base">
                                 Immediate scoring and grading will be provided upon completion of the test, allowing
                                 test-takers to identify areas of strength and weakness. This feedback is highly valuable for
                                 self-evaluation, continuous improvement, and target CNE credit calculations.
