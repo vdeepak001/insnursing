@@ -39,7 +39,7 @@
             ],
             'link' => 'https://www.nursingcms.com',
             'link_label' => 'Visit Nursing CMS',
-            'image' => asset('Smart_CMS.png'),
+            'image' => asset('about/CMS_1C.png'),
         ],
         [
             'id' => 'nursing-online-test',
@@ -53,7 +53,7 @@
             ],
             'link' => 'https://nursingonlinetest.com/nursing-students',
             'link_label' => 'Explore Nursing Online Test',
-            'image' => $aboutImage('About us_Focus_Nursing online test.jpeg'),
+            'image' => asset('about/Online_test.png'),
         ],
         [
             'id' => 'professional-knowledge-assessment',
@@ -66,7 +66,7 @@
             ],
             'link' => 'https://nursingonlinetest.com/nurse',
             'link_label' => 'Explore Professional Assessment',
-            'image' => $aboutImage('Home_page_1.png'),
+            'image' => asset('about/Professional_nurse.png'),
         ],
         [
             'id' => 'capacity-building',
