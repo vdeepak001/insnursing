@@ -14,7 +14,10 @@
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                         <div>
-                            <p class="mb-4 text-sm font-bold uppercase tracking-widest text-slate-500 font-outfit">Practice Tests</p>
+                            <p class="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-impetus-teal font-outfit">
+                                <span class="h-px w-8 bg-impetus-teal"></span>
+                                Practice Tests
+                            </p>
                             <h1 class="mb-6 text-3xl font-extrabold leading-tight text-slate-800 sm:text-4xl lg:text-[2.75rem] font-outfit">
                                 Practice Today.<br>
                                 <span class="text-impetus-teal">Excel Tomorrow.</span>

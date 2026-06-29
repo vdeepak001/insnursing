@@ -15,11 +15,8 @@
                 <div class="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16">
                     <div>
                         <p
-                            class="mb-5 inline-flex items-center gap-2 rounded-full border border-impetus-teal/20 bg-white/70 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-impetus-teal shadow-sm backdrop-blur font-outfit">
-                            <span class="relative flex h-2 w-2">
-                                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-impetus-orange opacity-75"></span>
-                                <span class="relative inline-flex h-2 w-2 rounded-full bg-impetus-orange"></span>
-                            </span>
+                            class="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-impetus-teal font-outfit">
+                            <span class="h-px w-8 bg-impetus-teal"></span>
                             CNE Certification
                         </p>
                         <h1
