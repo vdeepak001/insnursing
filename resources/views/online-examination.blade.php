@@ -3,7 +3,7 @@
 @section('title', 'Online Test - IHS')
 
 @php
-    $heroImage = asset('images/design/WhatsApp Image 2026-06-11 at 17.26.40.jpeg');
+    $heroImage = asset('online-test/Online_test_Banner.png');
 @endphp
 
 @section('content')
@@ -111,10 +111,14 @@
         {{-- Purpose, Benefits & Features --}}
         <section class="border-y border-impetus-teal/10 bg-slate-50 py-16 sm:py-20">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="grid gap-6 lg:grid-cols-3">
-                    {{-- Purpose --}}
-                    <div class="flex flex-col overflow-hidden rounded-2xl border border-impetus-teal/15 bg-impetus-teal-muted shadow-md">
-                        <div class="flex flex-1 flex-col p-6">
+                <div class="space-y-12 lg:space-y-16">
+                    {{-- Purpose: image left, content right --}}
+                    <div class="grid items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-12">
+                        <div class="order-2 lg:order-1">
+                            <img src="{{ asset('online-test/Purpose of _online_Test.png') }}" alt="Purpose of Online CNE Test"
+                                class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-teal/10 lg:h-full" loading="lazy">
+                        </div>
+                        <div class="order-1 lg:order-2">
                             <div class="mb-4 flex items-center gap-3">
                                 <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-impetus-teal text-white shadow-md">
                                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -122,9 +126,9 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75h.008v.008H12V9.75z" />
                                     </svg>
                                 </div>
-                                <h2 class="text-xl font-extrabold text-impetus-teal font-outfit">Purpose of Online CNE Test</h2>
+                                <h2 class="text-2xl font-extrabold text-impetus-teal font-outfit">Purpose of Online CNE Test</h2>
                             </div>
-                            <p class="mb-5 text-sm leading-relaxed text-slate-600 text-justify">
+                            <p class="mb-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
                                 Aligned with international clinical guidelines and continuous education frameworks, these
                                 digital assessments secure critical educational outcomes:
                             </p>
@@ -136,7 +140,7 @@
                                     'To support certification and continuing professional development requirements',
                                     'To maintain standards of nursing education and competency',
                                 ] as $purpose)
-                                    <li class="flex items-start gap-2 text-sm text-slate-600">
+                                    <li class="flex items-start gap-2 text-sm text-slate-600 sm:text-base">
                                         <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-impetus-teal text-white">
                                             <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -146,91 +150,96 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <div class="mt-6 flex justify-center">
-                                <img src="{{ asset('images/factual-knowledge (2).jpeg') }}" alt="Online examination interface"
-                                    class="h-36 w-full rounded-xl object-cover shadow-md" loading="lazy">
-                            </div>
-                        </div>
-                        <div class="bg-impetus-teal px-4 py-3 text-center text-sm font-bold tracking-wider text-white font-outfit">
-                            Assess • Improve • Excel
                         </div>
                     </div>
 
-                    {{-- Benefits --}}
-                    <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange p-6 shadow-md">
-                        <div class="mb-4 flex items-center gap-3">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-impetus-orange text-white shadow-md">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-                                </svg>
+                    {{-- Benefits: content left, image right --}}
+                    <div class="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+                        <div class="order-1">
+                            <div class="mb-4 flex items-center gap-3">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-impetus-orange text-white shadow-md">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                                    </svg>
+                                </div>
+                                <h2 class="text-2xl font-extrabold text-impetus-orange font-outfit">Benefits of Online CNE Test</h2>
                             </div>
-                            <h2 class="text-xl font-extrabold text-impetus-orange font-outfit">Benefits of Online CNE Test</h2>
+                            <p class="mb-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                                Designed to accelerate your learning journey and build confidence, practicing regularly delivers
+                                key advantages:
+                            </p>
+                            <ul class="grid gap-4 sm:grid-cols-2">
+                                @foreach ([
+                                    ['title' => 'Standardized Evaluation', 'text' => 'Provides objective and standardized assessment of learning.'],
+                                    ['title' => 'Enhanced Accountability', 'text' => 'Enhances accountability in professional education.'],
+                                    ['title' => 'Resource Efficiency', 'text' => 'Saves time and resources compared to traditional examinations.'],
+                                    ['title' => 'Universal Access', 'text' => 'Allows participation from any location.'],
+                                    ['title' => 'Continuous Progress Tracking', 'text' => 'Allows continuous monitoring of learning progress.'],
+                                    ['title' => 'Self-Discipline Habits', 'text' => 'Encourages self-discipline and focused study habits.'],
+                                ] as $benefit)
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
+                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
+                                        <div>
+                                            <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $benefit['title'] }}</h3>
+                                            <p class="mt-0.5 text-sm text-slate-600 text-justify sm:text-base">{{ $benefit['text'] }}</p>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
-                        <p class="mb-5 text-sm leading-relaxed text-slate-600 text-justify">
-                            Designed to accelerate your learning journey and build confidence, practicing regularly delivers
-                            key advantages:
-                        </p>
-                        <ul class="space-y-4">
-                            @foreach ([
-                                ['title' => 'Standardized Evaluation', 'text' => 'Provides objective and standardized assessment of learning.'],
-                                ['title' => 'Enhanced Accountability', 'text' => 'Enhances accountability in professional education.'],
-                                ['title' => 'Resource Efficiency', 'text' => 'Saves time and resources compared to traditional examinations.'],
-                                ['title' => 'Universal Access', 'text' => 'Allows participation from any location.'],
-                                ['title' => 'Continuous Progress Tracking', 'text' => 'Allows continuous monitoring of learning progress.'],
-                                ['title' => 'Self-Discipline Habits', 'text' => 'Encourages self-discipline and focused study habits.'],
-                            ] as $benefit)
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white">
-                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                        </svg>
-                                    </span>
-                                    <div>
-                                        <h3 class="text-sm font-bold text-slate-800 font-outfit">{{ $benefit['title'] }}</h3>
-                                        <p class="mt-0.5 text-sm text-slate-600 text-justify">{{ $benefit['text'] }}</p>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+                        <div class="order-2">
+                            <img src="{{ asset('online-test/Benefits of online_test.png') }}" alt="Benefits of Online CNE Test"
+                                class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-orange/15" loading="lazy">
+                        </div>
                     </div>
 
-                    {{-- Features --}}
-                    <div class="rounded-2xl border border-impetus-teal/15 bg-white p-6 shadow-md">
-                        <div class="mb-4 flex items-center gap-3">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-impetus-teal text-white shadow-md">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                            <h2 class="text-xl font-extrabold text-impetus-teal font-outfit">Features of Online CNE Test</h2>
+                    {{-- Features: image left, content right --}}
+                    <div class="grid items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-12">
+                        <div class="relative order-2 lg:order-1">
+                            <img src="{{ asset('online-test/Features of online test.png') }}" alt="Features of Online CNE Test"
+                                class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-teal/10 lg:absolute lg:inset-0 lg:h-full" loading="lazy">
                         </div>
-                        <p class="mb-5 text-sm leading-relaxed text-slate-600 text-justify">
-                            Our examination platform is built with rigorous protocols to deliver fair, robust, and easily
-                            navigable evaluations.
-                        </p>
-                        <ul class="space-y-4">
-                            @foreach ([
-                                ['title' => 'Fully Digital Access', 'text' => 'Fully digital and accessible through online platforms, eliminating physical test center constraints.'],
-                                ['title' => 'Flexible Formats', 'text' => 'Choose between time-bound proctored models or highly flexible, self-paced competency assessments.'],
-                                ['title' => 'Automated Evaluation', 'text' => 'Instant results, interactive performance scorecards, and immediate feedback rationales are delivered automatically.'],
-                                ['title' => 'Integrity-Secured Portal', 'text' => 'Protected login portals and integrated proctoring workflows maintain assessment integrity at all levels.'],
-                                ['title' => 'Randomized Questions', 'text' => 'Each attempt dynamically shuffles the question pool and answers to ensure complete transparency and fairness.'],
-                                ['title' => 'Holistic Concept Coverage', 'text' => 'Comprehensive assessment mapped thoroughly to encompass both critical theory and practical clinical decisions.'],
-                            ] as $feature)
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-teal text-white">
-                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                        </svg>
-                                    </span>
-                                    <div>
-                                        <h3 class="text-sm font-bold text-slate-800 font-outfit">{{ $feature['title'] }}</h3>
-                                        <p class="mt-0.5 text-sm text-slate-600 text-justify">{{ $feature['text'] }}</p>
-                                    </div>
-                                </li>
-                            @endforeach
-                        </ul>
+                        <div class="order-1 lg:order-2">
+                            <div class="mb-4 flex items-center gap-3">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-impetus-teal text-white shadow-md">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <h2 class="text-2xl font-extrabold text-impetus-teal font-outfit">Features of Online CNE Test</h2>
+                            </div>
+                            <p class="mb-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                                Our examination platform is built with rigorous protocols to deliver fair, robust, and easily
+                                navigable evaluations.
+                            </p>
+                            <ul class="grid gap-4 sm:grid-cols-2">
+                                @foreach ([
+                                    ['title' => 'Fully Digital Access', 'text' => 'Fully digital and accessible through online platforms, eliminating physical test center constraints.'],
+                                    ['title' => 'Flexible Formats', 'text' => 'Choose between time-bound proctored models or highly flexible, self-paced competency assessments.'],
+                                    ['title' => 'Automated Evaluation', 'text' => 'Instant results, interactive performance scorecards, and immediate feedback rationales are delivered automatically.'],
+                                    ['title' => 'Integrity-Secured Portal', 'text' => 'Protected login portals and integrated proctoring workflows maintain assessment integrity at all levels.'],
+                                    ['title' => 'Randomized Questions', 'text' => 'Each attempt dynamically shuffles the question pool and answers to ensure complete transparency and fairness.'],
+                                    ['title' => 'Holistic Concept Coverage', 'text' => 'Comprehensive assessment mapped thoroughly to encompass both critical theory and practical clinical decisions.'],
+                                ] as $feature)
+                                    <li class="flex items-start gap-3">
+                                        <span class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-impetus-teal text-white">
+                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                            </svg>
+                                        </span>
+                                        <div>
+                                            <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $feature['title'] }}</h3>
+                                            <p class="mt-0.5 text-sm text-slate-600 text-justify sm:text-base">{{ $feature['text'] }}</p>
+                                        </div>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -248,55 +257,19 @@
                     </p>
                 </div>
 
-                <div class="grid gap-6 lg:grid-cols-3">
-                    @foreach ([
-                        ['tier' => 'Tier 1', 'title' => 'Level 1 - Factual Knowledge', 'theme' => 'orange', 'image' => 'images/factual-knowledge (1).jpeg', 'paragraphs' => [
-                            'Focuses on the assessment of factual knowledge, evaluating the participant\'s foundational understanding of essential nursing concepts.',
-                            'Supports accurate evaluation of basic theoretical knowledge required for safe and effective clinical nursing practice.',
-                        ]],
-                        ['tier' => 'Tier 2', 'title' => 'Level 2 - Functional Knowledge', 'theme' => 'teal', 'image' => 'images/factual-knowledge (2).jpeg', 'paragraphs' => [
-                            'Focuses on the assessment of functional knowledge, measuring how well participants can apply learned concepts in practical nursing situations.',
-                            'Focuses directly on the clinical application of skills and safety protocols in real-world healthcare scenarios.',
-                        ]],
-                        ['tier' => 'Tier 3', 'title' => 'Level 3 - Problem Solving', 'theme' => 'orange', 'image' => 'images/factual-knowledge (3).jpeg', 'paragraphs' => [
-                            'Focuses on the assessment of problem-solving ability, challenging participants to use critical clinical judgement and decision-making in more complex scenarios.',
-                            'Recognizes higher-order reasoning, immediate diagnostics, and advanced clinical application for professional development.',
-                        ]],
-                    ] as $level)
-                        <article class="flex flex-col overflow-hidden rounded-2xl border border-impetus-teal/10 bg-white shadow-md">
-                            <div class="relative h-44 overflow-hidden">
-                                <img src="{{ asset($level['image']) }}" alt="{{ $level['title'] }}"
-                                    class="h-full w-full object-cover" loading="lazy">
-                                <span class="absolute bottom-3 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-impetus-teal">
-                                    {{ $level['tier'] }}
-                                </span>
-                            </div>
-                            <div class="flex flex-1 flex-col p-6">
-                                <h3 @class([
-                                    'mb-4 text-xl font-bold font-outfit',
-                                    'text-impetus-orange' => $level['theme'] === 'orange',
-                                    'text-impetus-teal' => $level['theme'] === 'teal',
-                                ])>{{ $level['title'] }}</h3>
-                                <div class="space-y-4 text-sm leading-relaxed text-slate-600 text-justify">
-                                    @foreach ($level['paragraphs'] as $paragraph)
-                                        <p>{{ $paragraph }}</p>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </article>
-                    @endforeach
-                </div>
+                <img src="{{ asset('online-test/Level of questions.png') }}" alt="Questions Based on Difficulty Hierarchy"
+                    class="mx-auto w-full rounded-2xl object-contain shadow-lg ring-1 ring-impetus-teal/10" loading="lazy">
 
-                <div class="mt-12 rounded-2xl border-l-4 border-impetus-orange bg-impetus-lightOrange p-6 sm:p-8">
+                <div class="mt-12 rounded-2xl bg-impetus-teal p-6 text-white shadow-lg sm:p-8">
                     <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-impetus-orange text-white shadow-md">
+                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white text-impetus-teal shadow-md">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18V6.125c0-.621.504-1.125 1.125-1.125H9.75M9 5.25h6.75m-6.75 0a.75.75 0 00-.75.75v1.125c0 .414.336.75.75.75h6.75a.75.75 0 00.75-.75V6c0-.414-.336-.75-.75-.75M9 5.25V3.75A1.5 1.5 0 007.5 2.25h9A1.5 1.5 0 0018 3.75V5.25" />
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-extrabold text-impetus-teal font-outfit sm:text-xl">Automated Feedback &amp; Detailed Scoring Rationale</h3>
-                            <p class="mt-2 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                            <h3 class="text-center text-lg font-extrabold text-impetus-orange font-outfit sm:text-xl">Automated Feedback &amp; Detailed Scoring Rationale</h3>
+                            <p class="mt-2 text-sm leading-relaxed text-white/90 text-justify sm:text-base">
                                 Immediate scoring and grading will be provided upon completion of the test, allowing
                                 test-takers to identify areas of strength and weakness. This feedback is highly valuable for
                                 self-evaluation, continuous improvement, and target CNE credit calculations.
