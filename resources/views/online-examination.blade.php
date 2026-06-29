@@ -3,7 +3,7 @@
 @section('title', 'Online Test - IHS')
 
 @php
-    $heroImage = asset('online-test/Online_test_Banner.png');
+    $heroImage = asset('images/online-test/Online_test_Banner.png');
 @endphp
 
 @section('content')
@@ -115,7 +115,7 @@
                     {{-- Purpose: image left, content right --}}
                     <div class="grid items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-12">
                         <div class="order-2 lg:order-1">
-                            <img src="{{ asset('online-test/Purpose of _online_Test.png') }}" alt="Purpose of Online CNE Test"
+                            <img src="{{ asset('images/online-test/Purpose of _online_Test.png') }}" alt="Purpose of Online CNE Test"
                                 class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-teal/10 lg:h-full" loading="lazy">
                         </div>
                         <div class="order-1 lg:order-2">
@@ -192,7 +192,7 @@
                             </ul>
                         </div>
                         <div class="order-2">
-                            <img src="{{ asset('online-test/Benefits of online_test.png') }}" alt="Benefits of Online CNE Test"
+                            <img src="{{ asset('images/online-test/Benefits of online_test.png') }}" alt="Benefits of Online CNE Test"
                                 class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-orange/15" loading="lazy">
                         </div>
                     </div>
@@ -200,7 +200,7 @@
                     {{-- Features: image left, content right --}}
                     <div class="grid items-center gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-12">
                         <div class="relative order-2 lg:order-1">
-                            <img src="{{ asset('online-test/Features of online test.png') }}" alt="Features of Online CNE Test"
+                            <img src="{{ asset('images/online-test/Features of online test.png') }}" alt="Features of Online CNE Test"
                                 class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-teal/10 lg:absolute lg:inset-0 lg:h-full" loading="lazy">
                         </div>
                         <div class="order-1 lg:order-2">
@@ -257,7 +257,7 @@
                     </p>
                 </div>
 
-                <img src="{{ asset('online-test/Level of questions.png') }}" alt="Questions Based on Difficulty Hierarchy"
+                <img src="{{ asset('images/online-test/Level of questions.png') }}" alt="Questions Based on Difficulty Hierarchy"
                     class="mx-auto w-full rounded-2xl object-contain shadow-lg ring-1 ring-impetus-teal/10" loading="lazy">
 
                 <div class="mt-12 rounded-2xl bg-impetus-teal p-6 text-white shadow-lg sm:p-8">
