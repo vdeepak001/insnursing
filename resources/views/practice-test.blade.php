@@ -82,7 +82,7 @@
                                     </div>
                                     <div>
                                         <h3 class="text-base font-bold text-slate-800 font-outfit">{{ $item['title'] }}</h3>
-                                        <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify">{{ $item['text'] }}</p>
+                                        <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">{{ $item['text'] }}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -128,7 +128,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                     </svg>
                                 </span>
-                                <p class="text-sm leading-relaxed text-slate-600 text-justify">{{ $purpose }}</p>
+                                <p class="text-sm leading-relaxed text-slate-600 text-justify sm:text-base">{{ $purpose }}</p>
                             </div>
                         @endforeach
                     </div>
@@ -167,7 +167,7 @@
                                     </span>
                                     <div>
                                         <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $benefit['title'] }}</h3>
-                                        <p class="mt-1 text-sm text-slate-600 text-justify">{{ $benefit['text'] }}</p>
+                                        <p class="mt-1 text-sm text-slate-600 text-justify sm:text-base">{{ $benefit['text'] }}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -198,7 +198,7 @@
                                     </svg>
                                 </div>
                                 <h3 class="text-base font-bold text-impetus-teal font-outfit">{{ $feature['title'] }}</h3>
-                                <p class="mt-2 text-sm leading-relaxed text-slate-600 text-justify">{{ $feature['text'] }}</p>
+                                <p class="mt-2 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">{{ $feature['text'] }}</p>
                             </div>
                         @endforeach
                     </div>
