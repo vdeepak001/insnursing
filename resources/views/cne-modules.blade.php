@@ -14,12 +14,12 @@
                             Professional Excellence
                         </span>
                         <h1 class="mb-6 text-3xl font-extrabold tracking-tight text-impetus-teal sm:text-4xl font-outfit">
-                            Online Continuing Nursing Education (CNE) Modules
+                            Online Continuing Nursing Education Modules
                         </h1>
 
                         <div class="grid gap-8 text-sm leading-relaxed text-slate-600 text-justify sm:text-base lg:grid-cols-2">
                             <p>
-                                Online Continuing Nursing Education (CNE) Modules are structured digital learning programs
+                                Online Continuing Nursing Education Modules are structured digital learning programs
                                 designed to help nurses and healthcare professionals enhance their knowledge, clinical
                                 skills, and professional competence through flexible and accessible online education. These
                                 modules support lifelong learning and continuing professional development by providing

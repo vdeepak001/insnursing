@@ -9,7 +9,7 @@
 @section('content')
     <main class="overflow-hidden bg-white font-sans antialiased text-slate-800">
         {{-- Hero Section --}}
-        <section class="relative bg-impetus-teal-muted py-16 sm:py-24">
+        <section class="relative bg-impetus-teal-muted py-16 sm:py-16">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
@@ -103,7 +103,7 @@
                             </span>
                             <div>
                                 <h3 class="text-sm font-bold text-slate-800 font-outfit sm:text-base">{{ $importance['title'] }}</h3>
-                                <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify">{{ $importance['text'] }}</p>
+                                <p class="mt-1 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">{{ $importance['text'] }}</p>
                             </div>
                         </li>
                     @endforeach
@@ -144,7 +144,7 @@
                                 'Self-assessment worksheets and study notes',
                                 'Accessible across desktop and mobile devices',
                             ] as $item)
-                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <li class="flex items-start gap-3 text-sm text-slate-600 sm:text-base">
                                     <span class="mt-0.5 text-impetus-teal">
                                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -175,7 +175,7 @@
                                 'Instructor-led and self-paced presentation formats',
                                 'Ideal for revision and classroom-style review',
                             ] as $item)
-                                <li class="flex items-start gap-3 text-sm text-slate-600">
+                                <li class="flex items-start gap-3 text-sm text-slate-600 sm:text-base">
                                     <span class="mt-0.5 text-impetus-orange">
                                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />

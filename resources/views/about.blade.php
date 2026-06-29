@@ -100,7 +100,7 @@
 @section('content')
     <main class="overflow-hidden bg-white">
         {{-- Hero Section --}}
-        <section class="relative bg-impetus-teal-muted py-16 sm:py-24">
+        <section class="relative bg-impetus-teal-muted py-16 sm:py-16">
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                     <div>
