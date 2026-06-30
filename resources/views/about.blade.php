@@ -316,16 +316,16 @@
                             </article>
                         @else
                         <article id="{{ $area['id'] }}" @class([
-                            'grid items-center gap-10 lg:grid-cols-12 lg:gap-12',
+                            'grid items-center gap-10 lg:grid-cols-12 lg:items-stretch lg:gap-12',
                             $theme['shell'],
                         ])>
                             <div @class([
-                                'lg:col-span-5',
+                                'relative lg:col-span-5',
                                 $imageOnLeft ? 'order-1' : 'order-2',
                             ])>
                                 <img src="{{ $area['image'] }}" alt="{{ $area['title'] }} at IHS Nursing"
                                     @class([
-                                        'w-full rounded-2xl object-cover shadow-xl border',
+                                        'w-full rounded-2xl object-cover shadow-xl border lg:absolute lg:inset-0 lg:h-full',
                                         $theme['imgBorder'],
                                     ])>
                             </div>
