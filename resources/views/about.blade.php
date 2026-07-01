@@ -314,7 +314,7 @@
                                     </div>
                                 </div>
                             </article>
-                        @else
+                        @elseif ($area['id'] === 'nursing-cms')
                         <article id="{{ $area['id'] }}" @class([
                             'flex flex-col gap-8',
                             $theme['shell'],
@@ -375,6 +375,75 @@
                                             </svg>
                                         </a>
                                     </div>
+                                @endif
+                            </div>
+                        </article>
+                        @else
+                        <article id="{{ $area['id'] }}" @class([
+                            'grid items-center gap-10 lg:grid-cols-12 lg:items-stretch lg:gap-12',
+                            $theme['shell'],
+                        ])>
+                            <div @class([
+                                'relative lg:col-span-5',
+                                $imageOnLeft ? 'order-1' : 'order-2',
+                            ])>
+                                <img src="{{ $area['image'] }}" alt="{{ $area['title'] }} at IHS Nursing"
+                                    @class([
+                                        'w-full rounded-2xl object-cover shadow-xl border lg:absolute lg:inset-0 lg:h-full',
+                                        $theme['imgBorder'],
+                                    ])>
+                            </div>
+
+                            <div @class([
+                                'lg:col-span-7',
+                                $imageOnLeft ? 'order-2' : 'order-1',
+                            ])>
+                                <div class="mb-4 flex items-center gap-4">
+                                    <span @class([
+                                        'flex h-10 w-10 items-center justify-center rounded-full text-sm font-extrabold text-white font-outfit',
+                                        $theme['badge'],
+                                    ])>
+                                        {{ $area['number'] }}
+                                    </span>
+                                    <span @class([
+                                        'text-sm font-bold uppercase tracking-widest font-outfit',
+                                        $theme['label'],
+                                    ])>Our Focus</span>
+                                </div>
+
+                                <h3 class="mb-3 text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">
+                                    {{ $area['title'] }}
+                                </h3>
+
+                                @if (! empty($area['subtitle']))
+                                    <p class="mb-3 text-base font-semibold text-impetus-teal font-outfit">
+                                        {{ $area['subtitle'] }}
+                                    </p>
+                                @endif
+
+                                @if (! empty($area['tagline']))
+                                    <p class="mb-6 text-base font-medium italic text-impetus-orange font-outfit sm:text-lg">
+                                        &ldquo;{{ $area['tagline'] }}&rdquo;
+                                    </p>
+                                @endif
+
+                                <div class="space-y-5 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">
+                                    @foreach ($area['paragraphs'] as $paragraph)
+                                        <p>{{ $paragraph }}</p>
+                                    @endforeach
+                                </div>
+
+                                @if (! empty($area['link']))
+                                    <a href="{{ $area['link'] }}" target="_blank" rel="noopener noreferrer"
+                                        @class([
+                                            'mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-md transition font-outfit',
+                                            $theme['btn'],
+                                        ])>
+                                        {{ $area['link_label'] }}
+                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                        </svg>
+                                    </a>
                                 @endif
                             </div>
                         </article>
