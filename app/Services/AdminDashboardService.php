@@ -117,7 +117,7 @@ class AdminDashboardService
             CourseTestType::Final->value => 'Final Tests',
         ];
 
-        $weekStarts = collect(range(1, $month->daysInMonth, 7));
+        $days = collect(range(1, $month->daysInMonth));
 
         $attempts = CourseTestAttempt::query()
             ->whereBetween('created_at', [$month->copy()->startOfDay(), $month->copy()->endOfMonth()->endOfDay()])
@@ -129,14 +129,14 @@ class AdminDashboardService
         foreach ($types as $typeValue => $label) {
             $series[] = [
                 'name' => $label,
-                'data' => $weekStarts->map(function (int $startDay) use ($attempts, $typeValue, $month): int {
-                    $weekStart = $month->copy()->day($startDay)->startOfDay();
-                    $weekEnd = $month->copy()->day(min($startDay + 6, $month->daysInMonth))->endOfDay();
+                'data' => $days->map(function (int $day) use ($attempts, $typeValue, $month): int {
+                    $dayStart = $month->copy()->day($day)->startOfDay();
+                    $dayEnd = $month->copy()->day($day)->endOfDay();
 
                     return $attempts
-                        ->filter(function (CourseTestAttempt $attempt) use ($typeValue, $weekStart, $weekEnd): bool {
+                        ->filter(function (CourseTestAttempt $attempt) use ($typeValue, $dayStart, $dayEnd): bool {
                             return $attempt->test_type->value === $typeValue
-                                && $attempt->created_at->betweenIncluded($weekStart, $weekEnd);
+                                && $attempt->created_at->betweenIncluded($dayStart, $dayEnd);
                         })
                         ->count();
                 })->values()->all(),
@@ -144,8 +144,8 @@ class AdminDashboardService
         }
 
         return [
-            'categories' => $weekStarts
-                ->map(fn (int $startDay): string => $month->copy()->day($startDay)->displayDate())
+            'categories' => $days
+                ->map(fn (int $day): string => $month->copy()->day($day)->format('d/m'))
                 ->values()
                 ->all(),
             'series' => $series,

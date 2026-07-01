@@ -125,7 +125,7 @@
                     <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                         <div>
                             <h3 class="font-outfit text-lg font-bold text-impetus-navy">Test Attempts Overview</h3>
-                            <p class="mt-0.5 text-xs text-slate-500">Weekly pre, mock, and final test attempts for the selected month.</p>
+                            <p class="mt-0.5 text-xs text-slate-500">Daily pre, mock, and final test attempts for the selected month.</p>
                         </div>
 
                         <form method="GET" class="shrink-0">
