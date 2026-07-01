@@ -82,7 +82,8 @@
                         </div>
                     </div>
 
-                    <div class="relative w-full self-stretch overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/60 min-h-[22rem] sm:min-h-[26rem] lg:min-h-[36rem]">
+                    <div
+                        class="relative w-full self-stretch overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/60 min-h-[22rem] sm:min-h-[26rem] lg:min-h-[36rem]">
                         <img src="{{ $heroImage }}" alt="Online CNE Test"
                             class="absolute top-0 left-0 w-full h-[120%] object-cover object-top">
                     </div>
@@ -99,7 +100,7 @@
                         <div class="order-2 lg:order-1">
                             <img src="{{ asset('images/online-test/Purpose of _online_Test.png') }}"
                                 alt="Purpose of Online CNE Test"
-                                class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-teal/10 lg:h-full"
+                                class="w-full rounded-2xl object-cover object-top shadow-xl ring-1 ring-impetus-teal/10 lg:h-full"
                                 loading="lazy">
                         </div>
                         <div class="order-1 lg:order-2">
@@ -150,7 +151,7 @@
                         <div class="relative order-2 lg:order-1">
                             <img src="{{ asset('images/online-test/Features of online test.png') }}"
                                 alt="Features of Online CNE Test"
-                                class="w-full rounded-2xl object-cover shadow-xl ring-1 ring-impetus-teal/10 lg:absolute lg:inset-0 lg:h-full"
+                                class="w-full rounded-2xl object-cover object-top shadow-xl ring-1 ring-impetus-teal/10 lg:absolute lg:inset-0 lg:h-full"
                                 loading="lazy">
                         </div>
                         <div class="order-1 lg:order-2">
@@ -173,7 +174,7 @@
                                 easily
                                 navigable evaluations.
                             </p>
-                            <ul class="grid gap-4 sm:grid-cols-2">
+                            <ul class="grid gap-4 sm:grid-cols-1">
                                 @foreach ([['title' => 'Fully Digital Access', 'text' => 'Fully digital and accessible through online platforms, eliminating physical test center constraints.'], ['title' => 'Flexible Formats', 'text' => 'Choose between time-bound proctored models or highly flexible, self-paced competency assessments.'], ['title' => 'Automated Evaluation', 'text' => 'Instant results, interactive performance scorecards, and immediate feedback rationales are delivered automatically.'], ['title' => 'Integrity-Secured Portal', 'text' => 'Protected login portals and integrated proctoring workflows maintain assessment integrity at all levels.'], ['title' => 'Randomized Questions', 'text' => 'Each attempt dynamically shuffles the question pool and answers to ensure complete transparency and fairness.'], ['title' => 'Holistic Concept Coverage', 'text' => 'Comprehensive assessment mapped thoroughly to encompass both critical theory and practical clinical decisions.']] as $feature)
                                     <li class="flex items-start gap-3">
                                         <span @class([
