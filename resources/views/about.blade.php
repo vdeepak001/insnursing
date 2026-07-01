@@ -354,27 +354,28 @@
                                         <p>{{ $paragraph }}</p>
                                     @endforeach
                                 </div>
-
-                                @if (! empty($area['link']))
-                                    <a href="{{ $area['link'] }}" target="_blank" rel="noopener noreferrer"
-                                        @class([
-                                            'mt-6 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-white shadow-md transition font-outfit',
-                                            $theme['btn'],
-                                        ])>
-                                        {{ $area['link_label'] }}
-                                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                                        </svg>
-                                    </a>
-                                @endif
                             </div>
 
-                            <div class="w-full">
+                            <div class="relative w-full">
                                 <img src="{{ $area['image'] }}" alt="{{ $area['title'] }} at IHS Nursing"
                                     @class([
                                         'w-full rounded-2xl object-cover shadow-xl border',
                                         $theme['imgBorder'],
                                     ])>
+                                @if (! empty($area['link']))
+                                    <div class="absolute right-4 sm:right-8 top-0 -translate-y-1/2 z-20">
+                                        <a href="{{ $area['link'] }}" target="_blank" rel="noopener noreferrer"
+                                            @class([
+                                                'inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs sm:px-6 sm:py-3 sm:text-sm font-bold text-white shadow-md transition transform hover:scale-105 active:scale-95 font-outfit',
+                                                $theme['btn'],
+                                            ])>
+                                            {{ $area['link_label'] }}
+                                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                @endif
                             </div>
                         </article>
                         @endif
