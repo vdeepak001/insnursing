@@ -413,12 +413,12 @@
                                 $theme['shell'],
                             ])>
                                 <div @class([
-                                    'relative lg:col-span-5',
+                                    'lg:col-span-5 flex items-center justify-center',
                                     $imageOnLeft ? 'order-1' : 'order-2',
                                 ])>
                                     <img src="{{ $area['image'] }}" alt="{{ $area['title'] }} at IHS Nursing"
                                         @class([
-                                            'w-full rounded-2xl object-cover shadow-xl border lg:absolute lg:inset-0 lg:h-full',
+                                            'w-full h-auto lg:max-h-[420px] rounded-2xl shadow-xl border object-contain',
                                             $theme['imgBorder'],
                                         ])>
                                 </div>
