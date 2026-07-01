@@ -418,7 +418,7 @@
                                 ])>
                                     <img src="{{ $area['image'] }}" alt="{{ $area['title'] }} at IHS Nursing"
                                         @class([
-                                            'w-full rounded-2xl object-cover shadow-xl border lg:absolute lg:inset-0 lg:h-full',
+                                            'w-full rounded-2xl object-cover object-top shadow-xl border lg:absolute lg:inset-0 lg:h-full',
                                             $theme['imgBorder'],
                                         ])>
                                 </div>
