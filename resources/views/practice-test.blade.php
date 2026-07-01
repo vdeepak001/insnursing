@@ -91,7 +91,7 @@
                         {{-- Image --}}
                         <div class="relative min-h-[20rem] overflow-hidden rounded-2xl shadow-lg">
                             <img src="{{ asset('why_practice_test_matters.png') }}" alt="Why Practice Tests Matter"
-                                class="absolute inset-0 h-full w-full object-cover">
+                                class="absolute inset-0 h-full w-full object-cover object-top">
                         </div>
                     </div>
                 </div>
