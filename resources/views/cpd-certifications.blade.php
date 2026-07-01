@@ -273,7 +273,8 @@
 
                 {{-- Desktop Layout (lg:block hidden) --}}
                 <div
-                    class="relative hidden lg:block border border-impetus-teal/80 rounded-[2rem] bg-white px-12 py-16 shadow-sm mt-12">
+                    class="relative hidden lg:block rounded-[2rem] bg-white px-12 py-16 shadow-sm mt-12"
+                    style="background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, #0d9488, #f97316) border-box; border: 2px transparent solid;">
                     <!-- Header sitting on the top border -->
                     <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white px-6 text-center">
                         <h3 class="text-xl md:text-2xl font-extrabold text-impetus-teal font-outfit whitespace-nowrap">
@@ -292,7 +293,8 @@
                                 <div class="relative flex flex-col items-center">
                                     <!-- Card -->
                                     <div
-                                        class="relative w-full bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex flex-col items-center pt-8 pb-5 px-4">
+                                        class="relative w-full rounded-2xl shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex flex-col items-center pt-8 pb-5 px-4"
+                                        style="background: linear-gradient(#fff, {{ $isTeal ? '#f0fdfa' : '#fff7ed' }}) padding-box, {{ $isTeal ? 'linear-gradient(135deg, #0d9488, rgba(13,148,136,0.15))' : 'linear-gradient(135deg, #f97316, rgba(249,115,22,0.15))' }} border-box; border: 1.5px transparent solid;">
                                         <!-- Number Badge -->
                                         <div @class([
                                             'absolute -top-4 left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full text-sm font-extrabold text-white shadow-md ring-4 ring-white z-30',
@@ -366,17 +368,17 @@
                         <div class="relative z-20 my-2 h-10 overflow-visible pointer-events-none" aria-hidden="true">
                             {{-- Down from card 4 --}}
                             <div
-                                class="absolute top-0 right-[calc((100%-4.5rem)/8)] h-1/2 w-0.5 translate-x-1/2 bg-impetus-teal">
+                                class="absolute top-0 right-[calc((100%_-_4.5rem)/8)] h-1/2 w-0.5 translate-x-1/2 bg-impetus-teal">
                             </div>
 
                             {{-- Across between rows --}}
                             <div
-                                class="absolute top-1/2 left-[calc((100%-4.5rem)/8)] right-[calc((100%-4.5rem)/8)] -translate-y-1/2 h-0.5 bg-impetus-teal">
+                                class="absolute top-1/2 left-[calc((100%_-_4.5rem)/8)] right-[calc((100%_-_4.5rem)/8)] -translate-y-1/2 h-0.5 bg-impetus-teal">
                             </div>
 
                             {{-- Down into card 5 (left end only) --}}
                             <div
-                                class="absolute bottom-1 top-1/2 left-[calc((100%-4.5rem)/8)] w-0.5 -translate-x-1/2 bg-impetus-teal">
+                                class="absolute top-1/2 left-[calc((100%_-_4.5rem)/8)] h-[38px] w-0.5 -translate-x-1/2 bg-impetus-teal">
                             </div>
 
                             <div
@@ -389,7 +391,7 @@
                             </div>
 
                             <div
-                                class="absolute top-0 right-[calc((100%-4.5rem)/8)] z-30 translate-x-1/2 -translate-y-1/2 text-impetus-teal">
+                                class="absolute top-0 right-[calc((100%_-_4.5rem)/8)] z-30 translate-x-1/2 -translate-y-1/2 text-impetus-teal">
                                 <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -398,7 +400,7 @@
                             </div>
 
                             <div
-                                class="absolute bottom-1 left-[calc((100%-4.5rem)/8)] z-30 -translate-x-1/2 text-impetus-teal">
+                                class="absolute -bottom-[18px] left-[calc((100%_-_4.5rem)/8)] z-30 -translate-x-1/2 text-impetus-teal">
                                 <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -416,7 +418,8 @@
                                 <div class="relative flex flex-col items-center">
                                     <!-- Card -->
                                     <div
-                                        class="relative w-full bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex flex-col items-center pt-8 pb-5 px-4">
+                                        class="relative w-full rounded-2xl shadow-sm transition hover:shadow-md hover:-translate-y-0.5 duration-300 flex flex-col items-center pt-8 pb-5 px-4"
+                                        style="background: linear-gradient(#fff, {{ $isTeal ? '#f0fdfa' : '#fff7ed' }}) padding-box, {{ $isTeal ? 'linear-gradient(135deg, #0d9488, rgba(13,148,136,0.15))' : 'linear-gradient(135deg, #f97316, rgba(249,115,22,0.15))' }} border-box; border: 1.5px transparent solid;">
                                         <!-- Number Badge -->
                                         <div @class([
                                             'absolute -top-4 left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full text-sm font-extrabold text-white shadow-md ring-4 ring-white z-30',
@@ -490,7 +493,8 @@
 
                 {{-- Mobile/Tablet Layout (lg:hidden) --}}
                 <div class="lg:hidden mt-8">
-                    <div class="relative border border-impetus-teal/80 rounded-[2rem] bg-white px-6 py-12 shadow-sm">
+                    <div class="relative rounded-[2rem] bg-white px-6 py-12 shadow-sm"
+                        style="background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, #0d9488, #f97316) border-box; border: 2px transparent solid;">
                         <!-- Header sitting on the top border -->
                         <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-white px-6 text-center">
                             <h3 class="text-lg md:text-xl font-extrabold text-impetus-teal font-outfit whitespace-nowrap">
@@ -520,7 +524,8 @@
 
                                     <!-- Step Card -->
                                     <div
-                                        class="flex-1 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md transition duration-300 flex items-stretch overflow-hidden">
+                                        class="flex-1 rounded-2xl shadow-sm hover:shadow-md transition duration-300 flex items-stretch overflow-hidden"
+                                        style="background: linear-gradient(to right, #fff, {{ $isTeal ? '#f0fdfa' : '#fff7ed' }}) padding-box, {{ $isTeal ? 'linear-gradient(135deg, #0d9488, rgba(13,148,136,0.15))' : 'linear-gradient(135deg, #f97316, rgba(249,115,22,0.15))' }} border-box; border: 1.5px transparent solid;">
                                         <!-- Left side icon panel matching the homepage CNE module card style -->
                                         <div class="relative flex w-20 shrink-0 items-center justify-center py-4">
                                             <div @class([
