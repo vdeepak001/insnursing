@@ -53,7 +53,7 @@
             ],
             'link' => 'https://nursingonlinetest.com/nursing-students',
             'link_label' => 'Explore Nursing Online Test',
-            'image' => asset('about/Online_test.png'),
+            'image' => asset('about/aboutus-Onlinetest.png'),
         ],
         [
             'id' => 'professional-knowledge-assessment',

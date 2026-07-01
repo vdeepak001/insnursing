@@ -184,20 +184,32 @@
                     </p>
                     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         @foreach ([
-                            ['title' => 'Module-Wise Sets', 'text' => 'Topic-wise and module-wise question sets are tailored specifically to match every target knowledge domain in your CNE training modules.'],
-                            ['title' => 'Flexible Assessments', 'text' => 'Enjoy self-paced learning with no constraints, or take time-bound practice assessments to simulate high-pressure, real-world exams.'],
-                            ['title' => 'Instant Analytics', 'text' => 'Obtain instant feedback, detailed scoring guides, and robust clinical performance analysis to identify strength areas and knowledge gaps.'],
-                            ['title' => 'Case-Driven Scenarios', 'text' => 'Practice with clinical problem-solving exercises, case-based questions, and real-world scenario metrics that accurately mimic daily practice.'],
-                            ['title' => 'Unlimited Re-Attempts', 'text' => 'Enjoy repeated learning attempts on complex topics, ensuring perfect knowledge retention and readiness for final certification exams.'],
-                            ['title' => 'Universal Platform', 'text' => 'Seamlessly optimized and accessible anywhere through our online learning platforms via desktops, laptops, tablets, and smartphones.'],
+                            ['title' => 'Module-Wise Sets', 'text' => 'Topic-wise and module-wise question sets are tailored specifically to match every target knowledge domain in your CNE training modules.', 'theme' => 'teal'],
+                            ['title' => 'Flexible Assessments', 'text' => 'Enjoy self-paced learning with no constraints, or take time-bound practice assessments to simulate high-pressure, real-world exams.', 'theme' => 'orange'],
+                            ['title' => 'Instant Analytics', 'text' => 'Obtain instant feedback, detailed scoring guides, and robust clinical performance analysis to identify strength areas and knowledge gaps.', 'theme' => 'teal'],
+                            ['title' => 'Case-Driven Scenarios', 'text' => 'Practice with clinical problem-solving exercises, case-based questions, and real-world scenario metrics that accurately mimic daily practice.', 'theme' => 'orange'],
+                            ['title' => 'Unlimited Re-Attempts', 'text' => 'Enjoy repeated learning attempts on complex topics, ensuring perfect knowledge retention and readiness for final certification exams.', 'theme' => 'teal'],
+                            ['title' => 'Universal Platform', 'text' => 'Seamlessly optimized and accessible anywhere through our online learning platforms via desktops, laptops, tablets, and smartphones.', 'theme' => 'orange'],
                         ] as $feature)
-                            <div class="rounded-2xl border border-impetus-teal/10 bg-white p-3 shadow-md">
-                                <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-impetus-teal text-white">
+                            <div @class([
+                                'rounded-2xl border bg-white p-3 shadow-md',
+                                'border-impetus-teal/10' => $feature['theme'] === 'teal',
+                                'border-impetus-orange/15' => $feature['theme'] === 'orange',
+                            ])>
+                                <div @class([
+                                    'mb-3 flex h-10 w-10 items-center justify-center rounded-lg text-white shadow-sm',
+                                    'bg-impetus-teal' => $feature['theme'] === 'teal',
+                                    'bg-impetus-orange' => $feature['theme'] === 'orange',
+                                ])>
                                     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                 </div>
-                                <h3 class="text-base font-bold text-impetus-teal font-outfit">{{ $feature['title'] }}</h3>
+                                <h3 @class([
+                                    'text-base font-bold font-outfit',
+                                    'text-impetus-teal' => $feature['theme'] === 'teal',
+                                    'text-impetus-orange' => $feature['theme'] === 'orange',
+                                ])>{{ $feature['title'] }}</h3>
                                 <p class="mt-2 text-sm leading-relaxed text-slate-600 text-justify sm:text-base">{{ $feature['text'] }}</p>
                             </div>
                         @endforeach
