@@ -74,17 +74,16 @@
         <section class="bg-white py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-3xl text-center">
-                    <h2 class="text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Features of Learning
-                        Resources</h2>
+                    <h2 class="text-2xl font-extrabold text-impetus-teal sm:text-3xl font-outfit">Features of Learning Resources</h2>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-                        Engineered to provide a rich educational ecosystem, our resources leverage evidence-based standards
-                        to deliver optimal clinical learning.
+                        Engineered to provide a rich educational ecosystem, our resources leverage evidence-based standards to deliver optimal clinical learning.
                     </p>
                 </div>
 
-                <div class="overflow-hidden rounded-2xl">
+                <div class="mx-auto max-w-3xl overflow-hidden rounded-2xl">
                     <img src="{{ asset(rawurlencode('Features of online test (1).png')) }}"
-                        alt="Features of Learning Resources" class="mx-auto h-auto w-full object-contain">
+                        alt="Features of Learning Resources"
+                        class="mx-auto h-auto w-full object-contain">
                 </div>
             </div>
         </section>
@@ -93,8 +92,7 @@
         <section class="bg-impetus-teal-muted py-16 sm:py-12">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto mb-10 max-w-3xl text-center">
-                    <h2 class="text-2xl font-extrabold text-impetus-orange sm:text-3xl font-outfit">Importance of Learning
-                        Resources in Online CNE</h2>
+                    <h2 class="text-2xl font-extrabold text-impetus-orange sm:text-3xl font-outfit">Importance of Learning Resources in Online CNE</h2>
                     <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
                         Learning resources play a crucial role in enhancing the effectiveness of online CNE programmes by
                         making education more engaging, interactive, and learner-friendly. They help healthcare
