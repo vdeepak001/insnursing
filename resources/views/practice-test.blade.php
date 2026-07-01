@@ -159,8 +159,14 @@
                                 ['title' => 'Exam Readiness', 'text' => 'Strengthens readiness for professional certification exams.'],
                                 ['title' => 'Performance Tracking', 'text' => 'Monitor progress and identify areas to improve through attempt history.'],
                             ] as $benefit)
-                                <div class="flex items-start gap-3 rounded-xl border border-impetus-orange/15 bg-impetus-lightOrange/50 p-3">
-                                    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-white shadow-sm">
+                                @php
+                                    $isTeal = $loop->odd;
+                                    $borderColor = $isTeal ? 'border-impetus-teal/15' : 'border-impetus-orange/15';
+                                    $bgColor = $isTeal ? 'bg-impetus-teal-muted/50' : 'bg-impetus-lightOrange/50';
+                                    $iconBg = $isTeal ? 'bg-impetus-teal' : 'bg-impetus-orange';
+                                @endphp
+                                <div class="flex items-start gap-3 rounded-xl border {{ $borderColor }} {{ $bgColor }} p-3">
+                                    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full {{ $iconBg }} text-white shadow-sm">
                                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
