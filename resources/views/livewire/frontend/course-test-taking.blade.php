@@ -568,6 +568,7 @@
                     @endif
                 </section>
 
+                {{--
                 <div class="exam-bottom-legend">
                     <ul class="exam-legend-row" role="list">
                         <li class="exam-legend-item">
@@ -584,6 +585,7 @@
                         </li>
                     </ul>
                 </div>
+                --}}
                 </div>
             </div>
                 </div>

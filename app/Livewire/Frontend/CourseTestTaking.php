@@ -490,7 +490,7 @@ class CourseTestTaking extends Component
             $this->questions[] = [
                 'id' => (int) $q->id,
                 'num' => $n++,
-                'text' => $q->question,
+                'text' => preg_replace('/~\s*((?:<\/(?:p|div|span|strong|em|h\d)>\s*)*)$/i', '$1', $q->question),
                 'choices' => [
                     'a' => $q->choice_a,
                     'b' => $q->choice_b,

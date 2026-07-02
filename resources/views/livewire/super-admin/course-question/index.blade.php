@@ -117,7 +117,7 @@
                             </div>
                         </td>
                         <td class="px-6 py-4 text-sm text-gray-900 dark:text-gray-100 max-w-sm truncate">
-                            {{ strip_tags(html_entity_decode($question->question)) }}
+                            {{ rtrim(strip_tags(html_entity_decode($question->question)), " ~") }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
                             <div>{{ $question->user?->name ?? 'System' }}</div>

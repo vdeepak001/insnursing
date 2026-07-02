@@ -1117,7 +1117,8 @@ h2 {
   @apply overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg;
 }
 .exam-header {
-  @apply flex flex-col gap-3 border-b border-[#034E51] bg-[#045A5D] px-4 py-4 text-white sm:flex-row sm:items-center sm:justify-between sm:px-6;
+  background: linear-gradient(to right, #045A5D 0%, #FF7A00 100%);
+  @apply flex flex-col gap-3 border-b border-[#034E51]/40 px-4 py-4 text-white sm:flex-row sm:items-center sm:justify-between sm:px-6;
 }
 .exam-body {
   @apply bg-[#F9FAFB] p-4 sm:p-6;
