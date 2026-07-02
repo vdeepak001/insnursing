@@ -113,18 +113,18 @@
                                             }
 
                                             $btnActive =
-                                                'ring-2 ring-offset-2 ring-[#045A5D] ring-offset-white shadow-md';
+                                                'ring-2 ring-offset-2 ring-[#16A34A] ring-offset-white shadow-md';
 
                                             $preClass = 'btn-pretest' . ($nextTest === 'pre' ? ' ' . $btnActive : '');
                                             $mockClass =
                                                 'btn-mock-test' .
                                                 ($nextTest === 'mock'
-                                                    ? ' ring-2 ring-offset-2 ring-[#FF7A00] ring-offset-white shadow-md'
+                                                    ? ' ring-2 ring-offset-2 ring-[#0F766E] ring-offset-white shadow-md'
                                                     : '');
                                             $finalClass =
                                                 'btn-final-test' .
                                                 ($nextTest === 'final'
-                                                    ? ' ring-2 ring-offset-2 ring-[#FF7A00] ring-offset-white shadow-md'
+                                                    ? ' ring-2 ring-offset-2 ring-[#F97316] ring-offset-white shadow-md'
                                                     : '');
 
                                             $preDoneClass = 'btn-pretest';
@@ -153,11 +153,7 @@
                                                     max: '{{ $tp['pre_max'] }}'
                                                 }"
                                                 class="{{ $preDoneClass }}">
-                                                Pretest <svg class="ml-2 h-5 w-5 text-[#045A5D]" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M4.5 12.75l6 6 9-13.5" />
-                                                </svg>
+                                                Pretest
                                             </button>
                                         @elseif ($canPre)
                                             <livewire:cne.pretest-otp-button :course="$course" :btn-class="$preClass" />
@@ -183,11 +179,7 @@
                                                     max: '{{ $tp['mock_max'] }}'
                                                 }"
                                                 class="{{ $mockDoneClass }}">
-                                                Mock <svg class="ml-2 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="3">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M4.5 12.75l6 6 9-13.5" />
-                                                </svg>
+                                                Mock Test
                                             </button>
                                         @elseif ($canMock)
                                             <livewire:cne.pretest-otp-button :course="$course" :btn-class="$mockClass"
@@ -214,25 +206,19 @@
                                                     max: '{{ $tp['final_max'] }}'
                                                 }"
                                                 class="{{ $finalDoneClass }}">
-                                                Final
-                                                @if ($tp['final_passed'] ?? false)
-                                                    <svg class="ml-2 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor" stroke-width="3">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M4.5 12.75l6 6 9-13.5" />
-                                                    </svg>
-                                                @else
+                                                Final Test
+                                                @if (! ($tp['final_passed'] ?? false))
                                                     <span
-                                                        class="ml-2 text-[10px] text-impetus-orange font-bold uppercase">(Failed)</span>
+                                                        class="ml-1 text-[10px] font-bold uppercase">(Failed)</span>
                                                 @endif
                                             </button>
                                         @elseif ($canFinal)
                                             <livewire:cne.pretest-otp-button :course="$course" :btn-class="$finalClass"
                                                 :test-type="'final'" :btn-label="$finalDone
-                                                    ? 'Retake Final (' .
+                                                    ? 'Retake Final Test (' .
                                                         number_format((float) $tp['final_score'], 1) .
                                                         '%)'
-                                                    : 'Final'" />
+                                                    : 'Final Test'" />
                                         @else
                                             <span class="{{ $finalLockedClass }}"
                                                 title="Complete the mock test first">Final Test</span>
