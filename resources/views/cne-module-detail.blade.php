@@ -344,7 +344,7 @@
 
         {{-- Learning resources + learning materials link --}}
         @if (filled($course->qa_content) || $hasCourseMaterials)
-            <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-24">
+            <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-16">
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="flex flex-col gap-10 md:flex-row md:items-center md:gap-12 lg:gap-16 xl:gap-20">
                         {{-- Left Column: Large Visual --}}
@@ -423,7 +423,7 @@
 
         {{-- Practice test --}}
         @if (filled($course->practice_content))
-            <section class="border-t border-impetus-teal/10 bg-white py-16 sm:py-24">
+            <section class="border-t border-impetus-teal/10 bg-white py-16 sm:py-16">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="mb-6 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                         <h2 class="text-2xl font-extrabold tracking-tight text-impetus-teal sm:text-3xl font-outfit">
