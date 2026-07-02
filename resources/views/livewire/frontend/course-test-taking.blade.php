@@ -46,39 +46,64 @@
                     {{-- Content Section --}}
                     <div class="bg-gradient-to-b from-white via-slate-50/30 to-white px-6 py-10 sm:px-10">
                         {{-- Quick Stats Grid --}}
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-3">
+                        <div class="flex flex-wrap justify-center gap-3">
+                            {{-- Score --}}
+                            <div class="flex w-36 flex-col items-center justify-center rounded-xl bg-[#045A5D] px-4 py-4 text-center text-white shadow-sm">
+                                <div class="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/20">
+                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-widest text-white/80">Score</p>
+                                <p class="mt-1 text-2xl font-bold font-outfit">{{ $obtainedScore }}/{{ $maxScore }}</p>
+                            </div>
+
+                            {{-- Percentage --}}
+                            <div class="flex w-36 flex-col items-center justify-center rounded-xl bg-[#FF7A00] px-4 py-4 text-center text-white shadow-sm">
+                                <div class="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-white/20">
+                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-widest text-white/80">Percentage</p>
+                                <p class="mt-1 text-2xl font-bold font-outfit">{{ $scorePercent }}%</p>
+                            </div>
+
                             {{-- Total Questions --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-transparent bg-gradient-to-br from-[#045A5D] to-[#067D80] p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-white/80 md:text-[11px]">Questions</p>
-                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $totalQuestions }}</p>
-                            </div>
-
-                            {{-- Correct Answers --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-teal/20 bg-impetus-teal p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Correct</p>
-                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $correctCount }}</p>
-                            </div>
-
-                            {{-- Incorrect Answers --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-orange/20 bg-impetus-orange p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Wrong</p>
-                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $wrongCount }}</p>
-                            </div>
-
-                            {{-- Obtained Score --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-orange/20 bg-impetus-orange p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Score</p>
-                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $obtainedScore }}/{{ $maxScore }}</p>
+                            <div class="flex w-36 flex-col items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-4 text-center shadow-sm">
+                                <div class="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-slate-100">
+                                    <svg class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Questions</p>
+                                <p class="mt-1 text-2xl font-bold font-outfit text-slate-800">{{ $totalQuestions }}</p>
                             </div>
 
                             @if($testType !== 'practice')
                             {{-- Time Taken --}}
-                            <div class="flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-slate-50/80 p-2 text-center text-slate-800 shadow-sm transition hover:shadow-md md:p-4">
-                                <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-slate-500 md:text-[11px]">Time Taken</p>
-                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $formattedDuration }}</p>
+                            <div class="flex w-36 flex-col items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-4 text-center shadow-sm">
+                                <div class="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-slate-100">
+                                    <svg class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Time Taken</p>
+                                <p class="mt-1 text-2xl font-bold font-outfit text-slate-800">{{ $formattedDuration }}</p>
                             </div>
                             @endif
+
+                            {{-- Correct Answers --}}
+                            <div class="flex w-36 flex-col items-center justify-center rounded-xl border border-green-200 bg-green-50 px-4 py-4 text-center shadow-sm">
+                                <div class="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-green-500 text-white">
+                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-widest text-green-700">Correct Answer</p>
+                                <p class="mt-1 text-2xl font-bold font-outfit text-green-700">{{ $correctCount }}</p>
+                            </div>
+
+                            {{-- Incorrect Answers --}}
+                            <div class="flex w-36 flex-col items-center justify-center rounded-xl border border-red-200 bg-red-50 px-4 py-4 text-center shadow-sm">
+                                <div class="mb-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-red-500 text-white">
+                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                                </div>
+                                <p class="text-[10px] font-bold uppercase tracking-widest text-red-700">Incorrect Answer</p>
+                                <p class="mt-1 text-2xl font-bold font-outfit text-red-700">{{ $wrongCount }}</p>
+                            </div>
                         </div>
+
                         {{-- Score Chart & Visuals --}}
                         <div class="mt-10 overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
                             <div class="flex flex-col gap-2 border-b border-slate-100 pb-5">
