@@ -1127,10 +1127,10 @@ h2 {
   @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#FF7A00] px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-orange-500/25 transition hover:bg-[#EA580C] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF7A00]/40 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 .exam-btn-submit {
-  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-[#045A5D] px-4 py-2 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-[#067D80] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#045A5D]/40 focus-visible:ring-offset-2 disabled:opacity-60;
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-[#CCFBF1] px-4 py-2 text-sm font-bold uppercase tracking-wide text-[#045A5D] transition hover:bg-[#99F6E4] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#045A5D]/40 focus-visible:ring-offset-2 disabled:opacity-60;
 }
 .exam-btn-submit-large {
-  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#045A5D] px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-teal-500/25 transition hover:bg-[#067D80] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#045A5D]/40 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#CCFBF1] px-6 py-2.5 text-sm font-bold uppercase tracking-wide text-[#045A5D] shadow-md shadow-teal-500/10 transition hover:bg-[#99F6E4] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#045A5D]/40 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
 }
 .exam-btn-prev {
   @apply rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-[#1F2937] shadow-sm transition enabled:hover:border-[#045A5D]/40 enabled:hover:text-[#045A5D] disabled:cursor-not-allowed disabled:opacity-40;
