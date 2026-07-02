@@ -397,7 +397,15 @@
                         @endphp
                         @if ($q)
                             <h2 class="mt-2 text-base font-medium leading-relaxed text-[#1F2937] font-outfit sm:text-lg">
-                                {{ $currentIndex + 1 }}. {!! $q['text'] !!}
+                                <style>
+                                    .question-text-inline p, .question-text-inline div {
+                                        display: inline !important;
+                                        margin: 0 !important;
+                                    }
+                                </style>
+                                <span class="question-text-inline">
+                                    {{ $currentIndex + 1 }}. {!! $q['text'] !!}
+                                </span>
                             </h2>
 
                             <div class="mt-8 space-y-4" wire:key="q-{{ $q['id'] }}">
