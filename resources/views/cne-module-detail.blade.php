@@ -519,20 +519,38 @@
                         <div
                             class="rounded-2xl bg-gradient-to-br from-[#0F776E] to-[#115E59] p-4 text-center text-white shadow-sm">
                             <p class="text-[10px] font-semibold uppercase tracking-wider text-white/85">Score</p>
-                            <p class="mt-2 text-xl font-bold font-outfit"
+                            <p class="mt-2 text-xl font-normal font-outfit"
                                 x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
                         </div>
                         <div
                             class="rounded-2xl bg-gradient-to-br from-[#F97316] to-[#EA580C] p-4 text-center text-white shadow-sm">
                             <p class="text-[10px] font-semibold uppercase tracking-wider text-white/85">Percentage</p>
-                            <p class="mt-2 text-xl font-bold font-outfit"
+                            <p class="mt-2 text-xl font-normal font-outfit"
                                 x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'">
                             </p>
                         </div>
                         <div
                             class="rounded-2xl border border-green-200 bg-[#F0FDF4] p-4 text-center shadow-sm">
                             <p class="text-[10px] font-semibold uppercase tracking-wider text-[#16A34A]">Correct</p>
-                            <p class="mt-2 text-xl font-bold font-outfit text-[#15803D]" x-text="scoreCardData.correct"></p>
+                            <p class="mt-2 text-xl font-normal font-outfit text-[#15803D]" x-text="scoreCardData.correct"></p>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 grid grid-cols-3 gap-3">
+                        <div
+                            class="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+                            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Questions</p>
+                            <p class="mt-2 text-xl font-normal font-outfit text-slate-900" x-text="scoreCardData.total"></p>
+                        </div>
+                        <div
+                            class="rounded-2xl border border-slate-200 bg-white p-4 text-center shadow-sm">
+                            <p class="text-[10px] font-semibold uppercase tracking-wider text-slate-500">Time Taken</p>
+                            <p class="mt-2 text-xl font-normal font-outfit text-slate-900" x-text="scoreCardData.duration"></p>
+                        </div>
+                        <div
+                            class="rounded-2xl border border-red-200 bg-[#FEF2F2] p-4 text-center shadow-sm">
+                            <p class="text-[10px] font-semibold uppercase tracking-wider text-[#DC2626]">Incorrect</p>
+                            <p class="mt-2 text-xl font-normal font-outfit text-[#B91C1C]" x-text="scoreCardData.wrong"></p>
                         </div>
                     </div>
 
