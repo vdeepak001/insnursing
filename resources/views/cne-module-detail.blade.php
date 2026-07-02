@@ -348,10 +348,17 @@
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="flex flex-col gap-10 md:flex-row md:items-center md:gap-12 lg:gap-16 xl:gap-20">
                         {{-- Left Column: Large Visual --}}
-                        <div class="w-full shrink-0 md:w-64 lg:w-72">
-                            <div class="flex justify-center md:justify-start">
-                                <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
-                                    class="h-auto w-full object-cover rounded-2xl" loading="lazy">
+                        <div class="order-1 w-full min-w-0 lg:order-2">
+                            <div class="relative w-full">
+                                <div
+                                    class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
+                                </div>
+                                <div
+                                    class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-300/35 ring-1 ring-slate-200/50">
+                                    <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
+                                        class="aspect-[4/3] w-full object-cover lg:aspect-auto lg:h-[min(22rem,48vh)]"
+                                        loading="lazy">
+                                </div>
                             </div>
                         </div>
 
