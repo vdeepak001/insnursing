@@ -506,38 +506,38 @@
 
                 <div class="px-6 py-6 sm:px-8">
                     <div class="text-center">
-                        <p class="mb-1 text-sm font-bold text-slate-800">{{ $course->couse_name }}</p>
-                        <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-impetus-teal/80"
+                        <p class="mb-1 text-base font-bold text-slate-800 font-outfit">{{ $course->couse_name }}</p>
+                        <p class="text-[10px] uppercase tracking-[0.15em] text-impetus-teal/80"
                             x-text="scoreCardData.title"></p>
                     </div>
 
                     <div class="mt-8 grid grid-cols-2 gap-3.5">
                         <div class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Score</p>
-                            <p class="mt-1.5 text-xl font-black font-outfit"
+                            <p class="text-[10px] uppercase tracking-wider text-white/80">Score</p>
+                            <p class="mt-1.5 text-xl font-outfit"
                                 x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
                         </div>
                         <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Percentage</p>
-                            <p class="mt-1.5 text-xl font-black font-outfit"
+                            <p class="text-[10px] uppercase tracking-wider text-white/80">Percentage</p>
+                            <p class="mt-1.5 text-xl font-outfit"
                                 x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'">
                             </p>
                         </div>
                         <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Questions</p>
-                            <p class="mt-1.5 text-xl font-black text-slate-900 font-outfit" x-text="scoreCardData.total"></p>
+                            <p class="text-[10px] uppercase tracking-wider text-slate-500">Questions</p>
+                            <p class="mt-1.5 text-xl text-slate-900 font-outfit" x-text="scoreCardData.total"></p>
                         </div>
                         <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Time taken</p>
-                            <p class="mt-1.5 text-xl font-black text-slate-900 font-outfit" x-text="scoreCardData.duration"></p>
+                            <p class="text-[10px] uppercase tracking-wider text-slate-500">Time taken</p>
+                            <p class="mt-1.5 text-xl text-slate-900 font-outfit" x-text="scoreCardData.duration"></p>
                         </div>
                         <div class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Correct Answer</p>
-                            <p class="mt-1.5 text-xl font-black font-outfit" x-text="scoreCardData.correct"></p>
+                            <p class="text-[10px] uppercase tracking-wider text-white/80">Correct Answer</p>
+                            <p class="mt-1.5 text-xl font-outfit" x-text="scoreCardData.correct"></p>
                         </div>
                         <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Incorrect Answer</p>
-                            <p class="mt-1.5 text-xl font-black font-outfit" x-text="scoreCardData.wrong"></p>
+                            <p class="text-[10px] uppercase tracking-wider text-white/80">Incorrect Answer</p>
+                            <p class="mt-1.5 text-xl font-outfit" x-text="scoreCardData.wrong"></p>
                         </div>
                     </div>
 
@@ -562,7 +562,7 @@
 
                     <div class="mt-8">
                         <button @click="scoreCardOpen = false"
-                            class="flex w-full items-center justify-center gap-2 rounded-2xl bg-impetus-teal py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-xl shadow-impetus-teal/20 transition hover:bg-impetus-teal-hover">
+                            class="flex w-full items-center justify-center gap-2 rounded-2xl bg-impetus-teal py-3.5 text-sm uppercase tracking-wide text-white shadow-xl shadow-impetus-teal/20 transition hover:bg-impetus-teal-hover">
                             Close
                         </button>
                     </div>
