@@ -277,7 +277,7 @@
                         </div>
                     </div>
                     <div class="flex flex-wrap items-center gap-2 sm:justify-end">
-                        <span class="rounded-lg bg-white/10 px-3 py-1.5 font-outfit text-sm font-bold tabular-nums">
+                        <span class="rounded-lg bg-[#CCFBF1] px-3 py-1.5 font-sans text-sm font-bold tabular-nums text-[#045A5D]">
                             Question {{ $currentIndex + 1 }} / {{ $totalQuestions }}
                         </span>
                         @if ($examDeadlineTs && $testType !== 'practice')
@@ -287,9 +287,9 @@
                                 aria-label="Exam time remaining"
                                 @class([
                                     'flex items-center gap-2 rounded-lg px-3 py-1.5 font-mono text-sm font-bold tabular-nums sm:text-base',
-                                    'bg-impetus-orange/90' => $examTimeExpired,
-                                    'bg-[#FF7A00]/90' => $timerLow && ! $examTimeExpired,
-                                    'bg-white/15' => ! $examTimeExpired && ! $timerLow,
+                                    'bg-impetus-orange/90 text-white' => $examTimeExpired,
+                                    'bg-[#FF7A00]/90 text-white' => $timerLow && ! $examTimeExpired,
+                                    'bg-[#CCFBF1] text-[#045A5D]' => ! $examTimeExpired && ! $timerLow,
                                 ])
                             >
                                 <svg class="size-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -556,7 +556,7 @@
                                             type="button"
                                             wire:click="submitTest"
                                             wire:loading.attr="disabled"
-                                            class="exam-btn-next"
+                                            class="exam-btn-submit-large"
                                         >
                                             <span wire:loading.remove wire:target="submitTest">Submit test</span>
                                             <span wire:loading wire:target="submitTest">Submitting…</span>
