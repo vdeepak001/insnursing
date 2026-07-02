@@ -474,7 +474,7 @@
                                 </div>
                                 <div
                                     class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-300/35 ring-1 ring-slate-200/50">
-                                    <img src="{{ asset('images/cne-practice-test.jpg') }}"
+                                    <img src="{{ asset('Practice_test_banner.png') }}"
                                         alt="Practice assessment and multiple-choice review"
                                         class="aspect-[4/3] w-full object-cover lg:aspect-auto lg:h-[min(22rem,48vh)]"
                                         width="1400" height="933" loading="lazy" decoding="async">
