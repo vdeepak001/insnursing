@@ -17,7 +17,7 @@ export function initDashboardCharts() {
         const seriesData = overview.series ?? [];
         const allValues = seriesData.flatMap((series) => series.data ?? []);
         const peakValue = allValues.length > 0 ? Math.max(...allValues) : 0;
-        const yAxisMax = peakValue === 0 ? 200 : Math.ceil(peakValue / 200) * 200;
+        const yAxisMax = peakValue + 20;
 
         const attemptsChart = new ApexCharts(attemptsEl, {
             series: seriesData,
@@ -31,7 +31,7 @@ export function initDashboardCharts() {
             },
             dataLabels: { enabled: false },
             stroke: {
-                curve: 'smooth',
+                curve: 'straight',
                 width: 3,
             },
             markers: {
@@ -66,12 +66,12 @@ export function initDashboardCharts() {
                 borderColor: '#E2E8F0',
                 strokeDashArray: 0,
                 yaxis: { lines: { show: true } },
-                xaxis: { lines: { show: false } },
+                xaxis: { lines: { show: true } },
             },
             legend: {
                 show: true,
-                position: 'top',
-                horizontalAlign: 'left',
+                position: 'bottom',
+                horizontalAlign: 'center',
                 fontSize: '13px',
                 markers: {
                     width: 10,
