@@ -396,7 +396,7 @@
                             $q = $questions[$currentIndex] ?? null;
                         @endphp
                         @if ($q)
-                            <h2 class="mt-2 text-base font-medium leading-relaxed text-[#1F2937] font-outfit sm:text-lg">
+                            <h2 class="mt-2 text-base font-medium leading-relaxed text-[#1F2937] font-sans sm:text-lg">
                                 <style>
                                     .question-text-inline p, .question-text-inline div {
                                         display: inline !important;
@@ -447,8 +447,8 @@
                                                     value="{{ $letter }}"
                                                     @disabled($showFeedback || $isFirstWrongChoice)
                                                 />
-                                            <span class="text-base leading-relaxed text-slate-800 sm:text-[17px] font-medium font-outfit">
-                                                <span class="font-bold text-slate-900 font-outfit">{{ $label }}.</span>
+                                            <span class="text-base leading-relaxed text-slate-800 sm:text-[17px] font-medium font-sans">
+                                                <span class="font-bold text-slate-900 font-sans">{{ $label }}.</span>
                                                 {{ $choice }}
                                                 @if ($showFeedback && $letter === $correctLetter)
                                                     <span class="ml-2 inline-flex items-center gap-1 font-bold text-impetus-teal">
@@ -497,7 +497,7 @@
                                 @if ($showReasoning && filled($practiceReasoning[$qid] ?? null))
                                     <div class="mt-4 rounded-2xl border border-impetus-teal/20 bg-impetus-teal-muted/40 p-5 shadow-sm">
                                         <h4 class="text-xs font-bold uppercase tracking-wider text-impetus-teal">Rationale</h4>
-                                        <p class="mt-2 text-justify text-base leading-relaxed text-slate-700 font-outfit">
+                                        <p class="mt-2 text-justify text-base leading-relaxed text-slate-700 font-sans">
                                             {{ $practiceReasoning[$qid] }}
                                         </p>
                                     </div>
