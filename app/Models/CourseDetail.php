@@ -60,6 +60,27 @@ class CourseDetail extends Model
         return asset('storage/'.$this->attachment);
     }
 
+    /**
+     * Image URL only when the attachment exists on disk and is an image type.
+     */
+    public function attachmentImageUrl(): ?string
+    {
+        if (! $this->attachmentIsImage() || ! $this->attachment) {
+            return null;
+        }
+
+        if (is_file(public_path($this->attachment))) {
+            return asset($this->attachment);
+        }
+
+        $storagePath = 'storage/'.$this->attachment;
+        if (is_file(public_path($storagePath))) {
+            return asset($storagePath);
+        }
+
+        return null;
+    }
+
     public function attachmentIsImage(): bool
     {
         if (! $this->attachment) {

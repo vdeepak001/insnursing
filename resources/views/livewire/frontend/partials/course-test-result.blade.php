@@ -5,9 +5,7 @@
     $banner = $type->resultBannerLabel();
     $user = auth()->user();
     $firstName = $user?->name ? explode(' ', trim($user->name))[0] : 'Learner';
-    $heroImage = ($course->attachmentIsImage() && $course->attachmentPublicUrl())
-        ? $course->attachmentPublicUrl()
-        : asset('research_development.jpeg');
+    $heroImage = $course->attachmentImageUrl() ?? asset('research_development.jpeg');
     $feedbackMessage = $pctCorrect >= 70
         ? 'Excellent work! You have demonstrated strong understanding of the module content.'
         : ($pctCorrect >= 50
@@ -47,7 +45,7 @@
             </div>
             <div class="hidden shrink-0 lg:block lg:w-56 xl:w-64">
                 <div class="overflow-hidden rounded-2xl border-4 border-white/20 shadow-xl">
-                    <img src="{{ $heroImage }}" alt="" class="aspect-[4/5] w-full object-cover" loading="lazy">
+                    <img src="{{ $heroImage }}" alt="{{ $course->couse_name }}" class="aspect-[4/5] w-full object-cover" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>
