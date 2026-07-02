@@ -500,90 +500,45 @@
                 class="relative w-full max-w-lg rounded-[2rem] border border-white/20 bg-white shadow-2xl ring-1 ring-slate-900/10">
                 <div
                     class="flex items-center justify-between border-b border-slate-100 bg-white/95 px-6 py-4 rounded-t-[2rem]">
-                    <div class="flex items-center gap-2.5">
-                        <div
-                            class="flex size-9 items-center justify-center rounded-xl bg-impetus-teal/10 text-impetus-teal">
-                            <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <h2 class="text-lg font-bold text-impetus-teal font-outfit">Score Card</h2>
-                    </div>
+                    <h2 class="text-lg font-bold text-[#0F776E] font-outfit">Score Card</h2>
                     <button @click="scoreCardOpen = false"
-                        class="rounded-xl p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600">
-                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        class="rounded-xl px-3 py-1.5 text-sm font-semibold text-slate-500 transition hover:bg-slate-100 hover:text-slate-700"
+                        aria-label="Close score card">
+                        Close
                     </button>
                 </div>
 
                 <div class="px-6 py-6 sm:px-8">
                     <div class="text-center">
                         <p class="mb-1 text-base font-bold text-slate-800 font-outfit">{{ $course->couse_name }}</p>
-                        <p class="text-[10px] uppercase tracking-[0.15em] text-impetus-teal/80"
+                        <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#0F776E]"
                             x-text="scoreCardData.title"></p>
                     </div>
 
-                    <div class="mt-8 grid grid-cols-2 gap-3.5">
+                    <div class="mt-8 grid grid-cols-3 gap-3">
                         <div
-                            class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] uppercase tracking-wider text-white/80">Score</p>
-                            <p class="mt-1.5 text-xl font-outfit"
+                            class="rounded-2xl bg-gradient-to-br from-[#0F776E] to-[#115E59] p-4 text-center text-white shadow-sm">
+                            <p class="text-[10px] font-semibold uppercase tracking-wider text-white/85">Score</p>
+                            <p class="mt-2 text-xl font-bold font-outfit"
                                 x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
                         </div>
                         <div
-                            class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] uppercase tracking-wider text-white/80">Percentage</p>
-                            <p class="mt-1.5 text-xl font-outfit"
+                            class="rounded-2xl bg-gradient-to-br from-[#F97316] to-[#EA580C] p-4 text-center text-white shadow-sm">
+                            <p class="text-[10px] font-semibold uppercase tracking-wider text-white/85">Percentage</p>
+                            <p class="mt-2 text-xl font-bold font-outfit"
                                 x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'">
                             </p>
                         </div>
                         <div
-                            class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
-                            <p class="text-[10px] uppercase tracking-wider text-slate-500">Questions</p>
-                            <p class="mt-1.5 text-xl text-slate-900 font-outfit" x-text="scoreCardData.total"></p>
-                        </div>
-                        <div
-                            class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
-                            <p class="text-[10px] uppercase tracking-wider text-slate-500">Time taken</p>
-                            <p class="mt-1.5 text-xl text-slate-900 font-outfit" x-text="scoreCardData.duration"></p>
-                        </div>
-                        <div
-                            class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] uppercase tracking-wider text-white/80">Correct Answer</p>
-                            <p class="mt-1.5 text-xl font-outfit" x-text="scoreCardData.correct"></p>
-                        </div>
-                        <div
-                            class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
-                            <p class="text-[10px] uppercase tracking-wider text-white/80">Incorrect Answer</p>
-                            <p class="mt-1.5 text-xl font-outfit" x-text="scoreCardData.wrong"></p>
+                            class="rounded-2xl border border-green-200 bg-[#F0FDF4] p-4 text-center shadow-sm">
+                            <p class="text-[10px] font-semibold uppercase tracking-wider text-[#16A34A]">Correct</p>
+                            <p class="mt-2 text-xl font-bold font-outfit text-[#15803D]" x-text="scoreCardData.correct"></p>
                         </div>
                     </div>
 
-                    {{-- Level Breakdown --}}
-                    {{-- <div class="mt-6 border-t border-slate-100 pt-6">
-                        <p class="text-center text-[10px] font-bold uppercase tracking-widest text-slate-400">Level Breakdown (Correct/Total)</p>
-                        <div class="mt-4 grid grid-cols-3 gap-3">
-                            <div class="rounded-xl bg-slate-50 p-3 text-center">
-                                <p class="text-[10px] font-bold text-slate-500 uppercase">Level 1</p>
-                                <p class="mt-1 text-sm font-bold text-slate-900" x-text="scoreCardData.l1"></p>
-                            </div>
-                            <div class="rounded-xl bg-slate-50 p-3 text-center">
-                                <p class="text-[10px] font-bold text-slate-500 uppercase">Level 2</p>
-                                <p class="mt-1 text-sm font-bold text-slate-900" x-text="scoreCardData.l2"></p>
-                            </div>
-                            <div class="rounded-xl bg-slate-50 p-3 text-center">
-                                <p class="text-[10px] font-bold text-slate-500 uppercase">Level 3</p>
-                                <p class="mt-1 text-sm font-bold text-slate-900" x-text="scoreCardData.l3"></p>
-                            </div>
-                        </div>
-                    </div> --}}
-
                     <div class="mt-8">
                         <button @click="scoreCardOpen = false"
-                            class="flex w-full items-center justify-center gap-2 rounded-2xl bg-impetus-teal py-3.5 text-sm uppercase tracking-wide text-white shadow-xl shadow-impetus-teal/20 transition hover:bg-impetus-teal-hover">
+                            class="flex w-full items-center justify-center rounded-2xl bg-gradient-to-r from-[#0F776E] to-[#115E59] py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-[#0F776E]/25 transition hover:from-[#115E59] hover:to-[#134E4A]">
                             Close
                         </button>
                     </div>
