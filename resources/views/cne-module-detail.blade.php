@@ -346,20 +346,27 @@
         @if (filled($course->qa_content) || $hasCourseMaterials)
             <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-16">
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="flex flex-col gap-10 md:flex-row md:items-center md:gap-12 lg:gap-16 xl:gap-20">
-                        {{-- Left Column: Large Visual --}}
-                        <div class="w-full shrink-0 md:w-64 lg:w-72">
-                            <div class="flex justify-center md:justify-start">
-                                <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
-                                    class="h-auto w-full object-cover rounded-2xl" loading="lazy">
+                    <div class="grid gap-10 lg:grid-cols-2 lg:items-stretch lg:gap-12 xl:gap-16">
+                        {{-- Left Column: Visual --}}
+                        <div class="relative flex w-full min-w-0">
+                            <div class="relative flex flex-1 flex-col">
+                                <div
+                                    class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
+                                </div>
+                                <div
+                                    class="relative flex flex-1 overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-xl shadow-slate-300/30 ring-1 ring-slate-200/40">
+                                    <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
+                                        class="h-full min-h-[240px] w-full object-cover sm:min-h-[280px] lg:min-h-0"
+                                        loading="lazy">
+                                </div>
                             </div>
                         </div>
 
                         {{-- Right Column: Content & Materials Link --}}
-                        <div class="min-w-0 flex-1">
-                            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div class="flex min-w-0 flex-col">
+                            <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                                 <h2
-                                    class="text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl">
+                                    class="shrink-0 text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl lg:whitespace-nowrap">
                                     Learning Resources
                                 </h2>
                                 @if ($isPurchased)
@@ -425,60 +432,55 @@
         @if (filled($course->practice_content))
             <section class="border-t border-impetus-teal/10 bg-white py-16 sm:py-16">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="mb-6 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-                        <h2 class="text-2xl font-extrabold tracking-tight text-impetus-teal sm:text-3xl font-outfit">
-                            Practice Test
-                        </h2>
-                        @auth
-                            @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
-                                <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
-                                    class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
-                                    <div class="relative flex items-center gap-4">
-                                        <span
-                                            class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
-                                            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
-                                            </svg>
-                                        </span>
-                                        <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
-                                        <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
-                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                        </svg>
-                                    </div>
-                                </a>
-                            @endif
-                        @endauth
-                    </div>
-                    <div class="grid items-start gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-20">
-                        <div class="order-2 min-w-0 lg:order-1">
-                            <div class="mt-4 space-y-4 text-lg leading-8 text-slate-600 text-justify">
-                                {!! nl2br(e($course->practice_content)) !!}
-                            </div>
-                            @auth
-                                @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
-                                    {{-- <div class="mt-4">
-                                        <p class="text-sm text-slate-500 italic">Up to 30 random questions per session, with numbered navigation.</p>
-                                    </div> --}}
-                                @endif
-                            @endauth
-                        </div>
-                        <div class="order-1 w-full min-w-0 lg:order-2">
-                            <br>
-                            <div class="relative w-full">
+                    <div class="grid gap-10 lg:grid-cols-2 lg:items-stretch lg:gap-12 xl:gap-16">
+                        {{-- Left Column: Visual --}}
+                        <div class="relative flex w-full min-w-0">
+                            <div class="relative flex flex-1 flex-col">
                                 <div
                                     class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
                                 </div>
                                 <div
-                                    class="relative overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-300/35 ring-1 ring-slate-200/50">
+                                    class="relative flex flex-1 overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-300/35 ring-1 ring-slate-200/50">
                                     <img src="{{ asset('Practice_test_banner.png') }}"
                                         alt="Practice assessment and multiple-choice review"
-                                        class="aspect-[4/3] w-full object-cover lg:aspect-auto lg:h-[min(22rem,48vh)]"
+                                        class="h-full min-h-[240px] w-full object-cover sm:min-h-[280px] lg:min-h-0"
                                         width="1400" height="933" loading="lazy" decoding="async">
                                 </div>
+                            </div>
+                        </div>
+
+                        {{-- Right Column: Content --}}
+                        <div class="flex min-w-0 flex-col">
+                            <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                                <h2 class="shrink-0 text-2xl font-extrabold tracking-tight text-impetus-teal sm:text-3xl font-outfit">
+                                    Practice Test
+                                </h2>
+                                @auth
+                                    @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
+                                        <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
+                                            class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
+                                            <div class="relative flex items-center gap-4">
+                                                <span
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
+                                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
+                                                    </svg>
+                                                </span>
+                                                <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
+                                                <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    @endif
+                                @endauth
+                            </div>
+                            <div class="mt-4 space-y-4 text-lg leading-8 text-slate-600 text-justify">
+                                {!! nl2br(e($course->practice_content)) !!}
                             </div>
                         </div>
                     </div>
