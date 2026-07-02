@@ -62,7 +62,7 @@
     }" @keydown.escape.window="practiceGateOpen = false; scoreCardOpen = false">
 
         {{-- Hero + overview (aligned with Practice Test / site theme) --}}
-        <section class="relative overflow-hidden border-b border-impetus-teal/10 bg-impetus-teal-muted/30 py-14 sm:py-20">
+        <section class="relative overflow-hidden border-b border-impetus-teal/10 bg-impetus-teal-muted/30 py-14 sm:py-16">
             <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-impetus-teal/10 blur-3xl">
             </div>
             <div
