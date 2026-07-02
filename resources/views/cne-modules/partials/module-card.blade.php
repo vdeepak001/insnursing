@@ -147,7 +147,11 @@
 
         @auth
             @if (auth()->user()?->role_type === 'user' && isset($creditPoints) && $creditPoints !== 'N/A')
-                <p class="mt-3 inline-flex self-start rounded-full bg-impetus-teal-muted px-3 py-1 text-xs font-bold text-impetus-teal">
+                <p @class([
+                    'mt-3 inline-flex self-start rounded-full px-3 py-1 text-xs font-bold',
+                    'bg-impetus-teal-muted text-impetus-teal' => $theme === 'teal',
+                    'bg-impetus-lightOrange/70 text-impetus-orange' => $theme === 'orange',
+                ])>
                     Credit Point: {{ $creditPoints }}
                 </p>
             @endif
