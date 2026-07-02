@@ -50,32 +50,32 @@
                             {{-- Total Questions --}}
                             <div class="flex flex-col items-center justify-center rounded-xl border border-transparent bg-gradient-to-br from-[#045A5D] to-[#067D80] p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
                                 <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-wider text-white/80 md:text-[11px]">Questions</p>
-                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $totalQuestions }}</p>
+                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $totalQuestions }}</p>
                             </div>
 
                             {{-- Correct Answers --}}
                             <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-teal/20 bg-impetus-teal p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
                                 <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Correct</p>
-                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $correctCount }}</p>
+                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $correctCount }}</p>
                             </div>
 
                             {{-- Incorrect Answers --}}
                             <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-orange/20 bg-impetus-orange p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
                                 <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Wrong</p>
-                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $wrongCount }}</p>
+                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $wrongCount }}</p>
                             </div>
 
                             {{-- Obtained Score --}}
                             <div class="flex flex-col items-center justify-center rounded-xl border border-impetus-orange/20 bg-impetus-orange p-2 text-center text-white shadow-sm transition hover:shadow-md md:p-4">
                                 <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-white/80 md:text-[11px]">Score</p>
-                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $obtainedScore }}/{{ $maxScore }}</p>
+                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $obtainedScore }}/{{ $maxScore }}</p>
                             </div>
 
                             @if($testType !== 'practice')
                             {{-- Time Taken --}}
                             <div class="flex flex-col items-center justify-center rounded-xl border border-slate-200 bg-slate-50/80 p-2 text-center text-slate-800 shadow-sm transition hover:shadow-md md:p-4">
                                 <p class="whitespace-nowrap text-center text-[8px] font-bold uppercase tracking-widest text-slate-500 md:text-[11px]">Time Taken</p>
-                                <p class="mt-1 text-xl font-black md:mt-2 md:text-2xl font-outfit">{{ $formattedDuration }}</p>
+                                <p class="mt-1 text-xl md:mt-2 md:text-2xl font-outfit">{{ $formattedDuration }}</p>
                             </div>
                             @endif
                         </div>
@@ -83,7 +83,7 @@
                         <div class="mt-10 overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white p-6 shadow-xl sm:p-8">
                             <div class="flex flex-col gap-2 border-b border-slate-100 pb-5">
                                 <h2 class="font-serif text-xl font-bold text-slate-900 sm:text-2xl">
-                                    Score: <span class="text-impetus-orange font-outfit font-black">{{ $obtainedScore }}/{{ $maxScore }}</span>
+                                    Score: <span class="text-impetus-orange font-outfit">{{ $obtainedScore }}/{{ $maxScore }}</span>
                                 </h2>
                             </div>
 
