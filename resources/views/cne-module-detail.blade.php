@@ -510,8 +510,8 @@
 
                 <div class="px-6 py-6 sm:px-8">
                     <div class="text-center">
-                        <p class="mb-1 text-base font-bold text-slate-800 font-outfit">{{ $course->couse_name }}</p>
-                        <p class="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#0F776E]"
+                        <p class="mb-1 text-lg font-bold text-slate-800 font-outfit">{{ $course->couse_name }}</p>
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.15em] text-[#0F776E]"
                             x-text="scoreCardData.title"></p>
                     </div>
 
