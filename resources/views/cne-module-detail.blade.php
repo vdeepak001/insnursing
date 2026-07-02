@@ -357,8 +357,7 @@
 
                         {{-- Right Column: Content & Materials Link --}}
                         <div class="min-w-0 flex-1">
-                            <div
-                                class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                                 <h2
                                     class="text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl">
                                     Learning Resources
