@@ -113,7 +113,7 @@
                                             }
 
                                             $btnActive =
-                                                'ring-2 ring-offset-2 ring-[#16A34A] ring-offset-white shadow-md';
+                                                'ring-2 ring-offset-2 ring-[#0F776E] ring-offset-white shadow-md';
 
                                             $preClass = 'btn-pretest' . ($nextTest === 'pre' ? ' ' . $btnActive : '');
                                             $mockClass =
@@ -154,7 +154,7 @@
                                                 }"
                                                 class="{{ $preDoneClass }}">
                                                 Pretest
-                                                <svg class="h-5 w-5 shrink-0 text-[#045A5D]" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-5 w-5 shrink-0 text-[#0F776E]" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="3" aria-hidden="true">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M4.5 12.75l6 6 9-13.5" />
