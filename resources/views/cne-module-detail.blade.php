@@ -128,8 +128,8 @@
                                                     : '');
 
                                             $preDoneClass = 'btn-test-completed';
-                                            $mockDoneClass = 'btn-test-completed';
-                                            $finalDoneClass = 'btn-test-completed';
+                                            $mockDoneClass = 'btn-mock-test';
+                                            $finalDoneClass = 'btn-final-test';
 
                                             $preLockedClass = 'btn-pretest-locked';
                                             $mockLockedClass = 'btn-mock-test-locked';
@@ -185,7 +185,7 @@
                                                 }"
                                                 class="{{ $mockDoneClass }}">
                                                 Mock Test
-                                                <svg class="h-5 w-5 shrink-0 text-[#045A5D]" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-5 w-5 shrink-0 text-white" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="3" aria-hidden="true">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M4.5 12.75l6 6 9-13.5" />
@@ -220,7 +220,7 @@
                                                 @if (! ($tp['final_passed'] ?? false))
                                                     <span class="text-[10px] font-bold uppercase">(Failed)</span>
                                                 @endif
-                                                <svg class="h-5 w-5 shrink-0 text-[#045A5D]" fill="none" viewBox="0 0 24 24"
+                                                <svg class="h-5 w-5 shrink-0 text-white" fill="none" viewBox="0 0 24 24"
                                                     stroke="currentColor" stroke-width="3" aria-hidden="true">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M4.5 12.75l6 6 9-13.5" />
