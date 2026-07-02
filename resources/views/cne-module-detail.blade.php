@@ -65,7 +65,8 @@
         <section class="relative overflow-hidden border-b border-impetus-teal/10 bg-impetus-teal-muted/30 py-14 sm:py-20">
             <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-impetus-teal/10 blur-3xl">
             </div>
-            <div class="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-impetus-orange/10 blur-3xl">
+            <div
+                class="pointer-events-none absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-impetus-orange/10 blur-3xl">
             </div>
             <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
@@ -114,12 +115,17 @@
                                             $btnActive =
                                                 'ring-2 ring-offset-2 ring-[#045A5D] ring-offset-white shadow-md';
 
-                                            $preClass =
-                                                'btn-pretest' . ($nextTest === 'pre' ? ' ' . $btnActive : '');
+                                            $preClass = 'btn-pretest' . ($nextTest === 'pre' ? ' ' . $btnActive : '');
                                             $mockClass =
-                                                'btn-mock-test' . ($nextTest === 'mock' ? ' ring-2 ring-offset-2 ring-[#FF7A00] ring-offset-white shadow-md' : '');
+                                                'btn-mock-test' .
+                                                ($nextTest === 'mock'
+                                                    ? ' ring-2 ring-offset-2 ring-[#FF7A00] ring-offset-white shadow-md'
+                                                    : '');
                                             $finalClass =
-                                                'btn-final-test' . ($nextTest === 'final' ? ' ring-2 ring-offset-2 ring-[#FF7A00] ring-offset-white shadow-md' : '');
+                                                'btn-final-test' .
+                                                ($nextTest === 'final'
+                                                    ? ' ring-2 ring-offset-2 ring-[#FF7A00] ring-offset-white shadow-md'
+                                                    : '');
 
                                             $preDoneClass = 'btn-pretest';
                                             $mockDoneClass = 'btn-mock-test';
@@ -177,8 +183,8 @@
                                                     max: '{{ $tp['mock_max'] }}'
                                                 }"
                                                 class="{{ $mockDoneClass }}">
-                                                Mock <svg class="ml-2 h-5 w-5 text-white" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                Mock <svg class="ml-2 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="3">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
                                                         d="M4.5 12.75l6 6 9-13.5" />
                                                 </svg>
@@ -187,8 +193,8 @@
                                             <livewire:cne.pretest-otp-button :course="$course" :btn-class="$mockClass"
                                                 :test-type="'mock'" :btn-label="'Mock Test'" />
                                         @else
-                                            <span class="{{ $mockLockedClass }}"
-                                                title="Complete the pre test first">Mock Test</span>
+                                            <span class="{{ $mockLockedClass }}" title="Complete the pre test first">Mock
+                                                Test</span>
                                         @endif
 
                                         {{-- Final Test --}}
@@ -210,8 +216,8 @@
                                                 class="{{ $finalDoneClass }}">
                                                 Final
                                                 @if ($tp['final_passed'] ?? false)
-                                                    <svg class="ml-2 h-5 w-5 text-white" fill="none"
-                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                                    <svg class="ml-2 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="3">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="M4.5 12.75l6 6 9-13.5" />
                                                     </svg>
@@ -246,8 +252,7 @@
                                     Buy now
                                 </a>
                             @else
-                                <button type="button" disabled
-                                    class="{{ $buyButtonClass }} cursor-not-allowed opacity-90"
+                                <button type="button" disabled class="{{ $buyButtonClass }} cursor-not-allowed opacity-90"
                                     title="Purchase link is not set for this module in the admin yet.">
                                     Buy now
                                 </button>
@@ -273,8 +278,7 @@
                         @auth
                             @if (auth()->user()?->role_type === 'user')
                                 <div class="mt-4 flex justify-end">
-                                    <div
-                                        class="text-sm font-bold uppercase tracking-wider text-impetus-orange">
+                                    <div class="text-sm font-bold uppercase tracking-wider text-impetus-orange">
                                         CREDIT POINTS: {{ $creditPoints }}
                                     </div>
                                 </div>
@@ -346,7 +350,7 @@
                         {{-- Left Column: Large Visual --}}
                         <div class="w-full shrink-0 md:w-64 lg:w-72">
                             <div class="flex justify-center md:justify-start">
-                                <img src="{{ asset('images/nursing-practice.png') }}" alt="Learning Illustration"
+                                <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
                                     class="h-auto w-full max-h-[32rem] object-contain" loading="lazy">
                             </div>
                         </div>
@@ -355,7 +359,8 @@
                         <div class="min-w-0 flex-1">
                             <div
                                 class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-l-4 border-impetus-teal pl-5 sm:pl-6">
-                                <h2 class="text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl">
+                                <h2
+                                    class="text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl">
                                     Learning Resources
                                 </h2>
                                 @if ($isPurchased)
@@ -371,7 +376,8 @@
                                                             d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                                                     </svg>
                                                 </span>
-                                                <span class="text-sm font-bold uppercase tracking-wider">Learning Resources</span>
+                                                <span class="text-sm font-bold uppercase tracking-wider">Learning
+                                                    Resources</span>
                                                 <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -381,17 +387,24 @@
                                         </a>
                                     @else
                                         <div class="flex flex-col items-end gap-1.5">
-                                            <span class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75">
+                                            <span
+                                                class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75">
                                                 <div class="relative flex items-center gap-4">
-                                                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
-                                                        <svg class="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                                    <span
+                                                        class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
+                                                        <svg class="h-5 w-5 text-slate-400" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                                                         </svg>
                                                     </span>
-                                                    <span class="text-sm font-bold uppercase tracking-wider">Learning Resources (Locked)</span>
+                                                    <span class="text-sm font-bold uppercase tracking-wider">Learning
+                                                        Resources (Locked)</span>
                                                 </div>
                                             </span>
-                                            <span class="text-xs font-semibold tracking-wide text-impetus-orange bg-impetus-lightOrange border border-impetus-orange/20 rounded-lg px-2.5 py-1">⚠️ Complete the Pre-test first to unlock your Learning Resources.</span>
+                                            <span
+                                                class="text-xs font-semibold tracking-wide text-impetus-orange bg-impetus-lightOrange border border-impetus-orange/20 rounded-lg px-2.5 py-1">⚠️
+                                                Complete the Pre-test first to unlock your Learning Resources.</span>
                                         </div>
                                     @endif
                                 @endif
@@ -487,7 +500,8 @@
                 <div
                     class="flex items-center justify-between border-b border-slate-100 bg-white/95 px-6 py-4 rounded-t-[2rem]">
                     <div class="flex items-center gap-2.5">
-                        <div class="flex size-9 items-center justify-center rounded-xl bg-impetus-teal/10 text-impetus-teal">
+                        <div
+                            class="flex size-9 items-center justify-center rounded-xl bg-impetus-teal/10 text-impetus-teal">
                             <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -512,30 +526,36 @@
                     </div>
 
                     <div class="mt-8 grid grid-cols-2 gap-3.5">
-                        <div class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
+                        <div
+                            class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
                             <p class="text-[10px] uppercase tracking-wider text-white/80">Score</p>
                             <p class="mt-1.5 text-xl font-outfit"
                                 x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
                         </div>
-                        <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
+                        <div
+                            class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
                             <p class="text-[10px] uppercase tracking-wider text-white/80">Percentage</p>
                             <p class="mt-1.5 text-xl font-outfit"
                                 x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'">
                             </p>
                         </div>
-                        <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
+                        <div
+                            class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
                             <p class="text-[10px] uppercase tracking-wider text-slate-500">Questions</p>
                             <p class="mt-1.5 text-xl text-slate-900 font-outfit" x-text="scoreCardData.total"></p>
                         </div>
-                        <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
+                        <div
+                            class="rounded-2xl border border-slate-200 bg-slate-50/80 p-4 text-center transition hover:shadow-md">
                             <p class="text-[10px] uppercase tracking-wider text-slate-500">Time taken</p>
                             <p class="mt-1.5 text-xl text-slate-900 font-outfit" x-text="scoreCardData.duration"></p>
                         </div>
-                        <div class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
+                        <div
+                            class="rounded-2xl border border-impetus-teal/20 bg-impetus-teal p-4 text-center text-white transition hover:shadow-md">
                             <p class="text-[10px] uppercase tracking-wider text-white/80">Correct Answer</p>
                             <p class="mt-1.5 text-xl font-outfit" x-text="scoreCardData.correct"></p>
                         </div>
-                        <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
+                        <div
+                            class="rounded-2xl border border-impetus-orange/20 bg-impetus-orange p-4 text-center text-white transition hover:shadow-md">
                             <p class="text-[10px] uppercase tracking-wider text-white/80">Incorrect Answer</p>
                             <p class="mt-1.5 text-xl font-outfit" x-text="scoreCardData.wrong"></p>
                         </div>
