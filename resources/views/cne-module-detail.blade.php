@@ -346,17 +346,19 @@
         @if (filled($course->qa_content) || $hasCourseMaterials)
             <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-24">
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="grid items-stretch gap-0 overflow-hidden rounded-3xl shadow-lg lg:grid-cols-2">
+                    <div class="flex flex-col gap-10 md:flex-row md:items-center md:gap-12 lg:gap-16 xl:gap-20">
                         {{-- Left Column: Large Visual --}}
-                        <div class="relative min-h-[20rem] lg:min-h-[28rem]">
-                            <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
-                                class="absolute inset-0 h-full w-full object-cover" loading="lazy">
+                        <div class="w-full shrink-0 md:w-64 lg:w-72">
+                            <div class="flex justify-center md:justify-start">
+                                <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
+                                    class="h-auto w-full object-cover rounded-2xl" loading="lazy">
+                            </div>
                         </div>
 
                         {{-- Right Column: Content & Materials Link --}}
-                        <div class="min-w-0 flex-1 bg-white px-8 py-10 sm:px-10">
+                        <div class="min-w-0 flex-1">
                             <div
-                                class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                                class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-l-4 border-impetus-teal pl-5 sm:pl-6">
                                 <h2
                                     class="text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl">
                                     Learning Resources
