@@ -1060,6 +1060,23 @@ h2 {
   background-color: #C2410C;
   border-color: #C2410C;
 }
+/* Completed test — light green with tick (default, not hover-only) */
+.btn-test-completed {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border px-8 py-3.5 text-sm font-bold uppercase tracking-wide transition cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#045A5D]/30 focus-visible:ring-offset-2;
+  background-color: #CCFBF1;
+  border-color: #99F6E4;
+  color: #045A5D;
+}
+.btn-test-completed:hover:not(:disabled) {
+  background-color: #99F6E4;
+  border-color: #5EEAD4;
+  color: #034548;
+}
+.btn-test-completed:active:not(:disabled) {
+  background-color: #5EEAD4;
+  border-color: #2DD4BF;
+  color: #034548;
+}
 .btn-test-disabled,
 .btn-pretest:disabled,
 .btn-mock-test:disabled,

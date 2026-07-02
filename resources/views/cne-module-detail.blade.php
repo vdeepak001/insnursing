@@ -127,9 +127,9 @@
                                                     ? ' ring-2 ring-offset-2 ring-[#F97316] ring-offset-white shadow-md'
                                                     : '');
 
-                                            $preDoneClass = 'btn-pretest';
-                                            $mockDoneClass = 'btn-mock-test';
-                                            $finalDoneClass = 'btn-final-test';
+                                            $preDoneClass = 'btn-test-completed';
+                                            $mockDoneClass = 'btn-test-completed';
+                                            $finalDoneClass = 'btn-test-completed';
 
                                             $preLockedClass = 'btn-pretest-locked';
                                             $mockLockedClass = 'btn-mock-test-locked';
@@ -154,6 +154,11 @@
                                                 }"
                                                 class="{{ $preDoneClass }}">
                                                 Pretest
+                                                <svg class="h-5 w-5 shrink-0 text-[#045A5D]" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="3" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M4.5 12.75l6 6 9-13.5" />
+                                                </svg>
                                             </button>
                                         @elseif ($canPre)
                                             <livewire:cne.pretest-otp-button :course="$course" :btn-class="$preClass" />
@@ -180,6 +185,11 @@
                                                 }"
                                                 class="{{ $mockDoneClass }}">
                                                 Mock Test
+                                                <svg class="h-5 w-5 shrink-0 text-[#045A5D]" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="3" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M4.5 12.75l6 6 9-13.5" />
+                                                </svg>
                                             </button>
                                         @elseif ($canMock)
                                             <livewire:cne.pretest-otp-button :course="$course" :btn-class="$mockClass"
@@ -208,9 +218,13 @@
                                                 class="{{ $finalDoneClass }}">
                                                 Final Test
                                                 @if (! ($tp['final_passed'] ?? false))
-                                                    <span
-                                                        class="ml-1 text-[10px] font-bold uppercase">(Failed)</span>
+                                                    <span class="text-[10px] font-bold uppercase">(Failed)</span>
                                                 @endif
+                                                <svg class="h-5 w-5 shrink-0 text-[#045A5D]" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="3" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M4.5 12.75l6 6 9-13.5" />
+                                                </svg>
                                             </button>
                                         @elseif ($canFinal)
                                             <livewire:cne.pretest-otp-button :course="$course" :btn-class="$finalClass"
