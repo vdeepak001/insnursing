@@ -82,9 +82,9 @@
                     </p>
                 </div>
 
-                <div class="mx-auto max-w-3xl overflow-hidden rounded-2xl">
+                <div class="mx-auto max-w-3xl overflow-hidden rounded-2xl border-4 border-impetus-orange p-2">
                     <img src="{{ asset(rawurlencode('Features-learning fesources.png')) }}"
-                        alt="Features of Learning Resources" class="mx-auto h-auto w-full object-contain">
+                        alt="Features of Learning Resources" class="mx-auto h-auto w-full object-contain rounded-xl">
                 </div>
             </div>
         </section>
