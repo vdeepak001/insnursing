@@ -346,23 +346,8 @@
         @if (filled($course->qa_content) || $hasCourseMaterials)
             <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-16">
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="grid gap-10 lg:grid-cols-2 lg:items-stretch lg:gap-12 xl:gap-16">
-                        {{-- Left Column: Visual --}}
-                        <div class="relative flex w-full min-w-0">
-                            <div class="relative flex flex-1 flex-col">
-                                <div
-                                    class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
-                                </div>
-                                <div
-                                    class="relative flex flex-1 overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-xl shadow-slate-300/30 ring-1 ring-slate-200/40">
-                                    <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
-                                        class="h-full min-h-[240px] w-full object-cover sm:min-h-[280px] lg:min-h-0"
-                                        loading="lazy">
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- Right Column: Content & Materials Link --}}
+                    <div class="grid gap-10 lg:grid-cols-[3fr_2fr] lg:items-stretch lg:gap-12 xl:gap-16">
+                        {{-- Left Column: Content (60%) --}}
                         <div class="flex min-w-0 flex-col">
                             <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                                 <h2
@@ -423,6 +408,21 @@
                             @endif
 
                         </div>
+
+                        {{-- Right Column: Visual (40%) --}}
+                        <div class="relative flex w-full min-w-0">
+                            <div class="relative flex flex-1 flex-col">
+                                <div
+                                    class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
+                                </div>
+                                <div
+                                    class="relative flex flex-1 overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-xl shadow-slate-300/30 ring-1 ring-slate-200/40">
+                                    <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
+                                        class="h-full min-h-[240px] w-full object-cover sm:min-h-[280px] lg:min-h-0"
+                                        loading="lazy">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -432,8 +432,8 @@
         @if (filled($course->practice_content))
             <section class="border-t border-impetus-teal/10 bg-white py-16 sm:py-16">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="grid gap-10 lg:grid-cols-2 lg:items-stretch lg:gap-12 xl:gap-16">
-                        {{-- Left Column: Visual --}}
+                    <div class="grid gap-10 lg:grid-cols-[2fr_3fr] lg:items-stretch lg:gap-12 xl:gap-16">
+                        {{-- Left Column: Visual (40%) --}}
                         <div class="relative flex w-full min-w-0">
                             <div class="relative flex flex-1 flex-col">
                                 <div
@@ -449,7 +449,7 @@
                             </div>
                         </div>
 
-                        {{-- Right Column: Content --}}
+                        {{-- Right Column: Content (60%) --}}
                         <div class="flex min-w-0 flex-col">
                             <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                                 <h2 class="shrink-0 text-2xl font-extrabold tracking-tight text-impetus-teal sm:text-3xl font-outfit">
