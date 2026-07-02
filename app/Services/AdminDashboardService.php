@@ -145,7 +145,7 @@ class AdminDashboardService
 
         return [
             'categories' => $days
-                ->map(fn (int $day): string => $month->copy()->day($day)->format('d/m'))
+                ->map(fn (int $day): string => $month->copy()->day($day)->format('d'))
                 ->values()
                 ->all(),
             'series' => $series,

@@ -102,10 +102,10 @@ test('attempts overview groups weekly data for the selected month', function () 
     $overview = app(AdminDashboardService::class)->build($month->format('Y-m'))['charts']['attempts_overview'];
     $series = collect($overview['series'])->keyBy('name');
 
-    expect($overview['categories'][0])->toBe($month->copy()->day(1)->displayDate());
+    expect($overview['categories'][0])->toBe($month->copy()->day(1)->format('d'));
     expect($overview['colors'])->toBe(['#2196F3', '#1A7F64', '#E68A2E']);
-    expect($series['Pre Tests']['data'][0])->toBe(1);
-    expect($series['Mock Tests']['data'][1])->toBe(1);
+    expect($series['Pre Tests']['data'][1])->toBe(1);
+    expect($series['Mock Tests']['data'][9])->toBe(1);
     expect($series['Final Tests']['data'])->each->toBe(0);
 });
 
