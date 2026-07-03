@@ -497,119 +497,119 @@
             <div class="absolute inset-0 bg-slate-900/60 transition-opacity" @click="scoreCardOpen = false"></div>
 
             <div
-                class="relative w-full max-w-sm overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl ring-1 ring-slate-900/10">
-                <div class="flex items-center justify-between px-4 pt-4 pb-2">
-                    <div class="flex items-center gap-2">
-                        <div class="flex size-8 items-center justify-center rounded-full bg-[#0F776E] text-white">
-                            <svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                class="relative w-full max-w-md overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl ring-1 ring-slate-900/10">
+                <div class="flex items-center justify-between px-5 pt-5 pb-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="flex size-10 items-center justify-center rounded-full bg-[#0F776E] text-white">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M12 2l2.4 4.86L20 7.64l-4 3.9.94 5.5L12 14.77 7.06 17.04 8 11.54l-4-3.9 5.6-.78L12 2z" />
                             </svg>
                         </div>
-                        <h2 class="text-base font-bold text-slate-800 font-outfit">Score Card</h2>
+                        <h2 class="text-lg font-bold text-slate-800 font-outfit">Score Card</h2>
                     </div>
                     <button type="button" @click="scoreCardOpen = false"
-                        class="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                        class="rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
                         aria-label="Close score card">
-                        <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
 
-                <div class="px-4 pb-4">
+                <div class="px-5 pb-5">
                     <div class="text-center">
-                        <p class="text-sm font-bold text-slate-800 font-outfit">{{ $course->couse_name }}</p>
-                        <p class="mt-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#0F776E]"
+                        <p class="text-base font-bold text-slate-800 font-outfit">{{ $course->couse_name }}</p>
+                        <p class="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#0F776E]"
                             x-text="scoreCardData.title"></p>
                     </div>
 
-                    <div class="my-3 flex items-center gap-2" aria-hidden="true">
+                    <div class="my-4 flex items-center gap-2" aria-hidden="true">
                         <div class="h-px flex-1 bg-slate-200"></div>
-                        <div class="size-1 rounded-full bg-slate-300"></div>
+                        <div class="size-1.5 rounded-full bg-slate-300"></div>
                         <div class="h-px flex-1 bg-slate-200"></div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="flex items-center gap-2 rounded-xl bg-[#0F776E] px-2.5 py-2 text-white shadow-sm">
-                            <div class="flex size-7 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                                <svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3 rounded-xl bg-[#0F776E] px-3.5 py-3 text-white shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
+                                <svg class="size-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path d="M7 4V2h10v2h3a1 1 0 0 1 1 1v2a5 5 0 0 1-4.1 4.9A5.5 5.5 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5.5 5.5 0 0 1 7.1 11.9 5 5 0 0 1 3 7V5a1 1 0 0 1 1-1h3zm0 2H5v1a3 3 0 0 0 3 3V6H7zm10 0h-2v4a3 3 0 0 0 3-3V6h-1z" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-[9px] font-bold uppercase tracking-wider text-white/80">Score</p>
-                                <p class="truncate text-sm font-bold font-outfit leading-tight"
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Score</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight"
                                     x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-2 rounded-xl bg-impetus-orange px-2.5 py-2 text-white shadow-sm">
-                            <div class="flex size-7 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <div class="flex items-center gap-3 rounded-xl bg-impetus-orange px-3.5 py-3 text-white shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-[9px] font-bold uppercase tracking-wider text-white/80">Percentage</p>
-                                <p class="truncate text-sm font-bold font-outfit leading-tight"
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Percentage</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight"
                                     x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'"></p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-2.5 py-2 shadow-sm">
-                            <div class="flex size-7 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
-                                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <div class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-[9px] font-bold uppercase tracking-wider text-slate-500">Questions</p>
-                                <p class="truncate text-sm font-bold font-outfit leading-tight text-slate-800" x-text="scoreCardData.total"></p>
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Questions</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800" x-text="scoreCardData.total"></p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-2.5 py-2 shadow-sm">
-                            <div class="flex size-7 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
-                                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <div class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-[9px] font-bold uppercase tracking-wider text-slate-500">Time Taken</p>
-                                <p class="truncate text-sm font-bold font-outfit leading-tight text-slate-800" x-text="scoreCardData.duration"></p>
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Time Taken</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800" x-text="scoreCardData.duration"></p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-2 rounded-xl border border-green-200 bg-[#F0FDF4] px-2.5 py-2 shadow-sm">
-                            <div class="flex size-7 shrink-0 items-center justify-center rounded-full bg-green-500 text-white">
-                                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <div class="flex items-center gap-3 rounded-xl border border-green-200 bg-[#F0FDF4] px-3.5 py-3 shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-full bg-green-500 text-white">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-[9px] font-bold uppercase tracking-wider text-green-600">Correct Answer</p>
-                                <p class="truncate text-sm font-bold font-outfit leading-tight text-green-700" x-text="scoreCardData.correct"></p>
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-green-600">Correct Answer</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-green-700" x-text="scoreCardData.correct"></p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-2 rounded-xl border border-red-200 bg-[#FEF2F2] px-2.5 py-2 shadow-sm">
-                            <div class="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
-                                <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <div class="flex items-center gap-3 rounded-xl border border-red-200 bg-[#FEF2F2] px-3.5 py-3 shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-[9px] font-bold uppercase tracking-wider text-red-600">Incorrect Answer</p>
-                                <p class="truncate text-sm font-bold font-outfit leading-tight text-red-700" x-text="scoreCardData.wrong"></p>
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-red-600">Incorrect Answer</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-red-700" x-text="scoreCardData.wrong"></p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-4">
+                    <div class="mt-5">
                         <button type="button" @click="scoreCardOpen = false"
-                            class="flex w-full items-center justify-center gap-1.5 rounded-xl bg-[#0F776E] py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-md shadow-[#0F776E]/20 transition hover:bg-[#115E59]">
-                            <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            class="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0F776E] py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-[#0F776E]/20 transition hover:bg-[#115E59]">
+                            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                             </svg>
                             Close

@@ -211,5 +211,5 @@ it('renders the compact two-column score card modal pattern', function () {
     $response->assertSee('Correct Answer', false);
     $response->assertSee('Incorrect Answer', false);
     $response->assertSee('grid-cols-2', false);
-    $response->assertSee('max-w-sm', false);
+    $response->assertSee('max-w-md', false);
 });
