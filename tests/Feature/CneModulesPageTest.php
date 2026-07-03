@@ -196,3 +196,20 @@ it('shows buy now as external link for authenticated users when course has a pur
     $response->assertSuccessful();
     $response->assertSee('https://example.com/purchase', false);
 });
+
+it('renders the compact two-column score card modal pattern', function () {
+    $course = CourseDetail::create([
+        'couse_name' => 'Score Card Module',
+        'description' => 'Test',
+        'active_status' => 1,
+    ]);
+
+    $response = $this->get(route('cne.modules.show', $course));
+
+    $response->assertSuccessful();
+    $response->assertSee('Score Card', false);
+    $response->assertSee('Correct Answer', false);
+    $response->assertSee('Incorrect Answer', false);
+    $response->assertSee('grid-cols-2', false);
+    $response->assertSee('max-w-sm', false);
+});
