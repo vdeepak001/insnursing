@@ -5,13 +5,17 @@
     $banner = $type->resultBannerLabel();
     $user = auth()->user();
     $firstName = $user?->name ? explode(' ', trim($user->name))[0] : 'Learner';
-    $heroImage = $course->attachmentImageUrl() ?? asset('research_development.jpeg');
+    $heroImage = asset('images/design/test-result-hero.png');
+
     $feedbackMessage = $pctCorrect >= 70
         ? 'Excellent work! You have demonstrated strong understanding of the module content.'
         : ($pctCorrect >= 50
             ? 'Good effort! Review the topics where you missed questions to strengthen your knowledge.'
             : 'Keep practicing! Review the topics and attempt the test again to improve your score.');
     $canRetakeFinal = $type === \App\Enums\CourseTestType::Final && ! ($passed ?? false) && $finalAttemptCount < 2;
+    $finalAttemptsExhausted = $type === \App\Enums\CourseTestType::Final && ! ($passed ?? false) && $finalAttemptCount >= 2;
+    $isPreOrMock = in_array($type, [\App\Enums\CourseTestType::Pre, \App\Enums\CourseTestType::Mock], true);
+    $showFeedback = ! $isPreOrMock;
     $learningUrl = route('cne.modules.materials', $course->couse_name);
     $moduleUrl = route('cne.modules.show', $course->couse_name);
     $practiceUrl = route('cne.modules.test', [$course->couse_name, 'practice']);
@@ -25,39 +29,83 @@
 
         <div class="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div class="flex min-w-0 flex-1 items-start gap-5 sm:gap-6">
-                <div class="flex size-20 shrink-0 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-white/20 sm:size-24">
+                <div class="flex size-20 shrink-0 items-center justify-center rounded-2xl bg-white shadow-lg sm:size-24">
                     @if ($type === \App\Enums\CourseTestType::Final && ! ($passed ?? false))
                         {{-- Warning/exclamation icon for failed final test --}}
-                        <svg class="size-10 text-rose-300 sm:size-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <svg class="size-10 text-rose-500 sm:size-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                         </svg>
                     @else
-                        {{-- Star icon for passed final or other completed tests --}}
-                        <svg class="size-10 text-amber-300 sm:size-12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M12 2l2.09 6.26L20.5 9.27l-5 3.64L16.82 20 12 16.77 7.18 20l1.32-7.09-5-3.64 6.41-1.01L12 2z" />
+                        {{-- Trophy icon for completed tests --}}
+                        <svg class="size-10 text-amber-400 sm:size-12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M7 4V2h10v2h3a1 1 0 0 1 1 1v2a5 5 0 0 1-4.1 4.9A5.5 5.5 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5.5 5.5 0 0 1 7.1 11.9 5 5 0 0 1 3 7V5a1 1 0 0 1 1-1h3zm0 2H5v1a3 3 0 0 0 3 3V6H7zm10 0h-2v4a3 3 0 0 0 3-3V6h-1z" />
                         </svg>
                     @endif
                 </div>
                 <div class="min-w-0 text-white">
-                    <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Completed</p>
-                    <h1 class="mt-2 font-outfit text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-                        @if ($type === \App\Enums\CourseTestType::Final && ! ($passed ?? false))
-                            Better Luck Next Time, {{ $firstName }}!
-                        @else
+                    @if ($type === \App\Enums\CourseTestType::Final && ($passed ?? false))
+                        <h1 class="font-outfit text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+                            Congratulations!
+                        </h1>
+                        <p class="mt-2 text-lg font-semibold text-white sm:text-xl">{{ $firstName }}</p>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">
+                            You have completed the Final test
+                        </p>
+                        <p class="mt-1 text-lg font-bold text-impetus-orange sm:text-xl">
+                            {{ $course->couse_name }}
+                        </p>
+                    @elseif ($type === \App\Enums\CourseTestType::Final && ! ($passed ?? false) && $finalAttemptCount < 2)
+                        <h1 class="font-outfit text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+                            Sorry!
+                        </h1>
+                        <p class="mt-2 text-lg font-semibold text-white sm:text-xl">{{ $firstName }}</p>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">
+                            You have not successfully completed the Exam
+                        </p>
+                        <p class="mt-1 text-sm text-white/85 sm:text-base">
+                            You can make one more CNE attempt
+                        </p>
+                    @elseif ($type === \App\Enums\CourseTestType::Final && ! ($passed ?? false))
+                        <h1 class="font-outfit text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+                            Sorry!
+                        </h1>
+                        <p class="mt-2 text-lg font-semibold text-white sm:text-xl">{{ $firstName }}</p>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">
+                            You have not successfully completed the Exam
+                        </p>
+                    @elseif ($isPreOrMock)
+                        <h1 class="font-outfit text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+                            Thank you!
+                        </h1>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">
+                            You have completed the {{ $banner }}
+                        </p>
+                        <p class="mt-1 text-lg font-bold text-impetus-orange sm:text-xl">
+                            {{ $course->couse_name }}
+                        </p>
+                    @else
+                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Completed</p>
+                        <h1 class="mt-2 font-outfit text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
                             Congratulations, {{ $firstName }}!
-                        @endif
-                    </h1>
-                    <p class="mt-2 text-sm text-white/90 sm:text-base">
-                        You have completed the {{ $banner }}.
-                    </p>
-                    <p class="mt-1 text-lg font-bold text-impetus-orange sm:text-xl">
-                        {{ $course->couse_name }}
-                    </p>
+                        </h1>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">
+                            You have completed the {{ $banner }}.
+                        </p>
+                        <p class="mt-1 text-lg font-bold text-impetus-orange sm:text-xl">
+                            {{ $course->couse_name }}
+                        </p>
+                    @endif
                 </div>
             </div>
-            <div class="hidden shrink-0 lg:block lg:w-56 xl:w-64">
-                <div class="overflow-hidden rounded-2xl border-4 border-white/20 shadow-xl">
-                    <img src="{{ $heroImage }}" alt="{{ $course->couse_name }}" class="aspect-[4/5] w-full object-cover" loading="lazy" decoding="async">
+            <div class="mx-auto shrink-0 sm:mx-0 lg:w-56 xl:w-64">
+                <div class="overflow-hidden rounded-2xl border-4 border-white/25 shadow-xl ring-1 ring-white/10">
+                    <img
+                        src="{{ $heroImage }}"
+                        alt="Test result"
+                        class="aspect-[4/5] w-full object-cover object-top"
+                        loading="lazy"
+                        decoding="async"
+                    >
                 </div>
             </div>
         </div>
@@ -155,7 +203,7 @@
     </div>
 
     {{-- Performance summary + rating --}}
-    <div class="grid gap-6 border-t border-slate-100 px-6 py-8 sm:px-8 lg:grid-cols-2">
+    <div class="grid gap-6 border-t border-slate-100 px-6 py-8 sm:px-8 @if ($showFeedback) lg:grid-cols-2 @endif">
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="flex items-center gap-2">
                 <svg class="size-5 text-[#0F776E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -193,8 +241,9 @@
             </div>
         </div>
 
+        @if ($showFeedback)
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h2 class="text-lg font-bold text-slate-900 font-outfit">Rate Your Performance</h2>
+            <h2 class="text-lg font-bold text-slate-900 font-outfit">Feedback (Give a star rating)</h2>
 
             <div class="mt-5" x-data="{ hoverRating: 0, currentRating: @entangle('rating').live }">
                 <div class="flex gap-1">
@@ -242,20 +291,8 @@
                     </a>
                 </div>
             @endif
-
-            @if ($type === \App\Enums\CourseTestType::Final && ! ($passed ?? false))
-                <div class="mt-8 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange p-4">
-                    <h3 class="font-bold text-impetus-orange">Exam Not Passed</h3>
-                    <p class="mt-1 text-sm text-slate-600">
-                        @if ($finalAttemptCount < 2)
-                            You can make one more attempt to pass the final test.
-                        @else
-                            You have used all attempts. Please purchase the module again to retake the exam.
-                        @endif
-                    </p>
-                </div>
-            @endif
         </div>
+        @endif
     </div>
 
     {{-- Action buttons --}}
@@ -267,18 +304,47 @@
             >
                 Back to Practice Sets
             </a>
-        @elseif ($type === \App\Enums\CourseTestType::Pre)
+        @elseif ($isPreOrMock)
             <a
                 href="{{ $learningUrl }}"
                 class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto"
             >
-                Start Learning Module
+                Start learning
             </a>
             <a
                 href="{{ $moduleUrl }}"
                 class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto"
             >
                 Back to Module
+            </a>
+        @elseif ($canRetakeFinal)
+            <a
+                href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto"
+            >
+                Try Again
+            </a>
+            <a
+                href="{{ $moduleUrl }}"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto"
+            >
+                Back to module
+            </a>
+        @elseif ($finalAttemptsExhausted)
+            <form method="POST" action="{{ route('cart.items.store', $course->couse_name) }}" class="inline-flex w-full sm:w-auto">
+                @csrf
+                <button
+                    type="submit"
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto"
+                >
+                    Purchase Module
+                </button>
+            </form>
+            <a
+                href="{{ $moduleUrl }}"
+                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto"
+            >
+                Back to module
             </a>
         @else
             <a
@@ -287,14 +353,6 @@
             >
                 Back to Module
             </a>
-            @if ($canRetakeFinal)
-                <a
-                    href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
-                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto"
-                >
-                    Retake Test
-                </a>
-            @endif
         @endif
     </div>
 </div>
