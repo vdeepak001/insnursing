@@ -19,21 +19,33 @@
 
 <div class="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/5">
     {{-- Hero banner --}}
-    <div class="relative overflow-hidden bg-gradient-to-r from-[#0F776E] via-[#0D6B64] to-[#115E59] px-6 py-10 sm:px-10 sm:py-12">
+    <div class="relative overflow-hidden @if ($type === \App\Enums\CourseTestType::Final && ! ($passed ?? false)) bg-gradient-to-r from-[#991B1B] via-[#8F1A24] to-[#7F1D1D] @else bg-gradient-to-r from-[#0F776E] via-[#0D6B64] to-[#115E59] @endif px-6 py-10 sm:px-10 sm:py-12">
         <div class="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10" aria-hidden="true"></div>
         <div class="pointer-events-none absolute -bottom-16 left-1/3 h-48 w-48 rounded-full bg-white/5" aria-hidden="true"></div>
 
         <div class="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div class="flex min-w-0 flex-1 items-start gap-5 sm:gap-6">
                 <div class="flex size-20 shrink-0 items-center justify-center rounded-2xl bg-white/15 ring-1 ring-white/20 sm:size-24">
-                    <svg class="size-10 text-amber-300 sm:size-12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M12 2l2.09 6.26L20.5 9.27l-5 3.64L16.82 20 12 16.77 7.18 20l1.32-7.09-5-3.64 6.41-1.01L12 2z" />
-                    </svg>
+                    @if ($type === \App\Enums\CourseTestType::Final && ! ($passed ?? false))
+                        {{-- Warning/exclamation icon for failed final test --}}
+                        <svg class="size-10 text-rose-300 sm:size-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                        </svg>
+                    @else
+                        {{-- Star icon for passed final or other completed tests --}}
+                        <svg class="size-10 text-amber-300 sm:size-12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 2l2.09 6.26L20.5 9.27l-5 3.64L16.82 20 12 16.77 7.18 20l1.32-7.09-5-3.64 6.41-1.01L12 2z" />
+                        </svg>
+                    @endif
                 </div>
                 <div class="min-w-0 text-white">
                     <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Completed</p>
                     <h1 class="mt-2 font-outfit text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
-                        Congratulations, {{ $firstName }}!
+                        @if ($type === \App\Enums\CourseTestType::Final && ! ($passed ?? false))
+                            Better Luck Next Time, {{ $firstName }}!
+                        @else
+                            Congratulations, {{ $firstName }}!
+                        @endif
                     </h1>
                     <p class="mt-2 text-sm text-white/90 sm:text-base">
                         You have completed the {{ $banner }}.
