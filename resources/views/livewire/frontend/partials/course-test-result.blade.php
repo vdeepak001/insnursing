@@ -17,7 +17,7 @@
     $finalAttemptsExhausted =
         $type === \App\Enums\CourseTestType::Final && !($passed ?? false) && $finalAttemptCount >= 2;
     $isPreOrMock = in_array($type, [\App\Enums\CourseTestType::Pre, \App\Enums\CourseTestType::Mock], true);
-    $showFeedback = !$isPreOrMock;
+    $showFeedback = !$isPreOrMock && !($type === \App\Enums\CourseTestType::Final && !($passed ?? false));
     $learningUrl = route('cne.modules.materials', $course->couse_name);
     $moduleUrl = route('cne.modules.show', $course->couse_name);
     $practiceUrl = route('cne.modules.test', [$course->couse_name, 'practice']);
@@ -116,23 +116,36 @@
                 {{-- Text content --}}
                 <div class="min-w-0 text-white">
                     @if ($type === \App\Enums\CourseTestType::Final && ($passed ?? false))
-                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Completed</p>
                         <h1
-                            class="mt-1 font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
-                            Congratulations, {{ $firstName }}!
+                            class="font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
+                            Congratulations!
                         </h1>
-                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have completed the Final Test.</p>
+                        <p class="mt-1 text-lg font-semibold text-white/95">{{ $user?->name ?? 'Learner' }}</p>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have successfully completed the final test</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
                     @elseif ($type === \App\Enums\CourseTestType::Final && !($passed ?? false) && $finalAttemptCount < 2)
-                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Result</p>
+                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Sorry!</p>
                         <h1
                             class="mt-1 font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
-                            Sorry, {{ $firstName }}!
+                            {{ $user?->name ?? 'Learner' }}
                         </h1>
-                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have not successfully completed the Exam.
-                        </p>
-                        <p class="mt-1 text-sm text-white/80">You can make one more CNE attempt.</p>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have not successfully completed the final test</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
+                        <div class="mt-5 flex flex-wrap items-center gap-3">
+                            <a href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-orange px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover">
+                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                </svg>
+                                Try Again
+                            </a>
+                            <a href="{{ $moduleUrl }}"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-white bg-transparent px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white/10">
+                                Back to Module
+                            </a>
+                        </div>
                     @elseif ($type === \App\Enums\CourseTestType::Final && !($passed ?? false))
                         <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Result</p>
                         <h1
@@ -143,14 +156,28 @@
                         </p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
                     @elseif ($isPreOrMock)
-                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Completed</p>
+                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Thank You!</p>
                         <h1
                             class="mt-1 font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
-                            Congratulations, {{ $firstName }}!
+                            {{ $user?->name ?? 'Learner' }}
                         </h1>
-                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have completed the {{ $banner }}.
-                        </p>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have completed the {{ $type === \App\Enums\CourseTestType::Pre ? 'pretest' : 'mock test' }}</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
+                        <div class="mt-5 flex flex-wrap items-center gap-3">
+                            <a href="{{ $learningUrl }}"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-orange px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover">
+                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                                </svg>
+                                Start Learning
+                            </a>
+                            <a href="{{ $moduleUrl }}"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-white bg-transparent px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white/10">
+                                Back to Module
+                            </a>
+                        </div>
                     @else
                         <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Completed</p>
                         <h1
@@ -178,7 +205,7 @@
          Quick stats bar: Score | Accuracy | Time Taken
          ══════════════════════════════════════════ --}}
     <div class="grid grid-cols-1 divide-y border-b border-slate-200 bg-white sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-        <div class="flex items-center gap-4 px-8 py-6">
+        <div class="flex items-center justify-center gap-4 px-8 py-6">
             <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                 <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                     aria-hidden="true">
@@ -188,11 +215,11 @@
             </div>
             <div>
                 <p class="text-sm font-semibold text-slate-500">Score</p>
-                <p class="text-2xl font-extrabold text-impetus-orange font-outfit leading-tight">{{ $obtainedScore }}
+                <p class="text-2xl font-normal text-impetus-orange font-outfit leading-tight">{{ $obtainedScore }}
                     / {{ $maxScore }}</p>
             </div>
         </div>
-        <div class="flex items-center gap-4 px-8 py-6">
+        <div class="flex items-center justify-center gap-4 px-8 py-6">
             <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                 <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                     aria-hidden="true">
@@ -202,11 +229,11 @@
             </div>
             <div>
                 <p class="text-sm font-semibold text-slate-500">Accuracy</p>
-                <p class="text-2xl font-extrabold text-[#0F776E] font-outfit leading-tight">{{ $scorePercent }}%</p>
+                <p class="text-2xl font-normal text-[#0F776E] font-outfit leading-tight">{{ $scorePercent }}%</p>
             </div>
         </div>
         @if ($testType !== 'practice')
-            <div class="flex items-center gap-4 px-8 py-6">
+            <div class="flex items-center justify-center gap-4 px-8 py-6">
                 <div
                     class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                     <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
@@ -217,12 +244,12 @@
                 </div>
                 <div>
                     <p class="text-sm font-semibold text-slate-500">Time Taken</p>
-                    <p class="text-2xl font-extrabold text-slate-800 font-outfit leading-tight">
+                    <p class="text-2xl font-normal text-slate-800 font-outfit leading-tight">
                         {{ $formattedDuration }}</p>
                 </div>
             </div>
         @else
-            <div class="flex items-center gap-4 px-8 py-6">
+            <div class="flex items-center justify-center gap-4 px-8 py-6">
                 <div
                     class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                     <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
@@ -233,7 +260,7 @@
                 </div>
                 <div>
                     <p class="text-sm font-semibold text-slate-500">Questions</p>
-                    <p class="text-2xl font-extrabold text-slate-800 font-outfit leading-tight">{{ $totalQuestions }}
+                    <p class="text-2xl font-normal text-slate-800 font-outfit leading-tight">{{ $totalQuestions }}
                     </p>
                 </div>
             </div>
@@ -258,7 +285,7 @@
                     </svg>
                 </div>
                 <div>
-                    <p class="text-3xl font-extrabold text-slate-800 font-outfit leading-none">{{ $totalQuestions }}
+                    <p class="text-3xl font-normal text-slate-800 font-outfit leading-none">{{ $totalQuestions }}
                     </p>
                     <p class="text-xs text-slate-500 mt-1">Total Questions</p>
                 </div>
@@ -276,7 +303,7 @@
                     </svg>
                 </div>
                 <div>
-                    <p class="text-3xl font-extrabold text-green-600 font-outfit leading-none">{{ $correctCount }}</p>
+                    <p class="text-3xl font-normal text-green-600 font-outfit leading-none">{{ $correctCount }}</p>
                     <p class="text-xs text-slate-500 mt-1">Correct Answers</p>
                 </div>
             </div>
@@ -293,7 +320,7 @@
                     </svg>
                 </div>
                 <div>
-                    <p class="text-3xl font-extrabold text-red-600 font-outfit leading-none">{{ $wrongCount }}</p>
+                    <p class="text-3xl font-normal text-red-600 font-outfit leading-none">{{ $wrongCount }}</p>
                     <p class="text-xs text-slate-500 mt-1">Incorrect Answers</p>
                 </div>
             </div>
@@ -312,7 +339,7 @@
                     </svg>
                 </div>
                 <div>
-                    <p class="text-3xl font-extrabold text-impetus-orange font-outfit leading-none">
+                    <p class="text-3xl font-normal text-impetus-orange font-outfit leading-none">
                         {{ $obtainedScore }}/{{ $maxScore }}</p>
                     <p class="text-xs text-slate-500 mt-1">Overall Score</p>
                 </div>
@@ -340,7 +367,7 @@
                 <div>
                     <div class="mb-2 flex items-center justify-between text-sm">
                         <span class="font-medium text-slate-600">Correct Answers</span>
-                        <span class="font-bold text-[#0F776E]">{{ $pctCorrect }}%</span>
+                        <span class="font-normal text-[#0F776E]">{{ $pctCorrect }}%</span>
                     </div>
                     <div class="h-3 overflow-hidden rounded-full bg-slate-100">
                         <div class="h-full rounded-full bg-[#0F776E] transition-all duration-700"
@@ -350,7 +377,7 @@
                 <div>
                     <div class="mb-2 flex items-center justify-between text-sm">
                         <span class="font-medium text-slate-600">Incorrect Answers</span>
-                        <span class="font-bold text-red-600">{{ $pctWrong }}%</span>
+                        <span class="font-normal text-red-600">{{ $pctWrong }}%</span>
                     </div>
                     <div class="h-3 overflow-hidden rounded-full bg-slate-100">
                         <div class="h-full rounded-full bg-red-500 transition-all duration-700"
@@ -379,8 +406,8 @@
                             d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 0 0 .95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 0 0-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 0 0-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 0 0-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 0 0 .951-.69l1.519-4.674z" />
                     </svg>
                     <div>
-                        <h2 class="text-lg font-bold text-slate-900 font-outfit">Rate Your Performance</h2>
-                        <p class="text-sm text-slate-500 mt-0.5">How would you rate your performance?</p>
+                        <h2 class="text-lg font-bold text-slate-900 font-outfit">Feedback</h2>
+                        <p class="text-sm text-slate-500 mt-0.5">Give a 5-star rating</p>
                     </div>
                 </div>
 
@@ -443,69 +470,52 @@
     {{-- ══════════════════════════════════════════
          Action buttons
          ══════════════════════════════════════════ --}}
-    <div
-        class="flex flex-col items-center gap-4 border-t border-slate-100 bg-white px-6 py-8 sm:flex-row sm:justify-center sm:px-8">
-        @if ($testType === 'practice')
-            <a href="{{ $practiceUrl }}"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
-                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
-                </svg>
-                Back to Practice Sets
-            </a>
-        @elseif ($isPreOrMock)
-            <a href="{{ $learningUrl }}"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
-                <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-                </svg>
-                Start Learning Module
-            </a>
-            <a href="{{ $moduleUrl }}"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto">
-                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-                </svg>
-                Retake Test
-            </a>
-        @elseif ($canRetakeFinal)
-            <a href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
-                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                    aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-                </svg>
-                Try Again
-            </a>
-            <a href="{{ $moduleUrl }}"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto">
-                Back to module
-            </a>
-        @elseif ($finalAttemptsExhausted)
-            <form method="POST" action="{{ route('cart.items.store', $course->couse_name) }}"
-                class="inline-flex w-full sm:w-auto">
-                @csrf
-                <button type="submit"
+    @if (!$isPreOrMock && !$canRetakeFinal)
+        <div
+            class="flex flex-col items-center gap-4 border-t border-slate-100 bg-white px-6 py-8 sm:flex-row sm:justify-center sm:px-8">
+            @if ($testType === 'practice')
+                <a href="{{ $practiceUrl }}"
                     class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
-                    Purchase Module
-                </button>
-            </form>
-            <a href="{{ $moduleUrl }}"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto">
-                Back to module
-            </a>
-        @else
-            <a href="{{ $moduleUrl }}"
-                class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
-                Back to Module
-            </a>
-        @endif
-    </div>
+                    <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                    </svg>
+                    Back to Practice Sets
+                </a>
+            @elseif ($canRetakeFinal)
+                <a href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
+                    <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                    </svg>
+                    Try Again
+                </a>
+                <a href="{{ $moduleUrl }}"
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto">
+                    Back to module
+                </a>
+            @elseif ($finalAttemptsExhausted)
+                <form method="POST" action="{{ route('cart.items.store', $course->couse_name) }}"
+                    class="inline-flex w-full sm:w-auto">
+                    @csrf
+                    <button type="submit"
+                        class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
+                        Purchase Module
+                    </button>
+                </form>
+                <a href="{{ $moduleUrl }}"
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto">
+                    Back to module
+                </a>
+            @else
+                <a href="{{ $moduleUrl }}"
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
+                    Back to Module
+                </a>
+            @endif
+        </div>
+    @endif
 </div>
