@@ -17,9 +17,11 @@ it('shows final test success banner without test completed label', function () {
         ->test(CourseTestResultPreview::class, ['courseId' => $course->id])
         ->assertSee('Congratulations!')
         ->assertSee('Jane')
-        ->assertSee('You have completed the Final test')
+        ->assertSee('You have successfully completed the final test')
         ->assertDontSee('Test Completed')
-        ->assertDontSee('Congratulations, Jane');
+        ->assertDontSee('Congratulations, Jane')
+        ->assertSee('fill="#FFD700"', false) // Trophy is visible
+        ->assertDontSee('text-rose-500'); // Warning icon is not visible
 });
 
 it('shows final test first-attempt failure banner and actions', function () {
@@ -35,12 +37,13 @@ it('shows final test first-attempt failure banner and actions', function () {
         ->set('finalAttemptCount', 1)
         ->assertSee('Sorry!')
         ->assertSee('John')
-        ->assertSee('You have not successfully completed the Exam')
-        ->assertSee('You can make one more CNE attempt')
+        ->assertSee('You have not successfully completed the final test')
         ->assertSee('Try Again')
-        ->assertSee('Back to module')
+        ->assertSee('Back to Module')
         ->assertDontSee('Better Luck Next Time')
-        ->assertDontSee('Retake Test');
+        ->assertDontSee('Retake Test')
+        ->assertDontSee('fill="#FFD700"') // Trophy is not visible
+        ->assertSee('text-rose-500'); // Warning icon is visible
 });
 
 it('shows final test second-attempt failure banner and purchase actions', function () {
@@ -54,12 +57,12 @@ it('shows final test second-attempt failure banner and purchase actions', functi
         ->test(CourseTestResultPreview::class, ['courseId' => $course->id])
         ->set('passed', false)
         ->set('finalAttemptCount', 2)
-        ->assertSee('Sorry!')
-        ->assertSee('Sam')
-        ->assertSee('You have not successfully completed the Exam')
+        ->assertSee('Sorry, Sam!')
+        ->assertSee('You have not successfully completed the Exam.')
         ->assertSee('Purchase Module')
         ->assertSee('Back to module')
-        ->assertDontSee('You can make one more CNE attempt');
+        ->assertDontSee('fill="#FFD700"') // Trophy is not visible
+        ->assertSee('text-rose-500'); // Warning icon is visible
 });
 
 it('shows pretest thank you banner with start learning link', function () {
@@ -73,15 +76,17 @@ it('shows pretest thank you banner with start learning link', function () {
         ->test(CourseTestResultPreview::class, ['courseId' => $course->id])
         ->set('type', CourseTestType::Pre)
         ->set('testType', 'pre')
-        ->assertSee('Thank you!')
+        ->assertSee('Test Completed')
         ->assertSee('You have completed the Pre-Test')
         ->assertSee('Banner Test Module')
-        ->assertSee('Start learning')
+        ->assertSee('Start Learning')
         ->assertSee(route('cne.modules.materials', $course->couse_name), false)
-        ->assertDontSee('Test Completed')
         ->assertDontSee('Rate Your Performance')
-        ->assertDontSee('Feedback (Give a star rating)')
-        ->assertDontSee('Download Certificate');
+        ->assertDontSee('Feedback')
+        ->assertDontSee('Download Certificate')
+        ->assertDontSee('width: 110px; height: 110px; min-width: 110px;', false) // Trophy box is hidden
+        ->assertDontSee('fill="#FFD700"') // Trophy is not visible
+        ->assertDontSee('text-rose-500'); // Warning icon is not visible
 });
 
 it('shows mock test thank you banner without rating or certificate', function () {
@@ -95,11 +100,14 @@ it('shows mock test thank you banner without rating or certificate', function ()
         ->test(CourseTestResultPreview::class, ['courseId' => $course->id])
         ->set('type', CourseTestType::Mock)
         ->set('testType', 'mock')
-        ->assertSee('Thank you!')
+        ->assertSee('Test Completed')
         ->assertSee('You have completed the Mock Test')
-        ->assertSee('Start learning')
-        ->assertDontSee('Feedback (Give a star rating)')
-        ->assertDontSee('Download Certificate');
+        ->assertSee('Start Learning')
+        ->assertDontSee('Feedback')
+        ->assertDontSee('Download Certificate')
+        ->assertDontSee('width: 110px; height: 110px; min-width: 110px;', false) // Trophy box is hidden
+        ->assertDontSee('fill="#FFD700"') // Trophy is not visible
+        ->assertDontSee('text-rose-500'); // Warning icon is not visible
 });
 
 it('shows feedback heading for final test results', function () {
@@ -111,7 +119,8 @@ it('shows feedback heading for final test results', function () {
 
     Livewire::actingAs($user)
         ->test(CourseTestResultPreview::class, ['courseId' => $course->id])
-        ->assertSee('Feedback (Give a star rating)')
+        ->assertSee('Feedback')
+        ->assertSee('Give a 5-star rating')
         ->assertDontSee('Rate Your Performance');
 });
 
