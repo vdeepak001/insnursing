@@ -179,7 +179,7 @@
                         <p class="mt-2 text-sm text-white/90 sm:text-base">You have completed the {{ $type === \App\Enums\CourseTestType::Pre ? 'Pre-Test' : 'Mock Test' }}.</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
                         <div class="mt-5 flex flex-wrap items-center gap-3">
-                            <a href="{{ $type === \App\Enums\CourseTestType::Pre ? $learningUrl : $practiceUrl }}"
+                            <a href="{{ $moduleUrl }}"
                                 class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-orange px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover">
                                 <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                     aria-hidden="true">
