@@ -134,7 +134,7 @@
                         <p class="mt-2 text-sm text-white/90 sm:text-base">You have not successfully completed the final test</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
                         <div class="mt-5 flex flex-wrap items-center gap-3">
-                            <a href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
+                            <a href="{{ $moduleUrl }}"
                                 class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-orange px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover">
                                 <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
                                     aria-hidden="true">
@@ -149,31 +149,44 @@
                             </a>
                         </div>
                     @elseif ($type === \App\Enums\CourseTestType::Final && !($passed ?? false))
-                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Result</p>
+                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Sorry!</p>
                         <h1
                             class="mt-1 font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
-                            Sorry, {{ $firstName }}!
+                            {{ $user?->name ?? 'Learner' }}
                         </h1>
-                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have not successfully completed the Exam.
-                        </p>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have not successfully completed the Final test.</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
+                        <div class="mt-5 flex flex-wrap items-center gap-3">
+                            <form method="POST" action="{{ route('cart.items.store', $course->couse_name) }}"
+                                class="inline-flex">
+                                @csrf
+                                <button type="submit"
+                                    class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-orange px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover">
+                                    Repurchase Module
+                                </button>
+                            </form>
+                            <a href="{{ $moduleUrl }}"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl border border-white bg-transparent px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white/10">
+                                Back to Module
+                            </a>
+                        </div>
                     @elseif ($isPreOrMock)
-                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Test Completed</p>
                         <h1
-                            class="mt-1 font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
-                            Congratulations, {{ $firstName }}!
+                            class="font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
+                            Thank you!
                         </h1>
+                        <p class="mt-1 text-lg font-semibold text-white/95">{{ $user?->name ?? 'Learner' }}</p>
                         <p class="mt-2 text-sm text-white/90 sm:text-base">You have completed the {{ $type === \App\Enums\CourseTestType::Pre ? 'Pre-Test' : 'Mock Test' }}.</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
                         <div class="mt-5 flex flex-wrap items-center gap-3">
-                            <a href="{{ $learningUrl }}"
+                            <a href="{{ $type === \App\Enums\CourseTestType::Pre ? $learningUrl : $practiceUrl }}"
                                 class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-orange px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover">
                                 <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                                     aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                                 </svg>
-                                Start Learning
+                                {{ $type === \App\Enums\CourseTestType::Pre ? 'Start Learning' : 'Practice Test' }}
                             </a>
                             <a href="{{ $moduleUrl }}"
                                 class="inline-flex items-center justify-center gap-2 rounded-xl border border-white bg-transparent px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white/10">
@@ -206,68 +219,71 @@
     {{-- ══════════════════════════════════════════
          Quick stats bar: Score | Accuracy | Time Taken
          ══════════════════════════════════════════ --}}
-    <div class="border-b border-slate-200 bg-white px-6 sm:px-10">
-        <div class="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-            <div class="flex items-center justify-center gap-4 px-8 py-6">
-                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
-                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-                    </svg>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-slate-500">Score</p>
-                    <p class="text-2xl font-bold text-impetus-orange font-outfit leading-tight">{{ $obtainedScore }}
-                        / {{ $maxScore }}</p>
-                </div>
-            </div>
-            <div class="flex items-center justify-center gap-4 px-8 py-6">
-                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
-                    <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                </div>
-                <div>
-                    <p class="text-sm font-semibold text-slate-500">Accuracy</p>
-                    <p class="text-2xl font-normal text-[#0F776E] font-outfit leading-tight">{{ $scorePercent }}%</p>
-                </div>
-            </div>
-            @if ($testType !== 'practice')
+    <div class="border-b border-slate-200 bg-white">
+        <div class="mx-auto max-w-3xl px-6 sm:px-10">
+            <div class="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:divide-slate-200">
                 <div class="flex items-center justify-center gap-4 px-8 py-6">
-                    <div
-                        class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
+                    <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                         <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                             aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 15a5 5 0 100-10 5 5 0 000 10z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 14.25L6 21l3.75-2.25L13.5 21l-2.25-6.75" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 14.25L18 21l-3.75-2.25L10.5 21l2.25-6.75" />
                         </svg>
                     </div>
                     <div>
-                        <p class="text-sm font-semibold text-slate-500">Time Taken</p>
-                        <p class="text-2xl font-normal text-slate-800 font-outfit leading-tight">
-                            {{ $formattedDuration }}</p>
+                        <p class="text-sm font-semibold text-slate-500">Score</p>
+                        <p class="text-2xl font-bold text-impetus-orange font-outfit leading-tight">{{ $obtainedScore }}
+                            / {{ $maxScore }}</p>
                     </div>
                 </div>
-            @else
                 <div class="flex items-center justify-center gap-4 px-8 py-6">
-                    <div
-                        class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
+                    <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                         <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
                             aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" />
+                                d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                         </svg>
                     </div>
                     <div>
-                        <p class="text-sm font-semibold text-slate-500">Questions</p>
-                        <p class="text-2xl font-normal text-slate-800 font-outfit leading-tight">{{ $totalQuestions }}
-                        </p>
+                        <p class="text-sm font-semibold text-slate-500">Accuracy</p>
+                        <p class="text-2xl font-bold text-[#0F776E] font-outfit leading-tight">{{ $scorePercent }}%</p>
                     </div>
                 </div>
-            @endif
+                @if ($testType !== 'practice')
+                    <div class="flex items-center justify-center gap-4 px-8 py-6">
+                        <div
+                            class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
+                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-500">Time Taken</p>
+                            <p class="text-2xl font-bold text-slate-800 font-outfit leading-tight">
+                                {{ $formattedDuration }}</p>
+                        </div>
+                    </div>
+                @else
+                    <div class="flex items-center justify-center gap-4 px-8 py-6">
+                        <div
+                            class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
+                            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-500">Questions</p>
+                            <p class="text-2xl font-bold text-slate-800 font-outfit leading-tight">{{ $totalQuestions }}
+                            </p>
+                        </div>
+                    </div>
+                @endif
+            </div>
         </div>
     </div>
 
@@ -454,7 +470,7 @@
                             </div>
                         </div>
                         <a href="{{ route('certificates.download', $orderId) }}"
-                            class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover"
+                            class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto"
                             target="_blank">
                             <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2.5" aria-hidden="true">
@@ -486,7 +502,7 @@
                     Back to Practice Sets
                 </a>
             @elseif ($canRetakeFinal)
-                <a href="{{ route('cne.modules.test', [$course->couse_name, 'final']) }}"
+                <a href="{{ $moduleUrl }}"
                     class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
                     <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
                         aria-hidden="true">
@@ -505,7 +521,7 @@
                     @csrf
                     <button type="submit"
                         class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
-                        Purchase Module
+                        Repurchase Module
                     </button>
                 </form>
                 <a href="{{ $moduleUrl }}"
@@ -514,7 +530,7 @@
                 </a>
             @else
                 <a href="{{ $moduleUrl }}"
-                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#0F776E] px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-[#0F776E]/20 transition hover:bg-[#0c5e57] sm:w-auto">
                     Back to Module
                 </a>
             @endif
