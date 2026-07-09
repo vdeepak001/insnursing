@@ -63,7 +63,7 @@
         <div class="relative" style="min-height: 260px;">
 
             {{-- Left: trophy + text, with right padding so text never slides under nurse --}}
-            <div class="flex items-center gap-10 sm:gap-14 px-6 py-8 sm:px-10 sm:py-10"
+            <div class="flex items-center gap-10 sm:gap-14 pl-6 pr-6 py-8 sm:pl-20 sm:pr-10 sm:py-10"
                 style="padding-right: 360px; min-height: 260px;">
 
                 {{-- Trophy white box — large, inside banner --}}
@@ -77,40 +77,8 @@
                                 d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
                         </svg>
                     @else
-                        {{-- Large gold trophy WITH laurel wreaths --}}
-                        <svg style="width:96px;height:96px;" viewBox="0 0 100 100" fill="none"
-                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            {{-- Base & pedestal --}}
-                            <rect x="38" y="80" width="24" height="5" rx="2" fill="#8B4513" />
-                            <rect x="30" y="84" width="40" height="6" rx="2" fill="#A0522D" />
-                            <rect x="42" y="68" width="16" height="14" fill="#C8860E" />
-                            {{-- Cup body --}}
-                            <path d="M22 14h56v30c0 15-12.5 26-28 26S22 59 22 44V14Z" fill="#FFD700" />
-                            {{-- Left handle --}}
-                            <path d="M8 16h14v22c0 5.5 3 10 7.5 12.5C21 48 14 40.5 14 32V16H8Z" fill="#FFD700" />
-                            <path d="M8 16h14v4H8Z" fill="#E8A000" />
-                            {{-- Right handle --}}
-                            <path d="M92 16h-14v22c0 5.5-3 10-7.5 12.5C79 48 86 40.5 86 32V16h6Z" fill="#FFD700" />
-                            <path d="M92 16h-14v4h14Z" fill="#E8A000" />
-                            {{-- Cup rim --}}
-                            <path d="M22 14h56v6H22Z" fill="#E8A000" />
-                            {{-- Star on cup --}}
-                            <path d="M50 28l2.5 7.5H60l-6 4.5 2.5 7.5-6-4.5-6 4.5 2.5-7.5-6-4.5h7.5Z" fill="#FFF176" />
-                            {{-- LEFT laurel wreath --}}
-                            <path d="M18 38 C14 35 11 31 12 27 C13 24 16 23 18 25" stroke="#4CAF50" stroke-width="2.2"
-                                fill="none" stroke-linecap="round" />
-                            <path d="M16 44 C11 42 8 37 9 33 C10 29 13 28 15 30" stroke="#4CAF50" stroke-width="2.2"
-                                fill="none" stroke-linecap="round" />
-                            <path d="M18 50 C13 49 10 44 11 40 C12 37 16 36 17 39" stroke="#4CAF50" stroke-width="2.2"
-                                fill="none" stroke-linecap="round" />
-                            {{-- RIGHT laurel wreath --}}
-                            <path d="M82 38 C86 35 89 31 88 27 C87 24 84 23 82 25" stroke="#4CAF50" stroke-width="2.2"
-                                fill="none" stroke-linecap="round" />
-                            <path d="M84 44 C89 42 92 37 91 33 C90 29 87 28 85 30" stroke="#4CAF50" stroke-width="2.2"
-                                fill="none" stroke-linecap="round" />
-                            <path d="M82 50 C87 49 90 44 89 40 C88 37 84 36 83 39" stroke="#4CAF50" stroke-width="2.2"
-                                fill="none" stroke-linecap="round" />
-                        </svg>
+                        {{-- Badge image replacing trophy --}}
+                        <img src="{{ asset('success.png') }}" alt="Success" class="w-[96px] h-[96px] object-contain" />
                     @endif
                 </div>
                 @endif
@@ -186,7 +154,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
                                 </svg>
-                                {{ $type === \App\Enums\CourseTestType::Pre ? 'Start Learning' : 'Practice Test' }}
+                                Start Learning
                             </a>
                             <a href="{{ $moduleUrl }}"
                                 class="inline-flex items-center justify-center gap-2 rounded-xl border border-white bg-transparent px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white/10">
@@ -470,9 +438,9 @@
                             </div>
                         </div>
                         <a href="{{ route('certificates.download', $orderId) }}"
-                            class="mt-4 flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto"
+                            class="mt-4 flex w-full items-center justify-center gap-1.5 rounded-lg bg-impetus-orange px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover sm:w-auto"
                             target="_blank">
-                            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2.5" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -488,7 +456,7 @@
     {{-- ══════════════════════════════════════════
          Action buttons
          ══════════════════════════════════════════ --}}
-    @if (!$isPreOrMock && !$canRetakeFinal)
+    @if (!$isPreOrMock && !$canRetakeFinal && !($type === \App\Enums\CourseTestType::Final && !($passed ?? false)))
         <div
             class="flex flex-col items-center gap-4 border-t border-slate-100 bg-white px-6 py-8 sm:flex-row sm:justify-center sm:px-8">
             @if ($testType === 'practice')
@@ -500,33 +468,6 @@
                             d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                     </svg>
                     Back to Practice Sets
-                </a>
-            @elseif ($canRetakeFinal)
-                <a href="{{ $moduleUrl }}"
-                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
-                    <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                        aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
-                    </svg>
-                    Try Again
-                </a>
-                <a href="{{ $moduleUrl }}"
-                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto">
-                    Back to module
-                </a>
-            @elseif ($finalAttemptsExhausted)
-                <form method="POST" action="{{ route('cart.items.store', $course->couse_name) }}"
-                    class="inline-flex w-full sm:w-auto">
-                    @csrf
-                    <button type="submit"
-                        class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-impetus-orange px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover sm:w-auto">
-                        Repurchase Module
-                    </button>
-                </form>
-                <a href="{{ $moduleUrl }}"
-                    class="inline-flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#0F776E] bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-[#0F776E] transition hover:bg-[#0F776E]/5 sm:w-auto">
-                    Back to module
                 </a>
             @else
                 <a href="{{ $moduleUrl }}"

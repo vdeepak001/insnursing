@@ -20,7 +20,7 @@ it('shows final test success banner without test completed label', function () {
         ->assertSee('You have successfully completed the final test')
         ->assertDontSee('Test Completed')
         ->assertDontSee('Congratulations, Jane')
-        ->assertSee('fill="#FFD700"', false) // Trophy is visible
+        ->assertSee('success.png') // Badge is visible
         ->assertDontSee('text-rose-500'); // Warning icon is not visible
 });
 
@@ -42,7 +42,7 @@ it('shows final test first-attempt failure banner and actions', function () {
         ->assertSee('Back to Module')
         ->assertDontSee('Better Luck Next Time')
         ->assertDontSee('Retake Test')
-        ->assertDontSee('fill="#FFD700"') // Trophy is not visible
+        ->assertDontSee('success.png') // Badge is not visible
         ->assertSee('text-rose-500'); // Warning icon is visible
 });
 
@@ -62,7 +62,7 @@ it('shows final test second-attempt failure banner and purchase actions', functi
         ->assertSee('You have not successfully completed the Final test.')
         ->assertSee('Repurchase Module')
         ->assertSee('Back to Module')
-        ->assertDontSee('fill="#FFD700"') // Trophy is not visible
+        ->assertDontSee('success.png') // Badge is not visible
         ->assertSee('text-rose-500'); // Warning icon is visible
 });
 
@@ -89,7 +89,7 @@ it('shows pretest thank you banner with start learning link', function () {
         ->assertDontSee('Feedback')
         ->assertDontSee('Download Certificate')
         ->assertDontSee('width: 110px; height: 110px; min-width: 110px;', false) // Trophy box is hidden
-        ->assertDontSee('fill="#FFD700"') // Trophy is not visible
+        ->assertDontSee('success.png') // Badge is not visible
         ->assertDontSee('text-rose-500'); // Warning icon is not visible
 });
 
@@ -109,12 +109,12 @@ it('shows mock test thank you banner without rating or certificate', function ()
         ->assertSee('Riya Patel')
         ->assertDontSee('Congratulations')
         ->assertSee('You have completed the Mock Test')
-        ->assertSee('Practice Test')
+        ->assertSee('Start Learning')
         ->assertSee(route('cne.modules.show', $course->couse_name), false)
         ->assertDontSee('Feedback')
         ->assertDontSee('Download Certificate')
         ->assertDontSee('width: 110px; height: 110px; min-width: 110px;', false) // Trophy box is hidden
-        ->assertDontSee('fill="#FFD700"') // Trophy is not visible
+        ->assertDontSee('success.png') // Badge is not visible
         ->assertDontSee('text-rose-500'); // Warning icon is not visible
 });
 

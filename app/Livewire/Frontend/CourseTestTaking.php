@@ -393,11 +393,13 @@ class CourseTestTaking extends Component
         $this->rating = $fresh->rating;
 
         if ($this->type === CourseTestType::Final) {
+            $order = $this->orderId ? \App\Models\Order::query()->find($this->orderId) : null;
             $this->finalAttemptCount = CourseTestAttempt::query()
                 ->where('user_id', $user->id)
                 ->where('course_detail_id', $this->courseId)
                 ->where('test_type', CourseTestType::Final->value)
                 ->where('status', CourseTestAttempt::STATUS_COMPLETED)
+                ->when($order, fn ($q) => $q->where('started_at', '>=', $order->created_at))
                 ->count();
         }
     }
