@@ -17,7 +17,7 @@
     $finalAttemptsExhausted =
         $type === \App\Enums\CourseTestType::Final && !($passed ?? false) && $finalAttemptCount >= 2;
     $isPreOrMock = in_array($type, [\App\Enums\CourseTestType::Pre, \App\Enums\CourseTestType::Mock], true);
-    $showFeedback = !$isPreOrMock && !($type === \App\Enums\CourseTestType::Final && !($passed ?? false));
+    $showFeedback = !$isPreOrMock && $type !== \App\Enums\CourseTestType::Practice && !($type === \App\Enums\CourseTestType::Final && !($passed ?? false));
     $learningUrl = route('cne.modules.materials', $course->couse_name);
     $moduleUrl = route('cne.modules.show', $course->couse_name);
     $practiceUrl = route('cne.modules.test', [$course->couse_name, 'practice']);
@@ -159,6 +159,25 @@
                             <a href="{{ $moduleUrl }}"
                                 class="inline-flex items-center justify-center gap-2 rounded-xl border border-white bg-transparent px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-white/10">
                                 Back to Module
+                            </a>
+                        </div>
+                    @elseif ($type === \App\Enums\CourseTestType::Practice)
+                        <h1
+                            class="font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
+                            Thank You!
+                        </h1>
+                        <p class="mt-1 text-lg font-semibold text-white/95">{{ $user?->name ?? 'Learner' }}</p>
+                        <p class="mt-2 text-sm text-white/90 sm:text-base">You have completed the practice test.</p>
+                        <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
+                        <div class="mt-5 flex flex-wrap items-center gap-3">
+                            <a href="{{ $practiceUrl }}"
+                                class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-orange px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover">
+                                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+                                </svg>
+                                Back to Practice Sets
                             </a>
                         </div>
                     @else
@@ -456,7 +475,7 @@
     {{-- ══════════════════════════════════════════
          Action buttons
          ══════════════════════════════════════════ --}}
-    @if (!$isPreOrMock && !$canRetakeFinal && !($type === \App\Enums\CourseTestType::Final && !($passed ?? false)))
+    @if (!$isPreOrMock && $type !== \App\Enums\CourseTestType::Practice && !$canRetakeFinal && !($type === \App\Enums\CourseTestType::Final && !($passed ?? false)))
         <div
             class="flex flex-col items-center gap-4 border-t border-slate-100 bg-white px-6 py-8 sm:flex-row sm:justify-center sm:px-8">
             @if ($testType === 'practice')

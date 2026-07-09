@@ -143,3 +143,23 @@ it('shows the result hero image on the banner', function () {
         ->test(CourseTestResultPreview::class, ['courseId' => $course->id])
         ->assertSee(asset('images/design/test-result-hero.png'), false);
 });
+
+it('shows practice test thank you banner with back to practice sets link and without feedback', function () {
+    $user = User::factory()->create(['name' => 'John Doe']);
+    $course = CourseDetail::create([
+        'couse_name' => 'Banner Test Module',
+        'active_status' => 1,
+    ]);
+
+    Livewire::actingAs($user)
+        ->test(CourseTestResultPreview::class, ['courseId' => $course->id])
+        ->set('type', CourseTestType::Practice)
+        ->set('testType', 'practice')
+        ->assertSee('Thank You!')
+        ->assertSee('John Doe')
+        ->assertSee('You have completed the practice test.')
+        ->assertSee('Banner Test Module')
+        ->assertSee('Back to Practice Sets')
+        ->assertDontSee('Feedback')
+        ->assertDontSee('Give a 5-star rating');
+});
