@@ -16,11 +16,11 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #FF7A00 0%, #045A5D 50%, #1E3A5F 100%); padding: 24px;">
-                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
+                        <td style="background: linear-gradient(135deg, #FF7A00 0%, #045A5D 50%, #1E3A5F 100%); padding: 24px; text-align: center;">
+                            <h1 style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700; text-align: center;">
                                 New Contact Inquiry
                             </h1>
-                            <p style="margin: 8px 0 0; color: #f8fafc; font-size: 14px; line-height: 1.6;">
+                            <p style="margin: 8px 0 0; color: #f8fafc; font-size: 14px; line-height: 1.6; text-align: center;">
                                 Received a new contact inquiry from the website.
                             </p>
                         </td>

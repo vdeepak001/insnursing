@@ -29,29 +29,29 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="background: linear-gradient(135deg, #FF7A00 0%, #045A5D 50%, #1E3A5F 100%); padding: 28px 24px;">
+                        <td style="background: linear-gradient(135deg, #FF7A00 0%, #045A5D 50%, #1E3A5F 100%); padding: 28px 24px; text-align: center;">
                             @if ($type === 'forgot')
                                 <h1
-                                    style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
+                                    style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700; text-align: center;">
                                     Temporary Password
                                 </h1>
-                                <p style="margin: 8px 0 0; color: #f8fafc; font-size: 14px; line-height: 1.6;">
+                                <p style="margin: 8px 0 0; color: #f8fafc; font-size: 14px; line-height: 1.6; text-align: center;">
                                     Your temporary login credentials to access your account.
                                 </p>
                             @elseif ($type === 'updated')
-                                <p style="margin: 0 0 6px; color: #f8fafc; font-size: 13px; line-height: 1.5; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;">
+                                <p style="margin: 0 0 6px; color: #f8fafc; font-size: 13px; line-height: 1.5; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; text-align: center;">
                                     Login Credentials
                                 </p>
                                 <h1
-                                    style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
+                                    style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700; text-align: center;">
                                     Your password has been updated
                                 </h1>
                             @else
                                 <h1
-                                    style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700;">
+                                    style="margin: 0; color: #ffffff; font-size: 24px; line-height: 1.3; font-weight: 700; text-align: center;">
                                     Welcome, {{ $user->name }}!
                                 </h1>
-                                <p style="margin: 8px 0 0; color: #f8fafc; font-size: 14px; line-height: 1.6;">
+                                <p style="margin: 8px 0 0; color: #f8fafc; font-size: 14px; line-height: 1.6; text-align: center;">
                                     Your account has been created successfully.
                                 </p>
                             @endif
