@@ -33,7 +33,7 @@
          Hero Banner — teal always (no red for failed)
          ══════════════════════════════════════════ --}}
     <div class="relative rounded-t-3xl rounded-b-3xl overflow-hidden"
-        style="background-color: #045a5d; min-height: 220px;">
+        style="background-color: #045a5d; min-height: 380px;">
 
         {{-- Decorative confetti shapes --}}
         <span class="pointer-events-none absolute top-6 left-[38%] w-4 h-4 rounded-sm bg-yellow-400 opacity-80 rotate-12"
@@ -64,11 +64,11 @@
             aria-hidden="true"></div>
 
         {{-- Content row —— nurse absolutely right, text + trophy left --}}
-        <div class="relative" style="min-height: 260px;">
+        <div class="relative" style="min-height: 300px;">
 
             {{-- Left: trophy + text, with right padding so text never slides under nurse --}}
             <div class="flex items-center gap-10 sm:gap-14 pl-6 pr-6 py-8 sm:pl-20 sm:pr-10 sm:py-10"
-                style="padding-right: 360px; min-height: 260px;">
+                style="padding-right: 360px; min-height: 300px;">
 
                 {{-- Trophy white box — large, inside banner --}}
                 @if ($type === \App\Enums\CourseTestType::Final)
@@ -206,19 +206,17 @@
 
         {{-- Nurse: outside banner, positioned on outer card so she overflows above banner boundary --}}
         <div class="hidden sm:block pointer-events-none select-none"
-            style="position: absolute; top: -90px; right: 0; width: 420px; height: calc(260px + 90px); z-index: 10;">
+            style="position: absolute; top: -90px; right: 0; width: 420px; height: calc(300px + 90px); z-index: 10;">
             <img src="{{ $heroImage }}" alt="Nurse"
                 style="width: 100%; height: 100%; object-fit: contain; object-position: bottom right;" loading="lazy"
                 decoding="async">
         </div>
 
-        {{-- ══════════════════════════════════════════
-         Quick stats bar: Score | Accuracy | Time Taken
-         ══════════════════════════════════════════ --}}
-        <div class="border-b border-slate-200 bg-white">
-            <div class="mx-auto max-w-3xl px-6 sm:px-10">
-                <div class="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:divide-slate-200">
-                    <div class="flex items-center justify-center gap-4 px-8 py-6">
+        {{-- Stats bar — white card embedded inside teal banner at the bottom --}}
+        <div class="relative z-20 mx-6 mb-5 sm:mx-8 rounded-2xl bg-white shadow-lg">
+            <div class="mx-auto">
+                <div class="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 divide-slate-200">
+                    <div class="flex items-center justify-center gap-4 px-6 py-5">
                         <div
                             class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -234,11 +232,10 @@
                         <div>
                             <p class="text-sm font-semibold text-slate-500">Score</p>
                             <p class="text-2xl font-bold text-impetus-orange font-outfit leading-tight">
-                                {{ $obtainedScore }}
-                                / {{ $maxScore }}</p>
+                                {{ $obtainedScore }} / {{ $maxScore }}</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-center gap-4 px-8 py-6">
+                    <div class="flex items-center justify-center gap-4 px-6 py-5">
                         <div
                             class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                             <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -254,7 +251,7 @@
                         </div>
                     </div>
                     @if ($testType !== 'practice')
-                        <div class="flex items-center justify-center gap-4 px-8 py-6">
+                        <div class="flex items-center justify-center gap-4 px-6 py-5">
                             <div
                                 class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                                 <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -270,7 +267,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="flex items-center justify-center gap-4 px-8 py-6">
+                        <div class="flex items-center justify-center gap-4 px-6 py-5">
                             <div
                                 class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#0F776E]/10 text-[#0F776E]">
                                 <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -291,11 +288,15 @@
             </div>
         </div>
 
-        {{-- ══════════════════════════════════════════
-         Detail cards: Questions | Correct | Wrong | Score
-         (label on top, large number below, icon on left)
-         ══════════════════════════════════════════ --}}
-        <div class="grid grid-cols-2 gap-4 bg-white px-6 py-6 sm:grid-cols-4 sm:px-10">
+    </div>{{-- end teal banner --}}
+
+
+
+    {{-- ══════════════════════════════════════════
+     Detail cards: Questions | Correct | Wrong | Score
+     (label on top, large number below, icon on left)
+     ══════════════════════════════════════════ --}}
+    <div class="grid grid-cols-2 gap-4 bg-white px-6 py-6 sm:grid-cols-4 sm:px-10">
 
             {{-- Questions --}}
             <div class="rounded-2xl border border-[#0F776E]/15 bg-white p-5 shadow-sm">
@@ -385,7 +386,7 @@
          Performance summary + rating / certificate
          ══════════════════════════════════════════ --}}
         <div
-            class="grid gap-6 border-t border-[#0F776E]/20 bg-[#0F776E]/10 px-6 py-8 sm:px-8 @if ($showFeedback) lg:grid-cols-2 @endif">
+            class="grid gap-6 border-t border-slate-100 bg-white px-6 py-8 sm:px-8 @if ($showFeedback) lg:grid-cols-2 @endif">
             {{-- Performance summary --}}
             <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                 <div class="flex items-center gap-2 mb-6">
