@@ -298,8 +298,11 @@
                     @php
                         $iconTheme = $loop->iteration % 2 === 1 ? 'teal' : 'orange';
                     @endphp
-                    <div
-                        class="flex items-start gap-3 rounded-xl border border-impetus-teal/10 bg-white p-4 shadow-sm transition hover:border-impetus-teal/25 hover:shadow-md">
+                    <div @class([
+                            'flex items-start gap-3 rounded-xl border p-4 shadow-sm transition hover:shadow-md',
+                            'border-impetus-teal/10 bg-impetus-teal-muted hover:border-impetus-teal/25' => $iconTheme === 'teal',
+                            'border-impetus-orange/10 bg-impetus-lightOrange hover:border-impetus-orange/25' => $iconTheme === 'orange',
+                        ])>
                         <div @class([
                             'flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-white',
                             'bg-impetus-teal' => $iconTheme === 'teal',
