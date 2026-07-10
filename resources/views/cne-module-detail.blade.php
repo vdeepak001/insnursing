@@ -293,11 +293,11 @@
                             What you will learn in {{ $title }}?
                         </h2>
                         @if (filled($course->description))
-                            <div class="mt-6 text-lg leading-8 text-slate-600 text-justify">
+                            <div class="mt-6 text-base leading-8 text-slate-600 text-justify">
                                 {!! nl2br(e($course->description)) !!}
                             </div>
                         @else
-                            <p class="mt-6 text-lg leading-8 text-slate-500 text-justify">Details for this module will be
+                            <p class="mt-6 text-base leading-8 text-slate-500 text-justify">Details for this module will be
                                 available soon.</p>
                         @endif
                     </div>
@@ -413,7 +413,7 @@
                             </div>
 
                             @if (filled($course->qa_content))
-                                <div class="mt-4 text-lg leading-8 text-slate-600 text-justify">
+                                <div class="mt-4 text-base leading-8 text-slate-600 text-justify">
                                     {!! nl2br(e($course->qa_content)) !!}
                                 </div>
                             @endif
@@ -490,7 +490,7 @@
                                     @endif
                                 @endauth
                             </div>
-                            <div class="mt-4 space-y-4 text-lg leading-8 text-slate-600 text-justify">
+                            <div class="mt-4 space-y-4 text-base leading-8 text-slate-600 text-justify">
                                 {!! nl2br(e($course->practice_content)) !!}
                             </div>
                         </div>
