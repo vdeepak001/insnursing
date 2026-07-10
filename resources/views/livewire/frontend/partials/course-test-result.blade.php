@@ -29,7 +29,7 @@
     {{-- ══════════════════════════════════════════
          Hero Banner — teal always (no red for failed)
          ══════════════════════════════════════════ --}}
-    <div class="relative rounded-t-3xl overflow-hidden" style="background-color: #045a5d; min-height: 220px;">
+    <div class="relative rounded-t-3xl rounded-b-3xl overflow-hidden" style="background-color: #045a5d; min-height: 220px;">
 
         {{-- Decorative confetti shapes --}}
         <span class="pointer-events-none absolute top-6 left-[38%] w-4 h-4 rounded-sm bg-yellow-400 opacity-80 rotate-12"
@@ -94,11 +94,11 @@
                         <p class="mt-2 text-sm text-white/90 sm:text-base">You have successfully completed the final test</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
                     @elseif ($type === \App\Enums\CourseTestType::Final && !($passed ?? false) && $finalAttemptCount < 2)
-                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Sorry!</p>
                         <h1
-                            class="mt-1 font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
-                            {{ $user?->name ?? 'Learner' }}
+                            class="font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
+                            Sorry!
                         </h1>
+                        <p class="mt-1 text-lg font-semibold text-white/95">{{ $user?->name ?? 'Learner' }}</p>
                         <p class="mt-2 text-sm text-white/90 sm:text-base">You have not successfully completed the final test</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
                         <div class="mt-5 flex flex-wrap items-center gap-3">
@@ -117,11 +117,11 @@
                             </a>
                         </div>
                     @elseif ($type === \App\Enums\CourseTestType::Final && !($passed ?? false))
-                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/75">Sorry!</p>
                         <h1
-                            class="mt-1 font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
-                            {{ $user?->name ?? 'Learner' }}
+                            class="font-outfit text-2xl font-extrabold tracking-tight sm:text-3xl lg:text-[2rem] leading-tight">
+                            Sorry!
                         </h1>
+                        <p class="mt-1 text-lg font-semibold text-white/95">{{ $user?->name ?? 'Learner' }}</p>
                         <p class="mt-2 text-sm text-white/90 sm:text-base">You have not successfully completed the Final test.</p>
                         <p class="mt-1 text-base font-bold text-[#FFB347]">{{ $course->couse_name }}</p>
                         <div class="mt-5 flex flex-wrap items-center gap-3">
@@ -372,7 +372,7 @@
                 <div>
                     <div class="mb-2 flex items-center justify-between text-sm">
                         <span class="font-medium text-slate-600">Correct Answers</span>
-                        <span class="font-normal text-[#0F776E]">{{ $pctCorrect }}%</span>
+                        <span class="font-bold text-[#0F776E]">{{ $pctCorrect }}%</span>
                     </div>
                     <div class="h-3 overflow-hidden rounded-full bg-slate-100">
                         <div class="h-full rounded-full bg-[#0F776E] transition-all duration-700"
@@ -382,7 +382,7 @@
                 <div>
                     <div class="mb-2 flex items-center justify-between text-sm">
                         <span class="font-medium text-slate-600">Incorrect Answers</span>
-                        <span class="font-normal text-red-600">{{ $pctWrong }}%</span>
+                        <span class="font-bold text-red-600">{{ $pctWrong }}%</span>
                     </div>
                     <div class="h-3 overflow-hidden rounded-full bg-slate-100">
                         <div class="h-full rounded-full bg-red-500 transition-all duration-700"
@@ -457,7 +457,7 @@
                             </div>
                         </div>
                         <a href="{{ route('certificates.download', $orderId) }}"
-                            class="mt-4 flex w-full items-center justify-center gap-1.5 rounded-lg bg-impetus-orange px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover sm:w-auto"
+                            class="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg bg-impetus-orange px-4 py-2 text-[11px] font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-impetus-orange-hover"
                             target="_blank">
                             <svg class="size-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 stroke-width="2.5" aria-hidden="true">

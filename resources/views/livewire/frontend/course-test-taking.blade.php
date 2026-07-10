@@ -153,7 +153,7 @@
                             $q = $questions[$currentIndex] ?? null;
                         @endphp
                         @if ($q)
-                            <h2 class="mt-2 text-base font-medium leading-relaxed text-[#1F2937] font-outfit sm:text-lg">
+                            <h2 class="mt-2 text-base font-medium leading-relaxed text-[#1F2937] font-outfit sm:text-lg text-justify">
                                 <style>
                                     .question-text-inline p, .question-text-inline div {
                                         display: inline !important;

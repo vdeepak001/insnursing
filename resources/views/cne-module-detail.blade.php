@@ -393,9 +393,20 @@
                                                         Resources (Locked)</span>
                                                 </div>
                                             </span>
-                                            <span
-                                                class="text-xs font-semibold tracking-wide text-impetus-orange bg-impetus-lightOrange border border-impetus-orange/20 rounded-lg px-2.5 py-1">⚠️
-                                                Complete the Pre-test first to unlock your Learning Resources.</span>
+                                            <div
+                                                class="mt-2 flex w-full items-center gap-3 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange px-3 py-2 text-left">
+                                                <span
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-impetus-orange/30 bg-impetus-lightOrange/50 shadow-inner">
+                                                    <svg class="h-5 w-5 text-impetus-orange" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                                    </svg>
+                                                </span>
+                                                <p class="text-xs font-semibold tracking-wide text-impetus-orange">
+                                                    Complete the Pre-test first<br>to unlock your Learning Resources.
+                                                </p>
+                                            </div>
                                         </div>
                                     @endif
                                 @endif
