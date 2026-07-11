@@ -214,7 +214,7 @@
 
         {{-- Stats bar — white card embedded inside teal banner at the bottom --}}
         <div class="relative z-20 rounded-2xl bg-white shadow-lg">
-            <div class="mx-auto">
+            <div class="mx-auto max-w-2xl">
                 <div class="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 divide-slate-200">
                     <div class="flex items-center justify-center gap-4 px-6 py-5">
                         <div
@@ -296,7 +296,7 @@
      Detail cards: Questions | Correct | Wrong | Score
      (label on top, large number below, icon on left)
      ══════════════════════════════════════════ --}}
-    <div class="grid grid-cols-2 gap-4 bg-white px-6 py-6 sm:grid-cols-4 sm:px-10">
+    <div class="grid grid-cols-2 gap-4 bg-white px-0 py-6 sm:grid-cols-4">
 
         {{-- Questions --}}
         <div class="rounded-2xl border border-[#0F776E]/15 bg-white p-5 shadow-sm">
@@ -383,7 +383,7 @@
          Performance summary + rating / certificate
          ══════════════════════════════════════════ --}}
     <div
-        class="grid gap-6 border-t border-slate-100 bg-white px-6 py-8 sm:px-8 @if ($showFeedback) lg:grid-cols-2 @endif">
+        class="grid gap-6 border-t border-slate-100 bg-white px-0 py-8 @if ($showFeedback) lg:grid-cols-2 @endif">
         {{-- Performance summary --}}
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="flex items-center gap-2 mb-6">
