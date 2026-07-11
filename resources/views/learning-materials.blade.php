@@ -140,7 +140,7 @@
                 </h2>
 
                 <div class="grid gap-8 lg:grid-cols-2">
-                    <div class="rounded-2xl border border-impetus-teal/15 bg-white p-6 shadow-lg sm:p-8">
+                    <div class="rounded-2xl border border-impetus-teal/15 bg-impetus-teal-muted p-6 shadow-lg sm:p-8">
                         <div class="mb-6 flex items-center gap-4">
                             <div
                                 class="flex h-16 w-16 items-center justify-center rounded-2xl bg-impetus-teal text-white shadow-md">
@@ -171,7 +171,7 @@
                         </ul>
                     </div>
 
-                    <div class="rounded-2xl border border-impetus-orange/20 bg-white p-6 shadow-lg sm:p-8">
+                    <div class="rounded-2xl border border-impetus-orange/20 bg-impetus-lightOrange p-6 shadow-lg sm:p-8">
                         <div class="mb-6 flex items-center gap-4">
                             <div
                                 class="flex h-16 w-16 items-center justify-center rounded-2xl bg-impetus-orange text-white shadow-md">

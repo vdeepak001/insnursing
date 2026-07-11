@@ -70,7 +70,11 @@
                                 ['title' => 'Identify Learning Gaps', 'text' => 'To identify areas requiring further study before final certification examinations.', 'theme' => 'teal'],
                                 ['title' => 'Prepare for Certification', 'text' => 'To prepare learners for final assessments and professional certification examinations.', 'theme' => 'orange'],
                             ] as $item)
-                                <div class="flex items-start gap-4 rounded-2xl border border-impetus-teal/10 bg-white p-3 shadow-md">
+                                <div @class([
+                                    'flex items-start gap-4 rounded-2xl border p-3 shadow-md',
+                                    'bg-impetus-teal-muted border-impetus-teal/15' => $item['theme'] === 'teal',
+                                    'bg-impetus-lightOrange border-impetus-orange/20' => $item['theme'] === 'orange',
+                                ])>
                                     <div @class([
                                         'flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-white shadow-md',
                                         'bg-impetus-teal' => $item['theme'] === 'teal',
@@ -198,9 +202,9 @@
                             ['title' => 'Universal Platform', 'text' => 'Seamlessly optimized and accessible anywhere through our online learning platforms via desktops, laptops, tablets, and smartphones.', 'theme' => 'orange'],
                         ] as $feature)
                             <div @class([
-                                'rounded-2xl border bg-white p-3 shadow-md',
-                                'border-impetus-teal/10' => $feature['theme'] === 'teal',
-                                'border-impetus-orange/15' => $feature['theme'] === 'orange',
+                                'rounded-2xl border p-3 shadow-md',
+                                'bg-impetus-teal-muted border-impetus-teal/15' => $feature['theme'] === 'teal',
+                                'bg-impetus-lightOrange border-impetus-orange/20' => $feature['theme'] === 'orange',
                             ])>
                                 <div @class([
                                     'mb-3 flex h-10 w-10 items-center justify-center rounded-lg text-white shadow-sm',
