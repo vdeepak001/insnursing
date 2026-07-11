@@ -26,14 +26,13 @@
     $practiceUrl = route('cne.modules.test', [$course->couse_name, 'practice']);
 @endphp
 
-<div class="mx-auto max-w-5xl rounded-3xl border border-slate-200 bg-white shadow-2xl ring-1 ring-slate-900/5"
+<div class="mx-auto max-w-5xl rounded-3xl border border-slate-200 bg-white"
     style="overflow: visible; position: relative;">
 
     {{-- ══════════════════════════════════════════
          Hero Banner — teal always (no red for failed)
          ══════════════════════════════════════════ --}}
-    <div class="relative rounded-t-3xl rounded-b-3xl overflow-hidden"
-        style="background-color: #045a5d; min-height: 380px;">
+    <div class="relative rounded-t-3xl rounded-b-3xl" style="background-color: #045a5d; min-height: 380px;">
 
         {{-- Decorative confetti shapes --}}
         <span class="pointer-events-none absolute top-6 left-[38%] w-4 h-4 rounded-sm bg-yellow-400 opacity-80 rotate-12"
