@@ -26,8 +26,7 @@
     $practiceUrl = route('cne.modules.test', [$course->couse_name, 'practice']);
 @endphp
 
-<div class="mx-auto max-w-5xl rounded-3xl border border-slate-200 bg-white"
-    style="overflow: visible; position: relative;">
+<div class="mx-auto max-w-5xl rounded-3xl  bg-white" style="overflow: visible; position: relative;">
 
     {{-- ══════════════════════════════════════════
          Hero Banner — teal always (no red for failed)
@@ -382,7 +381,7 @@
          Performance summary + rating / certificate
          ══════════════════════════════════════════ --}}
     <div
-        class="grid gap-6 border-t border-slate-100 bg-white px-0 py-8 @if ($showFeedback) lg:grid-cols-2 @endif">
+        class="grid gap-6 border-t border-slate-100 bg-white px-0 @if ($showFeedback) lg:grid-cols-2 @endif">
         {{-- Performance summary --}}
         <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <div class="flex items-center gap-2 mb-6">
