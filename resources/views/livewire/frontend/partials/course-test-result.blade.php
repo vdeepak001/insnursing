@@ -211,7 +211,7 @@
         </div>
 
         {{-- Stats bar — white card embedded inside teal banner at the bottom --}}
-        <div class="relative z-20 rounded-2xl bg-white shadow-lg">
+        <div class="relative z-20 rounded-2xl bg-white shadow-lg py-3">
             <div class="mx-auto max-w-2xl">
                 <div class="grid grid-cols-1 divide-y sm:grid-cols-3 sm:divide-x sm:divide-y-0 divide-slate-200">
                     <div class="flex items-center justify-center gap-4 px-6 py-5">
