@@ -173,7 +173,7 @@
                                     d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                             </svg>
                         </div>
-                        <p class="text-lg font-extrabold font-outfit sm:text-xl">15K+</p>
+                        <p class="text-lg font-extrabold font-outfit sm:text-xl">1.4 Lakhs+</p>
                         <p class="text-xs font-semibold uppercase tracking-wide text-white/90">Nurses Enrolled</p>
                     </div>
                     <div class="flex flex-col items-center gap-2">
@@ -184,7 +184,7 @@
                                     d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                             </svg>
                         </div>
-                        <p class="text-lg font-extrabold font-outfit sm:text-xl">10K+</p>
+                        <p class="text-lg font-extrabold font-outfit sm:text-xl">4.2 Lakhs+</p>
                         <p class="text-xs font-semibold uppercase tracking-wide text-white/90">Online Tests Taken</p>
                     </div>
                     <div class="flex flex-col items-center gap-2">
@@ -195,7 +195,7 @@
                                     d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
                             </svg>
                         </div>
-                        <p class="text-lg font-extrabold font-outfit sm:text-xl">8K+</p>
+                        <p class="text-lg font-extrabold font-outfit sm:text-xl">1.3 Lakhs+</p>
                         <p class="text-xs font-semibold uppercase tracking-wide text-white/90">Certificates Issued</p>
                     </div>
                     <div class="flex flex-col items-center gap-2">

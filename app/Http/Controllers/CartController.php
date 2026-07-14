@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PaymentStatus;
+use App\Mail\ModuleActivationMail;
 use App\Models\CartItem;
 use App\Models\CourseDetail;
+use App\Models\Order;
+use App\Services\CCAvenueService;
+use App\Services\SmsService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class CartController extends Controller
 {
@@ -105,10 +113,10 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('error', 'Your cart is empty.');
         }
 
-        $txnId = 'IHS' . $user->id . 'T' . time();
+        $txnId = 'IHS'.$user->id.'T'.time();
 
         foreach ($items as $item) {
-            \App\Models\Order::query()->create([
+            Order::query()->create([
                 'user_id' => $user->id,
                 'course_detail_id' => $item->course_detail_id,
                 'state_council_id' => $item->state_council_id,
@@ -116,7 +124,7 @@ class CartController extends Controller
                 'start_date' => now(),
                 'end_date' => now()->addDays($item->valid_days ?? 30),
                 'remarks' => $txnId,
-                'payment_status' => \App\Enums\PaymentStatus::Pending,
+                'payment_status' => PaymentStatus::Pending,
                 'recorded_by_id' => null,
             ]);
         }
@@ -125,10 +133,10 @@ class CartController extends Controller
             return (int) ($item->offer_price ?? $item->mrp ?? 0);
         });
 
-        $ccavenue = app(\App\Services\CCAvenueService::class);
+        $ccavenue = app(CCAvenueService::class);
 
         // Sanitize and pad billing parameters to ensure CCAvenue validations pass (especially for Card payments)
-        $billingAddress = trim(($user->address_line_1 ?? '') . ' ' . ($user->address_line_2 ?? ''));
+        $billingAddress = trim(($user->address_line_1 ?? '').' '.($user->address_line_2 ?? ''));
         if (empty($billingAddress)) {
             $billingAddress = 'Address Not Provided';
         } elseif (strlen($billingAddress) < 10) {
@@ -141,7 +149,7 @@ class CartController extends Controller
         }
 
         $billingZip = trim($user->zip_code ?? '');
-        if (empty($billingZip) || !preg_match('/^[a-zA-Z0-9]{3,12}$/', $billingZip)) {
+        if (empty($billingZip) || ! preg_match('/^[a-zA-Z0-9]{3,12}$/', $billingZip)) {
             $billingZip = '400001'; // Fallback to a valid default pin code format
         }
 
@@ -149,7 +157,7 @@ class CartController extends Controller
         if (strlen($billingTel) < 10 || strlen($billingTel) > 15) {
             $billingTel = '9999999999'; // Fallback to a valid default 10-digit format
         }
-        
+
         $params = [
             'merchant_id' => config('services.ccavenue.merchant_id'),
             'order_id' => $txnId,
@@ -170,7 +178,7 @@ class CartController extends Controller
 
         $merchantData = '';
         foreach ($params as $key => $value) {
-            $merchantData .= $key . '=' . $value . '&';
+            $merchantData .= $key.'='.$value.'&';
         }
         $merchantData = rtrim($merchantData, '&');
 
@@ -183,7 +191,7 @@ class CartController extends Controller
         ]);
     }
 
-    public function ccavenueCallback(\Illuminate\Http\Request $request): RedirectResponse
+    public function ccavenueCallback(Request $request): RedirectResponse
     {
         $encResp = $request->input('encResp') ?? $request->input('encResponse');
 
@@ -191,13 +199,13 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('error', 'Invalid payment response received.');
         }
 
-        $ccavenue = app(\App\Services\CCAvenueService::class);
+        $ccavenue = app(CCAvenueService::class);
         $decrypted = $ccavenue->decrypt($encResp, config('services.ccavenue.working_key'));
 
         parse_str($decrypted, $response);
 
         // Log decrypted CCAvenue response for transaction debugging
-        \Illuminate\Support\Facades\Log::info('CCAvenue Decrypted Callback Response:', [
+        Log::info('CCAvenue Decrypted Callback Response:', [
             'order_id' => $response['order_id'] ?? null,
             'order_status' => $response['order_status'] ?? null,
             'tracking_id' => $response['tracking_id'] ?? null,
@@ -215,9 +223,9 @@ class CartController extends Controller
             return redirect()->route('cart.index')->with('error', 'Unable to retrieve order reference.');
         }
 
-        $orders = \App\Models\Order::query()
+        $orders = Order::query()
             ->where('remarks', $orderId)
-            ->where('payment_status', \App\Enums\PaymentStatus::Pending)
+            ->where('payment_status', PaymentStatus::Pending)
             ->get();
 
         if ($orders->isEmpty()) {
@@ -227,30 +235,30 @@ class CartController extends Controller
         $user = $orders->first()->user;
 
         if (strtolower($orderStatus) === 'success') {
-            $courseNames = $orders->map(fn($o) => $o->courseDetail->couse_name ?? '')->filter()->implode(', ');
+            $courseNames = $orders->map(fn ($o) => $o->courseDetail->couse_name ?? '')->filter()->implode(', ');
             foreach ($orders as $order) {
                 $validDays = $order->start_date->diffInDays($order->end_date) ?: 30;
                 $order->update([
-                    'payment_status' => \App\Enums\PaymentStatus::Completed,
+                    'payment_status' => PaymentStatus::Completed,
                     'start_date' => now(),
                     'end_date' => now()->addDays($validDays),
                     'remarks' => "CCAvenue Tracking ID: {$trackingId}",
                 ]);
 
                 try {
-                    \Illuminate\Support\Facades\Mail::to($user->email)->send(
-                        new \App\Mail\ModuleActivationMail($user, $order->courseDetail, $order)
+                    Mail::to($user->email)->send(
+                        new ModuleActivationMail($user, $order->courseDetail, $order)
                     );
                 } catch (\Exception $e) {
-                    \Illuminate\Support\Facades\Log::error('Failed to send module activation mail: ' . $e->getMessage());
+                    Log::error('Failed to send module activation mail: '.$e->getMessage());
                 }
             }
 
-            if (filled($user->phone) && !empty($courseNames)) {
+            if (filled($user->phone) && ! empty($courseNames)) {
                 try {
-                    app(\App\Services\SmsService::class)->sendPurchaseConfirmation($user->phone, $courseNames);
+                    app(SmsService::class)->sendPurchaseConfirmation($user->phone, $courseNames);
                 } catch (\Exception $e) {
-                    \Illuminate\Support\Facades\Log::error('Failed to send purchase confirmation SMS: ' . $e->getMessage());
+                    Log::error('Failed to send purchase confirmation SMS: '.$e->getMessage());
                 }
             }
 
@@ -264,7 +272,7 @@ class CartController extends Controller
         if (strtolower($orderStatus) === 'aborted') {
             foreach ($orders as $order) {
                 $order->update([
-                    'payment_status' => \App\Enums\PaymentStatus::Aborted,
+                    'payment_status' => PaymentStatus::Aborted,
                     'remarks' => "Aborted at gateway. Tracking ID: {$trackingId}",
                 ]);
             }
@@ -277,14 +285,14 @@ class CartController extends Controller
         // Default to Failed
         foreach ($orders as $order) {
             $order->update([
-                'payment_status' => \App\Enums\PaymentStatus::Failed,
+                'payment_status' => PaymentStatus::Failed,
                 'remarks' => "Failed at gateway. Tracking ID: {$trackingId}. Reason: {$failureMessage}",
             ]);
         }
 
         auth()->login($user);
 
-        return redirect()->route('cart.index')->with('error', 'Payment failed. Reason: ' . ($failureMessage ?? 'Unknown error'));
+        return redirect()->route('cart.index')->with('error', 'Payment failed. Reason: '.($failureMessage ?? 'Unknown error'));
     }
 
     private function pivotScalar(mixed $value): ?int

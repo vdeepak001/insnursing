@@ -39,28 +39,53 @@ document.addEventListener('DOMContentLoaded', () => {
         import('./components/calendar-init').then(module => module.calendarInit());
     }
 
-    // Global security: Disable right-click and copy
-    document.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        return false;
-    });
+    const isAdminPath = window.location.pathname.startsWith('/admin') || 
+                        window.location.pathname.startsWith('/super-admin') || 
+                        window.location.pathname.startsWith('/sme') || 
+                        window.location.pathname.startsWith('/support');
 
-    document.addEventListener('copy', (e) => {
-        e.preventDefault();
-        return false;
-    });
-
-    // Disable keyboard shortcuts for copy and developer tools
-    document.addEventListener('keydown', (e) => {
-        // Disable Ctrl+C, Ctrl+U, Ctrl+S
-        if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+    if (isAdminPath) {
+        // Override the user-select: none from app.css
+        document.body.style.setProperty('-webkit-user-select', 'auto', 'important');
+        document.body.style.setProperty('-moz-user-select', 'auto', 'important');
+        document.body.style.setProperty('-ms-user-select', 'auto', 'important');
+        document.body.style.setProperty('user-select', 'auto', 'important');
+        
+        // Inject a style tag to ensure all children are selectable
+        const style = document.createElement('style');
+        style.innerHTML = `
+            * {
+                -webkit-user-select: text !important;
+                -moz-user-select: text !important;
+                -ms-user-select: text !important;
+                user-select: text !important;
+            }
+        `;
+        document.head.appendChild(style);
+    } else {
+        // Global security: Disable right-click and copy
+        document.addEventListener('contextmenu', (e) => {
             e.preventDefault();
             return false;
-        }
-        // Disable F12
-        if (e.key === 'F12') {
+        });
+
+        document.addEventListener('copy', (e) => {
             e.preventDefault();
             return false;
-        }
-    });
+        });
+
+        // Disable keyboard shortcuts for copy and developer tools
+        document.addEventListener('keydown', (e) => {
+            // Disable Ctrl+C, Ctrl+U, Ctrl+S
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+                e.preventDefault();
+                return false;
+            }
+            // Disable F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
 });

@@ -33,6 +33,19 @@
             }
             $creditPoints = !empty($creditPoints) ? $creditPoints : 'N/A';
         }
+
+        $activeOrder = null;
+        $purchaseCount = 0;
+        if (auth()->check() && $isPurchased) {
+            $activeOrder = \App\Models\Order::activeOrderFor(auth()->user(), $course);
+            $purchaseCount = \App\Models\Order::query()
+                ->where('user_id', auth()->id())
+                ->where('course_detail_id', $course->id)
+                ->where('payment_status', \App\Enums\PaymentStatus::Completed)
+                ->count();
+        }
+        $daysLeft = $activeOrder ? (int) abs(now()->startOfDay()->diffInDays(\Carbon\Carbon::parse($activeOrder->end_date)->startOfDay())) : 0;
+        $hasRepurchased = $purchaseCount > 1;
     @endphp
 
     <main class="pb-16" x-data="{
@@ -95,8 +108,15 @@
                         @if (Auth::check())
                             @if (auth()->user()?->role_type === 'user')
                                 @if ($isPurchased)
-                                    <div class="flex flex-wrap items-center justify-end gap-3">
-                                        @php
+                                    <div class="flex flex-col items-end gap-4">
+                                        @if ($hasRepurchased && $activeOrder && ! (isset($finalDone) && $finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2)))
+                                            <div class="flex flex-col items-end">
+                                                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Time remaining</span>
+                                                <span class="text-lg font-extrabold text-impetus-teal font-outfit">{{ max(0, $daysLeft) }} {{ max(0, $daysLeft) === 1 ? 'Day' : 'Days' }}</span>
+                                            </div>
+                                        @endif
+                                        <div class="flex flex-wrap items-center justify-end gap-3">
+                                            @php
                                             $canPre = (bool) $tp;
                                             $canMock = $tp && $preDone;
                                             $canFinal = $tp && $mockDone;
@@ -237,6 +257,8 @@
                                             <span class="{{ $finalLockedClass }}"
                                                 title="Complete the mock test first">Final Test</span>
                                         @endif
+                                        </div>
+
                                     </div>
                                 @else
                                     <form method="POST" action="{{ route('cart.items.store', $course->couse_name) }}">
@@ -277,7 +299,15 @@
                         @endif
                         @auth
                             @if (auth()->user()?->role_type === 'user')
-                                <div class="mt-4 flex justify-end">
+                                <div class="mt-4 flex items-center justify-end gap-6 @if ($isPurchased && isset($finalDone) && $finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2)) border-t border-impetus-teal/10 pt-4 w-full @endif">
+                                    @if ($isPurchased && isset($finalDone) && $finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2))
+                                        <form method="POST" action="{{ route('cart.items.store', $course->couse_name) }}">
+                                            @csrf
+                                            <button type="submit" class="{{ str_replace('px-8 py-3.5', 'px-6 py-2.5', $buyButtonClass) }}">
+                                                Buy again
+                                            </button>
+                                        </form>
+                                    @endif
                                     <div class="text-sm font-bold uppercase tracking-wider text-impetus-orange">
                                         CREDIT POINTS: {{ $creditPoints }}
                                     </div>
@@ -343,8 +373,7 @@
         </section>
 
         {{-- Learning resources + learning materials link --}}
-        @if (filled($course->qa_content) || $hasCourseMaterials)
-            <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-16">
+        <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-16">
                 <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="grid gap-10 lg:grid-cols-[3fr_2fr] lg:items-stretch lg:gap-12 xl:gap-16">
                         {{-- Left Column: Content (60%) --}}
@@ -412,11 +441,10 @@
                                 @endif
                             </div>
 
-                            @if (filled($course->qa_content))
-                                <div class="mt-4 text-base leading-8 text-slate-600 text-justify">
-                                    {!! nl2br(e($course->qa_content)) !!}
-                                </div>
-                            @endif
+                            <div class="mt-4 text-base leading-8 text-slate-600 text-justify space-y-4">
+                                <p>Our learning resources for Online Continuing Nursing Education modules are thoughtfully designed to help practicing nurses update their knowledge, strengthen clinical competencies, and maintain professional excellence through flexible, self-paced learning. Each module includes comprehensive PDF study materials and professionally developed PowerPoint presentations prepared by experienced nurse educators and clinical experts.</p>
+                                <p>These resources simplify complex concepts, reinforce critical thinking, and support the practical application of knowledge in diverse clinical settings. Accessible anytime and anywhere, they enable nurses to learn at their convenience, prepare confidently for assessments, earn CNE credits, and deliver safe, high-quality, patient-centered care.</p>
+                            </div>
 
                         </div>
 
@@ -437,11 +465,9 @@
                     </div>
                 </div>
             </section>
-        @endif
 
         {{-- Practice test --}}
-        @if (filled($course->practice_content))
-            <section class="border-t border-impetus-teal/10 bg-white py-16 sm:py-16">
+        <section class="border-t border-impetus-teal/10 bg-white py-16 sm:py-16">
                 <div class="mx-auto max-w-7xl px-6 lg:px-8">
                     <div class="grid gap-10 lg:grid-cols-[2fr_3fr] lg:items-stretch lg:gap-12 xl:gap-16">
                         {{-- Left Column: Visual (40%) --}}
@@ -491,13 +517,14 @@
                                 @endauth
                             </div>
                             <div class="mt-4 space-y-4 text-base leading-8 text-slate-600 text-justify">
-                                {!! nl2br(e($course->practice_content)) !!}
+                                <p>Our Practice Tests for Online Continuing Nursing Education modules are designed to reinforce learning, assess knowledge, and enhance clinical decision-making skills through interactive, competency-based assessments.</p>
+                                <p>Each test includes multiple-choice questions, case-based scenarios, and application-oriented exercises that reflect real-world clinical practice and align with current evidence-based nursing standards. The assessments comprehensively cover essential topics such as patient assessment, medication administration, infection prevention and control, disease process, patient safety, and ethical decision-making.</p>
+                                <p>Instant feedback and detailed performance analysis help learners identify strengths and areas for improvement, enabling focused revision and continuous professional development. With unlimited practice attempts and self-paced access, nurses can build confidence, strengthen clinical competence, and prepare effectively for final assessments.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        @endif
 
         {{-- Score Card Modal --}}
         <div x-show="scoreCardOpen" x-cloak x-transition:enter="transition ease-out duration-200"

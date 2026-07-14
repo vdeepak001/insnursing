@@ -114,13 +114,35 @@
             }
         </style>
         <script>
-            document.addEventListener('contextmenu', (e) => e.preventDefault());
-            document.addEventListener('copy', (e) => e.preventDefault());
-            document.addEventListener('keydown', (e) => {
-                if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U' || e.key === 's' || e
-                        .key === 'S')) e.preventDefault();
-                if (e.key === 'F12') e.preventDefault();
-            });
+            const isAdminPath = window.location.pathname.startsWith('/admin') || 
+                                window.location.pathname.startsWith('/super-admin') || 
+                                window.location.pathname.startsWith('/sme') || 
+                                window.location.pathname.startsWith('/support');
+            if (isAdminPath) {
+                document.body.style.setProperty('-webkit-user-select', 'auto', 'important');
+                document.body.style.setProperty('-moz-user-select', 'auto', 'important');
+                document.body.style.setProperty('-ms-user-select', 'auto', 'important');
+                document.body.style.setProperty('user-select', 'auto', 'important');
+                
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    * {
+                        -webkit-user-select: text !important;
+                        -moz-user-select: text !important;
+                        -ms-user-select: text !important;
+                        user-select: text !important;
+                    }
+                `;
+                document.head.appendChild(style);
+            } else {
+                document.addEventListener('contextmenu', (e) => e.preventDefault());
+                document.addEventListener('copy', (e) => e.preventDefault());
+                document.addEventListener('keydown', (e) => {
+                    if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'u' || e.key === 'U' || e.key === 's' || e
+                            .key === 'S')) e.preventDefault();
+                    if (e.key === 'F12') e.preventDefault();
+                });
+            }
         </script>
     @endif
 
