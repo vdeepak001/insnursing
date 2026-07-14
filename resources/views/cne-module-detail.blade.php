@@ -109,7 +109,7 @@
                             @if (auth()->user()?->role_type === 'user')
                                 @if ($isPurchased)
                                     <div class="flex flex-col items-end gap-4">
-                                        @if ($hasRepurchased && $activeOrder && ! (isset($finalDone) && $finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2)))
+                                        @if ($activeOrder && ! (isset($finalDone) && $finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2)))
                                             <div class="flex flex-col items-end">
                                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Time remaining</span>
                                                 <span class="text-lg font-extrabold text-impetus-teal font-outfit">{{ max(0, $daysLeft) }} {{ max(0, $daysLeft) === 1 ? 'Day' : 'Days' }}</span>
