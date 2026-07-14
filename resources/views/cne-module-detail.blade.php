@@ -44,7 +44,13 @@
                 ->where('payment_status', \App\Enums\PaymentStatus::Completed)
                 ->count();
         }
-        $daysLeft = $activeOrder ? (int) abs(now()->startOfDay()->diffInDays(\Carbon\Carbon::parse($activeOrder->end_date)->startOfDay())) : 0;
+        $daysLeft = $activeOrder
+            ? (int) abs(
+                now()
+                    ->startOfDay()
+                    ->diffInDays(\Carbon\Carbon::parse($activeOrder->end_date)->startOfDay()),
+            )
+            : 0;
         $hasRepurchased = $purchaseCount > 1;
     @endphp
 
@@ -109,57 +115,67 @@
                             @if (auth()->user()?->role_type === 'user')
                                 @if ($isPurchased)
                                     <div class="flex flex-col items-end gap-4">
-                                        @if ($activeOrder && ! (isset($finalDone) && $finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2)))
+                                        @if (
+                                            $activeOrder &&
+                                                !(isset($finalDone) &&
+                                                    $finalDone &&
+                                                    (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2)
+                                                ))
                                             <div class="flex flex-col items-end">
-                                                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Time remaining</span>
-                                                <span class="text-lg font-extrabold text-impetus-teal font-outfit">{{ max(0, $daysLeft) }} {{ max(0, $daysLeft) === 1 ? 'Day' : 'Days' }}</span>
+                                                <span
+                                                    class="text-xs font-bold uppercase tracking-wider text-slate-500">Remaining
+                                                    Days</span>
+                                                <span
+                                                    class="text-lg font-extrabold text-impetus-teal font-outfit">{{ max(0, $daysLeft) }}
+                                                    {{ max(0, $daysLeft) === 1 ? 'Day' : 'Days' }}</span>
                                             </div>
                                         @endif
                                         <div class="flex flex-wrap items-center justify-end gap-3">
                                             @php
-                                            $canPre = (bool) $tp;
-                                            $canMock = $tp && $preDone;
-                                            $canFinal = $tp && $mockDone;
+                                                $canPre = (bool) $tp;
+                                                $canMock = $tp && $preDone;
+                                                $canFinal = $tp && $mockDone;
 
-                                            $nextTest = null;
-                                            if ($tp) {
-                                                if (!$preDone) {
-                                                    $nextTest = 'pre';
-                                                } elseif (!$mockDone) {
-                                                    $nextTest = 'mock';
-                                                } elseif (!$finalDone) {
-                                                    $nextTest = 'final';
+                                                $nextTest = null;
+                                                if ($tp) {
+                                                    if (!$preDone) {
+                                                        $nextTest = 'pre';
+                                                    } elseif (!$mockDone) {
+                                                        $nextTest = 'mock';
+                                                    } elseif (!$finalDone) {
+                                                        $nextTest = 'final';
+                                                    }
                                                 }
-                                            }
 
-                                            $btnActive =
-                                                'ring-2 ring-offset-2 ring-[#0F776E] ring-offset-white shadow-md';
+                                                $btnActive =
+                                                    'ring-2 ring-offset-2 ring-[#0F776E] ring-offset-white shadow-md';
 
-                                            $preClass = 'btn-pretest' . ($nextTest === 'pre' ? ' ' . $btnActive : '');
-                                            $mockClass =
-                                                'btn-mock-test' .
-                                                ($nextTest === 'mock'
-                                                    ? ' ring-2 ring-offset-2 ring-[#0F766E] ring-offset-white shadow-md'
-                                                    : '');
-                                            $finalClass =
-                                                'btn-final-test' .
-                                                ($nextTest === 'final'
-                                                    ? ' ring-2 ring-offset-2 ring-[#F97316] ring-offset-white shadow-md'
-                                                    : '');
+                                                $preClass =
+                                                    'btn-pretest' . ($nextTest === 'pre' ? ' ' . $btnActive : '');
+                                                $mockClass =
+                                                    'btn-mock-test' .
+                                                    ($nextTest === 'mock'
+                                                        ? ' ring-2 ring-offset-2 ring-[#0F766E] ring-offset-white shadow-md'
+                                                        : '');
+                                                $finalClass =
+                                                    'btn-final-test' .
+                                                    ($nextTest === 'final'
+                                                        ? ' ring-2 ring-offset-2 ring-[#F97316] ring-offset-white shadow-md'
+                                                        : '');
 
-                                            $preDoneClass = 'btn-test-completed';
-                                            $mockDoneClass = 'btn-mock-test';
-                                            $finalDoneClass = 'btn-final-test';
+                                                $preDoneClass = 'btn-test-completed';
+                                                $mockDoneClass = 'btn-mock-test';
+                                                $finalDoneClass = 'btn-final-test';
 
-                                            $preLockedClass = 'btn-pretest-locked';
-                                            $mockLockedClass = 'btn-mock-test-locked';
-                                            $finalLockedClass = 'btn-final-test-locked';
-                                        @endphp
+                                                $preLockedClass = 'btn-pretest-locked';
+                                                $mockLockedClass = 'btn-mock-test-locked';
+                                                $finalLockedClass = 'btn-final-test-locked';
+                                            @endphp
 
-                                        {{-- Pre Test --}}
-                                        @if ($preDone)
-                                            <button type="button"
-                                                @click="scoreCardOpen = true; scoreCardData = {
+                                            {{-- Pre Test --}}
+                                            @if ($preDone)
+                                                <button type="button"
+                                                    @click="scoreCardOpen = true; scoreCardData = {
                                                     title: 'Pretest Result',
                                                     score: '{{ number_format((float) $tp['pre_score'], 1) }}',
                                                     correct: '{{ $tp['pre_correct'] }}',
@@ -172,25 +188,26 @@
                                                     obtained: '{{ $tp['pre_obtained'] }}',
                                                     max: '{{ $tp['pre_max'] }}'
                                                 }"
-                                                class="{{ $preDoneClass }}">
-                                                Pretest
-                                                <svg class="h-5 w-5 shrink-0 text-[#0F776E]" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="3" aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M4.5 12.75l6 6 9-13.5" />
-                                                </svg>
-                                            </button>
-                                        @elseif ($canPre)
-                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$preClass" />
-                                        @else
-                                            <span class="{{ $preLockedClass }}"
-                                                title="Tests are unavailable">Pretest</span>
-                                        @endif
+                                                    class="{{ $preDoneClass }}">
+                                                    Pretest
+                                                    <svg class="h-5 w-5 shrink-0 text-[#0F776E]" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
+                                                        aria-hidden="true">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M4.5 12.75l6 6 9-13.5" />
+                                                    </svg>
+                                                </button>
+                                            @elseif ($canPre)
+                                                <livewire:cne.pretest-otp-button :course="$course" :btn-class="$preClass" />
+                                            @else
+                                                <span class="{{ $preLockedClass }}"
+                                                    title="Tests are unavailable">Pretest</span>
+                                            @endif
 
-                                        {{-- Mock Test --}}
-                                        @if ($mockDone)
-                                            <button type="button"
-                                                @click="scoreCardOpen = true; scoreCardData = {
+                                            {{-- Mock Test --}}
+                                            @if ($mockDone)
+                                                <button type="button"
+                                                    @click="scoreCardOpen = true; scoreCardData = {
                                                     title: 'Mock Test Result',
                                                     score: '{{ number_format((float) $tp['mock_score'], 1) }}',
                                                     correct: '{{ $tp['mock_correct'] }}',
@@ -203,26 +220,28 @@
                                                     obtained: '{{ $tp['mock_obtained'] }}',
                                                     max: '{{ $tp['mock_max'] }}'
                                                 }"
-                                                class="{{ $mockDoneClass }}">
-                                                Mock Test
-                                                <svg class="h-5 w-5 shrink-0 text-white" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="3" aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M4.5 12.75l6 6 9-13.5" />
-                                                </svg>
-                                            </button>
-                                        @elseif ($canMock)
-                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$mockClass"
-                                                :test-type="'mock'" :btn-label="'Mock Test'" />
-                                        @else
-                                            <span class="{{ $mockLockedClass }}" title="Complete the pre test first">Mock
-                                                Test</span>
-                                        @endif
+                                                    class="{{ $mockDoneClass }}">
+                                                    Mock Test
+                                                    <svg class="h-5 w-5 shrink-0 text-white" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
+                                                        aria-hidden="true">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M4.5 12.75l6 6 9-13.5" />
+                                                    </svg>
+                                                </button>
+                                            @elseif ($canMock)
+                                                <livewire:cne.pretest-otp-button :course="$course" :btn-class="$mockClass"
+                                                    :test-type="'mock'" :btn-label="'Mock Test'" />
+                                            @else
+                                                <span class="{{ $mockLockedClass }}"
+                                                    title="Complete the pre test first">Mock
+                                                    Test</span>
+                                            @endif
 
-                                        {{-- Final Test --}}
-                                        @if ($finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2))
-                                            <button type="button"
-                                                @click="scoreCardOpen = true; scoreCardData = {
+                                            {{-- Final Test --}}
+                                            @if ($finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2))
+                                                <button type="button"
+                                                    @click="scoreCardOpen = true; scoreCardData = {
                                                     title: 'Final Test Result',
                                                     score: '{{ number_format((float) $tp['final_score'], 1) }}',
                                                     correct: '{{ $tp['final_correct'] }}',
@@ -235,28 +254,29 @@
                                                     obtained: '{{ $tp['final_obtained'] }}',
                                                     max: '{{ $tp['final_max'] }}'
                                                 }"
-                                                class="{{ $finalDoneClass }}">
-                                                Final Test
-                                                @if (! ($tp['final_passed'] ?? false))
-                                                    <span class="text-[10px] font-bold uppercase">(Failed)</span>
-                                                @endif
-                                                <svg class="h-5 w-5 shrink-0 text-white" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="3" aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M4.5 12.75l6 6 9-13.5" />
-                                                </svg>
-                                            </button>
-                                        @elseif ($canFinal)
-                                            <livewire:cne.pretest-otp-button :course="$course" :btn-class="$finalClass"
-                                                :test-type="'final'" :btn-label="$finalDone
-                                                    ? 'Retake Final Test (' .
-                                                        number_format((float) $tp['final_score'], 1) .
-                                                        '%)'
-                                                    : 'Final Test'" />
-                                        @else
-                                            <span class="{{ $finalLockedClass }}"
-                                                title="Complete the mock test first">Final Test</span>
-                                        @endif
+                                                    class="{{ $finalDoneClass }}">
+                                                    Final Test
+                                                    @if (!($tp['final_passed'] ?? false))
+                                                        <span class="text-[10px] font-bold uppercase">(Failed)</span>
+                                                    @endif
+                                                    <svg class="h-5 w-5 shrink-0 text-white" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
+                                                        aria-hidden="true">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M4.5 12.75l6 6 9-13.5" />
+                                                    </svg>
+                                                </button>
+                                            @elseif ($canFinal)
+                                                <livewire:cne.pretest-otp-button :course="$course" :btn-class="$finalClass"
+                                                    :test-type="'final'" :btn-label="$finalDone
+                                                        ? 'Retake Final Test (' .
+                                                            number_format((float) $tp['final_score'], 1) .
+                                                            '%)'
+                                                        : 'Final Test'" />
+                                            @else
+                                                <span class="{{ $finalLockedClass }}"
+                                                    title="Complete the mock test first">Final Test</span>
+                                            @endif
                                         </div>
 
                                     </div>
@@ -299,11 +319,21 @@
                         @endif
                         @auth
                             @if (auth()->user()?->role_type === 'user')
-                                <div class="mt-4 flex items-center justify-end gap-6 @if ($isPurchased && isset($finalDone) && $finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2)) border-t border-impetus-teal/10 pt-4 w-full @endif">
-                                    @if ($isPurchased && isset($finalDone) && $finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2))
+                                <div
+                                    class="mt-4 flex items-center justify-end gap-6 @if (
+                                        $isPurchased &&
+                                            isset($finalDone) &&
+                                            $finalDone &&
+                                            (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2)) border-t border-impetus-teal/10 pt-4 w-full @endif">
+                                    @if (
+                                        $isPurchased &&
+                                            isset($finalDone) &&
+                                            $finalDone &&
+                                            (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2))
                                         <form method="POST" action="{{ route('cart.items.store', $course->couse_name) }}">
                                             @csrf
-                                            <button type="submit" class="{{ str_replace('px-8 py-3.5', 'px-6 py-2.5', $buyButtonClass) }}">
+                                            <button type="submit"
+                                                class="{{ str_replace('px-8 py-3.5', 'px-6 py-2.5', $buyButtonClass) }}">
                                                 Buy again
                                             </button>
                                         </form>
@@ -374,157 +404,174 @@
 
         {{-- Learning resources + learning materials link --}}
         <section class="relative z-10 -mt-px border-t border-impetus-teal/10 bg-impetus-teal-muted/20 py-16 sm:py-16">
-                <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="grid gap-10 lg:grid-cols-[3fr_2fr] lg:items-stretch lg:gap-12 xl:gap-16">
-                        {{-- Left Column: Content (60%) --}}
-                        <div class="flex min-w-0 flex-col">
-                            <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                                <h2
-                                    class="shrink-0 text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl lg:whitespace-nowrap">
-                                    Learning Resources
-                                </h2>
-                                @if ($isPurchased)
-                                    @if ($preDone)
-                                        <a href="{{ route('cne.modules.materials', $course->couse_name) }}"
-                                            class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange active:translate-y-0">
+            <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="grid gap-10 lg:grid-cols-[3fr_2fr] lg:items-stretch lg:gap-12 xl:gap-16">
+                    {{-- Left Column: Content (60%) --}}
+                    <div class="flex min-w-0 flex-col">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                            <h2
+                                class="shrink-0 text-2xl font-extrabold tracking-tight text-impetus-teal font-outfit sm:text-3xl lg:whitespace-nowrap">
+                                Learning Resources
+                            </h2>
+                            @if ($isPurchased)
+                                @if ($preDone)
+                                    <a href="{{ route('cne.modules.materials', $course->couse_name) }}"
+                                        class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange active:translate-y-0">
+                                        <div class="relative flex items-center gap-4">
+                                            <span
+                                                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
+                                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                                </svg>
+                                            </span>
+                                            <span class="text-sm font-bold uppercase tracking-wider">Learning
+                                                Resources</span>
+                                            <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                @else
+                                    <div class="flex flex-col items-end gap-1.5">
+                                        <span
+                                            class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75">
                                             <div class="relative flex items-center gap-4">
                                                 <span
-                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
-                                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor" stroke-width="2">
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
+                                                    <svg class="h-5 w-5 text-slate-400" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                                            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                                                     </svg>
                                                 </span>
                                                 <span class="text-sm font-bold uppercase tracking-wider">Learning
-                                                    Resources</span>
-                                                <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                                                    Resources (Locked)</span>
+                                            </div>
+                                        </span>
+                                        <div
+                                            class="mt-2 flex w-full items-center gap-3 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange px-3 py-2 text-left">
+                                            <span
+                                                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-impetus-orange/30 bg-impetus-lightOrange/50 shadow-inner">
+                                                <svg class="h-5 w-5 text-impetus-orange" fill="none"
                                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                                                 </svg>
-                                            </div>
-                                        </a>
-                                    @else
-                                        <div class="flex flex-col items-end gap-1.5">
-                                            <span
-                                                class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75">
-                                                <div class="relative flex items-center gap-4">
-                                                    <span
-                                                        class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
-                                                        <svg class="h-5 w-5 text-slate-400" fill="none"
-                                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                                                        </svg>
-                                                    </span>
-                                                    <span class="text-sm font-bold uppercase tracking-wider">Learning
-                                                        Resources (Locked)</span>
-                                                </div>
                                             </span>
-                                            <div
-                                                class="mt-2 flex w-full items-center gap-3 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange px-3 py-2 text-left">
-                                                <span
-                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-impetus-orange/30 bg-impetus-lightOrange/50 shadow-inner">
-                                                    <svg class="h-5 w-5 text-impetus-orange" fill="none"
-                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
-                                                    </svg>
-                                                </span>
-                                                <p class="text-xs font-semibold tracking-wide text-impetus-orange">
-                                                    Complete the Pre-test first<br>to unlock your Learning Resources.
-                                                </p>
-                                            </div>
+                                            <p class="text-xs font-semibold tracking-wide text-impetus-orange">
+                                                Complete the Pre-test first<br>to unlock your Learning Resources.
+                                            </p>
                                         </div>
-                                    @endif
+                                    </div>
                                 @endif
-                            </div>
-
-                            <div class="mt-4 text-base leading-8 text-slate-600 text-justify space-y-4">
-                                <p>Our learning resources for Online Continuing Nursing Education modules are thoughtfully designed to help practicing nurses update their knowledge, strengthen clinical competencies, and maintain professional excellence through flexible, self-paced learning. Each module includes comprehensive PDF study materials and professionally developed PowerPoint presentations prepared by experienced nurse educators and clinical experts.</p>
-                                <p>These resources simplify complex concepts, reinforce critical thinking, and support the practical application of knowledge in diverse clinical settings. Accessible anytime and anywhere, they enable nurses to learn at their convenience, prepare confidently for assessments, earn CNE credits, and deliver safe, high-quality, patient-centered care.</p>
-                            </div>
-
+                            @endif
                         </div>
 
-                        {{-- Right Column: Visual (40%) --}}
-                        <div class="relative flex w-full min-w-0">
-                            <div class="relative flex flex-1 flex-col">
-                                <div
-                                    class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
-                                </div>
-                                <div
-                                    class="relative flex flex-1 overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-xl shadow-slate-300/30 ring-1 ring-slate-200/40">
-                                    <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
-                                        class="h-full min-h-[240px] w-full object-cover sm:min-h-[280px] lg:min-h-0"
-                                        loading="lazy">
-                                </div>
+                        <div class="mt-4 text-base leading-8 text-slate-600 text-justify space-y-4">
+                            <p>Our learning resources for Online Continuing Nursing Education modules are thoughtfully
+                                designed to help practicing nurses update their knowledge, strengthen clinical competencies,
+                                and maintain professional excellence through flexible, self-paced learning. Each module
+                                includes comprehensive PDF study materials and professionally developed PowerPoint
+                                presentations prepared by experienced nurse educators and clinical experts.</p>
+                            <p>These resources simplify complex concepts, reinforce critical thinking, and support the
+                                practical application of knowledge in diverse clinical settings. Accessible anytime and
+                                anywhere, they enable nurses to learn at their convenience, prepare confidently for
+                                assessments, earn CNE credits, and deliver safe, high-quality, patient-centered care.</p>
+                        </div>
+
+                    </div>
+
+                    {{-- Right Column: Visual (40%) --}}
+                    <div class="relative flex w-full min-w-0">
+                        <div class="relative flex flex-1 flex-col">
+                            <div
+                                class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
+                            </div>
+                            <div
+                                class="relative flex flex-1 overflow-hidden rounded-3xl border border-slate-200/70 bg-white shadow-xl shadow-slate-300/30 ring-1 ring-slate-200/40">
+                                <img src="{{ asset('research_development.jpeg') }}" alt="Learning Illustration"
+                                    class="h-full min-h-[240px] w-full object-cover sm:min-h-[280px] lg:min-h-0"
+                                    loading="lazy">
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
         {{-- Practice test --}}
         <section class="border-t border-impetus-teal/10 bg-white py-16 sm:py-16">
-                <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <div class="grid gap-10 lg:grid-cols-[2fr_3fr] lg:items-stretch lg:gap-12 xl:gap-16">
-                        {{-- Left Column: Visual (40%) --}}
-                        <div class="relative flex w-full min-w-0">
-                            <div class="relative flex flex-1 flex-col">
-                                <div
-                                    class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
-                                </div>
-                                <div
-                                    class="relative flex flex-1 overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-300/35 ring-1 ring-slate-200/50">
-                                    <img src="{{ asset('Practice_test_banner.png') }}"
-                                        alt="Practice assessment and multiple-choice review"
-                                        class="h-full min-h-[240px] w-full object-cover sm:min-h-[280px] lg:min-h-0"
-                                        width="1400" height="933" loading="lazy" decoding="async">
-                                </div>
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="grid gap-10 lg:grid-cols-[2fr_3fr] lg:items-stretch lg:gap-12 xl:gap-16">
+                    {{-- Left Column: Visual (40%) --}}
+                    <div class="relative flex w-full min-w-0">
+                        <div class="relative flex flex-1 flex-col">
+                            <div
+                                class="pointer-events-none absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-impetus-teal/15 via-transparent to-impetus-orange/15 blur-2xl">
                             </div>
-                        </div>
-
-                        {{-- Right Column: Content (60%) --}}
-                        <div class="flex min-w-0 flex-col">
-                            <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                                <h2 class="shrink-0 text-2xl font-extrabold tracking-tight text-impetus-teal sm:text-3xl font-outfit">
-                                    Practice Test
-                                </h2>
-                                @auth
-                                    @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
-                                        <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
-                                            class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
-                                            <div class="relative flex items-center gap-4">
-                                                <span
-                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
-                                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                        stroke-width="2">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
-                                                    </svg>
-                                                </span>
-                                                <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
-                                                <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
-                                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                                </svg>
-                                            </div>
-                                        </a>
-                                    @endif
-                                @endauth
-                            </div>
-                            <div class="mt-4 space-y-4 text-base leading-8 text-slate-600 text-justify">
-                                <p>Our Practice Tests for Online Continuing Nursing Education modules are designed to reinforce learning, assess knowledge, and enhance clinical decision-making skills through interactive, competency-based assessments.</p>
-                                <p>Each test includes multiple-choice questions, case-based scenarios, and application-oriented exercises that reflect real-world clinical practice and align with current evidence-based nursing standards. The assessments comprehensively cover essential topics such as patient assessment, medication administration, infection prevention and control, disease process, patient safety, and ethical decision-making.</p>
-                                <p>Instant feedback and detailed performance analysis help learners identify strengths and areas for improvement, enabling focused revision and continuous professional development. With unlimited practice attempts and self-paced access, nurses can build confidence, strengthen clinical competence, and prepare effectively for final assessments.</p>
+                            <div
+                                class="relative flex flex-1 overflow-hidden rounded-3xl border border-slate-200/70 bg-slate-100 shadow-xl shadow-slate-300/35 ring-1 ring-slate-200/50">
+                                <img src="{{ asset('Practice_test_banner.png') }}"
+                                    alt="Practice assessment and multiple-choice review"
+                                    class="h-full min-h-[240px] w-full object-cover sm:min-h-[280px] lg:min-h-0"
+                                    width="1400" height="933" loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
+
+                    {{-- Right Column: Content (60%) --}}
+                    <div class="flex min-w-0 flex-col">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                            <h2
+                                class="shrink-0 text-2xl font-extrabold tracking-tight text-impetus-teal sm:text-3xl font-outfit">
+                                Practice Test
+                            </h2>
+                            @auth
+                                @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
+                                    <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
+                                        class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
+                                        <div class="relative flex items-center gap-4">
+                                            <span
+                                                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
+                                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
+                                                </svg>
+                                            </span>
+                                            <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
+                                            <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                @endif
+                            @endauth
+                        </div>
+                        <div class="mt-4 space-y-4 text-base leading-8 text-slate-600 text-justify">
+                            <p>Our Practice Tests for Online Continuing Nursing Education modules are designed to reinforce
+                                learning, assess knowledge, and enhance clinical decision-making skills through interactive,
+                                competency-based assessments.</p>
+                            <p>Each test includes multiple-choice questions, case-based scenarios, and application-oriented
+                                exercises that reflect real-world clinical practice and align with current evidence-based
+                                nursing standards. The assessments comprehensively cover essential topics such as patient
+                                assessment, medication administration, infection prevention and control, disease process,
+                                patient safety, and ethical decision-making.</p>
+                            <p>Instant feedback and detailed performance analysis help learners identify strengths and areas
+                                for improvement, enabling focused revision and continuous professional development. With
+                                unlimited practice attempts and self-paced access, nurses can build confidence, strengthen
+                                clinical competence, and prepare effectively for final assessments.</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
         {{-- Score Card Modal --}}
         <div x-show="scoreCardOpen" x-cloak x-transition:enter="transition ease-out duration-200"
@@ -540,7 +587,8 @@
                     <div class="flex items-center gap-2.5">
                         <div class="flex size-10 items-center justify-center rounded-full bg-[#0F776E] text-white">
                             <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M12 2l2.4 4.86L20 7.64l-4 3.9.94 5.5L12 14.77 7.06 17.04 8 11.54l-4-3.9 5.6-.78L12 2z" />
+                                <path
+                                    d="M12 2l2.4 4.86L20 7.64l-4 3.9.94 5.5L12 14.77 7.06 17.04 8 11.54l-4-3.9 5.6-.78L12 2z" />
                             </svg>
                         </div>
                         <h2 class="text-lg font-bold text-slate-800 font-outfit">Score Card</h2>
@@ -548,7 +596,8 @@
                     <button type="button" @click="scoreCardOpen = false"
                         class="rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
                         aria-label="Close score card">
-                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
+                            aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -571,7 +620,8 @@
                         <div class="flex items-center gap-3 rounded-xl bg-[#0F776E] px-3.5 py-3 text-white shadow-sm">
                             <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
                                 <svg class="size-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                    <path d="M7 4V2h10v2h3a1 1 0 0 1 1 1v2a5 5 0 0 1-4.1 4.9A5.5 5.5 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5.5 5.5 0 0 1 7.1 11.9 5 5 0 0 1 3 7V5a1 1 0 0 1 1-1h3zm0 2H5v1a3 3 0 0 0 3 3V6H7zm10 0h-2v4a3 3 0 0 0 3-3V6h-1z" />
+                                    <path
+                                        d="M7 4V2h10v2h3a1 1 0 0 1 1 1v2a5 5 0 0 1-4.1 4.9A5.5 5.5 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5.5 5.5 0 0 1 7.1 11.9 5 5 0 0 1 3 7V5a1 1 0 0 1 1-1h3zm0 2H5v1a3 3 0 0 0 3 3V6H7zm10 0h-2v4a3 3 0 0 0 3-3V6h-1z" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
@@ -583,63 +633,85 @@
 
                         <div class="flex items-center gap-3 rounded-xl bg-impetus-orange px-3.5 py-3 text-white shadow-sm">
                             <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
                                 <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Percentage</p>
                                 <p class="truncate text-base font-bold font-outfit leading-tight"
-                                    x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'"></p>
+                                    x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'">
+                                </p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
-                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
-                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" />
+                        <div
+                            class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
+                            <div
+                                class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
                                 <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Questions</p>
-                                <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800" x-text="scoreCardData.total"></p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800"
+                                    x-text="scoreCardData.total"></p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
-                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
-                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        <div
+                            class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
+                            <div
+                                class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
                                 <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Time Taken</p>
-                                <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800" x-text="scoreCardData.duration"></p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800"
+                                    x-text="scoreCardData.duration"></p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-3 rounded-xl border border-green-200 bg-[#F0FDF4] px-3.5 py-3 shadow-sm">
-                            <div class="flex size-9 shrink-0 items-center justify-center rounded-full bg-green-500 text-white">
-                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <div
+                            class="flex items-center gap-3 rounded-xl border border-green-200 bg-[#F0FDF4] px-3.5 py-3 shadow-sm">
+                            <div
+                                class="flex size-9 shrink-0 items-center justify-center rounded-full bg-green-500 text-white">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
                                 <p class="text-[10px] font-bold uppercase tracking-wider text-green-600">Correct Answer</p>
-                                <p class="truncate text-base font-bold font-outfit leading-tight text-green-700" x-text="scoreCardData.correct"></p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-green-700"
+                                    x-text="scoreCardData.correct"></p>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-3 rounded-xl border border-red-200 bg-[#FEF2F2] px-3.5 py-3 shadow-sm">
-                            <div class="flex size-9 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
-                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <div
+                            class="flex items-center gap-3 rounded-xl border border-red-200 bg-[#FEF2F2] px-3.5 py-3 shadow-sm">
+                            <div
+                                class="flex size-9 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    stroke-width="2.5" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                 </svg>
                             </div>
                             <div class="min-w-0">
                                 <p class="text-[10px] font-bold uppercase tracking-wider text-red-600">Incorrect Answer</p>
-                                <p class="truncate text-base font-bold font-outfit leading-tight text-red-700" x-text="scoreCardData.wrong"></p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-red-700"
+                                    x-text="scoreCardData.wrong"></p>
                             </div>
                         </div>
                     </div>
@@ -647,7 +719,8 @@
                     <div class="mt-5">
                         <button type="button" @click="scoreCardOpen = false"
                             class="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0F776E] py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-[#0F776E]/20 transition hover:bg-[#115E59]">
-                            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                stroke-width="2.5" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                             </svg>
                             Close
