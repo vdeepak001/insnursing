@@ -97,13 +97,13 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="mt-6">
+                            {{-- <div class="mt-6">
                                 <p class="text-center text-sm font-medium text-orange-100">
                                     Don't have an account?
                                     <a href="{{ route('register') }}"
                                         class="font-bold text-white hover:text-orange-200 transition-colors font-outfit">Sign Up</a>
                                 </p>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
