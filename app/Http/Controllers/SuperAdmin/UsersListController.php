@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class UsersListController extends Controller
@@ -116,6 +117,29 @@ class UsersListController extends Controller
             'designation' => ['nullable', 'string', 'max:255'],
             'state' => ['nullable', 'string', 'max:255'],
         ]);
+
+        $targetState = Str::lower(trim((string) ($validated['state'] ?? $user->state)));
+        $targetUid = filled($validated['uid'] ?? null) ? Str::lower(trim((string) $validated['uid'])) : null;
+
+        if ($targetState === 'maharashtra' && $targetUid !== null) {
+            $uidAlreadyExists = User::query()
+                ->where('id', '!=', $user->id)
+                ->whereNotNull('uid')
+                ->get()
+                ->contains(function (User $otherUser) use ($targetUid): bool {
+                    return Str::lower(trim((string) $otherUser->state)) === 'maharashtra'
+                        && Str::lower(trim((string) $otherUser->uid)) === $targetUid;
+                });
+
+            if ($uidAlreadyExists) {
+                return response()->json([
+                    'message' => 'The given data was invalid.',
+                    'errors' => [
+                        'uid' => ['This UID is already registered for Maharashtra.'],
+                    ],
+                ], 422);
+            }
+        }
 
         $user->update($validated);
 

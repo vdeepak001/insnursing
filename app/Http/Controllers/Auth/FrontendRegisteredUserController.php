@@ -88,6 +88,27 @@ class FrontendRegisteredUserController extends Controller
                 ->withInput();
         }
 
+        $normalizedState = Str::lower(trim((string) $validated['state']));
+        $normalizedUid = filled($validated['uid'] ?? null) ? Str::lower(trim((string) $validated['uid'])) : null;
+
+        if ($normalizedState === 'maharashtra' && $normalizedUid !== null) {
+            $uidAlreadyExists = User::query()
+                ->whereNotNull('uid')
+                ->get()
+                ->contains(function (User $user) use ($normalizedUid): bool {
+                    return Str::lower(trim((string) $user->state)) === 'maharashtra'
+                        && Str::lower(trim((string) $user->uid)) === $normalizedUid;
+                });
+
+            if ($uidAlreadyExists) {
+                return back()
+                    ->withErrors([
+                        'uid' => 'This UID is already registered for Maharashtra.',
+                    ], 'frontendRegister')
+                    ->withInput();
+            }
+        }
+
         $user = User::query()->create([
             'name' => $validated['name'],
             'email' => $normalizedEmail,
