@@ -50,7 +50,7 @@ class ProfileUpdateRequest extends FormRequest
             'pan_number' => ['nullable', 'string', 'max:255'],
             'aadhar_number' => ['nullable', 'string', 'max:255'],
             'rn_number' => ['nullable', 'string', 'max:255'],
-            'uid' => ['nullable', 'string', 'max:255'],
+            'uid' => ['nullable', 'string', 'alpha_num', 'max:100'],
             'rm_number' => ['nullable', 'string', 'max:255'],
             'qualification' => ['nullable', 'string', 'max:255'],
             'academic_state' => ['nullable', 'string', 'max:255'],
@@ -68,6 +68,18 @@ class ProfileUpdateRequest extends FormRequest
             'professional_district' => ['nullable', 'string', 'max:255'],
             'professional_state' => ['nullable', 'string', 'max:255'],
             'professional_zip_code' => ['nullable', 'string', 'max:255'],
+        ];
+    }
+
+    /**
+     * Get the custom validation error messages.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'uid.alpha_num' => 'The UID must contain only letters and numbers without special characters.',
         ];
     }
 }

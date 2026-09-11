@@ -186,3 +186,40 @@ test('correct password must be provided to delete account', function () {
 
     $this->assertNotNull($user->fresh());
 });
+
+test('profile update fails when UID contains special characters', function () {
+    $user = User::factory()->create([
+        'role_type' => 'user',
+    ]);
+
+    $response = $this
+        ->actingAs($user)
+        ->patch('/profile', [
+            'name' => 'Frontend User',
+            'email' => $user->email,
+            'uid' => 'UID@123#',
+        ]);
+
+    $response->assertSessionHasErrors(['uid']);
+});
+
+test('profile update succeeds with valid alphanumeric UID', function () {
+    $user = User::factory()->create([
+        'role_type' => 'user',
+    ]);
+
+    $response = $this
+        ->actingAs($user)
+        ->patch('/profile', [
+            'name' => 'Frontend User',
+            'email' => $user->email,
+            'uid' => 'UID12345',
+        ]);
+
+    $response
+        ->assertSessionHasNoErrors()
+        ->assertRedirect('/profile');
+
+    expect($user->refresh()->uid)->toBe('UID12345');
+});
+
