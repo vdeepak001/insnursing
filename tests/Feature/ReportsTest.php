@@ -58,3 +58,41 @@ it('redirects legacy user performance route to the reports page', function () {
             'from_date' => '2026-01-01',
         ]));
 });
+
+it('renders the exact uid from users table in the user performance report', function () {
+    $admin = User::factory()->create(['role_type' => 'admin']);
+    $state = State::create(['name' => 'Goa', 'status' => 'active']);
+    $stateCouncil = StateCouncil::create([
+        'state_id' => $state->id,
+        'council_name' => 'Goa Council',
+        'active_status' => true,
+    ]);
+    $course = CourseDetail::create(['couse_name' => 'UID Test Module', 'active_status' => 1]);
+    $course->stateCouncils()->attach($stateCouncil->id);
+
+    $learner = User::factory()->create([
+        'role_type' => 'user',
+        'state' => 'Goa',
+        'uid' => 'MYCUSTOMUID99',
+    ]);
+
+    \App\Models\CourseTestAttempt::create([
+        'user_id' => $learner->id,
+        'course_detail_id' => $course->id,
+        'state_council_id' => $stateCouncil->id,
+        'test_type' => \App\Enums\CourseTestType::Final,
+        'score_percent' => 85,
+        'passed' => true,
+        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'completed_at' => now(),
+        'question_ids' => '[]',
+    ]);
+
+    $response = $this->actingAs($admin)->get(route('admin.reports.index', [
+        'state_id' => $state->id,
+    ]));
+
+    $response->assertSuccessful();
+    $response->assertSee('MYCUSTOMUID99');
+});
+
