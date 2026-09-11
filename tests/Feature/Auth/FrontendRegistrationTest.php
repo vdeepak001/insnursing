@@ -31,7 +31,7 @@ test('frontend users can register from the signup modal flow', function () {
         'email' => 'frontend.nurse@example.com',
         'phone' => '9999999999',
         'rn_number' => 'RN-12345',
-        'uid' => 'UID-12345',
+        'uid' => 'UID12345',
     ]);
 
     $response->assertStatus(302);
@@ -44,7 +44,7 @@ test('frontend users can register from the signup modal flow', function () {
         ->and($user->state)->toBe('Gujarat')
         ->and($user->qualification)->toBe('GNM')
         ->and($user->rn_number)->toBe('RN-12345')
-        ->and($user->uid)->toBe('UID-12345')
+        ->and($user->uid)->toBe('UID12345')
         ->and($user->phone)->toBe('9999999999')
         ->and(Hash::check('password', $user->password))->toBeFalse()
         ->and($user->password_raw)->toBeString()
@@ -58,6 +58,28 @@ test('frontend users can register from the signup modal flow', function () {
 
     Http::assertSent(fn ($request): bool => str_contains($request->url(), 'urlsms.php')
         && $request['dest_mobileno'] === '919999999999');
+});
+
+test('frontend registration rejects special characters in UID', function () {
+    /** @var TestCase $this */
+    State::query()->create([
+        'name' => 'Gujarat',
+        'status' => 'active',
+    ]);
+
+    $response = $this->post(route('frontend.register'), [
+        'name' => 'Invalid UID User',
+        'state' => 'Gujarat',
+        'qualification' => 'GNM',
+        'date_of_birth' => '1998-01-20',
+        'email' => 'invalid.uid@example.com',
+        'phone' => '9999999999',
+        'rn_number' => 'RN-12345',
+        'uid' => 'UID@123#',
+    ]);
+
+    $response->assertStatus(302);
+    $response->assertSessionHasErrors(['uid'], null, 'frontendRegister');
 });
 
 test('frontend registration only accepts active states', function () {
@@ -75,7 +97,7 @@ test('frontend registration only accepts active states', function () {
         'email' => 'inactive.state@example.com',
         'phone' => '9999999999',
         'rn_number' => 'RN-99999',
-        'uid' => 'UID-99999',
+        'uid' => 'UID99999',
     ]);
 
     $response->assertStatus(302);
@@ -106,7 +128,7 @@ test('frontend registration rejects duplicate email addresses', function () {
         'email' => 'duplicate@example.com',
         'phone' => '9999999999',
         'rn_number' => 'RN-99887',
-        'uid' => 'UID-99887',
+        'uid' => 'UID99887',
     ]);
 
     $response->assertStatus(302);
