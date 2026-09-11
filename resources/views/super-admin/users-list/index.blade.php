@@ -261,13 +261,34 @@
             },
             buildPerformanceBarOptions(orders) {
                 const categories = orders.map(o => `${o.course_name} (${o.purchase_date})`);
+                const hasSecondFinal = orders.some(o => o.scores && o.scores.final_2 !== null && o.scores.final_2 !== undefined);
+
+                const series = [
+                    { name: 'Pre-Test', data: orders.map(o => o.scores.pre || 0) },
+                    { name: 'Mock Test', data: orders.map(o => o.scores.mock || 0) },
+                ];
+                const colors = ['#465fff', '#10b981'];
+
+                if (hasSecondFinal) {
+                    series.push({
+                        name: 'Final Test 1',
+                        data: orders.map(o => o.scores.final_1 ?? o.scores.final ?? 0)
+                    });
+                    series.push({
+                        name: 'Final Test 2',
+                        data: orders.map(o => o.scores.final_2 ?? 0)
+                    });
+                    colors.push('#f59e0b', '#8b5cf6');
+                } else {
+                    series.push({
+                        name: 'Final Test',
+                        data: orders.map(o => o.scores.final_1 ?? o.scores.final ?? 0)
+                    });
+                    colors.push('#f59e0b');
+                }
 
                 return {
-                    series: [
-                        { name: 'Pre-Test', data: orders.map(o => o.scores.pre) },
-                        { name: 'Mock Test', data: orders.map(o => o.scores.mock) },
-                        { name: 'Final Test', data: orders.map(o => o.scores.final) },
-                    ],
+                    series,
                     chart: {
                         type: 'bar',
                         height: 350,
@@ -289,20 +310,34 @@
                         max: 100,
                     },
                     fill: { opacity: 1 },
-                    colors: ['#465fff', '#10b981', '#f59e0b'],
+                    colors,
                     tooltip: {
                         y: { formatter: (val) => val + '%' },
                     },
                     legend: { position: 'top' },
                 };
             },
-             buildPerformanceDonutOptions(order) {
-                const scores = [order.scores.pre, order.scores.mock, order.scores.final];
+            buildPerformanceDonutOptions(order) {
+                const hasSecondFinal = order.scores && order.scores.final_2 !== null && order.scores.final_2 !== undefined;
+
+                const labels = ['Pre-Test', 'Mock Test'];
+                const scores = [order.scores.pre || 0, order.scores.mock || 0];
+                const colors = ['#465fff', '#10b981'];
+
+                if (hasSecondFinal) {
+                    labels.push('Final Test 1', 'Final Test 2');
+                    scores.push(order.scores.final_1 ?? 0, order.scores.final_2 ?? 0);
+                    colors.push('#f59e0b', '#8b5cf6');
+                } else {
+                    labels.push('Final Test');
+                    scores.push(order.scores.final_1 ?? order.scores.final ?? 0);
+                    colors.push('#f59e0b');
+                }
 
                 return {
                     series: scores,
-                    labels: ['Pre-Test', 'Mock Test', 'Final Test'],
-                    colors: ['#465fff', '#10b981', '#f59e0b'],
+                    labels: labels,
+                    colors: colors,
                     chart: {
                         type: 'donut',
                         height: 380,
@@ -337,7 +372,7 @@
                                         fontSize: '14px',
                                         fontWeight: 600,
                                         color: '#64748B',
-                                        formatter: () => `${order.scores.final.toFixed(1)}%`,
+                                        formatter: () => `${(order.scores.final ?? order.scores.final_2 ?? order.scores.final_1 ?? 0).toFixed(1)}%`,
                                     },
                                 },
                             },
@@ -346,7 +381,7 @@
                     dataLabels: {
                         enabled: true,
                         style: {
-                            colors: ['#ffffff', '#ffffff', '#ffffff'],
+                            colors: colors.map(() => '#ffffff'),
                             fontWeight: 'bold',
                         },
                         formatter: (val, opts) => {

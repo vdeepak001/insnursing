@@ -140,11 +140,15 @@ class UserCourseOrderController extends Controller
                 ->latest('completed_at')
                 ->first();
 
-            $completion = (clone $baseQuery)
+            $finalAttempts = (clone $baseQuery)
                 ->where('test_type', CourseTestType::Final->value)
-                ->orderByDesc('passed')
-                ->latest('completed_at')
-                ->first();
+                ->orderBy('completed_at')
+                ->get();
+
+            $final1 = $finalAttempts->first();
+            $final2 = $finalAttempts->count() > 1 ? $finalAttempts->skip(1)->first() : null;
+
+            $completion = $finalAttempts->where('passed', true)->last() ?? $finalAttempts->last();
 
             return [
                 'id' => $order->id,
@@ -158,6 +162,9 @@ class UserCourseOrderController extends Controller
                     'pre' => $pre ? (float) $pre->score_percent : 0,
                     'mock' => $mock ? (float) $mock->score_percent : 0,
                     'final' => $completion ? (float) $completion->score_percent : 0,
+                    'final_1' => $final1 ? (float) $final1->score_percent : null,
+                    'final_2' => $final2 ? (float) $final2->score_percent : null,
+                    'final_attempts' => $finalAttempts->map(fn ($fa) => (float) $fa->score_percent)->values()->all(),
                 ],
             ];
         });
