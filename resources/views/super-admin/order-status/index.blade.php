@@ -3,25 +3,21 @@
 @section('content')
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-10">
         <div>
-            <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+            <h2 class="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight">
                 {{ $title }}
             </h2>
         </div>
 
         <div class="w-full max-w-xs">
             <form action="{{ request()->url() }}" method="GET" id="order-status-filters" class="relative">
-                <input 
-                    type="text" 
-                    name="search"
-                    id="order-search"
-                    value="{{ $filters['search'] ?? '' }}"
-                    placeholder="Search orders..."
-                    oninput="window.orderStatusDebounceSubmit()"
-                    class="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-400 shadow-sm"
-                >
+                <input type="text" name="search" id="order-search" value="{{ $filters['search'] ?? '' }}"
+                    placeholder="Search orders..." oninput="window.orderStatusDebounceSubmit()"
+                    class="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-400 shadow-sm">
                 <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                    <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </div>
             </form>
@@ -36,23 +32,30 @@
         <x-ui.payment-status-badge :status="\App\Enums\PaymentStatus::Aborted" />
     </div>
 
-    <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden mb-8">
+    <div
+        class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden mb-8">
         <div class="p-0 overflow-x-auto">
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-gradient-to-r from-impetus-teal to-impetus-orange">
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Order ID</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">UID</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Order ID
+                        </th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">IHS ID</th>
                         <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Name</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Module name</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Date of purchase</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Time of purchase</th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit text-center">Status</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Module name
+                        </th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Date of
+                            purchase</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Time of
+                            purchase</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit text-center">
+                            Status</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                     @forelse($orders as $order)
-                        <tr class="odd:bg-white even:bg-impetus-teal-muted/50 hover:bg-brand-50/80 transition-colors duration-150">
+                        <tr
+                            class="odd:bg-white even:bg-impetus-teal-muted/50 hover:bg-brand-50/80 transition-colors duration-150">
                             <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">
                                 @php
                                     $displayId = '-';
@@ -68,11 +71,16 @@
                                 @endphp
                                 {{ $displayId }}
                             </td>
-                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->user->unique_sequence_number ?? '-' }}</td>
-                            <td class="px-6 py-4 text-sm font-normal text-gray-900 dark:text-white uppercase">{{ $order->user->name ?? 'N/A' }}</td>
-                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->courseDetail->couse_name ?? 'N/A' }}</td>
-                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->created_at->displayDate() }}</td>
-                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $order->created_at->format('h:i A') }}</td>
+                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">
+                                {{ $order->user->unique_sequence_number ?? '-' }}</td>
+                            <td class="px-6 py-4 text-sm font-normal text-gray-900 dark:text-white uppercase">
+                                {{ $order->user->name ?? 'N/A' }}</td>
+                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">
+                                {{ $order->courseDetail->couse_name ?? 'N/A' }}</td>
+                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">
+                                {{ $order->created_at->displayDate() }}</td>
+                            <td class="px-6 py-4 text-sm font-medium text-gray-600 dark:text-gray-400">
+                                {{ $order->created_at->format('h:i A') }}</td>
                             <td class="px-6 py-4 text-center">
                                 <x-ui.payment-status-badge :status="$order->payment_status" class="mx-auto" />
                             </td>
@@ -89,20 +97,18 @@
         </div>
     </div>
 
-    @if($orders->hasPages())
+    @if ($orders->hasPages())
         <div class="mb-8">
             {{ $orders->links() }}
         </div>
     @endif
-
-
 @endsection
 
 @push('scripts')
     <script>
         let orderStatusDebounceTimer;
 
-        window.orderStatusDebounceSubmit = function () {
+        window.orderStatusDebounceSubmit = function() {
             clearTimeout(orderStatusDebounceTimer);
             orderStatusDebounceTimer = setTimeout(() => {
                 document.getElementById('order-status-filters')?.submit();

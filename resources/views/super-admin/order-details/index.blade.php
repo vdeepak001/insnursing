@@ -20,7 +20,7 @@
                     Search
                 </label>
                 <input id="order-search" name="search" type="text" value="{{ $filters['search'] }}"
-                    placeholder="Name, UID, email, module..."
+                    placeholder="Name, IHS ID, email, module..."
                     oninput="window.orderFiltersDebounceSubmit()"
                     class="block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100" />
             </div>
@@ -91,7 +91,7 @@
                         </th>
                         <th scope="col"
                             class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
-                            UID
+                            IHS ID
                         </th>
                         <th scope="col"
                             class="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
