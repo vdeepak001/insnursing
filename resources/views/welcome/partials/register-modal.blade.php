@@ -155,9 +155,12 @@
                        id="register-uid"
                        name="uid"
                        value="{{ old('uid') }}"
-                       required
                        class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$frontendRegisterErrors->get('uid')" class="mt-2" />
+            </div>
+
+            <div class="flex items-center pt-5 sm:pt-6">
+                <span class="text-xs font-semibold text-rose-600 sm:text-sm">* Fields are Mandatory</span>
             </div>
 
             <div class="sm:col-span-2 mt-1">

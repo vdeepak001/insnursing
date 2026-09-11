@@ -50,7 +50,7 @@ class FrontendRegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255'],
             'phone' => ['required', 'numeric', 'digits:10'],
             'rn_number' => ['required', 'string', 'max:100'],
-            'uid' => ['required', 'string', 'max:100'],
+            'uid' => ['nullable', 'string', 'max:100'],
         ]);
 
         $generatedPassword = Str::random(10);
@@ -97,7 +97,7 @@ class FrontendRegisteredUserController extends Controller
             'qualification' => $validated['qualification'],
             'phone' => $validated['phone'],
             'rn_number' => $validated['rn_number'],
-            'uid' => $validated['uid'],
+            'uid' => $validated['uid'] ?? null,
             'date_of_birth' => $validated['date_of_birth'],
         ]);
 
