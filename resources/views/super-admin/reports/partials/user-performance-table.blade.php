@@ -3,7 +3,7 @@
         <table class="w-full border-collapse text-left">
             <thead>
                 <tr class="bg-gradient-to-r from-impetus-teal to-impetus-orange print-bg-orange">
-                    <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">IHS ID</th>
+                    <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">UID</th>
                     <th class="w-[16%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">Name</th>
                     <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">RN Number</th>
                     <th class="w-[24%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">Module Name</th>
@@ -26,7 +26,7 @@
             <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                 @forelse ($userAttempts as $attempt)
                     <tr class="transition-colors duration-150 hover:bg-gray-50 dark:hover:bg-gray-900/50">
-                        <td class="whitespace-nowrap px-2 py-2 text-left text-sm font-medium text-gray-600 dark:text-gray-400">{{ $attempt->sequence_number }}</td>
+                        <td class="whitespace-nowrap px-2 py-2 text-left text-sm font-medium text-gray-600 dark:text-gray-400">{{ $attempt->uid }}</td>
                         <td class="whitespace-nowrap px-2 py-2 text-sm font-normal uppercase text-gray-900 dark:text-white">{{ $attempt->user_name }}</td>
                         <td class="whitespace-nowrap px-2 py-2 text-left text-sm font-medium uppercase text-gray-600 dark:text-gray-400">{{ $attempt->rn_number }}</td>
                         <td class="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-600 dark:text-gray-400">{{ $attempt->course_name }}</td>
@@ -87,7 +87,7 @@
         <tbody>
             @foreach ($userAttempts as $attempt)
                 <tr>
-                    <td class="border border-gray-300 px-3 py-2 text-center text-[10px]">{{ $attempt->sequence_number }}</td>
+                    <td class="border border-gray-300 px-3 py-2 text-center text-[10px]">{{ $attempt->uid }}</td>
                     <td class="border border-gray-300 px-3 py-2 text-left text-[10px] font-normal uppercase">{{ $attempt->user_name }}</td>
                     <td class="border border-gray-300 px-3 py-2 text-center text-[10px] uppercase">{{ $attempt->rn_number }}</td>
                     <td class="border border-gray-300 px-3 py-2 text-center text-[10px]">{{ $attempt->phone }}</td>

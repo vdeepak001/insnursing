@@ -16,7 +16,7 @@ it('shows overall reports summary on the reports page', function () {
     $response->assertSee('Registered Users', false);
     $response->assertSee('Modules Completed', false);
     $response->assertSee('Overall Report Module', false);
-    $response->assertSee('IHS ID', false);
+    $response->assertSee('UID', false);
     $response->assertSee('All Modules', false);
 });
 
@@ -38,7 +38,7 @@ it('shows state report and user performance on the same page when a state is sel
     $response->assertSuccessful();
     $response->assertSee('Report: Tamil Nadu', false);
     $response->assertSee('State Report Module', false);
-    $response->assertSee('IHS ID', false);
+    $response->assertSee('UID', false);
     $response->assertSee('Pre Test', false);
     $response->assertSee('All Modules', false);
     $response->assertSee('Download Excel', false);

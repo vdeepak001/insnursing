@@ -124,7 +124,7 @@ class ReportsController extends Controller
 
             foreach ($userAttempts as $attempt) {
                 fputcsv($file, [
-                    $attempt->sequence_number,
+                    $attempt->uid,
                     $attempt->user_name,
                     $attempt->rn_number,
                     $attempt->phone,
@@ -278,6 +278,7 @@ class ReportsController extends Controller
 
             return (object) [
                 'id' => $first->user_id,
+                'uid' => $first->user->uid ?: ($first->user->unique_sequence_number ?? '-'),
                 'sequence_number' => $first->user->unique_sequence_number ?? 'N/A',
                 'user_name' => $first->user->name ?? 'Unknown',
                 'rn_number' => $first->user->rn_number ?? 'N/A',
