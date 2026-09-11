@@ -3,6 +3,8 @@
 namespace App\Livewire\SuperAdmin\UsersList;
 
 use App\Models\User;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -66,6 +68,7 @@ class Index extends Component
 
         $filteredUsers = $allUsers->when($this->search !== '', function ($collection) {
             $searchTerm = mb_strtolower($this->search);
+
             return $collection->filter(function ($user) use ($searchTerm) {
                 return str_contains(mb_strtolower($user->unique_sequence_number ?? ''), $searchTerm)
                     || str_contains(mb_strtolower($user->uid ?? ''), $searchTerm)
@@ -81,13 +84,13 @@ class Index extends Component
         // Paginate the collection manually
         $page = $this->getPage();
         $items = $filteredUsers->forPage($page, $this->perPage);
-        
-        $users = new \Illuminate\Pagination\LengthAwarePaginator(
+
+        $users = new LengthAwarePaginator(
             $items,
             $filteredUsers->count(),
             $this->perPage,
             $page,
-            ['path' => \Illuminate\Pagination\Paginator::resolveCurrentPath()]
+            ['path' => Paginator::resolveCurrentPath()]
         );
 
         return view('livewire.super-admin.users-list.index', [
@@ -106,7 +109,7 @@ class Index extends Component
         $user = User::findOrFail($userId);
         $user->delete();
 
-        $this->dispatch('notify', 
+        $this->dispatch('notify',
             message: 'User deleted successfully!',
             title: 'Success',
             variant: 'success'

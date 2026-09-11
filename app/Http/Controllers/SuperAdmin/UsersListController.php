@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\SuperAdmin;
 
-use App\Helpers\MenuHelper;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class UsersListController extends Controller
@@ -102,7 +103,7 @@ class UsersListController extends Controller
         ]);
     }
 
-    public function update(\Illuminate\Http\Request $request, User $user): \Illuminate\Http\JsonResponse
+    public function update(Request $request, User $user): JsonResponse
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
