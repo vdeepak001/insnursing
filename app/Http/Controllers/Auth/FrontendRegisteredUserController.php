@@ -50,7 +50,9 @@ class FrontendRegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255'],
             'phone' => ['required', 'numeric', 'digits:10'],
             'rn_number' => ['required', 'string', 'max:100'],
-            'uid' => ['nullable', 'string', 'max:100'],
+            'uid' => ['nullable', 'string', 'alpha_num', 'max:100'],
+        ], [
+            'uid.alpha_num' => 'The UID must contain only letters and numbers without special characters.',
         ]);
 
         $generatedPassword = Str::random(10);

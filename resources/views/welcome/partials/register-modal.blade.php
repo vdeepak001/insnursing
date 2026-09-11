@@ -122,6 +122,8 @@
             <div>
                 <label for="register-uid" class="mb-1.5 block text-sm font-medium text-slate-700">UID</label>
                 <input type="text" id="register-uid" name="uid" value="{{ old('uid') }}"
+                    oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '')"
+                    placeholder="Alphanumeric only"
                     class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
                 <x-input-error :messages="$frontendRegisterErrors->get('uid')" class="mt-2" />
             </div>
