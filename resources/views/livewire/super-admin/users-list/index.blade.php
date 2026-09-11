@@ -136,7 +136,7 @@
                         </th>
                         <th scope="col"
                             class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
-                            Unique ID
+                            IHS ID
                         </th>
                         <th scope="col"
                             class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">

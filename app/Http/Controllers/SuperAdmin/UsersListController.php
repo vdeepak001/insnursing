@@ -59,7 +59,7 @@ class UsersListController extends Controller
      * @var array<string, string>
      */
     private const PROFILE_LABELS = [
-        'unique_sequence_number' => 'Unique ID',
+        'unique_sequence_number' => 'IHS ID',
         'first_name' => 'First name',
         'last_name' => 'Last name',
         'name' => 'Full name',

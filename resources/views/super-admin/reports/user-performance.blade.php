@@ -148,7 +148,7 @@
             <table class="w-full text-left border-collapse">
                 <thead>
                     <tr class="bg-gradient-to-r from-impetus-teal to-impetus-orange print-bg-orange">
-                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[10%] whitespace-nowrap">Unique ID</th>
+                        <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[10%] whitespace-nowrap">IHS ID</th>
                         <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[16%] whitespace-nowrap">Name</th>
                         <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[10%] whitespace-nowrap">RN Number</th>
                         <th class="px-4 py-2 text-xs font-bold text-white uppercase tracking-wider border-b border-orange-400/20 text-left w-[24%] whitespace-nowrap">Module Name</th>

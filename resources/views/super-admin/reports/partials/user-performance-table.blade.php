@@ -3,7 +3,7 @@
         <table class="w-full border-collapse text-left">
             <thead>
                 <tr class="bg-gradient-to-r from-impetus-teal to-impetus-orange print-bg-orange">
-                    <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">Unique ID</th>
+                    <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">IHS ID</th>
                     <th class="w-[16%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">Name</th>
                     <th class="w-[10%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">RN Number</th>
                     <th class="w-[24%] whitespace-nowrap border-b border-orange-400/20 px-2 py-2 text-left text-xs font-bold uppercase tracking-wider text-white font-outfit">Module Name</th>
