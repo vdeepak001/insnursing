@@ -3,7 +3,7 @@
 @section('content')
     <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-10">
         <div>
-            <h2 class="text-xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white tracking-tight">
                 {{ $title }}
             </h2>
         </div>
@@ -40,7 +40,7 @@
                     <tr class="bg-gradient-to-r from-impetus-teal to-impetus-orange">
                         <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Order ID
                         </th>
-                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">IHS ID</th>
+                        <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">IHSID</th>
                         <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Name</th>
                         <th class="px-6 py-4 text-xs font-bold text-white uppercase tracking-wider font-outfit">Module name
                         </th>

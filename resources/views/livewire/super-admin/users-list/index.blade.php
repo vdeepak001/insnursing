@@ -136,7 +136,7 @@
                         </th>
                         <th scope="col"
                             class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
-                            IHS ID
+                            IHSID
                         </th>
                         <th scope="col"
                             class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
@@ -260,8 +260,7 @@
                                         </svg>
                                     </button>
                                     @if (auth()->user()->role_type !== 'support')
-                                        <button type="button" 
-                                            wire:click="deleteUser({{ $user->id }})"
+                                        <button type="button" wire:click="deleteUser({{ $user->id }})"
                                             wire:confirm="Are you sure you want to delete this user?"
                                             class="inline-flex items-center justify-center rounded-lg p-2 text-red-600 transition-colors hover:bg-red-50 hover:text-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1 dark:text-red-400 dark:hover:bg-gray-700 dark:hover:text-red-300 dark:focus:ring-offset-gray-800"
                                             title="Delete User">
@@ -586,7 +585,8 @@
                                         </td>
                                         <td class="px-4 py-3 text-center">
                                             <template x-if="order.passed">
-                                                <a :href="`{{ url('/certificates') }}/${order.id}/download`" target="_blank"
+                                                <a :href="`{{ url('/certificates') }}/${order.id}/download`"
+                                                    target="_blank"
                                                     class="inline-flex items-center justify-center rounded-lg p-1.5 text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:text-blue-400 dark:hover:bg-gray-700"
                                                     title="Download Certificate">
                                                     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -602,7 +602,8 @@
                                                 <div class="inline-flex items-center justify-center gap-1.5">
                                                     <span class="text-gray-400">—</span>
                                                     @if (auth()->user()->role_type === 'superadmin')
-                                                        <a :href="`{{ url('/certificates') }}/${order.id}/download`" target="_blank"
+                                                        <a :href="`{{ url('/certificates') }}/${order.id}/download`"
+                                                            target="_blank"
                                                             class="inline-flex items-center justify-center rounded-lg p-1 text-amber-600 transition-colors hover:bg-amber-50 hover:text-amber-800 focus:outline-none focus:ring-2 focus:ring-amber-500 dark:text-amber-400 dark:hover:bg-gray-700"
                                                             title="Force Download Certificate (Bypass)">
                                                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24"
