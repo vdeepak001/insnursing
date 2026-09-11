@@ -26,6 +26,7 @@ class Index extends Component
         'name',
         'date_of_birth',
         'rn_number',
+        'uid',
         'email',
         'phone',
         'qualification',
@@ -42,6 +43,7 @@ class Index extends Component
         'name' => 'Full Name',
         'date_of_birth' => 'Date of Birth',
         'rn_number' => 'RN',
+        'uid' => 'UID',
         'email' => 'Email ID',
         'phone' => 'Mobile number',
         'qualification' => 'Qualification',
@@ -66,6 +68,7 @@ class Index extends Component
             $searchTerm = mb_strtolower($this->search);
             return $collection->filter(function ($user) use ($searchTerm) {
                 return str_contains(mb_strtolower($user->unique_sequence_number ?? ''), $searchTerm)
+                    || str_contains(mb_strtolower($user->uid ?? ''), $searchTerm)
                     || str_contains(mb_strtolower($user->name ?? ''), $searchTerm)
                     || str_contains(mb_strtolower($user->first_name ?? ''), $searchTerm)
                     || str_contains(mb_strtolower($user->last_name ?? ''), $searchTerm)

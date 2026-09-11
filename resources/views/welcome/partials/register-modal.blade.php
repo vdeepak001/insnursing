@@ -149,6 +149,17 @@
                 <x-input-error :messages="$frontendRegisterErrors->get('rn_number')" class="mt-2" />
             </div>
 
+            <div>
+                <label for="register-uid" class="mb-1.5 block text-sm font-medium text-slate-700">UID</label>
+                <input type="text"
+                       id="register-uid"
+                       name="uid"
+                       value="{{ old('uid') }}"
+                       required
+                       class="block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-impetus-orange focus:outline-none focus:ring-2 focus:ring-impetus-orange/25" />
+                <x-input-error :messages="$frontendRegisterErrors->get('uid')" class="mt-2" />
+            </div>
+
             <div class="sm:col-span-2 mt-1">
                 <button type="submit"
                         class="w-full rounded-full bg-impetus-orange px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-impetus-orange/90 focus:outline-none focus:ring-2 focus:ring-impetus-orange focus:ring-offset-2">

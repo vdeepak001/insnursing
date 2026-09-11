@@ -139,6 +139,10 @@
                             Unique ID
                         </th>
                         <th scope="col"
+                            class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit">
+                            UID
+                        </th>
+                        <th scope="col"
                             class="px-6 py-4 text-left text-xs font-bold text-white uppercase tracking-wider font-outfit whitespace-nowrap">
                             Reg. Date
                         </th>
@@ -177,6 +181,9 @@
                             <td
                                 class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-100">
                                 {{ $user->unique_sequence_number ?? '—' }}
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-100">
+                                {{ $user->uid ?? '—' }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">
                                 {{ $user->created_at?->displayDate() ?? '—' }}
@@ -272,7 +279,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="8" class="px-6 py-8 text-center text-sm text-gray-500 dark:text-gray-400">
+                            <td colspan="9" class="px-6 py-8 text-center text-sm text-gray-500 dark:text-gray-400">
                                 {{ $search ? 'No users found matching "' . $search . '".' : 'No users with this role yet.' }}
                             </td>
                         </tr>
