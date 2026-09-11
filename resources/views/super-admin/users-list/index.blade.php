@@ -2,8 +2,11 @@
 
 @section('content')
     <style>
-        .apexcharts-pie-series .apexcharts-datalabel {
+        .apexcharts-datalabels .apexcharts-datalabel,
+        .apexcharts-datalabels text:not(.apexcharts-datalabel-label):not(.apexcharts-datalabel-value),
+        #performanceChart .apexcharts-datalabels text:not(.apexcharts-datalabel-label):not(.apexcharts-datalabel-value) {
             fill: #ffffff !important;
+            color: #ffffff !important;
         }
     </style>
     <livewire:super-admin.users-list.index />
@@ -343,7 +346,7 @@
                     dataLabels: {
                         enabled: true,
                         style: {
-                            colors: ['#ffffff'],
+                            colors: ['#ffffff', '#ffffff', '#ffffff'],
                             fontWeight: 'bold',
                         },
                         formatter: (val, opts) => {
