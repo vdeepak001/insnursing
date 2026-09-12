@@ -255,7 +255,7 @@
                                                     max: '{{ $tp['final_max'] }}'
                                                 }"
                                                     class="{{ $finalDoneClass }}">
-                                                    Final Test
+                                                    Final test Max Two Attempts
                                                     @if (!($tp['final_passed'] ?? false))
                                                         <span class="text-[10px] font-bold uppercase">(Failed)</span>
                                                     @endif
@@ -272,10 +272,10 @@
                                                         ? 'Retake Final Test (' .
                                                             number_format((float) $tp['final_score'], 1) .
                                                             '%)'
-                                                        : 'Final Test'" />
+                                                        : 'Final test Max Two Attempts'" />
                                             @else
                                                 <span class="{{ $finalLockedClass }}"
-                                                    title="Complete the mock test first">Final Test</span>
+                                                    title="Complete the mock test first">Final test Max Two Attempts</span>
                                             @endif
                                         </div>
 
