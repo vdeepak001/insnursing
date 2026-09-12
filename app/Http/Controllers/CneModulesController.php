@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\CourseTestType;
+use App\Enums\PaymentStatus;
 use App\Models\CourseDetail;
 use App\Models\CourseQuestion;
 use App\Models\CourseTestAnswer;
@@ -114,22 +115,33 @@ class CneModulesController extends Controller
             ->exists();
 
         $activeOrder = null;
+        $latestOrder = null;
         $isPurchased = false;
         $viewer = auth()->user();
 
         if ($viewer && $viewer->role_type === 'user') {
+            $latestOrder = Order::query()
+                ->where('user_id', $viewer->id)
+                ->where('course_detail_id', $course_detail->id)
+                ->where('payment_status', PaymentStatus::Completed)
+                ->latest('id')
+                ->first();
+
             $activeOrder = Order::activeOrderFor($viewer, $course_detail);
-            $isPurchased = (bool) $activeOrder;
+            $isPurchased = (bool) $latestOrder;
         }
 
         $courseTestProgress = null;
         if ($viewer && $viewer->role_type === 'user' && $isPurchased) {
+            $targetOrder = $activeOrder ?? $latestOrder;
+            $orderExpired = $activeOrder === null || ($targetOrder && now()->toDateString() > $targetOrder->end_date);
+
             $preAttempt = CourseTestAttempt::query()
                 ->where('user_id', $viewer->id)
                 ->where('course_detail_id', $course_detail->id)
                 ->where('test_type', CourseTestType::Pre->value)
                 ->where('status', CourseTestAttempt::STATUS_COMPLETED)
-                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at))
+                ->when($targetOrder, fn ($q) => $q->where('started_at', '>=', $targetOrder->created_at))
                 ->latest('id')
                 ->first();
 
@@ -138,7 +150,7 @@ class CneModulesController extends Controller
                 ->where('course_detail_id', $course_detail->id)
                 ->where('test_type', CourseTestType::Mock->value)
                 ->where('status', CourseTestAttempt::STATUS_COMPLETED)
-                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at))
+                ->when($targetOrder, fn ($q) => $q->where('started_at', '>=', $targetOrder->created_at))
                 ->latest('id')
                 ->first();
 
@@ -147,12 +159,14 @@ class CneModulesController extends Controller
                 ->where('course_detail_id', $course_detail->id)
                 ->where('test_type', CourseTestType::Final->value)
                 ->where('status', CourseTestAttempt::STATUS_COMPLETED)
-                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at))
+                ->when($targetOrder, fn ($q) => $q->where('started_at', '>=', $targetOrder->created_at))
                 ->latest('id')
                 ->get();
 
             $finalAttempt = $finalAttempts->first();
             $finalAttemptCount = $finalAttempts->count();
+            $finalPassed = (bool) ($finalAttempt?->passed);
+            $finalDeactivated = ($finalAttemptCount >= 1) || $finalPassed || $orderExpired;
 
             $formatDuration = function ($seconds) {
                 if ($seconds === null) {
@@ -265,6 +279,7 @@ class CneModulesController extends Controller
                 'final_max' => $finalLevelStats['max'],
                 'final_passed' => $finalAttempt?->passed,
                 'final_attempt_count' => $finalAttemptCount,
+                'final_deactivated' => $finalDeactivated,
             ];
         }
 
@@ -354,6 +369,37 @@ class CneModulesController extends Controller
     {
         if ((int) $course_detail->active_status !== 1) {
             abort(404);
+        }
+
+        $viewer = auth()->user();
+        if ($viewer && $viewer->role_type === 'user') {
+            $latestOrder = Order::query()
+                ->where('user_id', $viewer->id)
+                ->where('course_detail_id', $course_detail->id)
+                ->where('payment_status', PaymentStatus::Completed)
+                ->latest('id')
+                ->first();
+
+            $activeOrder = Order::activeOrderFor($viewer, $course_detail);
+            $targetOrder = $activeOrder ?? $latestOrder;
+
+            if ($targetOrder) {
+                $orderExpired = $activeOrder === null || now()->toDateString() > $targetOrder->end_date;
+                $finalAttempts = CourseTestAttempt::query()
+                    ->where('user_id', $viewer->id)
+                    ->where('course_detail_id', $course_detail->id)
+                    ->where('test_type', CourseTestType::Final->value)
+                    ->where('status', CourseTestAttempt::STATUS_COMPLETED)
+                    ->where('started_at', '>=', $targetOrder->created_at)
+                    ->latest('id')
+                    ->get();
+                $finalAttempt = $finalAttempts->first();
+                $finalAttemptCount = $finalAttempts->count();
+                $finalDeactivated = ($finalAttemptCount >= 1) || (bool) ($finalAttempt?->passed) || $orderExpired;
+                if ($finalDeactivated) {
+                    abort(403, 'Learning Resources are deactivated.');
+                }
+            }
         }
 
         $course_detail->load([

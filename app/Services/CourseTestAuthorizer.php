@@ -31,14 +31,38 @@ class CourseTestAuthorizer
 
         if ($type === CourseTestType::Practice) {
             abort_unless(filled($course->practice_content), 404);
+            $latestOrder = Order::query()
+                ->where('user_id', $user->id)
+                ->where('course_detail_id', $course->id)
+                ->where('payment_status', \App\Enums\PaymentStatus::Completed)
+                ->latest('id')
+                ->first();
+            $targetOrder = $activeOrder ?? $latestOrder;
+            $orderExpired = $activeOrder === null || ($targetOrder && now()->toDateString() > $targetOrder->end_date);
+
             $preDone = CourseTestAttempt::query()
                 ->where('user_id', $user->id)
                 ->where('course_detail_id', $course->id)
                 ->where('test_type', CourseTestType::Pre->value)
                 ->where('status', CourseTestAttempt::STATUS_COMPLETED)
-                ->where('started_at', '>=', $activeOrder->created_at)
+                ->when($targetOrder, fn ($q) => $q->where('started_at', '>=', $targetOrder->created_at))
                 ->exists();
             abort_unless($preDone, 403);
+
+            $finalAttempts = CourseTestAttempt::query()
+                ->where('user_id', $user->id)
+                ->where('course_detail_id', $course->id)
+                ->where('test_type', CourseTestType::Final->value)
+                ->where('status', CourseTestAttempt::STATUS_COMPLETED)
+                ->when($targetOrder, fn ($q) => $q->where('started_at', '>=', $targetOrder->created_at))
+                ->latest('id')
+                ->get();
+
+            $finalAttempt = $finalAttempts->first();
+            $finalAttemptCount = $finalAttempts->count();
+            $finalDeactivated = ($finalAttemptCount >= 1) || (bool) ($finalAttempt?->passed) || $orderExpired;
+
+            abort_if($finalDeactivated, 403, 'Practice test is deactivated.');
 
             return;
         }

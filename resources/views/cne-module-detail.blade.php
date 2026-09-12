@@ -19,6 +19,7 @@
         $preDone = $tp['pre_done'] ?? false;
         $mockDone = $tp['mock_done'] ?? false;
         $finalDone = $tp['final_done'] ?? false;
+        $finalDeactivated = $tp['final_deactivated'] ?? false;
 
         $canViewLearningMaterials =
             auth()->check() && auth()->user()?->role_type === 'user' && $isPurchased && $preDone;
@@ -417,7 +418,22 @@
                                 Learning Resources
                             </h2>
                             @if ($isPurchased)
-                                @if ($preDone)
+                                @if ($finalDeactivated)
+                                    <button type="button" disabled
+                                        class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75 shadow-none">
+                                        <div class="relative flex items-center gap-4">
+                                            <span
+                                                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
+                                                <svg class="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                                </svg>
+                                            </span>
+                                            <span class="text-sm font-bold uppercase tracking-wider">Learning Resources</span>
+                                        </div>
+                                    </button>
+                                @elseif ($preDone)
                                     <a href="{{ route('cne.modules.materials', $course->couse_name) }}"
                                         class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange active:translate-y-0">
                                         <div class="relative flex items-center gap-4">
@@ -535,25 +551,42 @@
                             </h2>
                             @auth
                                 @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
-                                    <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
-                                        class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
-                                        <div class="relative flex items-center gap-4">
-                                            <span
-                                                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
-                                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2">
+                                    @if ($finalDeactivated)
+                                        <button type="button" disabled
+                                            class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75 shadow-none">
+                                            <div class="relative flex items-center gap-4">
+                                                <span
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
+                                                    <svg class="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
+                                                    </svg>
+                                                </span>
+                                                <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
+                                            </div>
+                                        </button>
+                                    @else
+                                        <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
+                                            class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
+                                            <div class="relative flex items-center gap-4">
+                                                <span
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
+                                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
+                                                    </svg>
+                                                </span>
+                                                <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
+                                                <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
+                                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                                 </svg>
-                                            </span>
-                                            <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
-                                            <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                            </svg>
-                                        </div>
-                                    </a>
+                                            </div>
+                                        </a>
+                                    @endif
                                 @endif
                             @endauth
                         </div>

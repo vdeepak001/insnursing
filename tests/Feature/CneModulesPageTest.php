@@ -213,3 +213,92 @@ it('renders the compact two-column score card modal pattern', function () {
     $response->assertSee('grid-cols-2', false);
     $response->assertSee('max-w-md', false);
 });
+
+it('deactivates learning resources and practice test buttons when 1st or 2nd final attempt completed', function () {
+    $user = User::factory()->create(['role_type' => 'user']);
+    $course = CourseDetail::create([
+        'couse_name' => 'Final Attempt Course',
+        'description' => 'Course description',
+        'practice_content' => 'Practice content available',
+        'active_status' => 1,
+    ]);
+
+    $order = \App\Models\Order::create([
+        'user_id' => $user->id,
+        'course_detail_id' => $course->id,
+        'payment_mode' => \App\Enums\PaymentMode::InternetBanking->value,
+        'payment_status' => \App\Enums\PaymentStatus::Completed->value,
+        'start_date' => now()->subDays(2)->toDateString(),
+        'end_date' => now()->addDays(10)->toDateString(),
+    ]);
+    \App\Models\Order::query()->where('id', $order->id)->update(['created_at' => now()->subHours(10)->toDateTimeString()]);
+
+    // Pretest completed
+    \App\Models\CourseTestAttempt::create([
+        'user_id' => $user->id,
+        'course_detail_id' => $course->id,
+        'test_type' => \App\Enums\CourseTestType::Pre->value,
+        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'question_ids' => [1, 2],
+        'total_questions' => 2,
+        'correct_count' => 2,
+        'started_at' => now()->subMinutes(30),
+        'completed_at' => now()->subMinutes(20),
+        'score_percent' => 80.0,
+    ]);
+
+    // Final test 1st attempt completed (failed)
+    \App\Models\CourseTestAttempt::create([
+        'user_id' => $user->id,
+        'course_detail_id' => $course->id,
+        'test_type' => \App\Enums\CourseTestType::Final->value,
+        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
+        'question_ids' => [1, 2],
+        'total_questions' => 2,
+        'correct_count' => 1,
+        'passed' => false,
+        'started_at' => now()->subMinutes(10),
+        'completed_at' => now()->subMinutes(5),
+        'score_percent' => 50.0,
+    ]);
+
+    $response = $this->actingAs($user)->get(route('cne.modules.show', $course));
+    $response->assertSuccessful();
+
+    // Must see exact button text in disabled state, but NO "(Locked)" text or warning banners
+    $response->assertSee('Learning Resources', false);
+    $response->assertSee('Take Practice Test', false);
+    $response->assertDontSee('Learning Resources (Locked)', false);
+    $response->assertDontSee('Practice Test (Locked)', false);
+
+    // Direct route access should be blocked
+    $materialsResponse = $this->actingAs($user)->get(route('cne.modules.materials', $course));
+    $materialsResponse->assertStatus(403);
+});
+
+it('deactivates learning resources and practice test buttons when order date expires', function () {
+    $user = User::factory()->create(['role_type' => 'user']);
+    $course = CourseDetail::create([
+        'couse_name' => 'Expired Course',
+        'description' => 'Course description',
+        'practice_content' => 'Practice content available',
+        'active_status' => 1,
+    ]);
+
+    $order = \App\Models\Order::create([
+        'user_id' => $user->id,
+        'course_detail_id' => $course->id,
+        'payment_mode' => \App\Enums\PaymentMode::InternetBanking->value,
+        'payment_status' => \App\Enums\PaymentStatus::Completed->value,
+        'start_date' => now()->subDays(20)->toDateString(),
+        'end_date' => now()->subDays(1)->toDateString(),
+    ]);
+    \App\Models\Order::query()->where('id', $order->id)->update(['created_at' => now()->subDays(20)->toDateTimeString()]);
+
+    $response = $this->actingAs($user)->get(route('cne.modules.show', $course));
+    $response->assertSuccessful();
+
+    // Route access blocked due to order expiration
+    $materialsResponse = $this->actingAs($user)->get(route('cne.modules.materials', $course));
+    $materialsResponse->assertStatus(403);
+});
