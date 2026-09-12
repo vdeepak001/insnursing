@@ -130,7 +130,7 @@
                                                     {{ max(0, $daysLeft) === 1 ? 'Day' : 'Days' }}</span>
                                             </div>
                                         @endif
-                                        <div class="flex flex-wrap items-center justify-end gap-3">
+                                        <div class="flex flex-wrap items-start justify-end gap-3">
                                             @php
                                                 $canPre = (bool) $tp;
                                                 $canMock = $tp && $preDone;
@@ -239,44 +239,47 @@
                                             @endif
 
                                             {{-- Final Test --}}
-                                            @if ($finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2))
-                                                <button type="button"
-                                                    @click="scoreCardOpen = true; scoreCardData = {
-                                                    title: 'Final Test Result',
-                                                    score: '{{ number_format((float) $tp['final_score'], 1) }}',
-                                                    correct: '{{ $tp['final_correct'] }}',
-                                                    wrong: '{{ $tp['final_wrong'] }}',
-                                                    total: '{{ $tp['final_total'] }}',
-                                                    duration: '{{ $tp['final_duration'] }}',
-                                                    l1: '{{ $tp['final_l1'] }}',
-                                                    l2: '{{ $tp['final_l2'] }}',
-                                                    l3: '{{ $tp['final_l3'] }}',
-                                                    obtained: '{{ $tp['final_obtained'] }}',
-                                                    max: '{{ $tp['final_max'] }}'
-                                                }"
-                                                    class="{{ $finalDoneClass }}">
-                                                    Final test Max Two Attempts
-                                                    @if (!($tp['final_passed'] ?? false))
-                                                        <span class="text-[10px] font-bold uppercase">(Failed)</span>
-                                                    @endif
-                                                    <svg class="h-5 w-5 shrink-0 text-white" fill="none"
-                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
-                                                        aria-hidden="true">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M4.5 12.75l6 6 9-13.5" />
-                                                    </svg>
-                                                </button>
-                                            @elseif ($canFinal)
-                                                <livewire:cne.pretest-otp-button :course="$course" :btn-class="$finalClass"
-                                                    :test-type="'final'" :btn-label="$finalDone
-                                                        ? 'Retake Final Test (' .
-                                                            number_format((float) $tp['final_score'], 1) .
-                                                            '%)'
-                                                        : 'Final test Max Two Attempts'" />
-                                            @else
-                                                <span class="{{ $finalLockedClass }}"
-                                                    title="Complete the mock test first">Final test Max Two Attempts</span>
-                                            @endif
+                                            <div class="flex flex-col items-center gap-1">
+                                                @if ($finalDone && (($tp['final_passed'] ?? false) || ($tp['final_attempt_count'] ?? 0) >= 2))
+                                                    <button type="button"
+                                                        @click="scoreCardOpen = true; scoreCardData = {
+                                                        title: 'Final Test Result',
+                                                        score: '{{ number_format((float) $tp['final_score'], 1) }}',
+                                                        correct: '{{ $tp['final_correct'] }}',
+                                                        wrong: '{{ $tp['final_wrong'] }}',
+                                                        total: '{{ $tp['final_total'] }}',
+                                                        duration: '{{ $tp['final_duration'] }}',
+                                                        l1: '{{ $tp['final_l1'] }}',
+                                                        l2: '{{ $tp['final_l2'] }}',
+                                                        l3: '{{ $tp['final_l3'] }}',
+                                                        obtained: '{{ $tp['final_obtained'] }}',
+                                                        max: '{{ $tp['final_max'] }}'
+                                                    }"
+                                                        class="{{ $finalDoneClass }}">
+                                                        Final Test
+                                                        @if (!($tp['final_passed'] ?? false))
+                                                            <span class="text-[10px] font-bold uppercase">(Failed)</span>
+                                                        @endif
+                                                        <svg class="h-5 w-5 shrink-0 text-white" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"
+                                                            aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M4.5 12.75l6 6 9-13.5" />
+                                                        </svg>
+                                                    </button>
+                                                @elseif ($canFinal)
+                                                    <livewire:cne.pretest-otp-button :course="$course" :btn-class="$finalClass"
+                                                        :test-type="'final'" :btn-label="$finalDone
+                                                            ? 'Retake Final Test (' .
+                                                                number_format((float) $tp['final_score'], 1) .
+                                                                '%)'
+                                                            : 'Final Test'" />
+                                                @else
+                                                    <span class="{{ $finalLockedClass }}"
+                                                        title="Complete the mock test first">Final Test</span>
+                                                @endif
+                                                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Max 2 Attempts</span>
+                                            </div>
                                         </div>
 
                                     </div>
