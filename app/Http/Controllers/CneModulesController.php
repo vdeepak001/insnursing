@@ -129,7 +129,7 @@ class CneModulesController extends Controller
                 ->where('course_detail_id', $course_detail->id)
                 ->where('test_type', CourseTestType::Pre->value)
                 ->where('status', CourseTestAttempt::STATUS_COMPLETED)
-                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at))
+                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at->toDateTimeString()))
                 ->latest('id')
                 ->first();
 
@@ -138,7 +138,7 @@ class CneModulesController extends Controller
                 ->where('course_detail_id', $course_detail->id)
                 ->where('test_type', CourseTestType::Mock->value)
                 ->where('status', CourseTestAttempt::STATUS_COMPLETED)
-                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at))
+                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at->toDateTimeString()))
                 ->latest('id')
                 ->first();
 
@@ -147,12 +147,20 @@ class CneModulesController extends Controller
                 ->where('course_detail_id', $course_detail->id)
                 ->where('test_type', CourseTestType::Final->value)
                 ->where('status', CourseTestAttempt::STATUS_COMPLETED)
-                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at))
+                ->when($activeOrder, fn ($q) => $q->where('started_at', '>=', $activeOrder->created_at->toDateTimeString()))
                 ->latest('id')
                 ->get();
 
             $finalAttempt = $finalAttempts->first();
             $finalAttemptCount = $finalAttempts->count();
+
+            $anyFinalAttempt = CourseTestAttempt::query()
+                ->where('user_id', $viewer->id)
+                ->where('course_detail_id', $course_detail->id)
+                ->where('test_type', CourseTestType::Final->value)
+                ->exists();
+
+            $finalStarted = (bool) $finalAttempt || $anyFinalAttempt || session()->has('finaltest_otp_verified_' . $course_detail->id);
 
             $formatDuration = function ($seconds) {
                 if ($seconds === null) {
@@ -265,6 +273,7 @@ class CneModulesController extends Controller
                 'final_max' => $finalLevelStats['max'],
                 'final_passed' => $finalAttempt?->passed,
                 'final_attempt_count' => $finalAttemptCount,
+                'final_started' => $finalStarted,
             ];
         }
 
@@ -354,6 +363,22 @@ class CneModulesController extends Controller
     {
         if ((int) $course_detail->active_status !== 1) {
             abort(404);
+        }
+
+        $viewer = auth()->user();
+        if ($viewer && $viewer->role_type === 'user') {
+            $activeOrder = Order::activeOrderFor($viewer, $course_detail);
+            if ($activeOrder) {
+                $finalStarted = CourseTestAttempt::query()
+                    ->where('user_id', $viewer->id)
+                    ->where('course_detail_id', $course_detail->id)
+                    ->where('test_type', CourseTestType::Final->value)
+                    ->where('started_at', '>=', $activeOrder->created_at)
+                    ->exists() || session()->has('finaltest_otp_verified_' . $course_detail->id);
+                if ($finalStarted) {
+                    abort(403, 'Learning Resources are deactivated once the Final Test is started.');
+                }
+            }
         }
 
         $course_detail->load([

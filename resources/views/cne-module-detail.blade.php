@@ -19,6 +19,7 @@
         $preDone = $tp['pre_done'] ?? false;
         $mockDone = $tp['mock_done'] ?? false;
         $finalDone = $tp['final_done'] ?? false;
+        $finalStarted = $tp['final_started'] ?? false;
 
         $canViewLearningMaterials =
             auth()->check() && auth()->user()?->role_type === 'user' && $isPurchased && $preDone;
@@ -417,7 +418,38 @@
                                 Learning Resources
                             </h2>
                             @if ($isPurchased)
-                                @if ($preDone)
+                                @if ($finalStarted)
+                                    <div class="flex flex-col items-end gap-1.5">
+                                        <span
+                                            class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75">
+                                            <div class="relative flex items-center gap-4">
+                                                <span
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
+                                                    <svg class="h-5 w-5 text-slate-400" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                                    </svg>
+                                                </span>
+                                                <span class="text-sm font-bold uppercase tracking-wider">Learning Resources (Locked)</span>
+                                            </div>
+                                        </span>
+                                        <div
+                                            class="mt-2 flex w-full items-center gap-3 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange px-3 py-2 text-left">
+                                            <span
+                                                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-impetus-orange/30 bg-impetus-lightOrange/50 shadow-inner">
+                                                <svg class="h-5 w-5 text-impetus-orange" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                                </svg>
+                                            </span>
+                                            <p class="text-xs font-semibold tracking-wide text-impetus-orange">
+                                                Learning Resources are deactivated<br>once the Final Test is started.
+                                            </p>
+                                        </div>
+                                    </div>
+                                @elseif ($preDone)
                                     <a href="{{ route('cne.modules.materials', $course->couse_name) }}"
                                         class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange active:translate-y-0">
                                         <div class="relative flex items-center gap-4">
@@ -451,8 +483,7 @@
                                                             d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
                                                     </svg>
                                                 </span>
-                                                <span class="text-sm font-bold uppercase tracking-wider">Learning
-                                                    Resources (Locked)</span>
+                                                <span class="text-sm font-bold uppercase tracking-wider">Learning Resources (Locked)</span>
                                             </div>
                                         </span>
                                         <div
@@ -533,27 +564,60 @@
                                 class="shrink-0 text-2xl font-extrabold tracking-tight text-impetus-teal sm:text-3xl font-outfit">
                                 Practice Test
                             </h2>
-                            @auth
+                             @auth
                                 @if (auth()->user()?->role_type === 'user' && ($isPurchased ?? false) && $preDone)
-                                    <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
-                                        class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
-                                        <div class="relative flex items-center gap-4">
+                                    @if ($finalStarted)
+                                        <div class="flex flex-col items-end gap-1.5">
                                             <span
-                                                class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
-                                                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
-                                                </svg>
+                                                class="group relative inline-flex overflow-hidden rounded-xl border border-slate-200 bg-slate-100 px-8 py-3.5 text-center text-slate-400 cursor-not-allowed opacity-75">
+                                                <div class="relative flex items-center gap-4">
+                                                    <span
+                                                        class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-300 bg-slate-200 shadow-inner">
+                                                        <svg class="h-5 w-5 text-slate-400" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                                        </svg>
+                                                    </span>
+                                                    <span class="text-sm font-bold uppercase tracking-wider">Practice Test (Locked)</span>
+                                                </div>
                                             </span>
-                                            <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
-                                            <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                            </svg>
+                                            <div
+                                                class="mt-2 flex w-full items-center gap-3 rounded-xl border border-impetus-orange/20 bg-impetus-lightOrange px-3 py-2 text-left">
+                                                <span
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-impetus-orange/30 bg-impetus-lightOrange/50 shadow-inner">
+                                                    <svg class="h-5 w-5 text-impetus-orange" fill="none"
+                                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                                                    </svg>
+                                                </span>
+                                                <p class="text-xs font-semibold tracking-wide text-impetus-orange">
+                                                    Practice Test is deactivated<br>once the Final Test is started.
+                                                </p>
+                                            </div>
                                         </div>
-                                    </a>
+                                    @else
+                                        <a href="{{ route('cne.modules.test', [$course->couse_name, 'practice']) }}"
+                                            class="group relative inline-flex overflow-hidden rounded-xl bg-impetus-orange px-8 py-3.5 text-center text-white shadow-lg shadow-impetus-orange/20 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2">
+                                            <div class="relative flex items-center gap-4">
+                                                <span
+                                                    class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/30 bg-white/10 shadow-inner">
+                                                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                                        stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125" />
+                                                    </svg>
+                                                </span>
+                                                <span class="text-sm font-bold uppercase tracking-wider">Take Practice Test</span>
+                                                <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none"
+                                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                                </svg>
+                                            </div>
+                                        </a>
+                                    @endif
                                 @endif
                             @endauth
                         </div>
