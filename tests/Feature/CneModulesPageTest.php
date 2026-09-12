@@ -12,7 +12,7 @@ it('returns a successful response for the CNE modules listing', function () {
 
     $response->assertSuccessful();
     $response->assertSee('CNE Modules', false);
-    $response->assertSee('Online Continuing Nursing Education (CNE) Modules', false);
+    $response->assertSee('Online Continuing Nursing Education Modules', false);
 });
 
 it('lists active courses with module cards and course titles', function () {
@@ -98,7 +98,7 @@ it('shows an active course detail page with module content', function () {
     $response->assertSee('What you will learn in First Aid?', false);
     $response->assertSee('Learning Materials', false);
     $response->assertSee('Practice Test', false);
-    $response->assertSee('Questions and answers for deeper learning', false);
+    $response->assertSee('Our learning resources for Online Continuing Nursing Education', false);
     $response->assertSee('Buy now', false);
 });
 
