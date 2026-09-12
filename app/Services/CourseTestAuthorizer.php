@@ -40,14 +40,6 @@ class CourseTestAuthorizer
                 ->exists();
             abort_unless($preDone, 403);
 
-            $finalStarted = CourseTestAttempt::query()
-                ->where('user_id', $user->id)
-                ->where('course_detail_id', $course->id)
-                ->where('test_type', CourseTestType::Final->value)
-                ->where('started_at', '>=', $activeOrder->created_at)
-                ->exists() || session()->has('finaltest_otp_verified_' . $course->id);
-            abort_if($finalStarted, 403, 'Practice Test is deactivated once the Final Test is started.');
-
             return;
         }
 

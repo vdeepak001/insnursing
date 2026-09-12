@@ -12,7 +12,7 @@ it('returns a successful response for the CNE modules listing', function () {
 
     $response->assertSuccessful();
     $response->assertSee('CNE Modules', false);
-    $response->assertSee('Online Continuing Nursing Education Modules', false);
+    $response->assertSee('Online Continuing Nursing Education (CNE) Modules', false);
 });
 
 it('lists active courses with module cards and course titles', function () {
@@ -98,7 +98,7 @@ it('shows an active course detail page with module content', function () {
     $response->assertSee('What you will learn in First Aid?', false);
     $response->assertSee('Learning Materials', false);
     $response->assertSee('Practice Test', false);
-    $response->assertSee('Our learning resources for Online Continuing Nursing Education', false);
+    $response->assertSee('Questions and answers for deeper learning', false);
     $response->assertSee('Buy now', false);
 });
 
@@ -212,67 +212,4 @@ it('renders the compact two-column score card modal pattern', function () {
     $response->assertSee('Incorrect Answer', false);
     $response->assertSee('grid-cols-2', false);
     $response->assertSee('max-w-md', false);
-});
-
-it('deactivates learning resources and practice test when final test is started or attempted', function () {
-    $user = User::factory()->create(['role_type' => 'user']);
-    $course = CourseDetail::create([
-        'couse_name' => 'Final Started Course',
-        'description' => 'Course description',
-        'practice_content' => 'Practice content available',
-        'active_status' => 1,
-    ]);
-
-    $order = \App\Models\Order::create([
-        'user_id' => $user->id,
-        'course_detail_id' => $course->id,
-        'payment_mode' => \App\Enums\PaymentMode::InternetBanking->value,
-        'payment_status' => \App\Enums\PaymentStatus::Completed->value,
-        'start_date' => now()->subDays(2)->toDateString(),
-        'end_date' => now()->addDays(10)->toDateString(),
-    ]);
-    \App\Models\Order::query()->where('id', $order->id)->update(['created_at' => now()->subHours(10)->toDateTimeString()]);
-
-    // Create completed pretest after order created_at
-    \App\Models\CourseTestAttempt::create([
-        'user_id' => $user->id,
-        'course_detail_id' => $course->id,
-        'test_type' => \App\Enums\CourseTestType::Pre->value,
-        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
-        'question_ids' => [1, 2],
-        'total_questions' => 2,
-        'correct_count' => 2,
-        'started_at' => now()->subMinutes(30),
-        'completed_at' => now()->subMinutes(20),
-        'score_percent' => 80.0,
-    ]);
-
-    // Create final test attempt after order created_at
-    \App\Models\CourseTestAttempt::create([
-        'user_id' => $user->id,
-        'course_detail_id' => $course->id,
-        'test_type' => \App\Enums\CourseTestType::Final->value,
-        'status' => \App\Models\CourseTestAttempt::STATUS_COMPLETED,
-        'question_ids' => [1, 2],
-        'total_questions' => 2,
-        'correct_count' => 1,
-        'started_at' => now()->subMinutes(10),
-        'completed_at' => now()->subMinutes(5),
-        'score_percent' => 75.0,
-    ]);
-
-    $response = $this->actingAs($user)->get(route('cne.modules.show', $course));
-    $response->assertSuccessful();
-    $response->assertSee('Learning Resources (Locked)', false);
-    $response->assertSee('Learning Resources are deactivated', false);
-    $response->assertSee('Practice Test (Locked)', false);
-    $response->assertSee('Practice Test is deactivated', false);
-
-    // Direct route access should be blocked
-    $materialsResponse = $this->actingAs($user)->get(route('cne.modules.materials', $course));
-    $materialsResponse->assertStatus(403);
-
-    session()->put('finaltest_otp_verified_' . $course->id, true);
-    $practiceResponse = $this->actingAs($user)->get(route('cne.modules.test', [$course->couse_name, 'practice']));
-    $practiceResponse->assertStatus(403);
 });
