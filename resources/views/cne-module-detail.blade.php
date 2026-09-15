@@ -700,8 +700,7 @@
                             <span
                                 class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white shadow-sm">2</span>
                             <p class="text-sm font-semibold text-slate-700 leading-snug">
-                                Only <span class="text-impetus-orange font-extrabold uppercase">2 FINAL TEST ATTEMPTS</span>
-                                are allowed in total.
+                                This is <span class="text-impetus-orange font-extrabold uppercase">YOUR LAST CHANCE</span> for <span class="text-impetus-orange font-extrabold uppercase">FINAL TEST</span>.
                             </p>
                         </div>
 
