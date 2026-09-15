@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
@@ -29,7 +30,7 @@ class FrontendRegisteredUserController extends Controller
      */
     public function store(Request $request, SmsService $smsService): RedirectResponse
     {
-        $validated = $request->validateWithBag('frontendRegister', [
+        $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'state' => [
                 'required',
@@ -55,60 +56,47 @@ class FrontendRegisteredUserController extends Controller
             'uid.alpha_num' => 'The UID must contain only letters and numbers without special characters.',
         ]);
 
-        $generatedPassword = Str::random(10);
-        $normalizedEmail = Str::lower(trim($validated['email']));
+        $validator->after(function ($validator) use ($request) {
+            $allUsers = User::withTrashed()->get();
 
-        $normalizedPhone = trim($validated['phone']);
+            $normalizedEmail = Str::lower(trim((string) $request->input('email')));
+            $emailAlreadyExists = $allUsers->contains(function (User $user) use ($normalizedEmail): bool {
+                return Str::lower(trim((string) $user->email)) === $normalizedEmail;
+            });
 
-        // Since email and phone are encrypted in the User model, we cannot use standard SQL uniqueness checks.
-        // We fetch ALL users (including soft-deleted) and check manually.
-        // withTrashed() is critical: without it, a soft-deleted user could re-register with the same email/phone.
-        $allUsers = User::withTrashed()->get();
+            if ($emailAlreadyExists) {
+                $validator->errors()->add('email', 'This email is already registered.');
+            }
 
-        $emailAlreadyExists = $allUsers->contains(function (User $user) use ($normalizedEmail): bool {
-            return Str::lower(trim((string) $user->email)) === $normalizedEmail;
-        });
+            $normalizedPhone = trim((string) $request->input('phone'));
+            $phoneAlreadyExists = $allUsers->contains(function (User $user) use ($normalizedPhone): bool {
+                return trim((string) $user->phone) === $normalizedPhone;
+            });
 
-        if ($emailAlreadyExists) {
-            return back()
-                ->withErrors([
-                    'email' => 'This email is already registered.',
-                ], 'frontendRegister')
-                ->withInput();
-        }
+            if ($phoneAlreadyExists) {
+                $validator->errors()->add('phone', 'This mobile number is already registered.');
+            }
 
-        $phoneAlreadyExists = $allUsers->contains(function (User $user) use ($normalizedPhone): bool {
-            return trim((string) $user->phone) === $normalizedPhone;
-        });
+            $normalizedState = Str::lower(trim((string) $request->input('state')));
+            $normalizedUid = filled($request->input('uid')) ? Str::lower(trim((string) $request->input('uid'))) : null;
 
-        if ($phoneAlreadyExists) {
-            return back()
-                ->withErrors([
-                    'phone' => 'This mobile number is already registered.',
-                ], 'frontendRegister')
-                ->withInput();
-        }
-
-        $normalizedState = Str::lower(trim((string) $validated['state']));
-        $normalizedUid = filled($validated['uid'] ?? null) ? Str::lower(trim((string) $validated['uid'])) : null;
-
-        if ($normalizedState === 'maharashtra' && $normalizedUid !== null) {
-            $uidAlreadyExists = User::withTrashed()
-                ->whereNotNull('uid')
-                ->get()
-                ->contains(function (User $user) use ($normalizedUid): bool {
-                    return Str::lower(trim((string) $user->state)) === 'maharashtra'
+            if ($normalizedState === 'maharashtra' && $normalizedUid !== null) {
+                $uidAlreadyExists = $allUsers->contains(function (User $user) use ($normalizedUid): bool {
+                    return $user->uid !== null
+                        && Str::lower(trim((string) $user->state)) === 'maharashtra'
                         && Str::lower(trim((string) $user->uid)) === $normalizedUid;
                 });
 
-            if ($uidAlreadyExists) {
-                return back()
-                    ->withErrors([
-                        'uid' => 'This UID is already registered for Maharashtra.',
-                    ], 'frontendRegister')
-                    ->withInput();
+                if ($uidAlreadyExists) {
+                    $validator->errors()->add('uid', 'This UID is already registered for Maharashtra.');
+                }
             }
-        }
+        });
+
+        $validated = $validator->validateWithBag('frontendRegister');
+
+        $generatedPassword = Str::random(10);
+        $normalizedEmail = Str::lower(trim($validated['email']));
 
         $user = User::query()->create([
             'name' => $validated['name'],
