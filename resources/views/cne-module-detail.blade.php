@@ -634,336 +634,319 @@
         {{-- ================================================================ --}}
         {{-- Final Test First-Attempt Warning Popup --}}
         {{-- Shows automatically when: mock done + final enabled + 0 attempts --}}
-        {{-- ================================================================ --}        <template x-teleport="body">
-            <div x-show="finalAttemptWarningOpen" x-cloak x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
-                x-transition:leave-end="opacity-0" class="fixed inset-0 z-[9999] overflow-y-auto p-4 sm:p-6"
-                role="alertdialog" aria-modal="true" aria-labelledby="final-warning-title">
-                {{-- Backdrop --}}
-                <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity" @click="finalAttemptWarningOpen = false"></div>
+        {{-- ================================================================ --}}
+        <div x-show="finalAttemptWarningOpen"
+            x-cloak
+            id="final-attempt-warning-modal"
+            class="fixed inset-0 overflow-y-auto p-4 sm:p-6"
+            style="z-index: 99999;"
+            role="alertdialog"
+            aria-modal="true"
+            aria-labelledby="final-warning-title">
+            {{-- Backdrop --}}
+            <div class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm transition-opacity"
+                x-transition:enter="ease-out duration-200"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="ease-in duration-150"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                @click="finalAttemptWarningOpen = false"></div>
 
-                {{-- Centered Modal Wrapper --}}
-                <div class="flex min-h-full items-center justify-center p-2 sm:p-4">
-                    {{-- Modal Card --}}
-                    <div x-transition:enter="transition ease-out duration-300"
-                        x-transition:enter-start="opacity-0 scale-95 translate-y-4"
-                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                        x-transition:leave="transition ease-in duration-200"
-                        x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-                        x-transition:leave-end="opacity-0 scale-95 translate-y-4"
-                        class="relative z-10 w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-900/10 my-8"
-                        @click.stop>
-                        {{-- Decorative top gradient bar --}}
-                        <div class="h-1.5 w-full bg-gradient-to-r from-impetus-teal via-impetus-teal/70 to-impetus-orange"></div>
+            {{-- Centered Modal Wrapper / Card --}}
+            <div class="relative z-10 w-full max-w-md mx-auto my-8 overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-900/10"
+                x-transition:enter="ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="ease-in duration-150"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+                @click.stop>
+                {{-- Decorative top gradient bar --}}
+                <div class="h-1.5 w-full bg-gradient-to-r from-impetus-teal via-impetus-teal/70 to-impetus-orange"></div>
 
-                        {{-- Header --}}
-                        <div class="flex items-start justify-between px-6 pt-6 pb-4">
-                            <div class="flex items-center gap-3">
-                                {{-- Shield / warning icon in teal circle --}}
-                                <div
-                                    class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-impetus-teal/10 ring-2 ring-impetus-teal/20">
-                                    <svg class="h-6 w-6 text-impetus-teal" fill="none" viewBox="0 0 24 24"
-                                        stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h3 id="final-warning-title"
-                                        class="text-lg font-extrabold tracking-tight text-impetus-teal font-outfit">
-                                        Final Test — First Attempt
-                                    </h3>
-                                    <p class="text-xs font-semibold uppercase tracking-wider text-impetus-orange">Important Notice
-                                    </p>
-                                </div>
-                            </div>
-                            {{-- Close button --}}
-                            <button type="button" @click="finalAttemptWarningOpen = false"
-                                class="ml-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal"
-                                aria-label="Close">
-                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    stroke-width="2.5" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                </svg>
-                            </button>
+                {{-- Header --}}
+                <div class="flex items-start justify-between px-6 pt-6 pb-4">
+                    <div class="flex items-center gap-3">
+                        {{-- Shield / warning icon in teal circle --}}
+                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-impetus-teal/10 ring-2 ring-impetus-teal/20">
+                            <svg class="h-6 w-6 text-impetus-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
                         </div>
-
-                        {{-- Divider --}}
-                        <div class="mx-6 border-t border-slate-100"></div>
-
-                        {{-- Body --}}
-                        <div class="px-6 py-5 space-y-4">
-                            {{-- Attempt counter badge --}}
-                            <div class="flex items-center gap-3 rounded-xl border border-impetus-orange/20 bg-orange-50 px-4 py-3">
-                                <span
-                                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white shadow-sm">2</span>
-                                <p class="text-sm font-semibold text-slate-700 leading-snug">
-                                    Only <span class="text-impetus-orange font-extrabold uppercase">2 FINAL TEST ATTEMPTS</span>
-                                    are allowed in total.
-                                </p>
-                            </div>
-
-                            {{-- Warning message --}}
-                            <div
-                                class="flex items-start gap-3 rounded-xl border border-impetus-teal/20 bg-impetus-teal-muted/30 px-4 py-3">
-                                <svg class="mt-0.5 h-5 w-5 shrink-0 text-impetus-teal" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-                                </svg>
-                                <p class="text-sm text-slate-600 leading-relaxed">
-                                    Practice thoroughly with <span class="font-bold text-impetus-teal">"Learning Resource and Practice Test"</span> before taking the Final Test.
-                                    Once you begin, one attempt will be consumed.
-                                </p>
-                            </div>
-                        </div>
-
-                        {{-- Footer Actions --}}
-                        <div class="flex items-center justify-end gap-3 border-t border-slate-100 px-6 py-4">
-                            <button type="button" @click="finalAttemptWarningOpen = false"
-                                class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:bg-slate-50 hover:border-slate-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal">
-                                Practice More
-                            </button>
-                            <button type="button" @click="finalAttemptWarningOpen = false"
-                                class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-teal px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-impetus-teal/25 transition hover:bg-impetus-teal/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal focus-visible:ring-offset-2">
-                                I Understand
-                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    stroke-width="2.5" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                </svg>
-                            </button>
+                        <div>
+                            <h3 id="final-warning-title" class="text-lg font-extrabold tracking-tight text-impetus-teal font-outfit">
+                                Final Test — First Attempt
+                            </h3>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-impetus-orange">Important Notice</p>
                         </div>
                     </div>
+                    {{-- Close button --}}
+                    <button type="button"
+                        @click="finalAttemptWarningOpen = false"
+                        class="ml-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal"
+                        aria-label="Close">
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                {{-- Divider --}}
+                <div class="mx-6 border-t border-slate-100"></div>
+
+                {{-- Body --}}
+                <div class="px-6 py-5 space-y-4">
+                    {{-- Attempt counter badge --}}
+                    <div class="flex items-center gap-3 rounded-xl border border-impetus-orange/20 bg-orange-50 px-4 py-3">
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white shadow-sm">2</span>
+                        <p class="text-sm font-semibold text-slate-700 leading-snug">
+                            Only <span class="text-impetus-orange font-extrabold uppercase">2 FINAL TEST ATTEMPTS</span> are allowed in total.
+                        </p>
+                    </div>
+
+                    {{-- Warning message --}}
+                    <div class="flex items-start gap-3 rounded-xl border border-impetus-teal/20 bg-impetus-teal-muted/30 px-4 py-3">
+                        <svg class="mt-0.5 h-5 w-5 shrink-0 text-impetus-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                        </svg>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Practice thoroughly with <span class="font-bold text-impetus-teal">"Learning Resource and Practice Test"</span> before taking the Final Test. Once you begin, one attempt will be consumed.
+                        </p>
+                    </div>
+                </div>
+
+                {{-- Footer Actions --}}
+                <div class="flex items-center justify-end gap-3 border-t border-slate-100 px-6 py-4">
+                    <button type="button"
+                        @click="finalAttemptWarningOpen = false"
+                        class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:bg-slate-50 hover:border-slate-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal">
+                        Practice More
+                    </button>
+                    <button type="button"
+                        @click="finalAttemptWarningOpen = false"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-teal px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-impetus-teal/25 transition hover:bg-impetus-teal/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal focus-visible:ring-offset-2">
+                        I Understand
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </template>
+        </div>
 
         {{-- Score Card Modal --}}
-        <template x-teleport="body">
-            <div x-show="scoreCardOpen" x-cloak x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100"
-                x-transition:leave-end="opacity-0" class="fixed inset-0 z-[9999] overflow-y-auto p-4 sm:p-6"
-                role="dialog" aria-modal="true">
-                <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" @click="scoreCardOpen = false"></div>
+        <div x-show="scoreCardOpen"
+            x-cloak
+            id="score-card-modal"
+            class="fixed inset-0 overflow-y-auto p-4 sm:p-6"
+            style="z-index: 99999;"
+            role="dialog"
+            aria-modal="true">
+            <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+                x-transition:enter="ease-out duration-200"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="ease-in duration-150"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                @click="scoreCardOpen = false"></div>
 
-                <div class="flex min-h-full items-center justify-center p-2 sm:p-4">
-                    <div
-                        class="relative z-10 w-full max-w-md overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl ring-1 ring-slate-900/10 my-8"
-                        @click.stop>
-                        <div class="flex items-center justify-between px-5 pt-5 pb-3">
-                            <div class="flex items-center gap-2.5">
-                                <div class="flex size-10 items-center justify-center rounded-full bg-[#0F776E] text-white">
-                                    <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path
-                                            d="M12 2l2.4 4.86L20 7.64l-4 3.9.94 5.5L12 14.77 7.06 17.04 8 11.54l-4-3.9 5.6-.78L12 2z" />
-                                    </svg>
-                                </div>
-                                <h2 class="text-lg font-bold text-slate-800 font-outfit">Score Card</h2>
+            <div class="relative z-10 w-full max-w-md mx-auto my-8 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-2xl ring-1 ring-slate-900/10"
+                x-transition:enter="ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="ease-in duration-150"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+                @click.stop>
+                <div class="flex items-center justify-between px-5 pt-5 pb-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="flex size-10 items-center justify-center rounded-full bg-[#0F776E] text-white">
+                            <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2l2.4 4.86L20 7.64l-4 3.9.94 5.5L12 14.77 7.06 17.04 8 11.54l-4-3.9 5.6-.78L12 2z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-lg font-bold text-slate-800 font-outfit">Score Card</h2>
+                    </div>
+                    <button type="button" @click="scoreCardOpen = false"
+                        class="rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                        aria-label="Close score card">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="px-5 pb-5">
+                    <div class="text-center">
+                        <p class="text-base font-bold text-slate-800 font-outfit">{{ $course->couse_name }}</p>
+                        <p class="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#0F776E]" x-text="scoreCardData.title"></p>
+                    </div>
+
+                    <div class="my-4 flex items-center gap-2" aria-hidden="true">
+                        <div class="h-px flex-1 bg-slate-200"></div>
+                        <div class="size-1.5 rounded-full bg-slate-300"></div>
+                        <div class="h-px flex-1 bg-slate-200"></div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="flex items-center gap-3 rounded-xl bg-[#0F776E] px-3.5 py-3 text-white shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
+                                <svg class="size-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M7 4V2h10v2h3a1 1 0 0 1 1 1v2a5 5 0 0 1-4.1 4.9A5.5 5.5 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5.5 5.5 0 0 1 7.1 11.9 5 5 0 0 1 3 7V5a1 1 0 0 1 1-1h3zm0 2H5v1a3 3 0 0 0 3 3V6H7zm10 0h-2v4a3 3 0 0 0 3-3V6h-1z" />
+                                </svg>
                             </div>
-                            <button type="button" @click="scoreCardOpen = false"
-                                class="rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
-                                aria-label="Close score card">
-                                <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"
-                                    aria-hidden="true">
+                            <div class="min-w-0">
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Score</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight" x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 rounded-xl bg-impetus-orange px-3.5 py-3 text-white shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Percentage</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight" x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Questions</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800" x-text="scoreCardData.total"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Time Taken</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800" x-text="scoreCardData.duration"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 rounded-xl border border-green-200 bg-[#F0FDF4] px-3.5 py-3 shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-full bg-green-500 text-white">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-green-600">Correct Answer</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-green-700" x-text="scoreCardData.correct"></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 rounded-xl border border-red-200 bg-[#FEF2F2] px-3.5 py-3 shadow-sm">
+                            <div class="flex size-9 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
+                                <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                                 </svg>
-                            </button>
-                        </div>
-
-                        <div class="px-5 pb-5">
-                            <div class="text-center">
-                                <p class="text-base font-bold text-slate-800 font-outfit">{{ $course->couse_name }}</p>
-                                <p class="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-[#0F776E]"
-                                    x-text="scoreCardData.title"></p>
                             </div>
-
-                            <div class="my-4 flex items-center gap-2" aria-hidden="true">
-                                <div class="h-px flex-1 bg-slate-200"></div>
-                                <div class="size-1.5 rounded-full bg-slate-300"></div>
-                                <div class="h-px flex-1 bg-slate-200"></div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-3">
-                                <div class="flex items-center gap-3 rounded-xl bg-[#0F776E] px-3.5 py-3 text-white shadow-sm">
-                                    <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                                        <svg class="size-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                            <path
-                                                d="M7 4V2h10v2h3a1 1 0 0 1 1 1v2a5 5 0 0 1-4.1 4.9A5.5 5.5 0 0 1 13 16.9V19h3v2H8v-2h3v-2.1A5.5 5.5 0 0 1 7.1 11.9 5 5 0 0 1 3 7V5a1 1 0 0 1 1-1h3zm0 2H5v1a3 3 0 0 0 3 3V6H7zm10 0h-2v4a3 3 0 0 0 3-3V6h-1z" />
-                                        </svg>
-                                    </div>
-                                    <div class="min-w-0">
-                                        <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Score</p>
-                                        <p class="truncate text-base font-bold font-outfit leading-tight"
-                                            x-text="scoreCardData.obtained + '/' + scoreCardData.max"></p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center gap-3 rounded-xl bg-impetus-orange px-3.5 py-3 text-white shadow-sm">
-                                    <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/15">
-                                        <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            stroke-width="2" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
-                                        </svg>
-                                    </div>
-                                    <div class="min-w-0">
-                                        <p class="text-[10px] font-bold uppercase tracking-wider text-white/80">Percentage</p>
-                                        <p class="truncate text-base font-bold font-outfit leading-tight"
-                                            x-text="scoreCardData.max > 0 ? Math.round((scoreCardData.obtained / scoreCardData.max) * 100) + '%' : '0%'">
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
-                                    <div
-                                        class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
-                                        <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            stroke-width="2" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2" />
-                                        </svg>
-                                    </div>
-                                    <div class="min-w-0">
-                                        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Questions</p>
-                                        <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800"
-                                            x-text="scoreCardData.total"></p>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 shadow-sm">
-                                    <div
-                                        class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-[#0F776E]/10 text-[#0F776E]">
-                                        <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            stroke-width="2" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                                        </svg>
-                                    </div>
-                                    <div class="min-w-0">
-                                        <p class="text-[10px] font-bold uppercase tracking-wider text-slate-500">Time Taken</p>
-                                        <p class="truncate text-base font-bold font-outfit leading-tight text-slate-800"
-                                            x-text="scoreCardData.duration"></p>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex items-center gap-3 rounded-xl border border-green-200 bg-[#F0FDF4] px-3.5 py-3 shadow-sm">
-                                    <div
-                                        class="flex size-9 shrink-0 items-center justify-center rounded-full bg-green-500 text-white">
-                                        <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            stroke-width="2.5" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                                        </svg>
-                                    </div>
-                                    <div class="min-w-0">
-                                        <p class="text-[10px] font-bold uppercase tracking-wider text-green-600">Correct Answer</p>
-                                        <p class="truncate text-base font-bold font-outfit leading-tight text-green-700"
-                                            x-text="scoreCardData.correct"></p>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex items-center gap-3 rounded-xl border border-red-200 bg-[#FEF2F2] px-3.5 py-3 shadow-sm">
-                                    <div
-                                        class="flex size-9 shrink-0 items-center justify-center rounded-full bg-red-500 text-white">
-                                        <svg class="size-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            stroke-width="2.5" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                        </svg>
-                                    </div>
-                                    <div class="min-w-0">
-                                        <p class="text-[10px] font-bold uppercase tracking-wider text-red-600">Incorrect Answer</p>
-                                        <p class="truncate text-base font-bold font-outfit leading-tight text-red-700"
-                                            x-text="scoreCardData.wrong"></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-5">
-                                <button type="button" @click="scoreCardOpen = false"
-                                    class="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0F776E] py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-[#0F776E]/20 transition hover:bg-[#115E59]">
-                                    <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                        stroke-width="2.5" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                                    </svg>
-                                    Close
-                                </button>
+                            <div class="min-w-0">
+                                <p class="text-[10px] font-bold uppercase tracking-wider text-red-600">Incorrect Answer</p>
+                                <p class="truncate text-base font-bold font-outfit leading-tight text-red-700" x-text="scoreCardData.wrong"></p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="mt-5">
+                        <button type="button" @click="scoreCardOpen = false"
+                            class="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0F776E] py-3 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-[#0F776E]/20 transition hover:bg-[#115E59]">
+                            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                            Close
+                        </button>
+                    </div>
                 </div>
             </div>
-        </template>
+        </div>
 
         {{-- Gate: practice questions require completed mock test --}}
-        <template x-teleport="body">
-            <div x-show="practiceGateOpen" x-cloak x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100"
-                x-transition:leave-end="opacity-0" class="fixed inset-0 z-[9999] overflow-y-auto p-4 sm:p-6"
-                role="dialog" aria-modal="true" aria-labelledby="practice-gate-title">
-                <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" @click="practiceGateOpen = false" aria-hidden="true"></div>
-                <div class="flex min-h-full items-center justify-center p-2 sm:p-4">
-                    <div class="relative z-10 w-full max-w-md overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/20 ring-1 ring-slate-200/60 my-8"
-                        x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="opacity-0 scale-95 translate-y-2"
-                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                        x-transition:leave="transition ease-in duration-150"
-                        x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-                        x-transition:leave-end="opacity-0 scale-95 translate-y-2" @click.stop>
-                        <div class="border-b border-impetus-orange/20 bg-impetus-lightOrange px-6 py-4">
-                            <div class="flex items-start justify-between gap-3">
-                                <div class="flex min-w-0 items-center gap-3">
-                                    <span
-                                        class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-impetus-orange/15 text-impetus-orange ring-1 ring-impetus-orange/20">
-                                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                            stroke-width="2" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008Z" />
-                                        </svg>
-                                    </span>
-                                    <h3 id="practice-gate-title" class="font-serif text-lg font-bold leading-snug text-slate-900">
-                                        Complete the mock test first
-                                    </h3>
-                                </div>
-                                <button type="button"
-                                    class="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal"
-                                    @click="practiceGateOpen = false" aria-label="Close dialog">
-                                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                        stroke-width="2" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                </button>
-                            </div>
+        <div x-show="practiceGateOpen"
+            x-cloak
+            id="practice-gate-modal"
+            class="fixed inset-0 overflow-y-auto p-4 sm:p-6"
+            style="z-index: 99999;"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="practice-gate-title">
+            <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"
+                x-transition:enter="ease-out duration-200"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="ease-in duration-150"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                @click="practiceGateOpen = false" aria-hidden="true"></div>
+
+            <div class="relative z-10 w-full max-w-md mx-auto my-8 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/20 ring-1 ring-slate-200/60"
+                x-transition:enter="ease-out duration-200"
+                x-transition:enter-start="opacity-0 scale-95"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="ease-in duration-150"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-95"
+                @click.stop>
+                <div class="border-b border-impetus-orange/20 bg-impetus-lightOrange px-6 py-4">
+                    <div class="flex items-start justify-between gap-3">
+                        <div class="flex min-w-0 items-center gap-3">
+                            <span class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-impetus-orange/15 text-impetus-orange ring-1 ring-impetus-orange/20">
+                                <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008Z" />
+                                </svg>
+                            </span>
+                            <h3 id="practice-gate-title" class="font-serif text-lg font-bold leading-snug text-slate-900">
+                                Complete the mock test first
+                            </h3>
                         </div>
-                        <div class="px-6 py-5">
-                            <p class="text-sm leading-relaxed text-slate-600">
-                                To open practice questions, you need to <span class="font-semibold text-slate-800">complete the
-                                    mock test</span> for this module first. After that, you can return here and proceed to practice.
-                            </p>
-                            <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
-                                <button type="button"
-                                    class="inline-flex w-full items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 sm:w-auto"
-                                    @click="practiceGateOpen = false">
-                                    Close
-                                </button>
-                                <a href="{{ route('cne.modules.test', [$course->couse_name, 'mock']) }}"
-                                    class="inline-flex w-full items-center justify-center rounded-xl bg-impetus-orange px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/25 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2 sm:w-auto"
-                                    @click="practiceGateOpen = false">
-                                    Go to mock test
-                                </a>
-                            </div>
-                        </div>
+                        <button type="button"
+                            class="rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal"
+                            @click="practiceGateOpen = false" aria-label="Close dialog">
+                            <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="px-6 py-5">
+                    <p class="text-sm leading-relaxed text-slate-600">
+                        To open practice questions, you need to <span class="font-semibold text-slate-800">complete the mock test</span> for this module first. After that, you can return here and proceed to practice.
+                    </p>
+                    <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
+                        <button type="button"
+                            class="inline-flex w-full items-center justify-center rounded-xl border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2 sm:w-auto"
+                            @click="practiceGateOpen = false">
+                            Close
+                        </button>
+                        <a href="{{ route('cne.modules.test', [$course->couse_name, 'mock']) }}"
+                            class="inline-flex w-full items-center justify-center rounded-xl bg-impetus-orange px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-impetus-orange/25 transition hover:bg-impetus-orange-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-orange focus-visible:ring-offset-2 sm:w-auto"
+                            @click="practiceGateOpen = false">
+                            Go to mock test
+                        </a>
                     </div>
                 </div>
             </div>
-        </template>
+        </div>
 
         <style>
             [x-cloak] {
