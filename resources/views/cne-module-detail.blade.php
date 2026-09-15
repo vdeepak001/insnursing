@@ -61,7 +61,7 @@
         //  - final test is enabled (canFinal)
         //  - no final attempt has been made yet (finalDone is false and attempt count is 0)
         $canFinalPhp = $tp && $mockDone;
-        $showFinalWarning = $canFinalPhp && !$finalDone && ($tp['final_attempt_count'] ?? 0) === 0;
+        $showFinalWarning = $canFinalPhp && !($tp['final_passed'] ?? false) && ($tp['final_attempt_count'] ?? 0) < 2;
     @endphp
 
     <main class="pb-16" x-data="{
@@ -668,7 +668,11 @@
                         <div>
                             <h3 id="final-warning-title"
                                 class="text-lg font-extrabold tracking-tight text-impetus-teal font-outfit">
-                                Final Test — First Attempt
+                                @if (($tp['final_attempt_count'] ?? 0) === 1)
+                                    Final Test — Second Attempt
+                                @else
+                                    Final Test — First Attempt
+                                @endif
                             </h3>
                             <p class="text-xs font-semibold uppercase tracking-wider text-impetus-orange">Important Notice
                             </p>
@@ -690,30 +694,52 @@
 
                 {{-- Body --}}
                 <div class="px-6 py-5 space-y-4">
-                    {{-- Attempt counter badge --}}
-                    <div class="flex items-center gap-3 rounded-xl border border-impetus-orange/20 bg-orange-50 px-4 py-3">
-                        <span
-                            class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white shadow-sm">1</span>
-                        <p class="text-sm font-semibold text-slate-700 leading-snug">
-                            Only <span class="text-impetus-orange font-extrabold uppercase">2 FINAL TEST ATTEMPTS</span>
-                            are allowed in total.
-                        </p>
-                    </div>
+                    @if (($tp['final_attempt_count'] ?? 0) === 1)
+                        {{-- Second Attempt / Retake --}}
+                        <div class="flex items-center gap-3 rounded-xl border border-impetus-orange/20 bg-orange-50 px-4 py-3">
+                            <span
+                                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white shadow-sm">2</span>
+                            <p class="text-sm font-semibold text-slate-700 leading-snug">
+                                Only <span class="text-impetus-orange font-extrabold uppercase">2 FINAL TEST ATTEMPTS</span>
+                                are allowed in total.
+                            </p>
+                        </div>
 
-                    {{-- Warning message --}}
-                    <div
-                        class="flex items-start gap-3 rounded-xl border border-impetus-teal/20 bg-impetus-teal-muted/30 px-4 py-3">
-                        <svg class="mt-0.5 h-5 w-5 shrink-0 text-impetus-teal" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
-                        </svg>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Practice thoroughly with <span class="font-bold text-impetus-teal">"Learning Resource and
-                                Practice Test"</span> before taking the Final Test. Once you begin, one attempt will be
-                            consumed.
-                        </p>
-                    </div>
+                        <div class="flex items-start gap-3 rounded-xl border border-impetus-teal/20 bg-impetus-teal-muted/30 px-4 py-3">
+                            <svg class="mt-0.5 h-5 w-5 shrink-0 text-impetus-teal" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                            </svg>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Practice thoroughly with <span class="font-bold text-impetus-teal">"Learning Resource and
+                                    Practice Test"</span> before taking the Final Test 2nd Attempt.
+                            </p>
+                        </div>
+                    @else
+                        {{-- First Attempt --}}
+                        <div class="flex items-center gap-3 rounded-xl border border-impetus-orange/20 bg-orange-50 px-4 py-3">
+                            <span
+                                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white shadow-sm">1</span>
+                            <p class="text-sm font-semibold text-slate-700 leading-snug">
+                                Only <span class="text-impetus-orange font-extrabold uppercase">2 FINAL TEST ATTEMPTS</span>
+                                are allowed in total.
+                            </p>
+                        </div>
+
+                        <div class="flex items-start gap-3 rounded-xl border border-impetus-teal/20 bg-impetus-teal-muted/30 px-4 py-3">
+                            <svg class="mt-0.5 h-5 w-5 shrink-0 text-impetus-teal" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                            </svg>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Practice thoroughly with <span class="font-bold text-impetus-teal">"Learning Resource and
+                                    Practice Test"</span> before taking the Final Test. Once you begin, one attempt will be
+                                consumed.
+                            </p>
+                        </div>
+                    @endif
                 </div>
 
                 {{-- Footer Actions --}}
