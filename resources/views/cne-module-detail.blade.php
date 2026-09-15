@@ -55,9 +55,19 @@
         $hasRepurchased = $purchaseCount > 1;
     @endphp
 
+    @php
+        // Show the final-test first-attempt warning when:
+        //  - mock is completed
+        //  - final test is enabled (canFinal)
+        //  - no final attempt has been made yet (finalDone is false and attempt count is 0)
+        $canFinalPhp = $tp && $mockDone;
+        $showFinalWarning = $canFinalPhp && !$finalDone && ($tp['final_attempt_count'] ?? 0) === 0;
+    @endphp
+
     <main class="pb-16" x-data="{
         practiceGateOpen: false,
         scoreCardOpen: false,
+        finalAttemptWarningOpen: {{ $showFinalWarning ? 'true' : 'false' }},
         scoreCardData: {
             title: '',
             score: 0,
@@ -78,8 +88,11 @@
             this.$watch('scoreCardOpen', value => {
                 document.body.style.overflow = value ? 'hidden' : '';
             });
+            this.$watch('finalAttemptWarningOpen', value => {
+                document.body.style.overflow = value ? 'hidden' : '';
+            });
         },
-    }" @keydown.escape.window="practiceGateOpen = false; scoreCardOpen = false">
+    }" @keydown.escape.window="practiceGateOpen = false; scoreCardOpen = false; finalAttemptWarningOpen = false">
 
         {{-- Hero + overview (aligned with Practice Test / site theme) --}}
         <section class="relative overflow-hidden border-b border-impetus-teal/10 bg-impetus-teal-muted/30 py-14 sm:py-16">
@@ -608,6 +621,122 @@
                 </div>
             </div>
         </section>
+
+        {{-- ================================================================ --}}
+        {{-- Final Test First-Attempt Warning Popup --}}
+        {{-- Shows automatically when: mock done + final enabled + 0 attempts --}}
+        {{-- ================================================================ --}}
+        <div
+            x-show="finalAttemptWarningOpen"
+            x-cloak
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 z-[200] flex items-center justify-center p-4"
+            role="alertdialog"
+            aria-modal="true"
+            aria-labelledby="final-warning-title"
+        >
+            {{-- Backdrop --}}
+            <div
+                class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"
+                @click="finalAttemptWarningOpen = false"
+            ></div>
+
+            {{-- Modal Card --}}
+            <div
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                x-transition:leave-end="opacity-0 scale-95 translate-y-4"
+                class="relative w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-slate-900/10"
+            >
+                {{-- Decorative top gradient bar --}}
+                <div class="h-1.5 w-full bg-gradient-to-r from-impetus-teal via-impetus-teal/70 to-impetus-orange"></div>
+
+                {{-- Header --}}
+                <div class="flex items-start justify-between px-6 pt-6 pb-4">
+                    <div class="flex items-center gap-3">
+                        {{-- Shield / warning icon in teal circle --}}
+                        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-impetus-teal/10 ring-2 ring-impetus-teal/20">
+                            <svg class="h-6 w-6 text-impetus-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 id="final-warning-title" class="text-lg font-extrabold tracking-tight text-impetus-teal font-outfit">
+                                Final Test — First Attempt
+                            </h3>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-impetus-orange">Important Notice</p>
+                        </div>
+                    </div>
+                    {{-- Close button --}}
+                    <button
+                        type="button"
+                        @click="finalAttemptWarningOpen = false"
+                        class="ml-2 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-100 hover:text-slate-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal"
+                        aria-label="Close"
+                    >
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                {{-- Divider --}}
+                <div class="mx-6 border-t border-slate-100"></div>
+
+                {{-- Body --}}
+                <div class="px-6 py-5 space-y-4">
+                    {{-- Attempt counter badge --}}
+                    <div class="flex items-center gap-3 rounded-xl border border-impetus-orange/20 bg-orange-50 px-4 py-3">
+                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-impetus-orange text-sm font-extrabold text-white shadow-sm">2</span>
+                        <p class="text-sm font-semibold text-slate-700 leading-snug">
+                            Only <span class="text-impetus-orange font-extrabold">two final test attempts</span> are allowed in total.
+                        </p>
+                    </div>
+
+                    {{-- Warning message --}}
+                    <div class="flex items-start gap-3 rounded-xl border border-impetus-teal/20 bg-impetus-teal-muted/30 px-4 py-3">
+                        <svg class="mt-0.5 h-5 w-5 shrink-0 text-impetus-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                        </svg>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Practice thoroughly with the <span class="font-bold text-impetus-teal">Mock Test</span> before taking the Final Test.
+                            Once you begin, one attempt will be consumed.
+                        </p>
+                    </div>
+                </div>
+
+                {{-- Footer Actions --}}
+                <div class="flex items-center justify-end gap-3 border-t border-slate-100 px-6 py-4">
+                    <button
+                        type="button"
+                        @click="finalAttemptWarningOpen = false"
+                        class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:bg-slate-50 hover:border-slate-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal"
+                    >
+                        Practice More
+                    </button>
+                    <button
+                        type="button"
+                        @click="finalAttemptWarningOpen = false"
+                        class="inline-flex items-center justify-center gap-2 rounded-xl bg-impetus-teal px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-md shadow-impetus-teal/25 transition hover:bg-impetus-teal/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-impetus-teal focus-visible:ring-offset-2"
+                    >
+                        I Understand
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         {{-- Score Card Modal --}}
         <div x-show="scoreCardOpen" x-cloak x-transition:enter="transition ease-out duration-200"
