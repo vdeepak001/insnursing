@@ -61,8 +61,9 @@ class FrontendRegisteredUserController extends Controller
         $normalizedPhone = trim($validated['phone']);
 
         // Since email and phone are encrypted in the User model, we cannot use standard SQL uniqueness checks.
-        // We fetch all users and check manually.
-        $allUsers = User::query()->whereNotNull('phone')->orWhereNotNull('email')->get();
+        // We fetch ALL users (including soft-deleted) and check manually.
+        // withTrashed() is critical: without it, a soft-deleted user could re-register with the same email/phone.
+        $allUsers = User::withTrashed()->get();
 
         $emailAlreadyExists = $allUsers->contains(function (User $user) use ($normalizedEmail): bool {
             return Str::lower(trim((string) $user->email)) === $normalizedEmail;
@@ -92,7 +93,7 @@ class FrontendRegisteredUserController extends Controller
         $normalizedUid = filled($validated['uid'] ?? null) ? Str::lower(trim((string) $validated['uid'])) : null;
 
         if ($normalizedState === 'maharashtra' && $normalizedUid !== null) {
-            $uidAlreadyExists = User::query()
+            $uidAlreadyExists = User::withTrashed()
                 ->whereNotNull('uid')
                 ->get()
                 ->contains(function (User $user) use ($normalizedUid): bool {
