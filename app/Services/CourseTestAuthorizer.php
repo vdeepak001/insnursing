@@ -60,7 +60,7 @@ class CourseTestAuthorizer
 
             $finalAttempt = $finalAttempts->first();
             $finalAttemptCount = $finalAttempts->count();
-            $finalDeactivated = ($finalAttemptCount >= 1) || (bool) ($finalAttempt?->passed) || $orderExpired;
+            $finalDeactivated = ($finalAttemptCount >= 2) || (bool) ($finalAttempt?->passed) || $orderExpired;
 
             abort_if($finalDeactivated, 403, 'Practice test is deactivated.');
 

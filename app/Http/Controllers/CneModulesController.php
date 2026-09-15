@@ -166,7 +166,7 @@ class CneModulesController extends Controller
             $finalAttempt = $finalAttempts->first();
             $finalAttemptCount = $finalAttempts->count();
             $finalPassed = (bool) ($finalAttempt?->passed);
-            $finalDeactivated = ($finalAttemptCount >= 1) || $finalPassed || $orderExpired;
+            $finalDeactivated = ($finalAttemptCount >= 2) || $finalPassed || $orderExpired;
 
             $formatDuration = function ($seconds) {
                 if ($seconds === null) {
@@ -395,7 +395,7 @@ class CneModulesController extends Controller
                     ->get();
                 $finalAttempt = $finalAttempts->first();
                 $finalAttemptCount = $finalAttempts->count();
-                $finalDeactivated = ($finalAttemptCount >= 1) || (bool) ($finalAttempt?->passed) || $orderExpired;
+                $finalDeactivated = ($finalAttemptCount >= 2) || (bool) ($finalAttempt?->passed) || $orderExpired;
                 if ($finalDeactivated) {
                     abort(403, 'Learning Resources are deactivated.');
                 }
