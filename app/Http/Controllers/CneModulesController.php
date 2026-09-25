@@ -129,6 +129,30 @@ class CneModulesController extends Controller
 
             $activeOrder = Order::activeOrderFor($viewer, $course_detail);
             $isPurchased = (bool) $latestOrder;
+
+            $targetCouncilId = $latestOrder?->state_council_id;
+            $stateName = filled($viewer->state) ? trim((string) $viewer->state) : null;
+
+            $course_detail->load(['stateCouncils' => function ($query) use ($targetCouncilId, $stateName) {
+                $query->where('active_status', true);
+                if ($targetCouncilId) {
+                    $query->where('state_councils.id', $targetCouncilId);
+                } elseif ($stateName) {
+                    $query->whereHas('state', function ($sq) use ($stateName) {
+                        $sq->where('name', $stateName)->where('status', 'active');
+                    });
+                }
+            }]);
+
+            if ($course_detail->stateCouncils->isEmpty()) {
+                $course_detail->load(['stateCouncils' => function ($query) {
+                    $query->where('active_status', true);
+                }]);
+            }
+        } else {
+            $course_detail->load(['stateCouncils' => function ($query) {
+                $query->where('active_status', true);
+            }]);
         }
 
         $courseTestProgress = null;
