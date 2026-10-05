@@ -304,6 +304,7 @@ it('sends the original ccavenue billing details for states other than goa', func
         'state' => $stateName,
         'city' => $city,
         'zip_code' => $zip,
+        'name' => 'Anita Nair',
         'phone' => '9876543210',
         'country' => 'India',
     ]);
@@ -327,7 +328,8 @@ it('sends the original ccavenue billing details for states other than goa', func
         $payload
     );
 
-    expect($payload['billing_state'])->toBe($stateName)
+    expect($payload['billing_name'])->toBe('Anita Nair')
+        ->and($payload['billing_state'])->toBe($stateName)
         ->and($payload['billing_city'])->toBe($expectedCity)
         ->and($payload['billing_zip'])->toBe($expectedZip)
         ->and($payload['billing_country'])->toBe('India')
@@ -338,6 +340,22 @@ it('sends the original ccavenue billing details for states other than goa', func
     'kerala without address' => ['Kerala', null, null, 'Kerala', '400001'],
     'maharashtra without address' => ['Maharashtra', null, null, 'Maharashtra', '400001'],
     'delhi with a saved address' => ['Delhi', 'New Delhi', '110001', 'New Delhi', '110001'],
+]);
+
+it('sends ccavenue a billing name of letters and spaces', function (string $name, string $expected) {
+    $user = User::factory()->create([
+        'role_type' => 'user',
+        'name' => $name,
+        'state' => 'Goa',
+    ]);
+
+    expect(app(CCAvenueService::class)->billingDetails($user)['billing_name'])->toBe($expected);
+    expect($user->fresh()->name)->toBe($name);
+})->with([
+    'plain name' => ['Lynel Anto', 'Lynel Anto'],
+    'goa surname with an apostrophe' => ["Lynel Anto D'Souza", 'Lynel Anto DSouza'],
+    'dotted and hyphenated name' => ['Lynel A. Anto-Pereira', 'Lynel A AntoPereira'],
+    'name with no letters' => ['123', 'Customer'],
 ]);
 
 it('keeps a real gateway failure message for any state', function () {

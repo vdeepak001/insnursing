@@ -16,7 +16,12 @@ class CCAvenueService
      * send Panaji and a 403 pin unless the learner already has a usable Goa
      * city and pin.
      *
+     * CCAvenue accepts a billing name of letters and spaces only, up to 60
+     * characters. An apostrophe, dot, or hyphen — common in Goan surnames
+     * such as D'Souza — is rejected as error 31004.
+     *
      * @return array{
+     *     billing_name: string,
      *     billing_address: string,
      *     billing_city: string,
      *     billing_state: string,
@@ -62,6 +67,7 @@ class CCAvenueService
         }
 
         return [
+            'billing_name' => $this->billingName($user->name),
             'billing_address' => $billingAddress,
             'billing_city' => $billingCity,
             'billing_state' => $isGoa ? 'Goa' : (string) ($user->state ?? ''),
@@ -69,6 +75,22 @@ class CCAvenueService
             'billing_tel' => $billingTel,
             'billing_country' => $user->country ?? 'India',
         ];
+    }
+
+    /**
+     * Reduce a learner name to the letters and spaces CCAvenue will accept.
+     */
+    private function billingName(?string $name): string
+    {
+        $ascii = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', (string) $name);
+        $billingName = preg_replace('/[^A-Za-z ]/', '', $ascii !== false ? $ascii : (string) $name) ?? '';
+        $billingName = trim((string) preg_replace('/\s+/', ' ', $billingName));
+
+        if ($billingName === '') {
+            return 'Customer';
+        }
+
+        return substr($billingName, 0, 60);
     }
 
     /**

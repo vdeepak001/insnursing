@@ -144,7 +144,7 @@ class CartController extends Controller
             'redirect_url' => route('payment.ccavenue.callback'),
             'cancel_url' => route('payment.ccavenue.callback'),
             'language' => 'EN',
-            'billing_name' => $user->name,
+            'billing_name' => $billing['billing_name'],
             'billing_email' => $user->email,
             'billing_tel' => $billing['billing_tel'],
             'billing_address' => $billing['billing_address'],
