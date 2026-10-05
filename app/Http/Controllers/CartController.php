@@ -134,29 +134,7 @@ class CartController extends Controller
         });
 
         $ccavenue = app(CCAvenueService::class);
-
-        // Sanitize and pad billing parameters to ensure CCAvenue validations pass (especially for Card payments)
-        $billingAddress = trim(($user->address_line_1 ?? '').' '.($user->address_line_2 ?? ''));
-        if (empty($billingAddress)) {
-            $billingAddress = 'Address Not Provided';
-        } elseif (strlen($billingAddress) < 10) {
-            $billingAddress = str_pad($billingAddress, 10, ' ');
-        }
-
-        $billingCity = trim($user->city ?? '');
-        if (empty($billingCity)) {
-            $billingCity = trim($user->state ?? 'Mumbai');
-        }
-
-        $billingZip = trim($user->zip_code ?? '');
-        if (empty($billingZip) || ! preg_match('/^[a-zA-Z0-9]{3,12}$/', $billingZip)) {
-            $billingZip = '400001'; // Fallback to a valid default pin code format
-        }
-
-        $billingTel = preg_replace('/[^0-9]/', '', $user->phone ?? '');
-        if (strlen($billingTel) < 10 || strlen($billingTel) > 15) {
-            $billingTel = '9999999999'; // Fallback to a valid default 10-digit format
-        }
+        $billing = $ccavenue->billingDetails($user);
 
         $params = [
             'merchant_id' => config('services.ccavenue.merchant_id'),
@@ -168,12 +146,12 @@ class CartController extends Controller
             'language' => 'EN',
             'billing_name' => $user->name,
             'billing_email' => $user->email,
-            'billing_tel' => $billingTel,
-            'billing_address' => $billingAddress,
-            'billing_city' => $billingCity,
-            'billing_state' => $user->state ?? '',
-            'billing_zip' => $billingZip,
-            'billing_country' => $user->country ?? 'India',
+            'billing_tel' => $billing['billing_tel'],
+            'billing_address' => $billing['billing_address'],
+            'billing_city' => $billing['billing_city'],
+            'billing_state' => $billing['billing_state'],
+            'billing_zip' => $billing['billing_zip'],
+            'billing_country' => $billing['billing_country'],
         ];
 
         $merchantData = '';
@@ -217,7 +195,7 @@ class CartController extends Controller
         $orderId = $response['order_id'] ?? null;
         $orderStatus = $response['order_status'] ?? null;
         $trackingId = $response['tracking_id'] ?? null;
-        $failureMessage = $response['failure_message'] ?? null;
+        $failureMessage = $this->paymentFailureReason($response);
 
         if (! $orderId) {
             return redirect()->route('cart.index')->with('error', 'Unable to retrieve order reference.');
@@ -292,7 +270,30 @@ class CartController extends Controller
 
         auth()->login($user);
 
-        return redirect()->route('cart.index')->with('error', 'Payment failed. Reason: '.($failureMessage ?? 'Unknown error'));
+        return redirect()->route('cart.index')->with('error', 'Payment failed. Reason: '.$failureMessage);
+    }
+
+    /**
+     * CCAvenue often returns an empty failure_message for a declined Goa billing
+     * check and puts the explanation in status_message instead.
+     *
+     * @param  array<string, mixed>  $response
+     */
+    private function paymentFailureReason(array $response): string
+    {
+        foreach (['failure_message', 'status_message'] as $key) {
+            $value = trim((string) ($response[$key] ?? ''));
+            if ($value !== '') {
+                return $value;
+            }
+        }
+
+        $statusCode = trim((string) ($response['status_code'] ?? ''));
+        if ($statusCode !== '') {
+            return 'Status code '.$statusCode;
+        }
+
+        return 'Unknown error';
     }
 
     private function pivotScalar(mixed $value): ?int
